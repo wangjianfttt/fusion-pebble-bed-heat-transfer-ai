@@ -3,6 +3,7 @@ message: "If you use these data or programs, please cite the associated manuscri
 title: "Transient conjugate heat transfer in internally heated ceramic pebble beds: pore-resolved reference fields and graph–Transformer prediction"
 type: software
 license: MIT
+repository-code: "https://github.com/wangjianfttt/fusion-pebble-bed-heat-transfer-ai"
 authors:
   - family-names: Wang
     given-names: Jian

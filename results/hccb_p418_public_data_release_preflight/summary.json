@@ -1,7 +1,7 @@
 {
   "status": "p418_public_data_release_preflight",
   "repository_doi": "pending_assignment",
-  "repository_url": null,
+  "repository_url": "https://github.com/wangjianfttt/fusion-pebble-bed-heat-transfer-ai",
   "software_and_data_license": {
     "software_license": "MIT",
     "data_license": "cc-by-4.0"

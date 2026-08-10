@@ -35,14 +35,14 @@
     "diffusion refinement"
   ],
   "access_right": "open",
+  "repository_url": "https://github.com/wangjianfttt/fusion-pebble-bed-heat-transfer-ai",
   "software_license": "MIT",
   "data_license": "cc-by-4.0",
   "pending_author_fields": [],
   "assigned_after_deposition": [
-    "repository_url",
     "repository_doi",
     "publication_date",
     "version"
   ],
-  "notes": "This is a preparation record, not a Zenodo deposition payload. The author-confirmed licences are recorded, while no DOI or repository URL is invented before deposition."
+  "notes": "This is a preparation record, not a Zenodo deposition payload. The public code repository and author-confirmed licences are recorded; the dataset DOI is assigned only after final deposition."
 }

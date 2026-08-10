@@ -65,6 +65,7 @@ REQUIRED_FILES = (
     "submission/cover_letter_IJHMT.md",
     "submission/highlights.txt",
     "submission/data_release_license_choice.json",
+    "submission/data_release_repository_record.json",
     "results/hccb_p418_fixed_flow_runtime_recovery_checks/summary.json",
 )
 

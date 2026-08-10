@@ -26,6 +26,9 @@ def test_repository_metadata_uses_current_manuscript_title_and_licences() -> Non
     assert metadata["software_license"] == "MIT"
     assert metadata["data_license"] == "cc-by-4.0"
     assert metadata["pending_author_fields"] == []
+    assert metadata["repository_url"] == (
+        "https://github.com/wangjianfttt/fusion-pebble-bed-heat-transfer-ai"
+    )
 
 
 def test_citation_file_uses_current_title_and_software_licence() -> None:
@@ -33,3 +36,7 @@ def test_citation_file_uses_current_title_and_software_licence() -> None:
     text = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
     assert f'title: "{expected}"' in text
     assert "license: MIT" in text
+    assert (
+        'repository-code: "https://github.com/wangjianfttt/'
+        'fusion-pebble-bed-heat-transfer-ai"'
+    ) in text

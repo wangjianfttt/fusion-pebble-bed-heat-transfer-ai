@@ -23,7 +23,9 @@ def test_public_data_release_preflight_is_path_free(tmp_path: Path) -> None:
     payload = module.build(ROOT, output)
     assert payload["compact_plot_data_ready"] is True
     assert payload["repository_doi"] == "pending_assignment"
-    assert payload["repository_url"] is None
+    assert payload["repository_url"] == (
+        "https://github.com/wangjianfttt/fusion-pebble-bed-heat-transfer-ai"
+    )
     assert payload["repository_metadata_ready"] is False
     assert payload["software_and_data_license"] == {
         "software_license": "MIT",
@@ -58,6 +60,16 @@ def test_public_data_release_preflight_is_path_free(tmp_path: Path) -> None:
         "data_license": "cc-by-4.0",
     }
     assert metadata["metadata"]["license"] == "cc-by-4.0"
+    assert metadata["metadata"]["related_identifiers"] == [
+        {
+            "identifier": (
+                "https://github.com/wangjianfttt/"
+                "fusion-pebble-bed-heat-transfer-ai"
+            ),
+            "relation": "isSupplementTo",
+            "scheme": "url",
+        }
+    ]
     readme = (output / "README.md").read_text(encoding="utf-8")
     assert "## Release layers" in readme
     assert "## Reproduce the compact quantitative figures" in readme

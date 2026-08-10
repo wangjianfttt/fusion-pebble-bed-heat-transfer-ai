@@ -155,6 +155,11 @@ affiliations, title, description, keywords and licences are fixed, while the
 repository URL, DOI and release version remain unset until the final processed
 prediction archive is complete.
 
+The public code repository is
+`https://github.com/wangjianfttt/fusion-pebble-bed-heat-transfer-ai`. The
+processed-data DOI is added only after the final selected predictions and
+figure records have been deposited.
+
 ## Licences
 
 Original project software and reproduction scripts are released under the MIT

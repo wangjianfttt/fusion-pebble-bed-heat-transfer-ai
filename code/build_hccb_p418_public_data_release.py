@@ -113,6 +113,17 @@ def license_choice(project_root: Path) -> dict[str, str] | None:
     return {"software_license": software, "data_license": data}
 
 
+def repository_record(project_root: Path) -> dict[str, object]:
+    path = project_root / "submission/data_release_repository_record.json"
+    if not path.is_file():
+        return {"repository_url": None, "repository_doi": None}
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    return {
+        "repository_url": str(payload.get("repository_url") or "").strip() or None,
+        "repository_doi": str(payload.get("repository_doi") or "").strip() or None,
+    }
+
+
 def expand_generated_manuscript_values(project_root: Path, text: str) -> str:
     """Expand scalar LaTeX macros before converting the abstract to plain text."""
     values = project_root / "manuscript/generated_results.tex"
@@ -151,6 +162,7 @@ def repository_metadata(
         if strip_latex(item)
     ]
     licenses = license_choice(project_root)
+    repository = repository_record(project_root)
     final_abstract_ready = abstract_source == "generated_final_abstract.tex"
     pending = []
     if not final_processed_ready:
@@ -169,6 +181,14 @@ def repository_metadata(
     }
     if licenses is not None:
         metadata["license"] = licenses["data_license"]
+    if repository["repository_url"]:
+        metadata["related_identifiers"] = [
+            {
+                "identifier": repository["repository_url"],
+                "relation": "isSupplementTo",
+                "scheme": "url",
+            }
+        ]
     return {
         "status": (
             "p418_repository_metadata_ready"
@@ -194,14 +214,15 @@ def build(project_root: Path, output_dir: Path) -> dict[str, object]:
         final_processed_ready=final_ready,
     )
     licenses = license_choice(project_root)
+    repository = repository_record(project_root)
     payload: dict[str, object] = {
         "status": (
             "p418_public_data_release_ready"
             if compact_ready and final_ready
             else "p418_public_data_release_preflight"
         ),
-        "repository_doi": "pending_assignment",
-        "repository_url": None,
+        "repository_doi": repository["repository_doi"] or "pending_assignment",
+        "repository_url": repository["repository_url"],
         "software_and_data_license": licenses or "pending_author_choice",
         "repository_metadata_ready": metadata["ready_for_deposition"],
         "compact_plot_data_ready": compact_ready,

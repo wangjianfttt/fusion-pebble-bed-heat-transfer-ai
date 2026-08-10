@@ -32,6 +32,7 @@ REPOSITORY_METADATA = {
     "LICENSE",
     "DATA_LICENSE.md",
     "submission/data_release_license_choice.json",
+    "submission/data_release_repository_record.json",
     "reproducibility/repository_release_metadata_draft.json",
 }
 

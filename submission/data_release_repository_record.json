@@ -1,0 +1,11 @@
+{
+  "status": "public_code_repository_created_processed_data_pending",
+  "repository_url": "https://github.com/wangjianfttt/fusion-pebble-bed-heat-transfer-ai",
+  "repository_visibility": "public",
+  "default_branch": "main",
+  "repository_doi": null,
+  "created_date": "2026-08-10",
+  "scope": "Path-free reproduction source, registered inputs, tests and compact processed figure data",
+  "raw_openfoam_fields_included": false,
+  "model_checkpoints_included": false
+}
