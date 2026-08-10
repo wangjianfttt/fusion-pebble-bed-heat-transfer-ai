@@ -1,0 +1,47 @@
+{
+  "status": "source_backed_li4sio4_transition_characterization",
+  "material": "pure Li4SiO4",
+  "source": {
+    "authors": "Heiko Kleykamp",
+    "title": "High-temperature Calorimetry of Fusion Reactor Blanket Materials",
+    "journal": "Netsu Sokutei",
+    "volume_issue_pages": "27(2), 100-104",
+    "year": 2000,
+    "official_url": "https://www.jstage.jst.go.jp/article/jscta1974/27/2/27_2_100/_pdf",
+    "local_pdf": "literature/raw/thermophysical_sources/Kleykamp_2000_High_temperature_calorimetry_review.pdf",
+    "local_pdf_sha256": "c46cfd490f20128e9e5afede70233a3f3d589da4969b8eeacdf6be14ff9b3d91",
+    "evidence_page_in_pdf": 3,
+    "printed_page": 102
+  },
+  "transition_regions": [
+    {
+      "transition_id": "Tc1",
+      "onset_temperature_degC": 648.0,
+      "critical_temperature_degC": 665.0,
+      "end_temperature_degC": 683.0,
+      "onset_temperature_K": 921.15,
+      "critical_temperature_converted_K": 938.15,
+      "critical_temperature_reported_K": 938.0,
+      "end_temperature_K": 956.15,
+      "additional_enthalpy_uptake_J_mol": 900.0
+    },
+    {
+      "transition_id": "Tc2",
+      "onset_temperature_degC": 713.0,
+      "critical_temperature_degC": 723.0,
+      "end_temperature_degC": 735.0,
+      "onset_temperature_K": 986.15,
+      "critical_temperature_converted_K": 996.15,
+      "critical_temperature_reported_K": 996.0,
+      "end_temperature_K": 1008.15,
+      "additional_enthalpy_uptake_J_mol": 630.0
+    }
+  ],
+  "use_in_this_project": {
+    "temperature_history_classification": true,
+    "openfoam_heat_capacity_modified": false,
+    "neural_network_target_modified": false,
+    "analytic_peak_shape_assumed": false,
+    "reason": "The source reports transition intervals, critical temperatures and integrated additional enthalpy, but not a unique analytic heat-capacity peak shape. The values are therefore used to locate where the smoothed P428-P429 heat capacity is incomplete, not to invent a transition correction."
+  }
+}

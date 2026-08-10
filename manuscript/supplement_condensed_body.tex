@@ -1,0 +1,64 @@
+\section{Numerical details and data separation}
+
+The \OpenFOAM{} fields use the literature-based geometry, operating conditions
+and thermophysical relations summarized in the main paper. The complete
+machine-readable parameter table, equation-to-input map, numerical settings
+and result-generating scripts are provided in the associated reproduction package
+rather than repeated here as multi-page tables.
+
+Steady field labels denote nonlinear iterations. Each accepted condition
+reaches iteration 200 and is checked for finite outlet temperature, pressure
+drop, maximum solid temperature, wall heat, mass difference and energy
+difference. The fixed-flow trajectories use identical staged output times.
+Grid- and time-step convergence indices are reported only for monotonic
+three-level sequences; raw values are retained otherwise.
+
+\input{generated_data_splits}
+
+No cell from an independent steady condition and no time point from an
+independent trajectory is used for fitting, normalization or model selection.
+Both directions connecting the same endpoint pair remain in one role. Model
+architecture and normalization are frozen before the high-velocity and
+independent-packing tests.
+
+\subsection{Legacy unbounded-output diagnostic}
+
+An early graph--Transformer could leave the thermophysical temperature range.
+Those checkpoints are retained only to document why all final neural models
+use the common differentiable bounded output map; they are excluded from the
+accuracy comparison.
+
+\IfFileExists{generated_unbounded_output_diagnostic.tex}{%
+\input{generated_unbounded_output_diagnostic}}{}
+
+\section{Additional checks and data access}
+
+The independent-packing comparison and the PREMUX, TESOMEX, HELOKA and
+fixed-bed comparisons are shown once in the main paper and are not duplicated
+here. Their pointwise processed data, uncertainty fields and generating
+programs are included in the reproduction package. The external measurements
+check aggregate thermal and hydraulic scales; they are not cellwise labels or
+a three-dimensional validation of the present local packing.
+
+The repository contains the complete physical-parameter table, implementation
+map, model settings, fixed split files, processed results and figure scripts.
+It also contains the regional DMDc field comparison used to check the classical
+baseline without repeating a second temperature-cloud figure in the paper.
+Raw \OpenFOAM{} fields are archived separately because of their size. The paper
+and supplementary material are regenerated with
+\texttt{run\_hccb\_p418\_manuscript\_refresh.sh}.
+
+\section{Numerical sensitivity}
+
+\IfFileExists{generated_mesh_sensitivity.tex}{%
+\begingroup
+\renewcommand{\cite}[1]{Celik et al.\ (2008; full reference in the main paper)}
+\input{generated_mesh_sensitivity}
+\endgroup
+}{}
+
+\IfFileExists{generated_timestep_sensitivity.tex}{%
+\input{generated_timestep_sensitivity}}{}
+
+\IfFileExists{generated_final_uncertainty.tex}{%
+\input{generated_final_uncertainty}}{}

@@ -1,0 +1,61 @@
+\documentclass[preprint,12pt]{elsarticle}
+\myfooterfont{\scriptsize\itshape}
+\makeatletter
+\patchcmd{\ps@pprintTitle}
+  {\hbox to \textwidth}
+  {\hbox to \dimexpr\textwidth-3pt\relax}
+  {}{}
+\makeatother
+
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage{lineno}
+\setlength{\emergencystretch}{2em}
+\makeatletter
+\pdfstringdefDisableCommands{%
+  \def\corref#1{}%
+  \def\cormark[#1]{}%
+  \def\cnotenum{}%
+  \def\@corref{}%
+}
+\setlength{\@fptop}{0pt}
+\setlength{\@fpbot}{0pt plus 1fil}
+\makeatother
+
+\journal{International Journal of Heat and Mass Transfer}
+\newcommand{\OpenFOAM}{OpenFOAM}
+
+\begin{document}
+\begin{frontmatter}
+
+\title{Supplementary material for ``Transient conjugate heat transfer in internally heated ceramic pebble beds: pore-resolved reference fields and graph--Transformer prediction''}
+
+\author[a,b]{Jian Wang\corref{cor1}}
+\ead{wjfttt@mail.ustc.edu.cn}
+\author[a,b]{Wei Wen}
+\author[a]{Gang Shen}
+\author[b]{Mingzhun Lei}
+\author[b]{Yuntao Song}
+\cortext[cor1]{Corresponding author.}
+
+\address[a]{Anhui University of Science and Technology, Huainan 232001, China}
+\address[b]{Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences, Hefei 230031, China}
+
+\begin{abstract}
+This supplementary material records the predefined data separation, the
+legacy unbounded-output diagnostic and the numerical sensitivity results that
+support the main paper. Complete inputs, programs and processed data are
+provided in the reproduction package rather than repeated as multi-page
+tables.
+\end{abstract}
+
+\end{frontmatter}
+\linenumbers
+
+\input{supplement_condensed_body}
+
+\end{document}

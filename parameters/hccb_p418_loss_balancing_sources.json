@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "purpose": "Recorded numerical candidates for balancing the three already dimensionless P418 full-coupled training groups: state data, face mass flux data and eight-equation physics.",
+  "physical_parameter_status": {
+    "new_physical_parameters": [],
+    "statement": "These are neural-network optimisation settings. They do not alter pebble-bed geometry, helium properties, Li4SiO4 properties, heating, boundary conditions or any other physical input."
+  },
+  "official_implementation_constants": {
+    "relative_loss_denominator_epsilon": 1e-12,
+    "source": "Bischof and Kraus official repository src/update_rules.py at commit b3c76d2bed7c6bebb2e2628575008a04858472cf",
+    "role": "Numerical protection against a zero relative-loss denominator; not a physical parameter."
+  },
+  "primary_sources": [
+    {
+      "method": "ReLoBRaLo",
+      "paper": "Multi-Objective Loss Balancing for Physics-Informed Deep Learning",
+      "authors": "Rafael Bischof and Michael A. Kraus",
+      "arxiv": "2110.09813",
+      "journal": "Computer Methods in Applied Mechanics and Engineering 439 (2025) 117914",
+      "doi": "10.1016/j.cma.2025.117914",
+      "equation_source": "arXiv version 16 November 2022, equation (11)",
+      "final_setting_source": "arXiv version 16 November 2022, table VIII",
+      "official_repository": "https://github.com/rbischof/relative_balancing",
+      "official_repository_commit": "b3c76d2bed7c6bebb2e2628575008a04858472cf",
+      "official_code_file": "src/update_rules.py",
+      "official_training_file": "src/train.py"
+    },
+    {
+      "method": "PINN gradient-statistics learning-rate annealing",
+      "paper": "Understanding and mitigating gradient pathologies in physics-informed neural networks",
+      "authors": "Sifan Wang, Yujun Teng and Paris Perdikaris",
+      "arxiv": "2001.04536",
+      "doi": "10.1137/20M1318043",
+      "role_here": "Physical reason for checking loss-gradient imbalance; not selected as the first implemented candidate because it requires additional full-gradient statistics."
+    },
+    {
+      "method": "GradNorm",
+      "paper": "GradNorm: Gradient Normalization for Adaptive Loss Balancing in Deep Multitask Networks",
+      "authors": "Zhao Chen, Vijay Badrinarayanan, Chen-Yu Lee and Andrew Rabinovich",
+      "venue": "Proceedings of Machine Learning Research 80 (2018) 794-803",
+      "url": "https://proceedings.mlr.press/v80/chen18a.html",
+      "role_here": "Mature comparison method reviewed by the ReLoBRaLo paper; not the first implementation because it adds a separate gradient-norm optimisation."
+    }
+  ],
+  "formal_candidates": [
+    {
+      "candidate_id": "fixed_equal_dimensionless",
+      "method": "fixed",
+      "state_weight": 1.0,
+      "face_flux_weight": 1.0,
+      "physics_weight": 1.0,
+      "source": "Neutral equal-weight baseline after training-only dimensional scaling and within-group averaging."
+    },
+    {
+      "candidate_id": "relobralo_burgers_table_viii",
+      "method": "relobralo",
+      "state_weight": 1.0,
+      "face_flux_weight": 1.0,
+      "physics_weight": 1.0,
+      "temperature": 0.1,
+      "alpha": 0.999,
+      "expected_rho": 0.9999,
+      "source": "Bischof and Kraus, arXiv:2110.09813, table VIII, Burgers setting."
+    },
+    {
+      "candidate_id": "relobralo_kirchhoff_table_viii",
+      "method": "relobralo",
+      "state_weight": 1.0,
+      "face_flux_weight": 1.0,
+      "physics_weight": 1.0,
+      "temperature": 0.01,
+      "alpha": 0.999,
+      "expected_rho": 0.9999,
+      "source": "Bischof and Kraus, arXiv:2110.09813, table VIII, Kirchhoff setting."
+    },
+    {
+      "candidate_id": "relobralo_helmholtz_table_viii",
+      "method": "relobralo",
+      "state_weight": 1.0,
+      "face_flux_weight": 1.0,
+      "physics_weight": 1.0,
+      "temperature": 1e-05,
+      "alpha": 0.99,
+      "expected_rho": 0.99,
+      "source": "Bischof and Kraus, arXiv:2110.09813, table VIII, Helmholtz setting."
+    }
+  ],
+  "selection_protocol": {
+    "training_data": "Complete training curves only.",
+    "checkpoint_selection": "Arithmetic mean of the three dimensionless validation loss groups. This score is independent of the adaptive training weights.",
+    "method_selection": "Compare the four recorded candidates on validation curves only, using the same architecture, split and random seed.",
+    "independent_test": "Read once after the weighting method and checkpoint are fixed.",
+    "claim_limit": "A published benchmark setting is only a candidate for this coupled pebble-bed problem. Superiority is not claimed before the formal validation comparison is complete."
+  }
+}

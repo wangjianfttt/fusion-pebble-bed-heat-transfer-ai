@@ -1,0 +1,51 @@
+{
+  "status": "completed_seed101_seed202_integral_response_comparison",
+  "accepted_common_case_count": 9,
+  "failed_seed202_case_count": 0,
+  "registered_case_count": 9,
+  "complete_nine_case_comparison": true,
+  "failed_seed202_cases": [],
+  "metric_summary": {
+    "outlet_temperature_K": {
+      "signed_difference_range": [
+        -3.3845832000000087,
+        4.394796700000029
+      ],
+      "relative_change_percent_range": [
+        -0.6612127462926768,
+        0.5841860446469477
+      ],
+      "mean_absolute_relative_change_percent": 0.5329274955275892,
+      "median_absolute_relative_change_percent": 0.5615566118615644,
+      "maximum_absolute_relative_change_percent": 0.6612127462926768
+    },
+    "maximum_solid_temperature_K": {
+      "signed_difference_range": [
+        -0.03861960000006093,
+        2.7184407999999394
+      ],
+      "relative_change_percent_range": [
+        -0.006082687590737268,
+        0.305276312449226
+      ],
+      "mean_absolute_relative_change_percent": 0.12891787884011724,
+      "median_absolute_relative_change_percent": 0.006082687590737268,
+      "maximum_absolute_relative_change_percent": 0.305276312449226
+    },
+    "pressure_drop_Pa": {
+      "signed_difference_range": [
+        0.9606000000057975,
+        7.288799999994808
+      ],
+      "relative_change_percent_range": [
+        14.66990424712208,
+        17.989690145285902
+      ],
+      "mean_absolute_relative_change_percent": 16.099806240685727,
+      "median_absolute_relative_change_percent": 15.483442461263031,
+      "maximum_absolute_relative_change_percent": 17.989690145285902
+    }
+  },
+  "new_physical_parameters": [],
+  "source_paths_removed_for_public_release": true
+}

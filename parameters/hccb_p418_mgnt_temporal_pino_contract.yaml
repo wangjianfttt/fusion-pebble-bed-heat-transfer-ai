@@ -1,0 +1,112 @@
+contract_id: HCCB-P418-MGNT-TEMPORAL-PINO-V1
+date: 2026-07-22
+status: implementation_and_full_graph_resource_test_completed_training_waits_for_12_p418_thermal_steps
+
+scientific_question: >-
+  Can a regional graph--Transformer constrained by the coupled fluid--solid
+  energy equations reproduce three-dimensional pebble-bed temperature
+  transients across published P418 operating conditions and independent
+  packing realizations?
+
+physical_inputs:
+  parameter_manifest: parameters/hccb_p418_physical_parameter_sources.csv
+  equation_input_map: parameters/hccb_p418_equation_input_map.csv
+  transient_plan: parameters/hccb_p418_transient_step_plan.json
+  new_fitted_physical_parameters: []
+
+algorithm_sources:
+  inherited_architecture_source: parameters/apd006_tdem_mgnt_temporal_pino_contract.yaml
+  p418_architecture_registry: parameters/hccb_p418_ai_architecture_sources.json
+  mesh_message_passing: https://iclr.cc/virtual/2021/spotlight/3542
+  regional_graph_operator: https://papers.nips.cc/paper_files/paper/2025/hash/dcb91f43033bb1d367d1848806dee98d-Abstract-Conference.html
+  physics_attention: https://proceedings.mlr.press/v235/wu24r.html
+  temporal_transformer: https://proceedings.neurips.cc/paper_files/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html
+  numerical_settings_reference: https://arxiv.org/abs/2601.23177
+
+fixed_architecture:
+  hidden_dim: 64
+  local_pre_iterations: 2
+  physics_attention_blocks: 2
+  local_post_iterations: 2
+  physics_attention_heads: 4
+  physics_slices: 128
+  temporal_layers: 3
+  temporal_heads: 1
+  leaky_relu_negative_slope: 0.01
+  value_source: >-
+    The values are copied without tuning from the registered component and
+    numerical-setting sources in the P418 architecture registry and the
+    inherited architecture source contract.
+
+p418_transient_representation:
+  output_time_count: 56
+  output_time_source: parameters/hccb_p418_transient_step_plan.json
+  retained_in_reference_and_factorized_modes:
+    - all 56 physical output times
+    - temporal Transformer
+    - time-dependent local graph refinement
+    - exact initial temperature
+    - transient fluid and solid energy-equation losses
+    - internal and boundary heat-flux losses
+  fixed_within_each_curve:
+    - pebble geometry and regional graph connectivity
+    - converged target velocity and pressure fields
+    - source and target operating-condition vector
+  predicted_state:
+    - helium temperature
+    - solid-pebble temperature
+  historical_resource_note: >-
+    Earlier 37-time calculations are retained only as documented CPU/GPU
+    resource comparisons. Formal P418 training and manuscript values use the
+    registered 56-time transient plan.
+
+training_protocol:
+  epochs: 500
+  optimizer: AdamW
+  learning_rate: 0.001
+  weight_decay: 0.00001
+  scheduler: CosineAnnealingLR
+  cosine_eta_min: 0.0
+  data_weight: 5.0
+  edge_flux_weight: 1.0
+  transient_energy_weight: 1.0
+  values_source: >-
+    The optimizer and learning-rate settings follow the registered Transolver
+    implementation. The dimensionless loss-weight ratio follows the registered
+    public PINO configuration; no material coefficient is transferred from a
+    machine-learning benchmark.
+
+comparison_scope:
+  data_splits: parameters/hccb_p418_transient_model_splits.json
+  required_comparisons:
+    - volume-weighted DMDc
+    - snapshot-POD residual correction
+    - data-only graph--Transformer
+    - physics-constrained graph--Transformer
+    - diffusion residual refinement
+  independent_tests:
+    - withheld operating-condition families
+    - independent pebble-packing realizations
+  reported_quantities:
+    - volume-weighted fluid and solid temperature error
+    - maximum pebble temperature error
+    - outlet temperature response
+    - wall heat transfer
+    - fluid and solid energy-equation residuals
+    - inference time and GPU memory
+
+continuation:
+  checkpoint_contents:
+    - model state
+    - optimizer state
+    - scheduler state when used
+    - completed epoch
+    - best validation result
+    - data-order and random-number states
+  resume_requires_same_data_settings_and_code: true
+
+scientific_scope: >-
+  The model predicts thermal evolution after the target hydrodynamic field has
+  reached its converged state. It does not replace OpenFOAM momentum evolution,
+  create new thermophysical parameters, or claim accuracy before the 12 formal
+  thermal-step histories and independent packings have been tested.

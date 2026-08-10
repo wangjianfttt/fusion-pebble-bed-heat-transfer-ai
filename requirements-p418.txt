@@ -1,0 +1,11 @@
+# Python 3.10 environment used by the formal P418 heat-transfer calculations.
+# PyTorch 2.12.1+cu130 is installed from the matching CUDA wheel source on the
+# remote machine; the remaining packages are ordinary Python packages.
+numpy==1.24.4
+pandas==2.3.3
+scipy==1.15.3
+scikit-learn==1.7.2
+torch==2.12.1+cu130
+matplotlib==3.5.1
+numexpr==2.8.1
+bottleneck==1.3.2

@@ -1,0 +1,65 @@
+{
+  "status": "seed303_contact_gap_mesh_repair_candidate_not_approved",
+  "purpose": "Remove the single basic-checkMesh skewness exceedance without changing the particle packing or physical model.",
+  "execution_approved": false,
+  "seed": 303,
+  "source_packing_sha256": "2737dcadde1b506049aa81f478ca6e0d69f4e0e48eab77c267beebe524578b83",
+  "reference_manifest_sha256": "155f8fb6204dac6877599ac8aa5a1bbc9029937fe21bacef5829f672360aff1c",
+  "reference_mesh_summary_sha256": "911558af351e238801088b6ac7ed1026536db7b87092d60efa0ff7fa62fc297b",
+  "diagnosed_face": {
+    "region": "solid",
+    "face_id": 3359283,
+    "maximum_skewness": 4.01922,
+    "basic_limit": 4.0,
+    "vertices_m": [
+      [0.00323589, 0.000246241, 0.00170545],
+      [0.00323687, 0.00023967, 0.00170939],
+      [0.00321177, 0.000238461, 0.00170877],
+      [0.00321252, 0.000244456, 0.00170544]
+    ]
+  },
+  "repair_controls": {
+    "particle_ids": [1595, 951],
+    "global_surface_refinement_level": 2,
+    "local_refinement_level": 3,
+    "local_refinement_region": "contact-gap",
+    "local_refinement_padding_cells": 4.0,
+    "cells_between_levels": 2,
+    "background_cells_per_particle_diameter": 10.101010101,
+    "sphere_icosphere_subdivisions": 3,
+    "solid_cell_source": "snappy-zone"
+  },
+  "expected_geometry": {
+    "physical_particle_diameter_m": 0.001,
+    "meshing_particle_diameter_m": 0.00099,
+    "crop_box_dp": [1.234, 5.157, 3.921, 8.163, 2.906, 6.396],
+    "intersecting_particle_count": 137,
+    "retained_particle_fragment_count": 130,
+    "omitted_tiny_fragment_count": 7,
+    "triangulated_porosity": 0.3956785918531317,
+    "solid_obj_sha256": "2b78c072a22ca24589da0d6f50893d3a6cc1b9626c4ad76addb5cf5295f0167a"
+  },
+  "expected_contact_gap": {
+    "particle_centres_global_m": [
+      [0.004453232529825548, 0.00420532414086442, 0.005105063623013502],
+      [0.004444930246149973, 0.0040433759086326, 0.004118695162943252]
+    ],
+    "centre_distance_m": 0.0009996093721342338,
+    "meshing_surface_gap_m": 9.609372134233851e-06,
+    "target_level_nominal_cell_size_m": 1.2375000000012376e-05,
+    "local_refinement_box_m": [
+      [0.003165541482532827, 0.00015307161026307275, 0.0016516383501977614],
+      [0.0032646212934426943, 0.00025362843923394684, 0.0017601204357589923]
+    ]
+  },
+  "acceptance_requirements": {
+    "fluid_basic_check_mesh_ok": true,
+    "solid_basic_check_mesh_ok": true,
+    "maximum_skewness_not_above": 4.0,
+    "fluid_connected_region_count": 1,
+    "packing_crop_and_surface_unchanged": true,
+    "strict_metrics_must_be_reported": true,
+    "heat_transfer_solver_must_not_start": true
+  },
+  "new_physical_parameters": []
+}

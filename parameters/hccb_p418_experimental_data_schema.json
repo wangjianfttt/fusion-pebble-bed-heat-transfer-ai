@@ -1,0 +1,71 @@
+{
+  "purpose": "Store direct pebble-bed flow and heat-transfer measurements without filling unavailable values or converting literature uncertainty into artificial training noise.",
+  "tables": {
+    "experiment_conditions.csv": {
+      "columns": ["experiment_id", "model_condition_id", "material", "packing_id", "run_type", "source_reference", "geometry_reference", "notes"],
+      "required_when_row_exists": ["experiment_id", "material", "packing_id", "run_type", "source_reference", "geometry_reference"]
+    },
+    "sensor_layout.csv": {
+      "columns": ["experiment_id", "sensor_id", "quantity", "model_observable", "sensor_response_model", "x_m", "y_m", "z_m", "measurement_method", "calibration_id", "notes"],
+      "required_when_row_exists": ["experiment_id", "sensor_id", "quantity", "measurement_method", "calibration_id"]
+    },
+    "steady_measurements.csv": {
+      "columns": ["experiment_id", "sensor_id", "quantity", "value", "unit", "standard_uncertainty", "averaging_start_s", "averaging_end_s", "notes"],
+      "required_when_row_exists": ["experiment_id", "sensor_id", "quantity", "value", "unit", "standard_uncertainty", "averaging_start_s", "averaging_end_s"]
+    },
+    "transient_measurements.csv": {
+      "columns": ["experiment_id", "time_s", "sensor_id", "quantity", "value", "unit", "standard_uncertainty", "notes"],
+      "required_when_row_exists": ["experiment_id", "time_s", "sensor_id", "quantity", "value", "unit", "standard_uncertainty"]
+    },
+    "calibration_records.csv": {
+      "columns": ["calibration_id", "instrument_type", "calibration_date", "reference_standard", "source_reference", "notes"],
+      "required_when_row_exists": ["calibration_id", "instrument_type", "calibration_date", "reference_standard", "source_reference"]
+    }
+  },
+  "quantity_units": {
+    "temperature": ["K"],
+    "absolute_pressure": ["Pa"],
+    "differential_pressure": ["Pa"],
+    "mass_flow_rate": ["kg/s"],
+    "superficial_velocity": ["m/s"],
+    "electrical_heating_power": ["W"],
+    "cooling_thermal_power": ["W"],
+    "heat_flux": ["W/m2"],
+    "effective_thermal_conductivity": ["W/m/K"],
+    "contact_pressure": ["Pa"]
+  },
+  "model_observables": {
+    "fluid_temperature": {"quantity": "temperature", "coordinates": "required", "allowed_sensor_response_models": ["nearest_regional_phase_temperature", "explicit_sensor_body"]},
+    "solid_temperature": {"quantity": "temperature", "coordinates": "required", "allowed_sensor_response_models": ["nearest_regional_phase_temperature", "explicit_sensor_body"]},
+    "fluid_absolute_pressure": {"quantity": "absolute_pressure", "coordinates": "required", "allowed_sensor_response_models": ["nearest_regional_fluid_pressure", "explicit_sensor_body"]},
+    "outlet_fluid_temperature": {"quantity": "temperature", "coordinates": "not_used", "allowed_sensor_response_models": ["direct_integral_or_boundary_quantity"]},
+    "solid_maximum_temperature": {"quantity": "temperature", "coordinates": "not_used", "allowed_sensor_response_models": ["derived_model_quantity"]},
+    "pressure_drop": {"quantity": "differential_pressure", "coordinates": "not_used", "allowed_sensor_response_models": ["direct_integral_or_boundary_quantity"]},
+    "inlet_mass_flow_rate": {"quantity": "mass_flow_rate", "coordinates": "not_used", "allowed_sensor_response_models": ["direct_integral_or_boundary_quantity"]},
+    "outlet_mass_flow_rate": {"quantity": "mass_flow_rate", "coordinates": "not_used", "allowed_sensor_response_models": ["direct_integral_or_boundary_quantity"]},
+    "inlet_superficial_velocity": {"quantity": "superficial_velocity", "coordinates": "not_used", "allowed_sensor_response_models": ["direct_integral_or_boundary_quantity"]},
+    "solid_volumetric_heating_power": {"quantity": "electrical_heating_power", "coordinates": "not_used", "allowed_sensor_response_models": ["direct_integral_or_boundary_quantity"]},
+    "cooling_wall_heat_into_fluid": {"quantity": "cooling_thermal_power", "coordinates": "not_used", "allowed_sensor_response_models": ["direct_integral_or_boundary_quantity"]},
+    "fluid_cooling_wall_heat_flux_outward": {"quantity": "heat_flux", "coordinates": "required", "allowed_sensor_response_models": ["nearest_regional_boundary_face", "explicit_sensor_body"]},
+    "solid_cooling_wall_heat_flux_outward": {"quantity": "heat_flux", "coordinates": "required", "allowed_sensor_response_models": ["nearest_regional_boundary_face", "explicit_sensor_body"]}
+  },
+  "sensor_response_models": {
+    "nearest_regional_phase_temperature": "At the sensor coordinate, use the nearest regional node of the declared phase. This is an explicit approximation; probe body, contact, local packing disturbance and response time are not resolved.",
+    "nearest_regional_fluid_pressure": "At the pressure-port coordinate, use the nearest regional fluid pressure. Port volume, tubing and transducer dynamics are not resolved.",
+    "nearest_regional_boundary_face": "At the sensor coordinate, use the nearest regional boundary-face quantity. Sensor footprint and local contact are not resolved.",
+    "direct_integral_or_boundary_quantity": "Use the corresponding inlet, outlet, wall or control-volume integral defined by the numerical model.",
+    "derived_model_quantity": "Use a stated model-derived quantity rather than treating it as a direct point-sensor reading.",
+    "explicit_sensor_body": "A separate sensor body, contact and dynamic response model is declared. The current P418 comparison program records this choice but does not yet compute it."
+  },
+  "rules": [
+    "Every non-empty experiment row retains a literature, apparatus report or laboratory record in source_reference.",
+    "Sensor coordinates are all blank for an integrated instrument or all present for a spatial sensor.",
+    "Uncertainty is the reported standard uncertainty in the same unit as value; do not infer it from another apparatus.",
+    "Transient data use a long table so any number of outlets and thermocouples can be retained without changing the schema.",
+    "Empty templates contain no physical parameter values and are valid only as a data-entry structure.",
+    "model_condition_id, model_observable and sensor_response_model are comparison metadata, not physical parameters. Leave all comparison fields blank when no like-for-like numerical case or model quantity exists.",
+    "A thermocouple temperature is not automatically equal to a fluid or solid regional-node temperature. The approximation or an explicit sensor model must be declared in sensor_response_model.",
+    "Reported experimental uncertainty is used to scale residuals. It is never converted into a hard overwrite of a computed temperature field or into invented training noise."
+  ],
+  "new_physical_parameters": []
+}

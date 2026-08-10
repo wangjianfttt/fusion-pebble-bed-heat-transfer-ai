@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "title": "P418 OpenFOAM-to-model data preparation",
+  "purpose": "Prepare steady, fixed-hydrodynamics thermal-step and fully coupled flow-heat datasets without starting PINN, Transformer, DMDc, POD or diffusion training.",
+  "steady": {
+    "source_root": "hccb_dense_cht_p418_60_sourceflow_r3",
+    "completion_marker": "formal_sample_complete.json",
+    "expected_case_count": 60,
+    "postprocess_runner": "code/run_hccb_p418_60_postprocess.sh",
+    "dataset_root": "hccb_dense_cht_p418_60_sourceflow_r3_dataset",
+    "postprocess_summary": "results/hccb_p418_60_sourceflow_r3_postprocess_summary.json"
+  },
+  "fixed_hydrodynamics_thermal_steps": {
+    "source_root": "hccb_p418_physical_steps_12",
+    "completion_marker": "step_response_complete.json",
+    "plan": "parameters/hccb_p418_transient_step_plan.json",
+    "integrated_observable_history_kind": "physical_step_response",
+    "result_root": "results/hccb_p418_physical_steps_12"
+  },
+  "fully_coupled_flow_heat_steps": {
+    "source_root": "hccb_p418_fully_coupled_steps_12",
+    "completion_marker": "fully_coupled_step_response_complete.json",
+    "plan": "parameters/hccb_p418_fully_coupled_step_plan.json",
+    "integrated_observable_history_kind": "fully_coupled_flow_heat_response",
+    "result_root": "results/hccb_p418_fully_coupled_steps_12"
+  },
+  "shared_inputs": {
+    "shared_topology": "hccb_dense_cht_p418_60_sourceflow_r3_dataset/shared_mesh_topology.npz",
+    "steady_dataset_index": "hccb_dense_cht_p418_60_sourceflow_r3_dataset/dataset_index.json",
+    "subface_geometry": "results/hccb_p418_subface_residual_geometry_r2/subface_residual_geometry.npz",
+    "regional_topology": "results/hccb_p418_regional_topology_r2/regional_topology.npz",
+    "model_geometry": "results/hccb_p418_60_sourceflow_r3_model_geometry/model_geometry.npz"
+  },
+  "integrated_observable_exporter": "code/export_hccb_p418_transient_observables.py",
+  "regional_sequence_exporter": "code/export_hccb_p418_step_regional_sequences.py",
+  "rules": [
+    "No model-training command is part of this data pipeline.",
+    "A stage runs only after every declared completion marker is present.",
+    "Fixed and fully coupled curves use the same twelve published P418 endpoint pairs.",
+    "Dataset normalization and model selection remain separate training-stage operations.",
+    "Large inputs and outputs remain on the project disk rather than home storage."
+  ],
+  "new_physical_parameters": []
+}

@@ -1,0 +1,42 @@
+{
+  "purpose": "Check numerical time-step sensitivity for one representative Li4SiO4 internally heated thermal step without changing any physical input.",
+  "sequence_id": "source_up_u0p15_T700",
+  "source_condition_id": "u0p15_T700_q4p85",
+  "target_condition_id": "u0p15_T700_q8p85",
+  "source_parameter_id": "P418",
+  "source_doi": "https://doi.org/10.1016/j.ijheatmasstransfer.2023.124325",
+  "transient_model": "thermal_step_with_quasi_steady_target_hydrodynamics",
+  "duration_s": 25,
+  "field_write_interval_s": 4,
+  "field_write_schedule": [
+    {"start_s": 0, "end_s": 0.1, "interval_s": 0.005},
+    {"start_s": 0.1, "end_s": 1, "interval_s": 0.1},
+    {"start_s": 1, "end_s": 5, "interval_s": 0.4},
+    {"start_s": 5, "end_s": 25, "interval_s": 4}
+  ],
+  "delta_t_s": [0.00004, 0.00002, 0.00001],
+  "formal_time_step_schedule": [
+    {"start_s": 0, "end_s": 0.1, "delta_t_s": 0.00001},
+    {"start_s": 0.1, "end_s": 1, "delta_t_s": 0.0005},
+    {"start_s": 1, "end_s": 25, "delta_t_s": 0.01}
+  ],
+  "comparison_quantities": [
+    "outlet_temperature_K",
+    "cooling_wall_power_W",
+    "maximum_solid_temperature_K",
+    "volume_average_fluid_temperature_K",
+    "volume_average_solid_temperature_K"
+  ],
+  "comparison_rule": "Compare complete curves and the 25 s endpoint between successive time-step refinements. Report the dimensional and response-normalized differences for every quantity without converting them into a pass/fail percentage.",
+  "numerical_selection_rule": "Run three predeclared staged schedules. Relative to the formal schedule, every stage is enlarged by factors of four, two and one. Use the finest completed schedule for the 12 formal histories. Successive differences are reported directly; no unsourced percentage is used to select a coarser schedule.",
+  "formal_selection_rule": "finest_completed_predeclared_step",
+  "discretization_uncertainty_method": {
+    "name": "three-resolution Grid Convergence Index",
+    "source_doi": "https://doi.org/10.1115/1.2960953",
+    "source_metadata": "literature/raw/numerical_methods/Celik_2008_GCI_crossref.json",
+    "refinement_ratio": 2.0,
+    "safety_factor": 1.25,
+    "scope": "Report endpoint and curve-maximum temporal-discretization uncertainty only for monotonically converging triplets. Oscillatory or non-converging triplets are labelled without forcing a GCI value."
+  },
+  "new_physical_parameters": []
+}

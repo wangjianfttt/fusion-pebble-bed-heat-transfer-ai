@@ -1,0 +1,80 @@
+contract_id: HCCB_P418_FULL_DOMAIN_REFERENCE_V1
+purpose: >-
+  Recompute one literature reference condition on the complete source-defined
+  pore-scale domain so that the current fine local crop can be checked against
+  a larger packed-bed region without changing material properties or operating
+  parameters.
+
+geometry:
+  packing_sequence: P050_then_P390_wall_adjacent_crop
+  particle_diameter: P048
+  target_porosity: P049
+  meshing_diameter_reduction: P404
+  packed_region: 12.5dp_x_12.5dp_x_10dp
+  inlet_extension: 10dp
+  outlet_extension: 10dp
+  boundary_layout: P392_and_P423
+  packing_realization:
+    seed: 101
+    artifact: data/apd006_hccb_source_sequence_target_packings/seed101_s80_xlo_ycentre/packing.npz
+    particle_count: 2039
+    status: numerical_reconstruction_of_the_published_sequence
+
+reference_condition:
+  source_parameter: P391
+  matrix_parameter: P418
+  inlet_velocity_m_s: 0.20
+  inlet_temperature_K: 700.0
+  solid_heat_source_MW_m3: 6.85
+  working_pressure_MPa: 0.12
+  cooling_wall_temperature_K: 635.0
+  published_pressure_drop_Pa: 87.0
+  published_maximum_temperature_K: 897.0
+
+mesh:
+  source_parameter: P405
+  primary_level: G2
+  primary_target_total_cells: 6670000
+  mean_cell_size_dp: 0.099
+  minimum_cell_size_dp: 0.045
+  sphere_surface_subdivisions: 3
+  surface_refinement_level: 1
+  note: >-
+    Mesh settings are numerical resolution controls taken from the published
+    mesh study. They do not change any physical parameter.
+
+comparison_quantities:
+  - pressure_drop_and_bed_pressure_gradient
+  - outlet_temperature_and_fluid_temperature_rise
+  - maximum_solid_temperature
+  - generated_solid_power
+  - cooling_wall_heat_flow
+  - fluid_solid_interface_heat_balance
+  - total_mass_and_energy_balance
+  - published_reference_difference
+  - local_crop_to_full_domain_scale_difference
+
+execution:
+  mesh_builder: code/build_hccb_pore_resolved_openfoam_mesh.py
+  mesh_check: code/audit_hccb_pore_resolved_openfoam_mesh.py
+  steady_case_builder: code/build_hccb_pore_resolved_openfoam_steady_case.py
+  result_reader: code/audit_hccb_pore_resolved_openfoam_steady_result.py
+  runner: code/run_hccb_p418_full_domain_reference.sh
+  parallel_subdomains: 32
+  start_condition: >-
+    Start only after all 60 local-domain steady cases and the 12 transient
+    OpenFOAM histories have completed, so this calculation does not slow the
+    data-generation stage.
+
+interpretation:
+  allowed: >-
+    Compare one source-backed full-domain reference calculation with the
+    published P391 pressure drop and maximum temperature, and quantify how the
+    present local crop differs at the same operating condition.
+  forbidden:
+    - treating_one_condition_as_full_operating_range_validation
+    - treating_seed101_as_the_exact_published_particle_coordinates
+    - using_the_full_domain_result_as_a_new_material_parameter
+    - replacing_the_60_condition_local_training_set_with_one_reference_case
+
+new_physical_parameters: []

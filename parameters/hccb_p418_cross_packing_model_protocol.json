@@ -1,0 +1,65 @@
+{
+  "status": "cross_packing_model_protocol_ready_before_new_fields",
+  "normalization": {
+    "packing_seed": 101,
+    "training_statistics": "results/hccb_p418_60_sourceflow_r3_training_statistics.json",
+    "regional_topology": "results/hccb_p418_regional_topology_r2/regional_topology.npz",
+    "model_geometry": "results/hccb_p418_60_sourceflow_r3_model_geometry/model_geometry.npz",
+    "regional_level": 5,
+    "split_name": "interleaved_all_ranges"
+  },
+  "evaluation_packings": [
+    {
+      "seed": 202,
+      "role": "development_packing",
+      "dataset_index": "hccb_dense_cht_p418_cross_packing_seed202_screen9_dataset/dataset_index.json",
+      "regional_topology": "results/hccb_p418_cross_packing_seed202_regional_topology/regional_topology.npz",
+      "model_geometry": "results/hccb_p418_cross_packing_seed202_model_geometry/model_geometry.npz",
+      "state_targets": "results/hccb_p418_cross_packing_seed202_regional_state_targets/regional_state_targets.npz",
+      "mass_targets": "results/hccb_p418_cross_packing_seed202_regional_mass_flux_targets/regional_mass_flux_targets.npz",
+      "energy_targets": "results/hccb_p418_cross_packing_seed202_regional_energy_flux_targets/regional_energy_flux_targets.npz",
+      "regional_level": 5,
+      "condition_ids": [
+        "u0p05_T300_q4p85",
+        "u0p05_T300_q8p85",
+        "u0p05_T900_q4p85",
+        "u0p05_T900_q8p85",
+        "u0p25_T300_q4p85",
+        "u0p25_T300_q8p85",
+        "u0p25_T900_q4p85",
+        "u0p25_T900_q8p85",
+        "u0p15_T700_q6p85"
+      ]
+    },
+    {
+      "seed": 303,
+      "role": "final_zero_shot_packing",
+      "dataset_index": "hccb_dense_cht_p418_cross_packing_seed303_screen9_dataset/dataset_index.json",
+      "regional_topology": "results/hccb_p418_cross_packing_seed303_regional_topology/regional_topology.npz",
+      "model_geometry": "results/hccb_p418_cross_packing_seed303_model_geometry/model_geometry.npz",
+      "state_targets": "results/hccb_p418_cross_packing_seed303_regional_state_targets/regional_state_targets.npz",
+      "mass_targets": "results/hccb_p418_cross_packing_seed303_regional_mass_flux_targets/regional_mass_flux_targets.npz",
+      "energy_targets": "results/hccb_p418_cross_packing_seed303_regional_energy_flux_targets/regional_energy_flux_targets.npz",
+      "regional_level": 5,
+      "condition_ids": [
+        "u0p05_T300_q4p85",
+        "u0p05_T300_q8p85",
+        "u0p05_T900_q4p85",
+        "u0p05_T900_q8p85",
+        "u0p25_T300_q4p85",
+        "u0p25_T300_q8p85",
+        "u0p25_T900_q4p85",
+        "u0p25_T900_q8p85",
+        "u0p15_T700_q6p85"
+      ]
+    }
+  ],
+  "sequence": [
+    "train and select architecture with seed101",
+    "compare architectures with seed202",
+    "fix architecture, weights and normalization",
+    "evaluate all nine seed303 cases once without seed303 fitting",
+    "only after saving zero-shot results, optionally adapt on three declared seed303 cases"
+  ],
+  "new_physical_parameter_values_added": []
+}

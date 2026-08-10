@@ -1,0 +1,69 @@
+{
+  "purpose": "Hold out complete physical step-response curves; never split time points from one curve across roles.",
+  "source_parameter_id": "P418",
+  "source_doi": "https://doi.org/10.1016/j.ijheatmasstransfer.2023.124325",
+  "new_physical_parameters": [],
+  "splits": {
+    "direction_down_test": {
+      "train": [
+        "temperature_up_u0p05_q6p85",
+        "temperature_down_u0p05_q6p85",
+        "velocity_up_T500_q6p85",
+        "velocity_down_T500_q6p85",
+        "source_up_u0p15_T300",
+        "source_down_u0p15_T300"
+      ],
+      "validation": [
+        "temperature_up_u0p15_q6p85",
+        "velocity_up_T900_q6p85",
+        "source_up_u0p15_T700"
+      ],
+      "test": [
+        "temperature_down_u0p15_q6p85",
+        "velocity_down_T900_q6p85",
+        "source_down_u0p15_T700"
+      ]
+    },
+    "direction_up_test": {
+      "train": [
+        "temperature_up_u0p05_q6p85",
+        "temperature_down_u0p05_q6p85",
+        "velocity_up_T500_q6p85",
+        "velocity_down_T500_q6p85",
+        "source_up_u0p15_T300",
+        "source_down_u0p15_T300"
+      ],
+      "validation": [
+        "temperature_down_u0p15_q6p85",
+        "velocity_down_T900_q6p85",
+        "source_down_u0p15_T700"
+      ],
+      "test": [
+        "temperature_up_u0p15_q6p85",
+        "velocity_up_T900_q6p85",
+        "source_up_u0p15_T700"
+      ]
+    },
+    "pair_disjoint_stress_test": {
+      "train": [
+        "temperature_up_u0p05_q6p85",
+        "temperature_down_u0p05_q6p85",
+        "velocity_up_T500_q6p85",
+        "velocity_down_T500_q6p85",
+        "source_up_u0p15_T300",
+        "source_down_u0p15_T300"
+      ],
+      "validation": [
+        "temperature_up_u0p15_q6p85",
+        "temperature_down_u0p15_q6p85"
+      ],
+      "test": [
+        "velocity_up_T900_q6p85",
+        "velocity_down_T900_q6p85",
+        "source_up_u0p15_T700",
+        "source_down_u0p15_T700"
+      ]
+    }
+  },
+  "scientific_scope": "The two direction splits use six complete training curves and three complete validation/test curves. The additional pair-disjoint stress split keeps both directions of every unordered endpoint pair in one role only (6/2/4 curves), so no source-target endpoint pair is shared across training, validation and test. The data set is deliberately small, so conclusions are limited to the tested fixed packing and published endpoint families."
+}

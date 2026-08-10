@@ -1,0 +1,123 @@
+{
+  "title": "P418 local three-dimensional flow and conjugate-heat-transfer model data definition",
+  "purpose_cn": "把三维孔隙绕流、流固界面换热和冷却壁换热明确保留在PINN、图神经算子和Transformer模型中，避免退化为只有入口速度和整床平均换热关系的模型。",
+  "current_evidence": {
+    "completed_case_count": 14,
+    "planned_case_count": 60,
+    "packing": "seed101 fixed Li4SiO4 packing",
+    "source_results": [
+      "results/hccb_p418_sourceflow_partial_physics/completed_case_physics.csv",
+      "results/hccb_p418_sourceflow_partial_pressure_correlation/pressure_correlation.csv",
+      "results/hccb_p418_sourceflow_partial_dimensionless_heat_transfer_with_flux/dimensionless_heat_transfer.csv",
+      "results/hccb_p418_sourceflow_partial_boundary_heat/summary.json"
+    ],
+    "scope_cn": "当前14组只用于验证数据定义、局部物理量关系和程序接口；完整60组完成并按既定工况划分后才允许正式训练和模型比较。"
+  },
+  "physical_source_ids": [
+    "P048",
+    "P049",
+    "P070",
+    "P071",
+    "P092",
+    "P388",
+    "P389",
+    "P403",
+    "P418",
+    "P419",
+    "P420",
+    "P421",
+    "P422",
+    "P423",
+    "P425",
+    "P426",
+    "P427",
+    "P428",
+    "P429",
+    "P430",
+    "P431"
+  ],
+  "case_inputs": [
+    "inlet_velocity_m_s",
+    "inlet_temperature_K",
+    "solid_heat_source_W_m3",
+    "outlet_pressure_Pa",
+    "cooling_wall_temperature_K"
+  ],
+  "node_inputs": [
+    "x_coordinate_m",
+    "y_coordinate_m",
+    "z_coordinate_m",
+    "regional_volume_m3",
+    "fluid_or_solid_indicator",
+    "inlet_boundary_fraction",
+    "outlet_boundary_fraction",
+    "cooling_wall_boundary_fraction",
+    "symmetry_boundary_fraction",
+    "fluid_solid_interface_boundary_fraction",
+    "local_velocity_vector_m_s",
+    "local_pressure_Pa",
+    "local_temperature_K"
+  ],
+  "edge_inputs_or_targets": [
+    "owner_neighbour_connectivity",
+    "face_centroid_m",
+    "face_area_vector_m2",
+    "fluid_solid_interface_indicator",
+    "oriented_internal_mass_flux_kg_s",
+    "oriented_boundary_mass_flux_kg_s",
+    "internal_energy_flow_W",
+    "boundary_energy_flow_W",
+    "paired_interface_heat_flow_W"
+  ],
+  "model_outputs": [
+    "fluid_velocity_vector_m_s",
+    "fluid_pressure_Pa",
+    "fluid_temperature_K",
+    "solid_temperature_K",
+    "oriented_face_mass_flux_kg_s",
+    "oriented_face_energy_flow_W"
+  ],
+  "physics_relations": [
+    "compressible_mass_conservation",
+    "fluid_momentum_conservation_for_fully_coupled_branch",
+    "helium_sensible_enthalpy_balance_with_pressure_work_and_kinetic_energy",
+    "Li4SiO4_heat_conduction_with_volumetric_heat_source",
+    "fluid_solid_interface_temperature_continuity",
+    "fluid_solid_interface_heat_flow_reciprocity",
+    "prescribed_inlet_outlet_cooling_wall_and_symmetry_boundary_relations"
+  ],
+  "dimensionless_diagnostics": [
+    "particle_Reynolds_number_from_axial_throughflow",
+    "particle_Reynolds_number_from_local_velocity_magnitude",
+    "local_Prandtl_number",
+    "local_Peclet_number",
+    "interface_flux_Nusselt_number",
+    "P419_full_bed_aggregate_Nusselt_number_for_comparison_only"
+  ],
+  "architecture_roles": {
+    "steady_PINN_or_graph_operator": "预测三维速度、压力、温度、面质量流和面能量流，并直接检查稳态质量与流固能量关系。",
+    "fixed_hydrodynamics_graph_Transformer": "使用目标工况已经求得的三维速度、压力和面质量流，只预测完整温度阶跃。",
+    "fully_coupled_graph_Transformer": "把有方向的初始面质量流传给相邻区域节点，随时间共同预测速度、压力、温度和面质量流，并检查连续性、动量与两相能量方程。",
+    "diffusion_model": "只修正确定性模型的温度或低维残差并给出不确定性；不得替代速度、边界、界面和能量方程。"
+  },
+  "rules": [
+    "P417/P419整床平均关系只作量级比较，不作为靠壁局部三维场的训练标签或强制损失。",
+    "局部速度模量和轴向净流量速度必须分开保存，不能只保留入口速度。",
+    "全耦合模型的初始面质量流必须同时进入面流量分支和相邻区域节点，不能只作为最终输出的加法基线。",
+    "流固界面热量和冷却壁热量必须分开保存，不能把总颗粒发热量当作全部界面换热量。",
+    "训练归一化只能从训练工况计算；完整曲线和完整工况不得跨训练、验证和测试集合。",
+    "当前14组结果不能替代完整60组稳态矩阵，也不能支持正式模型精度结论。"
+  ],
+  "implementation": [
+    "code/build_hccb_p418_regional_state_targets.py",
+    "code/build_hccb_p418_regional_mass_flux_targets.py",
+    "code/build_hccb_p418_regional_energy_flux_targets.py",
+    "code/hccb_p418_regional_cht_adapter.py",
+    "code/hccb_p418_spatiotemporal_regional_operator.py",
+    "code/hccb_p418_fully_coupled_spatiotemporal_operator.py",
+    "code/hccb_p418_fully_coupled_transient_physics.py",
+    "code/build_hccb_p418_local_transport_model_support.py",
+    "code/check_hccb_p418_local_transport_model_sensitivity.py"
+  ],
+  "new_physical_parameters": []
+}

@@ -1,0 +1,22 @@
+{
+  "recorded_from": "cloud_migration/VERSION_DEPENDENCIES_CN.md",
+  "inspection_date": "2026-07-22",
+  "operating_system": {
+    "distribution": "Ubuntu 22.04",
+    "kernel": "Linux 6.8.0-124-generic",
+    "architecture": "x86_64"
+  },
+  "openfoam": {
+    "distribution": "OpenFOAM Foundation",
+    "version": "13",
+    "multi_region_entry_point": "foamMultiRun",
+    "custom_solver": false
+  },
+  "mpi": "Open MPI 4.1.2",
+  "compiler": "GCC 11.4.0",
+  "python": "3.10.12",
+  "formal_case_mpi_ranks": 32,
+  "python_requirements": "requirements-p418.txt",
+  "large_output_rule": "Write formal cases and raw fields to the project or mechanical disk, never to /home.",
+  "version_policy": "Cloud reproduction should use OpenFOAM Foundation 13 and rebuild processor decomposition and dynamic code locally."
+}

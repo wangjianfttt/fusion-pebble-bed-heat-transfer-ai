@@ -1,0 +1,232 @@
+{
+  "title": "P418 steady PINN--graph-Transformer--diffusion model contract",
+  "purpose": "Keep the three model stages on one physical definition and prevent solver-relaxation histories from being used as physical thermal transients.",
+  "physical_problem": "Conjugate heat transfer in a fixed solid-breeder pebble packing with helium flow, solid volumetric heating and a cooled wall.",
+  "physical_parameter_sources": {
+    "registry": "parameters/hccb_p418_physical_parameter_sources.csv",
+    "evidence_registry": "parameters/hccb_p418_physical_parameter_evidence_files.csv",
+    "equation_map": "parameters/hccb_p418_equation_input_map.csv",
+    "rule": "Every material, geometry, operating and boundary parameter must have a non-empty literature source, original-location note and preserved local evidence file or explicitly identified publisher abstract. Neural-network numerical settings are not physical parameters."
+  },
+  "local_transport_model_contract": "parameters/hccb_p418_local_transport_model_contract.json",
+  "model_comparison_protocol": "parameters/hccb_p418_model_comparison_protocol.json",
+  "model_data_preparation": {
+    "config": "parameters/hccb_p418_model_data_pipeline.json",
+    "runner": "code/prepare_hccb_p418_model_data.py",
+    "rule": "The default command reports data completeness only. Explicit stage execution prepares OpenFOAM-derived model inputs and never starts PINN, Transformer, DMDc, POD or diffusion training.",
+    "starts_model_training": false,
+    "new_physical_parameters": []
+  },
+  "shared_state": {
+    "channel_order": [
+      "Ux_m_s",
+      "Uy_m_s",
+      "Uz_m_s",
+      "pressure_Pa",
+      "temperature_K"
+    ],
+    "fluid_active_channels": [0, 1, 2, 3, 4],
+    "solid_active_channels": [4],
+    "node_type": {
+      "0": "helium fluid",
+      "1": "solid breeder pebble"
+    }
+  },
+  "steady_stage": {
+    "model": "coordinate PINN with finite-volume mass and energy constraints",
+    "implementation": [
+      "code/hccb_p418_coordinate_pinn.py",
+      "code/train_hccb_p418_conservative_mixed_operator.py"
+    ],
+    "condition_order": [
+      "inlet_velocity_m_s",
+      "inlet_temperature_K",
+      "solid_heat_source_W_m3",
+      "outlet_pressure_Pa",
+      "cooling_wall_temperature_K"
+    ],
+    "state_output_order": [
+      "Ux_m_s",
+      "Uy_m_s",
+      "Uz_m_s",
+      "pressure_Pa",
+      "temperature_K"
+    ],
+    "additional_outputs": [
+      "oriented_internal_mass_flux_kg_s",
+      "oriented_boundary_mass_flux_kg_s",
+      "internal_energy_flow_W",
+      "boundary_energy_flow_W"
+    ],
+    "split_file": "parameters/hccb_p418_model_splits.json",
+    "normalization_rule": "All means and standard deviations are computed from steady training conditions only.",
+    "formal_data_root": "hccb_dense_cht_p418_60_sourceflow_r3",
+    "required_condition_count": 60
+  },
+  "physical_transient_stage": {
+    "model": "regional graph-Transformer with finite-volume transient energy constraints",
+    "implementation": [
+      "code/hccb_p418_spatiotemporal_regional_operator.py",
+      "code/train_hccb_p418_spatiotemporal_regional_operator.py"
+    ],
+    "structural_input_order": [
+      "x_coordinate",
+      "y_coordinate",
+      "z_coordinate",
+      "log_regional_volume",
+      "fluid_indicator",
+      "solid_indicator",
+      "inlet_boundary_fraction",
+      "outlet_boundary_fraction",
+      "cooling_wall_boundary_fraction",
+      "symmetry_boundary_fraction",
+      "fluid_solid_interface_boundary_fraction"
+    ],
+    "structural_input_source": "Coordinates, regional volume and material type come from the conservative regional mesh. Each boundary feature is the volume-weighted fraction of fine cells in a regional node that are adjacent to the inlet, outlet, cooling wall, symmetry boundary or fluid-solid interface. It is calculated from the P425/P427 boundary layout and the resolved OpenFOAM mesh rather than fitted as a physical parameter.",
+    "condition_order": [
+      "source_inlet_velocity_m_s",
+      "source_inlet_temperature_K",
+      "source_solid_heat_source_MW_m3",
+      "target_inlet_velocity_m_s",
+      "target_inlet_temperature_K",
+      "target_solid_heat_source_MW_m3",
+      "target_outlet_pressure_Pa",
+      "target_cooling_wall_temperature_K"
+    ],
+    "input_state_rule": "Use source-condition temperature with target-condition velocity, pressure and conservative face mass flux.",
+    "predicted_channels": ["temperature_K"],
+    "fixed_channels": ["Ux_m_s", "Uy_m_s", "Uz_m_s", "pressure_Pa"],
+    "fixed_face_quantity": "target-condition oriented mass flux on every retained fluid face",
+    "state_output_order": [
+      "Ux_m_s",
+      "Uy_m_s",
+      "Uz_m_s",
+      "pressure_Pa",
+      "temperature_K"
+    ],
+    "plan_file": "parameters/hccb_p418_transient_step_plan.json",
+    "split_file": "parameters/hccb_p418_step_response_splits.json",
+    "required_sequence_count": 12,
+    "required_output_time_count": 56,
+    "normalization_rule": "Condition, temperature and time scales are computed from complete training curves only.",
+    "curve_split_rule": "A complete thermal-step curve belongs to one role only; time points from one curve are never split across train, validation and test.",
+    "scientific_scope": "Computed thermal response with quasi-steady target hydrodynamics on one fixed packing; the initial momentum transient and temperature-to-flow feedback are not solved."
+  },
+  "fully_coupled_transient_extension": {
+    "purpose": "Measure the error caused by fixing velocity, pressure and face mass flux in the main thermal-response model.",
+    "plan_file": "parameters/hccb_p418_fully_coupled_step_plan.json",
+    "data_schema": "parameters/hccb_p418_fully_coupled_transient_data_schema.json",
+    "implementation": [
+      "code/build_hccb_p418_fully_coupled_step_cases.py",
+      "code/initialize_hccb_p418_fully_coupled_step_case.sh",
+      "code/verify_hccb_p418_fully_coupled_step_initialization.py",
+      "code/run_hccb_p418_fully_coupled_timestep_sensitivity.sh",
+      "code/verify_hccb_p418_fully_coupled_timestep_summary.py",
+      "code/run_hccb_p418_fully_coupled_step_responses.sh",
+      "code/finalize_hccb_p418_fully_coupled_step_response.sh",
+      "code/compare_hccb_p418_thermal_timestep_sensitivity.py",
+      "code/compare_hccb_p418_fixed_and_fully_coupled_steps.py",
+      "code/export_hccb_p418_step_regional_sequences.py",
+      "code/hccb_p418_fully_coupled_dataset.py",
+      "code/hccb_p418_fully_coupled_spatiotemporal_operator.py",
+      "code/hccb_p418_fully_coupled_transient_physics.py",
+      "code/hccb_p418_fully_coupled_training.py",
+      "code/train_hccb_p418_fully_coupled_spatiotemporal_operator.py"
+    ],
+    "time_step_sensitivity_config": "parameters/hccb_p418_fully_coupled_timestep_sensitivity.json",
+    "time_step_rule": "Run the representative velocity-up sequence at three predeclared temporal resolutions. The formal twelve-curve runner accepts only the finest completed staged schedule when it matches the first 25 s of the registered 300 s schedule.",
+    "initial_state_rule": "Use the complete source endpoint U, p, p_rgh, phi, fluid T and solid T fields, then apply the one exact target operating input from t=0.",
+    "predicted_channels": ["Ux_m_s", "Uy_m_s", "Uz_m_s", "pressure_Pa", "temperature_K"],
+    "structural_input_order": [
+      "x_coordinate",
+      "y_coordinate",
+      "z_coordinate",
+      "log_regional_volume",
+      "fluid_indicator",
+      "solid_indicator",
+      "inlet_boundary_fraction",
+      "outlet_boundary_fraction",
+      "cooling_wall_boundary_fraction",
+      "symmetry_boundary_fraction",
+      "fluid_solid_interface_boundary_fraction"
+    ],
+    "structural_input_source": "The fully coupled model uses the same conservative mesh and five volume-weighted boundary-adjacency fractions as the fixed-hydrodynamics graph-Transformer. These features identify where the governing boundary and interface relations act and introduce no new material or operating parameter.",
+    "predicted_face_quantities": [
+      "oriented_internal_mass_flux_kg_s",
+      "oriented_boundary_mass_flux_kg_s"
+    ],
+    "data_export_mode": "fully_coupled_flow_heat",
+    "normalization_rule": "State, condition, internal-face mass-flux and boundary-face mass-flux scales are calculated from complete training curves only.",
+    "sequence_rule": "Use the same twelve literature endpoint pairs and the same complete-curve splits as the main thermal-response study.",
+    "physics_relations": [
+      "compressible finite-volume continuity with density storage",
+      "finite-volume momentum with conservative momentum storage",
+      "OpenFOAM-13 sensible-enthalpy fluid energy with kinetic energy and pressure work",
+      "Li4SiO4 internal-energy solid equation",
+      "fluid--solid interface temperature and heat-flux continuity",
+      "predicted face mass flux consistency with reconstructed rho U dot S"
+    ],
+    "physics_scale_rule": "Each dimensional equation is exposed separately. Residual scales must be calculated from complete training histories only; the finite-volume module does not hide a fixed combined loss weight.",
+    "status": "input preparation, field checks, data loader, full-state forward model, dimensional transient equations, projection-aware losses, complete-curve training and restart implemented; formal OpenFOAM histories and model training remain pending",
+    "new_physical_parameters": []
+  },
+  "diffusion_stage": {
+    "model": "conditional residual diffusion refiner",
+    "implementation": [
+      "code/hccb_p418_temporal_temperature_diffusion.py",
+      "code/train_hccb_p418_temporal_temperature_diffusion.py"
+    ],
+    "upstream_model": "physics-constrained regional graph-Transformer",
+    "corrected_channels": ["temperature_K"],
+    "unchanged_channels": ["Ux_m_s", "Uy_m_s", "Uz_m_s", "pressure_Pa"],
+    "unchanged_face_quantity": "target-condition oriented mass flux",
+    "target": "OpenFOAM temperature minus deterministic graph-Transformer temperature",
+    "selection_rule": "Choose training epoch with validation diffusion-velocity loss; evaluate independent test curves only after selection.",
+    "physical_check": "Insert every deterministic prediction, diffusion ensemble mean and individual diffusion member into the same fluid/solid finite-volume energy relation."
+  },
+  "complete_prediction_chain": [
+    "The frozen steady PINN predicts the source endpoint and target endpoint.",
+    "Source temperature and target velocity/pressure/face mass flux form the transient initial state.",
+    "The graph-Transformer predicts the complete temperature trajectory.",
+    "The diffusion model optionally corrects only the temperature residual.",
+    "Temperature, hotspot, wall/interface heat transfer and common finite-volume energy errors are reported on the same held-out curves."
+  ],
+  "complete_inference_entry": {
+    "runner": "code/run_hccb_p418_chained_initial_state_evaluation.sh",
+    "deterministic_evaluator": "code/evaluate_hccb_p418_chained_initial_state.py",
+    "diffusion_evaluator": "code/evaluate_hccb_p418_chained_diffusion.py",
+    "common_energy_evaluator": "code/evaluate_hccb_p418_temporal_energy_balance.py",
+    "summary_builder": "code/summarize_hccb_p418_fused_chain.py",
+    "table_builder": "code/build_hccb_p418_fused_chain_table.py",
+    "final_split_result": "fused_chain_summary.json",
+    "required_split_names": [
+      "direction_down_test",
+      "direction_up_test",
+      "pair_disjoint_stress_test"
+    ],
+    "rule": "All stages use the same held-out physical-step curves, node order, normalization records and target-condition face mass flux. The runner stops when any completed upstream model or recorded prediction file is missing."
+  },
+  "independent_test_rules": {
+    "steady_endpoint_roles": "The source and target steady-condition roles are recorded for every transient test curve.",
+    "strict_end_to_end_subset": "Report separately the transient test curves whose source and target steady endpoints are both absent from steady-model training.",
+    "no_test_statistics": "No normalization, rank, epoch, architecture or loss weight may be selected from test curves.",
+    "cross_packing": "seed101 is used for fitting and model choice; seed202 supports architecture choice only where declared; seed303 remains the frozen zero-shot packing test.",
+    "high_re_operating_combinations": {
+      "fixed_hydrodynamics_plan": "parameters/hccb_p418_high_re_independent_step_plan.json",
+      "fully_coupled_plan": "parameters/hccb_p418_high_re_independent_fully_coupled_step_plan.json",
+      "curve_count": 6,
+      "rule": "These pair-disjoint P418 trajectories are read only after the main model, normalization, epoch, rank and loss settings are fixed. They cannot contribute to training, validation selection, POD basis construction or diffusion training."
+    }
+  },
+  "excluded_from_physical_transient_results": [
+    {
+      "path": "code/run_hccb_p418_60_transient_models.sh",
+      "reason": "This route models fixed-condition OpenFOAM solver-relaxation histories and can only support solver-acceleration comparisons."
+    },
+    {
+      "path": "results/hccb_p418_transient_observables_live",
+      "reason": "This existing program-test artifact comes from the old r2 fixed-condition start-up histories, not the corrected r3 physical thermal-step data."
+    }
+  ],
+  "new_physical_parameters": []
+}

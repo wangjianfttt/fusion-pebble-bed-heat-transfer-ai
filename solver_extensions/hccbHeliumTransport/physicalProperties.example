@@ -1,0 +1,46 @@
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "constant/fluid";
+    object      physicalProperties;
+}
+
+thermoType
+{
+    type            heRhoThermo;
+    mixture         pureMixture;
+    transport       hccbHelium;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+mixture
+{
+    specie
+    {
+        molWeight       3.992521804611004;
+    }
+
+    thermodynamics
+    {
+        Cp              5200;
+        hf              0;
+    }
+
+    transport
+    {
+        viscosityCoefficient                    0.4646;
+        viscosityTemperatureExponent            0.66;
+        viscosityScale                          1e-6;
+        conductivityCoefficient                 0.1448;
+        referenceTemperature                    273;
+        conductivityTemperatureExponent         0.68;
+        conductivityPressureCoefficient         2.5e-3;
+        conductivityPressureExponent            1.17;
+        conductivityPressureTemperatureExponent -1.85;
+        pressureScale                            1e6;
+    }
+}

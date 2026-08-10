@@ -1,0 +1,62 @@
+{
+  "title_cn": "P418球床换热实验观测量与模型输出来源",
+  "purpose_cn": "说明已有球床实验实际测过哪些量、这些量怎样与P418计算输出比较，以及哪些文献仪器数值不能直接搬到P418装置。",
+  "literature_parameter_manifest": "parameters/literature_parameter_manifest.csv",
+  "current_p418_status_cn": "当前P418主数据仍是孔隙尺度OpenFOAM共轭换热计算。PREMUX、TESOMEX、HELOKA和压降实验保留各自材料、装置和边界条件，不作为P418三维温度场标签。",
+  "observation_families": [
+    {
+      "family_id": "internal_temperature_layout",
+      "research_quantity_cn": "球床内部温度及其空间变化",
+      "source_parameter_ids": ["P238", "P276", "P375", "P376", "P377", "P378"],
+      "measured_information_cn": "PREMUX给出五档功率下的床内热电偶温度；TESOMEX给出热电偶数量、径向位置、双测量平面和对称测点原则。",
+      "model_comparison_cn": "在真实测点坐标提取模型温度。若未建立探头实体、接触和动态响应，只能明确标为最近同相区域温度近似。",
+      "current_use_cn": "PREMUX和TESOMEX用于各自装置的外部温度比较及稀疏测温设计参考，不进入P418训练标签。",
+      "limitations_cn": "TESOMEX没有公开全部机器可读三维坐标；P418实际测点数量和坐标尚未确定，不能从示意图自行补数。"
+    },
+    {
+      "family_id": "thermocouple_performance_and_failure",
+      "research_quantity_cn": "热电偶测量不确定度、位置误差和失效",
+      "source_parameter_ids": ["P179", "P234", "P239", "P272", "P280"],
+      "measured_information_cn": "文献给出HELOKA热电偶精度、PREMUX热电偶不确定度与坐标测量范围、出口热电偶直径，以及TESOMEX长时实验中的热电偶失效。",
+      "model_comparison_cn": "标准不确定度用于残差归一化；失效后的数据必须停止使用；传感器位置误差与模型区域离散距离分别保留。",
+      "current_use_cn": "只保留对应装置的测量说明，不转换成P418统一噪声，不作为扩散模型的精确固定值。",
+      "limitations_cn": "不同装置的探头直径、安装和标定不同，不能把某一装置的精度直接指定为P418实验精度。"
+    },
+    {
+      "family_id": "hydraulic_observation",
+      "research_quantity_cn": "入口流量、轴向压力和床层压降",
+      "source_parameter_ids": ["P383", "P384", "P395"],
+      "measured_information_cn": "固定球床实验给出两个速度下的轴向压力点，以及压力变送器和质量流量控制器误差。",
+      "model_comparison_cn": "比较相同几何、物性和工况下的轴向压降或压降梯度；压力接口的体积、导管和变送器动态需要另行说明。",
+      "current_use_cn": "用于检查氦气压降量级和流量定义，不用压降吻合替代内部速度场或温度场检验。",
+      "limitations_cn": "这些仪器精度属于原实验装置，只作为选型与误差范围参考，不生成P418人工噪声。"
+    },
+    {
+      "family_id": "coolant_and_heat_removal",
+      "research_quantity_cn": "入口温度、冷却通道流量、出口温度和冷却侧热功率",
+      "source_parameter_ids": ["P248", "P432"],
+      "measured_information_cn": "PREMUX给出入口温度、冷却通道质量流量，以及五档功率下两个通道的出口温度和置信区间。",
+      "model_comparison_cn": "出口温度按相应出口面积或质量流加权；冷却侧热功率由流量、比热和进出口温差联合计算。",
+      "current_use_cn": "只在PREMUX装置模型中检查冷却边界和热量收支，不直接替代P418的635 K理想冷却壁。",
+      "limitations_cn": "出口温度不能单独确定颗粒热点；完整装置热损失还包含管路、保温和引线等路径。"
+    },
+    {
+      "family_id": "thermomechanical_auxiliary",
+      "research_quantity_cn": "热循环下接触压力、温度变化和装填松弛",
+      "source_parameter_ids": ["P280", "P285"],
+      "measured_information_cn": "TESOMEX给出24小时温度与接触压力变化，并报告触觉压力系统的标定偏差。",
+      "model_comparison_cn": "接触压力可用于判断热循环是否改变装填与接触导热；当前固定装填P418模型不直接预测该量。",
+      "current_use_cn": "作为以后热机械耦合扩展的实验量，目前只用于解释固定装填模型不能覆盖的慢变化。",
+      "limitations_cn": "公开资料没有完整原始压力和温度序列，不能插值成高密度训练数据。"
+    }
+  ],
+  "usage_rules_cn": [
+    "上述数值均属于各自文献装置，不能自动变成P418仪器设置、测点坐标或训练噪声。",
+    "P418内部热电偶比较必须明确选择最近同相区域近似，或者实际建立探头实体、接触和动态响应模型。",
+    "真实测量的标准不确定度进入残差或概率模型，不把测量值当作无误差真值强行覆盖计算场。",
+    "扩散修正中的精确固定测点目前只能用于由OpenFOAM场抽取的数值试验；真实热电偶数据除非有明确的仪器模型和精度依据，不作精确固定条件。",
+    "不增加P418物理参数，不改变现有OpenFOAM工况和神经网络数据划分。"
+  ],
+  "p418_assigned_numeric_values": [],
+  "new_physical_parameters": []
+}

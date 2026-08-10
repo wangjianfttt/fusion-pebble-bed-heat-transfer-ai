@@ -1,0 +1,165 @@
+{
+  "title": "P418 pore-scale pebble-bed heat-transfer model comparison protocol",
+  "purpose": "Compare PINN, graph/Transformer operators, reduced models and diffusion residual correction on identical three-dimensional conjugate heat-transfer data and physical quantities.",
+  "physical_problem": "Helium flow and conjugate heat transfer through one fixed Li4SiO4 pebble packing with particle volumetric heating and a cooled wall.",
+  "physical_parameter_rule": {
+    "registry": "parameters/hccb_p418_physical_parameter_sources.csv",
+    "evidence_registry": "parameters/hccb_p418_physical_parameter_evidence_files.csv",
+    "equation_map": "parameters/hccb_p418_equation_input_map.csv",
+    "rule": "Every geometry, material property, operating condition and boundary value comes from the registered literature evidence. Model architecture and optimization settings are numerical choices and cannot change the physical inputs.",
+    "new_physical_parameters": []
+  },
+  "common_quantities": {
+    "operating_condition_order": [
+      "inlet_velocity_m_s",
+      "inlet_temperature_K",
+      "solid_heat_source_W_m3",
+      "outlet_pressure_Pa",
+      "cooling_wall_temperature_K"
+    ],
+    "state_channel_order": [
+      "Ux_m_s",
+      "Uy_m_s",
+      "Uz_m_s",
+      "pressure_Pa",
+      "temperature_K"
+    ],
+    "solid_state_channels": ["temperature_K"],
+    "conservative_outputs": [
+      "oriented_internal_mass_flux_kg_s",
+      "oriented_boundary_mass_flux_kg_s",
+      "internal_energy_flow_W",
+      "boundary_energy_flow_W"
+    ],
+    "normalization_rule": "All scales are calculated from training conditions or complete training curves only.",
+    "test_use_rule": "Test conditions and complete test curves are read only for final prediction and never select normalization, architecture, epoch, rank or loss weight."
+  },
+  "steady_comparison": {
+    "data_root": "hccb_dense_cht_p418_60_sourceflow_r3",
+    "required_condition_count": 60,
+    "split_file": "parameters/hccb_p418_model_splits.json",
+    "split_names": [
+      "interleaved_all_ranges",
+      "temperature_extrapolation",
+      "velocity_extrapolation",
+      "heat_source_interpolation",
+      "heat_source_extrapolation"
+    ],
+    "models": [
+      "response_surface",
+      "pinn_data_only",
+      "pinn",
+      "graph",
+      "transolver"
+    ],
+    "paired_pinn_rule": "The data-only and physics-constrained coordinate PINNs use identical data, initial weights, optimizer and supervised losses; only continuity and energy-balance losses are added to the constrained PINN.",
+    "primary_field_metrics": [
+      "test_fluid_temperature_normalized_rmse",
+      "test_solid_temperature_normalized_rmse"
+    ],
+    "engineering_metrics": [
+      "pressure_drop_Pa",
+      "outlet_temperature_K",
+      "solid_maximum_temperature_K",
+      "cooling_wall_heat_into_fluid_W",
+      "solid_to_fluid_interphase_net_W",
+      "fluid_solid_interphase_absolute_flow_W"
+    ],
+    "physical_consistency_metrics": [
+      "test_global_mass_imbalance_over_inlet_mean",
+      "test_global_energy_imbalance_over_generated_power_mean",
+      "test_local_mass_l1_over_two_inlet_mean",
+      "test_local_energy_l1_over_two_generated_power_mean"
+    ],
+    "cost_metrics": [
+      "model_parameter_count",
+      "training_wall_time_s",
+      "test_inference_s_per_case"
+    ],
+    "ranking_rule": "Report field, engineering, conservation and cost quantities separately. Do not collapse them into one weighted score.",
+    "repeat_rule_source": "parameters/hccb_p418_ai_architecture_sources.json"
+  },
+  "physical_transient_comparison": {
+    "plan_file": "parameters/hccb_p418_transient_step_plan.json",
+    "split_file": "parameters/hccb_p418_step_response_splits.json",
+    "required_sequence_count": 12,
+    "required_output_time_count": 56,
+    "independent_training_curve_count": 6,
+    "data_volume_interpretation": "Each training split contains six independent physical step curves. The 56 times and 46089 regional nodes within one curve are correlated field observations and are not counted as additional independent operating conditions.",
+    "training_curve_sensitivity_file": "parameters/hccb_p418_transient_learning_curve_splits.json",
+    "training_curve_sensitivity_models": [
+      "graph_transformer_factorized_energy_flux"
+    ],
+    "training_curve_sensitivity_rule": "Compare three upward-only curves, three downward-only curves and all six bidirectional curves with identical validation curves, test curves, architecture, seed and epochs.",
+    "augmentation_rule": "No interpolated curve, reversed curve, randomly perturbed physical condition or steady solver-convergence history is used as a physical temperature target.",
+    "split_names": [
+      "direction_down_test",
+      "direction_up_test",
+      "pair_disjoint_stress_test"
+    ],
+    "curve_split_rule": "A complete thermal-step curve belongs to one role only; its time points are never divided among training, validation and test.",
+    "models": [
+      "dmdc",
+      "graph_transformer_data_only",
+      "graph_transformer_energy_flux",
+      "graph_transformer_factorized_energy_flux",
+      "low_rank_residual_correction",
+      "diffusion_residual_correction"
+    ],
+    "primary_temperature_metrics": [
+      "fluid_temperature_RMSE_K",
+      "solid_temperature_RMSE_K",
+      "maximum_absolute_temperature_error_K"
+    ],
+    "hotspot_metrics": [
+      "solid_maximum_temperature_history_RMSE_K",
+      "solid_maximum_temperature_history_maximum_absolute_error_K",
+      "solid_regional_hotspot_location_mean_error_m",
+      "solid_regional_hotspot_location_p95_error_m",
+      "solid_regional_hotspot_location_maximum_error_m",
+      "solid_regional_hotspot_exact_match_fraction"
+    ],
+    "physical_consistency_metric": "projection_aware_volume_weighted_energy_equation_normalized_RMSE",
+    "cost_metrics": [
+      "model_size_scalar_count",
+      "training_seconds",
+      "inference_seconds_per_curve",
+      "training_only_break_even_curve_count",
+      "full_workflow_break_even_curve_count"
+    ],
+    "correction_chain_rule": "Low-rank and diffusion rows include the physics-constrained graph-Transformer upstream cost and prediction time.",
+    "diffusion_interpretation_rule": "Always report all held-out results. Describe diffusion as a joint improvement only when solid-temperature RMSE decreases and the common energy-equation error does not increase.",
+    "repeat_rule_source": "parameters/hccb_p418_ai_architecture_sources.json"
+  },
+  "numerical_resolution_checks": {
+    "mesh_comparison": "three P418 fluid-solid meshes using equivalent cell length and quantity-wise GCI only for monotonic convergence",
+    "thermal_time_step_file": "parameters/hccb_p418_thermal_step_timestep_sensitivity.json",
+    "rule": "Spatial and temporal discretization differences are reported directly before model error is interpreted."
+  },
+  "packing_generalization": {
+    "plan_file": "parameters/hccb_p418_cross_packing_plan.json",
+    "training_packing_seed": 101,
+    "development_packing_seed": 202,
+    "final_zero_shot_packing_seed": 303,
+    "case_count_per_new_packing": 9,
+    "rule": "Architecture may be fixed using seed202. Model structure, weights and preprocessing are frozen before any seed303 field is opened."
+  },
+  "high_re_operating_combination_test": {
+    "fixed_hydrodynamics_plan": "parameters/hccb_p418_high_re_independent_step_plan.json",
+    "fully_coupled_plan": "parameters/hccb_p418_high_re_independent_fully_coupled_step_plan.json",
+    "required_sequence_count": 6,
+    "data_role": "frozen_model_independent_test_only",
+    "dimensionless_summary": "results/hccb_p418_high_re_independent_plan/summary.json",
+    "rule": "Evaluate the six P418 high-flow trajectory combinations only after model structure, normalization, checkpoint, rank and loss settings are fixed from the original twelve-curve study. Report fixed-hydrodynamics and fully coupled errors separately."
+  },
+  "reporting_rules": [
+    "A one-epoch or partial-data run is a software check, not a model-accuracy result.",
+    "Formal steady accuracy requires all 60 conditions; formal transient accuracy requires all 12 physical step curves.",
+    "OpenFOAM fixed-condition solver-relaxation histories cannot be reported as physical transient heat-transfer data.",
+    "No architecture is declared best from one aggregate loss; temperature field, hotspot, wall/interface heat, conservation and cost are reported separately.",
+    "Physical conclusions remain limited to the registered material, operating envelope and packing tests actually computed."
+  ],
+  "transient_learning_curve_verification": "code/verify_hccb_p418_transient_learning_curve.py",
+  "verification_script": "code/verify_hccb_p418_model_comparison_protocol.py",
+  "chinese_summary": "parameters/HCCB_P418_MODEL_COMPARISON_PROTOCOL_CN.md"
+}

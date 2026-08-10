@@ -1,0 +1,139 @@
+{
+  "status": "p418_public_data_release_preflight",
+  "repository_doi": "pending_assignment",
+  "repository_url": null,
+  "software_and_data_license": {
+    "software_license": "MIT",
+    "data_license": "cc-by-4.0"
+  },
+  "repository_metadata_ready": false,
+  "compact_plot_data_ready": true,
+  "final_processed_archive_ready": false,
+  "compact_files": [
+    {
+      "path": "results/hccb_p418_public_figure_data/README.md",
+      "present": true,
+      "size_bytes": 1009,
+      "sha256": "a38acf528cd8948f71d208cc95bb0bfd0164fde23cec892e56d989ddf5bc242d"
+    },
+    {
+      "path": "results/hccb_p418_public_figure_data/physical_response_60.csv",
+      "present": true,
+      "size_bytes": 22419,
+      "sha256": "0acc947894b949664ad777d5aa646b774afbf6e67ea9aabc5d00475c13abbfa7"
+    },
+    {
+      "path": "results/hccb_p418_public_figure_data/seed202_integral_comparison_9.csv",
+      "present": true,
+      "size_bytes": 4038,
+      "sha256": "7e07355761b9c5a9b26ea81d7bb2f5678e29483321eee7b173e1a9a9b460fdc8"
+    },
+    {
+      "path": "results/hccb_p418_public_figure_data/seed202_integral_summary.json",
+      "present": true,
+      "size_bytes": 1699,
+      "sha256": "23b46b463ebc3e3d2bdbc5b7aac2328a6e75e9307e299970222c77da2c1f8b1b"
+    },
+    {
+      "path": "results/hccb_p418_public_figure_data/steady_model_comparison_5x5.csv",
+      "present": true,
+      "size_bytes": 22145,
+      "sha256": "e0ed99ebaa2cdddb69d4aa95500122517c68bcaa9858b737ad4d3b11f3086bac"
+    },
+    {
+      "path": "results/hccb_p418_public_figure_data/summary.json",
+      "present": true,
+      "size_bytes": 1523,
+      "sha256": "dc7beba7b74064ce80927bf44f9d1135987842789a6745c8cc91f3f1b67d10ca"
+    },
+    {
+      "path": "results/hccb_p418_public_figure_data/direct_transport_scope_limit.json",
+      "present": true,
+      "size_bytes": 1411,
+      "sha256": "4df44994d6e7568b978768d3fdb2d9f5365c23e87a04a66110f43ae0b08c0f22"
+    },
+    {
+      "path": "results/hccb_p418_three_mesh_cht_sensitivity/summary.json",
+      "present": true,
+      "size_bytes": 7375,
+      "sha256": "8944934cdd01157dcaf31835d9e0d9ecc44c3191f4f552a24bda4fbde007fe26"
+    },
+    {
+      "path": "results/hccb_p418_three_mesh_cht_sensitivity/engineering_observables.csv",
+      "present": true,
+      "size_bytes": 1554,
+      "sha256": "af9c6f2697345a87e9d7fa2642d22615d16ce1f2e83fb00499ca3c17133845dd"
+    },
+    {
+      "path": "results/hccb_p418_three_mesh_cht_sensitivity/mesh_gci.csv",
+      "present": true,
+      "size_bytes": 1109,
+      "sha256": "9c42e564ed862530cf5476e242ce33d0e4ac26ca1c05c339f7e470497da01bf2"
+    },
+    {
+      "path": "results/hccb_p418_public_data_release_preflight/formal_training_manifest_public.json",
+      "present": true,
+      "size_bytes": 112321,
+      "sha256": "461d716ddfd8800e6be35dea44cc7164dc6d549af01ce7da32be9921fab1f7dc"
+    }
+  ],
+  "final_processed_files": [
+    {
+      "path": "results/hccb_p418_physical_steps_12/regional_sequences/regional_sequence_geometry.npz",
+      "present": true,
+      "size_bytes": 14230450,
+      "sha256": "e36d8ad135eaad3ebf9e2d75d4762735fb34c31eb81fc6395e200f9ff883a797"
+    },
+    {
+      "path": "data/apd006_hccb_source_sequence_target_packings/seed101_s80_xlo_ycentre/packing.npz",
+      "present": true,
+      "size_bytes": 51266,
+      "sha256": "9e289c8752cbe8d1ce767d383536a67908568f10ed71d591d67ad8348960ae43"
+    },
+    {
+      "path": "results/hccb_p418_physical_steps_12/model_comparison/summary.json",
+      "present": false
+    },
+    {
+      "path": "results/hccb_p418_physical_steps_12/model_comparison/physical_step_model_metrics.csv",
+      "present": false
+    },
+    {
+      "path": "results/hccb_p418_physical_steps_12/model_comparison/physical_step_model_speedup.csv",
+      "present": false
+    },
+    {
+      "path": "results/hccb_p418_physical_steps_12/fixed_flow_loss_balancing_pair_disjoint_stress_test/selected_downstream_integration.json",
+      "present": false
+    },
+    {
+      "path": "results/hccb_p418_physical_steps_12/regional_persistence_pair_disjoint_stress_test/test_temperature_predictions.npz",
+      "present": false
+    },
+    {
+      "path": "results/hccb_p418_physical_steps_12/regional_graph_transformer_bounded_data_only_pair_disjoint_stress_test/test_temporal_temperature_predictions.npz",
+      "present": false
+    }
+  ],
+  "release_layers": [
+    {
+      "name": "small_source_archive",
+      "content": "code, inputs, tests and compact plot-ready tables",
+      "location": "results/hccb_p418_reproducibility_manifest/p418_reproduction_source.tar.gz"
+    },
+    {
+      "name": "citable_processed_data_archive",
+      "content": "geometry, selected prediction arrays, model metrics and figure records",
+      "location": "to be deposited after the final model comparison"
+    },
+    {
+      "name": "large_openfoam_fields",
+      "content": "decomposed and reconstructed three-dimensional OpenFOAM fields",
+      "location": "institutional/NAS archive; available on reasonable request"
+    }
+  ],
+  "raw_openfoam_fields_in_public_small_archive": false,
+  "old_tritium_release_doi_reused": false,
+  "private_machine_paths_in_manifest": false,
+  "new_physical_parameters": []
+}

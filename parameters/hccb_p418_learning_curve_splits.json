@@ -1,0 +1,843 @@
+{
+  "source_parameter_id": "P418",
+  "source_title": "Pore-scale simulation on flow and heat transfer characteristics in packed beds with internal heat sources at low Reynolds numbers",
+  "source_doi": "https://doi.org/10.1016/j.ijheatmasstransfer.2023.124325",
+  "condition_count": 60,
+  "conditions": [
+    {
+      "condition_id": "u0p05_T300_q4p85",
+      "inlet_velocity_m_s": 0.05,
+      "inlet_temperature_K": 300.0,
+      "solid_heat_source_MW_m3": 4.85,
+      "velocity_index": 0,
+      "temperature_index": 0,
+      "source_index": 0
+    },
+    {
+      "condition_id": "u0p05_T300_q6p85",
+      "inlet_velocity_m_s": 0.05,
+      "inlet_temperature_K": 300.0,
+      "solid_heat_source_MW_m3": 6.85,
+      "velocity_index": 0,
+      "temperature_index": 0,
+      "source_index": 1
+    },
+    {
+      "condition_id": "u0p05_T300_q8p85",
+      "inlet_velocity_m_s": 0.05,
+      "inlet_temperature_K": 300.0,
+      "solid_heat_source_MW_m3": 8.85,
+      "velocity_index": 0,
+      "temperature_index": 0,
+      "source_index": 2
+    },
+    {
+      "condition_id": "u0p05_T500_q4p85",
+      "inlet_velocity_m_s": 0.05,
+      "inlet_temperature_K": 500.0,
+      "solid_heat_source_MW_m3": 4.85,
+      "velocity_index": 0,
+      "temperature_index": 1,
+      "source_index": 0
+    },
+    {
+      "condition_id": "u0p05_T500_q6p85",
+      "inlet_velocity_m_s": 0.05,
+      "inlet_temperature_K": 500.0,
+      "solid_heat_source_MW_m3": 6.85,
+      "velocity_index": 0,
+      "temperature_index": 1,
+      "source_index": 1
+    },
+    {
+      "condition_id": "u0p05_T500_q8p85",
+      "inlet_velocity_m_s": 0.05,
+      "inlet_temperature_K": 500.0,
+      "solid_heat_source_MW_m3": 8.85,
+      "velocity_index": 0,
+      "temperature_index": 1,
+      "source_index": 2
+    },
+    {
+      "condition_id": "u0p05_T700_q4p85",
+      "inlet_velocity_m_s": 0.05,
+      "inlet_temperature_K": 700.0,
+      "solid_heat_source_MW_m3": 4.85,
+      "velocity_index": 0,
+      "temperature_index": 2,
+      "source_index": 0
+    },
+    {
+      "condition_id": "u0p05_T700_q6p85",
+      "inlet_velocity_m_s": 0.05,
+      "inlet_temperature_K": 700.0,
+      "solid_heat_source_MW_m3": 6.85,
+      "velocity_index": 0,
+      "temperature_index": 2,
+      "source_index": 1
+    },
+    {
+      "condition_id": "u0p05_T700_q8p85",
+      "inlet_velocity_m_s": 0.05,
+      "inlet_temperature_K": 700.0,
+      "solid_heat_source_MW_m3": 8.85,
+      "velocity_index": 0,
+      "temperature_index": 2,
+      "source_index": 2
+    },
+    {
+      "condition_id": "u0p05_T900_q4p85",
+      "inlet_velocity_m_s": 0.05,
+      "inlet_temperature_K": 900.0,
+      "solid_heat_source_MW_m3": 4.85,
+      "velocity_index": 0,
+      "temperature_index": 3,
+      "source_index": 0
+    },
+    {
+      "condition_id": "u0p05_T900_q6p85",
+      "inlet_velocity_m_s": 0.05,
+      "inlet_temperature_K": 900.0,
+      "solid_heat_source_MW_m3": 6.85,
+      "velocity_index": 0,
+      "temperature_index": 3,
+      "source_index": 1
+    },
+    {
+      "condition_id": "u0p05_T900_q8p85",
+      "inlet_velocity_m_s": 0.05,
+      "inlet_temperature_K": 900.0,
+      "solid_heat_source_MW_m3": 8.85,
+      "velocity_index": 0,
+      "temperature_index": 3,
+      "source_index": 2
+    },
+    {
+      "condition_id": "u0p10_T300_q4p85",
+      "inlet_velocity_m_s": 0.1,
+      "inlet_temperature_K": 300.0,
+      "solid_heat_source_MW_m3": 4.85,
+      "velocity_index": 1,
+      "temperature_index": 0,
+      "source_index": 0
+    },
+    {
+      "condition_id": "u0p10_T300_q6p85",
+      "inlet_velocity_m_s": 0.1,
+      "inlet_temperature_K": 300.0,
+      "solid_heat_source_MW_m3": 6.85,
+      "velocity_index": 1,
+      "temperature_index": 0,
+      "source_index": 1
+    },
+    {
+      "condition_id": "u0p10_T300_q8p85",
+      "inlet_velocity_m_s": 0.1,
+      "inlet_temperature_K": 300.0,
+      "solid_heat_source_MW_m3": 8.85,
+      "velocity_index": 1,
+      "temperature_index": 0,
+      "source_index": 2
+    },
+    {
+      "condition_id": "u0p10_T500_q4p85",
+      "inlet_velocity_m_s": 0.1,
+      "inlet_temperature_K": 500.0,
+      "solid_heat_source_MW_m3": 4.85,
+      "velocity_index": 1,
+      "temperature_index": 1,
+      "source_index": 0
+    },
+    {
+      "condition_id": "u0p10_T500_q6p85",
+      "inlet_velocity_m_s": 0.1,
+      "inlet_temperature_K": 500.0,
+      "solid_heat_source_MW_m3": 6.85,
+      "velocity_index": 1,
+      "temperature_index": 1,
+      "source_index": 1
+    },
+    {
+      "condition_id": "u0p10_T500_q8p85",
+      "inlet_velocity_m_s": 0.1,
+      "inlet_temperature_K": 500.0,
+      "solid_heat_source_MW_m3": 8.85,
+      "velocity_index": 1,
+      "temperature_index": 1,
+      "source_index": 2
+    },
+    {
+      "condition_id": "u0p10_T700_q4p85",
+      "inlet_velocity_m_s": 0.1,
+      "inlet_temperature_K": 700.0,
+      "solid_heat_source_MW_m3": 4.85,
+      "velocity_index": 1,
+      "temperature_index": 2,
+      "source_index": 0
+    },
+    {
+      "condition_id": "u0p10_T700_q6p85",
+      "inlet_velocity_m_s": 0.1,
+      "inlet_temperature_K": 700.0,
+      "solid_heat_source_MW_m3": 6.85,
+      "velocity_index": 1,
+      "temperature_index": 2,
+      "source_index": 1
+    },
+    {
+      "condition_id": "u0p10_T700_q8p85",
+      "inlet_velocity_m_s": 0.1,
+      "inlet_temperature_K": 700.0,
+      "solid_heat_source_MW_m3": 8.85,
+      "velocity_index": 1,
+      "temperature_index": 2,
+      "source_index": 2
+    },
+    {
+      "condition_id": "u0p10_T900_q4p85",
+      "inlet_velocity_m_s": 0.1,
+      "inlet_temperature_K": 900.0,
+      "solid_heat_source_MW_m3": 4.85,
+      "velocity_index": 1,
+      "temperature_index": 3,
+      "source_index": 0
+    },
+    {
+      "condition_id": "u0p10_T900_q6p85",
+      "inlet_velocity_m_s": 0.1,
+      "inlet_temperature_K": 900.0,
+      "solid_heat_source_MW_m3": 6.85,
+      "velocity_index": 1,
+      "temperature_index": 3,
+      "source_index": 1
+    },
+    {
+      "condition_id": "u0p10_T900_q8p85",
+      "inlet_velocity_m_s": 0.1,
+      "inlet_temperature_K": 900.0,
+      "solid_heat_source_MW_m3": 8.85,
+      "velocity_index": 1,
+      "temperature_index": 3,
+      "source_index": 2
+    },
+    {
+      "condition_id": "u0p15_T300_q4p85",
+      "inlet_velocity_m_s": 0.15,
+      "inlet_temperature_K": 300.0,
+      "solid_heat_source_MW_m3": 4.85,
+      "velocity_index": 2,
+      "temperature_index": 0,
+      "source_index": 0
+    },
+    {
+      "condition_id": "u0p15_T300_q6p85",
+      "inlet_velocity_m_s": 0.15,
+      "inlet_temperature_K": 300.0,
+      "solid_heat_source_MW_m3": 6.85,
+      "velocity_index": 2,
+      "temperature_index": 0,
+      "source_index": 1
+    },
+    {
+      "condition_id": "u0p15_T300_q8p85",
+      "inlet_velocity_m_s": 0.15,
+      "inlet_temperature_K": 300.0,
+      "solid_heat_source_MW_m3": 8.85,
+      "velocity_index": 2,
+      "temperature_index": 0,
+      "source_index": 2
+    },
+    {
+      "condition_id": "u0p15_T500_q4p85",
+      "inlet_velocity_m_s": 0.15,
+      "inlet_temperature_K": 500.0,
+      "solid_heat_source_MW_m3": 4.85,
+      "velocity_index": 2,
+      "temperature_index": 1,
+      "source_index": 0
+    },
+    {
+      "condition_id": "u0p15_T500_q6p85",
+      "inlet_velocity_m_s": 0.15,
+      "inlet_temperature_K": 500.0,
+      "solid_heat_source_MW_m3": 6.85,
+      "velocity_index": 2,
+      "temperature_index": 1,
+      "source_index": 1
+    },
+    {
+      "condition_id": "u0p15_T500_q8p85",
+      "inlet_velocity_m_s": 0.15,
+      "inlet_temperature_K": 500.0,
+      "solid_heat_source_MW_m3": 8.85,
+      "velocity_index": 2,
+      "temperature_index": 1,
+      "source_index": 2
+    },
+    {
+      "condition_id": "u0p15_T700_q4p85",
+      "inlet_velocity_m_s": 0.15,
+      "inlet_temperature_K": 700.0,
+      "solid_heat_source_MW_m3": 4.85,
+      "velocity_index": 2,
+      "temperature_index": 2,
+      "source_index": 0
+    },
+    {
+      "condition_id": "u0p15_T700_q6p85",
+      "inlet_velocity_m_s": 0.15,
+      "inlet_temperature_K": 700.0,
+      "solid_heat_source_MW_m3": 6.85,
+      "velocity_index": 2,
+      "temperature_index": 2,
+      "source_index": 1
+    },
+    {
+      "condition_id": "u0p15_T700_q8p85",
+      "inlet_velocity_m_s": 0.15,
+      "inlet_temperature_K": 700.0,
+      "solid_heat_source_MW_m3": 8.85,
+      "velocity_index": 2,
+      "temperature_index": 2,
+      "source_index": 2
+    },
+    {
+      "condition_id": "u0p15_T900_q4p85",
+      "inlet_velocity_m_s": 0.15,
+      "inlet_temperature_K": 900.0,
+      "solid_heat_source_MW_m3": 4.85,
+      "velocity_index": 2,
+      "temperature_index": 3,
+      "source_index": 0
+    },
+    {
+      "condition_id": "u0p15_T900_q6p85",
+      "inlet_velocity_m_s": 0.15,
+      "inlet_temperature_K": 900.0,
+      "solid_heat_source_MW_m3": 6.85,
+      "velocity_index": 2,
+      "temperature_index": 3,
+      "source_index": 1
+    },
+    {
+      "condition_id": "u0p15_T900_q8p85",
+      "inlet_velocity_m_s": 0.15,
+      "inlet_temperature_K": 900.0,
+      "solid_heat_source_MW_m3": 8.85,
+      "velocity_index": 2,
+      "temperature_index": 3,
+      "source_index": 2
+    },
+    {
+      "condition_id": "u0p20_T300_q4p85",
+      "inlet_velocity_m_s": 0.2,
+      "inlet_temperature_K": 300.0,
+      "solid_heat_source_MW_m3": 4.85,
+      "velocity_index": 3,
+      "temperature_index": 0,
+      "source_index": 0
+    },
+    {
+      "condition_id": "u0p20_T300_q6p85",
+      "inlet_velocity_m_s": 0.2,
+      "inlet_temperature_K": 300.0,
+      "solid_heat_source_MW_m3": 6.85,
+      "velocity_index": 3,
+      "temperature_index": 0,
+      "source_index": 1
+    },
+    {
+      "condition_id": "u0p20_T300_q8p85",
+      "inlet_velocity_m_s": 0.2,
+      "inlet_temperature_K": 300.0,
+      "solid_heat_source_MW_m3": 8.85,
+      "velocity_index": 3,
+      "temperature_index": 0,
+      "source_index": 2
+    },
+    {
+      "condition_id": "u0p20_T500_q4p85",
+      "inlet_velocity_m_s": 0.2,
+      "inlet_temperature_K": 500.0,
+      "solid_heat_source_MW_m3": 4.85,
+      "velocity_index": 3,
+      "temperature_index": 1,
+      "source_index": 0
+    },
+    {
+      "condition_id": "u0p20_T500_q6p85",
+      "inlet_velocity_m_s": 0.2,
+      "inlet_temperature_K": 500.0,
+      "solid_heat_source_MW_m3": 6.85,
+      "velocity_index": 3,
+      "temperature_index": 1,
+      "source_index": 1
+    },
+    {
+      "condition_id": "u0p20_T500_q8p85",
+      "inlet_velocity_m_s": 0.2,
+      "inlet_temperature_K": 500.0,
+      "solid_heat_source_MW_m3": 8.85,
+      "velocity_index": 3,
+      "temperature_index": 1,
+      "source_index": 2
+    },
+    {
+      "condition_id": "u0p20_T700_q4p85",
+      "inlet_velocity_m_s": 0.2,
+      "inlet_temperature_K": 700.0,
+      "solid_heat_source_MW_m3": 4.85,
+      "velocity_index": 3,
+      "temperature_index": 2,
+      "source_index": 0
+    },
+    {
+      "condition_id": "u0p20_T700_q6p85",
+      "inlet_velocity_m_s": 0.2,
+      "inlet_temperature_K": 700.0,
+      "solid_heat_source_MW_m3": 6.85,
+      "velocity_index": 3,
+      "temperature_index": 2,
+      "source_index": 1
+    },
+    {
+      "condition_id": "u0p20_T700_q8p85",
+      "inlet_velocity_m_s": 0.2,
+      "inlet_temperature_K": 700.0,
+      "solid_heat_source_MW_m3": 8.85,
+      "velocity_index": 3,
+      "temperature_index": 2,
+      "source_index": 2
+    },
+    {
+      "condition_id": "u0p20_T900_q4p85",
+      "inlet_velocity_m_s": 0.2,
+      "inlet_temperature_K": 900.0,
+      "solid_heat_source_MW_m3": 4.85,
+      "velocity_index": 3,
+      "temperature_index": 3,
+      "source_index": 0
+    },
+    {
+      "condition_id": "u0p20_T900_q6p85",
+      "inlet_velocity_m_s": 0.2,
+      "inlet_temperature_K": 900.0,
+      "solid_heat_source_MW_m3": 6.85,
+      "velocity_index": 3,
+      "temperature_index": 3,
+      "source_index": 1
+    },
+    {
+      "condition_id": "u0p20_T900_q8p85",
+      "inlet_velocity_m_s": 0.2,
+      "inlet_temperature_K": 900.0,
+      "solid_heat_source_MW_m3": 8.85,
+      "velocity_index": 3,
+      "temperature_index": 3,
+      "source_index": 2
+    },
+    {
+      "condition_id": "u0p25_T300_q4p85",
+      "inlet_velocity_m_s": 0.25,
+      "inlet_temperature_K": 300.0,
+      "solid_heat_source_MW_m3": 4.85,
+      "velocity_index": 4,
+      "temperature_index": 0,
+      "source_index": 0
+    },
+    {
+      "condition_id": "u0p25_T300_q6p85",
+      "inlet_velocity_m_s": 0.25,
+      "inlet_temperature_K": 300.0,
+      "solid_heat_source_MW_m3": 6.85,
+      "velocity_index": 4,
+      "temperature_index": 0,
+      "source_index": 1
+    },
+    {
+      "condition_id": "u0p25_T300_q8p85",
+      "inlet_velocity_m_s": 0.25,
+      "inlet_temperature_K": 300.0,
+      "solid_heat_source_MW_m3": 8.85,
+      "velocity_index": 4,
+      "temperature_index": 0,
+      "source_index": 2
+    },
+    {
+      "condition_id": "u0p25_T500_q4p85",
+      "inlet_velocity_m_s": 0.25,
+      "inlet_temperature_K": 500.0,
+      "solid_heat_source_MW_m3": 4.85,
+      "velocity_index": 4,
+      "temperature_index": 1,
+      "source_index": 0
+    },
+    {
+      "condition_id": "u0p25_T500_q6p85",
+      "inlet_velocity_m_s": 0.25,
+      "inlet_temperature_K": 500.0,
+      "solid_heat_source_MW_m3": 6.85,
+      "velocity_index": 4,
+      "temperature_index": 1,
+      "source_index": 1
+    },
+    {
+      "condition_id": "u0p25_T500_q8p85",
+      "inlet_velocity_m_s": 0.25,
+      "inlet_temperature_K": 500.0,
+      "solid_heat_source_MW_m3": 8.85,
+      "velocity_index": 4,
+      "temperature_index": 1,
+      "source_index": 2
+    },
+    {
+      "condition_id": "u0p25_T700_q4p85",
+      "inlet_velocity_m_s": 0.25,
+      "inlet_temperature_K": 700.0,
+      "solid_heat_source_MW_m3": 4.85,
+      "velocity_index": 4,
+      "temperature_index": 2,
+      "source_index": 0
+    },
+    {
+      "condition_id": "u0p25_T700_q6p85",
+      "inlet_velocity_m_s": 0.25,
+      "inlet_temperature_K": 700.0,
+      "solid_heat_source_MW_m3": 6.85,
+      "velocity_index": 4,
+      "temperature_index": 2,
+      "source_index": 1
+    },
+    {
+      "condition_id": "u0p25_T700_q8p85",
+      "inlet_velocity_m_s": 0.25,
+      "inlet_temperature_K": 700.0,
+      "solid_heat_source_MW_m3": 8.85,
+      "velocity_index": 4,
+      "temperature_index": 2,
+      "source_index": 2
+    },
+    {
+      "condition_id": "u0p25_T900_q4p85",
+      "inlet_velocity_m_s": 0.25,
+      "inlet_temperature_K": 900.0,
+      "solid_heat_source_MW_m3": 4.85,
+      "velocity_index": 4,
+      "temperature_index": 3,
+      "source_index": 0
+    },
+    {
+      "condition_id": "u0p25_T900_q6p85",
+      "inlet_velocity_m_s": 0.25,
+      "inlet_temperature_K": 900.0,
+      "solid_heat_source_MW_m3": 6.85,
+      "velocity_index": 4,
+      "temperature_index": 3,
+      "source_index": 1
+    },
+    {
+      "condition_id": "u0p25_T900_q8p85",
+      "inlet_velocity_m_s": 0.25,
+      "inlet_temperature_K": 900.0,
+      "solid_heat_source_MW_m3": 8.85,
+      "velocity_index": 4,
+      "temperature_index": 3,
+      "source_index": 2
+    }
+  ],
+  "base_split": "interleaved_all_ranges",
+  "training_sizes": [
+    9,
+    18,
+    27,
+    36
+  ],
+  "selection_rule": "nested deterministic space-filling subsets; first cover all velocity, temperature and heat-source levels, then maximize distance in normalized condition space",
+  "physical_parameter_rule": "No physical parameter is added or changed. All condition values are the P418 literature-defined matrix values.",
+  "splits": {
+    "learning_curve_n09": {
+      "train": [
+        "u0p15_T700_q6p85",
+        "u0p25_T300_q4p85",
+        "u0p05_T900_q8p85",
+        "u0p10_T500_q4p85",
+        "u0p20_T300_q8p85",
+        "u0p25_T700_q8p85",
+        "u0p05_T500_q8p85",
+        "u0p25_T700_q4p85",
+        "u0p10_T900_q4p85"
+      ],
+      "validation": [
+        "u0p05_T300_q8p85",
+        "u0p05_T900_q4p85",
+        "u0p10_T300_q4p85",
+        "u0p10_T500_q6p85",
+        "u0p10_T700_q8p85",
+        "u0p15_T700_q4p85",
+        "u0p15_T900_q6p85",
+        "u0p20_T300_q6p85",
+        "u0p20_T500_q8p85",
+        "u0p25_T500_q4p85",
+        "u0p25_T700_q6p85",
+        "u0p25_T900_q8p85"
+      ],
+      "test": [
+        "u0p05_T300_q4p85",
+        "u0p05_T500_q6p85",
+        "u0p05_T700_q8p85",
+        "u0p10_T700_q4p85",
+        "u0p10_T900_q6p85",
+        "u0p15_T300_q6p85",
+        "u0p15_T500_q8p85",
+        "u0p20_T500_q4p85",
+        "u0p20_T700_q6p85",
+        "u0p20_T900_q8p85",
+        "u0p25_T300_q8p85",
+        "u0p25_T900_q4p85"
+      ],
+      "unused": [
+        "u0p05_T300_q6p85",
+        "u0p05_T500_q4p85",
+        "u0p05_T700_q4p85",
+        "u0p05_T700_q6p85",
+        "u0p05_T900_q6p85",
+        "u0p10_T300_q6p85",
+        "u0p10_T300_q8p85",
+        "u0p10_T500_q8p85",
+        "u0p10_T700_q6p85",
+        "u0p10_T900_q8p85",
+        "u0p15_T300_q4p85",
+        "u0p15_T300_q8p85",
+        "u0p15_T500_q4p85",
+        "u0p15_T500_q6p85",
+        "u0p15_T700_q8p85",
+        "u0p15_T900_q4p85",
+        "u0p15_T900_q8p85",
+        "u0p20_T300_q4p85",
+        "u0p20_T500_q6p85",
+        "u0p20_T700_q4p85",
+        "u0p20_T700_q8p85",
+        "u0p20_T900_q4p85",
+        "u0p20_T900_q6p85",
+        "u0p25_T300_q6p85",
+        "u0p25_T500_q6p85",
+        "u0p25_T500_q8p85",
+        "u0p25_T900_q6p85"
+      ],
+      "question": "With the same 12 validation and 12 test conditions, how much accuracy is obtained from 9 literature-defined OpenFOAM training conditions?"
+    },
+    "learning_curve_n18": {
+      "train": [
+        "u0p15_T700_q6p85",
+        "u0p25_T300_q4p85",
+        "u0p05_T900_q8p85",
+        "u0p10_T500_q4p85",
+        "u0p20_T300_q8p85",
+        "u0p25_T700_q8p85",
+        "u0p05_T500_q8p85",
+        "u0p25_T700_q4p85",
+        "u0p10_T900_q4p85",
+        "u0p10_T300_q6p85",
+        "u0p25_T500_q6p85",
+        "u0p25_T900_q6p85",
+        "u0p15_T700_q8p85",
+        "u0p05_T700_q6p85",
+        "u0p20_T900_q4p85",
+        "u0p15_T300_q4p85",
+        "u0p10_T300_q8p85",
+        "u0p05_T700_q4p85"
+      ],
+      "validation": [
+        "u0p05_T300_q8p85",
+        "u0p05_T900_q4p85",
+        "u0p10_T300_q4p85",
+        "u0p10_T500_q6p85",
+        "u0p10_T700_q8p85",
+        "u0p15_T700_q4p85",
+        "u0p15_T900_q6p85",
+        "u0p20_T300_q6p85",
+        "u0p20_T500_q8p85",
+        "u0p25_T500_q4p85",
+        "u0p25_T700_q6p85",
+        "u0p25_T900_q8p85"
+      ],
+      "test": [
+        "u0p05_T300_q4p85",
+        "u0p05_T500_q6p85",
+        "u0p05_T700_q8p85",
+        "u0p10_T700_q4p85",
+        "u0p10_T900_q6p85",
+        "u0p15_T300_q6p85",
+        "u0p15_T500_q8p85",
+        "u0p20_T500_q4p85",
+        "u0p20_T700_q6p85",
+        "u0p20_T900_q8p85",
+        "u0p25_T300_q8p85",
+        "u0p25_T900_q4p85"
+      ],
+      "unused": [
+        "u0p05_T300_q6p85",
+        "u0p05_T500_q4p85",
+        "u0p05_T900_q6p85",
+        "u0p10_T500_q8p85",
+        "u0p10_T700_q6p85",
+        "u0p10_T900_q8p85",
+        "u0p15_T300_q8p85",
+        "u0p15_T500_q4p85",
+        "u0p15_T500_q6p85",
+        "u0p15_T900_q4p85",
+        "u0p15_T900_q8p85",
+        "u0p20_T300_q4p85",
+        "u0p20_T500_q6p85",
+        "u0p20_T700_q4p85",
+        "u0p20_T700_q8p85",
+        "u0p20_T900_q6p85",
+        "u0p25_T300_q6p85",
+        "u0p25_T500_q8p85"
+      ],
+      "question": "With the same 12 validation and 12 test conditions, how much accuracy is obtained from 18 literature-defined OpenFOAM training conditions?"
+    },
+    "learning_curve_n27": {
+      "train": [
+        "u0p15_T700_q6p85",
+        "u0p25_T300_q4p85",
+        "u0p05_T900_q8p85",
+        "u0p10_T500_q4p85",
+        "u0p20_T300_q8p85",
+        "u0p25_T700_q8p85",
+        "u0p05_T500_q8p85",
+        "u0p25_T700_q4p85",
+        "u0p10_T900_q4p85",
+        "u0p10_T300_q6p85",
+        "u0p25_T500_q6p85",
+        "u0p25_T900_q6p85",
+        "u0p15_T700_q8p85",
+        "u0p05_T700_q6p85",
+        "u0p20_T900_q4p85",
+        "u0p15_T300_q4p85",
+        "u0p10_T300_q8p85",
+        "u0p05_T700_q4p85",
+        "u0p15_T900_q8p85",
+        "u0p05_T900_q6p85",
+        "u0p15_T500_q6p85",
+        "u0p25_T500_q8p85",
+        "u0p25_T300_q6p85",
+        "u0p15_T500_q4p85",
+        "u0p15_T300_q8p85",
+        "u0p15_T900_q4p85",
+        "u0p10_T700_q6p85"
+      ],
+      "validation": [
+        "u0p05_T300_q8p85",
+        "u0p05_T900_q4p85",
+        "u0p10_T300_q4p85",
+        "u0p10_T500_q6p85",
+        "u0p10_T700_q8p85",
+        "u0p15_T700_q4p85",
+        "u0p15_T900_q6p85",
+        "u0p20_T300_q6p85",
+        "u0p20_T500_q8p85",
+        "u0p25_T500_q4p85",
+        "u0p25_T700_q6p85",
+        "u0p25_T900_q8p85"
+      ],
+      "test": [
+        "u0p05_T300_q4p85",
+        "u0p05_T500_q6p85",
+        "u0p05_T700_q8p85",
+        "u0p10_T700_q4p85",
+        "u0p10_T900_q6p85",
+        "u0p15_T300_q6p85",
+        "u0p15_T500_q8p85",
+        "u0p20_T500_q4p85",
+        "u0p20_T700_q6p85",
+        "u0p20_T900_q8p85",
+        "u0p25_T300_q8p85",
+        "u0p25_T900_q4p85"
+      ],
+      "unused": [
+        "u0p05_T300_q6p85",
+        "u0p05_T500_q4p85",
+        "u0p10_T500_q8p85",
+        "u0p10_T900_q8p85",
+        "u0p20_T300_q4p85",
+        "u0p20_T500_q6p85",
+        "u0p20_T700_q4p85",
+        "u0p20_T700_q8p85",
+        "u0p20_T900_q6p85"
+      ],
+      "question": "With the same 12 validation and 12 test conditions, how much accuracy is obtained from 27 literature-defined OpenFOAM training conditions?"
+    },
+    "learning_curve_n36": {
+      "train": [
+        "u0p15_T700_q6p85",
+        "u0p25_T300_q4p85",
+        "u0p05_T900_q8p85",
+        "u0p10_T500_q4p85",
+        "u0p20_T300_q8p85",
+        "u0p25_T700_q8p85",
+        "u0p05_T500_q8p85",
+        "u0p25_T700_q4p85",
+        "u0p10_T900_q4p85",
+        "u0p10_T300_q6p85",
+        "u0p25_T500_q6p85",
+        "u0p25_T900_q6p85",
+        "u0p15_T700_q8p85",
+        "u0p05_T700_q6p85",
+        "u0p20_T900_q4p85",
+        "u0p15_T300_q4p85",
+        "u0p10_T300_q8p85",
+        "u0p05_T700_q4p85",
+        "u0p15_T900_q8p85",
+        "u0p05_T900_q6p85",
+        "u0p15_T500_q6p85",
+        "u0p25_T500_q8p85",
+        "u0p25_T300_q6p85",
+        "u0p15_T500_q4p85",
+        "u0p15_T300_q8p85",
+        "u0p15_T900_q4p85",
+        "u0p10_T700_q6p85",
+        "u0p20_T700_q4p85",
+        "u0p20_T700_q8p85",
+        "u0p20_T500_q6p85",
+        "u0p10_T500_q8p85",
+        "u0p20_T900_q6p85",
+        "u0p10_T900_q8p85",
+        "u0p20_T300_q4p85",
+        "u0p05_T500_q4p85",
+        "u0p05_T300_q6p85"
+      ],
+      "validation": [
+        "u0p05_T300_q8p85",
+        "u0p05_T900_q4p85",
+        "u0p10_T300_q4p85",
+        "u0p10_T500_q6p85",
+        "u0p10_T700_q8p85",
+        "u0p15_T700_q4p85",
+        "u0p15_T900_q6p85",
+        "u0p20_T300_q6p85",
+        "u0p20_T500_q8p85",
+        "u0p25_T500_q4p85",
+        "u0p25_T700_q6p85",
+        "u0p25_T900_q8p85"
+      ],
+      "test": [
+        "u0p05_T300_q4p85",
+        "u0p05_T500_q6p85",
+        "u0p05_T700_q8p85",
+        "u0p10_T700_q4p85",
+        "u0p10_T900_q6p85",
+        "u0p15_T300_q6p85",
+        "u0p15_T500_q8p85",
+        "u0p20_T500_q4p85",
+        "u0p20_T700_q6p85",
+        "u0p20_T900_q8p85",
+        "u0p25_T300_q8p85",
+        "u0p25_T900_q4p85"
+      ],
+      "unused": [],
+      "question": "With the same 12 validation and 12 test conditions, how much accuracy is obtained from 36 literature-defined OpenFOAM training conditions?"
+    }
+  },
+  "comparison_rule": "Validation and test conditions are fixed across all training sizes; only the number of OpenFOAM training conditions changes."
+}

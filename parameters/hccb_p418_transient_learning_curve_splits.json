@@ -1,0 +1,84 @@
+{
+  "purpose": "Test whether the P418 spatiotemporal graph-Transformer is limited by the number and direction of independent thermal-step curves. No interpolated or synthetic temperature history is added.",
+  "source_parameter_id": "P418",
+  "source_doi": "https://doi.org/10.1016/j.ijheatmasstransfer.2023.124325",
+  "fixed_validation": [
+    "temperature_up_u0p15_q6p85",
+    "temperature_down_u0p15_q6p85"
+  ],
+  "fixed_test": [
+    "velocity_up_T900_q6p85",
+    "velocity_down_T900_q6p85",
+    "source_up_u0p15_T700",
+    "source_down_u0p15_T700"
+  ],
+  "splits": {
+    "transient_learning_n03_up": {
+      "train": [
+        "temperature_up_u0p05_q6p85",
+        "velocity_up_T500_q6p85",
+        "source_up_u0p15_T300"
+      ],
+      "validation": [
+        "temperature_up_u0p15_q6p85",
+        "temperature_down_u0p15_q6p85"
+      ],
+      "test": [
+        "velocity_up_T900_q6p85",
+        "velocity_down_T900_q6p85",
+        "source_up_u0p15_T700",
+        "source_down_u0p15_T700"
+      ],
+      "unused": [
+        "temperature_down_u0p05_q6p85",
+        "velocity_down_T500_q6p85",
+        "source_down_u0p15_T300"
+      ]
+    },
+    "transient_learning_n03_down": {
+      "train": [
+        "temperature_down_u0p05_q6p85",
+        "velocity_down_T500_q6p85",
+        "source_down_u0p15_T300"
+      ],
+      "validation": [
+        "temperature_up_u0p15_q6p85",
+        "temperature_down_u0p15_q6p85"
+      ],
+      "test": [
+        "velocity_up_T900_q6p85",
+        "velocity_down_T900_q6p85",
+        "source_up_u0p15_T700",
+        "source_down_u0p15_T700"
+      ],
+      "unused": [
+        "temperature_up_u0p05_q6p85",
+        "velocity_up_T500_q6p85",
+        "source_up_u0p15_T300"
+      ]
+    },
+    "transient_learning_n06_both": {
+      "train": [
+        "temperature_up_u0p05_q6p85",
+        "temperature_down_u0p05_q6p85",
+        "velocity_up_T500_q6p85",
+        "velocity_down_T500_q6p85",
+        "source_up_u0p15_T300",
+        "source_down_u0p15_T300"
+      ],
+      "validation": [
+        "temperature_up_u0p15_q6p85",
+        "temperature_down_u0p15_q6p85"
+      ],
+      "test": [
+        "velocity_up_T900_q6p85",
+        "velocity_down_T900_q6p85",
+        "source_up_u0p15_T700",
+        "source_down_u0p15_T700"
+      ],
+      "unused": []
+    }
+  },
+  "interpretation": "The four independent test curves and two validation curves are identical in all three comparisons. The two three-curve runs separate upward-only and downward-only training so direction sensitivity is visible. The six-curve run adds the opposite direction from the same three published step families. Node-time samples inside one curve are correlated field observations and are not counted as additional independent operating conditions.",
+  "new_physical_parameters": []
+}

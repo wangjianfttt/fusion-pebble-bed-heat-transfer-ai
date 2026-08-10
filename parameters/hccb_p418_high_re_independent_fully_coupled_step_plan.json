@@ -1,0 +1,86 @@
+{
+  "title": "P418 high-Re operating-combination independent fully coupled test",
+  "purpose": "Repeat the six independent high-flow operating-combination trajectories with velocity, pressure, face flow and both temperatures evolving together.",
+  "source_parameter_id": "P418",
+  "source_title": "Pore-scale simulation on flow and heat transfer characteristics in packed beds with internal heat sources at low Reynolds numbers",
+  "source_doi": "https://doi.org/10.1016/j.ijheatmasstransfer.2023.124325",
+  "analysis_kind": "independent_high_re_test",
+  "data_role": "frozen_model_independent_test_only",
+  "base_thermal_step_plan": "parameters/hccb_p418_high_re_independent_step_plan.json",
+  "physical_parameter_registry": "parameters/hccb_p418_physical_parameter_sources.csv",
+  "new_physical_parameters": [],
+  "initial_state_rule": "Use the source condition's completed steady-iteration-200 U, p, p_rgh, phi, fluid-temperature and solid-temperature fields. The label 200 is not physical seconds.",
+  "target_rule": "At t=0 switch only the declared inlet velocity, inlet temperature or solid volumetric heat source to its exact P418 endpoint.",
+  "openfoam_flow_controls": {
+    "flow": "yes",
+    "momentumPredictor": "yes",
+    "fluid_and_solid_ddt_scheme": "Euler"
+  },
+  "output_schema": "parameters/hccb_p418_fully_coupled_transient_data_schema.json",
+  "input_preparation": {
+    "builder": "code/build_hccb_p418_fully_coupled_step_cases.py",
+    "initializer": "code/initialize_hccb_p418_fully_coupled_step_case.sh",
+    "initial_field_verifier": "code/verify_hccb_p418_fully_coupled_step_initialization.py"
+  },
+  "openfoam_execution": {
+    "runner": "code/run_hccb_p418_fully_coupled_step_responses.sh",
+    "default_mode": "plan_only",
+    "explicit_execution_switch": "EXECUTE=1",
+    "completion_marker": "fully_coupled_step_response_complete.json"
+  },
+  "data_export": {
+    "integrated_observable_history_kind": "fully_coupled_flow_heat_response",
+    "history_mode": "fully_coupled_flow_heat"
+  },
+  "time_step_rule": "Reuse the finest numerical schedule accepted by the representative fully coupled time-step study; the independent curves do not select a new schedule.",
+  "sequence_rule": "Use the same six endpoint pairs as the fixed-hydrodynamics high-Re independent test.",
+  "model_use": {
+    "allowed_for_training": false,
+    "allowed_for_normalization": false,
+    "allowed_for_checkpoint_selection": false,
+    "allowed_for_architecture_selection": false,
+    "allowed_for_loss_weight_selection": false,
+    "allowed_for_pod_basis": false,
+    "allowed_for_diffusion_training": false,
+    "evaluation_rule": "Evaluate only frozen models selected from the original twelve-curve study."
+  },
+  "sequences": [
+    {
+      "sequence_id": "high_re_velocity_up_T300_q6p85",
+      "family": "inlet_velocity_step",
+      "source_condition_id": "u0p05_T300_q6p85",
+      "target_condition_id": "u0p25_T300_q6p85"
+    },
+    {
+      "sequence_id": "high_re_velocity_down_T300_q6p85",
+      "family": "inlet_velocity_step",
+      "source_condition_id": "u0p25_T300_q6p85",
+      "target_condition_id": "u0p05_T300_q6p85"
+    },
+    {
+      "sequence_id": "high_re_temperature_up_u0p25_q6p85",
+      "family": "inlet_temperature_step",
+      "source_condition_id": "u0p25_T300_q6p85",
+      "target_condition_id": "u0p25_T900_q6p85"
+    },
+    {
+      "sequence_id": "high_re_temperature_down_u0p25_q6p85",
+      "family": "inlet_temperature_step",
+      "source_condition_id": "u0p25_T900_q6p85",
+      "target_condition_id": "u0p25_T300_q6p85"
+    },
+    {
+      "sequence_id": "high_re_source_up_u0p25_T300",
+      "family": "solid_heat_source_step",
+      "source_condition_id": "u0p25_T300_q4p85",
+      "target_condition_id": "u0p25_T300_q8p85"
+    },
+    {
+      "sequence_id": "high_re_source_down_u0p25_T300",
+      "family": "solid_heat_source_step",
+      "source_condition_id": "u0p25_T300_q8p85",
+      "target_condition_id": "u0p25_T300_q4p85"
+    }
+  ],
+  "scientific_scope": "This separate set measures high-flow trajectory-combination transfer and the influence of full flow--heat coupling. It does not provide training data and introduces no new material, geometry, boundary or operating parameter."
+}

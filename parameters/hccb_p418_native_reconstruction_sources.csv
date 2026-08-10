@@ -1,0 +1,4 @@
+method,role,source,doi,numerical_setting,physical_parameter_added,notes
+regional volume mean,regional target and exact phase mean preservation,project finite-volume definition,,cell-volume weighting,no,uses OpenFOAM native cell volumes and temperatures
+unweighted least-squares gradient,parameter-free deterministic affine reconstruction,Barth and Jespersen 1989,10.2514/6.1989-366,unique adjacent regional nodes,no,used as an unrestricted negative control because it can overshoot
+neighbour-extrema scalar limiter,monotone affine native-cell reconstruction,Barth and Jespersen 1989,10.2514/6.1989-366,limiter range zero to one computed from local extrema,no,no empirical limiter coefficient is fitted

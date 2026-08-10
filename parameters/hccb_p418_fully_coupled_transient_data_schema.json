@@ -1,0 +1,57 @@
+{
+  "title": "P418 fully coupled regional transient data schema",
+  "purpose": "Preserve time-dependent flow and temperature fields without reducing them to the fixed-hydrodynamic thermal data format.",
+  "index_fields": {
+    "sequence_id": "string",
+    "family": "string",
+    "source_condition_id": "string",
+    "target_condition_id": "string",
+    "time_s": "float64[Nt]"
+  },
+  "regional_geometry_fields": {
+    "node_centroid_m": "float64[Nnode,3]",
+    "node_volume_m3": "float64[Nnode]",
+    "node_type": "int8[Nnode]",
+    "edge_source": "int64[Nedge]",
+    "edge_target": "int64[Nedge]",
+    "edge_area_m2": "float64[Nedge]",
+    "edge_area_vector_m2": "float64[Nedge,3]"
+  },
+  "condition_order": [
+    "source_inlet_velocity_m_s",
+    "source_inlet_temperature_K",
+    "source_solid_heat_source_MW_m3",
+    "target_inlet_velocity_m_s",
+    "target_inlet_temperature_K",
+    "target_solid_heat_source_MW_m3",
+    "target_outlet_pressure_Pa",
+    "target_cooling_wall_temperature_K"
+  ],
+  "state_order": [
+    "Ux_m_s",
+    "Uy_m_s",
+    "Uz_m_s",
+    "pressure_Pa",
+    "temperature_K"
+  ],
+  "sequence_arrays": {
+    "condition_physical": "float64[8]",
+    "state_physical": "float32[Nt,Nnode,5]",
+    "fluid_internal_mass_flux_kg_s": "float64[Nt,NinternalFace]",
+    "fluid_boundary_mass_flux_kg_s": "float64[Nt,NboundaryFace]"
+  },
+  "key_difference_from_thermal_only_data": "Velocity, pressure and face mass flux retain their time axes and are prediction targets rather than fixed inputs.",
+  "exporter": "code/export_hccb_p418_step_regional_sequences.py --history-mode fully_coupled_flow_heat",
+  "required_completion_marker": "fully_coupled_step_response_complete.json",
+  "normalization_rule": "Calculate every channel scale from complete training curves only and save the exact statistics with the split identifiers.",
+  "required_checks": [
+    "finite values and strictly increasing recorded times",
+    "identical node and face ordering for every curve",
+    "zero mass flux through fluid--solid faces",
+    "initial field matches the registered source endpoint",
+    "target boundary and solid heat source match the registered target endpoint",
+    "native and regional mass/energy balance summaries are stored",
+    "no test-curve value contributes to normalization or model selection"
+  ],
+  "new_physical_parameters": []
+}

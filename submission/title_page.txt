@@ -1,0 +1,13 @@
+Transient conjugate heat transfer in internally heated ceramic pebble beds: pore-resolved reference fields and graph–Transformer prediction
+
+Jian Wang a,b,*
+Wei Wen a,b
+Gang Shen a
+Mingzhun Lei b
+Yuntao Song b
+
+a Anhui University of Science and Technology, Huainan 232001, China
+b Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences, Hefei 230031, China
+
+* Corresponding author
+Email: wjfttt@mail.ustc.edu.cn

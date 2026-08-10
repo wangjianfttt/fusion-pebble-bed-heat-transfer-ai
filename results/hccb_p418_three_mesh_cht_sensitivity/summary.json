@@ -1,0 +1,167 @@
+{
+  "status": "completed_three_mesh_p418_cht_comparison",
+  "physical_conditions": {
+    "inlet_temperature_K": 700.0,
+    "inlet_velocity_m_s": 0.2,
+    "cooling_wall_temperature_K": 635.0,
+    "solid_heat_source_W_m3": 6850000.0
+  },
+  "mesh_levels": [
+    {
+      "mesh_level": "coarse",
+      "fluid_cells": 160989,
+      "solid_cells": 200162,
+      "total_cells": 361151,
+      "equivalent_cell_size_m": 5.438034275556315e-05,
+      "cell_volume_porosity": 0.385905947822254,
+      "fluid_basic_check_passes": true,
+      "solid_basic_check_passes": true,
+      "relative_mass_difference": 1.4508700256800338e-09,
+      "relative_energy_difference": 0.0014536289201107693,
+      "outlet_temperature_change_K": -26.51815929999998,
+      "solid_maximum_temperature_change_K": -0.14458920000004127,
+      "cooling_wall_heat_fraction": -0.2733302238331053,
+      "pressure_drop_Pa": 23.301000000006752,
+      "outlet_temperature_K": 673.4818407,
+      "solid_maximum_temperature_K": 699.8554108,
+      "cooling_wall_heat_flow_W": -0.06668014629,
+      "generated_power_W": 0.24395453,
+      "pressure_drop_Pa_relative_difference_from_fine": 0.13706392119055333,
+      "outlet_temperature_change_K_relative_difference_from_fine": 0.01786889626441855,
+      "solid_maximum_temperature_change_K_relative_difference_from_fine": 1.898909291661502,
+      "cooling_wall_heat_fraction_relative_difference_from_fine": 0.11228710952578073
+    },
+    {
+      "mesh_level": "medium",
+      "fluid_cells": 432384,
+      "solid_cells": 515540,
+      "total_cells": 947924,
+      "equivalent_cell_size_m": 3.942276139483062e-05,
+      "cell_volume_porosity": 0.38660500289264166,
+      "fluid_basic_check_passes": true,
+      "solid_basic_check_passes": true,
+      "relative_mass_difference": 1.276005321559112e-08,
+      "relative_energy_difference": 0.00031402692132856695,
+      "outlet_temperature_change_K": -26.203501200000005,
+      "solid_maximum_temperature_change_K": 0.05208719999995992,
+      "cooling_wall_heat_fraction": -0.2942447589311008,
+      "pressure_drop_Pa": 25.640599999998813,
+      "outlet_temperature_K": 673.7964988,
+      "solid_maximum_temperature_K": 700.0520872,
+      "cooling_wall_heat_flow_W": -0.07178234187,
+      "generated_power_W": 0.24395453,
+      "pressure_drop_Pa_relative_difference_from_fine": 0.050418487519245436,
+      "outlet_temperature_change_K_relative_difference_from_fine": 0.005791108763246366,
+      "solid_maximum_temperature_change_K_relative_difference_from_fine": 0.6761745133344566,
+      "cooling_wall_heat_fraction_relative_difference_from_fine": 0.04436157189441174
+    },
+    {
+      "mesh_level": "fine",
+      "fluid_cells": 858419,
+      "solid_cells": 1011645,
+      "total_cells": 1870064,
+      "equivalent_cell_size_m": 3.143301631002701e-05,
+      "cell_volume_porosity": 0.38679784567067965,
+      "fluid_basic_check_passes": true,
+      "solid_basic_check_passes": true,
+      "relative_mass_difference": 2.91929009681821e-09,
+      "relative_energy_difference": 1.1867725961745176e-05,
+      "outlet_temperature_change_K": -26.05262760000005,
+      "solid_maximum_temperature_change_K": 0.16084960000000592,
+      "cooling_wall_heat_fraction": -0.307903858067321,
+      "pressure_drop_Pa": 27.00199999999313,
+      "outlet_temperature_K": 673.9473724,
+      "solid_maximum_temperature_K": 700.1608496,
+      "cooling_wall_heat_flow_W": -0.07511454098,
+      "generated_power_W": 0.24395453,
+      "pressure_drop_Pa_relative_difference_from_fine": 0.0,
+      "outlet_temperature_change_K_relative_difference_from_fine": 0.0,
+      "solid_maximum_temperature_change_K_relative_difference_from_fine": 0.0,
+      "cooling_wall_heat_fraction_relative_difference_from_fine": 0.0
+    }
+  ],
+  "refinement_trends": {
+    "pressure_drop_Pa": {
+      "coarse_to_medium_absolute_change": 2.3395999999920605,
+      "medium_to_fine_absolute_change": 1.361399999994319,
+      "change_reduces_on_refinement": true,
+      "monotonic_values": true
+    },
+    "outlet_temperature_change_K": {
+      "coarse_to_medium_absolute_change": 0.3146580999999742,
+      "medium_to_fine_absolute_change": 0.15087359999995442,
+      "change_reduces_on_refinement": true,
+      "monotonic_values": true
+    },
+    "solid_maximum_temperature_change_K": {
+      "coarse_to_medium_absolute_change": 0.1966764000000012,
+      "medium_to_fine_absolute_change": 0.108762400000046,
+      "change_reduces_on_refinement": true,
+      "monotonic_values": true
+    },
+    "cooling_wall_heat_fraction": {
+      "coarse_to_medium_absolute_change": 0.020914535097995512,
+      "medium_to_fine_absolute_change": 0.01365909913622021,
+      "change_reduces_on_refinement": true,
+      "monotonic_values": true
+    }
+  },
+  "grid_convergence": [
+    {
+      "metric": "pressure_drop_Pa",
+      "coarse_value": 23.301000000006752,
+      "medium_value": 25.640599999998813,
+      "fine_value": 27.00199999999313,
+      "coarse_to_medium_refinement_ratio": 1.3794148565831788,
+      "medium_to_fine_refinement_ratio": 1.2541832131539636,
+      "observed_order": 0.6918259675862528,
+      "richardson_extrapolated_value": 35.027679605301614,
+      "fine_gci_fraction": 0.37153172011844154,
+      "fine_gci_absolute": 10.032099506635607,
+      "convergence_status": "monotonic_gci_reported"
+    },
+    {
+      "metric": "outlet_temperature_change_K",
+      "coarse_value": -26.51815929999998,
+      "medium_value": -26.203501200000005,
+      "fine_value": -26.05262760000005,
+      "coarse_to_medium_refinement_ratio": 1.3794148565831788,
+      "medium_to_fine_refinement_ratio": 1.2541832131539636,
+      "observed_order": 1.3867089542314976,
+      "richardson_extrapolated_value": -25.64373722301562,
+      "fine_gci_fraction": 0.019618480679873384,
+      "fine_gci_absolute": 0.5111129712305371,
+      "convergence_status": "monotonic_gci_reported"
+    },
+    {
+      "metric": "solid_maximum_temperature_change_K",
+      "coarse_value": -0.14458920000004127,
+      "medium_value": 0.05208719999995992,
+      "fine_value": 0.16084960000000592,
+      "coarse_to_medium_refinement_ratio": 1.3794148565831788,
+      "medium_to_fine_refinement_ratio": 1.2541832131539636,
+      "observed_order": 0.8753668185033406,
+      "richardson_extrapolated_value": 0.6568569927022233,
+      "fine_gci_fraction": 3.8545898832061063,
+      "fine_gci_absolute": 0.6200092408777718,
+      "convergence_status": "monotonic_gci_reported"
+    },
+    {
+      "metric": "cooling_wall_heat_fraction",
+      "coarse_value": -0.2733302238331053,
+      "medium_value": -0.2942447589311008,
+      "fine_value": -0.307903858067321,
+      "coarse_to_medium_refinement_ratio": 1.3794148565831788,
+      "medium_to_fine_refinement_ratio": 1.2541832131539636,
+      "observed_order": 0.27386573214356535,
+      "richardson_extrapolated_value": -0.521359355234536,
+      "fine_gci_fraction": 0.8665671587677234,
+      "fine_gci_absolute": 0.26681937145901874,
+      "convergence_status": "monotonic_gci_reported"
+    }
+  ],
+  "grid_convergence_method": "Celik et al. three-grid GCI with actual unequal equivalent-cell-size refinement ratios and safety factor 1.25",
+  "grid_convergence_safety_factor": 1.25,
+  "interpretation": "This is a three-mesh sensitivity comparison for engineering observables. It does not by itself prove complete mesh independence.",
+  "new_physical_parameters": []
+}

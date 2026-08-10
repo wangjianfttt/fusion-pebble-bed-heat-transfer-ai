@@ -1,0 +1,32 @@
+类别,物理量或方程,符号或关系,文献参数编号,采用值或关系,OpenFOAM位置,Python实现,在神经网络中的作用,说明
+球床结构,颗粒直径,d_p,P048,1 mm,cht_smoke_metadata.json::source_particle_diameter_mm,code/hccb_p418_source_contract.py,定义固定网格的长度尺度,三角化后的颗粒体积另行计算
+球床结构,源球床目标孔隙率,epsilon_target,P049,0.397,cht_smoke_metadata.json::source_target_porosity,code/hccb_p418_source_contract.py,说明堆积来源,正式网格实际孔隙率0.3867913是几何计算结果
+球床结构,初始大球床尺寸,L_large,P050,25dp x 25dp x 10dp,data/apd006_hccb_source_sequence_target_packings/*/summary.json,code/build_hccb_source_sequence_lammps_packing.py,定义颗粒排列的生成母域,先生成大球床再截取文献计算区域
+球床结构,文献截取区域尺寸,L_crop,P390,"12.5dp x 12.5dp x 10dp; inlet/outlet extensions 10dp",data/apd006_hccb_source_sequence_target_packings/*/summary.json,code/check_hccb_source_sequence_lammps_packing.py,定义正式颗粒排列来源区域,当前精细局部域在该区域内再次截取
+网格处理,颗粒网格直径,d_mesh,P404,0.99 d_p,runs/hccb_dense_snappy_g2_nativezone_r2/case_manifest.json::meshing_particle_diameter_m,code/check_hccb_source_sequence_lammps_packing.py,保持颗粒物理直径与网格处理相互区分,文献规定网格前直径缩小1%以消除点接触
+球床结构,靠壁截取和横向边界,wall-adjacent crop,P423,one wall-adjacent and laterally centred crop,data/apd006_hccb_source_sequence_target_packings/*/summary.json,code/check_hccb_source_sequence_lammps_packing.py,定义颗粒排列相对冷却壁的位置,冷却壁为xlo面其余横向面为对称面
+运行工况,入口速度—入口温度—体积发热率矩阵,"u_in,T_in,q'''",P418,"0.05--0.25 m/s; 300--900 K; 4.85--8.85 MW/m3",0/fluid/U;0/fluid/T;constant/solid/fvModels,code/build_hccb_dense_cht_p418_matrix.py,稳态网络的三个工况输入以及瞬态源/目标工况输入,完整5x4x3共60组
+边界条件,冷却壁温度,T_wall,P425,635 K,0/fluid/T::coolingWall;0/solid/T::coolingWall,code/hccb_p418_regional_cht_adapter.py,物理边界输入,流体和固体冷却壁使用同一温度
+边界条件,出口绝对压力,p_out,P426,0.12 MPa,0/fluid/p;0/fluid/p_rgh,code/hccb_p418_regional_cht_adapter.py,物理边界输入,密度和导热系数使用绝对压力
+边界条件,计算域与边界类型,"constant-temperature wall; symmetry; inlet; outlet",P427,"12.5dp x 12.5dp x 10dp source domain; current local crop uses the reported boundary families",boundary files,code/hccb_p418_regional_cht_adapter.py,边界类别和区域图边类型,当前精细局部域不是原文完整尺寸
+氦气物性,密度,rho_f,P389,rho_f=480.19*p_MPa/T_K,constant/fluid/physicalProperties,code/hccb_source_backed_thermophysical.py,质量方程和流体储热项,压力输入为绝对Pa后在程序中转换为MPa
+氦气物性,动力黏度,mu_f,P070,mu=0.4646*T_K^0.66*1e-6 Pa s,constant/fluid/physicalProperties,code/hccb_source_backed_thermophysical.py,动量方程及压降物理关系,随局部温度变化
+氦气物性,导热系数,k_f,P071,k_f=0.1448*(T/273)^0.68*(1+2.5e-3*p_MPa^1.17*(T/273)^-1.85),constant/fluid/physicalProperties,code/hccb_source_backed_thermophysical.py,流体导热通量和能量方程,随局部温度和压力变化
+氦气物性,定压比热,c_p_f,P388,5200 J/kg/K,constant/fluid/physicalProperties::Cp,code/hccb_source_backed_thermophysical.py,流体焓和瞬态储热项,与OpenFOAM hConst焓定义一致
+Li4SiO4物性,颗粒导热系数,k_s,P092,1.42 W/m/K,constant/solid/physicalProperties::kappa,code/hccb_source_backed_thermophysical.py,颗粒导热通量和固体能量方程,当前保持常数
+Li4SiO4物性,颗粒密度,rho_s,P403,1526.4 kg/m3,constant/solid/physicalProperties::rho,code/hccb_source_backed_thermophysical.py,固体瞬态储热项,稳态温度场不依赖热容
+Li4SiO4物性,稳态算例字典比热,c_p_s_steady,P406,"(-5.33e-7*T_C^2+0.001925*T_C+1.238)*1000 J/kg/K",constant/solid/physicalProperties::Cv,code/build_hccb_pore_resolved_openfoam_steady_case.py,只用于满足稳态OpenFOAM材料字典,不进入12条正式热阶跃
+Li4SiO4物性,纯Li4SiO4焓关系,H(T)-H(298),P428,-17156+73.694*T+0.103210*T^2-4163115/T J/mol,constant/solid/physicalProperties,code/hccb_source_backed_thermophysical.py,定义热阶跃初态和储热关系,298--1300 K平滑关系
+Li4SiO4物性,纯Li4SiO4比热,c_p_s(T),P429;P430,"(73.694+0.206420*T+4163115/T^2)/0.119841 J/kg/K",constant/solid/physicalProperties,code/hccb_source_backed_thermophysical.py,固体瞬态储热项,摩尔质量按天然同位素组成换算
+Li4SiO4物性,二级相变温度,T_c1;T_c2,P431,938 K;996 K,step_case_metadata.json,code/hccb_source_backed_thermophysical.py,标记模型适用温区,平滑比热关系不解析相变峰
+物性适用范围,氦气物性表温度范围,T_range,P424,300--1000 K,constant/fluid/physicalProperties,code/build_hccb_openfoam_helium_property_table.py,限制训练和预测温度范围,不产生额外入口工况
+稳态方程,质量守恒,div(rho_f*u)=0,P070;P389,使用文献氦气密度和黏度关系,fluid finite-volume faces,code/hccb_p418_regional_cht_adapter.py;code/hccb_p418_conservative_mixed_operator.py,区域质量收支损失和质量流输出,按有向有限体积面求和
+稳态方程,流体能量守恒,"div(rho_f*u*h_f)-div(k_f*grad(T_f))=0",P071;P388;P389,使用文献氦气导热系数密度和比热,fluid finite-volume faces,code/hccb_p418_regional_cht_adapter.py,区域流体能量损失和热流输出,焓按Cp*(T-Tref)计算
+稳态方程,固体能量守恒,"-div(k_s*grad(T_s))-q'''=0",P092;P418,使用文献颗粒导热系数和体积热源,solid finite-volume faces;constant/solid/fvModels,code/hccb_p418_regional_cht_adapter.py,区域固体能量损失和颗粒热流输出,体积热源只施加于固体区
+耦合条件,流固界面温度与热流连续,"T_f=T_s; q_f+q_s=0",P071;P092,流体与颗粒采用各自文献导热系数,fluid_to_solid;solid_to_fluid mapped interface,code/hccb_p418_regional_cht_adapter.py,界面温差与热流互反损失,两侧面通过原始OpenFOAM映射连接
+瞬态方程,流体储热,"d(rho_f*h_f)/dt+d(rho_f*K)/dt-dp/dt; K=|U|^2/2",P388;P389,温度和绝对压力相关密度;常数比热焓;目标工况速度压力场,fluid transient energy,code/hccb_p418_transient_regional_physics.py,OpenFOAM-13守恒焓方程的储热与压力功,时间导数在实际不等间隔输出时刻上用三点二阶公式;另保留固定OpenFOAM面质量流对应的div(phi*K)
+瞬态方程,固体储热,"rho_s*d(e_s(T_s))/dt",P403;P428;P429;P430;P431,纯Li4SiO4量热焓积分关系,solid transient energy,code/hccb_p418_transient_regional_physics.py,OpenFOAM固体内能方程的储热项,de_s/dT等于P429比热;接近938 K和996 K时单独说明平滑关系限制;时间导数使用不等间隔三点二阶公式
+全耦合瞬态方程,连续性,"d(rho_f)/dt+div(rho_f*u)=0",P389,密度随局部绝对压力和温度更新,fluid transient continuity,code/hccb_p418_fully_coupled_transient_physics.py,全耦合模型的连续性关系,密度储存项与稳态有限体积质量余量相加
+全耦合瞬态方程,动量,"d(rho_f*u)/dt+div(rho_f*u*u)+grad(p)-div(tau)=0",P070;P389,使用同一氦气密度和温度相关动力黏度,fluid transient momentum,code/hccb_p418_fully_coupled_transient_physics.py;code/hccb_steady_momentum_residual.py,全耦合模型的三分量动量关系,瞬态动量储存项与同一面质量流构成的对流压力和黏性项相加
+全耦合瞬态方程,总焓与动能,"d[rho_f*(h_f+K)]/dt-dp/dt+div[rho_f*u*(h_f+K)]-div(k_f*grad(T_f))=0",P071;P388;P389,密度导热系数和焓均由已登记文献关系计算,fluid transient energy,code/hccb_p418_fully_coupled_transient_physics.py;code/hccb_p418_transient_regional_physics.py,全耦合模型的流体能量关系,焓和动能使用同一个随时间变化的面质量流 压力功按OpenFOAM-13守恒焓形式保留
+全耦合瞬态方程,面质量流一致性,"m_dot_f=(rho_f*u)_f dot S_f",P389,用局部密度速度和实际面面积向量重建,fluid internal and boundary faces,code/hccb_p418_fully_coupled_transient_physics.py;code/openfoam13_face_flux_reconstruction.py,面质量流预测与单元状态之间的一致性关系,内部面和边界面分别报告 不增加拟合物理参数

@@ -1,0 +1,48 @@
+{
+  "status": "p418_repository_metadata_draft",
+  "title": "Transient conjugate heat transfer in internally heated ceramic pebble beds: pore-resolved reference fields and graph–Transformer prediction",
+  "upload_type": "dataset",
+  "description": "Reproducible inputs, processing programs, compact figure data and selected predictions for pore-resolved conjugate heat transfer and reduced-order modelling of internally heated ceramic pebble beds.",
+  "creators": [
+    {
+      "name": "Wang, Jian",
+      "affiliation": "Anhui University of Science and Technology; Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences"
+    },
+    {
+      "name": "Wen, Wei",
+      "affiliation": "Anhui University of Science and Technology; Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences"
+    },
+    {
+      "name": "Shen, Gang",
+      "affiliation": "Anhui University of Science and Technology"
+    },
+    {
+      "name": "Lei, Mingzhun",
+      "affiliation": "Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences"
+    },
+    {
+      "name": "Song, Yuntao",
+      "affiliation": "Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences"
+    }
+  ],
+  "keywords": [
+    "solid-breeder blanket",
+    "ceramic pebble bed",
+    "conjugate heat transfer",
+    "OpenFOAM",
+    "physics-informed neural network",
+    "graph Transformer",
+    "diffusion refinement"
+  ],
+  "access_right": "open",
+  "software_license": "MIT",
+  "data_license": "cc-by-4.0",
+  "pending_author_fields": [],
+  "assigned_after_deposition": [
+    "repository_url",
+    "repository_doi",
+    "publication_date",
+    "version"
+  ],
+  "notes": "This is a preparation record, not a Zenodo deposition payload. The author-confirmed licences are recorded, while no DOI or repository URL is invented before deposition."
+}

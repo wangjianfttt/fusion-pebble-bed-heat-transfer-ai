@@ -1,0 +1,121 @@
+{
+  "title": "P418 high-Re operating-combination independent thermal-step test",
+  "purpose": "Test a frozen transient model on high-inlet-Re operating combinations that are not among the twelve main thermal-step trajectories, without inventing new operating values.",
+  "source_parameter_id": "P418",
+  "source_title": "Pore-scale simulation on flow and heat transfer characteristics in packed beds with internal heat sources at low Reynolds numbers",
+  "source_doi": "https://doi.org/10.1016/j.ijheatmasstransfer.2023.124325",
+  "analysis_kind": "independent_high_re_test",
+  "data_role": "frozen_model_independent_test_only",
+  "base_thermal_step_plan": "parameters/hccb_p418_transient_step_plan.json",
+  "transient_model": "thermal_step_with_quasi_steady_target_hydrodynamics",
+  "initial_state_rule": "Use each source condition's completed steady-iteration-200 temperatures and each target condition's steady-iteration-200 velocity, pressure and conservative face-flow fields. The label 200 is not physical seconds.",
+  "target_boundary_rule": "Switch exactly one input to another endpoint in the published P418 5 x 4 x 3 operating matrix.",
+  "hydrodynamic_rule": "Use the same fixed-target-hydrodynamics approximation and the same numerical time schedule as the twelve main thermal-step trajectories.",
+  "numerical_time_design": {
+    "duration_s": 300,
+    "delta_t_s": 1e-05,
+    "time_step_schedule": [
+      {
+        "start_s": 0,
+        "end_s": 0.1,
+        "delta_t_s": 1e-05
+      },
+      {
+        "start_s": 0.1,
+        "end_s": 1,
+        "delta_t_s": 0.0005
+      },
+      {
+        "start_s": 1,
+        "end_s": 25,
+        "delta_t_s": 0.01
+      },
+      {
+        "start_s": 25,
+        "end_s": 300,
+        "delta_t_s": 0.125
+      }
+    ],
+    "field_write_interval_s": 25,
+    "field_write_schedule": [
+      {
+        "start_s": 0,
+        "end_s": 0.1,
+        "interval_s": 0.005
+      },
+      {
+        "start_s": 0.1,
+        "end_s": 1,
+        "interval_s": 0.1
+      },
+      {
+        "start_s": 1,
+        "end_s": 5,
+        "interval_s": 0.4
+      },
+      {
+        "start_s": 5,
+        "end_s": 25,
+        "interval_s": 4
+      },
+      {
+        "start_s": 25,
+        "end_s": 300,
+        "interval_s": 25
+      }
+    ],
+    "ddt_scheme": "Euler",
+    "write_control": "runTime",
+    "origin": "Copied without change from the predeclared main P418 thermal-step plan."
+  },
+  "model_use": {
+    "allowed_for_training": false,
+    "allowed_for_normalization": false,
+    "allowed_for_checkpoint_selection": false,
+    "allowed_for_architecture_selection": false,
+    "allowed_for_loss_weight_selection": false,
+    "allowed_for_pod_basis": false,
+    "allowed_for_diffusion_training": false,
+    "evaluation_rule": "Read these curves only after the main model, normalization, epoch, rank and loss settings have been fixed from the original training and validation curves."
+  },
+  "new_physical_parameters": [],
+  "sequences": [
+    {
+      "sequence_id": "high_re_velocity_up_T300_q6p85",
+      "family": "inlet_velocity_step",
+      "source_condition_id": "u0p05_T300_q6p85",
+      "target_condition_id": "u0p25_T300_q6p85"
+    },
+    {
+      "sequence_id": "high_re_velocity_down_T300_q6p85",
+      "family": "inlet_velocity_step",
+      "source_condition_id": "u0p25_T300_q6p85",
+      "target_condition_id": "u0p05_T300_q6p85"
+    },
+    {
+      "sequence_id": "high_re_temperature_up_u0p25_q6p85",
+      "family": "inlet_temperature_step",
+      "source_condition_id": "u0p25_T300_q6p85",
+      "target_condition_id": "u0p25_T900_q6p85"
+    },
+    {
+      "sequence_id": "high_re_temperature_down_u0p25_q6p85",
+      "family": "inlet_temperature_step",
+      "source_condition_id": "u0p25_T900_q6p85",
+      "target_condition_id": "u0p25_T300_q6p85"
+    },
+    {
+      "sequence_id": "high_re_source_up_u0p25_T300",
+      "family": "solid_heat_source_step",
+      "source_condition_id": "u0p25_T300_q4p85",
+      "target_condition_id": "u0p25_T300_q8p85"
+    },
+    {
+      "sequence_id": "high_re_source_down_u0p25_T300",
+      "family": "solid_heat_source_step",
+      "source_condition_id": "u0p25_T300_q8p85",
+      "target_condition_id": "u0p25_T300_q4p85"
+    }
+  ],
+  "scientific_scope": "The six curves test unseen high-flow operating combinations within the published P418 matrix. Some endpoint states also occur in the main twelve-curve study, so this is a trajectory-combination test rather than a claim of wholly unseen physical states. The inlet particle Re, Pr and Pe are derived descriptors of the published endpoints, not additional model inputs or fitted parameters."
+}

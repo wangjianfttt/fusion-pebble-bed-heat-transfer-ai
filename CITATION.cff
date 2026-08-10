@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use these data or programs, please cite the associated manuscript and archived dataset."
+title: "Transient conjugate heat transfer in internally heated ceramic pebble beds: pore-resolved reference fields and graph–Transformer prediction"
+type: software
+license: MIT
+authors:
+  - family-names: Wang
+    given-names: Jian
+    affiliation: "Anhui University of Science and Technology; Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences"
+  - family-names: Wen
+    given-names: Wei
+    affiliation: "Anhui University of Science and Technology; Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences"
+  - family-names: Shen
+    given-names: Gang
+    affiliation: "Anhui University of Science and Technology"
+  - family-names: Lei
+    given-names: Mingzhun
+    affiliation: "Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences"
+  - family-names: Song
+    given-names: Yuntao
+    affiliation: "Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences"
+abstract: >-
+  Reproducible inputs, processing programs, compact figure data and selected
+  predictions for pore-resolved conjugate heat transfer and reduced-order
+  modelling of internally heated ceramic pebble beds.
+keywords:
+  - ceramic pebble bed
+  - conjugate heat transfer
+  - OpenFOAM
+  - graph Transformer
+  - physics-informed neural network
+  - diffusion refinement

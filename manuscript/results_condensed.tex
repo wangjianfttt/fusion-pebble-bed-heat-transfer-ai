@@ -1,0 +1,195 @@
+\subsection{Reference heat-transfer response}
+
+Figure~\ref{fig:physical_response} summarizes the resolved thermal and
+hydraulic response over the 60-condition matrix.
+
+\IfFileExists{../figures/hccb_p418_physical_response.pdf}{%
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{../figures/hccb_p418_physical_response.pdf}
+\caption{Pore-resolved response across 60 conditions. (a) Pressure drop.
+(b)--(d) Outlet-temperature rise, maximum solid temperature and normalized
+signed wall heat; lines show medians and bands the sampled range.
+(e) Inlet temperature at wall-heat reversal. (f) Mass and energy differences.}
+\label{fig:physical_response}
+\end{figure}
+}{}
+
+\IfFileExists{generated_steady_physics_text.tex}{%
+\input{generated_steady_physics_text}}{}
+
+\IfFileExists{generated_steady_final_windows.tex}{%
+\input{generated_steady_final_windows}}{}
+
+\IfFileExists{generated_mesh_sensitivity.tex}{%
+\input{generated_mesh_sensitivity}
+
+The three-grid comparison separates integral thermal convergence from local
+hydraulic and wall-heat sensitivity. The fine-grid GCI is 1.96\% for outlet
+temperature change, but 37.2\% for pressure drop and 86.7\% for signed
+cooling-wall heat fraction. The maximum-solid-temperature change is close to
+zero and changes sign across the three grids, so a percentage GCI is not
+reported for that quantity. The common fine mesh therefore supports the
+temperature-field model comparison, while pressure loss and wall heat are
+retained as explicitly mesh-sensitive observables.}{}
+
+\IfFileExists{generated_scope_limits.tex}{%
+\input{generated_scope_limits}}{%
+The fixed-flow time-step study gave maximum medium-to-fine thermal-curve
+differences below 0.043\%. Fully coupled startup calculations left the
+specified helium-property pressure range before \SI{0.002}{s}; the model
+results therefore concern thermal evolution with a prescribed hydrodynamic
+field.}
+
+\IfFileExists{generated_final_uncertainty_text.tex}{%
+\input{generated_final_uncertainty_text}}{}
+
+\subsection{External consistency checks}
+
+\IfFileExists{../figures/hccb_heat_ai_external_evidence.pdf}{%
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{../figures/hccb_heat_ai_external_evidence.pdf}
+\caption{External comparisons: (a) PREMUX thermocouple temperatures,
+(b) TESOMEX radial profiles, (c) HELOKA Nusselt numbers and (d) pressure
+gradients in \SI{1}{mm} helium-cooled beds
+\cite{hernandez2017premux,mohammed2018tesomex,abousena2023hcpb,
+cheng2024pressure,liu2024unitary}. The data are not training labels.}
+\label{fig:external_evidence}
+\end{figure}
+}{}
+
+Figure~\ref{fig:external_evidence} compares independent thermal and hydraulic
+measurements with the calculations. PREMUX and TESOMEX expose temperature
+structure missed by reduced one- and two-dimensional descriptions. HELOKA and
+fixed-bed data support the adopted convective and hydraulic scales, with mean
+or median absolute relative errors of 3.9\% and 3.7\%, respectively. These
+comparisons do not validate the specific three-dimensional packing.
+
+\subsection{Sensitivity to pebble arrangement}
+
+Nine matched conditions were recalculated on an independently generated
+spherical-pebble arrangement. Relative to the source arrangement, the absolute
+change is at most 0.67\% for outlet temperature and 0.31\% for maximum solid
+temperature, but 14.7--18.0\% for pressure drop. Thus the integral thermal
+response is comparatively robust for these two arrangements, whereas the
+hydraulic response remains strongly geometry dependent
+(Fig.~\ref{fig:cross_packing_integral}).
+
+\IfFileExists{../figures/hccb_p418_seed202_integral_9.pdf}{%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{../figures/hccb_p418_seed202_integral_9.pdf}
+\caption{Packing sensitivity at nine matched conditions. (a)--(c) Outlet
+temperature, maximum solid temperature and pressure drop for seed101 and
+seed202; the dashed line denotes parity, colours encode inlet temperature and
+symbols encode inlet velocity. (d) Relative changes on a symmetric-logarithmic
+axis (linear within $\pm1\%$); diamonds mark nine-condition means.
+All points are direct calculations at the 200th steady nonlinear iteration.}
+\label{fig:cross_packing_integral}
+\end{figure}
+}{}
+
+\IfFileExists{generated_steady_model_comparison_validated.tex}{%
+\subsection{Prediction of unseen steady conditions}
+Figure~\ref{fig:steady_model_comparison} compares all steady models on the
+same complete-condition splits and physical quantities.
+\IfFileExists{../figures/hccb_p418_steady_model_comparison.pdf}{%
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{../figures/hccb_p418_steady_model_comparison.pdf}
+\caption{Steady prediction on five complete-condition splits. Response-surface,
+PINN, graph-operator and Physics-Attention models use identical temperature,
+pressure, wall-heat and finite-volume balance measures.}
+\label{fig:steady_model_comparison}
+\end{figure}
+}{}
+
+\IfFileExists{generated_steady_performance.tex}{%
+\input{generated_steady_performance}}{}
+\IfFileExists{generated_steady_result_text.tex}{%
+\input{generated_steady_result_text}}{}
+}{}
+
+\subsection{Prediction of held-out thermal trajectories}
+
+Complete trajectories, rather than isolated time points, are withheld from
+training and model selection. Persistence, DMDc, POD correction, diffusion
+refinement and data-only or physics-constrained graph--Transformers are tested
+on the same four endpoint pairs. Two temperature steps also withhold both
+steady endpoints, testing the complete frozen steady-to-transient chain.
+
+\IfFileExists{generated_transient_model_comparison_validated.tex}{}{%
+\IfFileExists{generated_regional_dynamics_text.tex}{%
+\input{generated_regional_dynamics_text}}{}
+}
+
+\IfFileExists{generated_transient_model_comparison_validated.tex}{%
+\IfFileExists{../figures/hccb_p418_transient_model_comparison.pdf}{%
+Figure~\ref{fig:transient_model_comparison} summarizes the resulting accuracy,
+finite-volume energy consistency and acceleration.
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{../figures/hccb_p418_transient_model_comparison.pdf}
+\caption{Held-out thermal-trajectory prediction after validation-only model
+and loss-weight selection. (a)--(d) Representative solid-temperature
+responses. (e) Temperature error versus finite-volume energy-equation RMSE
+after projection onto the common regional basis. (f) Accuracy versus
+complete-chain speed-up relative to 32-rank \OpenFOAM{}; training and
+data-generation costs are reported separately.}
+\label{fig:transient_model_comparison}
+\end{figure}
+}{}
+}{}
+
+% The validated marker below supplies these values.  Empty fallbacks keep old
+% preview metrics out of the manuscript source and are never typeset without
+% that marker.
+\providecommand{\PFieldModelLabel}{}
+\providecommand{\PFieldFluidRMSE}{}
+\providecommand{\PFieldSolidRMSE}{}
+\providecommand{\PFieldFluidMaxError}{}
+\providecommand{\PFieldSolidMaxError}{}
+\IfFileExists{generated_openfoam_model_field_comparison_validated.tex}{%
+\input{generated_openfoam_model_field_comparison_validated}
+\IfFileExists{../figures/hccb_p418_openfoam_model_field_comparison.pdf}{%
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth,height=0.76\textheight,keepaspectratio]{../figures/hccb_p418_openfoam_model_field_comparison.pdf}
+\caption{Regionalized OpenFOAM--model temperatures at \SI{25}{s} for an
+independent test heat-source increase; the model was selected using validation trajectories only.
+Rows: reference, \PFieldModelLabel{} prediction and
+signed error; columns: fluid and solid phases. Reference and prediction
+share a scale. Error colours are clipped at the 99th percentile; annotated
+extrema and metrics are unclipped. Section interpolation is visual only;
+metrics use the original regional nodes.}
+\label{fig:field_cloud_comparison}
+\end{figure}
+
+The full regional-field fluid/solid RMSE in
+Fig.~\ref{fig:field_cloud_comparison} is
+\SI{\PFieldFluidRMSE}{K}/\SI{\PFieldSolidRMSE}{K}, and the corresponding
+maximum absolute errors are \SI{\PFieldFluidMaxError}{K} and
+\SI{\PFieldSolidMaxError}{K}.  These maxima are reported without colour-scale
+clipping, so the figure distinguishes representative spatial fidelity from
+isolated extreme errors rather than reporting only an averaged score.
+}{}
+}{}
+
+\IfFileExists{generated_transient_performance.tex}{%
+\input{generated_transient_performance}}{}
+\IfFileExists{generated_transient_result_text.tex}{%
+\input{generated_transient_result_text}}{}
+\IfFileExists{generated_fused_chain_text.tex}{%
+
+\input{generated_fused_chain_text}}{}
+\IfFileExists{generated_high_re_comparison.tex}{%
+The three frozen graph--Transformer variants were additionally evaluated on
+six independent high-velocity histories that were excluded from training,
+normalization and model selection.  Their aggregate fluid/solid temperature
+RMSE values are 122.6--\SI{123.9}{K} and
+116.2--\SI{117.7}{K}, respectively; the fixed-weight physical residuals
+do not improve this transfer.  Source steps remain within \SIrange{3.2}{6.3}{K}
+and velocity steps within \SIrange{14.8}{21.0}{K}, whereas temperature steps
+produce \SIrange{198.8}{215.9}{K}.  The dominant limitation is therefore
+temperature-range extrapolation rather than flow-rate transfer alone.}{}

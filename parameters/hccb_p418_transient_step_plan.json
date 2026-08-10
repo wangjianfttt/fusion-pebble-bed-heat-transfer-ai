@@ -1,0 +1,51 @@
+{
+  "purpose": "Define thermal step-response calculations between converged P418 operating points without inventing new boundary values.",
+  "source_parameter_id": "P418",
+  "source_title": "Pore-scale simulation on flow and heat transfer characteristics in packed beds with internal heat sources at low Reynolds numbers",
+  "source_doi": "https://doi.org/10.1016/j.ijheatmasstransfer.2023.124325",
+  "transient_model": "thermal_step_with_quasi_steady_target_hydrodynamics",
+  "initial_state_rule": "Use each source condition's completion-marker steady iteration 200 endpoint for fluid and solid temperatures, and each target condition's own completion-marker steady iteration 200 endpoint for U, p and p_rgh at physical t=0. Both regions use steadyState ddt schemes in the 60-case matrix, so the label 200 is an iteration index rather than 200 s.",
+  "target_boundary_rule": "Use the exact inlet velocity, inlet temperature and solid heat source of target_condition_id.",
+  "hydrodynamic_rule": "Hold the converged target velocity and pressure fields fixed while the coupled fluid and solid energy equations evolve in time. The velocity and pressure adjustment itself is not solved, but the temperature equations retain advection by the frozen conservative face flux and therefore use a separately refined early-time numerical step.",
+  "time_scale_basis": "The cited geometry uses a 10dp packed region plus 10dp inlet and outlet extensions with dp=1 mm (P048 and P427). Across the P418 inlet range, L/u is 0.04-0.20 s for the packed region and 0.12-0.60 s for the full source domain. The corrected local crop gives 0.0059-0.0293 s from its resolved flow span and area-preserving pore velocity, while P048/P092/P403/P429/P430 give a 0.408-0.593 s particle radial conduction scale. The staged numerical steps resolve the initial advective temperature redistribution, the particle-scale thermal response and the late bed response separately. These scales are derived checks, not fitted physical parameters.",
+  "numerical_time_design": {
+    "duration_s": 300,
+    "delta_t_s": 0.00001,
+    "time_step_schedule": [
+      {"start_s": 0, "end_s": 0.1, "delta_t_s": 0.00001},
+      {"start_s": 0.1, "end_s": 1, "delta_t_s": 0.0005},
+      {"start_s": 1, "end_s": 25, "delta_t_s": 0.01},
+      {"start_s": 25, "end_s": 300, "delta_t_s": 0.125}
+    ],
+    "field_write_interval_s": 25,
+    "field_write_schedule": [
+      {"start_s": 0, "end_s": 0.1, "interval_s": 0.005},
+      {"start_s": 0.1, "end_s": 1, "interval_s": 0.1},
+      {"start_s": 1, "end_s": 5, "interval_s": 0.4},
+      {"start_s": 5, "end_s": 25, "interval_s": 4},
+      {"start_s": 25, "end_s": 300, "interval_s": 25}
+    ],
+    "ddt_scheme": "Euler",
+    "write_control": "runTime",
+    "origin": "The listed 300 s duration is a candidate upper observation window, not an accepted duration and not inherited from the steady iteration label 200. A representative three-level time-step calculation is first evaluated over 25 physical seconds. The formal observation duration will be fixed from that computed response: it is extended only if outlet, solid-temperature or heat-balance changes remain scientifically relevant after 25 s. The early stages resolve the local advective crossing and particle radial-conduction scales; numerical resolution choices are not material or operating parameters."
+  },
+  "time_step_sensitivity_file": "parameters/hccb_p418_thermal_step_timestep_sensitivity.json",
+  "time_resolution_analysis": "results/hccb_p418_transient_time_resolution/summary.json",
+  "velocity_step_time_scale_analysis": "results/hccb_p418_velocity_step_time_scales/summary.json",
+  "new_physical_parameters": [],
+  "sequences": [
+    {"sequence_id": "temperature_up_u0p05_q6p85", "family": "inlet_temperature_step", "source_condition_id": "u0p05_T300_q6p85", "target_condition_id": "u0p05_T900_q6p85"},
+    {"sequence_id": "temperature_down_u0p05_q6p85", "family": "inlet_temperature_step", "source_condition_id": "u0p05_T900_q6p85", "target_condition_id": "u0p05_T300_q6p85"},
+    {"sequence_id": "temperature_up_u0p15_q6p85", "family": "inlet_temperature_step", "source_condition_id": "u0p15_T300_q6p85", "target_condition_id": "u0p15_T900_q6p85"},
+    {"sequence_id": "temperature_down_u0p15_q6p85", "family": "inlet_temperature_step", "source_condition_id": "u0p15_T900_q6p85", "target_condition_id": "u0p15_T300_q6p85"},
+    {"sequence_id": "velocity_up_T500_q6p85", "family": "inlet_velocity_step", "source_condition_id": "u0p05_T500_q6p85", "target_condition_id": "u0p25_T500_q6p85"},
+    {"sequence_id": "velocity_down_T500_q6p85", "family": "inlet_velocity_step", "source_condition_id": "u0p25_T500_q6p85", "target_condition_id": "u0p05_T500_q6p85"},
+    {"sequence_id": "velocity_up_T900_q6p85", "family": "inlet_velocity_step", "source_condition_id": "u0p05_T900_q6p85", "target_condition_id": "u0p25_T900_q6p85"},
+    {"sequence_id": "velocity_down_T900_q6p85", "family": "inlet_velocity_step", "source_condition_id": "u0p25_T900_q6p85", "target_condition_id": "u0p05_T900_q6p85"},
+    {"sequence_id": "source_up_u0p15_T300", "family": "solid_heat_source_step", "source_condition_id": "u0p15_T300_q4p85", "target_condition_id": "u0p15_T300_q8p85"},
+    {"sequence_id": "source_down_u0p15_T300", "family": "solid_heat_source_step", "source_condition_id": "u0p15_T300_q8p85", "target_condition_id": "u0p15_T300_q4p85"},
+    {"sequence_id": "source_up_u0p15_T700", "family": "solid_heat_source_step", "source_condition_id": "u0p15_T700_q4p85", "target_condition_id": "u0p15_T700_q8p85"},
+    {"sequence_id": "source_down_u0p15_T700", "family": "solid_heat_source_step", "source_condition_id": "u0p15_T700_q8p85", "target_condition_id": "u0p15_T700_q4p85"}
+  ],
+  "scientific_scope": "Computed coupled fluid-solid thermal responses on one fixed pebble packing after a quasi-steady change of the hydrodynamic field. They test thermal dynamics across published operating endpoints. They do not resolve the first sub-second momentum transient, pressure-wave propagation, temperature-to-flow feedback, buoyancy-driven flow, pebble motion, experimental validation or accident scenarios."
+}

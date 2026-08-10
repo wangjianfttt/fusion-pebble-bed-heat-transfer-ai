@@ -1,0 +1,5 @@
+Pore-resolved conjugate heat transfer spans 60 internally heated bed states.
+Twelve complete thermal steps test unseen conditions and trajectory pairs.
+Graph-Transformer models are tested with regional energy and interface flux.
+External Nusselt and pressure-gradient errors are 3.87% and 3.71%.
+Independent packing changes pressure drop more than integral temperatures.

@@ -1,0 +1,45 @@
+{
+  "status": "p418_matched_initial_direct_transport_representative_scope_limit_public",
+  "source_record_sha256": "8d8b40fecdc18c2ebca59390037a154ede583fe1e58d5702d9f9d5c20cb8324a",
+  "job_id": 18963,
+  "sequence_id": "source_up_u0p15_T700",
+  "scientific_scope": "single representative 0.01 s fully coupled short run; not a formal twelve-case result",
+  "slurm": {
+    "state": "FAILED",
+    "exit_code": "1:0",
+    "elapsed": "01:59:22"
+  },
+  "last_logged_physical_time_s": 0.0015220808,
+  "last_logged_max_courant": 0.1998820548,
+  "last_32_rank_common_complete_time_s": 0.000999952,
+  "common_complete_file_contract": {
+    "mpi_ranks": 32,
+    "files_per_rank": [
+      "fluid/T",
+      "fluid/U",
+      "fluid/p",
+      "fluid/p_rgh",
+      "fluid/phi",
+      "solid/T",
+      "uniform/time"
+    ],
+    "verified_file_count": 224
+  },
+  "failure": {
+    "type": "solid_Cv_nonuniform_table_temperature_out_of_range",
+    "query_temperature_K": 1308.759277,
+    "table_lower_limit_K": 298.0,
+    "table_upper_limit_K": 1300.0,
+    "foam_fatal": true,
+    "mpi_abort": true,
+    "nan": false,
+    "nonpositive_transport_input": false,
+    "segmentation_fault": false
+  },
+  "openfoam_end_present": false,
+  "completion_marker_present": false,
+  "observable_export_summary_present": false,
+  "observable_signal_count": 0,
+  "automatic_timeout_continuation_allowed": false,
+  "new_physical_parameters": []
+}

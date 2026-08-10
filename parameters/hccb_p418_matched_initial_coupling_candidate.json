@@ -1,0 +1,20 @@
+{
+  "status": "candidate_preflight_only_not_approved_for_solver",
+  "title": "Matched-initial-state fixed-flow versus fully coupled comparison",
+  "scientific_question": "How much does time-dependent hydrodynamic feedback change the thermal step response when both calculations start from exactly the same three-dimensional state?",
+  "fixed_flow_reference": "The existing P418 fixed-flow step cases use target-endpoint U, p, p_rgh and phi together with source-endpoint fluid and solid temperature fields.",
+  "fully_coupled_candidate": "Use byte-identical time-zero fields and target boundary conditions, but enable continuity and momentum together with the two energy equations after t=0.",
+  "reason": "The previous source-flow initialization mixed hydrodynamic feedback with a large inlet/interior flow mismatch, especially for the 0.05 to 0.25 m/s velocity step.",
+  "representative_sequence_first": "source_up_u0p15_T700",
+  "representative_sequence_reason": "The source step changes heat generation while inlet velocity is unchanged, providing the cleanest first check of flow-thermal feedback.",
+  "preparer": "code/prepare_hccb_p418_matched_initial_fully_coupled_candidate.py",
+  "required_pre_solver_checks": [
+    "all six time-zero fields are byte-identical between fixed-flow and fully coupled cases",
+    "fluid and solid transient schemes use Euler",
+    "flow and momentumPredictor are enabled only in the fully coupled candidate",
+    "mesh, material properties, boundary values and heat source remain unchanged",
+    "the OpenFOAM solver is not called during preparation"
+  ],
+  "formal_twelve_curve_execution_approved": false,
+  "new_physical_parameters": []
+}

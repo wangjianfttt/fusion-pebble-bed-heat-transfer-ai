@@ -1,0 +1,24 @@
+{
+  "purpose": "Verify transient Li4SiO4 thermo and field mapping on two completed P418 endpoints without running a new solver case.",
+  "source_parameter_id": "P418",
+  "source_title": "Pore-scale simulation on flow and heat transfer characteristics in packed beds with internal heat sources at low Reynolds numbers",
+  "source_doi": "https://doi.org/10.1016/j.ijheatmasstransfer.2023.124325",
+  "numerical_time_design": {
+    "duration_s": 2,
+    "delta_t_s": 1,
+    "field_write_interval_s": 1,
+    "ddt_scheme": "Euler",
+    "write_control": "runTime",
+    "origin": "Two-step initialization check only; no physical result is reported."
+  },
+  "new_physical_parameters": [],
+  "sequences": [
+    {
+      "sequence_id": "temperature_up_u0p05_q8p85_initialization_check",
+      "family": "inlet_temperature_step_initialization_check",
+      "source_condition_id": "u0p05_T300_q8p85",
+      "target_condition_id": "u0p05_T900_q8p85"
+    }
+  ],
+  "scientific_scope": "Initialization and thermo-file check on completed computed endpoints; not a transient heat-transfer result."
+}

@@ -1,0 +1,625 @@
+{
+  "purpose": "Record the published algorithm settings considered for the P418 pore-scale CHT model comparison. These are numerical model settings, not physical pebble-bed parameters.",
+  "physical_parameter_rule": "Operating conditions, material properties and boundary conditions remain those listed in literature_parameter_manifest.csv and hccb_p418_model_splits.json. No neural-network setting is allowed to alter them.",
+  "domain_specific_pinn_precedents": [
+    {
+      "paper": "Physics-Informed Neural Networks for Inversion of the Macroscopic Transport Parameters in Packed Bed",
+      "venue": "Chemical Engineering Transactions 114 (2024) 403-408",
+      "doi": "10.3303/CET24114068",
+      "paper_url": "https://www.cetjournal.it/index.php/cet/article/view/CET24114068",
+      "local_source_pdf": "literature/raw/algorithm_candidates/Wang_2024_PINN_macroscopic_transport_packed_bed.pdf",
+      "local_source_pdf_sha256": "c0bf787bad8622db608404407b4d4449b1c667d3316856571f5a7ee999d1b10a",
+      "local_text": "logs/pdf_text/Wang_2024_PINN_macroscopic_transport_packed_bed.txt",
+      "local_text_sha256": "2d2f4080524a14b6664dcfd6276438a1d0d3d4567d1d9b6617316542c58c26ac",
+      "physical_problem": "Two-dimensional HCCB packed-bed-scale inversion of effective permeability and effective thermal conductivity from pore-scale pressure and temperature fields.",
+      "reported_method": "A coordinate fully connected PINN maps (x,y) to (u,v,p,T), treats effective permeability and effective thermal conductivity as trainable quantities, uses tanh and Adam, and runs for 60000 epochs.",
+      "reported_training_data": "2000 outlet velocity points and 10000 packed-bed pressure/temperature points.",
+      "reported_loss_weights": "Equation weights 1e3, 1 and 1e-19; overall PDE and data weights 1 and 1e4.",
+      "unreported_settings": [
+        "network depth",
+        "network width",
+        "learning rate",
+        "batch size",
+        "random seed"
+      ],
+      "use_in_this_project": "Direct domain precedent for using a PINN in HCCB packed-bed upscaling. It supports the choice of a coordinate-PINN baseline, but its unreported network settings are not invented or copied.",
+      "not_used_as": [
+        "a source of the present network depth or width",
+        "an external accuracy result for the present 3D model",
+        "a source of new pebble-bed physical parameters"
+      ]
+    },
+    {
+      "paper": "Physics-informed neural networks for effective diffusion characteristics inversion in packed bed at low flow rates",
+      "venue": "International Journal of Heat and Mass Transfer 244 (2025) 126970",
+      "doi": "10.1016/j.ijheatmasstransfer.2025.126970",
+      "paper_url": "https://www.sciencedirect.com/science/article/pii/S0017931025003114",
+      "local_source_pdf": "literature/raw/algorithm_candidates/Wang_2025_PINN_effective_diffusion_packed_bed.pdf",
+      "local_source_pdf_sha256": "4297bf9ce42133cd786ecf7e82a27064c4dc2451d9a03a51a899afb6d4d21c70",
+      "local_text": "logs/pdf_text/Wang_2025_PINN_effective_diffusion_packed_bed.txt",
+      "local_text_sha256": "aa26432bf48109d9d4e22783c75597f158d3b0eb5313a832105a6babed15b83d",
+      "local_method_note": "literature/extracted/Wang_2025_packed_bed_PINN_diffusion_method_CN.md",
+      "physical_problem": "Two-dimensional low-Reynolds-number packed-bed inversion of effective diffusion and convection characteristics from pore-scale concentration fields.",
+      "reported_method": "A coordinate fully connected PINN maps (y,z) to concentration, treats the effective diffusion coefficient as trainable, uses tanh, Adam, normalized variables and 60000 epochs.",
+      "reported_training_data": "10000 packed-bed concentration points and 400 inlet/outlet boundary points.",
+      "reported_loss_weights": "Equation and boundary weights 1e9 and 1e-3 after grid search; overall PDE and data weights both equal one.",
+      "unreported_settings": [
+        "network depth",
+        "network width",
+        "learning rate",
+        "batch size",
+        "random seed"
+      ],
+      "use_in_this_project": "Direct evidence that packed-bed PINN inversion at low flow rates is an active scientific problem. It also shows why pore-scale stagnation and convection mismatch matter, but it does not cover 3D conjugate heat transfer, transient hotspots or transfer to a new packing.",
+      "not_used_as": [
+        "a heat-transfer validation dataset",
+        "a source of the present network depth or width",
+        "a source of new pebble-bed physical parameters"
+      ]
+    }
+  ],
+  "fully_coupled_loss_balancing": {
+    "groups": [
+      "dimensionless state data",
+      "dimensionless internal and boundary face mass flux data",
+      "dimensionless fully coupled finite-volume physics"
+    ],
+    "fixed_baseline": "Equal unit weights after training-only physical scaling and within-group averaging.",
+    "adaptive_method": "ReLoBRaLo equation (11), with the official two-step alpha schedule and checkpointed random lookback state.",
+    "paper": "Multi-Objective Loss Balancing for Physics-Informed Deep Learning",
+    "paper_url": "https://arxiv.org/abs/2110.09813",
+    "journal_doi": "10.1016/j.cma.2025.117914",
+    "official_code_url": "https://github.com/rbischof/relative_balancing",
+    "official_code_commit": "b3c76d2bed7c6bebb2e2628575008a04858472cf",
+    "recorded_candidates": "parameters/hccb_p418_loss_balancing_sources.json",
+    "implementation": "code/hccb_p418_loss_balancing.py",
+    "two_stage_runner": "code/run_hccb_p418_loss_balancing_protocol.py",
+    "selection_program": "code/select_hccb_p418_loss_balancing_method.py",
+    "selection_rule": "Four recorded candidates use identical data, architecture and seed. Validation uses the equal mean of the three dimensionless groups. Independent test curves are read only after one candidate is selected.",
+    "new_physical_parameters": []
+  },
+  "architecture_selection_boundary": {
+    "retained_now": [
+      "coordinate PINN as a classical physics-informed baseline",
+      "RIGNO-style regional graph operator for the unstructured two-region mesh",
+      "Transolver Physics-Attention for long-range physical coupling",
+      "temporal Transformer for engineering histories",
+      "published-component regional graph, Physics-Attention and temporal Transformer for full-field thermal histories",
+      "DMDc and snapshot POD as non-neural reduced comparisons",
+      "PDE-Refiner-style diffusion only for residual correction after a deterministic prediction"
+    ],
+    "not_added_now": [
+      {
+        "method": "SPINN",
+        "paper_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/4af827e7d0b7bdae6097d44977e87534-Abstract-Conference.html",
+        "reason": "Its per-axis separable computation is not a direct representation of the present unstructured conjugate fluid-solid regional graph."
+      },
+      {
+        "method": "LE-PDE",
+        "paper_url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/0f817dcbad81afb21fb695f1b2e55e44-Abstract-Conference.html",
+        "reason": "A learned nonlinear latent encoder and decoder would overlap the DMDc/POD question while only twelve physical step trajectories are available."
+      },
+      {
+        "method": "Radon neural operator",
+        "paper_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/e66233a208ef32f56df6312263239fa0-Abstract-Conference.html",
+        "reason": "A sinogram representation does not directly retain the present fluid-solid interface graph, unequal regional volumes and oriented finite-volume heat fluxes."
+      },
+      {
+        "method": "Porous-DeepONet and physics-informed DeepONet",
+        "paper_url": "https://www.sciencedirect.com/science/article/pii/S2095809924003904",
+        "doi": "10.1016/j.eng.2024.07.002",
+        "reason": "Porous-DeepONet is an important porous-structure solution-operator precedent, but its convolutional branch reads equal-spaced image-like structure fields. A separate branch-trunk formal model would require a common structured representation that the present unequal-volume fluid-solid regional graph does not provide, while only twelve physical step trajectories are available."
+      },
+      {
+        "method": "Voxel CNN/U-Net porous-field predictors",
+        "paper_url": "https://doi.org/10.1016/j.egyai.2024.100425",
+        "doi": "10.1016/j.egyai.2024.100425",
+        "reason": "CNN and U-Net predictors are strong for voxel or equal-grid porous fields and large lattice-Boltzmann datasets. The present comparison instead retains unequal regional volumes, fluid-solid interfaces, oriented face mass and heat fluxes, and changing connectivity between pebble packings without voxel interpolation."
+      },
+      {
+        "method": "UNO-PINO/FNO family",
+        "paper_url": "https://www.sciencedirect.com/science/article/pii/S0735193326014193",
+        "doi": "10.1016/j.icheatmasstransfer.2026.111898",
+        "official_code_url": "https://github.com/aoi-hiroshi/UNO-PINO",
+        "reason": "Finite-volume-constrained UNO-PINO is a relevant conservation precedent for two-dimensional steady heat conduction with discontinuous conductivity. The present task is three-dimensional transient fluid-solid conjugate heat transfer on irregular regional graphs; adding a formal UNO/FNO baseline would first require a common voxelized representation and enough physical trajectories to separate representation error from model error."
+      },
+      {
+        "method": "Graph-Physics temporal correction and local multi-node prediction",
+        "paper_url": "https://arxiv.org/abs/2605.01542",
+        "reason": "The public implementation contains both extensions, but every checked training configuration at the locked commit disables them. The present comparison therefore retains the already implemented temporal Transformer and finite-volume regional losses instead of adding an unverified sixth formal architecture."
+      }
+    ],
+    "revisit_condition": "Reconsider additional pretrained or latent architectures only after multiple packings or hundreds of physical trajectories become available; do not enlarge the present comparison using the same twelve trajectories."
+  },
+  "training_repeat_rule": {
+    "primary_seed": 20260717,
+    "strict_split": "pair_disjoint_stress_test",
+    "strict_split_seeds": [20260717, 20260718, 20260719],
+    "repeated_models": [
+      "observable Transformer",
+      "data-only graph-Transformer",
+      "physics-constrained graph-Transformer",
+      "snapshot-POD residual correction",
+      "PDE-Refiner-style diffusion residual correction"
+    ],
+    "reason": "Three training seeds are used on the strict endpoint-pair-disjoint split to measure initialization and training variability without tripling every directional comparison.",
+    "summary_script": "code/summarize_hccb_p418_step_seed_robustness.py",
+    "summary_script_sha256": "69b19d0910bd362c589ce07f2762836a5d36dddbe0640305d3ed4ee080987d0b"
+  },
+  "steady_training_repeat_rule": {
+    "primary_seed": 20260717,
+    "repeated_split": "interleaved_all_ranges",
+    "seeds": [20260717, 20260718, 20260719],
+    "repeated_models": [
+      "data-only coordinate PINN",
+      "physics-informed coordinate PINN",
+      "regional graph operator",
+      "Transolver Physics-Attention operator"
+    ],
+    "non_repeated_deterministic_model": "response surface",
+    "reason": "The main steady split is repeated with three independent initializations to measure neural-training variation. The four extrapolation splits retain the registered primary seed so that the complete five-split comparison is not tripled.",
+    "runner": "code/run_hccb_p418_steady_seed_robustness.sh",
+    "runner_sha256": "9d0f2df698bbebcd256810f00a809a2e70cd55893b867b4dd430b9c1cbe1a14b",
+    "summary_script": "code/summarize_hccb_p418_steady_seed_robustness.py",
+    "summary_script_sha256": "5373acdb8efc3e07e9ff724f8f05146487b1c151e9582ff8fecea13f58a7de03",
+    "real_3d_software_check_script": "code/verify_hccb_p418_steady_seed_repeatability.py",
+    "real_3d_software_check_script_sha256": "3f81f939ff0fa63accdf4120e6854ffcf6ccf877bbb0a282f3023ed79f1598ea",
+    "real_3d_software_check_result": "results/hccb_p418_steady_seed_real_smoke_repeatability/summary.json",
+    "real_3d_software_check_result_sha256": "57d7a68a363da127ee84f1566f612f1b706dc1f2ad9c8591d6b0617f791db52c",
+    "real_3d_software_check_scope": "One training epoch on eight existing P418 3D fields. Same-seed predictions agree within float32 GPU accumulation differences, while different seeds produce much larger changes. These values verify the training procedure and are not model-accuracy results."
+  },
+  "common_transient_energy_evaluation": {
+    "script": "code/evaluate_hccb_p418_temporal_energy_balance.py",
+    "script_sha256": "1171516e3e17a0cde8975f1efcc8ce7aba47b7bb40aac8218693f24cbf29260d",
+    "models": [
+      "DMDc",
+      "data-only graph-Transformer",
+      "physics-constrained graph-Transformer",
+      "factorized physics-constrained graph-Transformer",
+      "snapshot-POD residual correction",
+      "diffusion residual correction"
+    ],
+    "device": "CPU",
+    "reason": "All temperature-field models are evaluated with the same transient fluid/solid energy operator. The primary comparison is the volume-weighted difference between the predicted regional operator and the OpenFOAM field projected onto the same regional geometry. Absolute regional residuals are reported only to expose projection error, while native OpenFOAM solver balances remain the conservation reference. CPU accumulation is retained because an actual 46089-node check gave exactly repeatable values for identical fields, whereas CUDA scatter accumulation showed small run-to-run differences."
+  },
+  "latest_steady_software_test": {
+    "scope": "one training epoch on eight completed P418 OpenFOAM fields with six train, one validation and one independent-prediction condition; software-path check only",
+    "architectures": [
+      "response_surface",
+      "pinn_data_only",
+      "pinn",
+      "graph",
+      "transolver"
+    ],
+    "result": "all five methods completed with finite state, mass-flow, energy-flow and engineering outputs; the one-epoch values are not model-accuracy evidence",
+    "result_path": "results/hccb_p418_mixed_endpoint_smoke_model_comparison_1epoch/summary.json"
+  },
+  "latest_steady_small_condition_training_check": {
+    "scope": "100 training epochs on eight completed P418 OpenFOAM fields with six train, one validation and one independent-test condition, followed by a 100-to-200-epoch graph-model extension; this checks small-sample behaviour before the formal 60-condition comparison",
+    "result": "the response surface gave the smallest independent-condition temperature errors with only six training conditions. Extending the graph model from 100 to 200 epochs reduced total state RMSE and solid-maximum-temperature error, but worsened outlet-temperature error and global energy balance. Therefore lower aggregate loss is not accepted as sufficient evidence of better engineering prediction; the formal comparison will report outlet temperature, solid hot spot, wall heat and energy balance separately across the 9, 18, 27 and 36-condition learning curve.",
+    "comparison_path": "results/hccb_p418_mixed_endpoint_100epoch_readiness_comparison/summary.json",
+    "graph_extension_path": "results/hccb_p418_mixed_endpoint_graph_training_extension/summary.json",
+    "engineering_metric_breakdown_path": "results/hccb_p418_mixed_endpoint_100epoch_readiness_comparison/engineering_metric_summary.json",
+    "engineering_metric_result": "with six training conditions the response surface led five of seven independent engineering metrics, while Transolver led cooling-wall heat and the graph model led fluid-solid net heat transfer; no architecture led every physical quantity",
+    "status": "completed small-condition behaviour check; final model accuracy still waits for the formal 60-condition OpenFOAM dataset"
+  },
+  "steady_source_epoch_followup": {
+    "first_comparison_epochs": 100,
+    "first_comparison_role": "common-epoch computing-cost and initial accuracy comparison",
+    "extension_condition": "best validation total loss occurs exactly at the final epoch of the first comparison; no fractional window or tolerance is introduced",
+    "extension_epochs": "read from each architecture's archived source_settings.epochs",
+    "comparison_rule": "retain both runs and compare full-field state, outlet temperature, maximum solid temperature, cooling-wall heat, fluid-solid heat transfer, global energy balance and global mass balance separately",
+    "plan_builder": "code/build_hccb_p418_epoch_followup_plan.py",
+    "runner": "code/run_hccb_p418_steady_epoch_followup.sh",
+    "comparison": "code/compare_hccb_p418_epoch_followup.py",
+    "status": "implemented in the post-steady pipeline; formal execution waits for the 60-condition data"
+  },
+  "architectures": [
+    {
+      "name": "PINO-paper coordinate PINN control",
+      "role": "classical pointwise physics-informed neural-network baseline",
+      "paper": "Physics-Informed Neural Operator for Learning Partial Differential Equations",
+      "venue": "ACM/IMS Journal of Data Science 2024",
+      "paper_url": "https://doi.org/10.1145/3648506",
+      "official_code_url": "https://github.com/neuraloperator/physics_informed",
+      "local_source": "third_party/physics_informed/baselines/pinns_ns_05s.py",
+      "local_source_sha256": "d77e96afef6753973e45a6bdbccc0ea1e17bb6dbbe72a8d1cf6fa9da148dbbf5",
+      "local_config": "third_party/physics_informed/configs/baseline/Re500-pinns-05s.yaml",
+      "local_config_sha256": "b4c7574716199fb64a7aa498647588bd7733c77a5d32583665362d3114abb03d",
+      "local_commit": "3b6bc307c63c64057d0496753bf1af5f44ac5108",
+      "source_settings": {
+        "hidden_layers": 6,
+        "hidden_width": 50,
+        "activation": "tanh",
+        "initialization": "Glorot normal",
+        "optimizer": "Adam",
+        "epochs": 3000,
+        "learning_rate": 0.01
+      },
+      "project_adaptation": "The archived baseline maps (x,y,t) to three Navier-Stokes variables. The P418 control maps five literature operating conditions plus fixed regional coordinates, cell volume, fluid/solid type and boundary role to five CHT state channels. The six tanh layers, width 50, Glorot-normal initialization and Adam learning rate are retained. The common finite-volume mass and energy balance losses replace the Navier-Stokes residuals. Conservative face-output heads are shared with the graph and Transformer models. This is an adapted classical PINN control, not an exact reproduction of the 2024 HCCB inverse PINN paper.",
+      "implementation": "code/hccb_p418_coordinate_pinn.py and code/train_hccb_p418_conservative_mixed_operator.py",
+      "status": "architecture and optimizer are implemented from the archived source; one-epoch training and independent-condition prediction passed on eight actual P418 OpenFOAM fields with finite state/flux outputs; full 60-case training is pending"
+    },
+    {
+      "name": "RIGNO-style regional graph operator",
+      "role": "primary fixed-mesh neural-operator baseline",
+      "paper": "RIGNO: A Graph-based Framework for Robust and Accurate Operator Learning for PDEs on Arbitrary Domains",
+      "venue": "NeurIPS 2025",
+      "paper_url": "https://papers.nips.cc/paper_files/paper/2025/hash/dcb91f43033bb1d367d1848806dee98d-Abstract-Conference.html",
+      "official_code_url": "https://github.com/camlab-ethz/rigno",
+      "local_source": "third_party/rigno/rigno/train.py",
+      "local_source_sha256": "039ca1dad733d2c6c70112eb583ccf4193f8d88b2dcf49694b90f8b9a0248439",
+      "source_settings": {
+        "mesh_subsample_factor": 4.0,
+        "regional_mesh_levels": 6,
+        "node_latent_size": 128,
+        "edge_latent_size": 128,
+        "mlp_hidden_layers": 1,
+        "processor_steps": 12,
+        "optimizer": "AdamW",
+        "epochs": 2000,
+        "effective_batch_size": 2,
+        "learning_rate_initial": 1e-05,
+        "learning_rate_peak": 0.0002,
+        "learning_rate_base": 1e-05,
+        "learning_rate_final": 1e-06,
+        "weight_decay": 1e-08
+      },
+  "project_adaptation": "Regions follow native OpenFOAM finite-volume faces. Fluid and solid are aggregated separately and mapped fluid-solid faces remain a separate connection type. Official RIGNO uses one regional-node set with several connection ranges; the present finite-volume implementation instead provides an explicit aggregation hierarchy. The memory-bounded initial comparison uses the coarsest 46089-node graph and decodes the complete 1870064-cell field in chunks. It is therefore described as RIGNO-style rather than an exact RIGNO reproduction. The published processor_steps=12 remains the total message-passing depth and is never repeated at every level.",
+  "measured_compute_setting": {
+    "effective_batch_size": 2,
+    "microbatch_size": 1,
+    "reason": "A two-condition CUDA batch used 19.76 GB on the actual 46089-node graph. One-condition microbatches with gradient accumulation reduced the peak to 10.02 GB while preserving one effective-batch update.",
+    "reference_result": "results/hccb_p418_mixed_endpoint_smoke_model_graph_completed_smoke_1epoch/summary.json",
+    "successful_result": "results/hccb_p418_post_power_gpu_graph_microbatch1/summary.json"
+  },
+  "implementation": "code/hccb_p418_parametric_regional_operator.py and code/train_hccb_p418_regional_operator.py",
+  "status": "source-width forward and backward execution passed on the actual 46089-node graph; one-epoch CUDA training and independent-condition prediction passed on eight actual P418 OpenFOAM fields with effective batch two accumulated from one-condition microbatches; full training waits for the 60-case dataset"
+    },
+    {
+      "name": "Transolver",
+      "role": "Transformer comparison on unstructured regional nodes",
+      "paper": "Transolver: A Fast Transformer Solver for PDEs on General Geometries",
+      "venue": "ICML 2024 Spotlight",
+      "paper_url": "https://proceedings.mlr.press/v235/wu24r.html",
+      "official_code_url": "https://github.com/thuml/Transolver",
+      "local_source": "third_party/Transolver/PDE-Solving-StandardBenchmark/model/Transolver_Irregular_Mesh.py",
+      "local_commit": "75e0f67643806a81cd1d3f6adc88dd8c02416fe7",
+      "local_source_sha256": "5259759f7ecc6a954c8442ac8359990b9f242f1437c452c69e5e0f03549b5311",
+      "source_settings": {
+        "layers": 5,
+        "hidden_size": 256,
+        "attention_heads": 8,
+        "physics_slices": 32,
+        "dropout": 0.0,
+        "mlp_ratio": 1,
+        "optimizer": "AdamW",
+        "epochs": 500,
+        "effective_batch_size": 8,
+        "learning_rate_peak": 0.001,
+        "weight_decay": 1e-05,
+        "scheduler": "OneCycleLR"
+      },
+      "project_adaptation": "Physics-Attention is applied only after finite-volume cells have been mapped to regional nodes; full attention over approximately 1.87 million original cells is not used. The official slice-attend-deslice sequence, eight heads, 32 slices, zero dropout and orthogonal slice projection are retained. On the project RTX 4000 Ada, the published effective batch size of eight is retained by accumulating gradients from one condition at a time; this changes memory scheduling rather than the network, loss or optimizer update.",
+      "measured_compute_setting": {
+        "gpu": "RTX 4000 Ada 20 GB",
+        "effective_batch_size": 8,
+        "microbatch_size": 1,
+        "reason": "A six-condition direct CUDA batch reached 19.22 GiB and failed while allocating the energy-face tensors; one-condition microbatches completed the same one-update smoke path.",
+        "failure_log": "results/hccb_p418_post_power_gpu_memory/transolver_batch6_cuda_oom.log",
+        "successful_result": "results/hccb_p418_post_power_gpu_transolver_microbatch1/summary.json"
+      },
+      "implementation": "RegionalPhysicsAttentionBlock in code/hccb_p418_parametric_regional_operator.py and code/train_hccb_p418_regional_operator.py",
+      "status": "official code archived locally; source-width forward and backward execution passed on the actual 46089-node graph; one-epoch CUDA training and independent-condition prediction passed with effective batch eight accumulated from one-condition microbatches; full training waits for the 60-case dataset"
+    },
+    {
+      "name": "Temporal Transformer trajectory operator",
+      "role": "solver-relaxation acceleration and physical P418 endpoint step-response prediction for directly reported OpenFOAM observables",
+      "paper": "Attention Is All You Need",
+      "venue": "NeurIPS 2017",
+      "paper_url": "https://papers.nips.cc/paper_files/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html",
+      "sizing_and_optimizer_source": "Transolver: A Fast Transformer Solver for PDEs on General Geometries",
+      "sizing_source_url": "https://arxiv.org/abs/2402.02366",
+      "source_settings": {
+        "layers": 5,
+        "hidden_size": 256,
+        "attention_heads": 8,
+        "dropout": 0.0,
+        "feedforward_ratio": 1,
+        "optimizer": "AdamW",
+        "epochs": 500,
+        "effective_batch_size": 8,
+        "learning_rate_peak": 0.001,
+        "weight_decay": 1e-05,
+        "scheduler": "OneCycleLR"
+      },
+      "project_adaptation": "A standard temporal self-attention encoder has two explicitly separated uses. For solver acceleration, it maps each published P418 operating condition and steady-iteration coordinate to its complete OpenFOAM steady-solver relaxation trajectory through iteration 200. These labels are not physical time or physical start-up. For thermal dynamics, it maps the source and target P418 conditions plus physical time to a separate response after exactly one inlet-temperature, inlet-velocity or solid-heat-source step. Each step case starts from the converged steady-iteration-200 source fluid/solid temperatures and target U, p and p_rgh fields. The target hydrodynamic field is held fixed while the fluid and solid energy equations advance with an Euler time derivative. A 25 s representative calculation is used to determine whether the physical observation window needs extension; 300 s is only a candidate upper bound before that calculation. Complete curves, rather than individual time points, are separated between training, validation and testing. The dimensions and optimizer follow the Transolver comparison, but the attention is ordinary temporal self-attention rather than Transolver Physics-Attention. The outputs are outlet temperature, volume-average fluid/solid temperatures, oriented mass flow, inlet/outlet enthalpy flow, cooling-wall power and maximum solid temperature.",
+      "implementation": "code/train_hccb_p418_transient_observable_transformer.py",
+      "implementation_sha256": "da139d1f6ce7a82271829e3cbc47e9976d46b2f51f85b669207ae7efeddb5fa2",
+      "physical_step_exporter": "code/export_hccb_p418_transient_observables.py",
+      "physical_step_exporter_sha256": "3bc57e96abaf0ccbe982fdcdf752d067826289f05bf9bc5dd24527d61ab6bf8e",
+      "physical_step_runner": "code/run_hccb_p418_step_responses.sh",
+      "physical_step_runner_sha256": "e740308cba80f06249af73d714457a8ad3ef25faba74d523a6bc0e063ec77336",
+      "status": "real OpenFOAM time-history export is implemented; a reduced one-epoch solver-relaxation smoke run passed on five completed curves; a 12-curve physical-step software test and complete-curve split test passed; formal source-sized training waits for the corresponding OpenFOAM histories"
+    },
+    {
+      "name": "Published-component spatiotemporal regional operator",
+      "role": "primary full-field predictor for the 12 physical P418 temperature-step histories",
+      "paper": "RIGNO regional graph operator with Transolver Physics-Attention and a temporal Transformer",
+      "venue": "NeurIPS 2025; ICML 2024; NeurIPS 2017",
+      "paper_url": "https://papers.nips.cc/paper_files/paper/2025/hash/dcb91f43033bb1d367d1848806dee98d-Abstract-Conference.html",
+      "published_component_sources": [
+        {
+          "component": "regional graph representation on arbitrary domains",
+          "paper": "RIGNO: A Graph-based Framework for Robust and Accurate Operator Learning for PDEs on Arbitrary Domains",
+          "venue": "NeurIPS 2025",
+          "paper_url": "https://papers.nips.cc/paper_files/paper/2025/hash/dcb91f43033bb1d367d1848806dee98d-Abstract-Conference.html",
+          "official_code_url": "https://github.com/camlab-ethz/rigno"
+        },
+        {
+          "component": "mesh message passing",
+          "paper": "Learning Mesh-Based Simulation with Graph Networks",
+          "venue": "ICLR 2021 Spotlight",
+          "paper_url": "https://iclr.cc/virtual/2021/spotlight/3542"
+        },
+        {
+          "component": "global Physics-Attention over learnable physical slices",
+          "paper": "Transolver: A Fast Transformer Solver for PDEs on General Geometries",
+          "venue": "ICML 2024",
+          "paper_url": "https://proceedings.mlr.press/v235/wu24r.html",
+          "official_code_url": "https://github.com/thuml/Transolver"
+        },
+        {
+          "component": "temporal self-attention encoder",
+          "paper": "Attention Is All You Need",
+          "venue": "NeurIPS 2017",
+          "paper_url": "https://proceedings.neurips.cc/paper_files/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html"
+        },
+        {
+          "component": "adjacency-masked graph Transformer tested on large three-dimensional CFD meshes",
+          "paper": "Training Transformers for Mesh-Based Simulations",
+          "venue": "arXiv 2025",
+          "paper_url": "https://arxiv.org/abs/2508.18051",
+          "official_code_url": "https://github.com/DonsetPG/graph-physics"
+        }
+      ],
+      "numerical_settings_reference": {
+        "paper": "MeshGraphNet-Transformer hybrid reported by Iparraguirre et al.",
+        "paper_url": "https://arxiv.org/abs/2601.23177",
+        "doi": "10.48550/arXiv.2601.23177",
+        "local_source_pdf": "literature/raw/algorithm_sources/Iparraguirre_2026_MeshGraphNet_Transformer.pdf",
+        "local_source_sha256": "7993d0721fd68aedb1312fda2dd8a5ba5b26db45fb6402b703cc37b10dc49b82",
+        "use_in_this_project": "Only the listed layer counts, hidden path and attention dimensions are retained as a fixed, untuned implementation setting. The scientific architecture claim is based on the published component papers above, and this project is not presented as an exact reproduction of the preprint."
+      },
+      "source_settings": {
+        "preprocessor_mpnn_iterations": 2,
+        "physics_attention_blocks": 2,
+        "refinement_mpnn_iterations": 2,
+        "attention_heads": 4,
+        "physical_tokens": 128,
+        "hidden_path": [64, 32, 64],
+        "temporal_layers": 3,
+        "temporal_heads": 1,
+        "leaky_relu_negative_slope": 0.01
+      },
+      "project_adaptation": "The implemented model combines published mesh message passing, a RIGNO-style regional representation, Transolver Physics-Attention and an explicit temporal Transformer. Regional nodes and edges come from conservative OpenFOAM finite-volume aggregation. Each node receives its coordinates, log regional volume, fluid/solid type and the volume-weighted fractions of its fine cells adjacent to the inlet, outlet, cooling wall, symmetry boundary and fluid-solid interface. These are boundary-adjacency volume fractions, not boundary-area fractions, and are computed from the registered P425/P427 boundary layout and resolved mesh rather than fitted from the thermal histories. Velocity and pressure are copied from the converged target hydrodynamic state, and only temperature evolves. Because regional volume averaging does not commute with nonlinear finite-volume face fluxes, the PINN term minimizes the difference between the predicted regional transient-energy operator and the OpenFOAM reference projected onto the same regional geometry. Fluid and solid energy-residual differences are integrated with their finite-volume cell measures. Internal heat-flux differences are compared as heat-flux density with face-area integration, making the loss invariant when one geometric face is subdivided without changing its total area or heat flow. Absolute regional residuals for prediction and reference are reported as projection diagnostics and are not confused with native-mesh OpenFOAM closure. OpenFOAM reference edge heat flux is retained as an additional spatial-gradient target. The reference branch applies the spatial preprocessor to every time query. A separate factorized efficiency branch applies that preprocessor once to the fixed geometry, converged hydrodynamic state and step condition, then retains every declared time query, the temporal mixer, time-dependent local refinement and the same transient energy/flux losses. This is a project composition of published components, not an exact reproduction of any one paper.",
+      "fully_coupled_extension": {
+        "architecture_revision": "p418_fully_coupled_oriented_initial_face_flux_context_v2",
+        "method_source": "MeshGraphNet and RIGNO edge-to-node message passing applied to finite-volume owner-neighbour connectivity",
+        "initial_internal_face_flux_message": "owner:+m_dot;neighbour:-m_dot",
+        "initial_active_boundary_face_flux_message": "inlet/outlet to owner; other boundary faces excluded",
+        "initial_face_flux_aggregation": "mean over incident active faces",
+        "scope": "The fully coupled branch advances velocity, pressure, temperature and oriented face mass flow. The stated message rules are numerical graph construction choices and introduce no new pebble-bed physical parameter.",
+        "implementation": "code/hccb_p418_fully_coupled_spatiotemporal_operator.py"
+      },
+      "fully_coupled_extension_implementation_sha256": "dfcbbe1bbed56e99985c1c5dc8a8ae29559e5d685830441ee686335a9df6a53c",
+      "implementation": "code/hccb_p418_spatiotemporal_regional_operator.py and code/train_hccb_p418_spatiotemporal_regional_operator.py",
+      "implementation_model_sha256": "da4c89b47b238708649a1a49186d4d776103b8a199be08f842e2c1ebb0a3b8d0",
+      "implementation_trainer_sha256": "0cfbbef8f76a9f2307d2b8322a105dc93f6dcf570a1cb0569ded2bdf37824d23",
+      "source_contract": "parameters/hccb_p418_mgnt_temporal_pino_contract.yaml",
+      "source_contract_sha256": "65aaf5950c3e1cd74fc588d5a165e4f6746a24e0b9447310d7f53554cb0d7af1",
+      "fixed_thread_efficiency_result": {
+        "nodes": 46089,
+        "edges": 245848,
+        "time_points": 37,
+        "cpu_threads": 8,
+        "repeated_query_seconds": 276.6126049947925,
+        "factorized_static_seconds": 157.7374809132889,
+        "factorized_update_speedup": 1.7536263632031208,
+        "result": "results/hccb_p418_actual_spatiotemporal_operator_37time_cpu8_efficiency_comparison/summary.json"
+      },
+      "gpu_efficiency_result": {
+        "nodes": 46089,
+        "edges": 245848,
+        "time_points": 37,
+        "gpu": "RTX 4000 Ada",
+        "repeated_query_seconds": 10.01549191493541,
+        "repeated_query_peak_gpu_GB": 13.164193792,
+        "factorized_static_seconds": 5.953488990664482,
+        "factorized_static_peak_gpu_GB": 12.741802496,
+        "factorized_gpu_speedup": 1.682291404899287,
+        "factorized_gpu_vs_cpu8_speedup": 26.49496474430928,
+        "repeated_result": "results/hccb_p418_actual_spatiotemporal_operator_37time_gpu_repeated/summary.json",
+        "factorized_result": "results/hccb_p418_actual_spatiotemporal_operator_37time_gpu_factorized/summary.json",
+        "cpu_gpu_result": "results/hccb_p418_actual_spatiotemporal_operator_37time_cpu_gpu_efficiency/summary.json"
+      },
+      "formal_56_time_gpu_resource_result": {
+        "nodes": 46089,
+        "edges": 245848,
+        "time_points": 56,
+        "gpu": "RTX 4000 Ada",
+        "data_only_seconds": 12.877155470981961,
+        "data_only_peak_gpu_GB": 6.18651136,
+        "repeated_query_seconds": 15.132283304992598,
+        "repeated_query_peak_gpu_GB": 19.639863808,
+        "factorized_static_seconds": 7.7418866290245205,
+        "factorized_static_peak_gpu_GB": 18.990930944,
+        "factorized_speedup_over_repeated": 1.9545989278971485,
+        "step_plan_sha256": "12861deba4ddb4667d0c3b16e23fd0f4c0f28793e8f66f8147b721913a299fdd",
+        "result": "results/hccb_p418_actual_spatiotemporal_operator_56time_gpu_factorized/summary.json"
+      },
+      "status": "The factorized branch completed forward execution, transient-energy and heat-flux evaluation, and backward propagation for the revised 56-snapshot plan on the actual 46089-node, 245848-edge regional graph. One update required 7.74 s and 18.99 GB on the RTX 4000 Ada, compared with 15.13 s and 19.64 GB for repeated spatial queries. The latter required expandable CUDA memory segments because it operates near the 20 GB device limit. The input geometry, topology, state targets, steady dataset and time plan were checked by SHA256 before execution. The batch is therefore restricted to one complete curve with gradient accumulation. Prediction accuracy still waits for the 12 OpenFOAM temperature-step histories."
+    },
+    {
+      "name": "DPOT",
+      "role": "future autoregressive denoising Transformer comparison when a sufficiently large 3D trajectory set exists",
+      "paper": "DPOT: Auto-Regressive Denoising Operator Transformer for Large-Scale PDE Pre-Training",
+      "venue": "ICML 2024",
+      "paper_url": "https://proceedings.mlr.press/v235/hao24d.html",
+      "official_code_url": "https://github.com/HaoZhongkai/DPOT",
+      "local_commit": "dcd2f9a9359765e19ad63e2f3f879a2a8ce1aa17",
+      "local_3d_source": "third_party/DPOT/models/dpot3d.py",
+      "local_3d_source_sha256": "44dc70b0696bf2f4de6956537c84e7cd4e79ccb1823f0ddc77cc6fa27b084b3c",
+      "local_tiny_config": "third_party/DPOT/configs/pretrain_tiny.yaml",
+      "local_tiny_config_sha256": "862c431bf4a08d5575a08469a12c9f6204eeb078fd32724c0d6fa162f54a2ec5",
+      "local_temporal_training_source": "third_party/DPOT/train_temporal.py",
+      "local_temporal_training_source_sha256": "266876b444d9056456e18b1c7727df05116ae1858c4b60c4534a5fc7140d91cb",
+      "published_scale": {
+        "smallest_reported_model_parameters": "approximately 7 million",
+        "pretraining_trajectory_count": "more than 100000",
+        "pretraining_dataset_count": "more than 10 PDE datasets"
+      },
+      "project_adaptation": "Retain the official three-dimensional autoregressive denoising Transformer as a later transfer-learning comparison. It will use the same 12 physical step-response curves and the same train/validation/test curve partitions as the graph--Transformer, but it will not be trained from scratch on the 60 steady solver histories. No DPOT-generated field is used as OpenFOAM truth or as a source of pebble-bed physical parameters.",
+      "project_decision": "Do not train DPOT from scratch on only 60 fixed-condition P418 curves. Preserve the official 3D implementation for a later transfer-learning test after the 12-case full-field snapshot subset and genuine step-change sequences are available. Current diffusion work remains a residual correction after a deterministic operator.",
+      "status": "official source archived and inspected; not yet trained because the present data volume is far below the published pretraining regime"
+    },
+    {
+      "name": "Volume-weighted DMDc baseline",
+      "role": "classical reduced-order baseline for regional thermal-step trajectories",
+      "paper": "Dynamic Mode Decomposition with Control",
+      "venue": "SIAM Journal on Applied Dynamical Systems 15 (2016) 142-161",
+      "paper_url": "https://epubs.siam.org/doi/10.1137/15M1013857",
+      "doi": "10.1137/15M1013857",
+      "source_settings": {
+        "published_state_equation": "z(k+1)=A z(k)+B u(k)",
+        "project_state_equation": "dz/dt=A z+B u",
+        "project_fit": "midpoint reduced states and adjacent finite-difference time derivatives using the actual recorded time intervals",
+        "project_time_integration": "exact augmented linear-system matrix exponential over each recorded interval",
+        "candidate_pod_ranks": [1, 2, 3, 4, 8, 12, 16, 24, 32],
+        "rank_selection": "lowest validation solid-temperature RMSE",
+        "spatial_weighting": "square root of regional volume normalized by mean regional volume"
+      },
+      "project_adaptation": "The reduced state contains the volume-weighted regional fluid and solid temperatures. Because the 56 registered output times are nonuniform, adjacent reduced states are converted to midpoint states and physical-time derivatives to fit dz/dt=A z+B u. Prediction uses a matrix exponential over every original recorded interval, without interpolation to a uniform grid. The eight source/target operating quantities act as control inputs. Training curves alone determine the POD basis and DMDc matrices; the validation curves choose rank and the test curves are used only once for reporting.",
+      "implementation": "reproducibility/formal_training_sources/train_hccb_p418_regional_dmdc_20260729.py",
+      "implementation_sha256": "0431ec73172ee5fd6d4591f7f08a8672ff989ef01ab122a662f8d338ac0a22fd",
+      "maintained_implementation": "code/train_hccb_p418_regional_dmdc.py",
+      "maintained_implementation_sha256": "9204b9f9eece60eeedee75edce5a7e5ac1888b0711c1c3ae7a143187d46bc993",
+      "status": "completed as the non-neural regional-field baseline on the registered 12-trajectory physical-step dataset"
+    },
+    {
+      "name": "Observable DMDc baseline",
+      "role": "like-for-like classical linear-dynamics baseline for the observable Transformer",
+      "paper": "Dynamic Mode Decomposition with Control",
+      "venue": "SIAM Journal on Applied Dynamical Systems 15 (2016) 142-161",
+      "paper_url": "https://epubs.siam.org/doi/10.1137/15M1013857",
+      "doi": "10.1137/15M1013857",
+      "source_settings": {
+        "published_state_equation": "z(k+1)=A z(k)+B u(k)",
+        "project_state_equation": "dz/dt=A z+B u",
+        "project_fit": "midpoint observable states and adjacent finite-difference time derivatives using the actual recorded time intervals",
+        "project_time_integration": "exact augmented linear-system matrix exponential over each recorded interval",
+        "candidate_ranks": [1, 2, 3, 4, 5, 6],
+        "rank_selection": "lowest validation normalized trajectory mean-squared error",
+        "inputs": "the same eight source and target operating quantities used by the observable Transformer",
+        "outputs": "the same six outlet and aggregate-temperature trajectories used by the observable Transformer"
+      },
+      "project_adaptation": "This baseline uses the same complete-trajectory training, validation and independent-test identifiers, input quantities, output trajectories, physical times and training-only normalization as the observable Transformer. Training trajectories alone determine the DMDc matrices, validation trajectories choose rank and test trajectories are used once for reporting. It is distinct from the regional DMDc field baseline and does not use regional temperature fields.",
+      "implementation": "code/train_hccb_p418_observable_dmdc.py",
+      "implementation_sha256": "9599ca136a680cf9e5a4a7bc9a2282a50b0b1756fe2ef1ca81076440c25f1aec",
+      "status": "completed for the pair-disjoint, direction-down and direction-up trajectory splits"
+    },
+    {
+      "name": "Snapshot-POD low-rank temperature-residual correction",
+      "role": "non-neural low-rank correction after the physics-constrained spatiotemporal predictor",
+      "paper": "Turbulence and the dynamics of coherent structures. Part I: Coherent structures",
+      "venue": "Quarterly of Applied Mathematics 45 (1987) 561-571",
+      "paper_url": "https://www.ams.org/qam/1987-45-03/S0033-569X-1987-0910462-6/",
+      "doi": "10.1090/qam/910462",
+      "source_settings": {
+        "decomposition": "singular-value implementation of the snapshot proper orthogonal decomposition",
+        "spatial_weighting": "square root of regional volume divided by the training temperature scale",
+        "candidate_ranks": "zero through the number supported by the training residual matrix",
+        "rank_selection": "lowest validation solid-temperature volume-weighted RMSE, with the smaller rank used for an exact tie",
+        "coefficient_map": "ordinary minimum-norm least squares from normalized source/target operating conditions",
+        "initial_condition": "temperature correction fixed exactly to zero at t=0"
+      },
+      "project_adaptation": "Only training-curve residuals between the physics-constrained graph-Transformer and OpenFOAM are decomposed. Formal execution requires the upstream predictor to be a completed physics-constrained run over all 12 disjoint thermal-step curves; software-smoke predictions are rejected. Validation curves choose the retained rank and complete held-out curves are used once for reporting. No pebble-bed physical parameter, boundary condition or material property is fitted or changed. The PREMUX cross-power result motivates testing a low-rank residual, but its spatial mode and amplitudes are not transferred to P418.",
+      "implementation": "code/train_hccb_p418_low_rank_temperature_residual.py",
+      "implementation_sha256": "46178a64941c95224765b3e238c1106ee73381b70c0591dc3ece379066a0f13a",
+      "status": "implemented and connected to the common physical-step comparison; formal rank and prediction error wait for the 12 OpenFOAM thermal-step curves"
+    },
+    {
+      "name": "PDE-Refiner-style diffusion refinement",
+      "role": "temperature-residual correction after a deterministic steady or transient CHT predictor",
+      "paper": "PDE-Refiner: Achieving Accurate Long Rollouts with Neural PDE Solvers",
+      "venue": "NeurIPS 2023",
+      "paper_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/d529b943af3dba734f8a7d49efcb6d09-Abstract-Conference.html",
+      "code_url_reported_by_paper": "https://github.com/microsoft/pdearena",
+      "local_source": "third_party/pdearena/pdearena/models/pderefiner.py",
+      "local_commit": "78a8b03d50115d8bb24ce9f04efa5b920fcd4369",
+      "local_source_sha256": "f7f79d53b6bedcb4dc903133fe3e1e7f22509513fdb1ebfb14da2384b0c31131",
+      "source_settings": {
+        "num_refinement_steps": 3,
+        "minimum_noise_standard_deviation": 4e-7,
+        "prediction_type": "v_prediction",
+        "ema_decay": 0.995,
+        "effective_batch_size": 8,
+        "curve_microbatch_size": 1,
+        "activation_precision_on_cuda": "bfloat16",
+        "formal_stochastic_samples_per_curve": 32,
+        "sample_count_convergence": [8, 16, 32]
+      },
+      "partial_observation_source": {
+        "paper": "DiffusionPDE: Generative PDE-Solving under Partial Observation",
+        "venue": "NeurIPS 2024",
+        "paper_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/eb3878c1dcbfff9ee95d5d033e5f5942-Abstract-Conference.html",
+        "official_code_url": "https://github.com/jhhuangchloe/DiffusionPDE",
+        "use_boundary": "Only the partial-observation problem formulation is transferred. Burgers-equation guidance weights are not copied to the pebble-bed thermal problem."
+      },
+      "project_adaptation": "Diffusion is restricted to the temperature residual after a deterministic CHT predictor. Formal execution requires the upstream predictor to be a completed physics-constrained run over all 12 disjoint thermal-step curves; software-smoke predictions are rejected. For the 12 thermal-step curves it combines regional Physics-Attention with temporal self-attention, imposes t=0 exactly and accepts only externally supplied measurement locations. Formal computed-residual comparisons use 32 fixed-seed samples and report 8/16/32 sample-count convergence, ensemble spread and descriptive interval coverage. The checkpoint is selected on validation curves before independent prediction. Deterministic, diffusion-refined and OpenFOAM reference temperatures are evaluated with the same transient fluid/solid energy equations. On independent test curves, every one of the 32 stochastic temperature samples is also inserted separately into those equations; the reported member distribution and joint-improvement fraction therefore do not rely only on the ensemble mean. Every held-out result is reported; it is described as a joint improvement only when solid-temperature RMSE decreases and the projection-aware energy residual does not increase. This held-out description is not used to select or update the model. The effective curve batch remains eight, but complete curves are processed one at a time and their volume-weighted gradients are accumulated before one optimizer and EMA update. CUDA activations use bfloat16 after a full-size backward test, while parameters and optimizer states remain float32. Model, EMA, optimizer, learning-rate schedule and random-generator states are atomically saved after every completed epoch so a matching run can continue after an interruption. These are seed-sensitivity results, not an experimentally calibrated posterior. It does not replace the finite-volume equations, alter any physical operating condition or create synthetic sensor positions.",
+      "implementation": "code/hccb_p418_regional_diffusion_refiner.py; code/train_hccb_p418_regional_diffusion_refiner.py; code/hccb_p418_temporal_temperature_diffusion.py; code/train_hccb_p418_temporal_temperature_diffusion.py",
+      "regional_model_sha256": "03b4b10bdeb4322cb6d008d81cbf89948d2589097c82e05b6534fa52557943ee",
+      "regional_trainer_sha256": "cc7e3d8bc6a2aa25ad2281fdeada10608b39ea776a0dbf479d3a23cc09cca3ac",
+      "temporal_model_sha256": "42118cd4550d7591c825b0e1d6d3ea28280c7135eed868e96035a602cd915861",
+      "temporal_trainer_sha256": "69724d05ee4a3d1de5a0afb80e8627e22a755710e66ed389560cc020540d08cd",
+      "physical_state_verification_script": "code/verify_hccb_p418_diffusion_physical_state.py",
+      "physical_state_verification_script_sha256": "66e0c80c5d781a38c4bd835ea1a3dc9812d2b35bd9e1f6cc8eb67d5840a0f2a8",
+      "physical_state_verification_result": "results/hccb_p418_diffusion_physical_state/summary.json",
+      "physical_state_verification_result_sha256": "bed5eac47ff4415fe5d2866b90576c271776fd927054daf5fab6dea52375bbe5",
+      "observation_scope_verification_script": "code/verify_hccb_p418_diffusion_observation_scope.py",
+      "observation_scope_verification_script_sha256": "9ec1b63d73048a8bce7a804d2c640f61d10404c05bec1e49fd89da7e1c45ed7d",
+      "observation_scope_verification_result": "results/hccb_p418_diffusion_observation_scope/summary.json",
+      "observation_scope_verification_result_sha256": "949903c2ce8754d210db3104e515411bde6a8b20a95754feb2b25e2a728795b5",
+      "resource_test_script": "code/smoke_hccb_p418_actual_temporal_diffusion_gpu.py",
+      "resource_test_script_sha256": "6dc1b493ef3351ddc28f2ba75917c34e50521ac84c62a4437fc6b7b37f90644a",
+      "actual_graph_gpu_resource_result": {
+        "nodes": 46089,
+        "edges": 245848,
+        "time_points": 37,
+        "curve_batch_size": 1,
+        "gpu": "RTX 4000 Ada",
+        "float32_seconds": 17.897390010301024,
+        "float32_peak_gpu_GB": 19.59922176,
+        "bfloat16_seconds": 10.825107167009264,
+        "bfloat16_peak_gpu_GB": 12.412809216,
+        "float32_result": "results/hccb_p418_actual_temporal_diffusion_37time_gpu_batch1/summary.json",
+        "bfloat16_result": "results/hccb_p418_actual_temporal_diffusion_37time_gpu_batch1_bfloat16/summary.json"
+      },
+      "formal_56_time_gpu_resource_result": {
+        "nodes": 46089,
+        "edges": 245848,
+        "time_points": 56,
+        "curve_batch_size": 1,
+        "gpu": "RTX 4000 Ada",
+        "activation_precision": "bfloat16",
+        "temporal_node_chunk_size": 2048,
+        "seconds": 14.033711493975716,
+        "peak_gpu_GB": 18.747707904,
+        "step_plan_sha256": "12861deba4ddb4667d0c3b16e23fd0f4c0f28793e8f66f8147b721913a299fdd",
+        "result": "results/hccb_p418_actual_temporal_diffusion_56time_gpu_batch1_bfloat16_chunk2048/summary.json"
+      },
+      "status": "Official PDE-Refiner scheduling, velocity targets, EMA training and reverse residual sampling are implemented for steady and temporal residuals. On the actual 46089-node graph, a 4096-node temporal block exhausted the 20 GB GPU during the revised 56-snapshot backward pass. Reducing only the temporal node block to 2048 retained all nodes and times and completed in 14.03 s with 18.75 GB peak memory and finite gradients. The geometry, topology and time-plan SHA256 values are stored with the result. Prediction accuracy still waits for the 12 OpenFOAM thermal-step histories."
+    }
+  ],
+  "comparison_rule": "All architectures use the same 60 literature conditions, the same train/validation/test lists, the same train-only normalization and the same field and engineering metrics. Reduced smoke-test widths or layer counts may test software execution only and cannot be reported as the scientific comparison."
+}

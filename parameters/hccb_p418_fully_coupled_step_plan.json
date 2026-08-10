@@ -1,0 +1,113 @@
+{
+  "title": "P418 fully coupled flow--heat step-response extension",
+  "purpose": "Quantify the error introduced by fixing velocity, pressure and face mass flux during thermal-step prediction, using the same published P418 endpoint pairs as the main thermal-response study.",
+  "source_parameter_id": "P418",
+  "source_title": "Pore-scale simulation on flow and heat transfer characteristics in packed beds with internal heat sources at low Reynolds numbers",
+  "source_doi": "https://doi.org/10.1016/j.ijheatmasstransfer.2023.124325",
+  "base_thermal_step_plan": "parameters/hccb_p418_transient_step_plan.json",
+  "physical_parameter_registry": "parameters/hccb_p418_physical_parameter_sources.csv",
+  "new_physical_parameters": [],
+  "initial_state_rule": "Use the source condition's converged steady-iteration-200 internal U, p, p_rgh, phi, fluid-temperature and solid-temperature fields. The label 200 is a steady iteration index, not physical seconds.",
+  "target_rule": "At t=0 switch only the one declared inlet velocity, inlet temperature or solid volumetric heat-source input to the exact target P418 endpoint. The inlet phi boundary values are copied from that same target endpoint so the imposed inlet U, T and mass flux are mutually consistent; internal and outlet flow fields remain at the source state. Retain the registered outlet pressure, cooling-wall temperature, geometry and material properties.",
+  "openfoam_flow_controls": {
+    "flow": "yes",
+    "momentumPredictor": "yes",
+    "fluid_and_solid_ddt_scheme": "Euler"
+  },
+  "pilot_time_schedule_source": "parameters/hccb_p418_transient_step_plan.json",
+  "time_step_rule": "The existing finest thermal schedule is only the first fully coupled pilot. A representative velocity step must be repeated at three temporal resolutions before the fully coupled histories are accepted; differences in U, p, temperature, wall heat and mass/energy balance are reported directly.",
+  "time_step_sensitivity": {
+    "config": "parameters/hccb_p418_fully_coupled_timestep_sensitivity.json",
+    "runner": "code/run_hccb_p418_fully_coupled_timestep_sensitivity.sh",
+    "comparison": "code/compare_hccb_p418_thermal_timestep_sensitivity.py",
+    "summary_verifier": "code/verify_hccb_p418_fully_coupled_timestep_summary.py",
+    "representative_sequence_id": "velocity_up_T500_q6p85",
+    "default_mode": "plan_only",
+    "formal_execution_rule": "The twelve formal curves can start only after the representative summary has the declared fully-coupled status, velocity-step id, three time steps and finest staged schedule matching the first 25 s of the formal 300 s plan."
+  },
+  "sequence_rule": "Use exactly the same twelve source--target endpoint pairs and complete-curve data splits as the quasi-steady-hydrodynamic thermal study.",
+  "output_schema": "parameters/hccb_p418_fully_coupled_transient_data_schema.json",
+  "input_preparation": {
+    "builder": "code/build_hccb_p418_fully_coupled_step_cases.py",
+    "initializer": "code/initialize_hccb_p418_fully_coupled_step_case.sh",
+    "initial_field_verifier": "code/verify_hccb_p418_fully_coupled_step_initialization.py",
+    "rule": "The source endpoint supplies every internal U, p, p_rgh, phi and T value. The exact target pore-opening velocity, inlet/backflow temperature, inlet phi boundary values and volumetric heat-source dictionary are applied from t=0. No internal or outlet flow field is replaced by the target steady state."
+  },
+  "openfoam_execution": {
+    "runner": "code/run_hccb_p418_fully_coupled_step_responses.sh",
+    "finalizer": "code/finalize_hccb_p418_fully_coupled_step_response.sh",
+    "default_mode": "plan_only",
+    "explicit_execution_switch": "EXECUTE=1",
+    "completion_marker": "fully_coupled_step_response_complete.json",
+    "restart_rule": "Resume only from the latest time at which U, p, p_rgh, phi and T exist for every MPI rank and both regions contain their required state.",
+    "workstation_pause_rule": "If the cloud-migration pause marker exists, execution stops unless ALLOW_PAUSED_WORKSTATION_RUN=1 is given explicitly."
+  },
+  "data_export": {
+    "integrated_observable_exporter": "code/export_hccb_p418_transient_observables.py",
+    "integrated_observable_history_kind": "fully_coupled_flow_heat_response",
+    "exporter": "code/export_hccb_p418_step_regional_sequences.py",
+    "dataset_loader": "code/hccb_p418_fully_coupled_dataset.py",
+    "history_mode": "fully_coupled_flow_heat",
+    "completion_marker": "fully_coupled_step_response_complete.json",
+    "rule": "Every saved time retains U, p, fluid/solid T and oriented internal/boundary face mass flux; fixed-hydrodynamics curves remain a separate data mode."
+  },
+  "predicted_physical_fields": [
+    "Ux_m_s",
+    "Uy_m_s",
+    "Uz_m_s",
+    "pressure_Pa",
+    "temperature_K",
+    "oriented_internal_mass_flux_kg_s",
+    "oriented_boundary_mass_flux_kg_s"
+  ],
+  "comparison_with_fixed_hydrodynamics": [
+    "fluid_velocity_field_difference",
+    "pressure_drop_history_difference",
+    "fluid_temperature_field_difference",
+    "solid_temperature_field_difference",
+    "outlet_temperature_history_difference",
+    "maximum_solid_temperature_history_difference",
+    "cooling_wall_heat_history_difference",
+    "fluid_solid_interphase_heat_history_difference",
+    "mass_balance_difference",
+    "energy_balance_difference"
+  ],
+  "fixed_vs_fully_coupled_comparison": {
+    "implementation": "code/compare_hccb_p418_fixed_and_fully_coupled_steps.py",
+    "rule": "Compare the same twelve sequence ids over common recorded times. Report dimensional and fully-coupled-response-normalized differences for each engineering history without imposing a fitted acceptance percentage."
+  },
+  "model_extension": {
+    "deterministic_model": "regional graph--Transformer predicting time-dependent U, p and T plus conservative face mass flux",
+    "implementation": "code/hccb_p418_fully_coupled_spatiotemporal_operator.py",
+    "numerical_setting_source": "parameters/hccb_p418_mgnt_temporal_pino_contract.yaml",
+    "physics_relations": [
+      "finite-volume fluid continuity",
+      "finite-volume fluid momentum",
+      "finite-volume fluid energy",
+      "finite-volume solid energy",
+      "fluid--solid interface heat continuity",
+      "predicted face mass flux consistency with reconstructed rho U dot S"
+    ],
+    "physics_implementation": "code/hccb_p418_fully_coupled_transient_physics.py",
+    "training_loss_implementation": "code/hccb_p418_fully_coupled_training.py",
+    "training_runner": "code/train_hccb_p418_fully_coupled_spatiotemporal_operator.py",
+    "physics_scale_rule": "Keep all equations dimensional in the finite-volume module and calculate positive residual scales from complete training curves only. Return equation-wise terms separately rather than hiding fixed relative weights.",
+    "diffusion_role": "If used later, diffusion corrects the residual after the deterministic full-state model and must not alter prescribed boundary values or material properties.",
+    "implementation_status": "full-state and face-flux forward model, continuity, momentum, dual-region energy, interface and rho-U-face-flux consistency relations, projection-aware losses, complete-curve training, validation selection and restart have passed a small end-to-end run; formal training waits for accepted fully coupled OpenFOAM histories"
+  },
+  "sequences": [
+    {"sequence_id": "temperature_up_u0p05_q6p85", "family": "inlet_temperature_step", "source_condition_id": "u0p05_T300_q6p85", "target_condition_id": "u0p05_T900_q6p85"},
+    {"sequence_id": "temperature_down_u0p05_q6p85", "family": "inlet_temperature_step", "source_condition_id": "u0p05_T900_q6p85", "target_condition_id": "u0p05_T300_q6p85"},
+    {"sequence_id": "temperature_up_u0p15_q6p85", "family": "inlet_temperature_step", "source_condition_id": "u0p15_T300_q6p85", "target_condition_id": "u0p15_T900_q6p85"},
+    {"sequence_id": "temperature_down_u0p15_q6p85", "family": "inlet_temperature_step", "source_condition_id": "u0p15_T900_q6p85", "target_condition_id": "u0p15_T300_q6p85"},
+    {"sequence_id": "velocity_up_T500_q6p85", "family": "inlet_velocity_step", "source_condition_id": "u0p05_T500_q6p85", "target_condition_id": "u0p25_T500_q6p85"},
+    {"sequence_id": "velocity_down_T500_q6p85", "family": "inlet_velocity_step", "source_condition_id": "u0p25_T500_q6p85", "target_condition_id": "u0p05_T500_q6p85"},
+    {"sequence_id": "velocity_up_T900_q6p85", "family": "inlet_velocity_step", "source_condition_id": "u0p05_T900_q6p85", "target_condition_id": "u0p25_T900_q6p85"},
+    {"sequence_id": "velocity_down_T900_q6p85", "family": "inlet_velocity_step", "source_condition_id": "u0p25_T900_q6p85", "target_condition_id": "u0p05_T900_q6p85"},
+    {"sequence_id": "source_up_u0p15_T300", "family": "solid_heat_source_step", "source_condition_id": "u0p15_T300_q4p85", "target_condition_id": "u0p15_T300_q8p85"},
+    {"sequence_id": "source_down_u0p15_T300", "family": "solid_heat_source_step", "source_condition_id": "u0p15_T300_q8p85", "target_condition_id": "u0p15_T300_q4p85"},
+    {"sequence_id": "source_up_u0p15_T700", "family": "solid_heat_source_step", "source_condition_id": "u0p15_T700_q4p85", "target_condition_id": "u0p15_T700_q8p85"},
+    {"sequence_id": "source_down_u0p15_T700", "family": "solid_heat_source_step", "source_condition_id": "u0p15_T700_q8p85", "target_condition_id": "u0p15_T700_q4p85"}
+  ],
+  "scientific_scope": "This extension tests flow--thermal coupling for the same fixed packing and published endpoint families. It does not introduce buoyancy, pebble motion, thermo-mechanical deformation, accident conditions or new material parameters."
+}

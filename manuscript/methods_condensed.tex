@@ -1,0 +1,199 @@
+\subsection{Reference problem and calculations}
+
+The reference problem follows the published low-Reynolds-number HCCB
+pore-scale configuration \cite{wang2023pore,wang2024macro}. Sixty steady
+conditions combine five inlet velocities
+(\SIrange{0.05}{0.25}{m.s^{-1}}), four inlet temperatures
+(\SIrange{300}{900}{K}) and three pebble heat-source levels
+(4.85, 6.85 and \SI{8.85}{MW.m^{-3}}). The outlet absolute pressure is
+\SI{0.12}{MPa}, the cooled wall is held at \SI{635}{K}, and the spherical
+\LiSi{} pebbles have a physical diameter of \SI{1}{mm}. At the inlet,
+$Re_{p,\mathrm{in}}=0.078$--$2.40$, $Pr=0.660$--$0.675$ and
+$Pe_{p,\mathrm{in}}=0.051$--$1.62$, distinct from the source paper's spatially
+averaged $Re_{p,\mathrm{AVE}}<1.8$. The local resolved
+domain is cut from the published packing construction and retains the inlet,
+outlet, cooled-wall and symmetry-boundary families. A 1\% diameter reduction
+is used only to remove point contacts during meshing; consequently, the
+reference fields represent an uncompressed bed without solid-contact
+conduction.
+
+The steady helium field obeys
+\begin{align}
+\nabla\cdot(\rho_f\mathbf{u}) &= 0,\\
+\rho_f(\mathbf{u}\cdot\nabla)\mathbf{u}
+ +\nabla p-\nabla\cdot\!\left[
+\mu_f(\nabla\mathbf{u}+\nabla\mathbf{u}^{\mathsf T})\right]&=0,
+\end{align}
+Here $p$ is absolute thermophysical pressure; \OpenFOAM{} also retains
+$p_{rgh}$ for pressure--velocity coupling.
+The phase energy equations are
+\begin{align}
+\rho_fc_{p,f}\left(\frac{\partial T_f}{\partial t}
+ +\mathbf{u}\cdot\nabla T_f\right)
+ +\nabla\cdot(-k_f\nabla T_f)&=0,\\
+\rho_sc_{p,s}\frac{\partial T_s}{\partial t}
+ +\nabla\cdot(-k_s\nabla T_s)&=q'''.
+\end{align}
+Temperature and normal heat flux are continuous at every resolved
+fluid--solid interface. Helium density, viscosity and conductivity use the
+published HCCB relations, while solid heat storage uses the measured
+\LiSi{} enthalpy relation \cite{wang2024macro,kleykamp1996enthalpy}.
+The steady calculations set both time derivatives to zero.  In the
+fixed-hydrodynamics trajectories, the converged target velocity and pressure
+are held constant while the two energy equations remain time dependent.
+The published property relations were implemented and verified pointwise in
+\OpenFOAM{}, avoiding table extrapolation without implying fully coupled
+trajectory accuracy.
+
+All fields are generated with \OpenFOAM{} 13. The steady labels 1--200 are
+nonlinear iterations, not physical seconds; accepted cases are finite and
+satisfy the reported mass and energy checks.
+The 12 paired thermal steps combine the converged source temperature with
+target $\mathbf u$, $p$, $p_{rgh}$ and conservative face mass flow $\phi$.
+They describe heat transfer after the new flow is established, not the
+initial momentum or pressure-wave transient. This follows quasi-steady CHT
+methods that exploit fluid--solid time-scale separation
+\cite{shen2013quasisteady,gimenez2016weakly,errera2017transientcht}. Its
+accuracy during momentum adjustment would require a same-initial-state fully
+coupled comparison and is not claimed here. A staged time-step schedule covers
+\SIrange{0}{300}{s} and retains 56 common field times per trajectory on the
+same fine local mesh.
+A representative condition is also solved on coarse, medium and fine fluid--solid meshes
+that passed the basic mesh checks. Their unequal equivalent-cell refinement ratios
+are retained in the apparent-order and three-grid GCI calculation
+\cite{celik2008gci}; percentage GCI is omitted when a near-zero response
+crosses sign. Fixed-flow time-step sensitivity is reported separately.
+
+\subsection{Regional graph and physical constraints}
+
+The native finite-volume fields are reduced to \RegionalNodes{} phase-specific
+regional nodes connected by \RegionalEdges{} graph edges. The temperature of
+region $r$ is the volume average
+\begin{equation}
+\overline T_r=\frac{\sum_{i\in r}V_iT_i}{\sum_{i\in r}V_i}.
+\end{equation}
+The volume-weighted projection preserves phase-average temperature and makes
+its piecewise-constant error orthogonal to regional prediction error. Thus,
+\begin{equation}
+E_{T,\mathrm{native}}^2
+=E_{T,\mathrm{rep}}^2+E_{T,\mathrm{model}}^2,
+\end{equation}
+so regional accuracy is not presented as unresolved pore-scale accuracy.
+
+Signed incidence operators assembled from the owner, neighbour and
+boundary-face lists of the finite-volume mesh evaluate regional mass and
+energy differences:
+\begin{equation}
+\mathbf b_m=\mathbf A_m\widehat{\dot{\mathbf m}},\qquad
+\mathbf b_Q=\mathbf A_Q\widehat{\dot{\mathbf Q}}-\mathbf W.
+\end{equation}
+The physics-constrained losses compare these quantities with the regionalized
+\OpenFOAM{} balances using scales calculated from training conditions only.
+Temperature, pressure, interface flux, outlet temperature, pressure drop,
+wall heat and hotspot location remain separate reported quantities.
+
+\subsection{Steady and transient models}
+
+The steady comparison uses a response surface, data-only coordinate network,
+coordinate PINN, regional graph operator and attention-based physics operator
+\cite{raissi2019pinn}. All receive the same conditions and regional fields.
+The paired coordinate networks share architecture, initialization and targets;
+only the finite-volume mass, energy and interface-flux terms differ.
+
+The transient model composes a frozen steady predictor $P_\psi$, a regional
+graph--Transformer $G_\theta$ and an optional diffusion-style temperature
+refiner $R_\phi$:
+\begin{align}
+\widehat{\mathbf z}_0&=
+[\widehat{\mathbf u}^{\,\mathrm{tgt}},
+\widehat p^{\,\mathrm{tgt}},
+\widehat T^{\,\mathrm{src}}],\\
+\widehat{\mathbf T}_{1:N_t}
+&=G_\theta(\widehat{\mathbf z}_0,
+\boldsymbol\xi_{\mathrm{src}},
+\boldsymbol\xi_{\mathrm{tgt}},\mathbf t),\\
+\mathbf T^{\mathrm{final}}_{1:N_t}
+&=\widehat{\mathbf T}_{1:N_t}
++R_\phi(\widehat{\mathbf T}_{1:N_t},\boldsymbol\epsilon).
+\end{align}
+Training uses the exact \OpenFOAM{} source state to isolate trajectory error.
+The strict end-to-end test replaces it with the frozen PINN prediction;
+neither network is refitted on the held-out endpoint pair.
+Local graph blocks represent short-range exchange, Physics-Attention represents
+long-range coupling, and temporal attention advances the trajectory. The
+diffusion module changes only temperature and is retained only if it reduces
+temperature error without worsening the common energy difference. Persistence,
+DMDc and POD corrections provide zero-dynamics, linear-dynamics and low-rank baselines
+\cite{vaswani2017attention,proctor2016dmdc,sirovich1987pod,lippe2023pderefiner}.
+
+The common graph--Transformer has 270,441 trainable parameters: a 64-channel
+path, two local graph blocks before and after two four-head Physics-Attention
+blocks with 128 slices, and three temporal-attention layers. The data-only and
+physics-constrained variants share this architecture and initialization; the
+factorized variant evaluates the static spatial representation once but keeps
+the same temporal queries and parameter count. Training uses at most 500
+epochs of AdamW, an initial learning rate of $10^{-3}$, weight decay
+$10^{-5}$ and cosine decay to zero. The data-only objective is the
+volume-weighted temperature loss $\mathcal L_T$; the constrained variants use
+$5\mathcal L_T+\mathcal L_Q+\mathcal L_E$, where $\mathcal L_Q$ compares
+regional edge heat flux and $\mathcal L_E$ compares the projected transient
+energy operator \cite{li2024pino}. Because fixed coefficients need not balance
+the numerical progress of these terms, the predefined $5{:}1{:}1$ baseline is
+compared with three published ReLoBRaLo settings \cite{bischof2025relobralo}.
+Architecture, split, initialization and training length remain fixed. The
+unweighted mean of the three dimensionless validation losses selects both
+checkpoint and weighting method; the independent test is read once thereafter.
+The loss definition is identical on CPU and CUDA. On one representative
+46,089-node regional trajectory, CPU--CUDA and repeated-CUDA residuals differed
+by at most $3.0\times10^{-5}$ and $2.7\times10^{-5}$ in relative $L_\infty$
+norm, respectively, owing to the order of parallel floating-point summation.
+
+All neural transient models use the same bounded-residual map. For phase $r$,
+the network first predicts the unconstrained physical increment
+$d_r=(t/t_{\max})s_rq_{\theta,r}$, where $s_r$ is the training-set temperature
+scale. Define the available increment in the predicted direction as
+\begin{equation}
+c_r(d_r)=
+\begin{cases}
+T_{r,\max}-T_{r,0},&d_r\geq0,\\
+T_{r,0}-T_{r,\min},&d_r<0.
+\end{cases}
+\qquad
+\widehat T_r(t)=T_{r,0}+c_r(d_r)
+\tanh\!\left[\frac{d_r}{c_r(d_r)}\right].
+\label{eq:bounded_temperature_output}
+\end{equation}
+with \SIrange{300}{1000}{K} for helium and
+\SIrange{298}{1300}{K} for the solid. The initial field is exact, and the
+limiting value is used when $c_r=0$. The feasible inward derivative is unity at
+a bound, so heating from the lower bound and cooling from the upper bound remain
+trainable. Equation~\eqref{eq:bounded_temperature_output} enforces the declared
+property range without clipping errors within it.
+
+\subsection{Data separation and evaluation}
+
+Steady samples are separated by complete operating condition. The five tests
+cover interleaved conditions, high-temperature and high-velocity
+extrapolation, and transfer to middle and high heat-source levels. The
+source-level tests contain one training source value; its zero-variance input
+is therefore zero in every role, making them stability rather than
+learned-source-response tests. Transient samples are separated by complete
+endpoint pair: both directions joining the
+same two steady states remain in one role, and no time point from a held-out
+trajectory enters training, normalization or model selection. The strict
+end-to-end test also withholds both steady endpoints from steady-model fitting.
+
+Reported metrics include volume-weighted fluid and solid temperature errors,
+outlet-temperature and pressure-drop errors, maximum solid temperature,
+hotspot displacement, signed wall heat, and regional mass and energy
+differences. Transient tests additionally report trajectory error, final-state
+error, inference time and diffusion interval calibration. Checkpoints are chosen only
+on validation conditions and then frozen for the high-velocity
+and independent-packing tests. External PREMUX, TESOMEX, HELOKA and fixed-bed
+measurements are used only to check aggregate thermal and hydraulic scales;
+they are not cellwise labels for the P418 fields.
+
+Grid and time-step studies quantify numerical sensitivity, the second packing
+tests geometric sensitivity, and repeated seeds and training subsets quantify
+model and data sensitivity. These effects remain separate and use the same
+physical error measures as the final comparison.

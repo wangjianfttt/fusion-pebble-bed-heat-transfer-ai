@@ -1,0 +1,163 @@
+{
+  "status": "hccb_p418_cross_packing_screening_plan_ready",
+  "purpose": "Test whether a model trained on one particle arrangement retains accuracy on two independent particle arrangements within the current 60+9+9 paper route.",
+  "source_condition_matrix": {
+    "parameter_id": "P418",
+    "source_title": "Pore-scale simulation on flow and heat transfer characteristics in packed beds with internal heat sources at low Reynolds numbers",
+    "source_doi": "https://doi.org/10.1016/j.ijheatmasstransfer.2023.124325",
+    "published_case_count": 60
+  },
+  "physical_parameter_ids": [
+    "P048",
+    "P049",
+    "P050",
+    "P390",
+    "P404",
+    "P423",
+    "P070",
+    "P071",
+    "P092",
+    "P388",
+    "P389",
+    "P403",
+    "P406",
+    "P418",
+    "P424",
+    "P425",
+    "P426",
+    "P427"
+  ],
+  "new_physical_parameter_values_added": [],
+  "packing_realisations": [
+    {
+      "seed": 101,
+      "role": "current_full_60_condition_base",
+      "packing_path": "data/apd006_hccb_source_sequence_target_packings/seed101_s80_xlo_ycentre/packing.npz",
+      "packing_npz_sha256": "9e289c8752cbe8d1ce767d383536a67908568f10ed71d591d67ad8348960ae43",
+      "particle_count": 2039,
+      "geometric_porosity": 0.407599141319965
+    },
+    {
+      "seed": 202,
+      "role": "nine_condition_development_packing",
+      "packing_path": "data/apd006_hccb_source_sequence_target_packings/seed202_s80_xlo_ycentre/packing.npz",
+      "packing_npz_sha256": "d80ffc6d4a75bf6293bf75d565d05b4cbcce308bdd8b234b0c3ebf06e4506caf",
+      "particle_count": 2055,
+      "geometric_porosity": 0.4066760555664536
+    },
+    {
+      "seed": 303,
+      "role": "nine_condition_final_zero_shot_packing",
+      "packing_path": "data/apd006_hccb_source_sequence_target_packings/seed303_s80_xlo_ycentre/packing.npz",
+      "packing_npz_sha256": "2737dcadde1b506049aa81f478ca6e0d69f4e0e48eab77c267beebe524578b83",
+      "particle_count": 2044,
+      "geometric_porosity": 0.4090659405397955
+    }
+  ],
+  "screening_design": {
+    "case_count_per_new_packing": 9,
+    "selection_rule": "Eight exact corners of the published P418 condition envelope plus the exact published interior condition u0p15_T700_q6p85.",
+    "conditions": [
+      {
+        "condition_id": "u0p05_T300_q4p85",
+        "inlet_velocity_m_s": 0.05,
+        "inlet_temperature_K": 300.0,
+        "solid_heat_source_MW_m3": 4.85,
+        "selection_role": "published_envelope_corner"
+      },
+      {
+        "condition_id": "u0p05_T300_q8p85",
+        "inlet_velocity_m_s": 0.05,
+        "inlet_temperature_K": 300.0,
+        "solid_heat_source_MW_m3": 8.85,
+        "selection_role": "published_envelope_corner"
+      },
+      {
+        "condition_id": "u0p05_T900_q4p85",
+        "inlet_velocity_m_s": 0.05,
+        "inlet_temperature_K": 900.0,
+        "solid_heat_source_MW_m3": 4.85,
+        "selection_role": "published_envelope_corner"
+      },
+      {
+        "condition_id": "u0p05_T900_q8p85",
+        "inlet_velocity_m_s": 0.05,
+        "inlet_temperature_K": 900.0,
+        "solid_heat_source_MW_m3": 8.85,
+        "selection_role": "published_envelope_corner"
+      },
+      {
+        "condition_id": "u0p25_T300_q4p85",
+        "inlet_velocity_m_s": 0.25,
+        "inlet_temperature_K": 300.0,
+        "solid_heat_source_MW_m3": 4.85,
+        "selection_role": "published_envelope_corner"
+      },
+      {
+        "condition_id": "u0p25_T300_q8p85",
+        "inlet_velocity_m_s": 0.25,
+        "inlet_temperature_K": 300.0,
+        "solid_heat_source_MW_m3": 8.85,
+        "selection_role": "published_envelope_corner"
+      },
+      {
+        "condition_id": "u0p25_T900_q4p85",
+        "inlet_velocity_m_s": 0.25,
+        "inlet_temperature_K": 900.0,
+        "solid_heat_source_MW_m3": 4.85,
+        "selection_role": "published_envelope_corner"
+      },
+      {
+        "condition_id": "u0p25_T900_q8p85",
+        "inlet_velocity_m_s": 0.25,
+        "inlet_temperature_K": 900.0,
+        "solid_heat_source_MW_m3": 8.85,
+        "selection_role": "published_envelope_corner"
+      },
+      {
+        "condition_id": "u0p15_T700_q6p85",
+        "inlet_velocity_m_s": 0.15,
+        "inlet_temperature_K": 700.0,
+        "solid_heat_source_MW_m3": 6.85,
+        "selection_role": "published_interior_reference"
+      }
+    ],
+    "execution_case_count_for_seeds_202_and_303": 18
+  },
+  "model_use": {
+    "seed101": "Fit the fixed-packing models with the complete 60-condition matrix.",
+    "seed202": "Use the nine screening cases to compare architecture choices and quantify the first independent-packing loss of accuracy.",
+    "seed303_zero_shot": "Freeze architecture, weights and preprocessing before opening any seed303 field; predict all nine cases without seed303 fitting.",
+    "seed303_optional_few_shot_after_zero_shot": {
+      "adaptation_conditions": [
+        "u0p05_T300_q4p85",
+        "u0p15_T700_q6p85",
+        "u0p25_T900_q8p85"
+      ],
+      "test_conditions": [
+        "u0p05_T300_q8p85",
+        "u0p05_T900_q4p85",
+        "u0p05_T900_q8p85",
+        "u0p25_T300_q4p85",
+        "u0p25_T300_q8p85",
+        "u0p25_T900_q4p85"
+      ],
+      "reporting_rule": "Record the all-nine zero-shot result first. The optional three-case adaptation result is separate and cannot replace it."
+    }
+  },
+  "reported_quantities": [
+    "pressure_drop",
+    "outlet_temperature",
+    "maximum_solid_temperature",
+    "cooling_wall_heat_flow",
+    "fluid_temperature_field_error",
+    "solid_temperature_field_error",
+    "hotspot_location_error",
+    "mass_and_energy_residuals"
+  ],
+  "later_full_extension": {
+    "case_count": 180,
+    "protocol": "three_fold_leave_one_complete_packing_out",
+    "statement": "A later three-packing 180-case study is an optional extension. It is not required for the current 60+9+9 paper and must not be presented as completed evidence."
+  }
+}

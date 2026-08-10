@@ -1,0 +1,50 @@
+{
+  "status": "completed_p418_fixed_flow_runtime_recovery_checks",
+  "purpose": "Verify complete 32-rank restart fields and eliminate isolated wallHeatFlux-only time directories before the formal 12-sequence fixed-flow calculations.",
+  "checks": [
+    {
+      "job_id": 14374,
+      "range_s": [1.0, 1.4],
+      "mpi_ranks": 32,
+      "slurm_status": "COMPLETED/0:0",
+      "solver_end": true,
+      "fatal_error_count": 0,
+      "complete_terminal_fields_32_of_32": ["fluid/T", "fluid/U", "fluid/p", "fluid/p_rgh", "fluid/phi", "solid/T", "uniform/time"],
+      "isolated_intermediate_time_directory_count": 0,
+      "completion_marker_sha256": "6a0dd082401d5d3d9e30936754270654cfdfcf0b4a2be95355099e9335f18217",
+      "solver_log_sha256": "3492d8bbd2a37f2cbd1088d34d18a1877e1d9e95d9d0ebb6182b0714dc3ef1c9"
+    },
+    {
+      "job_id": 14375,
+      "range_s": [1.0, 1.4],
+      "mpi_ranks": 32,
+      "slurm_status": "COMPLETED/0:0",
+      "solver_end": true,
+      "fatal_error_count": 0,
+      "complete_terminal_fields_32_of_32": ["fluid/T", "fluid/U", "fluid/p", "fluid/p_rgh", "fluid/phi", "solid/T", "uniform/time", "fluid/wallHeatFlux"],
+      "cooling_wall_power_history": {"row_count": 41, "time_start_s": 1.0, "time_end_s": 1.4, "all_values_finite": true},
+      "isolated_intermediate_time_directory_count": 0,
+      "completion_marker_sha256": "aa81f5ad16791cbd1d2d63684d2b8753856b3e7d25a6ea5d61ec1c0062d1ab87",
+      "solver_log_sha256": "41973d9af84c9e6568bd98cb73f143661171a1ada5152cd38930dfbc550cea11"
+    },
+    {
+      "job_id": 14377,
+      "range_s": [1.4, 5.0],
+      "mpi_ranks": 32,
+      "slurm_status": "COMPLETED/0:0",
+      "solver_end": true,
+      "fatal_error_count": 0,
+      "start_time_index": 11840,
+      "stage_step_count": 360,
+      "terminal_write_time_index": 12200,
+      "complete_terminal_fields_32_of_32": ["fluid/T", "fluid/U", "fluid/p", "fluid/p_rgh", "fluid/phi", "solid/T", "uniform/time", "fluid/wallHeatFlux"],
+      "cooling_wall_power_history": {"row_count": 361, "time_start_s": 1.4, "time_end_s": 5.0, "time_increment_s": 0.01, "strictly_increasing_time": true, "all_values_finite": true},
+      "isolated_intermediate_time_directory_count": 0,
+      "completion_marker_sha256": "35684645e498f113fc2d2782a05c37f3963a2c318af1e4ad11ccf8266eb129ca",
+      "solver_log_sha256": "c34c00c03bf236d15e1ea092a614423ac0277b45ec88dfa77ed2fbf6a1523f9a"
+    }
+  ],
+  "formal_result_use": "The checks validate restart/write behaviour only. They do not replace the completed 12 formal fixed-flow trajectories.",
+  "source_record": "PROCESS_LOG_CN.md sections 485 and 488",
+  "new_physical_parameters": []
+}

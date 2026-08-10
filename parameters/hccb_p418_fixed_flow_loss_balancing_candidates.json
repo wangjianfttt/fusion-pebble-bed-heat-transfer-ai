@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "purpose": "Recorded candidates for balancing temperature-data, reference edge-energy-flux and projection-aware transient-energy losses in the fixed-hydrodynamics P418 regional operator.",
+  "physical_parameter_status": {
+    "new_physical_parameters": [],
+    "statement": "These are neural-network optimisation settings. They do not change pebble geometry, helium or ceramic properties, heating, boundary conditions, time histories or OpenFOAM data."
+  },
+  "group_mapping": {
+    "temperature_data": "state_data",
+    "reference_edge_energy_flux": "face_flux_data",
+    "projection_aware_transient_energy": "physics"
+  },
+  "primary_source": {
+    "method": "ReLoBRaLo",
+    "paper": "Multi-Objective Loss Balancing for Physics-Informed Deep Learning",
+    "authors": "Rafael Bischof and Michael A. Kraus",
+    "journal": "Computer Methods in Applied Mechanics and Engineering 439 (2025) 117914",
+    "doi": "10.1016/j.cma.2025.117914",
+    "arxiv": "2110.09813",
+    "equation_source": "arXiv version 16 November 2022, equation (11)",
+    "candidate_setting_source": "arXiv version 16 November 2022, table VIII",
+    "official_repository": "https://github.com/rbischof/relative_balancing",
+    "official_repository_commit": "b3c76d2bed7c6bebb2e2628575008a04858472cf",
+    "official_code_file": "src/update_rules.py"
+  },
+  "formal_candidates": [
+    {
+      "candidate_id": "fixed_registered_5_1_1",
+      "method": "fixed",
+      "temperature_data_weight": 5.0,
+      "reference_edge_energy_flux_weight": 1.0,
+      "projection_aware_transient_energy_weight": 1.0,
+      "source": "Registered fixed-weight baseline already used by the P418 fixed-hydrodynamics operator."
+    },
+    {
+      "candidate_id": "relobralo_burgers_table_viii",
+      "method": "relobralo",
+      "temperature_data_weight": 1.0,
+      "reference_edge_energy_flux_weight": 1.0,
+      "projection_aware_transient_energy_weight": 1.0,
+      "temperature": 0.1,
+      "alpha": 0.999,
+      "expected_rho": 0.9999,
+      "source": "Bischof and Kraus, arXiv:2110.09813, table VIII, Burgers setting."
+    },
+    {
+      "candidate_id": "relobralo_kirchhoff_table_viii",
+      "method": "relobralo",
+      "temperature_data_weight": 1.0,
+      "reference_edge_energy_flux_weight": 1.0,
+      "projection_aware_transient_energy_weight": 1.0,
+      "temperature": 0.01,
+      "alpha": 0.999,
+      "expected_rho": 0.9999,
+      "source": "Bischof and Kraus, arXiv:2110.09813, table VIII, Kirchhoff setting."
+    },
+    {
+      "candidate_id": "relobralo_helmholtz_table_viii",
+      "method": "relobralo",
+      "temperature_data_weight": 1.0,
+      "reference_edge_energy_flux_weight": 1.0,
+      "projection_aware_transient_energy_weight": 1.0,
+      "temperature": 1e-05,
+      "alpha": 0.99,
+      "expected_rho": 0.99,
+      "source": "Bischof and Kraus, arXiv:2110.09813, table VIII, Helmholtz setting."
+    }
+  ],
+  "selection_protocol": {
+    "training_data": "Complete training curves only.",
+    "checkpoint_selection": "Use the same unweighted validation score for every candidate: the arithmetic mean of the three dimensionless validation loss groups.",
+    "method_selection": "Select the candidate on validation curves only, with identical architecture, split and random seed.",
+    "independent_test": "Read the strict test curves once after the candidate and checkpoint are fixed.",
+    "claim_limit": "Published settings are candidates for this pebble-bed problem; superiority is not claimed before the validation-only comparison is complete."
+  }
+}

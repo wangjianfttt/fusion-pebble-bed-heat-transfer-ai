@@ -1,0 +1,11 @@
+{
+  "status": "author_confirmed",
+  "software_license": "MIT",
+  "data_license": "cc-by-4.0",
+  "confirmed_date": "2026-08-10",
+  "scope": {
+    "software": "Original project code, scripts and compact reproduction tools",
+    "data": "Processed numerical data, plot-ready tables, derived figure data and released model predictions",
+    "excluded": "Third-party publications, publisher figures, external data and third-party software"
+  }
+}
