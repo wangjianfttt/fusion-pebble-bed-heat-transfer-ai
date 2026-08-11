@@ -22,6 +22,7 @@ REQUIRED_FILES = (
     "reproducibility/README_CN.md",
     "reproducibility/p418_environment.json",
     "reproducibility/repository_release_metadata_draft.json",
+    "reproducibility/formal_training_sources/train_hccb_p418_regional_dmdc_20260729.py",
     "scripts/reproduce_p418_paper.sh",
     "scripts/test_p418_public_package.sh",
     "code/run_hccb_p418_formal_calculations.sh",
@@ -74,6 +75,8 @@ REQUIRED_FILES = (
     "submission/data_release_license_choice.json",
     "submission/data_release_repository_record.json",
     "results/hccb_p418_fixed_flow_runtime_recovery_checks/summary.json",
+    "results/hccb_p418_diffusion_physical_state/summary.json",
+    "results/hccb_p418_diffusion_observation_scope/summary.json",
 )
 
 SOURCE_PATTERNS = (
