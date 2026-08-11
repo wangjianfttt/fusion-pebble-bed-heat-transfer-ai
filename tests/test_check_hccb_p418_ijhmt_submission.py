@@ -28,6 +28,7 @@ def test_working_paper_has_clean_pdf_but_waits_for_final_transient_result() -> N
     payload = build(ROOT)
     checks = payload["checks"]
     assert checks["abstract_at_most_250_words"]
+    assert checks["introduction_at_most_800_words"]
     assert checks["keyword_count_1_to_7"]
     assert checks["main_pdf_at_most_40_pages"]
     assert checks["compact_main_pdf_at_most_25_pages"]
@@ -116,6 +117,8 @@ def test_working_paper_has_clean_pdf_but_waits_for_final_transient_result() -> N
         or payload["manuscript_title"].replace("--", "–") in cover_letter_text
     )
     assert payload["abstract_word_count"] <= 250
+    assert payload["introduction_word_count"] <= 800
+    assert payload["internal_introduction_word_target"] == 800
     assert payload["main_pdf_word_count"] <= 7500
     assert payload["keyword_count"] == 6
     assert payload["citation_count"] <= payload["ijhmt_reference_limit"] == 50

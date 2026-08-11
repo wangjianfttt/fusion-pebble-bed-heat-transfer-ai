@@ -64,6 +64,7 @@ MAIN_FIGURE_SOURCE_FILES = (
 INTERNAL_MAIN_PAGE_TARGET = 25
 INTERNAL_MAIN_WORD_TARGET = 7500
 INTERNAL_MAIN_FIGURE_TARGET = 7
+INTERNAL_INTRODUCTION_WORD_TARGET = 800
 IJHMT_REFERENCE_LIMIT = 50
 IJHMT_GUIDE_URL = (
     "https://www.sciencedirect.com/journal/"
@@ -448,6 +449,22 @@ def build(
     manuscript_title = extract_title(main_text)
     abstract_latex, abstract_source = final_abstract(root, main_text)
     abstract_words = re.findall(r"[A-Za-z0-9]+(?:[-'][A-Za-z0-9]+)*", strip_latex(abstract_latex))
+    introduction_match = re.search(
+        r"\\section\{Introduction\}(.*?)\\section\{Methods\}",
+        main_text,
+        flags=re.DOTALL,
+    )
+    introduction_latex = introduction_match.group(1) if introduction_match else ""
+    introduction_latex = re.sub(
+        r"\\begin\{figure\*?\}.*?\\end\{figure\*?\}",
+        " ",
+        introduction_latex,
+        flags=re.DOTALL,
+    )
+    introduction_words = re.findall(
+        r"[A-Za-z0-9]+(?:[-'][A-Za-z0-9]+)*",
+        strip_latex(introduction_latex),
+    )
     keyword_environment = extract_environment(main_text, "keyword")
     keywords = [
         strip_latex(item)
@@ -696,6 +713,8 @@ def build(
     )
     checks = {
         "abstract_at_most_250_words": len(abstract_words) <= 250,
+        "introduction_at_most_800_words": len(introduction_words)
+        <= INTERNAL_INTRODUCTION_WORD_TARGET,
         "keyword_count_1_to_7": 1 <= len(keywords) <= 7,
         "main_pdf_at_most_40_pages": page_count <= 40,
         "main_pdf_fonts_embedded_without_type3": (
@@ -836,6 +855,8 @@ def build(
         "abstract_source": abstract_source,
         "manuscript_title": manuscript_title,
         "abstract_word_count": len(abstract_words),
+        "introduction_word_count": len(introduction_words),
+        "internal_introduction_word_target": INTERNAL_INTRODUCTION_WORD_TARGET,
         "keyword_count": len(keywords),
         "keywords": keywords,
         "main_pdf_page_count": page_count,
@@ -897,6 +918,8 @@ def write_chinese(path: Path, payload: dict[str, object]) -> None:
         "",
         f"- 当前状态：{'全部通过' if payload['status'].startswith('completed') else '尚未全部通过'}",
         f"- 摘要词数：{payload['abstract_word_count']}（上限250）",
+        f"- 引言词数：{payload['introduction_word_count']}"
+        f"（内部精简目标不超过{payload['internal_introduction_word_target']}）",
         f"- 关键词数量：{payload['keyword_count']}（要求1--7）",
         f"- 主文PDF页数：{payload['main_pdf_page_count']}（当前检查上限40）",
         f"- 内部精简目标：不超过{payload['internal_main_page_target']}页",
@@ -917,6 +940,7 @@ def write_chinese(path: Path, payload: dict[str, object]) -> None:
     ]
     labels = {
         "abstract_at_most_250_words": "摘要长度",
+        "introduction_at_most_800_words": "引言精简长度",
         "keyword_count_1_to_7": "关键词数量",
         "main_pdf_at_most_40_pages": "主文页数",
         "main_pdf_fonts_embedded_without_type3": (
