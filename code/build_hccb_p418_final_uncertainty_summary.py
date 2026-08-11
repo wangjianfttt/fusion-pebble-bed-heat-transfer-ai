@@ -445,8 +445,10 @@ def write_tex(path: Path, headline: dict) -> None:
         f"{1000.0 * coupled['latest_stop_s']:.3f} ms. Across three initializations, the "
         "largest coefficients of variation across the separately defined metrics are "
         f"{100.0 * steady['coefficient_of_variation_fraction']:.1f}\\% for the steady "
-        f"models and {100.0 * transient['coefficient_of_variation_fraction']:.1f}\\% "
-        "for the transient models. "
+        f"models ({tex_escape(steady['model'])}, {tex_escape(steady['metric'])}) and "
+        f"{100.0 * transient['coefficient_of_variation_fraction']:.1f}\\% for the "
+        f"transient models ({tex_escape(transient['model'])}, "
+        f"{tex_escape(transient['metric'])}). "
         f"The independent packing changes outlet and maximum-solid temperatures by at "
         f"most {fmt(changes['outlet_temperature_K'])}\\% and "
         f"{fmt(changes['maximum_solid_temperature_K'])}\\%, respectively, but pressure "
@@ -481,8 +483,8 @@ def write_chinese(path: Path, headline: dict, external: dict) -> None:
         "",
         "## 网络重复训练",
         "",
-        f"- 稳态模型各指标分别计算后，最大变异系数为 {100.0 * headline['steady_training_seeds']['coefficient_of_variation_fraction']:.1f}%。",
-        f"- 瞬态模型各指标分别计算后，最大变异系数为 {100.0 * headline['transient_training_seeds']['coefficient_of_variation_fraction']:.1f}%。",
+        f"- 稳态模型各指标分别计算后，最大变异系数为 {100.0 * headline['steady_training_seeds']['coefficient_of_variation_fraction']:.1f}%，来自 {headline['steady_training_seeds']['model']} 的 {headline['steady_training_seeds']['metric']}。",
+        f"- 瞬态模型各指标分别计算后，最大变异系数为 {100.0 * headline['transient_training_seeds']['coefficient_of_variation_fraction']:.1f}%，来自 {headline['transient_training_seeds']['model']} 的 {headline['transient_training_seeds']['metric']}。",
         "",
         "## 颗粒装填与概率预测",
         "",
