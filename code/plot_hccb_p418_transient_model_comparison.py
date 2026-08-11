@@ -327,6 +327,14 @@ def main() -> int:
     )
     parser.add_argument("--output-dir", type=Path, default=root / "figures")
     parser.add_argument("--validation-marker", type=Path)
+    parser.add_argument(
+        "--allow-preselection-diagnostic",
+        action="store_true",
+        help=(
+            "Render a clearly named diagnostic layout before validation-only model "
+            "selection. This mode never writes the formal figure or validation marker."
+        ),
+    )
     args = parser.parse_args()
     result_dir = args.result_dir.resolve()
     comparison_dir = result_dir / "model_comparison"
@@ -343,6 +351,11 @@ def main() -> int:
 
     integration_path = selected_chain_record_path(result_dir)
     selected_loss_ready = integration_path.is_file()
+    if not selected_loss_ready and not args.allow_preselection_diagnostic:
+        raise ValueError(
+            "formal transient figure requires validation-selected loss balancing; "
+            "use --allow-preselection-diagnostic only for a non-manuscript diagnostic"
+        )
     if args.validation_marker is not None and not selected_loss_ready:
         raise ValueError(
             "a formal validation marker requires validation-selected loss balancing"
@@ -627,9 +640,14 @@ def main() -> int:
 
     output = args.output_dir.resolve()
     output.mkdir(parents=True, exist_ok=True)
-    pdf = output / "hccb_p418_transient_model_comparison.pdf"
-    svg = output / "hccb_p418_transient_model_comparison.svg"
-    png = output / "hccb_p418_transient_model_comparison.png"
+    output_stem = (
+        "hccb_p418_transient_model_comparison"
+        if selected_loss_ready
+        else "hccb_p418_transient_model_comparison_preselection_diagnostic"
+    )
+    pdf = output / f"{output_stem}.pdf"
+    svg = output / f"{output_stem}.svg"
+    png = output / f"{output_stem}.png"
     canvas_bounds = figure.bbox_inches
     figure.savefig(pdf, bbox_inches=canvas_bounds)
     figure.savefig(svg, bbox_inches=canvas_bounds)
@@ -637,7 +655,11 @@ def main() -> int:
     plt.close(figure)
 
     provenance = {
-        "status": "complete_formal_p418_transient_model_comparison_figure",
+        "status": (
+            "complete_formal_p418_transient_model_comparison_figure"
+            if selected_loss_ready
+            else "diagnostic_p418_transient_model_comparison_preselection"
+        ),
         "split_name": STRICT_SPLIT,
         "held_out_trajectory_ids": expected_ids,
         "held_out_trajectory_count": len(expected_ids),
@@ -683,7 +705,7 @@ def main() -> int:
             "split. The figure is not generated from incomplete trajectories or smoke-test output."
         ),
     }
-    summary_path = output / "hccb_p418_transient_model_comparison.json"
+    summary_path = output / f"{output_stem}.json"
     summary_path.write_text(
         json.dumps(provenance, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )

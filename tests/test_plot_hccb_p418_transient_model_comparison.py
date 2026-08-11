@@ -393,7 +393,7 @@ def test_renders_complete_formal_transient_figure(tmp_path: Path) -> None:
     )
 
 
-def test_preselection_layout_does_not_write_formal_marker(tmp_path: Path) -> None:
+def test_preselection_requires_explicit_diagnostic_mode(tmp_path: Path) -> None:
     splits = write_fixture(tmp_path)
     (
         tmp_path
@@ -415,14 +415,49 @@ def test_preselection_layout_does_not_write_formal_marker(tmp_path: Path) -> Non
         capture_output=True,
         text=True,
     )
+    assert result.returncode != 0
+    assert "requires validation-selected loss balancing" in result.stderr
+    assert not (output / "hccb_p418_transient_model_comparison.pdf").exists()
+
+
+def test_explicit_preselection_diagnostic_does_not_write_formal_files(
+    tmp_path: Path,
+) -> None:
+    splits = write_fixture(tmp_path)
+    (
+        tmp_path
+        / "results/fixed_flow_loss_balancing_pair_disjoint_stress_test"
+        / "selected_downstream_integration.json"
+    ).unlink()
+    output = tmp_path / "figures"
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(SCRIPT),
+            "--result-dir",
+            str(tmp_path / "results"),
+            "--splits",
+            str(splits),
+            "--output-dir",
+            str(output),
+            "--allow-preselection-diagnostic",
+        ],
+        capture_output=True,
+        text=True,
+    )
     assert result.returncode == 0, result.stderr
+    diagnostic_stem = "hccb_p418_transient_model_comparison_preselection_diagnostic"
     summary = json.loads(
-        (output / "hccb_p418_transient_model_comparison.json").read_text(
+        (output / f"{diagnostic_stem}.json").read_text(
             encoding="utf-8"
         )
     )
+    assert summary["status"] == "diagnostic_p418_transient_model_comparison_preselection"
     assert summary["strict_split_loss_balancing_stage"] == "registered_preselection"
     assert summary["validation_marker"] is None
+    assert (output / f"{diagnostic_stem}.pdf").is_file()
+    assert not (output / "hccb_p418_transient_model_comparison.pdf").exists()
+    assert not (output / "hccb_p418_transient_model_comparison.json").exists()
     assert not (
         tmp_path
         / "manuscript/generated_transient_model_comparison_validated.tex"
