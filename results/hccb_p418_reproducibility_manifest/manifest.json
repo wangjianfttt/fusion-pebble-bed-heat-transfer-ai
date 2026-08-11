@@ -5,7 +5,7 @@
   "source_package_ready": true,
   "final_outputs_ready": false,
   "source_file_count": 856,
-  "source_bytes": 24351545,
+  "source_bytes": 24352784,
   "missing_required_files": [],
   "files": [
     {
@@ -2051,8 +2051,8 @@
     {
       "category": "programs",
       "path": "code/run_hccb_p418_post_manifest_manuscript_finalization.sh",
-      "size_bytes": 5832,
-      "sha256": "608b148999486b9314b1776d1192f04b2748c0c66a13752547725bd2468c9e46",
+      "size_bytes": 6926,
+      "sha256": "b575f88947d2eb94063cb717c5448746ad247796de797167efb1ec653a8799b8",
       "required": true,
       "present": true
     },
@@ -2939,8 +2939,8 @@
     {
       "category": "manuscript",
       "path": "manuscript/P418_论文中文便读版.md",
-      "size_bytes": 12454,
-      "sha256": "609b29a109846982bd932341ebefebc894db86dba7b1d9ebb2d228650185c5ff",
+      "size_bytes": 12437,
+      "sha256": "195735e87f6a4d4170c9b15ab4e3e715d12a71fa0a73e76285884bc748fbfa58",
       "required": true,
       "present": true
     },
@@ -5803,8 +5803,8 @@
     {
       "category": "tests",
       "path": "tests/test_hccb_p418_post_manifest_manuscript_finalization.py",
-      "size_bytes": 1734,
-      "sha256": "85e69640fca57e5665bd34cd0af21408970c76e95bf3d268140446c90e3f9320",
+      "size_bytes": 1896,
+      "sha256": "f725d7fde7e974e5b96a82e6d12857ba83de2cd01b3b95bc787cf42d3f8687c9",
       "required": false,
       "present": true
     },
