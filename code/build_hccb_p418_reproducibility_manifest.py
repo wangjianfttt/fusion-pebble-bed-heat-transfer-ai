@@ -52,6 +52,7 @@ REQUIRED_FILES = (
     "results/hccb_p418_public_figure_data/direct_transport_scope_limit.json",
     "results/hccb_p418_public_data_release_preflight/README.md",
     "results/hccb_p418_public_data_release_preflight/summary.json",
+    "results/hccb_p418_public_data_release_preflight/zenodo_metadata_draft.json",
     "results/hccb_p418_public_data_release_preflight/formal_training_manifest_public.json",
     "results/hccb_p418_60_steady_seed_robustness_100epoch/summary.json",
     "results/hccb_p418_60_steady_seed_robustness_100epoch/steady_seed_metrics.csv",

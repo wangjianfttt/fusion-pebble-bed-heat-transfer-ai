@@ -4,8 +4,8 @@
   "project_root": ".",
   "source_package_ready": true,
   "final_outputs_ready": false,
-  "source_file_count": 857,
-  "source_bytes": 24356194,
+  "source_file_count": 858,
+  "source_bytes": 24360169,
   "missing_required_files": [],
   "files": [
     {
@@ -643,8 +643,8 @@
     {
       "category": "programs",
       "path": "code/build_hccb_p418_reproducibility_manifest.py",
-      "size_bytes": 17852,
-      "sha256": "919d11279b8730d4f19fc33be90029ee162bea42ff79100789c67e1cdf4e877b",
+      "size_bytes": 17934,
+      "sha256": "411939ed30a0fd566f50953c6c549374b9d7d9152a35424ddf4f31c36accefd9",
       "required": false,
       "present": true
     },
@@ -3821,6 +3821,14 @@
       "path": "results/hccb_p418_public_data_release_preflight/summary.json",
       "size_bytes": 5673,
       "sha256": "0d6b1056eae1b730e6a7c4ca065d79e84559d8b58251490b6165768f8019aca7",
+      "required": true,
+      "present": true
+    },
+    {
+      "category": "small_processed_results",
+      "path": "results/hccb_p418_public_data_release_preflight/zenodo_metadata_draft.json",
+      "size_bytes": 3893,
+      "sha256": "f5ca0ec9678695178eb42f1a7bf9f05cffcf430e7d68275ca9930cd0960d908f",
       "required": true,
       "present": true
     },
