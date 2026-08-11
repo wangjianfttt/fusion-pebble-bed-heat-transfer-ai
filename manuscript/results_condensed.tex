@@ -1,8 +1,5 @@
 \subsection{Reference heat-transfer response}
 
-Figure~\ref{fig:physical_response} summarizes the resolved thermal and
-hydraulic response over the 60-condition matrix.
-
 \IfFileExists{../figures/hccb_p418_physical_response.pdf}{%
 \begin{figure}[!htbp]
 \centering
@@ -59,9 +56,8 @@ cheng2024pressure,liu2024unitary}. The data are not training labels.}
 \end{figure}
 }{}
 
-Figure~\ref{fig:external_evidence} compares independent thermal and hydraulic
-measurements with the calculations. PREMUX and TESOMEX expose temperature
-structure missed by reduced one- and two-dimensional descriptions. HELOKA and
+PREMUX and TESOMEX document spatial temperature structure that is not retained
+by integral outlet measures. HELOKA and
 fixed-bed data support the adopted convective and hydraulic scales, with mean
 or median absolute relative errors of 3.9\% and 3.7\%, respectively. These
 comparisons do not validate the specific three-dimensional packing.
@@ -82,7 +78,7 @@ hydraulic response remains strongly geometry dependent
 \includegraphics[width=\textwidth]{../figures/hccb_p418_seed202_integral_9.pdf}
 \caption{Packing sensitivity at nine matched conditions. (a)--(c) Outlet
 temperature, maximum solid temperature and pressure drop for seed101 and
-seed202; the dashed line denotes parity, colours encode inlet temperature and
+seed202; the dashed line denotes parity, colors encode inlet temperature and
 symbols encode inlet velocity. (d) Relative changes on a symmetric-logarithmic
 axis (linear within $\pm1\%$); diamonds mark nine-condition means.
 All points are direct calculations at the 200th steady nonlinear iteration.}
@@ -92,10 +88,8 @@ All points are direct calculations at the 200th steady nonlinear iteration.}
 
 \IfFileExists{generated_steady_model_comparison_validated.tex}{%
 \subsection{Prediction of unseen steady conditions}
-Figure~\ref{fig:steady_model_comparison} compares all steady models on the
-same complete-condition splits and physical quantities.
 \IfFileExists{../figures/hccb_p418_steady_model_comparison.pdf}{%
-\begin{figure}[!htbp]
+\begin{figure}[!t]
 \centering
 \includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{../figures/hccb_p418_steady_model_comparison.pdf}
 \caption{Steady prediction on five complete-condition splits. Response-surface,
@@ -109,6 +103,8 @@ pressure, wall-heat and finite-volume balance measures.}
 \input{generated_steady_performance}}{}
 \IfFileExists{generated_steady_result_text.tex}{%
 \input{generated_steady_result_text}}{}
+\IfFileExists{generated_steady_seed_robustness_text.tex}{%
+\input{generated_steady_seed_robustness_text}}{}
 }{}
 
 \subsection{Prediction of held-out thermal trajectories}
@@ -126,8 +122,6 @@ steady endpoints, testing the complete frozen steady-to-transient chain.
 
 \IfFileExists{generated_transient_model_comparison_validated.tex}{%
 \IfFileExists{../figures/hccb_p418_transient_model_comparison.pdf}{%
-Figure~\ref{fig:transient_model_comparison} summarizes the resulting accuracy,
-finite-volume energy consistency and acceleration.
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{../figures/hccb_p418_transient_model_comparison.pdf}
@@ -160,7 +154,7 @@ data-generation costs are reported separately.}
 independent test heat-source increase; the model was selected using validation trajectories only.
 Rows: reference, \PFieldModelLabel{} prediction and
 signed error; columns: fluid and solid phases. Reference and prediction
-share a scale. Error colours are clipped at the 99th percentile; annotated
+share a scale. Error colors are clipped at the 99th percentile; annotated
 extrema and metrics are unclipped. Section interpolation is visual only;
 metrics use the original regional nodes.}
 \label{fig:field_cloud_comparison}
@@ -170,7 +164,7 @@ The full regional-field fluid/solid RMSE in
 Fig.~\ref{fig:field_cloud_comparison} is
 \SI{\PFieldFluidRMSE}{K}/\SI{\PFieldSolidRMSE}{K}, and the corresponding
 maximum absolute errors are \SI{\PFieldFluidMaxError}{K} and
-\SI{\PFieldSolidMaxError}{K}.  These maxima are reported without colour-scale
+\SI{\PFieldSolidMaxError}{K}.  These maxima are reported without color-scale
 clipping, so the figure distinguishes representative spatial fidelity from
 isolated extreme errors rather than reporting only an averaged score.
 }{}

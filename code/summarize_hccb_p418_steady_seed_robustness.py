@@ -149,6 +149,43 @@ def write_tex(path: Path, aggregate: list[dict], split_name: str, seed_count: in
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
+def write_result_text(path: Path, aggregate: list[dict]) -> None:
+    lookup = {(row["architecture"], row["metric"]): row for row in aggregate}
+
+    def pair(architecture: str, metric: str) -> tuple[float, float]:
+        row = lookup[(architecture, metric)]
+        return float(row["mean"]), float(row["sample_std"])
+
+    transolver_temperature = pair("transolver", "solid_temperature_normalized_rmse")
+    transolver_maximum = pair("transolver", "solid_maximum_temperature_p95_K")
+    graph_temperature = pair("graph", "solid_temperature_normalized_rmse")
+    graph_maximum = pair("graph", "solid_maximum_temperature_p95_K")
+    transolver_wall = pair("transolver", "wall_heat_p95_percent")
+    transolver_energy = pair("transolver", "regional_energy_difference_percent")
+    lines = [
+        "Across three independent initializations on the registered main split, the ",
+        (
+            "Transolver gives a solid-temperature nRMSE of "
+            f"${transolver_temperature[0]:.4f} \\pm {transolver_temperature[1]:.4f}$ and a "
+            f"maximum-solid-temperature p95 error of ${transolver_maximum[0]:.1f} \\pm "
+            f"{transolver_maximum[1]:.1f}$~K.  The corresponding graph-operator values are "
+            f"${graph_temperature[0]:.4f} \\pm {graph_temperature[1]:.4f}$ and "
+            f"${graph_maximum[0]:.1f} \\pm {graph_maximum[1]:.1f}$~K."
+        ),
+        (
+            "This repeatability in temperature does not imply local energy closure: the "
+            f"Transolver wall-heat p95 error is ${transolver_wall[0]:.1f} \\pm "
+            f"{transolver_wall[1]:.1f}$\\%, and its mean regional energy-difference measure is "
+            f"${transolver_energy[0]:.0f} \\pm {transolver_energy[1]:.0f}$\\%.  The latter "
+            "quantities are therefore retained as separate acceptance measures rather than "
+            "being inferred from temperature accuracy."
+        ),
+        "",
+    ]
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(lines), encoding="utf-8")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--results-root", type=Path, required=True)
@@ -160,6 +197,7 @@ def main() -> int:
     parser.add_argument("--seeds", type=int, nargs="+", default=[20260717, 20260718, 20260719])
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--tex-output", type=Path)
+    parser.add_argument("--text-output", type=Path)
     args = parser.parse_args()
 
     seeds = list(dict.fromkeys(args.seeds))
@@ -248,6 +286,8 @@ def main() -> int:
     write_csv(output / "steady_seed_summary.csv", aggregate)
     if args.tex_output is not None:
         write_tex(args.tex_output.resolve(), aggregate, args.split_name, len(seeds))
+    if args.text_output is not None:
+        write_result_text(args.text_output.resolve(), aggregate)
     payload = {
         "status": "completed_p418_main_steady_split_seed_robustness",
         "split_name": args.split_name,

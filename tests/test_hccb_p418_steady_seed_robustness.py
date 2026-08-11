@@ -91,6 +91,8 @@ def command(tmp_path: Path, split: Path, results: Path) -> list[str]:
         str(tmp_path / "summary"),
         "--tex-output",
         str(tmp_path / "seed_table.tex"),
+        "--text-output",
+        str(tmp_path / "seed_text.tex"),
     ]
 
 
@@ -110,6 +112,10 @@ def test_three_seed_summary_and_tex_are_generated(tmp_path: Path) -> None:
     tex = (tmp_path / "seed_table.tex").read_text(encoding="utf-8")
     assert "mean $\\pm$ sample standard deviation" in tex
     assert "Physics PINN" in tex
+    result_text = (tmp_path / "seed_text.tex").read_text(encoding="utf-8")
+    assert "three independent initializations" in result_text
+    assert "does not imply local energy closure" in result_text
+    assert "wall-heat p95 error" in result_text
     assert (tmp_path / "summary/README_CN.md").is_file()
 
 

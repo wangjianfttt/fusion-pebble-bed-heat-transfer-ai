@@ -1,0 +1,17 @@
+\begin{table*}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4.0pt}
+\caption{Sensitivity of the main steady-condition comparison to neural-network initialization. Values are mean $\pm$ sample standard deviation over 3 independent training seeds on the same registered split; OpenFOAM fields, case partition and normalization are unchanged.}
+\label{tab:steady_seed_robustness}
+\begin{tabular}{lrrrr}
+\toprule
+Method & Solid-$T$ nRMSE & Max-$T$ p95 (K) & Wall-heat p95 (\%) & Energy diff. (\%) \\
+\midrule
+Data-only PINN & 0.329 $\pm$ 0.314 & 116 $\pm$ 40.7 & 39.8 $\pm$ 17.1 & 1.59e+03 $\pm$ 122 \\
+Physics PINN & 0.454 $\pm$ 0.469 & 103 $\pm$ 22.2 & 39.4 $\pm$ 20.8 & 1.18e+03 $\pm$ 184 \\
+Graph operator & 0.0725 $\pm$ 1.44e-03 & 27.1 $\pm$ 8.9 & 87 $\pm$ 10.5 & 1.55e+03 $\pm$ 33.1 \\
+Transolver & 0.0675 $\pm$ 2.62e-03 & 11.9 $\pm$ 1.2 & 73.5 $\pm$ 31.8 & 1.32e+03 $\pm$ 63.1 \\
+\bottomrule
+\end{tabular}
+\end{table*}
