@@ -1,0 +1,98 @@
+{
+  "status": "research_route_complete_formal_calculation_pending",
+  "scheme_checks": {
+    "literature_physical_inputs": true,
+    "published_model_and_algorithm_sources": true,
+    "numerical_settings_separated_from_physics": true,
+    "experimental_route_and_data_structure": true,
+    "chinese_process_and_explanation_documents": true,
+    "initial_code_and_model_data_structure": true,
+    "current_summary_counts_match_source_tables": true
+  },
+  "scheme_complete": true,
+  "formal_calculation_complete": false,
+  "formal_data_progress": {
+    "steady": "0/60",
+    "fixed_hydrodynamics_steps": "0/12",
+    "fully_coupled_steps": "0/12"
+  },
+  "fully_coupled_scope_status": "property_range_limited_not_part_of_formal_training_data",
+  "physical_and_model_inputs": {
+    "status": "completed_p418_parameter_and_model_input_summary",
+    "physical_parameter_count": 22,
+    "physical_parameters_used_by_equations": 22,
+    "unused_physical_parameter_ids": [],
+    "unknown_equation_parameter_ids": [],
+    "equation_map_row_count": 31,
+    "model_numerical_setting_count": 78,
+    "model_setting_type_counts": {
+      "data_derived": 6,
+      "finite_volume_definition": 1,
+      "measured_compute_setting": 5,
+      "official_OpenFOAM13_software_constant": 1,
+      "official_code_architecture": 4,
+      "official_code_constant": 1,
+      "official_code_training": 15,
+      "predeclared_baseline": 3,
+      "predeclared_numerical_scan": 2,
+      "predeclared_selection_rule": 2,
+      "problem_geometry": 2,
+      "project_adaptation": 2,
+      "published_algorithm": 13,
+      "published_architecture": 16,
+      "published_component_adaptation": 3,
+      "source_backed_output_parameterization": 2
+    },
+    "literature_or_official_model_setting_count": 55,
+    "case_or_data_derived_model_setting_count": 14,
+    "predeclared_project_comparison_setting_count": 9,
+    "unknown_model_setting_types": [],
+    "all_model_settings_are_nonphysical": true,
+    "all_model_setting_source_paths_exist": true,
+    "model_setting_source_verification_mode": "registered_metadata",
+    "experimental_observable_count": 12,
+    "experimental_observation_source_count": 17,
+    "experimental_template_rows": {
+      "calibration_records.csv": 0,
+      "experiment_conditions.csv": 0,
+      "sensor_layout.csv": 0,
+      "steady_measurements.csv": 0,
+      "transient_measurements.csv": 0
+    },
+    "experimental_templates_contain_no_measurements": true,
+    "new_physical_parameters": []
+  },
+  "architecture_sources": {
+    "architecture_count": 10,
+    "domain_specific_pinn_precedent_count": 2,
+    "checked_local_source_hash_count": 25,
+    "missing_paper_links": [],
+    "missing_local_source_files": [],
+    "changed_local_source_files": [],
+    "source_verification_mode": "registered_metadata_and_sha256",
+    "complete": true
+  },
+  "required_documents": {
+    "required_file_count": 3,
+    "missing_files": [],
+    "complete": true
+  },
+  "core_code_and_contracts": {
+    "required_file_count": 14,
+    "missing_files": [],
+    "complete": true
+  },
+  "experimental_templates": {
+    "required_file_count": 5,
+    "missing_files": [],
+    "complete": true
+  },
+  "current_summary_count_checks": {
+    "physical_parameter_count": true,
+    "equation_map_row_count": true,
+    "model_setting_count": true,
+    "model_setting_verified_count": true,
+    "architecture_count": true
+  },
+  "new_physical_parameters": []
+}

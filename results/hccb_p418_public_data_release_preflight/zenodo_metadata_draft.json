@@ -1,0 +1,58 @@
+{
+  "status": "p418_repository_metadata_draft",
+  "metadata": {
+    "title": "Data and code for: Transient conjugate heat transfer in internally heated ceramic pebble beds: pore-resolved reference fields and graph–Transformer prediction",
+    "upload_type": "dataset",
+    "description": "Pore-scale heat transfer in solid-breeder pebble beds couples temperature-dependent helium flow, ceramic conduction, fluid--solid exchange, volumetric heating and wall cooling. Direct three-dimensional calculations resolve these mechanisms but are too expensive for repeated operating-condition and transient studies. We establish a pore-resolved benchmark and a hybrid prediction chain in which, at inference, a frozen steady coordinate PINN supplies the source-condition temperature and target-condition hydrodynamic state, a regional graph--Transformer predicts the fluid and solid temperature trajectory, and a diffusion-style refiner acts only on the remaining temperature error. Physics-constrained variants incorporate finite-volume mass, energy and interface heat-flux relations; all models are evaluated using the same physical quantities. Complete operating conditions and thermal-step trajectories are separated between training, validation and independent prediction. The database contains 60 steady conjugate-heat-transfer conditions and 12 fixed-hydrodynamics thermal-step trajectories. The regional representation contains nodes and connections, with retained field times per trajectory. A second independently generated spherical-pebble arrangement was calculated at nine matched conditions. Relative to the reference arrangement, its outlet-temperature and maximum-solid-temperature changes remain below 0.67% and 0.31%, respectively, whereas the pressure-drop change is 14.7--18.0%. For these two intact spherical arrangements, integral thermal response is therefore less packing-sensitive than hydraulic resistance. The final comparison tests whether the hybrid model accelerates the three-dimensional reference calculation while retaining hotspot magnitude and location, signed wall heat transfer and finite-volume energy consistency.",
+    "creators": [
+      {
+        "name": "Wang, Jian",
+        "affiliation": "Anhui University of Science and Technology; Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences"
+      },
+      {
+        "name": "Wen, Wei",
+        "affiliation": "Anhui University of Science and Technology; Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences"
+      },
+      {
+        "name": "Shen, Gang",
+        "affiliation": "Anhui University of Science and Technology"
+      },
+      {
+        "name": "Lei, Mingzhun",
+        "affiliation": "Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences"
+      },
+      {
+        "name": "Song, Yuntao",
+        "affiliation": "Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences"
+      }
+    ],
+    "keywords": [
+      "solid-breeder blanket",
+      "ceramic pebble bed",
+      "conjugate heat transfer",
+      "physics-informed neural network",
+      "graph Transformer",
+      "diffusion refinement"
+    ],
+    "access_right": "open",
+    "license": "cc-by-4.0",
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/wangjianfttt/fusion-pebble-bed-heat-transfer-ai",
+        "relation": "isSupplementTo",
+        "scheme": "url"
+      }
+    ]
+  },
+  "description_source": "main.tex fallback",
+  "license_choice": {
+    "software_license": "MIT",
+    "data_license": "cc-by-4.0"
+  },
+  "pending_fields": [
+    "final_processed_files",
+    "final_abstract"
+  ],
+  "ready_for_deposition": false,
+  "new_physical_parameters": []
+}

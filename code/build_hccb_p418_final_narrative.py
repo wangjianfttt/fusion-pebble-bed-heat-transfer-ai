@@ -816,8 +816,8 @@ def build(args: argparse.Namespace) -> dict:
         "heating and wall cooling. We compare physics-informed and "
         "data-driven reduced models using 60 three-dimensional steady "
         "conjugate-heat-transfer fields and 12 complete fixed-flow "
-        "thermal trajectories from literature-derived conditions. "
-        "Conditions and endpoint pairs are withheld. "
+        "thermal trajectories. Disjoint condition and endpoint-pair splits "
+        "separate validation from testing. "
         f"The maximum solid temperature spans {fmt(solid_min)}--"
         f"{fmt(solid_max)} K, and wall heat reverses direction at inlet "
         f"temperatures of {fmt(crossing_min)}--{fmt(crossing_max)} K. "
@@ -883,7 +883,7 @@ def build(args: argparse.Namespace) -> dict:
 
     conclusion = (
         "A finite-volume-consistent comparison evaluates PINN, graph--Transformer and diffusion models for "
-        "pore-resolved breeder-bed heat transfer. Models are selected on complete withheld conditions; "
+        "pore-resolved breeder-bed heat transfer. Validation selects models and loss weights before independent testing; "
         "temperature, energy, wall heat and hotspot errors remain separate. "
         f"The best strict-split transient field model is the "
         f"{TRANSIENT_LABELS[best_transient_model]} with a "

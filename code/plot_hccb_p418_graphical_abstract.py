@@ -17,6 +17,13 @@ BLUE = "#0072B2"
 ORANGE = "#D55E00"
 GREEN = "#009E73"
 INK = "#161616"
+MODEL_LABELS = {
+    "graph_transformer_data_only": "Data-only\ngraph Transformer",
+    "graph_transformer_energy_flux": "Physics-constrained\ngraph Transformer",
+    "graph_transformer_factorized_energy_flux": "Factorized\ngraph Transformer",
+    "low_rank_residual_correction": "POD residual\ncorrection",
+    "diffusion_residual_correction": "Diffusion residual\ncorrection",
+}
 
 
 def sha256(path: Path) -> str:
@@ -40,22 +47,37 @@ def crop_fraction(image: Image.Image, bounds: tuple[float, float, float, float])
     )
 
 
-def require_final_inputs(root: Path) -> tuple[Path, Path]:
+def require_final_inputs(root: Path) -> tuple[Path, Path, Path, dict[str, object]]:
     marker = root / "manuscript/generated_openfoam_model_field_comparison_validated.tex"
     domain = root / "figures/hccb_p418_physical_model_domain.png"
     field = root / "figures/hccb_p418_openfoam_model_field_comparison.png"
-    missing = [str(path) for path in (marker, domain, field) if not path.is_file()]
+    selection = root / "figures/hccb_p418_openfoam_model_field_selection.json"
+    missing = [
+        str(path)
+        for path in (marker, domain, field, selection)
+        if not path.is_file()
+    ]
     if missing:
         raise FileNotFoundError(
             "graphical abstract requires validated final inputs: " + ", ".join(missing)
         )
     if marker.stat().st_size == 0 or field.stat().st_size == 0:
         raise RuntimeError("validated field marker or final field figure is empty")
-    return domain, field
+    selection_record = json.loads(selection.read_text(encoding="utf-8"))
+    selected_model = str(selection_record.get("selected_model", ""))
+    if (
+        selection_record.get("status")
+        != "selected_p418_field_figure_learned_model"
+        or selection_record.get("selection_data_role") != "validation"
+        or selection_record.get("display_data_role") != "test"
+        or selected_model not in MODEL_LABELS
+    ):
+        raise RuntimeError("graphical abstract model selection is incomplete")
+    return domain, field, selection, selection_record
 
 
 def render(root: Path, output_stem: Path) -> dict[str, object]:
-    domain_path, field_path = require_final_inputs(root)
+    domain_path, field_path, selection_path, selection_record = require_final_inputs(root)
     domain_image = Image.open(domain_path).convert("RGB")
     field_image = Image.open(field_path).convert("RGB")
 
@@ -83,7 +105,12 @@ def render(root: Path, output_stem: Path) -> dict[str, object]:
 
     headings = (
         (0.148, "Pore-resolved\npacked bed", ORANGE),
-        (0.498, "Physics-guided\ngraph Transformer", BLUE),
+        (
+            0.498,
+            "Validation-selected\n"
+            + MODEL_LABELS[str(selection_record["selected_model"])],
+            BLUE,
+        ),
         (0.848, "Independent\nfull-field test", GREEN),
     )
     for x, label, colour in headings:
@@ -103,8 +130,8 @@ def render(root: Path, output_stem: Path) -> dict[str, object]:
         )
 
     fig.text(0.148, 0.012, "60 steady + 12 transient cases", ha="center", va="bottom", fontsize=5.0)
-    fig.text(0.498, 0.012, "Validation-only model selection", ha="center", va="bottom", fontsize=5.0)
-    fig.text(0.848, 0.012, "Fluid + solid temperature fields", ha="center", va="bottom", fontsize=5.0)
+    fig.text(0.498, 0.012, "Selection uses validation trajectories", ha="center", va="bottom", fontsize=5.0)
+    fig.text(0.848, 0.012, "Fluid + solid temperatures at 25 s", ha="center", va="bottom", fontsize=5.0)
 
     output_stem.parent.mkdir(parents=True, exist_ok=True)
     outputs = {
@@ -128,7 +155,11 @@ def render(root: Path, output_stem: Path) -> dict[str, object]:
         "inputs": {
             str(domain_path.relative_to(root)): sha256(domain_path),
             str(field_path.relative_to(root)): sha256(field_path),
+            str(selection_path.relative_to(root)): sha256(selection_path),
         },
+        "selected_model": selection_record["selected_model"],
+        "selection_data_role": selection_record["selection_data_role"],
+        "display_data_role": selection_record["display_data_role"],
         "outputs": {
             kind: {"path": str(path), "sha256": sha256(path)}
             for kind, path in outputs.items()

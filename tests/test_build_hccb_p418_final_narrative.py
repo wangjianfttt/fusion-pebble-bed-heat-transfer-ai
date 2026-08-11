@@ -548,6 +548,8 @@ def test_builds_current_scope_final_sections(tmp_path: Path) -> None:
     discussion = result["discussion"].read_text(encoding="utf-8")
     conclusion = result["conclusion"].read_text(encoding="utf-8")
     assert "60 three-dimensional steady" in abstract
+    assert "Disjoint condition and endpoint-pair splits" in abstract
+    assert "separate validation from testing" in abstract
     assert "9.00 / 7.00 / 6.00 K" in abstract
     assert "initial-temperature persistence" in abstract
     assert "4.00 K" in abstract
@@ -574,6 +576,10 @@ def test_builds_current_scope_final_sections(tmp_path: Path) -> None:
     assert "bulk porosity alone did not capture" in discussion
     assert "not cellwise validation" in discussion
     assert "finite-volume-consistent comparison" in conclusion
+    assert (
+        "Validation selects models and loss weights before independent testing"
+        in conclusion
+    )
     assert "sampled operating conditions and two packing realizations" in conclusion
     assert "seed303" not in abstract + discussion + conclusion
     assert "fully coupled predictor" not in abstract + discussion + conclusion

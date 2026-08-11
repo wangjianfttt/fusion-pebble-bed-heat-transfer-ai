@@ -49,3 +49,22 @@ def test_panelled_captions_name_each_plotted_panel_range() -> None:
     assert "(d)" in captions["fig:cross_packing_integral"]
     assert "(a)" in captions["fig:transient_model_comparison"]
     assert "(f)" in captions["fig:transient_model_comparison"]
+
+
+def test_final_model_figure_captions_keep_selection_and_panel_meanings_explicit() -> None:
+    captions = dict(main_figure_captions())
+    transient = captions["fig:transient_model_comparison"]
+    for phrase in (
+        "(a) velocity increase",
+        "(b) velocity decrease",
+        "(c) heat-source increase",
+        "(d) heat-source decrease",
+        "validation-only model and loss-weight selection",
+    ):
+        assert phrase in transient
+
+    field = captions["fig:field_cloud_comparison"]
+    assert "selected using validation trajectories only" in field
+    assert "independent test heat-source increase" in field
+    assert "Rows: reference" in field
+    assert "columns: fluid and solid phases" in field

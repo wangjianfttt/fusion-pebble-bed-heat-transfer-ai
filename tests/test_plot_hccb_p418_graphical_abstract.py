@@ -38,11 +38,23 @@ def test_graphical_abstract_is_deterministic_and_large_enough(tmp_path: Path) ->
     (manuscript / "generated_openfoam_model_field_comparison_validated.tex").write_text(
         "validated\n", encoding="utf-8"
     )
+    (figures / "hccb_p418_openfoam_model_field_selection.json").write_text(
+        """{
+  "status": "selected_p418_field_figure_learned_model",
+  "selected_model": "diffusion_residual_correction",
+  "selection_data_role": "validation",
+  "display_data_role": "test"
+}\n""",
+        encoding="utf-8",
+    )
 
     first = render(tmp_path, tmp_path / "first/graphical_abstract")
     second = render(tmp_path, tmp_path / "second/graphical_abstract")
     assert first["status"] == "p418_ijhmt_graphical_abstract_ready"
     assert first["generative_ai_used_for_image"] is False
+    assert first["selected_model"] == "diffusion_residual_correction"
+    assert first["selection_data_role"] == "validation"
+    assert first["display_data_role"] == "test"
     assert first["png_size_pixels"][0] >= 1328
     assert first["png_size_pixels"][1] >= 531
     assert first["outputs"]["png"]["sha256"] == second["outputs"]["png"]["sha256"]

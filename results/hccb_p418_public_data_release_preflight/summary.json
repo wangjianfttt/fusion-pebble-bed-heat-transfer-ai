@@ -80,9 +80,7 @@
   "final_processed_files": [
     {
       "path": "results/hccb_p418_physical_steps_12/regional_sequences/regional_sequence_geometry.npz",
-      "present": true,
-      "size_bytes": 14230450,
-      "sha256": "e36d8ad135eaad3ebf9e2d75d4762735fb34c31eb81fc6395e200f9ff883a797"
+      "present": false
     },
     {
       "path": "data/apd006_hccb_source_sequence_target_packings/seed101_s80_xlo_ycentre/packing.npz",
