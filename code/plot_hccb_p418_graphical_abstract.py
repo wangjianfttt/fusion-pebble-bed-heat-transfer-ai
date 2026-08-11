@@ -7,6 +7,8 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import shutil
+import subprocess
 
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch
@@ -94,6 +96,9 @@ def render(root: Path, output_stem: Path) -> dict[str, object]:
             "font.size": 7.0,
             "axes.linewidth": 0.8,
             "text.color": INK,
+            "pdf.fonttype": 42,
+            "ps.fonttype": 42,
+            "svg.fonttype": "none",
         }
     )
     fig = plt.figure(figsize=(13.0 / 2.54, 5.0 / 2.54), dpi=320, facecolor="white")
@@ -168,11 +173,29 @@ def render(root: Path, output_stem: Path) -> dict[str, object]:
     png_size = Image.open(outputs["png"]).size
     if png_size[0] < 1328 or png_size[1] < 531:
         raise RuntimeError(f"graphical abstract is below IJHMT minimum size: {png_size}")
+    svg_text = outputs["svg"].read_text(encoding="utf-8")
+    if "<text" not in svg_text:
+        raise RuntimeError("graphical abstract SVG text is not editable")
+    pdffonts = shutil.which("pdffonts")
+    pdf_type3_fonts: bool | None = None
+    if pdffonts is not None:
+        completed = subprocess.run(
+            [pdffonts, str(outputs["pdf"])],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        pdf_type3_fonts = "Type 3" in completed.stdout
+        if pdf_type3_fonts:
+            raise RuntimeError("graphical abstract PDF contains Type 3 fonts")
     record = {
         "status": "p418_ijhmt_graphical_abstract_ready",
         "source_mode": "deterministic_crop_of_validated_project_figures",
         "generative_ai_used_for_image": False,
         "png_size_pixels": list(png_size),
+        "figure_size_cm": [13.0, 5.0],
+        "svg_text_editable": True,
+        "pdf_type3_fonts": pdf_type3_fonts,
         "inputs": {
             str(domain_path.relative_to(root)): sha256(domain_path),
             str(field_path.relative_to(root)): sha256(field_path),

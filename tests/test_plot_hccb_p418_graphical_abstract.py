@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import sys
+import shutil
+import subprocess
 from pathlib import Path
 
 import numpy as np
@@ -57,4 +59,18 @@ def test_graphical_abstract_is_deterministic_and_large_enough(tmp_path: Path) ->
     assert first["display_data_role"] == "test"
     assert first["png_size_pixels"][0] >= 1328
     assert first["png_size_pixels"][1] >= 531
+    assert first["figure_size_cm"] == [13.0, 5.0]
+    assert first["svg_text_editable"] is True
+    assert "<text" in (tmp_path / "first/graphical_abstract.svg").read_text(
+        encoding="utf-8"
+    )
+    if shutil.which("pdffonts") is not None:
+        fonts = subprocess.run(
+            ["pdffonts", str(tmp_path / "first/graphical_abstract.pdf")],
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout
+        assert "Type 3" not in fonts
+        assert first["pdf_type3_fonts"] is False
     assert first["outputs"]["png"]["sha256"] == second["outputs"]["png"]["sha256"]
