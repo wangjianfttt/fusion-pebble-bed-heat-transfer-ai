@@ -3204,7 +3204,7 @@
       "category": "manuscript",
       "path": "manuscript/main.tex",
       "size_bytes": 14428,
-      "sha256": "3bd552346667eb2b50953996ffeee5d41085f653ea8a00be3fdfc726124600db",
+      "sha256": "14c9191dc3b80ccedd07751ffeff0e93c60606d0dfd05f8df026d7f0a12a73c2",
       "required": true,
       "present": true
     },
@@ -3828,7 +3828,7 @@
       "category": "small_processed_results",
       "path": "results/hccb_p418_public_data_release_preflight/zenodo_metadata_draft.json",
       "size_bytes": 3893,
-      "sha256": "f5ca0ec9678695178eb42f1a7bf9f05cffcf430e7d68275ca9930cd0960d908f",
+      "sha256": "694d56a94df4b46205c9628eacb76dbf1fc0ab1e1ceb0eaad80aeeb4fd158c7e",
       "required": true,
       "present": true
     },
