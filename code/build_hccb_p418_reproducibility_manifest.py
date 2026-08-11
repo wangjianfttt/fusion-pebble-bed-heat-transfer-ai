@@ -61,12 +61,15 @@ REQUIRED_FILES = (
     "results/hccb_p418_actual_spatiotemporal_operator_37time_gpu_data_only/regional_sequence_geometry.npz",
     "results/hccb_p418_60_sourceflow_r3_model_geometry/model_geometry.npz",
     "manuscript/main.tex",
+    "manuscript/generated_results.tex",
+    "manuscript/generated_dimensionless_envelope.tex",
     "manuscript/methods_condensed.tex",
     "manuscript/results_condensed.tex",
     "manuscript/result_source_map.csv",
     "manuscript/supplement.tex",
     "manuscript/supplement_condensed_body.tex",
     "manuscript/references.bib",
+    "manuscript/reference_metadata_decisions.json",
     "manuscript/P418_论文中文便读版.md",
     "manuscript/elsarticle.cls",
     "manuscript/elsarticle-num.bst",
@@ -77,6 +80,9 @@ REQUIRED_FILES = (
     "results/hccb_p418_fixed_flow_runtime_recovery_checks/summary.json",
     "results/hccb_p418_diffusion_physical_state/summary.json",
     "results/hccb_p418_diffusion_observation_scope/summary.json",
+    "results/hccb_p418_reference_metadata_check_20260812/summary.json",
+    "results/hccb_p418_reference_metadata_check_20260812/doi_metadata_comparison.csv",
+    "results/hccb_p418_reference_metadata_check_20260812/REFERENCE_METADATA_CHECK.md",
 )
 
 SOURCE_PATTERNS = (
@@ -90,6 +96,7 @@ SOURCE_PATTERNS = (
     "experimental_data_templates/*",
     "reproducibility/*",
     "submission/*",
+    "results/hccb_p418_reference_metadata_cache/*.json",
 )
 
 PUBLIC_SOURCE_EXCLUDES = {

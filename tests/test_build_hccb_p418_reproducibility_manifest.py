@@ -41,6 +41,18 @@ RESULT_TRACEABILITY = {
     "results/hccb_p418_fixed_flow_runtime_recovery_checks/summary.json",
 }
 
+MANDATORY_MANUSCRIPT_INPUTS = {
+    "manuscript/generated_results.tex",
+    "manuscript/generated_dimensionless_envelope.tex",
+}
+
+REFERENCE_METADATA_EVIDENCE = {
+    "manuscript/reference_metadata_decisions.json",
+    "results/hccb_p418_reference_metadata_check_20260812/summary.json",
+    "results/hccb_p418_reference_metadata_check_20260812/doi_metadata_comparison.csv",
+    "results/hccb_p418_reference_metadata_check_20260812/REFERENCE_METADATA_CHECK.md",
+}
+
 
 def test_figure_one_geometry_is_part_of_reproducibility_source() -> None:
     assert FIGURE_ONE_DATA.issubset(REQUIRED_FILES)
@@ -52,6 +64,14 @@ def test_repository_citation_metadata_is_required_public_source() -> None:
 
 def test_result_traceability_files_are_required_public_source() -> None:
     assert RESULT_TRACEABILITY.issubset(REQUIRED_FILES)
+
+
+def test_mandatory_manuscript_inputs_are_required_public_source() -> None:
+    assert MANDATORY_MANUSCRIPT_INPUTS.issubset(REQUIRED_FILES)
+
+
+def test_reference_metadata_evidence_is_required_public_source() -> None:
+    assert REFERENCE_METADATA_EVIDENCE.issubset(REQUIRED_FILES)
 
 
 def test_hash_reopens_after_a_transient_read_error(tmp_path: Path) -> None:
