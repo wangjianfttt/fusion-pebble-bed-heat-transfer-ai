@@ -60,6 +60,10 @@ def test_pending_results_are_not_claimed_ready() -> None:
     assert by_section["steady performance table"]["status"] == "complete_5_models_5_splits"
     assert by_section["steady result text"]["status"] == "complete_5_models_5_splits"
     assert (
+        by_section["steady initialization repeat"]["status"]
+        == "complete_4_models_3_seeds"
+    )
+    assert (
         by_section["steady training-condition learning curve"]["status"]
         == "p418_steady_learning_curve_complete"
     )
