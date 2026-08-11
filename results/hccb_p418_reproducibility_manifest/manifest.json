@@ -5,7 +5,7 @@
   "source_package_ready": true,
   "final_outputs_ready": false,
   "source_file_count": 856,
-  "source_bytes": 24350891,
+  "source_bytes": 24351545,
   "missing_required_files": [],
   "files": [
     {
@@ -547,8 +547,8 @@
     {
       "category": "programs",
       "path": "code/build_hccb_p418_public_data_release.py",
-      "size_bytes": 18221,
-      "sha256": "111dbcb5686689592de0a9319af7289a0d21d815bf5a058ccb5aec384941a36a",
+      "size_bytes": 18276,
+      "sha256": "c934fb398cc3d9fa6aa025dcc54e4c2c4f8e6e71551850d4484a52fa9dd9a72e",
       "required": false,
       "present": true
     },
@@ -1619,8 +1619,8 @@
     {
       "category": "programs",
       "path": "code/plot_hccb_p418_graphical_abstract.py",
-      "size_bytes": 6922,
-      "sha256": "3730b42fa6c3a059e7d024d5faf7aa64f28e22f0ec9e2d3631b37a4bb662022e",
+      "size_bytes": 7414,
+      "sha256": "3e75f4b84f971b34912b37391fcfd1880d43db4c784f278cb454ceae6c93c090",
       "required": false,
       "present": true
     },
@@ -4811,8 +4811,8 @@
     {
       "category": "tests",
       "path": "tests/test_build_hccb_p418_public_data_release.py",
-      "size_bytes": 6252,
-      "sha256": "454143527f3c7353cfde49173ba5e4d332ae0438eaee0fa13f0c8feb2552c438",
+      "size_bytes": 6359,
+      "sha256": "1455afeca0a6f853b127c7dba1a5bc79abdc2422c6f60dd9ea30c02ef9ac0e0f",
       "required": false,
       "present": true
     },
