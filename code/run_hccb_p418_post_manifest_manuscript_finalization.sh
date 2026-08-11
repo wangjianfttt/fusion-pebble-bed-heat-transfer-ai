@@ -19,6 +19,8 @@ TRANSIENT_FIGURE=${ROOT}/figures/hccb_p418_transient_model_comparison.json
 FIELD_FIGURE=${ROOT}/figures/hccb_p418_openfoam_model_field_comparison.json
 FINAL_RECORD=${RESULT_ROOT}/hccb_p418_manuscript_refresh_complete.json
 GRAPHICAL_ABSTRACT_STEM=${ROOT}/figures/hccb_p418_graphical_abstract
+GRAPHICAL_ABSTRACT_RECORD=${GRAPHICAL_ABSTRACT_STEM}.json
+GRAPHICAL_ABSTRACT_LOCK=${RESULT_ROOT}/.p418_post_manifest_graphical_abstract.lock
 REMAINING_VALIDATION_RECORD=${RESULT_ROOT}/hccb_p418_remaining_validation_chain_complete.json
 REMAINING_VALIDATION_LOCK=${RESULT_ROOT}/.p418_remaining_validation_chain.lock
 LOCK=${TRANSIENT_ROOT}/.post_manifest_manuscript_finalization.lock
@@ -128,11 +130,41 @@ if field_payload.get("display_data_role") != "test":
     raise SystemExit("final field figure does not display the independent test data")
 PY
 
-python3 "${ROOT}/code/plot_hccb_p418_graphical_abstract.py" \
-    --project-root "${ROOT}" \
-    --output-stem "${GRAPHICAL_ABSTRACT_STEM}"
+graphical_abstract_ready() {
+python3 - "${GRAPHICAL_ABSTRACT_RECORD}" <<'PY'
+import json
+import sys
+from pathlib import Path
 
-python3 - "${GRAPHICAL_ABSTRACT_STEM}.json" <<'PY'
+path = Path(sys.argv[1])
+if not path.is_file() or path.stat().st_size == 0:
+    raise SystemExit(1)
+try:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+    raise SystemExit(1)
+raise SystemExit(
+    0 if payload.get("status") == "p418_ijhmt_graphical_abstract_ready" else 1
+)
+PY
+}
+
+# The separately registered graphical-abstract waiter may finish at almost the
+# same time as this finalizer.  Share its directory lock and reuse a completed
+# result instead of allowing both processes to write the same files.
+(
+    while ! mkdir "${GRAPHICAL_ABSTRACT_LOCK}" 2>/dev/null; do
+        sleep "${POLL_SECONDS}"
+    done
+    trap 'rmdir "${GRAPHICAL_ABSTRACT_LOCK}" 2>/dev/null || true' EXIT
+    if ! graphical_abstract_ready; then
+        python3 "${ROOT}/code/plot_hccb_p418_graphical_abstract.py" \
+            --project-root "${ROOT}" \
+            --output-stem "${GRAPHICAL_ABSTRACT_STEM}"
+    fi
+)
+
+python3 - "${GRAPHICAL_ABSTRACT_RECORD}" <<'PY'
 import json
 import sys
 from pathlib import Path

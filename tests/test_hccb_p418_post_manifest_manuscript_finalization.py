@@ -18,6 +18,9 @@ def test_finalizer_waits_for_models_and_both_final_figures() -> None:
     assert "plot_hccb_p418_graphical_abstract.py" in text
     assert "p418_ijhmt_graphical_abstract_ready" in text
     assert "generative_ai_used_for_image" in text
+    assert "GRAPHICAL_ABSTRACT_LOCK" in text
+    assert "while ! mkdir \"${GRAPHICAL_ABSTRACT_LOCK}\"" in text
+    assert "if ! graphical_abstract_ready" in text
 
 
 def test_finalizer_builds_and_checks_the_complete_manuscript() -> None:
