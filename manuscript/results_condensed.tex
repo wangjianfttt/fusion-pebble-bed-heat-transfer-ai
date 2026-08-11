@@ -26,9 +26,11 @@ hydraulic and wall-heat sensitivity. The fine-grid GCI is 1.96\% for outlet
 temperature change, but 37.2\% for pressure drop and 86.7\% for signed
 cooling-wall heat fraction. The maximum-solid-temperature change is close to
 zero and changes sign across the three grids, so a percentage GCI is not
-reported for that quantity. The common fine mesh therefore supports the
-temperature-field model comparison, while pressure loss and wall heat are
-retained as explicitly mesh-sensitive observables.}{}
+reported for that quantity. The common fine mesh is therefore retained as the
+reference resolution for the model comparison, but the integral GCI does not
+establish pointwise mesh independence of the three-dimensional temperature
+field. Pressure loss and wall heat remain explicitly mesh-sensitive
+observables.}{}
 
 \IfFileExists{generated_scope_limits.tex}{%
 \input{generated_scope_limits}}{%
