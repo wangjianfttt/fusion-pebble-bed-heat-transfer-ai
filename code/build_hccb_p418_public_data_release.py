@@ -9,6 +9,7 @@ import json
 import re
 from pathlib import Path
 import sys
+import zipfile
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
@@ -90,20 +91,66 @@ CREATORS = (
 )
 
 
-def sha256(path: Path) -> str:
+def sha256_and_read_size(path: Path) -> tuple[str, int]:
     digest = hashlib.sha256()
+    read_size = 0
     with path.open("rb") as handle:
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(chunk)
-    return digest.hexdigest()
+            read_size += len(chunk)
+    return digest.hexdigest(), read_size
+
+
+def file_format_valid(path: Path) -> bool:
+    """Check formats that can otherwise look present while containing no data."""
+    try:
+        if path.suffix.lower() == ".npz":
+            with zipfile.ZipFile(path) as archive:
+                members = archive.namelist()
+                return bool(members) and archive.testzip() is None
+        if path.suffix.lower() == ".json":
+            json.loads(path.read_text(encoding="utf-8"))
+        elif path.suffix.lower() == ".pdf":
+            with path.open("rb") as handle:
+                return handle.read(5) == b"%PDF-"
+    except (OSError, UnicodeError, json.JSONDecodeError, zipfile.BadZipFile):
+        return False
+    return True
 
 
 def describe(project_root: Path, relative: str) -> dict[str, object]:
     path = project_root / relative
-    present = path.is_file() and path.stat().st_size > 0
-    row: dict[str, object] = {"path": relative, "present": present}
-    if present:
-        row.update({"size_bytes": path.stat().st_size, "sha256": sha256(path)})
+    row: dict[str, object] = {"path": relative, "present": False}
+    if not path.is_file():
+        return row
+    logical_size = path.stat().st_size
+    if logical_size <= 0:
+        row["reason"] = "empty_file"
+        return row
+    try:
+        digest, read_size = sha256_and_read_size(path)
+    except OSError:
+        row["reason"] = "file_not_readable"
+        return row
+    if read_size != logical_size:
+        row.update(
+            {
+                "reason": "unreadable_cloud_placeholder",
+                "logical_size_bytes": logical_size,
+                "read_size_bytes": read_size,
+            }
+        )
+        return row
+    if not file_format_valid(path):
+        row.update({"reason": "invalid_file_format", "size_bytes": logical_size})
+        return row
+    row.update(
+        {
+            "present": True,
+            "size_bytes": logical_size,
+            "sha256": digest,
+        }
+    )
     return row
 
 

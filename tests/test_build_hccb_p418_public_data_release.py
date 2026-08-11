@@ -122,3 +122,28 @@ def test_selected_prediction_must_remain_inside_project(tmp_path: Path) -> None:
         assert "outside the project root" in str(error)
     else:
         raise AssertionError("an external selected prediction was accepted")
+
+
+def test_describe_rejects_invalid_npz(tmp_path: Path) -> None:
+    module = load_module()
+    path = tmp_path / "invalid.npz"
+    path.write_bytes(b"not a NumPy archive")
+    row = module.describe(tmp_path, path.name)
+    assert row["present"] is False
+    assert row["reason"] == "invalid_file_format"
+
+
+def test_describe_rejects_short_cloud_placeholder_read(tmp_path: Path) -> None:
+    module = load_module()
+    path = tmp_path / "placeholder.bin"
+    path.write_bytes(b"logical content")
+    original = module.sha256_and_read_size
+    module.sha256_and_read_size = lambda _path: ("unused", 0)
+    try:
+        row = module.describe(tmp_path, path.name)
+    finally:
+        module.sha256_and_read_size = original
+    assert row["present"] is False
+    assert row["reason"] == "unreadable_cloud_placeholder"
+    assert row["logical_size_bytes"] == len(b"logical content")
+    assert row["read_size_bytes"] == 0
