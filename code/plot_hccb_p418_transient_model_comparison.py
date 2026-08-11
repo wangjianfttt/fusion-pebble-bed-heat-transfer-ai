@@ -638,6 +638,17 @@ def main() -> int:
     speed_axis.set_ylabel("Solid-temperature RMSE (K)")
     add_panel_label(speed_axis, 5)
 
+    figure.canvas.draw()
+    panel_axis_bounds = [
+        list(map(float, axis.get_position().bounds)) for axis in axes.flat
+    ]
+    panel_widths = [bounds[2] for bounds in panel_axis_bounds]
+    panel_heights = [bounds[3] for bounds in panel_axis_bounds]
+    if max(panel_widths) - min(panel_widths) > 1.0e-6:
+        raise RuntimeError("transient-comparison panels do not have equal widths")
+    if max(panel_heights) - min(panel_heights) > 1.0e-6:
+        raise RuntimeError("transient-comparison panels do not have equal heights")
+
     output = args.output_dir.resolve()
     output.mkdir(parents=True, exist_ok=True)
     output_stem = (
@@ -667,6 +678,9 @@ def main() -> int:
         "figure_size_inch": list(FIGURE_SIZE_INCH),
         "figure_size_mm": [137.16, 170.18],
         "panel_width_to_height_ratio": panel_width_to_height_ratio(),
+        "panel_axis_bounds": panel_axis_bounds,
+        "panel_axis_width_spread": max(panel_widths) - min(panel_widths),
+        "panel_axis_height_spread": max(panel_heights) - min(panel_heights),
         "physics_prediction": str((physics_dir / "test_temporal_temperature_predictions.npz").resolve()),
         "persistence_prediction": str(
             (persistence_dir / "test_temperature_predictions.npz").resolve()

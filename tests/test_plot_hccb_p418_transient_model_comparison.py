@@ -369,6 +369,9 @@ def test_renders_complete_formal_transient_figure(tmp_path: Path) -> None:
     assert summary["held_out_trajectory_count"] == 4
     assert summary["figure_size_inch"] == [5.4, 6.7]
     assert 1.15 <= summary["panel_width_to_height_ratio"] <= 1.35
+    assert len(summary["panel_axis_bounds"]) == 6
+    assert summary["panel_axis_width_spread"] < 1.0e-6
+    assert summary["panel_axis_height_spread"] < 1.0e-6
     assert "regional_persistence" in summary["persistence_prediction"]
     assert summary["split_regional_field_RMSE_K"][
         "data_only_graph_transformer"
