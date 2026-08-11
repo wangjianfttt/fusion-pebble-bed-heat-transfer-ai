@@ -123,7 +123,7 @@ def verify_formal_job_fairness(split_names: tuple[str, ...]) -> dict[str, object
             upstream = by_id[dependencies[0]]
             if upstream.get("split_name") != split_name or upstream.get("seed") != job.get("seed"):
                 raise ValueError(f"{job_id} does not inherit its upstream split and seed")
-            if not ends_with(options.get("--prediction-dir"), Path(upstream["output_dir"]).name):
+            if str(options.get("--prediction-dir")) != str(upstream["output_dir"]):
                 raise ValueError(f"{job_id} prediction directory differs from its dependency")
             if "--split-name" in options and options["--split-name"] != split_name:
                 raise ValueError(f"{job_id} command split differs from its metadata")
@@ -150,7 +150,7 @@ def verify_formal_job_fairness(split_names: tuple[str, ...]) -> dict[str, object
             raise ValueError(f"{job['job_id']} lacks one registered model dependency")
         upstream = by_id[dependencies[0]]
         _, options = command_options(str(job["command"]))
-        if not ends_with(options.get("--model-summary"), Path(upstream["completion_file"]).name):
+        if str(options.get("--model-summary")) != str(upstream["completion_file"]):
             raise ValueError(f"{job['job_id']} evaluates a different model summary")
         if not ends_with(options.get("--dataset-index"), CANONICAL_REGIONAL_DATA):
             raise ValueError(f"{job['job_id']} does not use the common regional data")
