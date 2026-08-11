@@ -28,6 +28,7 @@ FIGURE_ONE_DATA = {
 }
 
 REPOSITORY_METADATA = {
+    ".zenodo.json",
     "CITATION.cff",
     "LICENSE",
     "DATA_LICENSE.md",

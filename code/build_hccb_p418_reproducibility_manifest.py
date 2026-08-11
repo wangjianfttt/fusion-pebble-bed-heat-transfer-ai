@@ -13,6 +13,7 @@ from pathlib import Path
 
 
 REQUIRED_FILES = (
+    ".zenodo.json",
     "CITATION.cff",
     "LICENSE",
     "DATA_LICENSE.md",
