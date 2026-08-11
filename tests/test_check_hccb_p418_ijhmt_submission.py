@@ -13,6 +13,7 @@ from check_hccb_p418_ijhmt_submission import (  # noqa: E402
     final_abstract,
     formal_figure_evidence,
     pdf_text_and_pages,
+    repository_doi_text_checks,
     strip_latex,
 )
 
@@ -57,17 +58,27 @@ def test_working_paper_has_clean_pdf_but_waits_for_final_transient_result() -> N
     assert checks["no_draft_markers_in_submission_sources"]
     assert checks["highlights_3_to_5"]
     assert checks["highlights_each_at_most_85_characters"]
+    assert checks["highlights_external_errors_match_results"]
+    assert payload["expected_external_highlight"] == (
+        "External Nusselt and pressure-gradient errors are 3.87% and 3.71%."
+    )
     assert checks["cover_letter_present"]
+    assert checks["cover_letter_pdf_ready"]
+    assert checks["cover_letter_pdf_repository_record_matches"]
+    assert payload["cover_letter_pdf_page_count"] == 1
     assert checks["cover_letter_data_availability_matches_manuscript"]
     assert checks["cover_letter_title_matches_manuscript"]
     assert checks["cover_letter_scientific_claims_match_results"]
     assert checks["separate_title_page_matches_manuscript"]
+    assert not checks["corresponding_author_phone_complete"]
     assert checks["separate_credit_statement_complete"]
     assert checks["separate_credit_statement_matches_manuscript"]
     assert checks["separate_competing_interest_statement_complete"]
     assert checks["separate_competing_interest_matches_manuscript"]
     assert checks["separate_acknowledgements_complete"]
     assert checks["separate_acknowledgements_matches_manuscript"]
+    assert checks["separate_ai_declaration_complete"]
+    assert checks["separate_ai_declaration_matches_manuscript"]
     assert payload["forbidden_source_text_found"] == []
     assert payload["highlight_character_counts"] == [76, 74, 76, 66, 74]
     claims = payload["cover_letter_scientific_claims"]
@@ -181,6 +192,33 @@ def test_citable_data_record_rejects_placeholder_and_accepts_doi(
     payload = citable_data_record(tmp_path)
     assert payload["ready"]
     assert payload["repository_doi"] == "10.5281/zenodo.1234567"
+
+
+def test_repository_doi_text_switches_from_pending_to_assigned_record() -> None:
+    pending = {"ready": False, "repository_doi": "pending_assignment"}
+    pending_checks = repository_doi_text_checks(
+        pending,
+        "A versioned DOI will be added before submission.",
+        "A versioned Zenodo DOI will be included before submission.",
+    )
+    assert all(pending_checks.values())
+
+    final = {"ready": True, "repository_doi": "10.5281/zenodo.1234567"}
+    final_checks = repository_doi_text_checks(
+        final,
+        "Data: https://doi.org/10.5281/zenodo.1234567",
+        "Archived at DOI 10.5281/zenodo.1234567.",
+    )
+    assert all(final_checks.values())
+
+    stale_checks = repository_doi_text_checks(
+        final,
+        "DOI 10.5281/zenodo.1234567 will be added before submission.",
+        "DOI 10.5281/zenodo.1234567 will be included before submission.",
+    )
+    assert stale_checks["manuscript"]
+    assert stale_checks["cover_letter"]
+    assert not stale_checks["no_stale_future_wording"]
 
 
 def test_fallback_abstract_is_unwrapped_and_keeps_escaped_percent() -> None:

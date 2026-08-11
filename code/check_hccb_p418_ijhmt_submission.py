@@ -7,6 +7,7 @@ import argparse
 import json
 import re
 import subprocess
+import unicodedata
 from pathlib import Path
 
 from check_hccb_p418_final_figure_outputs import parse_pdffonts_output
@@ -16,6 +17,7 @@ REQUIRED_SECTIONS = (
     "CRediT authorship contribution statement",
     "Declaration of competing interest",
     "Acknowledgements",
+    "Declaration of generative AI and AI-assisted technologies in the manuscript preparation process",
 )
 REQUIRED_AUTHORS = (
     "Jian Wang",
@@ -307,6 +309,42 @@ def citable_data_record(root: Path) -> dict[str, object]:
     }
 
 
+def repository_doi_text_checks(
+    data_record: dict[str, object],
+    manuscript_text: str,
+    cover_letter_text: str,
+) -> dict[str, bool]:
+    """Switch from pending wording to the assigned DOI in the final files."""
+    manuscript_lower = manuscript_text.lower()
+    cover_lower = cover_letter_text.lower()
+    doi = str(data_record.get("repository_doi") or "").strip().lower()
+    if bool(data_record.get("ready")):
+        manuscript_ok = bool(doi) and doi in manuscript_lower
+        cover_ok = bool(doi) and doi in cover_lower
+        no_stale_future_wording = all(
+            phrase not in manuscript_lower and phrase not in cover_lower
+            for phrase in (
+                "will be added",
+                "will be included before submission",
+            )
+        )
+    else:
+        manuscript_ok = all(
+            phrase in manuscript_lower
+            for phrase in ("versioned doi", "before submission")
+        )
+        cover_ok = all(
+            phrase in cover_lower
+            for phrase in ("versioned zenodo doi", "before submission")
+        )
+        no_stale_future_wording = True
+    return {
+        "manuscript": manuscript_ok,
+        "cover_letter": cover_ok,
+        "no_stale_future_wording": no_stale_future_wording,
+    }
+
+
 def cover_letter_scientific_claims(
     root: Path, cover_letter_text: str
 ) -> dict[str, object]:
@@ -398,10 +436,12 @@ def build(
     submission = root / "submission"
     title_page_file = submission / "title_page.txt"
     cover_letter = submission / "cover_letter_IJHMT.md"
+    cover_letter_pdf = submission / "cover_letter_IJHMT.pdf"
     highlights_file = submission / "highlights.txt"
     credit_file = submission / "CRediT_author_statement.md"
     competing_interest_file = submission / "declaration_of_competing_interest.md"
     acknowledgements_file = submission / "acknowledgements.md"
+    ai_declaration_file = submission / "declaration_of_generative_ai_use.md"
     if not main_tex.is_file() or not main_pdf.is_file():
         raise FileNotFoundError("main.tex or main.pdf is missing")
     main_text = main_tex.read_text(encoding="utf-8")
@@ -507,7 +547,7 @@ def build(
     competing_interest_main = extract_unnumbered_section(
         main_text,
         "Declaration of competing interest",
-        "Acknowledgements",
+        "Declaration of generative AI and AI-assisted technologies in the manuscript preparation process",
     )
     acknowledgements_match = re.search(
         r"\\section\*\{Acknowledgements\}(.*?)\\begingroup",
@@ -516,6 +556,16 @@ def build(
     )
     acknowledgements_main = (
         acknowledgements_match.group(1) if acknowledgements_match else ""
+    )
+    ai_declaration_match = re.search(
+        r"\\section\*\{Declaration of generative AI and AI-assisted "
+        r"technologies in the manuscript preparation process\}(.*?)"
+        r"\\section\*\{Acknowledgements\}",
+        main_text,
+        flags=re.DOTALL,
+    )
+    ai_declaration_main = (
+        ai_declaration_match.group(1) if ai_declaration_match else ""
     )
     missing_credit_authors = [item for item in REQUIRED_AUTHORS if item not in credit_text]
 
@@ -549,7 +599,33 @@ def build(
         if cover_letter.is_file()
         else ""
     )
+    cover_letter_pdf_text, cover_letter_pdf_pages = (
+        pdf_text_and_pages(cover_letter_pdf)
+        if cover_letter_pdf.is_file() and cover_letter_pdf.stat().st_size > 0
+        else ("", 0)
+    )
+    normalized_cover_pdf = " ".join(
+        unicodedata.normalize("NFKC", cover_letter_pdf_text).split()
+    )
+    normalized_manuscript_title = " ".join(
+        unicodedata.normalize("NFKC", manuscript_title.replace("--", "–")).split()
+    )
+    canonical_cover_pdf = re.sub(r"[^a-z0-9]", "", normalized_cover_pdf.lower())
+    canonical_manuscript_title = re.sub(
+        r"[^a-z0-9]", "", normalized_manuscript_title.lower()
+    )
+    doi_text_checks = repository_doi_text_checks(
+        data_record, main_text, cover_letter_text
+    )
+    cover_pdf_doi_checks = repository_doi_text_checks(
+        data_record, main_text, normalized_cover_pdf
+    )
     cover_letter_claims = cover_letter_scientific_claims(root, cover_letter_text)
+    expected_external_highlight = (
+        "External Nusselt and pressure-gradient errors are "
+        f"{cover_letter_claims['values']['nusselt_mean_absolute_relative_error_percent']:.2f}% and "
+        f"{cover_letter_claims['values']['pressure_gradient_median_absolute_relative_error_percent']:.2f}%."
+    )
     title_page_text = (
         title_page_file.read_text(encoding="utf-8")
         if title_page_file.is_file()
@@ -564,6 +640,12 @@ def build(
         and all(item in title_page_text for item in EXPECTED_AFFILIATIONS)
         and "wjfttt@mail.ustc.edu.cn" in title_page_text
     )
+    corresponding_author_phone_complete = bool(
+        re.search(
+            r"(?im)^Phone:\s*\+\d[\d\s()-]{6,}$",
+            title_page_text,
+        )
+    )
     cover_letter_title_present = (
         manuscript_title in cover_letter_text
         or manuscript_title.replace("--", "–") in cover_letter_text
@@ -577,15 +659,23 @@ def build(
             "wjfttt@mail.ustc.edu.cn",
         )
     )
+    cover_letter_pdf_complete = (
+        cover_letter_pdf_pages == 1
+        and canonical_manuscript_title in canonical_cover_pdf
+        and "International Journal of Heat and Mass Transfer" in normalized_cover_pdf
+        and "wjfttt@mail.ustc.edu.cn" in normalized_cover_pdf
+    )
     cover_letter_availability_complete = all(
         phrase in cover_letter_text.lower()
         for phrase in (
-            "during peer review",
+            "https://github.com/wangjianfttt/fusion-pebble-bed-heat-transfer-ai",
+            "software and data licences",
+            "institutional archive",
             "reasonable request",
-            "before publication",
-            "identifier will be added",
         )
-    )
+    ) and doi_text_checks["cover_letter"] and doi_text_checks[
+        "no_stale_future_wording"
+    ]
     credit_file_text = (
         credit_file.read_text(encoding="utf-8") if credit_file.is_file() else ""
     )
@@ -597,6 +687,11 @@ def build(
     acknowledgements_text = (
         acknowledgements_file.read_text(encoding="utf-8")
         if acknowledgements_file.is_file()
+        else ""
+    )
+    ai_declaration_text = (
+        ai_declaration_file.read_text(encoding="utf-8")
+        if ai_declaration_file.is_file()
         else ""
     )
     checks = {
@@ -638,14 +733,20 @@ def build(
             not bibliography_entries_missing_persistent_identifier
         ),
         "editable_manuscript_sources_present": not missing_editable_sources,
-        "data_and_code_availability_is_truthful": all(
-            phrase in availability_text
-            for phrase in (
-                "reasonable request",
-                "before publication",
-                "citable repository",
-                "institutional archive",
+        "data_and_code_availability_is_truthful": (
+            "https://github.com/wangjianfttt/"
+            "fusion-pebble-bed-heat-transfer-ai" in main_text
+            and all(
+                phrase in availability_text
+                for phrase in (
+                    "mit license",
+                    "cc by 4.0",
+                    "institutional archive",
+                    "reasonable request",
+                )
             )
+            and doi_text_checks["manuscript"]
+            and doi_text_checks["no_stale_future_wording"]
         ),
         "citable_data_repository_record_ready": bool(data_record["ready"]),
         "no_previous_project_repository_identifier": (
@@ -662,7 +763,15 @@ def build(
         "highlights_3_to_5": 3 <= len(highlights) <= 5,
         "highlights_each_at_most_85_characters": bool(highlights)
         and max(highlight_lengths) <= 85,
+        "highlights_external_errors_match_results": (
+            expected_external_highlight in highlights
+        ),
         "cover_letter_present": cover_letter_complete,
+        "cover_letter_pdf_ready": cover_letter_pdf_complete,
+        "cover_letter_pdf_repository_record_matches": (
+            cover_pdf_doi_checks["cover_letter"]
+            and cover_pdf_doi_checks["no_stale_future_wording"]
+        ),
         "cover_letter_data_availability_matches_manuscript": (
             cover_letter_availability_complete
         ),
@@ -671,6 +780,9 @@ def build(
             cover_letter_claims["matches"]
         ),
         "separate_title_page_matches_manuscript": title_page_complete,
+        "corresponding_author_phone_complete": (
+            corresponding_author_phone_complete
+        ),
         "separate_credit_statement_complete": bool(credit_file_text)
         and all(author in credit_file_text for author in REQUIRED_AUTHORS),
         "separate_credit_statement_matches_manuscript": (
@@ -697,6 +809,18 @@ def build(
         "separate_acknowledgements_matches_manuscript": (
             normalized_statement(acknowledgements_text)
             == normalized_statement(acknowledgements_main)
+        ),
+        "separate_ai_declaration_complete": all(
+            phrase in ai_declaration_text
+            for phrase in (
+                "OpenAI Codex",
+                "independently verified the calculations",
+                "No generative AI system was used to create or alter the scientific images or numerical results",
+            )
+        ),
+        "separate_ai_declaration_matches_manuscript": (
+            normalized_statement(ai_declaration_text)
+            == normalized_statement(ai_declaration_main)
         ),
         "final_generated_abstract_present": abstract_source
         == "generated_final_abstract.tex",
@@ -728,14 +852,18 @@ def build(
         "supplement_pdf_exists": supplement_exists,
         "supplement_title": supplement_title,
         "cover_letter_path": str(cover_letter.resolve()),
+        "cover_letter_pdf_path": str(cover_letter_pdf.resolve()),
+        "cover_letter_pdf_page_count": cover_letter_pdf_pages,
         "cover_letter_scientific_claims": cover_letter_claims,
         "title_page_path": str(title_page_file.resolve()),
         "highlights_path": str(highlights_file.resolve()),
         "credit_statement_path": str(credit_file.resolve()),
         "competing_interest_path": str(competing_interest_file.resolve()),
         "acknowledgements_path": str(acknowledgements_file.resolve()),
+        "ai_declaration_path": str(ai_declaration_file.resolve()),
         "highlights": highlights,
         "highlight_character_counts": highlight_lengths,
+        "expected_external_highlight": expected_external_highlight,
         "missing_sections": missing_sections,
         "citation_count": len(citation_keys),
         "ijhmt_reference_limit": IJHMT_REFERENCE_LIMIT,
@@ -751,6 +879,8 @@ def build(
         ],
         "missing_editable_manuscript_sources": missing_editable_sources,
         "citable_data_record": data_record,
+        "repository_doi_text_checks": doi_text_checks,
+        "cover_letter_pdf_repository_doi_text_checks": cover_pdf_doi_checks,
         "missing_credit_authors": missing_credit_authors,
         "forbidden_pdf_text_found": forbidden_found,
         "forbidden_source_text_found": forbidden_source_found,
@@ -821,17 +951,25 @@ def write_chinese(path: Path, payload: dict[str, object]) -> None:
         "separate_competing_interest_matches_manuscript": "利益冲突附件与正文一致",
         "separate_acknowledgements_complete": "单独上传的基金致谢文件",
         "separate_acknowledgements_matches_manuscript": "基金致谢附件与正文一致",
+        "separate_ai_declaration_complete": "单独上传的AI辅助使用声明",
+        "separate_ai_declaration_matches_manuscript": "AI辅助使用声明附件与正文一致",
         "no_draft_or_future_result_text_in_pdf": "PDF中没有待填结果或草稿文字",
         "no_draft_markers_in_submission_sources": "投稿源文件中没有旧草稿标记",
         "highlights_3_to_5": "Highlights数量为3--5条",
         "highlights_each_at_most_85_characters": "每条Highlight不超过85个字符",
+        "highlights_external_errors_match_results": (
+            "Highlights中的Nusselt数和压力梯度误差与正式结果一致"
+        ),
         "cover_letter_present": "本论文专用Cover letter",
+        "cover_letter_pdf_ready": "Cover letter PDF为单页且题目、期刊和邮箱正确",
+        "cover_letter_pdf_repository_record_matches": "Cover letter PDF中的数据DOI状态与正文一致",
         "cover_letter_data_availability_matches_manuscript": "投稿信的数据公开说明与正文一致",
         "cover_letter_title_matches_manuscript": "Cover letter题目与论文一致",
         "cover_letter_scientific_claims_match_results": (
             "Cover letter关键数字与正式结果一致"
         ),
         "separate_title_page_matches_manuscript": "单独Title page与正文作者信息一致",
+        "corresponding_author_phone_complete": "通讯作者国际格式电话号码",
         "final_generated_abstract_present": "摘要已经由正式结果生成",
     }
     for key, value in payload["checks"].items():
