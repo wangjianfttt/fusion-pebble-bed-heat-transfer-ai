@@ -5,7 +5,7 @@
   "source_package_ready": true,
   "final_outputs_ready": false,
   "source_file_count": 858,
-  "source_bytes": 24361596,
+  "source_bytes": 24361710,
   "missing_required_files": [],
   "files": [
     {
@@ -3243,8 +3243,8 @@
     {
       "category": "manuscript",
       "path": "manuscript/results_condensed.tex",
-      "size_bytes": 9101,
-      "sha256": "389659d7a41657632437beaefa15f3b230253d5d6464f238900ee3bffe92df0a",
+      "size_bytes": 9215,
+      "sha256": "136ae35365e5937939a167c49eb662f57c3f184b000e6fccd4c2785c7e33b18b",
       "required": true,
       "present": true
     },
