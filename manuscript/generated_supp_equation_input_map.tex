@@ -1,0 +1,52 @@
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{4.0cm}>{\raggedright\arraybackslash}p{12.2cm}}
+\caption{Mapping from source-backed inputs to the OpenFOAM reference calculation and the learning-model state. The listed paths identify the implementation rather than introducing additional physical values.}\label{tab:supp_equation_input_map}\\
+\toprule
+Source ID & Symbol/relation & OpenFOAM/Python implementation \\
+\midrule
+\endfirsthead
+\multicolumn{3}{l}{\textit{Table \thetable\ continued}}\\
+\toprule
+Source ID & Symbol/relation & OpenFOAM/Python implementation \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{\textit{Continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+P048 & d\_\allowbreak{}p & \nolinkurl{cht_smoke_metadata.json::source_particle_diameter_mm}\newline \nolinkurl{code/hccb_p418_source_contract.py} \\
+P049 & epsilon\_\allowbreak{}target & \nolinkurl{cht_smoke_metadata.json::source_target_porosity}\newline \nolinkurl{code/hccb_p418_source_contract.py} \\
+P050 & L\_\allowbreak{}large & \nolinkurl{data/apd006_hccb_source_sequence_target_packings/*/summary.json}\newline \nolinkurl{code/build_hccb_source_sequence_lammps_packing.py} \\
+P390 & L\_\allowbreak{}crop & \nolinkurl{data/apd006_hccb_source_sequence_target_packings/*/summary.json}\newline \nolinkurl{code/check_hccb_source_sequence_lammps_packing.py} \\
+P404 & d\_\allowbreak{}mesh & \nolinkurl{runs/hccb_dense_snappy_g2_nativezone_r2/case_manifest.json::meshing_particle_diameter_m}\newline \nolinkurl{code/check_hccb_source_sequence_lammps_packing.py} \\
+P423 & wall-adjacent crop & \nolinkurl{data/apd006_hccb_source_sequence_target_packings/*/summary.json}\newline \nolinkurl{code/check_hccb_source_sequence_lammps_packing.py} \\
+P418 & u\_\allowbreak{}in,\allowbreak{}T\_\allowbreak{}in,\allowbreak{}q''' & \nolinkurl{0/fluid/U}; \nolinkurl{0/fluid/T}; +1 additional files\newline \nolinkurl{code/build_hccb_dense_cht_p418_matrix.py} \\
+P425 & T\_\allowbreak{}wall & \nolinkurl{0/fluid/T::coolingWall}; \nolinkurl{0/solid/T::coolingWall}\newline \nolinkurl{code/hccb_p418_regional_cht_adapter.py} \\
+P426 & p\_\allowbreak{}out & \nolinkurl{0/fluid/p}; \nolinkurl{0/fluid/p_rgh}\newline \nolinkurl{code/hccb_p418_regional_cht_adapter.py} \\
+P427 & constant-temperature wall;\allowbreak{} symmetry;\allowbreak{} inlet;\allowbreak{} outlet & \nolinkurl{boundary files}\newline \nolinkurl{code/hccb_p418_regional_cht_adapter.py} \\
+P389 & rho\_\allowbreak{}f & \nolinkurl{constant/fluid/physicalProperties}\newline \nolinkurl{code/hccb_source_backed_thermophysical.py} \\
+P070 & mu\_\allowbreak{}f & \nolinkurl{constant/fluid/physicalProperties}\newline \nolinkurl{code/hccb_source_backed_thermophysical.py} \\
+P071 & k\_\allowbreak{}f & \nolinkurl{constant/fluid/physicalProperties}\newline \nolinkurl{code/hccb_source_backed_thermophysical.py} \\
+P388 & c\_\allowbreak{}p\_\allowbreak{}f & \nolinkurl{constant/fluid/physicalProperties::Cp}\newline \nolinkurl{code/hccb_source_backed_thermophysical.py} \\
+P092 & k\_\allowbreak{}s & \nolinkurl{constant/solid/physicalProperties::kappa}\newline \nolinkurl{code/hccb_source_backed_thermophysical.py} \\
+P403 & rho\_\allowbreak{}s & \nolinkurl{constant/solid/physicalProperties::rho}\newline \nolinkurl{code/hccb_source_backed_thermophysical.py} \\
+P406 & c\_\allowbreak{}p\_\allowbreak{}s\_\allowbreak{}steady & \nolinkurl{constant/solid/physicalProperties::Cv}\newline \nolinkurl{code/build_hccb_pore_resolved_openfoam_steady_case.py} \\
+P428 & H(\allowbreak{}T)-H(\allowbreak{}298) & \nolinkurl{constant/solid/physicalProperties}\newline \nolinkurl{code/hccb_source_backed_thermophysical.py} \\
+P429;\allowbreak{}P430 & c\_\allowbreak{}p\_\allowbreak{}s(\allowbreak{}T) & \nolinkurl{constant/solid/physicalProperties}\newline \nolinkurl{code/hccb_source_backed_thermophysical.py} \\
+P431 & T\_\allowbreak{}c1;\allowbreak{}T\_\allowbreak{}c2 & \nolinkurl{step_case_metadata.json}\newline \nolinkurl{code/hccb_source_backed_thermophysical.py} \\
+P424 & T\_\allowbreak{}range & \nolinkurl{constant/fluid/physicalProperties}\newline \nolinkurl{code/build_hccb_openfoam_helium_property_table.py} \\
+P070;\allowbreak{}P389 & div(\allowbreak{}rho\_\allowbreak{}f*u)=\allowbreak{}0 & \nolinkurl{fluid finite-volume faces}\newline \nolinkurl{code/hccb_p418_regional_cht_adapter.py}; \nolinkurl{code/hccb_p418_conservative_mixed_operator.py} \\
+P071;\allowbreak{}P388;\allowbreak{}P389 & div(\allowbreak{}rho\_\allowbreak{}f*u*h\_\allowbreak{}f)-div(\allowbreak{}k\_\allowbreak{}f*grad(\allowbreak{}T\_\allowbreak{}f))=\allowbreak{}0 & \nolinkurl{fluid finite-volume faces}\newline \nolinkurl{code/hccb_p418_regional_cht_adapter.py} \\
+P092;\allowbreak{}P418 & -div(\allowbreak{}k\_\allowbreak{}s*grad(\allowbreak{}T\_\allowbreak{}s))-q'''=\allowbreak{}0 & \nolinkurl{solid finite-volume faces}; \nolinkurl{constant/solid/fvModels}\newline \nolinkurl{code/hccb_p418_regional_cht_adapter.py} \\
+P071;\allowbreak{}P092 & T\_\allowbreak{}f=\allowbreak{}T\_\allowbreak{}s;\allowbreak{} q\_\allowbreak{}f+q\_\allowbreak{}s=\allowbreak{}0 & \nolinkurl{fluid_to_solid}; \nolinkurl{solid_to_fluid mapped interface}\newline \nolinkurl{code/hccb_p418_regional_cht_adapter.py} \\
+P388;\allowbreak{}P389 & d(\allowbreak{}rho\_\allowbreak{}f*h\_\allowbreak{}f)/\allowbreak{}dt+d(\allowbreak{}rho\_\allowbreak{}f*K)/\allowbreak{}dt-dp/\allowbreak{}dt;\allowbreak{} K=\allowbreak{}|U|\textasciicircum{}2/\allowbreak{}2 & \nolinkurl{fluid transient energy}\newline \nolinkurl{code/hccb_p418_transient_regional_physics.py} \\
+P403;\allowbreak{}P428;\allowbreak{}P429;\allowbreak{}P430;\allowbreak{}P431 & rho\_\allowbreak{}s*d(\allowbreak{}e\_\allowbreak{}s(\allowbreak{}T\_\allowbreak{}s))/\allowbreak{}dt & \nolinkurl{solid transient energy}\newline \nolinkurl{code/hccb_p418_transient_regional_physics.py} \\
+P389 & d(\allowbreak{}rho\_\allowbreak{}f)/\allowbreak{}dt+div(\allowbreak{}rho\_\allowbreak{}f*u)=\allowbreak{}0 & \nolinkurl{fluid transient continuity}\newline \nolinkurl{code/hccb_p418_fully_coupled_transient_physics.py} \\
+P070;\allowbreak{}P389 & d(\allowbreak{}rho\_\allowbreak{}f*u)/\allowbreak{}dt+div(\allowbreak{}rho\_\allowbreak{}f*u*u)+grad(\allowbreak{}p)-div(\allowbreak{}tau)=\allowbreak{}0 & \nolinkurl{fluid transient momentum}\newline \nolinkurl{code/hccb_p418_fully_coupled_transient_physics.py}; \nolinkurl{code/hccb_steady_momentum_residual.py} \\
+P071;\allowbreak{}P388;\allowbreak{}P389 & d[rho\_\allowbreak{}f*(\allowbreak{}h\_\allowbreak{}f+K)]/\allowbreak{}dt-dp/\allowbreak{}dt+div[rho\_\allowbreak{}f*u*(\allowbreak{}h\_\allowbreak{}f+K)]-div(\allowbreak{}k\_\allowbreak{}f*grad(\allowbreak{}T\_\allowbreak{}f))=\allowbreak{}0 & \nolinkurl{fluid transient energy}\newline \nolinkurl{code/hccb_p418_fully_coupled_transient_physics.py}; \nolinkurl{code/hccb_p418_transient_regional_physics.py} \\
+P389 & m\_\allowbreak{}dot\_\allowbreak{}f=\allowbreak{}(\allowbreak{}rho\_\allowbreak{}f*u)\_\allowbreak{}f dot S\_\allowbreak{}f & \nolinkurl{fluid internal and boundary faces}\newline \nolinkurl{code/hccb_p418_fully_coupled_transient_physics.py}; \nolinkurl{code/openfoam13_face_flux_reconstruction.py} \\
+\end{longtable}
+\endgroup

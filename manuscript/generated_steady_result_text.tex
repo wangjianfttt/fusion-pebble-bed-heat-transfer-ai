@@ -1,0 +1,7 @@
+Across the five complete-condition splits, the lowest worst-case values for the six separately evaluated quantities are fluid-temperature nRMSE 0.144, solid-temperature nRMSE 0.148, pressure p95 error 9.07~Pa, solid maximum-$T$ p95 error 13.4~K, wall-heat p95 error 55.9~\%, regional energy difference 25~\%. All six are produced by the response surface; the separate quantities are not combined into a scalar model score.
+
+With identical coordinate-network form, initialization, observations and optimization schedule, the data-only and physics-informed PINNs give, respectively, solid-temperature nRMSE 2.17 versus 2.27, wall-heat p95 error 140~\% versus 114~\%, regional energy difference 4.89e+03~\% versus 2.2e+03~\%. This paired comparison isolates the effect of the finite-volume mass, energy and interface-flux terms; all independent-condition values remain in Figure~\ref{fig:steady_model_comparison}.
+
+The temperature-extrapolation split comprises training 30 conditions (30 wall-to-fluid, 0 fluid-to-wall), validation 15 conditions (0 wall-to-fluid, 15 fluid-to-wall), independent prediction 15 conditions (0 wall-to-fluid, 15 fluid-to-wall). It therefore measures transfer across the signed wall-heat change, not only interpolation between nearby inlet temperatures. The interleaved independent set contains 12 conditions (6 wall-to-fluid, 6 fluid-to-wall).
+
+The two heat-source splits contain one training source level, so its zero-variance input is zero in every role; they test stability at unseen source levels, not learned source sensitivity.

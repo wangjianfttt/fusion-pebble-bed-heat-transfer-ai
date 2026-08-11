@@ -1,0 +1,18 @@
+\begin{table*}[t]
+\centering
+\caption{Frozen fixed-flow model comparison on six independent high-Reynolds-number OpenFOAM histories.}
+\label{tab:p418_high_re_frozen_comparison}
+\begin{tabular}{lccc}
+\hline
+Quantity & Data only & Physics constrained & Factorized \\
+\hline
+Fluid temperature RMSE (K) & 123.8 & 123.9 & 122.6 \\
+Solid temperature RMSE (K) & 117.5 & 117.7 & 116.2 \\
+Solid maximum-history RMSE (K) & 91.79 & 99.42 & 98.28 \\
+Mean hotspot-location error (m) & 0.001406 & 0.001601 & 0.001616 \\
+Hotspot-location p95 error (m) & 0.004523 & 0.004985 & 0.005058 \\
+Projection-aware energy-equation RMSE & 4186 & 3371 & 3955 \\
+Predicted global energy-closure RMSE & 16.3 & 16.02 & 16.34 \\
+\hline
+\end{tabular}
+\end{table*}

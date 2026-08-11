@@ -1,0 +1,18 @@
+\begin{table*}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Like-for-like prediction of regional temperature fields for the endpoint-pair holdout. All models use the same six training, two validation and four independent trajectories, the same 46\,089-node regional representation and the original 56 physical times. Rank or epoch is selected using validation trajectories only. Temperature errors are regional-volume weighted; hotspot error is the 95th percentile distance between predicted and reference hottest solid regional nodes.}
+\label{tab:regional_dynamics}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Model & Selected & Fluid $T$ RMSE (K) & Solid $T$ RMSE (K) & $T_{s,\max}$ RMSE (K) & Hotspot p95 (mm) \\
+\midrule
+Initial-field persistence & n/a & 3.63 & 3.55 & 1.48 & 2.48 \\
+Continuous-time regional DMDc & 8 & 5.45 & 5.03 & 7.15 & 4.20 \\
+Data-only graph--Transformer & 248 & 3.68 & 3.60 & 2.64 & 3.46 \\
+Physics-constrained graph--Transformer & 498 & 9.28 & 3.67 & 1.67 & 3.63 \\
+Factorized physics-constrained graph--Transformer & 497 & 10.58 & 7.11 & 8.16 & 3.50 \\
+\bottomrule
+\end{tabular}
+\end{table*}

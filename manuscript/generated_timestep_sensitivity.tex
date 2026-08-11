@@ -1,0 +1,18 @@
+\begin{table*}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\caption{Temporal-resolution comparison for the representative heat-source step. The computed trajectories use the finest staged schedule: \num{1e-05}\,s over \num{0}--\num{0.1}\,s, \num{0.0005}\,s over \num{0.1}--\num{1}\,s, \num{0.01}\,s over \num{1}--\num{25}\,s. The second column reports the largest next-coarser--finest curve difference normalized by the finest-curve response span. GCI values are reported only for monotonically converging three-resolution triplets.}
+\label{tab:thermal_timestep}
+\begin{tabular}{lccc}
+\toprule
+Quantity & \shortstack{Finest-pair curve\\difference} & \shortstack{Endpoint\\GCI} & \shortstack{Curve-maximum\\GCI} \\
+\midrule
+Outlet temperature & 0.0385\% & 3.02e-05\% & 3.02e-05\% \\
+Cooling-wall power & 0.0276\% & 0.000152\% & 0\% \\
+Maximum solid temperature & 0.0425\% & 1.49e-05\% & 1.49e-05\% \\
+Volume-averaged fluid temperature & 0.0359\% & 2.02e-05\% & 2.02e-05\% \\
+Volume-averaged solid temperature & 0.0356\% & 2.03e-05\% & 2.03e-05\% \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,22 @@
+\begin{table}[htbp]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{0.90}
+\setlength{\tabcolsep}{3pt}
+\caption{Numerical settings used for the model comparison. These values define network architecture, numerical training and model selection; they are not pebble-bed material properties or operating conditions.}
+\label{tab:model_settings}
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.4cm}>{\raggedright\arraybackslash}p{5.2cm}>{\raggedright\arraybackslash}p{5.0cm}}
+\toprule
+Method & Structure & Training and model selection \\
+\midrule
+Coordinate PINN \cite{raissi2019pinn,li2024pino,wang2024hccb_pinn} & 6 hidden layers $\times$ 50; tanh activation & Adam; 3000 epochs; learning rate 0.01. Minimum validation total loss; independent conditions used after selection \\
+Regional graph operator \cite{mousavi2025rigno} & 6 regional levels; latent width 128; 12 processor steps & AdamW; 2000 epochs; effective batch 2. Minimum validation total loss on the common condition split \\
+Steady Physics-Attention \cite{wu2024transolver} & 5 layers $\times$ 256; 8 heads; 32 slices & AdamW; 500 epochs; effective batch 8. Minimum validation total loss on the common condition split \\
+Graph--Transformer \cite{pfaff2021meshgraphnets,mousavi2025rigno,wu2024transolver,vaswani2017attention,iparraguirre2026mgnt} & 2 local pre-processing graph blocks + 2 Physics-Attention blocks (128 slices) + 3 temporal layers + 2 local refinement graph blocks; hidden path [64, 32, 64]; bounded-residual temperature output (fluid 300--1000 K, solid 298--1300 K) & AdamW; 500 epochs; learning rate 0.001. Data-only checkpoint: minimum validation normalized temperature MSE; fixed and ReLoBRaLo physics-loss candidates: common unweighted mean of the three dimensionless validation groups, followed by one independent-test evaluation \\
+Observable DMDc \cite{proctor2016dmdc} & $\dot z=Az+Bu$; six outlet/aggregate trajectories; candidate ranks 1, 2, 3, 4, 5, 6 & Closed-form continuous-time dynamics on the original nonuniform times. Rank selected by validation normalized trajectory MSE on the same split as the observable Transformer \\
+Regional DMDc \cite{proctor2016dmdc} & $\dot z=Az+Bu$; volume-weighted fluid and solid regional temperatures; candidate ranks 1, 2, 3, 4, 8, 12, 16, 24, 32 & Closed-form continuous-time reduced-field dynamics on the original nonuniform times. Rank selected by validation solid-temperature RMSE \\
+Snapshot POD \cite{sirovich1987pod} & Volume-weighted decomposition of the deterministic-model temperature residual & Ranks from zero to the rank supported by training residuals. Validation RMSE; lower rank retained for an exact tie \\
+Diffusion correction \cite{lippe2023pderefiner} & 3 residual steps; temperature only; EMA 0.995; 32 samples & AdamW; 500 epochs; effective batch 8. Validation checkpoint fixed before independent prediction; all independent results retained; joint improvement denotes temperature RMSE $\downarrow$ without a larger projection-aware energy RMSE \\
+\bottomrule
+\end{tabular}
+\end{table}

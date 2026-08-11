@@ -1,0 +1,17 @@
+\begin{table*}[htbp]
+\centering
+\caption{Reference response of the six independent high-velocity fixed-flow OpenFOAM trajectories. $\Delta T_{\mathrm{out}}$ is the final minus initial outlet temperature. $t_{50}$ and $t_{90}$ are the first times at which 50\% and 90\% of that signed change are reached. All histories span 0--300 s and contain 16\,401 time points.}
+\label{tab:high_re_reference_response}
+\begin{tabular}{llrrr}
+\toprule
+Perturbed quantity & Source$\rightarrow$target & $\Delta T_{\mathrm{out}}$ (K) & $t_{50}$ (s) & $t_{90}$ (s) \\
+\midrule
+Inlet temperature & $300\rightarrow900$ K & +231.85 & 6.65 & 16.94 \\
+Inlet temperature & $900\rightarrow300$ K & -231.85 & 6.63 & 14.66 \\
+Inlet velocity & $0.05\rightarrow0.25$ m s$^{-1}$ & -29.30 & 4.63 & 12.47 \\
+Inlet velocity & $0.25\rightarrow0.05$ m s$^{-1}$ & +29.30 & 5.48 & 15.74 \\
+Solid heat source & $4.85\rightarrow8.85$ MW m$^{-3}$ & +8.50 & 3.63 & 11.41 \\
+Solid heat source & $8.85\rightarrow4.85$ MW m$^{-3}$ & -8.50 & 3.64 & 11.41 \\
+\bottomrule
+\end{tabular}
+\end{table*}

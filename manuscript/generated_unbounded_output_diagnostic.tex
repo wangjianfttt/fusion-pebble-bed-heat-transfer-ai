@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\caption{Diagnostic results from superseded graph--Transformer checkpoints with unbounded temperature outputs. These checkpoints are excluded from the final model comparison. The pressure channel remained positive, whereas the learned temperature channels left the specified thermophysical intervals; the physics-constrained checkpoint produced four non-positive fluid-temperature values.}
+\label{tab:unbounded_output_diagnostic}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Checkpoint & Epochs & Min. $T_f$ (K) & Min. $T_s$ (K) & Min. $p_{\mathrm{abs}}$ (Pa) & $T_f\leq0$ \\
+\midrule
+Data-only & 500 & 94.524 & 69.493 & 119999.4 & 0 \\
+Physics-constrained & 42 & -18.023 & 318.144 & 119999.4 & 4 \\
+\bottomrule
+\end{tabular}
+\end{table}

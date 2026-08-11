@@ -1,0 +1,17 @@
+\begin{table*}[htbp]
+\centering
+\small
+\caption{Temperature prediction after reconstruction on the original \OpenFOAM{} cells for the main complete-condition split. The bounded linear reconstruction is fixed by regional geometry and neighbor extrema and introduces no fitted physical parameter. Values are means over the independent conditions. The total RMSE includes both regional-representation loss and model prediction error.}
+\label{tab:native_cell_prediction}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrr@{}}
+\toprule
+Method & \shortstack{Fluid total\\RMSE (K)} & \shortstack{Solid total\\RMSE (K)} & \shortstack{Solid max-$T$\\error (K)} & \shortstack{Hotspot shift\\($d_p$)} \\
+\midrule
+Response surface & 6.04 & 3.06 & 0.117 & 1.39 \\
+Data-only PINN & 28.5 & 22.4 & 19.2 & 2.06 \\
+Physics-informed PINN & 27.9 & 19.8 & 10.9 & 2.19 \\
+Graph operator & 11.9 & 9.31 & 12.5 & 1.73 \\
+Physics-Attention & 11.1 & 8.52 & -0.956 & 1.46 \\
+\bottomrule
+\end{tabular*}
+\end{table*}

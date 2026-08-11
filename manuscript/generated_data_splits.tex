@@ -1,0 +1,24 @@
+\begin{table}[!htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\caption{Pre-defined physical data splits. A steady condition is one complete three-dimensional field at a fixed inlet velocity, inlet temperature and pebble heat source. A transient sample is one complete staged-time trajectory; no time point from a trajectory is assigned to another role. The endpoint-pair split also keeps the forward and reverse trajectories joining the same two steady conditions together. Normalization and checkpoint selection use training and validation data only. Exact condition and trajectory identifiers are stored in the cited machine-readable split files.}
+\label{tab:physical_data_splits}
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{3.2cm}}
+\toprule
+Physical test & Training & Validation & Independent test \\
+\midrule
+\multicolumn{4}{l}{\textit{Steady three-dimensional fields}} \\
+Interleaved combinations & all sampled levels (36) & all sampled levels (12) & all sampled levels (12) \\
+Temperature extrapolation & $T_{\rm in}=300, 500$ K (30) & $T_{\rm in}=700$ K (15) & $T_{\rm in}=900$ K (15) \\
+Velocity extrapolation & $u_{\rm in}=0.05, 0.1, 0.15$ m s$^{-1}$ (36) & $u_{\rm in}=0.2$ m s$^{-1}$ (12) & $u_{\rm in}=0.25$ m s$^{-1}$ (12) \\
+Heat-source interpolation & $q'''=4.85, 8.85$ MW m$^{-3}$ (32); disjoint combinations & $q'''=4.85, 8.85$ MW m$^{-3}$ (8); disjoint combinations & $q'''=6.85$ MW m$^{-3}$ (20) \\
+Heat-source extrapolation & $q'''=4.85$ MW m$^{-3}$ (20) & $q'''=6.85$ MW m$^{-3}$ (20) & $q'''=8.85$ MW m$^{-3}$ (20) \\
+\midrule
+\multicolumn{4}{l}{\textit{Complete thermal-step trajectories}} \\
+Downward-step prediction & six paired curves (6) & three upward curves (3) & three downward curves (3) \\
+Upward-step prediction & six paired curves (6) & three downward curves (3) & three upward curves (3) \\
+Endpoint-pair prediction & three endpoint pairs (6) & one endpoint pair (2) & two unseen endpoint pairs (4) \\
+\bottomrule
+\end{tabular}
+\end{table}

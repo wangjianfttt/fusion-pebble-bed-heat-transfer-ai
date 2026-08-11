@@ -1,0 +1,18 @@
+\begin{table*}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{1.8pt}
+\caption{Steady prediction accuracy and computational cost. Accuracy entries are the worst values across the five complete-condition splits in Figure~\ref{fig:steady_model_comparison}. Training and inference times are medians across the same five runs. The response-surface parameter range reflects validation-based selection between its linear and quadratic bases; neural-network parameter counts are fixed across splits. Times are measured values from the recorded computing device for each method and are not normalized to identical hardware.}
+\label{tab:steady_performance}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrrr@{}}
+\toprule
+Method & \shortstack{Solid-$T$\\nRMSE} & \shortstack{Max-$T$ p95\\(K)} & \shortstack{Wall-heat p95\\(\%)} & \shortstack{Energy diff.\\(\%)} & \shortstack{Params\\(M; range)} & \shortstack{Train\\(min)} & \shortstack{Infer\\(ms)} \\
+\midrule
+response surface & 0.148 & 13.4 & 55.9 & 25 & 1.67--4.16 & 0.185 & 0.825 \\
+data-only PINN & 2.17 & 246 & 140 & 4.89e+03 & 0.0368 & 0.878 & 4.93 \\
+physics PINN & 2.27 & 253 & 114 & 2.2e+03 & 0.0368 & 0.898 & 5.14 \\
+graph operator & 2.22 & 266 & 279 & 1.73e+03 & 1.45 & 20.7 & 116 \\
+Physics-Attention & 1.33 & 178 & 510 & 5.41e+03 & 2.61 & 13.8 & 71.6 \\
+\bottomrule
+\end{tabular*}
+\end{table*}
