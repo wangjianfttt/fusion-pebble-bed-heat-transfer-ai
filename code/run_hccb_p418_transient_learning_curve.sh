@@ -3,8 +3,8 @@ set -euo pipefail
 
 ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 EXECUTE=${EXECUTE:-0}
-DATASET_INDEX=${DATASET_INDEX:-${ROOT}/results/hccb_p418_step_responses/regional_sequences/dataset_index.json}
-RESIDUAL_GEOMETRY=${RESIDUAL_GEOMETRY:-${ROOT}/results/hccb_p418_step_responses/regional_sequences/subface_residual_geometry.npz}
+DATASET_INDEX=${DATASET_INDEX:-${ROOT}/results/hccb_p418_physical_steps_12/regional_sequences/dataset_index.json}
+RESIDUAL_GEOMETRY=${RESIDUAL_GEOMETRY:-${ROOT}/results/hccb_p418_subface_residual_geometry_r2/subface_residual_geometry.npz}
 SPLITS=${SPLITS:-${ROOT}/parameters/hccb_p418_transient_learning_curve_splits.json}
 OUTPUT_ROOT=${OUTPUT_ROOT:-${ROOT}/results/hccb_p418_transient_learning_curve}
 SEED=${SEED:-20260717}
@@ -46,3 +46,9 @@ for split_name in ${SPLIT_NAMES}; do
     --seed "${SEED}" \
     --resume
 done
+
+python3 "${ROOT}/code/summarize_hccb_p418_transient_learning_curve.py" \
+  --result-root "${OUTPUT_ROOT}" \
+  --splits "${SPLITS}" \
+  --output-dir "${OUTPUT_ROOT}" \
+  --tex-output "${ROOT}/manuscript/generated_transient_learning_curve.tex"

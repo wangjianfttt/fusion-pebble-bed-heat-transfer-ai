@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import csv
 import hashlib
 import sys
 from pathlib import Path
@@ -15,9 +16,11 @@ from check_hccb_p418_final_scientific_requirements import (  # noqa: E402
     summarize_remaining_dependencies,
     steady_extrapolation_evidence,
     steady_physics_evidence,
+    steady_learning_curve_complete,
     steady_seed_robustness_complete,
     three_mesh_sensitivity_evidence,
     transient_seed_robustness_complete,
+    transient_learning_curve_complete,
 )
 
 
@@ -295,3 +298,85 @@ def test_seed_results_require_complete_registered_content(tmp_path: Path) -> Non
     payload["complete_curve_split_ids"]["test"].append("test_case_0")
     write_json(transient_path, payload)
     assert not transient_seed_robustness_complete(transient_path)
+
+
+def test_learning_curves_require_all_registered_sample_counts(tmp_path: Path) -> None:
+    steady = tmp_path / "steady/learning_curve_summary.json"
+    architectures = [
+        "response_surface",
+        "pinn_data_only",
+        "pinn",
+        "graph",
+        "transolver",
+    ]
+    counts = [9, 18, 27, 36]
+    rows = [
+        {
+            "architecture": architecture,
+            "train_case_count": count,
+            "validation_case_count": 12,
+            "test_case_count": 12,
+            "test_solid_temperature_normalized_rmse": 0.1,
+        }
+        for architecture in architectures
+        for count in counts
+    ]
+    steady.parent.mkdir(parents=True)
+    with (steady.parent / "learning.csv").open(
+        "w", newline="", encoding="utf-8"
+    ) as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+    write_json(
+        steady,
+        {
+            "status": "p418_steady_learning_curve_complete",
+            "training_condition_counts": counts,
+            "fixed_validation_condition_count": [12],
+            "fixed_test_condition_count": [12],
+            "architectures": architectures,
+            "table": "learning.csv",
+            "new_physical_parameters": [],
+        },
+    )
+    assert steady_learning_curve_complete(steady)
+    rows.pop()
+    with (steady.parent / "learning.csv").open(
+        "w", newline="", encoding="utf-8"
+    ) as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+    assert not steady_learning_curve_complete(steady)
+
+    transient = tmp_path / "transient/summary.json"
+    runs = [
+        {
+            "training_trajectory_count": count,
+            "training_direction": direction,
+            "validation_trajectory_count": 2,
+            "test_trajectory_count": 4,
+            "selected_epoch": 10,
+            "test_solid_temperature_RMSE_K": 2.0,
+            "source_summary_sha256": "a" * 64,
+        }
+        for count, direction in ((3, "up"), (3, "down"), (6, "both"))
+    ]
+    write_json(
+        transient,
+        {
+            "status": "completed_p418_transient_learning_curve",
+            "training_trajectory_counts": [3, 6],
+            "fixed_validation_trajectory_count": 2,
+            "fixed_test_trajectory_count": 4,
+            "model": "physics_constrained_factorized_graph_transformer",
+            "runs": runs,
+            "new_physical_parameters": [],
+        },
+    )
+    assert transient_learning_curve_complete(transient)
+    payload = json.loads(transient.read_text(encoding="utf-8"))
+    payload["runs"][1]["selected_epoch"] = 0
+    write_json(transient, payload)
+    assert not transient_learning_curve_complete(transient)

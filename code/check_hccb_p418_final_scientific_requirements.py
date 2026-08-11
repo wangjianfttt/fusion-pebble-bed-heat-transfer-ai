@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import hashlib
 import json
 import math
@@ -144,6 +145,91 @@ def transient_seed_robustness_complete(path: Path) -> bool:
         and float(row.get("sample_std_K", -1.0)) >= 0.0
         for row in metrics
     )
+
+
+def steady_learning_curve_complete(path: Path) -> bool:
+    payload = json_payload(path)
+    expected_architectures = {
+        "response_surface",
+        "pinn_data_only",
+        "pinn",
+        "graph",
+        "transolver",
+    }
+    expected_counts = [9, 18, 27, 36]
+    if not (
+        payload is not None
+        and payload.get("status") == "p418_steady_learning_curve_complete"
+        and payload.get("training_condition_counts") == expected_counts
+        and payload.get("fixed_validation_condition_count") == [12]
+        and payload.get("fixed_test_condition_count") == [12]
+        and set(payload.get("architectures", [])) == expected_architectures
+        and payload.get("new_physical_parameters") == []
+    ):
+        return False
+    table_name = str(payload.get("table", ""))
+    table_path = path.parent / table_name
+    if not table_name or not file_ok(table_path):
+        return False
+    try:
+        with table_path.open(newline="", encoding="utf-8") as handle:
+            rows = list(csv.DictReader(handle))
+        combinations = {
+            (str(row["architecture"]), int(row["train_case_count"])) for row in rows
+        }
+        expected_combinations = {
+            (architecture, count)
+            for architecture in expected_architectures
+            for count in expected_counts
+        }
+        return (
+            len(rows) == len(expected_combinations)
+            and combinations == expected_combinations
+            and all(
+                int(row["validation_case_count"]) == 12
+                and int(row["test_case_count"]) == 12
+                and math.isfinite(float(row["test_solid_temperature_normalized_rmse"]))
+                and float(row["test_solid_temperature_normalized_rmse"]) >= 0.0
+                for row in rows
+            )
+        )
+    except (KeyError, TypeError, ValueError, OSError):
+        return False
+
+
+def transient_learning_curve_complete(path: Path) -> bool:
+    payload = json_payload(path)
+    runs = payload.get("runs") if payload is not None else None
+    if not (
+        payload is not None
+        and payload.get("status") == "completed_p418_transient_learning_curve"
+        and payload.get("training_trajectory_counts") == [3, 6]
+        and payload.get("fixed_validation_trajectory_count") == 2
+        and payload.get("fixed_test_trajectory_count") == 4
+        and payload.get("model")
+        == "physics_constrained_factorized_graph_transformer"
+        and isinstance(runs, list)
+        and len(runs) == 3
+        and payload.get("new_physical_parameters") == []
+    ):
+        return False
+    expected = {(3, "up"), (3, "down"), (6, "both")}
+    try:
+        actual = {
+            (int(row["training_trajectory_count"]), str(row["training_direction"]))
+            for row in runs
+        }
+        return actual == expected and all(
+            int(row["validation_trajectory_count"]) == 2
+            and int(row["test_trajectory_count"]) == 4
+            and int(row["selected_epoch"]) > 0
+            and math.isfinite(float(row["test_solid_temperature_RMSE_K"]))
+            and float(row["test_solid_temperature_RMSE_K"]) >= 0.0
+            and len(str(row.get("source_summary_sha256", ""))) == 64
+            for row in runs
+        )
+    except (KeyError, TypeError, ValueError):
+        return False
 
 
 def corrected_steady_comparison_complete(root: Path) -> bool:
@@ -781,11 +867,24 @@ def build_requirements(root: Path) -> list[dict]:
     transient_seed_summary = (
         transient_root / "seed_robustness_pair_disjoint_stress_test/summary.json"
     )
+    steady_learning_summary = (
+        results
+        / "hccb_p418_learning_curve_model_comparison_100epoch/learning_curve_summary.json"
+    )
+    transient_learning_summary = (
+        results / "hccb_p418_transient_learning_curve/summary.json"
+    )
     result_completion_overrides = {
         transient_summary: transient_comparison_complete,
         steady_seed_summary: steady_seed_robustness_complete(steady_seed_summary),
         transient_seed_summary: transient_seed_robustness_complete(
             transient_seed_summary
+        ),
+        steady_learning_summary: steady_learning_curve_complete(
+            steady_learning_summary
+        ),
+        transient_learning_summary: transient_learning_curve_complete(
+            transient_learning_summary
         ),
     }
     for group, name, path in result_files:
