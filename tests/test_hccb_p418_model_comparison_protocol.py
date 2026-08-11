@@ -23,6 +23,14 @@ def test_common_model_comparison_protocol_matches_current_programs() -> None:
     assert summary["transient_output_time_count"] == 56
     assert summary["transient_model_count"] == 6
     assert summary["packing_seeds"] == [101, 202, 303]
+    assert summary["formal_manifest_job_count"] == 75
+    assert summary["direct_common_split_job_count"] == 27
+    assert summary["upstream_inherited_split_job_count"] == 10
+    assert summary["common_energy_evaluation_job_count"] == 29
+    assert summary["train_only_source_program_count"] == 6
+    assert summary["same_physical_inputs_for_all_models"] is True
+    assert summary["train_only_normalization"] is True
+    assert summary["complete_curve_splitting"] is True
     assert summary["new_physical_parameters"] == []
 
 

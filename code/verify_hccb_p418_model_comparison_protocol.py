@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import shlex
 import sys
 from pathlib import Path
 
@@ -34,6 +35,17 @@ TRANSIENT_MODELS = (
     "diffusion_residual_correction",
 )
 
+FORMAL_JOB_MANIFEST = (
+    "results/hccb_p418_public_data_release_preflight/formal_training_manifest_public.json"
+)
+CANONICAL_SPLIT_FILE = "parameters/hccb_p418_step_response_splits.json"
+CANONICAL_OBSERVABLE_DATA = (
+    "results/hccb_p418_physical_steps_12/hccb_p418_transient_observables.npz"
+)
+CANONICAL_REGIONAL_DATA = (
+    "results/hccb_p418_physical_steps_12/regional_sequences/dataset_index.json"
+)
+
 
 def load_json(relative: str) -> dict:
     path = ROOT / relative
@@ -59,6 +71,124 @@ def require_exact_partition(
             f"{split_name} does not partition the declared data: "
             f"missing={sorted(available-seen)}, extra={sorted(seen-available)}"
         )
+
+
+def command_options(command: str) -> tuple[str, dict[str, str | bool]]:
+    tokens = shlex.split(command)
+    if len(tokens) < 2:
+        raise ValueError(f"invalid formal command: {command}")
+    options: dict[str, str | bool] = {}
+    index = 2
+    while index < len(tokens):
+        token = tokens[index]
+        if not token.startswith("--"):
+            index += 1
+            continue
+        if index + 1 < len(tokens) and not tokens[index + 1].startswith("--"):
+            options[token] = tokens[index + 1]
+            index += 2
+        else:
+            options[token] = True
+            index += 1
+    return Path(tokens[1]).name, options
+
+
+def ends_with(value: object, relative: str) -> bool:
+    return str(value).replace("\\", "/").endswith(relative)
+
+
+def verify_formal_job_fairness(split_names: tuple[str, ...]) -> dict[str, object]:
+    manifest = load_json(FORMAL_JOB_MANIFEST)
+    jobs = manifest.get("jobs", [])
+    if len(jobs) != int(manifest.get("job_count", -1)) or not jobs:
+        raise ValueError("formal training manifest job count is inconsistent")
+    by_id = {str(job["job_id"]): job for job in jobs}
+    if len(by_id) != len(jobs):
+        raise ValueError("formal training manifest repeats job IDs")
+
+    model_stages = {"independent_training", "random_seed_repeat", "dependent_correction"}
+    model_jobs = [job for job in jobs if job["stage"] in model_stages]
+    direct_split_jobs = 0
+    inherited_split_jobs = 0
+    for job in model_jobs:
+        job_id = str(job["job_id"])
+        split_name = str(job.get("split_name"))
+        if split_name not in split_names:
+            raise ValueError(f"{job_id} uses an undeclared split: {split_name}")
+        _, options = command_options(str(job["command"]))
+        if job["stage"] == "dependent_correction":
+            dependencies = [str(value) for value in job.get("depends_on", [])]
+            if len(dependencies) != 1 or dependencies[0] not in by_id:
+                raise ValueError(f"{job_id} must inherit one registered upstream model")
+            upstream = by_id[dependencies[0]]
+            if upstream.get("split_name") != split_name or upstream.get("seed") != job.get("seed"):
+                raise ValueError(f"{job_id} does not inherit its upstream split and seed")
+            if not ends_with(options.get("--prediction-dir"), Path(upstream["output_dir"]).name):
+                raise ValueError(f"{job_id} prediction directory differs from its dependency")
+            if "--split-name" in options and options["--split-name"] != split_name:
+                raise ValueError(f"{job_id} command split differs from its metadata")
+            inherited_split_jobs += 1
+            continue
+
+        if options.get("--split-name") != split_name:
+            raise ValueError(f"{job_id} command split differs from its metadata")
+        if not ends_with(options.get("--splits"), CANONICAL_SPLIT_FILE):
+            raise ValueError(f"{job_id} does not use the common complete-curve split file")
+        data_ok = ends_with(options.get("--data"), CANONICAL_OBSERVABLE_DATA) or ends_with(
+            options.get("--dataset-index"), CANONICAL_REGIONAL_DATA
+        )
+        if not data_ok:
+            raise ValueError(f"{job_id} does not use a registered 12-curve data source")
+        if job.get("seed") is not None and str(options.get("--seed")) != str(job["seed"]):
+            raise ValueError(f"{job_id} command seed differs from its metadata")
+        direct_split_jobs += 1
+
+    energy_jobs = [job for job in jobs if job["stage"] == "energy_evaluation"]
+    for job in energy_jobs:
+        dependencies = [str(value) for value in job.get("depends_on", [])]
+        if len(dependencies) != 1 or dependencies[0] not in by_id:
+            raise ValueError(f"{job['job_id']} lacks one registered model dependency")
+        upstream = by_id[dependencies[0]]
+        _, options = command_options(str(job["command"]))
+        if not ends_with(options.get("--model-summary"), Path(upstream["completion_file"]).name):
+            raise ValueError(f"{job['job_id']} evaluates a different model summary")
+        if not ends_with(options.get("--dataset-index"), CANONICAL_REGIONAL_DATA):
+            raise ValueError(f"{job['job_id']} does not use the common regional data")
+
+    source_requirements = {
+        "code/train_hccb_p418_transient_observable_transformer.py": (
+            "train_idx = split[\"train\"]",
+            "target_train = targets[train_idx][train_mask]",
+            "maximum_time = float(np.nanmax(time_s[train_idx]))",
+        ),
+        "code/train_hccb_p418_spatiotemporal_regional_operator.py": (
+            "training_statistics(",
+            "split[\"train\"]",
+            "independent_test_read",
+            "test_evaluated",
+        ),
+        "code/train_hccb_p418_regional_dmdc.py": (
+            "training = [load_sequence(root, source_records[value]) for value in split[\"train\"]]",
+        ),
+        "code/train_hccb_p418_observable_dmdc.py": ("split[\"train\"]",),
+        "code/train_hccb_p418_low_rank_temperature_residual.py": ('data["train"]',),
+        "code/train_hccb_p418_temporal_temperature_diffusion.py": ('splits["train"]',),
+    }
+    checked_sources = 0
+    for relative, snippets in source_requirements.items():
+        text = (ROOT / relative).read_text(encoding="utf-8")
+        missing = [snippet for snippet in snippets if snippet not in text]
+        if missing:
+            raise ValueError(f"{relative} no longer proves train-only fitting: {missing}")
+        checked_sources += 1
+
+    return {
+        "formal_manifest_job_count": len(jobs),
+        "direct_common_split_job_count": direct_split_jobs,
+        "upstream_inherited_split_job_count": inherited_split_jobs,
+        "common_energy_evaluation_job_count": len(energy_jobs),
+        "train_only_source_program_count": checked_sources,
+    }
 
 
 def verify(protocol_path: Path) -> dict[str, object]:
@@ -151,6 +281,8 @@ def verify(protocol_path: Path) -> dict[str, object]:
     if transient_repeat["strict_split"] != "pair_disjoint_stress_test":
         raise ValueError("transient repeat rule no longer uses the strict split")
 
+    fairness = verify_formal_job_fairness(tuple(transient["split_names"]))
+
     return {
         "status": "p418_common_model_comparison_protocol_verified",
         "physical_parameter_count": len(parameter_rows),
@@ -165,6 +297,7 @@ def verify(protocol_path: Path) -> dict[str, object]:
         "independent_packing_case_count_each": 9,
         "steady_repeat_seed_count": len(repeat["seeds"]),
         "transient_repeat_seed_count": len(transient_repeat["strict_split_seeds"]),
+        **fairness,
         "same_physical_inputs_for_all_models": True,
         "train_only_normalization": True,
         "complete_curve_splitting": True,
