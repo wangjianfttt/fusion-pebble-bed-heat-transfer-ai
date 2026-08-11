@@ -5,7 +5,7 @@
   "source_package_ready": true,
   "final_outputs_ready": false,
   "source_file_count": 858,
-  "source_bytes": 24360169,
+  "source_bytes": 24361596,
   "missing_required_files": [],
   "files": [
     {
@@ -1627,8 +1627,8 @@
     {
       "category": "programs",
       "path": "code/plot_hccb_p418_graphical_abstract.py",
-      "size_bytes": 7414,
-      "sha256": "3e75f4b84f971b34912b37391fcfd1880d43db4c784f278cb454ceae6c93c090",
+      "size_bytes": 8269,
+      "sha256": "255938a6d2236d4d893810b3b8e5fa0383adc1f824a9a52be5f994a4d48104ca",
       "required": false,
       "present": true
     },
@@ -4475,8 +4475,8 @@
     {
       "category": "project_entry",
       "path": "submission/highlights.txt",
-      "size_bytes": 371,
-      "sha256": "a0fcef5051b51d05763d47bc4c00d0fc23f334d0dde549ffa29e901e554d8c2f",
+      "size_bytes": 373,
+      "sha256": "bffb9fce30024bb6d623b22e582a83fc67faf69f1e0ff9437c2ade27c7908b09",
       "required": true,
       "present": true
     },
@@ -5036,7 +5036,7 @@
       "category": "tests",
       "path": "tests/test_check_hccb_p418_ijhmt_submission.py",
       "size_bytes": 10427,
-      "sha256": "50f7d6b99acf4c8e2181cb159d6d5908dcdcd177ee81fafd4447f76c6177489a",
+      "sha256": "12166f1bc6015e8ad8fe8736b03b534891db1f491214c5faa94c25d5b85037d7",
       "required": false,
       "present": true
     },
@@ -6235,8 +6235,8 @@
     {
       "category": "tests",
       "path": "tests/test_plot_hccb_p418_graphical_abstract.py",
-      "size_bytes": 2292,
-      "sha256": "a7b2f7aaaf0bbe506528f2ce8f3f57ea07d97edb6e5577f16133f1002c5a3637",
+      "size_bytes": 2862,
+      "sha256": "17de27d6f221b4309b614a06041fb6f094034b4dde6ff6fb549b6151185861aa",
       "required": false,
       "present": true
     },
