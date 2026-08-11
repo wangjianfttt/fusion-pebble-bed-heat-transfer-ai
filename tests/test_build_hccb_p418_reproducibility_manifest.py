@@ -46,6 +46,8 @@ MANDATORY_MANUSCRIPT_INPUTS = {
     "manuscript/generated_dimensionless_envelope.tex",
 }
 
+GENERATED_MANUSCRIPT_INPUT_PATTERN = "manuscript/generated_*.tex"
+
 REFERENCE_METADATA_EVIDENCE = {
     "manuscript/reference_metadata_decisions.json",
     "results/hccb_p418_reference_metadata_check_20260812/summary.json",
@@ -68,6 +70,12 @@ def test_result_traceability_files_are_required_public_source() -> None:
 
 def test_mandatory_manuscript_inputs_are_required_public_source() -> None:
     assert MANDATORY_MANUSCRIPT_INPUTS.issubset(REQUIRED_FILES)
+
+
+def test_generated_manuscript_inputs_are_collected_as_public_source() -> None:
+    from build_hccb_p418_reproducibility_manifest import SOURCE_PATTERNS
+
+    assert GENERATED_MANUSCRIPT_INPUT_PATTERN in SOURCE_PATTERNS
 
 
 def test_reference_metadata_evidence_is_required_public_source() -> None:

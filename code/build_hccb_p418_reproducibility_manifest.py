@@ -86,6 +86,7 @@ REQUIRED_FILES = (
 )
 
 SOURCE_PATTERNS = (
+    "manuscript/generated_*.tex",
     "code/*hccb_p418*.py",
     "code/*hccb_p418*.sh",
     "code/hccb_p418*.py",
