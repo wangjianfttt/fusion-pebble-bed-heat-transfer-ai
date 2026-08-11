@@ -99,6 +99,11 @@ def test_github_zenodo_metadata_uses_current_title_authors_and_licence() -> None
     assert metadata["version"] == "1.0.0"
     assert metadata["language"] == "eng"
 
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    assert "top-level `CITATION.cff` and\n`.zenodo.json`" in readme
+    assert "planned software release version `1.0.0`" in readme
+    assert "repository URL, DOI and release version remain unset" not in readme
+
 
 def test_manuscript_and_zenodo_draft_use_the_same_authors_and_licences() -> None:
     manuscript = (ROOT / "manuscript/main.tex").read_text(encoding="utf-8")

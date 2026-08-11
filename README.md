@@ -159,12 +159,13 @@ prediction arrays that remain pending. The repository DOI remains unassigned
 until the P418-specific Zenodo record is deposited; the DOI of the earlier
 tritium-release study is not reused.
 
-Repository citation metadata are prepared in the top-level `CITATION.cff` and
-`reproducibility/repository_release_metadata_draft.json`. The latter is a
-preparation record rather than a Zenodo deposition payload: author names,
-affiliations, title, description, keywords and licences are fixed, while the
-repository URL, DOI and release version remain unset until the final processed
-prediction archive is complete.
+Software citation metadata are prepared in the top-level `CITATION.cff` and
+`.zenodo.json`; they fix the public repository URL, authorship, MIT licence and
+the planned software release version `1.0.0`. The separate processed-data
+deposit is prepared in
+`results/hccb_p418_public_data_release_preflight/zenodo_metadata_draft.json`
+under CC BY 4.0. Its DOI and publication date remain unassigned until the final
+selected predictions and figure records are complete.
 
 The public code repository is
 `https://github.com/wangjianfttt/fusion-pebble-bed-heat-transfer-ai`. The

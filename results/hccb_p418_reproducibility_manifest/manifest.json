@@ -5,7 +5,7 @@
   "source_package_ready": true,
   "final_outputs_ready": false,
   "source_file_count": 857,
-  "source_bytes": 24354891,
+  "source_bytes": 24355232,
   "missing_required_files": [],
   "files": [
     {
@@ -3683,8 +3683,8 @@
     {
       "category": "reproducibility",
       "path": "reproducibility/README.md",
-      "size_bytes": 8734,
-      "sha256": "c61c51c04bfb2819500074b1acfdb0c0971e1ee30cdfce03216f6efd4e02b2db",
+      "size_bytes": 8784,
+      "sha256": "7840bb88c72286f8758dcc959b0e44f27d18db90ef6a9d5cb7b82e626681796f",
       "required": true,
       "present": true
     },
@@ -5907,8 +5907,8 @@
     {
       "category": "tests",
       "path": "tests/test_hccb_p418_repository_metadata_consistency.py",
-      "size_bytes": 4446,
-      "sha256": "3d0ee4ec128c1bcab1f6a6796ca373a16fc65d7234ae1fa9003c0e3dd1e4ed37",
+      "size_bytes": 4737,
+      "sha256": "effa874894ed1ccdecaee748b8e9669f25bb403ee71532cd3334679c7de9afe2",
       "required": false,
       "present": true
     },
