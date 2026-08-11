@@ -1,0 +1,897 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        8,
+        8
+      ]
+    ],
+    "date-time": "2026-08-08T06:20:19Z",
+    "timestamp": 1786170019017,
+    "version": "3.56.0"
+  },
+  "reference-count": 76,
+  "publisher": "Elsevier BV",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            5,
+            1
+          ]
+        ],
+        "date-time": "2025-05-01T00:00:00Z",
+        "timestamp": 1746057600000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            5,
+            1
+          ]
+        ],
+        "date-time": "2025-05-01T00:00:00Z",
+        "timestamp": 1746057600000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/legal/tdmrep-license"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            3,
+            14
+          ]
+        ],
+        "date-time": "2025-03-14T00:00:00Z",
+        "timestamp": 1741910400000
+      },
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "URL": "http://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "funder": [
+    {
+      "DOI": "10.13039/501100012652",
+      "name": "ETH Zürich Foundation",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "2020-HS-388"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "2020-HS-388"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100012652",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/501100003006",
+      "name": "Eidgenössische Technische Hochschule Zürich",
+      "doi-asserted-by": "publisher",
+      "id": [
+        {
+          "id": "10.13039/501100003006",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/100031576",
+      "name": "Swiss Data Science Center",
+      "doi-asserted-by": "publisher",
+      "id": [
+        {
+          "id": "10.13039/100031576",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    }
+  ],
+  "content-domain": {
+    "domain": [
+      "elsevier.com",
+      "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2025,
+        5
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.cma.2025.117914",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2025,
+        3,
+        16
+      ]
+    ],
+    "date-time": "2025-03-16T09:43:03Z",
+    "timestamp": 1742118183000
+  },
+  "page": "117914",
+  "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 142,
+  "special_numbering": "C",
+  "title": "Multi-Objective Loss Balancing for Physics-Informed Deep Learning",
+  "prefix": "10.1016",
+  "volume": "439",
+  "author": [
+    {
+      "ORCID": "https://orcid.org/0000-0002-6617-2767",
+      "authenticated-orcid": false,
+      "given": "Rafael",
+      "family": "Bischof",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0002-5000-2923",
+      "authenticated-orcid": false,
+      "given": "Michael A.",
+      "family": "Kraus",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    }
+  ],
+  "member": "78",
+  "reference": [
+    {
+      "key": "10.1016/j.cma.2025.117914_b1",
+      "series-title": "Physics informed deep learning (part II): Data-driven discovery of nonlinear partial differential equations",
+      "author": "Raissi",
+      "year": "2017"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b2",
+      "series-title": "A deep collocation method for the bending analysis of Kirchhoff plate",
+      "author": "Guo",
+      "year": "2021"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b3",
+      "series-title": "Finite Element Procedures",
+      "volume": "No. pt. 2",
+      "author": "Bathe",
+      "year": "1996"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b4",
+      "series-title": "The Finite Element Method: Linear Static and Dynamic Finite Element Analysis",
+      "author": "Hughes",
+      "year": "2012"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b5",
+      "series-title": "Numerical Solutions of Partial Differential Equations: Finite Difference Methods",
+      "author": "Smith",
+      "year": "1985"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b6",
+      "series-title": "Numerical treatment of partial differential equations",
+      "author": "Grossmann",
+      "year": "2007"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b7",
+      "series-title": "A proof that artificial neural networks overcome the curse of dimensionality in the numerical approximation of black-scholes partial differential equations",
+      "author": "Grohs",
+      "year": "2018"
+    },
+    {
+      "issue": "5",
+      "key": "10.1016/j.cma.2025.117914_b8",
+      "doi-asserted-by": "crossref",
+      "first-page": "503",
+      "DOI": "10.1007/s11633-017-1054-2",
+      "article-title": "Why and when can deep-but not shallow-networks avoid the curse of dimensionality: a review",
+      "volume": "14",
+      "author": "Poggio",
+      "year": "2017",
+      "journal-title": "Int. J. Autom. Comput."
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b9",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cma.2021.113741",
+      "article-title": "A physics-informed deep learning framework for inversion and surrogate modeling in solid mechanics",
+      "volume": "379",
+      "author": "Haghighat",
+      "year": "2021",
+      "journal-title": "Comput. Methods Appl. Mech. Engrg."
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b10",
+      "series-title": "Engineering Design Optimization",
+      "author": "Martins",
+      "year": "2021"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b11",
+      "series-title": "Sensors and Smart Structures Technologies for Civil, Mechanical, and Aerospace Systems 2020",
+      "article-title": "Machine learning for structural health monitoring: challenges and opportunities",
+      "volume": "Vol. 11379",
+      "author": "Yuan",
+      "year": "2020"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b12",
+      "series-title": "Self-adaptive loss balanced physics-informed neural networks for the incompressible Navier-Stokes equations",
+      "author": "Xiang",
+      "year": "2021"
+    },
+    {
+      "issue": "6481",
+      "key": "10.1016/j.cma.2025.117914_b13",
+      "doi-asserted-by": "crossref",
+      "first-page": "1026",
+      "DOI": "10.1126/science.aaw4741",
+      "article-title": "Hidden fluid mechanics: Learning velocity and pressure fields from flow visualizations",
+      "volume": "367",
+      "author": "Raissi",
+      "year": "2020",
+      "journal-title": "Science"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b14",
+      "series-title": "Fluids Engineering Division Summer Meeting",
+      "article-title": "Heat transfer prediction with unknown thermal boundary conditions using physics-informed neural networks",
+      "volume": "Vol. 83730",
+      "author": "Cai",
+      "year": "2020"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b15",
+      "series-title": "When and why PINNs fail to train: A neural tangent kernel perspective",
+      "author": "Wang",
+      "year": "2020"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b16",
+      "series-title": "Self-adaptive physics-informed neural networks using a soft attention mechanism",
+      "author": "McClenny",
+      "year": "2020"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b17",
+      "series-title": "Understanding and mitigating gradient pathologies in physics-informed neural networks",
+      "author": "Wang",
+      "year": "2020"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b18",
+      "series-title": "Theory of Deep Learning IIb: Optimization Properties of SGD",
+      "author": "Zhang",
+      "year": "2018"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b19",
+      "series-title": "Adam: A method for stochastic optimization",
+      "author": "Kingma",
+      "year": "2014"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b20",
+      "series-title": "Machine Learning (Second Edition)",
+      "first-page": "179",
+      "article-title": "Chapter 5 - online learning: the stochastic gradient descent family of algorithms",
+      "author": "Theodoridis",
+      "year": "2020"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b21",
+      "series-title": "Multi-task learning using uncertainty to weigh losses for scene geometry and semantics",
+      "author": "Kendall",
+      "year": "2017"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b22",
+      "series-title": "GradNorm: Gradient normalization for adaptive loss balancing in deep multitask networks",
+      "author": "Chen",
+      "year": "2017"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b23",
+      "series-title": "SoftAdapt: Techniques for adaptive loss weighting of neural networks with multi-part loss functions",
+      "author": "Heydari",
+      "year": "2019"
+    },
+    {
+      "issue": "5",
+      "key": "10.1016/j.cma.2025.117914_b24",
+      "doi-asserted-by": "crossref",
+      "first-page": "987",
+      "DOI": "10.1109/72.712178",
+      "article-title": "Artificial neural networks for solving ordinary and partial differential equations",
+      "volume": "9",
+      "author": "Lagaris",
+      "year": "1998",
+      "journal-title": "IEEE Trans. Neural Netw."
+    },
+    {
+      "issue": "5",
+      "key": "10.1016/j.cma.2025.117914_b25",
+      "doi-asserted-by": "crossref",
+      "first-page": "1041",
+      "DOI": "10.1109/72.870037",
+      "article-title": "Neural-network methods for boundary value problems with irregular boundaries",
+      "volume": "11",
+      "author": "Lagaris",
+      "year": "2000",
+      "journal-title": "IEEE Trans. Neural Netw."
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b26",
+      "doi-asserted-by": "crossref",
+      "first-page": "1339",
+      "DOI": "10.1016/j.jcp.2018.08.029",
+      "article-title": "DGM: A deep learning algorithm for solving partial differential equations",
+      "volume": "375",
+      "author": "Sirignano",
+      "year": "2018",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b27",
+      "first-page": "1",
+      "article-title": "Deep hidden physics models: Deep learning of nonlinear partial differential equations",
+      "volume": "19",
+      "author": "Raissi",
+      "year": "2018",
+      "journal-title": "J. Mach. Learn. Res."
+    },
+    {
+      "issue": "5",
+      "key": "10.1016/j.cma.2025.117914_b28",
+      "doi-asserted-by": "crossref",
+      "first-page": "2042",
+      "DOI": "10.4208/cicp.OA-2020-0193",
+      "article-title": "On the convergence of physics informed neural networks for linear second-order elliptic and parabolic type PDEs",
+      "volume": "28",
+      "author": "Shin",
+      "year": "2020",
+      "journal-title": "Commun. Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b29",
+      "series-title": "PINNacle: A comprehensive benchmark of physics-informed neural networks for solving PDEs",
+      "author": "Hao",
+      "year": "2023"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b30",
+      "doi-asserted-by": "crossref",
+      "first-page": "686",
+      "DOI": "10.1016/j.jcp.2018.10.045",
+      "article-title": "Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations",
+      "volume": "378",
+      "author": "Raissi",
+      "year": "2019",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "issue": "2239",
+      "key": "10.1016/j.cma.2025.117914_b31",
+      "article-title": "Locally adaptive activation functions with slope recovery for deep and physics-informed neural networks",
+      "volume": "476",
+      "author": "Jagtap",
+      "year": "2020",
+      "journal-title": "Proc. R. Soc. Lond. Ser. A"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b32",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jcp.2019.109136",
+      "article-title": "Adaptive activation functions accelerate convergence in deep and physics-informed neural networks",
+      "volume": "404",
+      "author": "Jagtap",
+      "year": "2020",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b33",
+      "series-title": "A fast and accurate physics-informed neural network reduced order model with shallow masked autoencoder",
+      "author": "Kim",
+      "year": "2020"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b34",
+      "series-title": "Accelerating physics-informed neural network training with prior dictionaries",
+      "author": "Peng",
+      "year": "2020"
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.cma.2025.117914_b35",
+      "doi-asserted-by": "crossref",
+      "first-page": "208",
+      "DOI": "10.1137/19M1274067",
+      "article-title": "DeepXDE: A deep learning library for solving differential equations",
+      "volume": "63",
+      "author": "Lu",
+      "year": "2021",
+      "journal-title": "SIAM Rev."
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b36",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cma.2020.113028",
+      "article-title": "Conservative physics-informed neural networks on discrete domains for conservation laws: Applications to forward and inverse problems",
+      "volume": "365",
+      "author": "Jagtap",
+      "year": "2020",
+      "journal-title": "Comput. Methods Appl. Mech. Engrg."
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b37",
+      "doi-asserted-by": "crossref",
+      "first-page": "2002",
+      "DOI": "10.4208/cicp.OA-2020-0164",
+      "article-title": "Extended physics-informed neural networks (XPINNs): A generalized space-time domain decomposition based deep learning framework for nonlinear partial differential equations",
+      "volume": "28",
+      "author": "Jagtap",
+      "year": "2020",
+      "journal-title": "Commun. Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b38",
+      "series-title": "Parallel Physics-Informed Neural Networks via Domain Decomposition",
+      "author": "Shukla",
+      "year": "2021"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b39",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cma.2020.113250",
+      "article-title": "PPINN: Parareal physics-informed neural network for time-dependent PDEs",
+      "volume": "370",
+      "author": "Meng",
+      "year": "2020",
+      "journal-title": "Comput. Methods Appl. Mech. Engrg."
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b40",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cma.2020.113547",
+      "article-title": "Hp-VPINNs: Variational physics-informed neural networks with domain decomposition",
+      "volume": "374",
+      "author": "Kharazmi",
+      "year": "2021",
+      "journal-title": "Comput. Methods Appl. Mech. Engrg."
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b41",
+      "unstructured": "R. Bischof, M.A. Kraus, Mixture-of-Experts-Ensemble Meta-Learning for Physics-Informed Neural Networks, in: Proceedings of 33. Forum Bauinformatik, 2022."
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b42",
+      "series-title": "Proceedings of the Thirteenth International Conference on Artificial Intelligence and Statistics",
+      "first-page": "249",
+      "article-title": "Understanding the difficulty of training deep feedforward neural networks",
+      "volume": "vol. 9",
+      "author": "Glorot",
+      "year": "2010"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b43",
+      "series-title": "A novel meta-learning initialization method for physics-informed neural networks",
+      "author": "Liu",
+      "year": "2021"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b44",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jcp.2020.109942",
+      "article-title": "Transfer learning based multi-fidelity physics informed deep neural network",
+      "volume": "426",
+      "author": "Chakraborty",
+      "year": "2021",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b45",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.tafmec.2019.102447",
+      "article-title": "Transfer learning enhanced physics informed neural network for phase-field modeling of fracture",
+      "volume": "106",
+      "author": "Goswami",
+      "year": "2020",
+      "journal-title": "Theor. Appl. Fract. Mech."
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b46",
+      "series-title": "Meta-learning with implicit gradients",
+      "author": "Rajeswaran",
+      "year": "2019"
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.cma.2025.117914_b47",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1145/1456650.1456656",
+      "article-title": "Cross-disciplinary perspectives on meta-learning for algorithm selection",
+      "volume": "41",
+      "author": "Smith-Miles",
+      "year": "2009",
+      "journal-title": "ACM Comput. Surv."
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b48",
+      "series-title": "Meta-learning and universality: Deep representations and gradient descent can approximate any learning algorithm",
+      "author": "Finn",
+      "year": "2017"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b49",
+      "series-title": "Probabilistic model-agnostic meta-learning",
+      "author": "Finn",
+      "year": "2018"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b50",
+      "series-title": "Proceedings of the 34th International Conference on Machine Learning - Volume 70",
+      "first-page": "1126",
+      "article-title": "Model-agnostic meta-learning for fast adaptation of deep networks",
+      "author": "Finn",
+      "year": "2017"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b51",
+      "series-title": "On first-order meta-learning algorithms",
+      "author": "Nichol",
+      "year": "2018"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b52",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cma.2022.115671",
+      "article-title": "A comprehensive study of non-adaptive and residual-based adaptive sampling for physics-informed neural networks",
+      "volume": "403",
+      "author": "Wu",
+      "year": "2023",
+      "journal-title": "Comput. Methods Appl. Mech. Engrg."
+    },
+    {
+      "issue": "4",
+      "key": "10.1016/j.cma.2025.117914_b53",
+      "doi-asserted-by": "crossref",
+      "first-page": "A1971",
+      "DOI": "10.1137/22M1527763",
+      "article-title": "Failure-informed adaptive sampling for PINNs",
+      "volume": "45",
+      "author": "Gao",
+      "year": "2023",
+      "journal-title": "SIAM J. Sci. Comput."
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b54",
+      "series-title": "Advances in Neural Information Processing Systems",
+      "first-page": "4279",
+      "article-title": "Sobolev training for neural networks",
+      "volume": "Vol. 2017-Decem",
+      "author": "Czarnecki",
+      "year": "2017"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b55",
+      "series-title": "Sobolev training for the neural network solutions of PDEs",
+      "author": "Son",
+      "year": "2021"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b56",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cma.2021.113695",
+      "article-title": "Sobolev training of thermodynamic-informed neural networks for interpretable elasto-plasticity models with level set hardening",
+      "volume": "377",
+      "author": "Vlassis",
+      "year": "2021",
+      "journal-title": "Comput. Methods Appl. Mech. Engrg."
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b57",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cma.2020.113299",
+      "article-title": "Geometric deep learning for computational mechanics part i: Anisotropic hyperelasticity",
+      "volume": "371",
+      "author": "Vlassis",
+      "year": "2020",
+      "journal-title": "Comput. Methods Appl. Mech. Engrg."
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b58",
+      "series-title": "Machine Learning Techniques for the Material Parameter Identification of Laminated Glass in the Intact and Post-Fracture State",
+      "author": "Kraus",
+      "year": "2019"
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.cma.2025.117914_b59",
+      "doi-asserted-by": "crossref",
+      "first-page": "247",
+      "DOI": "10.1007/s40940-020-00132-8",
+      "article-title": "Artificial intelligence for structural glass engineering applications—overview, case studies and future potentials",
+      "volume": "5",
+      "author": "Kraus",
+      "year": "2020",
+      "journal-title": "Glas. Struct. Eng."
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b60",
+      "series-title": "Solving Allen-Cahn and Cahn-Hilliard equations using the adaptive physics informed neural networks",
+      "author": "Wight",
+      "year": "2020"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b61",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1023/A:1007379606734",
+      "article-title": "Multitask learning",
+      "volume": "28",
+      "author": "Caruana",
+      "year": "1997",
+      "journal-title": "Mach. Learn."
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.cma.2025.117914_b62",
+      "doi-asserted-by": "crossref",
+      "first-page": "1",
+      "DOI": "10.1016/S0377-2217(01)00123-0",
+      "article-title": "Multi-objective meta-heuristics: An overview of the current state-of-the-art",
+      "volume": "137",
+      "author": "Jones",
+      "year": "2002",
+      "journal-title": "European J. Oper. Res."
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b63",
+      "series-title": "E-Design",
+      "first-page": "907",
+      "article-title": "Chapter 17 - design optimization",
+      "author": "Chang",
+      "year": "2015"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b64",
+      "series-title": "Advances in Neural Information Processing Systems",
+      "article-title": "Multi-task learning as multi-objective optimization",
+      "volume": "Vol. 31",
+      "author": "Sener",
+      "year": "2018"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b65",
+      "series-title": "Efficient multi-objective optimization for deep learning",
+      "author": "Ruchte",
+      "year": "2021"
+    },
+    {
+      "issue": "5",
+      "key": "10.1016/j.cma.2025.117914_b66",
+      "doi-asserted-by": "crossref",
+      "first-page": "551",
+      "DOI": "10.1016/0893-6080(90)90005-6",
+      "article-title": "Universal approximation of an unknown mapping and its derivatives using multilayer feedforward networks",
+      "volume": "3",
+      "author": "Hornik",
+      "year": "1990",
+      "journal-title": "Neural Netw."
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b67",
+      "series-title": "Grid search, random search, genetic algorithm: A big comparison for NAS",
+      "author": "Liashchynskyi",
+      "year": "2019"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b68",
+      "series-title": "Proceedings of the 25th International Conference on Neural Information Processing Systems - Volume 2",
+      "first-page": "2951",
+      "article-title": "Practical Bayesian optimization of machine learning algorithms",
+      "author": "Snoek",
+      "year": "2012"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b69",
+      "series-title": "Bayesian optimization: Open source constrained global optimization tool for Python",
+      "author": "Nogueira",
+      "year": "2014"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b70",
+      "series-title": "The Application of Bayesian Methods for Seeking the Extremum",
+      "first-page": "117",
+      "author": "Mockus",
+      "year": "2014"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b71",
+      "series-title": "Fluid Flow Phenomena: A Numerical Toolkit",
+      "first-page": "40",
+      "article-title": "The Burgers equation",
+      "author": "Orlandi",
+      "year": "2000"
+    },
+    {
+      "issue": "6",
+      "key": "10.1016/j.cma.2025.117914_b72",
+      "doi-asserted-by": "crossref",
+      "first-page": "69",
+      "DOI": "10.1007/s12043-018-1559-4",
+      "article-title": "A systematic literature review of Burgers’ equation with recent advances",
+      "volume": "90",
+      "author": "Bonkile",
+      "year": "2018",
+      "journal-title": "Pramana"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b73",
+      "series-title": "EN 1992-1-1 Eurocode 2: Design of Concrete Structures - Part 1-1: General Ruels and Rules for Buildings",
+      "author": "European Committee for Standardization",
+      "year": "2005"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b74",
+      "series-title": "Partial Differential Equations in Physics",
+      "author": "Sommerfeld",
+      "year": "1949"
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b75",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cma.2021.114474",
+      "article-title": "A novel sequential method to train physics informed neural networks for Allen Cahn and Cahn Hilliard equations",
+      "volume": "390",
+      "author": "Mattey",
+      "year": "2022",
+      "journal-title": "Comput. Methods Appl. Mech. Engrg."
+    },
+    {
+      "key": "10.1016/j.cma.2025.117914_b76",
+      "series-title": "Solving Allen-Cahn and Cahn-Hilliard equations using the adaptive physics informed neural networks",
+      "author": "Wight",
+      "year": "2020"
+    }
+  ],
+  "container-title": "Computer Methods in Applied Mechanics and Engineering",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0045782525001860?httpAccept=text/xml",
+      "content-type": "text/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0045782525001860?httpAccept=text/plain",
+      "content-type": "text/plain",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2025,
+        11,
+        4
+      ]
+    ],
+    "date-time": "2025-11-04T03:01:18Z",
+    "timestamp": 1762225278000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0045782525001860"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2025,
+        5
+      ]
+    ]
+  },
+  "references-count": 76,
+  "alternative-id": [
+    "S0045782525001860"
+  ],
+  "URL": "http://dx.doi.org/10.1016/j.cma.2025.117914",
+  "relation": {},
+  "ISSN": [
+    "0045-7825"
+  ],
+  "subject": [],
+  "container-title-short": "Computer Methods in Applied Mechanics and Engineering",
+  "published": {
+    "date-parts": [
+      [
+        2025,
+        5
+      ]
+    ]
+  },
+  "assertion": [
+    {
+      "value": "Elsevier",
+      "name": "publisher",
+      "label": "This article is maintained by"
+    },
+    {
+      "value": "Multi-Objective Loss Balancing for Physics-Informed Deep Learning",
+      "name": "articletitle",
+      "label": "Article Title"
+    },
+    {
+      "value": "Computer Methods in Applied Mechanics and Engineering",
+      "name": "journaltitle",
+      "label": "Journal Title"
+    },
+    {
+      "value": "https://doi.org/10.1016/j.cma.2025.117914",
+      "name": "articlelink",
+      "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+      "value": "article",
+      "name": "content_type",
+      "label": "Content Type"
+    },
+    {
+      "value": "© 2025 The Authors. Published by Elsevier B.V.",
+      "name": "copyright",
+      "label": "Copyright"
+    }
+  ],
+  "article-number": "117914"
+}

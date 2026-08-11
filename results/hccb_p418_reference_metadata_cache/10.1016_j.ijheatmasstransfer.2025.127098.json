@@ -1,0 +1,717 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        7,
+        21
+      ]
+    ],
+    "date-time": "2026-07-21T04:47:38Z",
+    "timestamp": 1784609258888,
+    "version": "3.55.0"
+  },
+  "reference-count": 34,
+  "publisher": "Elsevier BV",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            8,
+            1
+          ]
+        ],
+        "date-time": "2025-08-01T00:00:00Z",
+        "timestamp": 1754006400000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            8,
+            1
+          ]
+        ],
+        "date-time": "2025-08-01T00:00:00Z",
+        "timestamp": 1754006400000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/legal/tdmrep-license"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            8,
+            1
+          ]
+        ],
+        "date-time": "2025-08-01T00:00:00Z",
+        "timestamp": 1754006400000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-017"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            8,
+            1
+          ]
+        ],
+        "date-time": "2025-08-01T00:00:00Z",
+        "timestamp": 1754006400000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-037"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            8,
+            1
+          ]
+        ],
+        "date-time": "2025-08-01T00:00:00Z",
+        "timestamp": 1754006400000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-012"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            8,
+            1
+          ]
+        ],
+        "date-time": "2025-08-01T00:00:00Z",
+        "timestamp": 1754006400000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-029"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            8,
+            1
+          ]
+        ],
+        "date-time": "2025-08-01T00:00:00Z",
+        "timestamp": 1754006400000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-004"
+    }
+  ],
+  "funder": [
+    {
+      "DOI": "10.13039/501100003052",
+      "name": "Korea Ministry of Trade Industry and Energy",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "20023762"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "20023762"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100003052",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    }
+  ],
+  "content-domain": {
+    "domain": [
+      "elsevier.com",
+      "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2025,
+        8
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.ijheatmasstransfer.2025.127098",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2025,
+        4,
+        10
+      ]
+    ],
+    "date-time": "2025-04-10T18:07:01Z",
+    "timestamp": 1744308421000
+  },
+  "page": "127098",
+  "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 11,
+  "special_numbering": "C",
+  "title": "Extended multiphysics-informed neural network for conjugate heat transfer problems",
+  "prefix": "10.1016",
+  "volume": "246",
+  "author": [
+    {
+      "given": "Jongmok",
+      "family": "Lee",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Seungmin",
+      "family": "Shin",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Ho",
+      "family": "Choi",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Anna",
+      "family": "Lee",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Bumsoo",
+      "family": "Park",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Seungchul",
+      "family": "Lee",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    }
+  ],
+  "member": "78",
+  "reference": [
+    {
+      "issue": "3",
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0001",
+      "doi-asserted-by": "crossref",
+      "first-page": "88",
+      "DOI": "10.1007/s10915-022-01939-z",
+      "article-title": "Scientific machine learning through physics–informed neural networks: where we are and what's next",
+      "volume": "92",
+      "author": "Cuomo",
+      "year": "2022",
+      "journal-title": "J. Sci. Comput."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0002",
+      "doi-asserted-by": "crossref",
+      "first-page": "686",
+      "DOI": "10.1016/j.jcp.2018.10.045",
+      "article-title": "Physics-informed neural networks: a deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations",
+      "volume": "378",
+      "author": "Raissi",
+      "year": "2019",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "issue": "12",
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0003",
+      "doi-asserted-by": "crossref",
+      "first-page": "1727",
+      "DOI": "10.1007/s10409-021-01148-1",
+      "article-title": "Physics-informed neural networks (PINNs) for fluid mechanics: a review",
+      "volume": "37",
+      "author": "Cai",
+      "year": "2021",
+      "journal-title": "Acta Mechanica Sinica"
+    },
+    {
+      "issue": "6",
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0004",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1115/1.4050542",
+      "article-title": "Physics-informed neural networks for heat transfer problems",
+      "volume": "143",
+      "author": "Cai",
+      "year": "2021",
+      "journal-title": "J. Heat. Transfer."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0005",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2024.125480",
+      "article-title": "Inverse flow prediction using ensemble PINNs and uncertainty quantification",
+      "volume": "226",
+      "author": "Soibam",
+      "year": "2024",
+      "journal-title": "Int. J. Heat. Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0006",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijmecsci.2024.109525",
+      "article-title": "Boundary integrated neural networks for 2D elastostatic and piezoelectric problems",
+      "volume": "280",
+      "author": "Zhang",
+      "year": "2024",
+      "journal-title": "Int. J. Mech. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0007",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cma.2021.113741",
+      "article-title": "A physics-informed deep learning framework for inversion and surrogate modeling in solid mechanics",
+      "volume": "379",
+      "author": "Haghighat",
+      "year": "2021",
+      "journal-title": "Comput. Methods Appl. Mech. Eng."
+    },
+    {
+      "issue": "9",
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0008",
+      "first-page": "1",
+      "article-title": "Physics informed neural networks for electromagnetic analysis",
+      "volume": "58",
+      "author": "Khan",
+      "year": "2022",
+      "journal-title": "IEEE Trans. Magn."
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0009",
+      "doi-asserted-by": "crossref",
+      "first-page": "515",
+      "DOI": "10.1007/s11814-021-0979-x",
+      "article-title": "Physics-informed deep learning for data-driven solutions of computational fluid dynamics",
+      "volume": "39",
+      "author": "Choi",
+      "year": "2022",
+      "journal-title": "Korean J. Chem. Eng."
+    },
+    {
+      "issue": "4",
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0010",
+      "first-page": "423",
+      "article-title": "Deep learning method based on physics informed neural network with resnet block for solving fluid flow problems",
+      "volume": "13",
+      "author": "Cheng",
+      "year": "2021",
+      "journal-title": "Water. (Basel)"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0011",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijsolstr.2023.112321",
+      "article-title": "Enriched physics-informed neural networks for 2D in-plane crack analysis: theory and MATLAB code",
+      "volume": "276",
+      "author": "Gu",
+      "year": "2023",
+      "journal-title": "Int. J. Solids. Struct."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0012",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jcp.2020.109951",
+      "article-title": "NSFnets (Navier-Stokes flow nets): physics-informed neural networks for the incompressible Navier-Stokes equations",
+      "volume": "426",
+      "author": "Jin",
+      "year": "2021",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0013",
+      "doi-asserted-by": "crossref",
+      "first-page": "207",
+      "DOI": "10.1016/j.taml.2020.01.039",
+      "article-title": "Physics-informed deep learning for incompressible laminar flows",
+      "volume": "10",
+      "author": "Rao",
+      "year": "2020",
+      "journal-title": "Theor. Appl. Mech. Lett."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0014",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.compfluid.2022.105632",
+      "article-title": "Learning by neural networks under physical constraints for simulation in fluid mechanics",
+      "volume": "248",
+      "author": "Yang",
+      "year": "2022",
+      "journal-title": "Comput. Fluids."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0015",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2020.120626",
+      "article-title": "Reconstruction of natural convection within an enclosure using deep neural network",
+      "volume": "164",
+      "author": "Wang",
+      "year": "2021",
+      "journal-title": "Int. J. Heat. Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0016",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.engappai.2021.104232",
+      "article-title": "A physics-informed machine learning approach for solving heat transfer equation in advanced manufacturing and engineering applications",
+      "volume": "101",
+      "author": "Zobeiry",
+      "year": "2021",
+      "journal-title": "Eng. Appl. Artif. Intell."
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0017",
+      "first-page": "1496",
+      "article-title": "Surrogate modeling for physical fields of heat transfer processes based on physics-informed neural network",
+      "volume": "72",
+      "author": "Zhibin",
+      "year": "2021",
+      "journal-title": "CIESC J."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0018",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2023.125089",
+      "article-title": "Physics-informed neural networks for heat transfer prediction in two-phase flows",
+      "volume": "221",
+      "author": "Jalili",
+      "year": "2024",
+      "journal-title": "Int. J. Heat. Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0019",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.est.2023.106654",
+      "article-title": "Modeling and prediction of lithium-ion battery thermal runaway via multiphysics-informed neural network",
+      "volume": "60",
+      "author": "Kim",
+      "year": "2023",
+      "journal-title": "J. Energy Storage"
+    },
+    {
+      "issue": "10",
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0020",
+      "doi-asserted-by": "crossref",
+      "first-page": "2442",
+      "DOI": "10.1007/s11431-022-2118-9",
+      "article-title": "Multi-domain physics-informed neural network for solving heat conduction and conjugate natural convection with discontinuity of temperature gradient on interface",
+      "volume": "65",
+      "author": "Wang",
+      "year": "2022",
+      "journal-title": "Sci. China Technol. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0021",
+      "series-title": "AAAI Spring Symposium",
+      "first-page": "2002",
+      "article-title": "Extended physics-informed Neural networks (XPINNs): a generalized space-time domain decomposition based deep learning framework for nonlinear partial differential equations",
+      "author": "Jagtap",
+      "year": "2021"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0022",
+      "doi-asserted-by": "crossref",
+      "first-page": "475",
+      "DOI": "10.1007/s11831-018-9252-9",
+      "article-title": "Applied and theoretical aspects of conjugate heat transfer analysis: a review",
+      "volume": "26",
+      "author": "John",
+      "year": "2019",
+      "journal-title": "Arch. Comput. Methods Eng."
+    },
+    {
+      "issue": "28",
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0023",
+      "doi-asserted-by": "crossref",
+      "first-page": "21093",
+      "DOI": "10.1007/s00521-023-08876-4",
+      "article-title": "BC-PINN: an adaptive physics informed neural network based on biased multiobjective coevolutionary algorithm",
+      "volume": "35",
+      "author": "Zhu",
+      "year": "2023",
+      "journal-title": "Neural Comput. Appl."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0024",
+      "doi-asserted-by": "crossref",
+      "first-page": "95",
+      "DOI": "10.1016/j.compfluid.2014.05.006",
+      "article-title": "Methodology of numerical coupling for transient conjugate heat transfer",
+      "volume": "100",
+      "author": "Radenac",
+      "year": "2014",
+      "journal-title": "Comput. Fluids."
+    },
+    {
+      "issue": "2",
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0025",
+      "article-title": "Numerical investigation of conjugate heat transfer between spherical solid body and fluid",
+      "volume": "9",
+      "author": "Eleiwi",
+      "year": "2022",
+      "journal-title": "Math. Model. Eng. Probl."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0026",
+      "series-title": "International conference on machine learning",
+      "first-page": "1139",
+      "article-title": "On the importance of initialization and momentum in deep learning",
+      "author": "Sutskever",
+      "year": "2013"
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0027",
+      "doi-asserted-by": "crossref",
+      "first-page": "107",
+      "DOI": "10.1145/3446776",
+      "article-title": "Understanding deep learning (still) requires rethinking generalization",
+      "volume": "64",
+      "author": "Zhang",
+      "year": "2021",
+      "journal-title": "Commun. ACM"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0028",
+      "first-page": "30",
+      "article-title": "Train longer, generalize better: closing the generalization gap in large batch training of neural networks",
+      "author": "Hoffer",
+      "year": "2017",
+      "journal-title": "Adv. Neural Inf. Process. Syst."
+    },
+    {
+      "issue": "4",
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0029",
+      "doi-asserted-by": "crossref",
+      "first-page": "A2603",
+      "DOI": "10.1137/18M1229845",
+      "article-title": "fPINNs: fractional physics-informed neural networks",
+      "volume": "41",
+      "author": "Pang",
+      "year": "2019",
+      "journal-title": "SIAM J. Sci. Comput."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0030",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cma.2020.113250",
+      "article-title": "PPINN: parareal physics-informed neural network for time-dependent PDEs",
+      "volume": "370",
+      "author": "Meng",
+      "year": "2020",
+      "journal-title": "Comput. Methods Appl. Mech. Eng."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0031",
+      "article-title": "Multiphysics-informed neural networks for coupled soil hydrothermal modeling",
+      "author": "Wang",
+      "year": "2023",
+      "journal-title": "Water Resour. Res."
+    },
+    {
+      "issue": "12",
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0032",
+      "doi-asserted-by": "crossref",
+      "first-page": "4558",
+      "DOI": "10.3390/en16124558",
+      "article-title": "Physics-informed neural networks for low Reynolds number flows over cylinder",
+      "volume": "16",
+      "author": "Ang",
+      "year": "2023",
+      "journal-title": "Energies"
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0033",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1063/5.0200384",
+      "article-title": "Physics-informed neural networks for transonic flow around a cylinder with high reynolds number",
+      "volume": "36",
+      "author": "Ren",
+      "year": "2024",
+      "journal-title": "Phys. Fluids"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127098_bib0034",
+      "doi-asserted-by": "crossref",
+      "first-page": "351",
+      "DOI": "10.1016/j.applthermaleng.2018.05.054",
+      "article-title": "The continuous adjoint method for shape optimization in Conjugate Heat Transfer problems with turbulent incompressible flows",
+      "volume": "140",
+      "author": "Gkaragkounis",
+      "year": "2018",
+      "journal-title": "Appl. Therm. Eng."
+    }
+  ],
+  "container-title": "International Journal of Heat and Mass Transfer",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0017931025004375?httpAccept=text/xml",
+      "content-type": "text/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0017931025004375?httpAccept=text/plain",
+      "content-type": "text/plain",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2025,
+        11,
+        3
+      ]
+    ],
+    "date-time": "2025-11-03T12:31:55Z",
+    "timestamp": 1762173115000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0017931025004375"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2025,
+        8
+      ]
+    ]
+  },
+  "references-count": 34,
+  "alternative-id": [
+    "S0017931025004375"
+  ],
+  "URL": "http://dx.doi.org/10.1016/j.ijheatmasstransfer.2025.127098",
+  "relation": {},
+  "ISSN": [
+    "0017-9310"
+  ],
+  "subject": [],
+  "container-title-short": "International Journal of Heat and Mass Transfer",
+  "published": {
+    "date-parts": [
+      [
+        2025,
+        8
+      ]
+    ]
+  },
+  "assertion": [
+    {
+      "value": "Elsevier",
+      "name": "publisher",
+      "label": "This article is maintained by"
+    },
+    {
+      "value": "Extended multiphysics-informed neural network for conjugate heat transfer problems",
+      "name": "articletitle",
+      "label": "Article Title"
+    },
+    {
+      "value": "International Journal of Heat and Mass Transfer",
+      "name": "journaltitle",
+      "label": "Journal Title"
+    },
+    {
+      "value": "https://doi.org/10.1016/j.ijheatmasstransfer.2025.127098",
+      "name": "articlelink",
+      "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+      "value": "article",
+      "name": "content_type",
+      "label": "Content Type"
+    },
+    {
+      "value": "© 2025 Elsevier Ltd. All rights are reserved, including those for text and data mining, AI training, and similar technologies.",
+      "name": "copyright",
+      "label": "Copyright"
+    }
+  ],
+  "article-number": "127098"
+}

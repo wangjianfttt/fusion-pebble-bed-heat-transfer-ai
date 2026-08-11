@@ -1,0 +1,810 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        3,
+        28
+      ]
+    ],
+    "date-time": "2026-03-28T04:24:37Z",
+    "timestamp": 1774671877249,
+    "version": "3.50.1"
+  },
+  "reference-count": 56,
+  "publisher": "Elsevier BV",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2020,
+            10,
+            1
+          ]
+        ],
+        "date-time": "2020-10-01T00:00:00Z",
+        "timestamp": 1601510400000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2020,
+            10,
+            1
+          ]
+        ],
+        "date-time": "2020-10-01T00:00:00Z",
+        "timestamp": 1601510400000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/legal/tdmrep-license"
+    }
+  ],
+  "content-domain": {
+    "domain": [
+      "elsevier.com",
+      "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2020,
+        10
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.fusengdes.2020.111767",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2020,
+        5,
+        30
+      ]
+    ],
+    "date-time": "2020-05-30T17:36:59Z",
+    "timestamp": 1590860219000
+  },
+  "page": "111767",
+  "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 11,
+  "special_numbering": "C",
+  "title": "Influence of bed conditions on the effective thermal conductivity of ceramic breeder pebble beds using thermal DEM (TDEM)",
+  "prefix": "10.1016",
+  "volume": "159",
+  "author": [
+    {
+      "given": "Raghuram Karthik",
+      "family": "Desu",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "Akhil Reddy",
+      "family": "Peeketi",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "Ratna Kumar",
+      "family": "Annabattula",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    }
+  ],
+  "member": "78",
+  "reference": [
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0005",
+      "doi-asserted-by": "crossref",
+      "first-page": "782",
+      "DOI": "10.1016/j.fusengdes.2018.04.009",
+      "article-title": "Progress in EU Breeding Blanket design and integration",
+      "volume": "136",
+      "author": "Cismondi",
+      "year": "2018",
+      "journal-title": "Fusion Engineering and Design"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0010",
+      "doi-asserted-by": "crossref",
+      "first-page": "188",
+      "DOI": "10.1016/0022-3115(88)90240-1",
+      "article-title": "Ceramic breeder materials",
+      "volume": "155-157",
+      "author": "Johnson",
+      "year": "1988",
+      "journal-title": "Journal of Nuclear Materials"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0015",
+      "series-title": "Recent advances in the development of solid breeder-blanket materials",
+      "author": "Johnson",
+      "year": "1983"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0020",
+      "doi-asserted-by": "crossref",
+      "first-page": "298",
+      "DOI": "10.13182/FST95-A30392",
+      "article-title": "Experimental study of the effect of external pressure on particle bed effective thermal properties",
+      "volume": "27",
+      "author": "Tehranian",
+      "year": "1995",
+      "journal-title": "Fusion Technology"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0025",
+      "doi-asserted-by": "crossref",
+      "first-page": "31",
+      "DOI": "10.13182/FST98-A13",
+      "article-title": "The effective thermal conductivity of a bed of 1.2-mm-diam lithium zirconate spheres in helium",
+      "volume": "33",
+      "author": "Earnshaw",
+      "year": "1998",
+      "journal-title": "Fusion Technology"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0030",
+      "doi-asserted-by": "crossref",
+      "first-page": "612",
+      "DOI": "10.13182/FST01-A11963305",
+      "article-title": "Effective thermal conductivity measurement of the candidate ceramic breeder pebble beds by the hot wire method",
+      "volume": "39",
+      "author": "Enoeda",
+      "year": "2001",
+      "journal-title": "Fusion Technology"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0035",
+      "doi-asserted-by": "crossref",
+      "first-page": "94",
+      "DOI": "10.13182/FST03-A316",
+      "article-title": "Effective thermal conductivity of a Li2TiO3 pebble bed for a DEMO blanket",
+      "volume": "44",
+      "author": "Hatano",
+      "year": "2003",
+      "journal-title": "Fusion Science and Technology"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0040",
+      "doi-asserted-by": "crossref",
+      "first-page": "15",
+      "DOI": "10.1016/S0032-5910(03)00040-8",
+      "article-title": "The effect of compression and preconsolidation on the effective thermal conductivity of particulate beds",
+      "volume": "133",
+      "author": "Widenfeld",
+      "year": "2003",
+      "journal-title": "Powder Technology"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0045",
+      "doi-asserted-by": "crossref",
+      "first-page": "206",
+      "DOI": "10.1016/j.jmatprotec.2006.03.061",
+      "article-title": "Experimental measurements of the effective thermal conductivity of a lithium titanate (Li2TiO3) pebbles-packed bed",
+      "volume": "181",
+      "author": "Abou-Sena",
+      "year": "2007",
+      "journal-title": "Journal of Materials Processing Technology"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0050",
+      "doi-asserted-by": "crossref",
+      "first-page": "73",
+      "DOI": "10.1016/j.fusengdes.2017.01.026",
+      "article-title": "Effective thermal conductivity of advanced ceramic breeder pebble beds",
+      "volume": "116",
+      "author": "Pupeschi",
+      "year": "2017",
+      "journal-title": "Fusion Engineering and Design"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0055",
+      "doi-asserted-by": "crossref",
+      "first-page": "34",
+      "DOI": "10.1016/j.fusengdes.2017.12.003",
+      "article-title": "Experimental measurement and numerical modeling of the effective thermal conductivity of lithium meta-titanate pebble bed",
+      "volume": "127",
+      "author": "Panchal",
+      "year": "2018",
+      "journal-title": "Fusion Engineering and Design"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0060",
+      "doi-asserted-by": "crossref",
+      "first-page": "2751",
+      "DOI": "10.1016/0017-9310(94)90392-1",
+      "article-title": "Modified Zehner-Schlunder models for stagnant thermal conductivity of porous media",
+      "volume": "37",
+      "author": "Hsu",
+      "year": "1994",
+      "journal-title": "International Journal of Heat and Mass Transfer"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0065",
+      "doi-asserted-by": "crossref",
+      "first-page": "4199",
+      "DOI": "10.1016/S0009-2509(99)00125-6",
+      "article-title": "Evaluation of effective thermal conductivity from the structure of a packed bed",
+      "volume": "54",
+      "author": "Cheng",
+      "year": "1999",
+      "journal-title": "Chemical Engineering Science"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0070",
+      "doi-asserted-by": "crossref",
+      "first-page": "611",
+      "DOI": "10.1109/TCAPT.2008.2001839",
+      "article-title": "An efficient network model for determining the effective thermal conductivity of particulate thermal interface materials",
+      "volume": "31",
+      "author": "Kanuparthi",
+      "year": "2008",
+      "journal-title": "IEEE Transactions on Components and Packaging Technologies"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0075",
+      "doi-asserted-by": "crossref",
+      "first-page": "248",
+      "DOI": "10.1016/j.powtec.2009.03.001",
+      "article-title": "Discrete thermal element modelling of heat conduction in particle systems: pipe-network model and transient analysis",
+      "volume": "193",
+      "author": "Feng",
+      "year": "2009",
+      "journal-title": "Powder Technology"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0080",
+      "doi-asserted-by": "crossref",
+      "first-page": "024202",
+      "DOI": "10.1103/PhysRevB.80.024202",
+      "article-title": "Model of thermal conductivity in powder beds",
+      "volume": "80",
+      "author": "Gusarov",
+      "year": "2009",
+      "journal-title": "Physical Review B"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0085",
+      "doi-asserted-by": "crossref",
+      "first-page": "1975",
+      "DOI": "10.1016/j.fusengdes.2010.07.010",
+      "article-title": "Theoretical calculation and analysis modeling for the effective thermal conductivity of Li4SiO4 pebble bed",
+      "volume": "85",
+      "author": "Zhao",
+      "year": "2010",
+      "journal-title": "Fusion Engineering and Design"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0090",
+      "doi-asserted-by": "crossref",
+      "first-page": "991",
+      "DOI": "10.1016/j.compgeo.2010.08.007",
+      "article-title": "Three-dimensional random network model for thermal conductivity in particulate materials",
+      "volume": "37",
+      "author": "Yun",
+      "year": "2010",
+      "journal-title": "Computers and Geotechnics"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0095",
+      "doi-asserted-by": "crossref",
+      "first-page": "1803",
+      "DOI": "10.1016/j.nucengdes.2010.03.009",
+      "article-title": "A review of correlations to model the packing structure and effective thermal conductivity in packed beds of mono-sized spherical particles",
+      "volume": "240",
+      "author": "Van Antwerpen",
+      "year": "2010",
+      "journal-title": "Nuclear Engineering and Design"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0100",
+      "doi-asserted-by": "crossref",
+      "first-page": "984",
+      "DOI": "10.1016/j.applthermaleng.2014.08.063",
+      "article-title": "A new model for heat transfer through the contact network of randomly packed granular material",
+      "volume": "73",
+      "author": "Liang",
+      "year": "2014",
+      "journal-title": "Applied Thermal Engineering"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0105",
+      "doi-asserted-by": "crossref",
+      "first-page": "192",
+      "DOI": "10.1016/j.fusengdes.2018.01.013",
+      "article-title": "Discrete element method for effective thermal conductivity of packed pebbles accounting for the Smoluchowski effect",
+      "volume": "127",
+      "author": "Moscardini",
+      "year": "2018",
+      "journal-title": "Fusion Engineering and Design"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0110",
+      "doi-asserted-by": "crossref",
+      "first-page": "1105",
+      "DOI": "10.1016/j.ijheatmasstransfer.2015.07.059",
+      "article-title": "Expression for effective thermal conductivity of randomly packed granular material",
+      "volume": "90",
+      "author": "Liang",
+      "year": "2015",
+      "journal-title": "International Journal of Heat and Mass Transfer"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0115",
+      "doi-asserted-by": "crossref",
+      "first-page": "1",
+      "DOI": "10.1016/j.fusengdes.2016.03.001",
+      "article-title": "Investigation of effective thermal conductivity for pebble beds by one-way coupled CFD-DEM method for CFETR WCCB",
+      "volume": "106",
+      "author": "Chen",
+      "year": "2016",
+      "journal-title": "Fusion Engineering and Design"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0120",
+      "doi-asserted-by": "crossref",
+      "first-page": "327",
+      "DOI": "10.1016/j.ijthermalsci.2017.01.003",
+      "article-title": "Modeling of granular packed beds, their statistical analyses and evaluation of effective thermal conductivity",
+      "volume": "114",
+      "author": "Kovalev",
+      "year": "2017",
+      "journal-title": "International Journal of Thermal Sciences"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0125",
+      "doi-asserted-by": "crossref",
+      "first-page": "393",
+      "DOI": "10.1016/j.ijheatmasstransfer.2017.03.035",
+      "article-title": "Numerical simulation of heat transfer in packed pebble beds: CFD-DEM coupled with particle thermal radiation",
+      "volume": "110",
+      "author": "Wu",
+      "year": "2017",
+      "journal-title": "International Journal of Heat and Mass Transfer"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0130",
+      "doi-asserted-by": "crossref",
+      "first-page": "80",
+      "DOI": "10.1016/j.fusengdes.2018.02.088",
+      "article-title": "Effective thermal conductivity of a compacted pebble bed in a stagnant gaseous environment: An analytical approach together with DEM",
+      "volume": "130",
+      "author": "Peeketi",
+      "year": "2018",
+      "journal-title": "Fusion Engineering and Design"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0135",
+      "doi-asserted-by": "crossref",
+      "first-page": "182",
+      "DOI": "10.1016/j.fusengdes.2018.09.012",
+      "article-title": "Numerical prediction of packing behavior and thermal conductivity of pebble beds according to pebble size distributions and friction coefficients",
+      "volume": "137",
+      "author": "Sohn",
+      "year": "2018",
+      "journal-title": "Fusion Engineering and Design"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0140",
+      "doi-asserted-by": "crossref",
+      "first-page": "93",
+      "DOI": "10.1007/s10035-019-0945-z",
+      "article-title": "Analytical estimation of the effective thermal conductivity of a granular bed in a stagnant gas including the Smoluchowski effect",
+      "volume": "21",
+      "author": "Peeketi",
+      "year": "2019",
+      "journal-title": "Granular Matter"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0145",
+      "doi-asserted-by": "crossref",
+      "first-page": "118753",
+      "DOI": "10.1016/j.ijheatmasstransfer.2019.118753",
+      "article-title": "Thermal discrete element method for transient heat conduction in granular packing under compressive forces",
+      "volume": "145",
+      "author": "Kiani-Oshtorjani",
+      "year": "2019",
+      "journal-title": "International Journal of Heat and Mass Transfer"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0150",
+      "doi-asserted-by": "crossref",
+      "first-page": "111257",
+      "DOI": "10.1016/j.fusengdes.2019.111257",
+      "article-title": "A DEM-CFD numerical model for the prediction of the effective thermal conductivity of pebble beds with contact conduction",
+      "volume": "147",
+      "author": "Wang",
+      "year": "2019",
+      "journal-title": "Fusion Engineering and Design"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0155",
+      "doi-asserted-by": "crossref",
+      "first-page": "266",
+      "DOI": "10.1016/j.ijthermalsci.2019.04.028",
+      "article-title": "The effects of packing structure on the effective thermal conductivity of granular media: A grain scale investigation",
+      "volume": "142",
+      "author": "Dai",
+      "year": "2019",
+      "journal-title": "International Journal of Thermal Sciences"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0160",
+      "doi-asserted-by": "crossref",
+      "first-page": "283",
+      "DOI": "10.1080/15361055.2019.1565481",
+      "article-title": "Discrete Element Analysis of Heat Transfer in the Breeder Beds of the European Solid Breeder Blanket Concept",
+      "volume": "75",
+      "author": "Moscardini",
+      "year": "2019",
+      "journal-title": "Fusion Science and Technology"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0165",
+      "doi-asserted-by": "crossref",
+      "first-page": "331",
+      "DOI": "10.1016/j.ijheatmasstransfer.2018.12.005",
+      "article-title": "A DEM-based heat transfer model for the evaluation of effective thermal conductivity of packed beds filled with stagnant fluid: Thermal contact theory and numerical simulation",
+      "volume": "132",
+      "author": "Chen",
+      "year": "2019",
+      "journal-title": "International Journal of Heat and Mass Transfer"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0170",
+      "doi-asserted-by": "crossref",
+      "first-page": "1782",
+      "DOI": "10.1016/j.fusengdes.2010.05.042",
+      "article-title": "Computer simulation of packing structure in pebble beds",
+      "volume": "85",
+      "author": "Gan",
+      "year": "2010",
+      "journal-title": "Fusion Engineering and Design"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0175",
+      "doi-asserted-by": "crossref",
+      "first-page": "259",
+      "DOI": "10.1016/j.fusengdes.2018.01.005",
+      "article-title": "DEM simulation of packing mono-sized pebbles into prismatic containers through different filling strategies",
+      "volume": "127",
+      "author": "Desu",
+      "year": "2018",
+      "journal-title": "Fusion Engineering and Design"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0180",
+      "doi-asserted-by": "crossref",
+      "first-page": "265",
+      "DOI": "10.1299/jsmea.49.265",
+      "article-title": "Effects of cubic container's wall or floor on random packing structures of spherical particles",
+      "volume": "49",
+      "author": "Taguchi",
+      "year": "2006",
+      "journal-title": "JSME International Journal Series A Solid Mechanics and Material Engineering"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0185",
+      "doi-asserted-by": "crossref",
+      "first-page": "1855",
+      "DOI": "10.1016/j.fusengdes.2015.05.026",
+      "article-title": "Pebble bed structures in the vicinity of concave and convex walls",
+      "volume": "98",
+      "author": "Reimann",
+      "year": "2015",
+      "journal-title": "Fusion Engineering and Design"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0190",
+      "doi-asserted-by": "crossref",
+      "first-page": "241",
+      "DOI": "10.1016/S0920-3796(03)00347-8",
+      "article-title": "Influence of pebble bed dimensions and filling factor on mechanical pebble bed properties",
+      "volume": "69",
+      "author": "Reimann",
+      "year": "2003",
+      "journal-title": "Fusion Engineering and Design"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0195",
+      "doi-asserted-by": "crossref",
+      "unstructured": "J. Reimann, J. Vicente, C. Ferrero, A. Rack, Y. Gan, 3d tomography analysis of the packing structure of spherical particles in slender prismatic containers: Paper presented at the Symposium ”Tomographic and Radiographic Imaging with Synchrotron X-rays and Neutrons“ of the MSE 2018, 26-28 September 2018, Darmstadt, Germany, International Journal of Materials Research.",
+      "DOI": "10.3139/146.111814"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0200",
+      "doi-asserted-by": "crossref",
+      "first-page": "2285",
+      "DOI": "10.1016/j.fusengdes.2019.03.173",
+      "article-title": "Numerical investigation of mechanical and thermal characteristics of binary-sized pebble beds using discrete element method",
+      "volume": "146",
+      "author": "Lee",
+      "year": "2019",
+      "journal-title": "Fusion Engineering and Design"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0205",
+      "first-page": "313",
+      "article-title": "Thermal or electrical conduction through a granular material, Proceedings of the Royal Society of London. Series A",
+      "author": "Batchelor",
+      "year": "1977",
+      "journal-title": "Mathematical and Physical Sciences"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0210",
+      "doi-asserted-by": "crossref",
+      "first-page": "163",
+      "DOI": "10.1016/S0065-2717(08)70018-2",
+      "article-title": "Heat transfer in rarefied gases",
+      "volume": "7",
+      "author": "Springer",
+      "year": "1971",
+      "journal-title": "Advances in Heat Transfer"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0215",
+      "first-page": "1",
+      "article-title": "Artificial neural network-based prediction of effective thermal conductivity of a granular bed in a gaseous environment",
+      "author": "Desu",
+      "year": "2019",
+      "journal-title": "Computational Particle Mechanics"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0220",
+      "doi-asserted-by": "crossref",
+      "first-page": "2375",
+      "DOI": "10.1016/j.fusengdes.2007.05.008",
+      "article-title": "Mechanical characterization of Li2TiO3 and Li4SiO4 pebble beds: experimental determination of the material properties and of the pebble bed effective values",
+      "volume": "82",
+      "author": "Zaccari",
+      "year": "2007",
+      "journal-title": "Fusion Engineering and Design"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0225",
+      "first-page": "1068",
+      "article-title": "Thermal conductivity of sintered lithium orthosilicate compacts",
+      "volume": "386",
+      "author": "L&rdquo;obbecke",
+      "year": "2009",
+      "journal-title": "Journal of Nuclear Materials"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0230",
+      "doi-asserted-by": "crossref",
+      "first-page": "213",
+      "DOI": "10.1016/S0022-3115(97)00314-0",
+      "article-title": "Density dependence on thermal properties of Li2TiO3 pellets",
+      "volume": "253",
+      "author": "Saito",
+      "year": "1998",
+      "journal-title": "Journal of Nuclear Materials"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0235",
+      "doi-asserted-by": "crossref",
+      "first-page": "399",
+      "DOI": "10.13182/FST85-A24559",
+      "article-title": "Thermal conductivities for sintered and sphere-pac Li2O and γ-LiAlO2 solid breeders with and without irradiation effects",
+      "volume": "7",
+      "author": "Liu",
+      "year": "1985",
+      "journal-title": "Fusion Science and Technology"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0240",
+      "series-title": "CRC Handbook of Chemistry and Physics",
+      "first-page": "12J204",
+      "author": "Lide",
+      "year": "2012"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0245",
+      "unstructured": "The Engineering ToolBox, http://www.engineeringtoolbox.com/dry-air-properties-d_973.html, Accessed on 21 Jan 2020."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0250",
+      "doi-asserted-by": "crossref",
+      "first-page": "90",
+      "DOI": "10.1016/j.jnucmat.2012.06.043",
+      "article-title": "Mechanics of a crushable pebble assembly using discrete element method",
+      "volume": "430",
+      "author": "Annabattula",
+      "year": "2012",
+      "journal-title": "Journal of Nuclear Materials"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0255",
+      "doi-asserted-by": "crossref",
+      "first-page": "237",
+      "DOI": "10.1016/j.nme.2016.03.002",
+      "article-title": "Mechanics of binary crushable granular assembly through discrete element method",
+      "volume": "9",
+      "author": "Desu",
+      "year": "2016",
+      "journal-title": "Nuclear Materials and Energy"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0260",
+      "doi-asserted-by": "crossref",
+      "first-page": "471",
+      "DOI": "10.1016/j.powtec.2017.05.033",
+      "article-title": "X-ray tomography investigations of mono-sized sphere packing structures in cylindrical containers",
+      "volume": "318",
+      "author": "Reimann",
+      "year": "2017",
+      "journal-title": "Powder Technology"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0265",
+      "doi-asserted-by": "crossref",
+      "first-page": "803",
+      "DOI": "10.1080/00223131.2015.1074877",
+      "article-title": "Investigation of the packing structure of pebble beds by DEM for CFETR WCCB",
+      "volume": "53",
+      "author": "Chen",
+      "year": "2016",
+      "journal-title": "Journal of Nuclear Science and Technology"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0270",
+      "doi-asserted-by": "crossref",
+      "first-page": "256",
+      "DOI": "10.1016/j.fusengdes.2017.08.002",
+      "article-title": "Discrete element modeling of pebble bed packing structures for HCCB TBM",
+      "volume": "121",
+      "author": "Gong",
+      "year": "2017",
+      "journal-title": "Fusion Engineering and Design"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0275",
+      "doi-asserted-by": "crossref",
+      "first-page": "1326",
+      "DOI": "10.1016/j.fusengdes.2008.06.026",
+      "article-title": "X-ray tomography investigations on pebble bed structures",
+      "volume": "83",
+      "author": "Reimann",
+      "year": "2008",
+      "journal-title": "Fusion Engineering and Design"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111767_bib0280",
+      "doi-asserted-by": "crossref",
+      "first-page": "2343",
+      "DOI": "10.1016/j.fusengdes.2013.05.100",
+      "article-title": "Pebble bed packing in prismatic containers",
+      "volume": "88",
+      "author": "Reimann",
+      "year": "2013",
+      "journal-title": "Fusion Engineering and Design"
+    }
+  ],
+  "container-title": "Fusion Engineering and Design",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S092037962030315X?httpAccept=text/xml",
+      "content-type": "text/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S092037962030315X?httpAccept=text/plain",
+      "content-type": "text/plain",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2025,
+        10,
+        12
+      ]
+    ],
+    "date-time": "2025-10-12T14:01:09Z",
+    "timestamp": 1760277669000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://linkinghub.elsevier.com/retrieve/pii/S092037962030315X"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2020,
+        10
+      ]
+    ]
+  },
+  "references-count": 56,
+  "alternative-id": [
+    "S092037962030315X"
+  ],
+  "URL": "http://dx.doi.org/10.1016/j.fusengdes.2020.111767",
+  "relation": {},
+  "ISSN": [
+    "0920-3796"
+  ],
+  "subject": [],
+  "container-title-short": "Fusion Engineering and Design",
+  "published": {
+    "date-parts": [
+      [
+        2020,
+        10
+      ]
+    ]
+  },
+  "assertion": [
+    {
+      "value": "Elsevier",
+      "name": "publisher",
+      "label": "This article is maintained by"
+    },
+    {
+      "value": "Influence of bed conditions on the effective thermal conductivity of ceramic breeder pebble beds using thermal DEM (TDEM)",
+      "name": "articletitle",
+      "label": "Article Title"
+    },
+    {
+      "value": "Fusion Engineering and Design",
+      "name": "journaltitle",
+      "label": "Journal Title"
+    },
+    {
+      "value": "https://doi.org/10.1016/j.fusengdes.2020.111767",
+      "name": "articlelink",
+      "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+      "value": "article",
+      "name": "content_type",
+      "label": "Content Type"
+    },
+    {
+      "value": "© 2020 Elsevier B.V. All rights reserved.",
+      "name": "copyright",
+      "label": "Copyright"
+    }
+  ],
+  "article-number": "111767"
+}

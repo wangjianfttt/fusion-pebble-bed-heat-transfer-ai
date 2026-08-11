@@ -1,0 +1,397 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        8,
+        8
+      ]
+    ],
+    "date-time": "2026-08-08T07:28:18Z",
+    "timestamp": 1786174098513,
+    "version": "3.56.0"
+  },
+  "reference-count": 37,
+  "publisher": "American Mathematical Society (AMS)",
+  "issue": "3",
+  "content-domain": {
+    "domain": [],
+    "crossmark-restriction": false
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        1987,
+        10
+      ]
+    ]
+  },
+  "DOI": "10.1090/qam/910462",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        12,
+        14
+      ]
+    ],
+    "date-time": "2016-12-14T19:50:59Z",
+    "timestamp": 1481745059000
+  },
+  "page": "561-571",
+  "source": "Crossref",
+  "is-referenced-by-count": 5105,
+  "title": "Turbulence and the dynamics of coherent structures. I. Coherent structures",
+  "prefix": "10.1090",
+  "volume": "45",
+  "author": [
+    {
+      "given": "Lawrence",
+      "family": "Sirovich",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    }
+  ],
+  "member": "14",
+  "reference": [
+    {
+      "key": "1",
+      "unstructured": "G. I. Taylor, Statistical theory of turbulence, Pts. I–V, Proc. Roy. Soc. A 151, 421–478 (1938)"
+    },
+    {
+      "key": "2",
+      "doi-asserted-by": "crossref",
+      "unstructured": "B. J. Cantwell, Organized motion in turbulent flow, Ann. Rev. Fluid Mech. 13, 457–515 (1981)",
+      "DOI": "10.1146/annurev.fl.13.010181.002325"
+    },
+    {
+      "key": "3",
+      "isbn-type": "print",
+      "first-page": "15",
+      "article-title": "Strange attractors in fluids: another view",
+      "author": "Guckenheimer, John",
+      "year": "1986",
+      "ISBN": "https://id.crossref.org/isbn/0824307186"
+    },
+    {
+      "key": "4",
+      "unstructured": "J. L. Lumley, The structure of inhomogeneous turbulent flows, Atmospheric Turbulence and Radio Wave Propagation, A. M. Yaglom and V. I. Tatarski, eds., 166–178, Moskow: Nauka, 1967"
+    },
+    {
+      "key": "5",
+      "doi-asserted-by": "crossref",
+      "unstructured": "J. L. Lumley, Coherent structures in turbulence, in Transition and Turbulence, R. E. Meyer, ed., 215–242, Academic Press, N. Y., 1981",
+      "DOI": "10.1016/B978-0-12-493240-1.50017-X"
+    },
+    {
+      "key": "6",
+      "doi-asserted-by": "crossref",
+      "unstructured": "P. Bakewell and J. L. Lumley, Viscous sublayer and adjacent wall region in turbulent pipe flow, Phys. Fluids 10, 1880–1889 (1967)",
+      "DOI": "10.1063/1.1762382"
+    },
+    {
+      "key": "7",
+      "doi-asserted-by": "crossref",
+      "unstructured": "F. R. Payne and J. L. Lumley, Large eddy structure of the turbulent wake behind a circular cylinder, Phys. Fluids 10, S194–196 (1967)",
+      "DOI": "10.1063/1.1762445"
+    },
+    {
+      "key": "8",
+      "unstructured": "M. N. Glauser, S. J. Lieb, and N. K. George, Coherent structure in the axisymmetric jet mixing layer, Proc. 5th Symp. Turb. Shear Flow, Cornell Univ., Springer-Verlag, N. Y., 1985"
+    },
+    {
+      "key": "9",
+      "doi-asserted-by": "crossref",
+      "unstructured": "P. Moin, Probing turbulence via large eddy simulation, AIAA Pap.–84-0174 (1984)",
+      "DOI": "10.2514/6.1984-174"
+    },
+    {
+      "key": "10",
+      "series-title": "Probability and Mathematical Statistics, Vol. 27",
+      "volume-title": "Topics in stochastic processes",
+      "author": "Ash, Robert B.",
+      "year": "1975"
+    },
+    {
+      "key": "11",
+      "series-title": "Computer Science and Scientific Computing",
+      "isbn-type": "print",
+      "volume-title": "Introduction to statistical pattern recognition",
+      "author": "Fukunaga, Keinosuke",
+      "year": "1990",
+      "ISBN": "https://id.crossref.org/isbn/0122698517",
+      "edition": "2"
+    },
+    {
+      "key": "12",
+      "doi-asserted-by": "crossref",
+      "unstructured": "N. Ahmed and M. H. Goldstein, Orthogonal Transforms for Digital Signal Processing, Springer-Verlag, N. Y., 1975",
+      "DOI": "10.1007/978-3-642-45450-9"
+    },
+    {
+      "key": "13",
+      "series-title": "Applied Mathematics and Mechanics, Vol. 12",
+      "volume-title": "Stochastic tools in turbulence",
+      "author": "Lumley, John L.",
+      "year": "1970"
+    },
+    {
+      "key": "14",
+      "isbn-type": "print",
+      "volume-title": "Deterministic chaos",
+      "author": "Schuster, Heinz Georg",
+      "year": "1988",
+      "ISBN": "https://id.crossref.org/isbn/3527268626",
+      "edition": "2"
+    },
+    {
+      "key": "15",
+      "series-title": "A Wiley-Interscience Publication",
+      "isbn-type": "print",
+      "volume-title": "Order within chaos",
+      "author": "Bergé, Pierre",
+      "year": "1986",
+      "ISBN": "https://id.crossref.org/isbn/0471849677"
+    },
+    {
+      "key": "16",
+      "unstructured": "B. Malraison, P. Atten, P. Berge, and M. Dubois, Dimension d’attracteurs étranges: une détermination expérimentale au régime chaotique de deux systems convectifs, Comp. Ren. (Paris) C 297, 209– (1983)"
+    },
+    {
+      "issue": "16",
+      "key": "17",
+      "doi-asserted-by": "publisher",
+      "first-page": "1442",
+      "DOI": "10.1103/PhysRevLett.51.1442",
+      "article-title": "Low-dimensional chaos in a hydrodynamic system",
+      "volume": "51",
+      "author": "Brandstäter, A.",
+      "year": "1983",
+      "journal-title": "Phys. Rev. Lett.",
+      "ISSN": "https://id.crossref.org/issn/0031-9007",
+      "issn-type": "print"
+    },
+    {
+      "key": "18",
+      "doi-asserted-by": "crossref",
+      "unstructured": "K. R. Sreenivasan, Transition and turbulence in fluid flows and low dimensional chaos, in Frontiers in Fluid Mechanics, S. H. Davis and J. L. Lumley, eds., 41–67, Springer-Verlag, N. Y., 1985",
+      "DOI": "10.1007/978-3-642-46543-7_3"
+    },
+    {
+      "key": "19",
+      "doi-asserted-by": "publisher",
+      "first-page": "427",
+      "DOI": "10.1017/S0022112085000209",
+      "article-title": "Determining modes and fractal dimension of turbulent flows",
+      "volume": "150",
+      "author": "Constantin, P.",
+      "year": "1985",
+      "journal-title": "J. Fluid Mech.",
+      "ISSN": "https://id.crossref.org/issn/0022-1120",
+      "issn-type": "print"
+    },
+    {
+      "issue": "5",
+      "key": "20",
+      "doi-asserted-by": "publisher",
+      "first-page": "211",
+      "DOI": "10.1016/0375-9601(87)90209-X",
+      "article-title": "Coherent structures and chaos: a model problem",
+      "volume": "120",
+      "author": "Sirovich, L.",
+      "year": "1987",
+      "journal-title": "Phys. Lett. A",
+      "ISSN": "https://id.crossref.org/issn/0375-9601",
+      "issn-type": "print"
+    },
+    {
+      "issue": "3",
+      "key": "21",
+      "doi-asserted-by": "publisher",
+      "first-page": "645",
+      "DOI": "10.2307/1968482",
+      "article-title": "Differentiable manifolds",
+      "volume": "37",
+      "author": "Whitney, Hassler",
+      "year": "1936",
+      "journal-title": "Ann. of Math. (2)",
+      "ISSN": "https://id.crossref.org/issn/0003-486X",
+      "issn-type": "print"
+    },
+    {
+      "key": "22",
+      "series-title": "McGraw-Hill Series in Mechanical Engineering",
+      "volume-title": "Turbulence: An introduction to its mechanism and theory",
+      "author": "Hinze, J. O.",
+      "year": "1959"
+    },
+    {
+      "key": "23",
+      "doi-asserted-by": "crossref",
+      "unstructured": "H. Tennekes, and J. L. Lumley, A First Course in Turbulence, MIT Press, Cambridge, 1972",
+      "DOI": "10.7551/mitpress/3014.001.0001"
+    },
+    {
+      "key": "24",
+      "doi-asserted-by": "crossref",
+      "unstructured": "L. Sirovich and M. Kirby, Low-dimensional procedure for characterization of human faces, J. Opt. Soc. 4, no. 3 (1987)",
+      "DOI": "10.1364/JOSAA.4.000519"
+    },
+    {
+      "key": "25",
+      "unstructured": "L. Sirovich, M. Maxey, and H. Tarman, Eigenfunction analysis of turbulence correlations in thermal convection, Bull. Amer. Phys. Soc. 31, 1676 (1986)"
+    },
+    {
+      "key": "26",
+      "volume-title": "Functional analysis",
+      "author": "Riesz, Frigyes",
+      "year": "1955"
+    },
+    {
+      "key": "27",
+      "unstructured": "O. A. Ladyshenskaya, The Mathematical Theory of Viscous Incompressible Flow, Gordon and Breach, N. Y., 1969"
+    },
+    {
+      "key": "28",
+      "doi-asserted-by": "crossref",
+      "unstructured": "S. A. Orzag and G. S. Patterson, Numerical simulation of three-dimensional homogeneous isotropic turbulence, Phys. Rev. Letters 28, 76 (1972)",
+      "DOI": "10.1103/PhysRevLett.28.76"
+    },
+    {
+      "key": "29",
+      "doi-asserted-by": "crossref",
+      "unstructured": "G. S. Patterson and S. A. Orzag, Spectral calculation of isotropic turbulence, Phys. Fluids 14, 2538 (1971)",
+      "DOI": "10.1063/1.1693365"
+    },
+    {
+      "key": "30",
+      "doi-asserted-by": "crossref",
+      "unstructured": "D. Gottlieb and S. A. Orzag, Numerical Analysis of Spectral Methods: Theory and Applications, SIAM, Philadelphia, 1977",
+      "DOI": "10.1137/1.9781611970425"
+    },
+    {
+      "key": "31",
+      "doi-asserted-by": "crossref",
+      "unstructured": "C. Canuto, M. Y. Hussaini, A. Quarderonic, and T. A. Zang, Spectral Methods in Fluid Dynamics, Springer-Verlag, N. Y., 1987",
+      "DOI": "10.1007/978-3-642-84108-8"
+    },
+    {
+      "key": "32",
+      "doi-asserted-by": "crossref",
+      "unstructured": "R. S. Rogallo and P. Moin, Numerical simulation of turbulent flows, Ann. Rev. Fluid Mech. 16, 99–127 (1984)",
+      "DOI": "10.1146/annurev.fl.16.010184.000531"
+    },
+    {
+      "key": "33",
+      "doi-asserted-by": "crossref",
+      "unstructured": "J. H. Curry, J. R. Herring, J. Loncaric, and S. A. Orzag, Order and disorder in two- and three-dimensional Bénard convection, J. Fluid Mech. 147, 1–38 (1984)",
+      "DOI": "10.1017/S0022112084001968"
+    },
+    {
+      "key": "34",
+      "doi-asserted-by": "crossref",
+      "unstructured": "T. M. Eidson, M. Y. Hussaini, and T. A. Zang, Simulation of the turbulent Rayleigh-Bénard problem using a spectral/finite difference technique, ICASE Rep. 86–6 (1986)",
+      "DOI": "10.1007/978-3-663-00197-3_13"
+    },
+    {
+      "key": "35",
+      "doi-asserted-by": "crossref",
+      "unstructured": "S. A. Orzag and L. C. Kells, Transition to turbulence in plane Poiseuille and Couette flow, J. Fluid Mech. 96, 159–205 (1980)",
+      "DOI": "10.1017/S0022112080002066"
+    },
+    {
+      "key": "36",
+      "doi-asserted-by": "crossref",
+      "unstructured": "J. W. Deardoff, A numerical study of three-dimensional turbulent channel flow at large Reynolds numbers, J. Fluid Mech. 41, 453–480 (1970)",
+      "DOI": "10.1017/S0022112070000691"
+    },
+    {
+      "key": "37",
+      "doi-asserted-by": "crossref",
+      "unstructured": "P. Moin and J. Kim, Numerical investigation of turbulent channel flow, J. Fluid Mech. 118, 341–377 (1982)",
+      "DOI": "10.1017/S0022112082001116"
+    }
+  ],
+  "container-title": "Quarterly of Applied Mathematics",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "http://www.ams.org/qam/1987-45-03/S0033-569X-1987-0910462-6/S0033-569X-1987-0910462-6.pdf",
+      "content-type": "unspecified",
+      "content-version": "vor",
+      "intended-application": "similarity-checking"
+    },
+    {
+      "URL": "https://www.ams.org/qam/1987-45-03/S0033-569X-1987-0910462-6/S0033-569X-1987-0910462-6.pdf",
+      "content-type": "unspecified",
+      "content-version": "vor",
+      "intended-application": "similarity-checking"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2026,
+        4,
+        20
+      ]
+    ],
+    "date-time": "2026-04-20T14:55:51Z",
+    "timestamp": 1776696951000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://www.ams.org/qam/1987-45-03/S0033-569X-1987-0910462-6/"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        1987,
+        10
+      ]
+    ]
+  },
+  "references-count": 37,
+  "journal-issue": {
+    "issue": "3",
+    "published-print": {
+      "date-parts": [
+        [
+          1987,
+          10
+        ]
+      ]
+    }
+  },
+  "alternative-id": [
+    "S0033-569X-1987-0910462-6"
+  ],
+  "URL": "http://dx.doi.org/10.1090/qam/910462",
+  "relation": {},
+  "ISSN": [
+    "1552-4485",
+    "0033-569X"
+  ],
+  "subject": [],
+  "container-title-short": "Quart. Appl. Math.",
+  "published": {
+    "date-parts": [
+      [
+        1987,
+        10
+      ]
+    ]
+  }
+}

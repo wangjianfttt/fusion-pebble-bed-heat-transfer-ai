@@ -1,0 +1,39 @@
+{
+  "type": "article-journal",
+  "author": [
+    {
+      "literal": "Wang Mouhao"
+    },
+    {
+      "literal": "Bu Shanshan"
+    },
+    {
+      "literal": "Zhou Bing"
+    },
+    {
+      "literal": "Gong Baoping"
+    },
+    {
+      "literal": "Li Zhenzhong"
+    },
+    {
+      "literal": "Chen Deqi"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2024,
+        12
+      ]
+    ]
+  },
+  "container-title": "Chemical Engineering Transactions",
+  "DOI": "10.3303/CET24114068",
+  "page": "403–408",
+  "publisher": "AIDIC: Italian Association of Chemical Engineering",
+  "publisher-place": "IT",
+  "title": "Physics-Informed Neural Networks for Inversion of the Macroscopic Transport Parameters in Packed Bed",
+  "URL": "https://doi.org/10.3303/CET24114068",
+  "volume": "114"
+}

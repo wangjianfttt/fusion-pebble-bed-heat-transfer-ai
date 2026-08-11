@@ -1,0 +1,792 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        5,
+        13
+      ]
+    ],
+    "date-time": "2026-05-13T01:15:21Z",
+    "timestamp": 1778634921719,
+    "version": "3.51.4"
+  },
+  "reference-count": 37,
+  "publisher": "Elsevier BV",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2024,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2024-06-01T00:00:00Z",
+        "timestamp": 1717200000000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2024,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2024-06-01T00:00:00Z",
+        "timestamp": 1717200000000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/legal/tdmrep-license"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2024,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2024-06-01T00:00:00Z",
+        "timestamp": 1717200000000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-017"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2024,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2024-06-01T00:00:00Z",
+        "timestamp": 1717200000000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-037"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2024,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2024-06-01T00:00:00Z",
+        "timestamp": 1717200000000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-012"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2024,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2024-06-01T00:00:00Z",
+        "timestamp": 1717200000000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-029"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2024,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2024-06-01T00:00:00Z",
+        "timestamp": 1717200000000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-004"
+    }
+  ],
+  "funder": [
+    {
+      "DOI": "10.13039/501100002855",
+      "name": "Ministry of Science and Technology of the People&apos;s Republic of China",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "2019YFE03130001"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "2019YFE03130001"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100002855",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/501100001809",
+      "name": "National Natural Science Foundation of China",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "12105315"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "12105315"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100001809",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/501100001809",
+      "name": "National Natural Science Foundation of China",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "12205330"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "12205330"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100001809",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/501100010453",
+      "name": "National Development and Reform Commission",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "2018-000052-73-01-001228"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "2018-000052-73-01-001228"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100010453",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/501100007123",
+      "name": "Institute of Plasma Physics Chinese Academy of Sciences",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "DSJJ-2021-05"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "DSJJ-2021-05"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100007123",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    }
+  ],
+  "content-domain": {
+    "domain": [
+      "elsevier.com",
+      "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2024,
+        6
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.fusengdes.2024.114434",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2024,
+        4,
+        13
+      ]
+    ],
+    "date-time": "2024-04-13T11:08:46Z",
+    "timestamp": 1713006526000
+  },
+  "page": "114434",
+  "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 3,
+  "special_numbering": "C",
+  "title": "Measurement of pressure drop of purge gas flow in unitary and binary pebble beds",
+  "prefix": "10.1016",
+  "volume": "203",
+  "author": [
+    {
+      "given": "Yong",
+      "family": "Liu",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "Yong",
+      "family": "Chen",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0003-0716-1280",
+      "authenticated-orcid": false,
+      "given": "Cong",
+      "family": "Wang",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0002-3957-5608",
+      "authenticated-orcid": false,
+      "given": "Lei",
+      "family": "Chen",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0001-5321-9864",
+      "authenticated-orcid": false,
+      "given": "Songlin",
+      "family": "Liu",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    }
+  ],
+  "member": "78",
+  "reference": [
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0001",
+      "doi-asserted-by": "crossref",
+      "first-page": "652",
+      "DOI": "10.1016/j.ces.2017.07.019",
+      "article-title": "Segregation dynamics of a binary-size mixture in a three-dimensional rotating drum",
+      "volume": "172",
+      "author": "Yang",
+      "year": "2017",
+      "journal-title": "Chem. Eng. Sci."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0002",
+      "series-title": "Tortuosity in Bioseparations and its Application to Food Processes",
+      "author": "Mota",
+      "year": "1998"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0003",
+      "doi-asserted-by": "crossref",
+      "first-page": "55",
+      "DOI": "10.1208/pt010433",
+      "article-title": "Effect of drug substance particle size on the characteristics of granulation manufactured in a high-shear mixer",
+      "volume": "1",
+      "author": "Badawy",
+      "year": "2000",
+      "journal-title": "AAPS. PharmSciTech."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0004",
+      "series-title": "Conceptual Design of a Helium Cooled Solid Breeder Blanket Based on the use of a Mixed Bed of Beryllium and Li4SiO4 Pebbles",
+      "first-page": "1326",
+      "author": "Donne",
+      "year": "1993"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0005",
+      "doi-asserted-by": "crossref",
+      "first-page": "161",
+      "DOI": "10.1016/j.taml.2019.03.001",
+      "article-title": "Progress on design and related R&D activities for the water-cooled breeder blanket for CFETR",
+      "volume": "9",
+      "author": "Liu",
+      "year": "2019",
+      "journal-title": "Theoret. Appl. Mech. Lett."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0006",
+      "doi-asserted-by": "crossref",
+      "first-page": "865",
+      "DOI": "10.1016/j.fusengdes.2017.02.065",
+      "article-title": "Conceptual design of the water cooled ceramic breeder blanket for CFETR based on pressurized water cooled reactor technology",
+      "volume": "124",
+      "author": "Liu",
+      "year": "2017",
+      "journal-title": "Fus. Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0007",
+      "doi-asserted-by": "crossref",
+      "first-page": "331",
+      "DOI": "10.1016/j.ijheatmasstransfer.2018.12.005",
+      "article-title": "A DEM-based heat transfer model for the evaluation of effective thermal conductivity of packed beds filled with stagnant fluid: thermal contact theory and numerical simulation",
+      "volume": "132",
+      "author": "Chen",
+      "year": "2019",
+      "journal-title": "Int. J. Heat. Mass Transf."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0008",
+      "doi-asserted-by": "crossref",
+      "first-page": "803",
+      "DOI": "10.1080/00223131.2015.1074877",
+      "article-title": "Investigation of the packing structure of pebble beds by DEM for CFETR WCCB",
+      "volume": "53",
+      "author": "Chen",
+      "year": "2015",
+      "journal-title": "J. Nucl. Sci. Technol."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0009",
+      "first-page": "177",
+      "article-title": "Design of the Water-Cooled Ceramic Breeder blanket for CFETR",
+      "author": "Liu",
+      "year": "2022",
+      "journal-title": "Fus. Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0010",
+      "doi-asserted-by": "crossref",
+      "first-page": "288",
+      "DOI": "10.1016/j.fusengdes.2016.06.045",
+      "article-title": "DEM-CFD simulation of purge gas flow in a solid breeder pebble bed",
+      "volume": "113",
+      "author": "Zhang",
+      "year": "2016",
+      "journal-title": "Fus. Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0011",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.fusengdes.2021.112929",
+      "article-title": "Tritium transport code development based on COMSOL and MATLAB and its application to the WCCB blanket",
+      "volume": "173",
+      "author": "Zhao",
+      "year": "2021",
+      "journal-title": "Fus. Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0012",
+      "doi-asserted-by": "crossref",
+      "first-page": "24",
+      "DOI": "10.1016/j.fusengdes.2019.03.068",
+      "article-title": "A DEM-CFD study of the effects of size distributions and packing fractions of pebbles on purge gas flow through pebble beds",
+      "volume": "143",
+      "author": "Choi",
+      "year": "2019",
+      "journal-title": "Fus. Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0013",
+      "article-title": "Recherches expérimentales relatives au mouvement de l'eau dans les tuyaux",
+      "author": "Darcy",
+      "year": "1857",
+      "journal-title": "Impr. Impériale"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0014",
+      "series-title": "Proc. Class I",
+      "first-page": "271",
+      "article-title": "Ueber kapillare leitung der wasser in boden",
+      "volume": "136",
+      "author": "Kozeny",
+      "year": "1927"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0015",
+      "doi-asserted-by": "crossref",
+      "first-page": "S32",
+      "DOI": "10.1016/S0263-8762(97)80003-2",
+      "article-title": "Fluid flow through granular beds",
+      "volume": "75",
+      "author": "Carman",
+      "year": "1997",
+      "journal-title": "Chem. Eng. Res. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0016",
+      "first-page": "1782",
+      "volume": "45",
+      "author": "Forchheimer",
+      "year": "1901",
+      "journal-title": "Z. Ver. Deutsch. Ing"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0017",
+      "first-page": "89",
+      "article-title": "Fluid Flow through Packed Columns",
+      "volume": "48",
+      "author": "Ergun",
+      "year": "1952",
+      "journal-title": "Chem. Eng. Prog."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0018",
+      "first-page": "199",
+      "volume": "18",
+      "author": "Macdonald",
+      "year": "1979"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0019",
+      "doi-asserted-by": "crossref",
+      "first-page": "369",
+      "DOI": "10.1163/156855208X314985",
+      "article-title": "A modification on Ergun's correlation for use in cylindrical packed beds with non-spherical particles",
+      "volume": "19",
+      "author": "Ozahi",
+      "year": "2008",
+      "journal-title": "Adv. Powder Technol."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0020",
+      "doi-asserted-by": "crossref",
+      "first-page": "1092",
+      "DOI": "10.1002/aic.690160639",
+      "article-title": "Packed bed pressure drop—an extension to higher Reynolds numbers",
+      "volume": "16",
+      "author": "Tallmadge",
+      "year": "1970",
+      "journal-title": "Aiche J."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0021",
+      "series-title": "Seepage Hydraulics",
+      "author": "Kovács",
+      "year": "2011"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0022",
+      "doi-asserted-by": "crossref",
+      "first-page": "1459",
+      "DOI": "10.1016/j.fusengdes.2013.12.009",
+      "article-title": "Measurements of the purge helium pressure drop across pebble beds packed with lithium orthosilicate and glass pebbles",
+      "volume": "89",
+      "author": "Abou-Sena",
+      "year": "2014",
+      "journal-title": "Fus. Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0023",
+      "doi-asserted-by": "crossref",
+      "first-page": "250",
+      "DOI": "10.1007/s42757-020-0058-2",
+      "article-title": "Parameter analysis and wall effect of radiative heat transfer for CFD-DEM simulation in nuclear packed pebble bed",
+      "volume": "3",
+      "author": "Wu",
+      "year": "2020",
+      "journal-title": "Exp. Comput. Multiph. Flow."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0024",
+      "doi-asserted-by": "crossref",
+      "first-page": "275",
+      "DOI": "10.1016/j.ijheatmasstransfer.2017.10.123",
+      "article-title": "A smoothed void fraction method for CFD-DEM simulation of packed pebble beds with particle thermal radiation",
+      "volume": "118",
+      "author": "Wu",
+      "year": "2018",
+      "journal-title": "Int. J. Heat. Mass Transf."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0025",
+      "series-title": "2017 25th International Conference on Nuclear Engineering",
+      "article-title": "DEM-CFD Study of Purge Gas Flow in Pebble Bed of WCCB for CFETR",
+      "author": "Chen",
+      "year": "2017"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0026",
+      "doi-asserted-by": "crossref",
+      "first-page": "470",
+      "DOI": "10.1016/j.jhydrol.2007.11.020",
+      "article-title": "Permeability analysis in bisized porous media: wall effect between particles of different size",
+      "volume": "349",
+      "author": "Dias",
+      "year": "2008",
+      "journal-title": "J. Hydrol. (Amst)"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0027",
+      "doi-asserted-by": "crossref",
+      "first-page": "180",
+      "DOI": "10.1016/j.seppur.2006.01.010",
+      "article-title": "Tortuosity variation in a low density binary particulate bed",
+      "volume": "51",
+      "author": "Dias",
+      "year": "2006",
+      "journal-title": "Sep. Purif. Technol."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0028",
+      "article-title": "Permeability of mono- and bi-dispersed porous media",
+      "volume": "45",
+      "author": "Dančová",
+      "year": "2013",
+      "journal-title": "EPJ. Web. Conf."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0029",
+      "article-title": "Binary spherical particle mixed beds: porosity and permeability relationship measurement",
+      "volume": "1",
+      "author": "Mota",
+      "year": "2001",
+      "journal-title": "Trans. Filtr. Soc."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0030",
+      "doi-asserted-by": "crossref",
+      "unstructured": "M. Kaviany, Fluid Mechanics, in: M. Kaviany (Ed.) Principles of Heat Transfer in Porous Media, Springer New York, New York, NY, 1995, pp. 17–118.",
+      "DOI": "10.1007/978-1-4612-4254-3_2"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0031",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.fusengdes.2020.111707",
+      "article-title": "Experimental measurements for the effective thermal conductivity of pebble beds with uncertainty analysis",
+      "volume": "156",
+      "author": "Wang",
+      "year": "2020",
+      "journal-title": "Fus. Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0032",
+      "doi-asserted-by": "crossref",
+      "first-page": "404",
+      "DOI": "10.1016/j.cej.2009.07.057",
+      "article-title": "CFD-based analysis of the wall effect on the pressure drop in packed beds with moderate tube/particle diameter ratios in the laminar flow regime",
+      "volume": "155",
+      "author": "Atmakidis",
+      "year": "2009",
+      "journal-title": "Chem. Eng. J."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0033",
+      "doi-asserted-by": "crossref",
+      "first-page": "261",
+      "DOI": "10.1016/j.powtec.2011.03.026",
+      "article-title": "Wall effect on pressure drop in packed beds",
+      "volume": "210",
+      "author": "Cheng",
+      "year": "2011",
+      "journal-title": "Powder. Technol."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0034",
+      "series-title": "6th International Symposium on High-Temperature Metallurgical Processing",
+      "first-page": "99",
+      "article-title": "Study on thermal physical properties of 304 stainless steel",
+      "author": "Fang",
+      "year": "2016"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0035",
+      "article-title": "Measurement of thermal expansion for stainless steel 304, copper",
+      "author": "Shrivastava",
+      "year": "2020",
+      "journal-title": "Alum. Brass Push Rod Dilatomet."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0036",
+      "article-title": "Dynamics of fluids in porous media",
+      "author": "Bear",
+      "year": "1988",
+      "journal-title": "Dover"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2024.114434_bib0037",
+      "doi-asserted-by": "crossref",
+      "first-page": "268",
+      "DOI": "10.1016/j.partic.2023.06.018",
+      "article-title": "Effects of vibration conditions, spatial confinement and friction on mixing and segregation characteristics of mixed pebble beds for CFETR WCCB blanket",
+      "volume": "85",
+      "author": "Liu",
+      "year": "2024",
+      "journal-title": "Particuology"
+    }
+  ],
+  "container-title": "Fusion Engineering and Design",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0920379624002874?httpAccept=text/xml",
+      "content-type": "text/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0920379624002874?httpAccept=text/plain",
+      "content-type": "text/plain",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2026,
+        5,
+        13
+      ]
+    ],
+    "date-time": "2026-05-13T00:46:58Z",
+    "timestamp": 1778633218000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0920379624002874"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2024,
+        6
+      ]
+    ]
+  },
+  "references-count": 37,
+  "alternative-id": [
+    "S0920379624002874"
+  ],
+  "URL": "http://dx.doi.org/10.1016/j.fusengdes.2024.114434",
+  "relation": {},
+  "ISSN": [
+    "0920-3796"
+  ],
+  "subject": [],
+  "container-title-short": "Fusion Engineering and Design",
+  "published": {
+    "date-parts": [
+      [
+        2024,
+        6
+      ]
+    ]
+  },
+  "assertion": [
+    {
+      "value": "Elsevier",
+      "name": "publisher",
+      "label": "This article is maintained by"
+    },
+    {
+      "value": "Measurement of pressure drop of purge gas flow in unitary and binary pebble beds",
+      "name": "articletitle",
+      "label": "Article Title"
+    },
+    {
+      "value": "Fusion Engineering and Design",
+      "name": "journaltitle",
+      "label": "Journal Title"
+    },
+    {
+      "value": "https://doi.org/10.1016/j.fusengdes.2024.114434",
+      "name": "articlelink",
+      "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+      "value": "article",
+      "name": "content_type",
+      "label": "Content Type"
+    },
+    {
+      "value": "© 2024 Elsevier B.V. All rights reserved.",
+      "name": "copyright",
+      "label": "Copyright"
+    }
+  ],
+  "article-number": "114434"
+}

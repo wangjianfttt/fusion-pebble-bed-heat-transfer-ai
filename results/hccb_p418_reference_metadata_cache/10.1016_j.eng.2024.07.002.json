@@ -1,0 +1,895 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        8,
+        4
+      ]
+    ],
+    "date-time": "2026-08-04T10:40:30Z",
+    "timestamp": 1785840030310,
+    "version": "3.56.0"
+  },
+  "reference-count": 46,
+  "publisher": "Elsevier BV",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2024,
+            8,
+            1
+          ]
+        ],
+        "date-time": "2024-08-01T00:00:00Z",
+        "timestamp": 1722470400000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2024,
+            8,
+            1
+          ]
+        ],
+        "date-time": "2024-08-01T00:00:00Z",
+        "timestamp": 1722470400000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/legal/tdmrep-license"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2024,
+            7,
+            15
+          ]
+        ],
+        "date-time": "2024-07-15T00:00:00Z",
+        "timestamp": 1721001600000
+      },
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "URL": "http://creativecommons.org/licenses/by-nc-nd/4.0/"
+    }
+  ],
+  "funder": [
+    {
+      "DOI": "10.13039/501100012166",
+      "name": "National Key Research and Development Program of China",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "2022YFA1503501"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "2022YFA1503501"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100012166",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/501100012226",
+      "name": "Fundamental Research Funds for the Central Universities",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "2022ZFJH004"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "2022ZFJH004"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100012226",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/501100001809",
+      "name": "National Natural Science Foundation of China",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "22378112"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "22378112"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100001809",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/501100001809",
+      "name": "National Natural Science Foundation of China",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "22078088"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "22078088"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100001809",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/501100001809",
+      "name": "National Natural Science Foundation of China",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "22278127"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "22278127"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100001809",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/501100013105",
+      "name": "Shanghai Rising-Star Program",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "21QA1401900"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "21QA1401900"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100013105",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    }
+  ],
+  "content-domain": {
+    "domain": [
+      "elsevier.com",
+      "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2024,
+        8
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.eng.2024.07.002",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2024,
+        7,
+        19
+      ]
+    ],
+    "date-time": "2024-07-19T02:22:19Z",
+    "timestamp": 1721355739000
+  },
+  "page": "94-103",
+  "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 37,
+  "special_numbering": "C",
+  "title": "Porous-DeepONet: Learning the Solution Operators of Parametric Reactive Transport Equations in Porous Media",
+  "prefix": "10.1016",
+  "volume": "39",
+  "author": [
+    {
+      "given": "Pan",
+      "family": "Huang",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Yifei",
+      "family": "Leng",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Cheng",
+      "family": "Lian",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Honglai",
+      "family": "Liu",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    }
+  ],
+  "member": "78",
+  "reference": [
+    {
+      "issue": "20",
+      "key": "10.1016/j.eng.2024.07.002_b0005",
+      "doi-asserted-by": "crossref",
+      "first-page": "12278",
+      "DOI": "10.1021/acs.chemrev.1c00243",
+      "article-title": "Metal–organic framework-based hierarchically porous materials: synthesis and applications",
+      "volume": "121",
+      "author": "Cai",
+      "year": "2021",
+      "journal-title": "Chem Rev"
+    },
+    {
+      "issue": "12",
+      "key": "10.1016/j.eng.2024.07.002_b0010",
+      "doi-asserted-by": "crossref",
+      "first-page": "3479",
+      "DOI": "10.1039/C6CS00135A",
+      "article-title": "Applications of hierarchically structured porous materials from energy storage and conversion, catalysis, photocatalysis, adsorption, separation, and sensing to biomedicine",
+      "volume": "45",
+      "author": "Sun",
+      "year": "2016",
+      "journal-title": "Chem Soc Rev"
+    },
+    {
+      "issue": "22",
+      "key": "10.1016/j.eng.2024.07.002_b0015",
+      "doi-asserted-by": "crossref",
+      "first-page": "6927",
+      "DOI": "10.1039/C7CS00283A",
+      "article-title": "Emerging crystalline porous materials as a multifunctional platform for electrochemical energy storage",
+      "volume": "46",
+      "author": "Zhou",
+      "year": "2017",
+      "journal-title": "Chem Soc Rev"
+    },
+    {
+      "issue": "9",
+      "key": "10.1016/j.eng.2024.07.002_b0020",
+      "doi-asserted-by": "crossref",
+      "first-page": "3956",
+      "DOI": "10.1039/C2CS35244C",
+      "article-title": "Porous materials in catalysis: challenges for mesoporous materials",
+      "volume": "42",
+      "author": "Perego",
+      "year": "2013",
+      "journal-title": "Chem Soc Rev"
+    },
+    {
+      "issue": "12",
+      "key": "10.1016/j.eng.2024.07.002_b0025",
+      "doi-asserted-by": "crossref",
+      "first-page": "1180",
+      "DOI": "10.1038/s41557-018-0141-5",
+      "article-title": "Sulfone-containing covalent organic frameworks for photocatalytic hydrogen evolution from water",
+      "volume": "10",
+      "author": "Wang",
+      "year": "2018",
+      "journal-title": "Nat Chem"
+    },
+    {
+      "issue": "2",
+      "key": "10.1016/j.eng.2024.07.002_b0030",
+      "doi-asserted-by": "crossref",
+      "first-page": "190",
+      "DOI": "10.1038/nmat4463",
+      "article-title": "Tough bonding of hydrogels to diverse non-porous surfaces",
+      "volume": "15",
+      "author": "Yuk",
+      "year": "2016",
+      "journal-title": "Nat Mater"
+    },
+    {
+      "issue": "5",
+      "key": "10.1016/j.eng.2024.07.002_b0035",
+      "doi-asserted-by": "crossref",
+      "first-page": "16039",
+      "DOI": "10.1038/nenergy.2016.39",
+      "article-title": "Reversible aqueous zinc/manganese oxide energy storage from conversion reactions",
+      "volume": "1",
+      "author": "Pan",
+      "year": "2016",
+      "journal-title": "Nat Energy"
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.eng.2024.07.002_b0040",
+      "doi-asserted-by": "crossref",
+      "first-page": "3181",
+      "DOI": "10.1038/s41467-021-23517-x",
+      "article-title": "Dual-atom Pt heterogeneous catalyst with excellent catalytic performances for the selective hydrogenation and epoxidation",
+      "volume": "12",
+      "author": "Tian",
+      "year": "2021",
+      "journal-title": "Nat Commun"
+    },
+    {
+      "issue": "7",
+      "key": "10.1016/j.eng.2024.07.002_b0045",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1103/PhysRevLett.124.076001",
+      "article-title": "Blessing and curse: how a supercapacitor’s large capacitance causes its slow charging",
+      "volume": "124",
+      "author": "Lian",
+      "year": "2020",
+      "journal-title": "Phys Rev Lett"
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.eng.2024.07.002_b0050",
+      "doi-asserted-by": "crossref",
+      "first-page": "303",
+      "DOI": "10.1016/j.gee.2020.06.020",
+      "article-title": "Multiscale modeling of electrolytes in porous electrode: from equilibrium structure to non-equilibrium transport",
+      "volume": "5",
+      "author": "Tao",
+      "year": "2020",
+      "journal-title": "Green Energy Environ"
+    },
+    {
+      "issue": "40",
+      "key": "10.1016/j.eng.2024.07.002_b0055",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1126/sciadv.abi8605",
+      "article-title": "Learning the solution operator of parametric partial differential equations with physics-informed DeepONets",
+      "volume": "7",
+      "author": "Wang",
+      "year": "2021",
+      "journal-title": "Sci Adv"
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.eng.2024.07.002_b0060",
+      "doi-asserted-by": "crossref",
+      "first-page": "208",
+      "DOI": "10.1137/19M1274067",
+      "article-title": "DeepXDE: a deep learning library for solving differential equations",
+      "volume": "63",
+      "author": "Lu",
+      "year": "2021",
+      "journal-title": "SIAM Rev"
+    },
+    {
+      "key": "10.1016/j.eng.2024.07.002_b0065",
+      "doi-asserted-by": "crossref",
+      "first-page": "1",
+      "DOI": "10.1016/j.pmatsci.2018.01.005",
+      "article-title": "Computational microstructure characterization and reconstruction: review of the state-of-the-art techniques",
+      "volume": "95",
+      "author": "Bostanabad",
+      "year": "2018",
+      "journal-title": "Prog Mater Sci"
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.eng.2024.07.002_b0070",
+      "doi-asserted-by": "crossref",
+      "first-page": "3",
+      "DOI": "10.1186/2190-5983-1-3",
+      "article-title": "Certified reduced basis approximation for parametrized partial differential equations and applications",
+      "volume": "1",
+      "author": "Quarteroni",
+      "year": "2011",
+      "journal-title": "J Math Ind"
+    },
+    {
+      "key": "10.1016/j.eng.2024.07.002_b0075",
+      "series-title": "Intelligent systems modeling and simulation II: machine learning, neural networks, efficient numerical algorithm and statistical methods",
+      "first-page": "37",
+      "article-title": "An overview on deep learning techniques in solving partial differential equations",
+      "author": "Yunus",
+      "year": "2022"
+    },
+    {
+      "issue": "6",
+      "key": "10.1016/j.eng.2024.07.002_b0080",
+      "doi-asserted-by": "crossref",
+      "first-page": "422",
+      "DOI": "10.1038/s42254-021-00314-5",
+      "article-title": "Physics-informed machine learning",
+      "volume": "3",
+      "author": "Karniadakis",
+      "year": "2021",
+      "journal-title": "Nat Rev Phys"
+    },
+    {
+      "key": "10.1016/j.eng.2024.07.002_b0085",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cma.2021.114399",
+      "article-title": "PhyCRNet: physics-informed convolutional-recurrent network for solving spatiotemporal PDEs",
+      "volume": "389",
+      "author": "Ren",
+      "year": "2022",
+      "journal-title": "Comput Methods Appl Mech Eng"
+    },
+    {
+      "key": "10.1016/j.eng.2024.07.002_b0090",
+      "doi-asserted-by": "crossref",
+      "first-page": "263",
+      "DOI": "10.1016/j.jcp.2019.05.026",
+      "article-title": "ConvPDE-UQ: convolutional neural networks with quantified uncertainty for heterogeneous elliptic partial differential equations on varied domains",
+      "volume": "394",
+      "author": "Winovich",
+      "year": "2019",
+      "journal-title": "J Comput Phys"
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.eng.2024.07.002_b0095",
+      "doi-asserted-by": "crossref",
+      "first-page": "352",
+      "DOI": "10.1007/s10851-019-00903-1",
+      "article-title": "Deep neural networks motivated by partial differential equations",
+      "volume": "62",
+      "author": "Ruthotto",
+      "year": "2020",
+      "journal-title": "J Math Imaging Vis"
+    },
+    {
+      "key": "10.1016/j.eng.2024.07.002_b0100",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jcp.2020.110079",
+      "article-title": "PhyGeoNet: physics-informed geometry-adaptive convolutional neural networks for solving parameterized steady-state PDEs on irregular domain",
+      "volume": "428",
+      "author": "Gao",
+      "year": "2021",
+      "journal-title": "J Comput Phys"
+    },
+    {
+      "issue": "6",
+      "key": "10.1016/j.eng.2024.07.002_b0105",
+      "doi-asserted-by": "crossref",
+      "first-page": "3697",
+      "DOI": "10.3934/dcdsb.2022238",
+      "article-title": "An overview on deep learning-based approximation methods for partial differential equations",
+      "volume": "28",
+      "author": "Beck",
+      "year": "2023",
+      "journal-title": "Discrete Contin Dyn Syst B"
+    },
+    {
+      "issue": "4",
+      "key": "10.1016/j.eng.2024.07.002_b0110",
+      "doi-asserted-by": "crossref",
+      "first-page": "911",
+      "DOI": "10.1109/72.392253",
+      "article-title": "Universal approximation to nonlinear operators by neural networks with arbitrary activation functions and its application to dynamical systems",
+      "volume": "6",
+      "author": "Chen",
+      "year": "1995",
+      "journal-title": "IEEE Trans Neural Netw"
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.eng.2024.07.002_b0115",
+      "doi-asserted-by": "crossref",
+      "first-page": "218",
+      "DOI": "10.1038/s42256-021-00302-5",
+      "article-title": "Learning nonlinear operators via DeepONet based on the universal approximation theorem of operators",
+      "volume": "3",
+      "author": "Lu",
+      "year": "2021",
+      "journal-title": "Nat Mach Intell"
+    },
+    {
+      "issue": "20",
+      "key": "10.1016/j.eng.2024.07.002_b0120",
+      "doi-asserted-by": "crossref",
+      "first-page": "13902",
+      "DOI": "10.1039/D2CP05506F",
+      "article-title": "Efficient quasi-classical trajectory calculations by means of neural operator architectures",
+      "volume": "25",
+      "author": "Sharma Priyadarshini",
+      "year": "2023",
+      "journal-title": "Phys Chem Chem Phys"
+    },
+    {
+      "key": "10.1016/j.eng.2024.07.002_b0125",
+      "doi-asserted-by": "crossref",
+      "first-page": "A18",
+      "DOI": "10.1017/jfm.2021.866",
+      "article-title": "A seamless multiscale operator neural network for inferring bubble dynamics",
+      "volume": "929",
+      "author": "Lin",
+      "year": "2021",
+      "journal-title": "J Fluid Mech"
+    },
+    {
+      "issue": "10",
+      "key": "10.1016/j.eng.2024.07.002_b0130",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1063/5.0041203",
+      "article-title": "Operator learning for predicting multiscale bubble growth dynamics",
+      "volume": "154",
+      "author": "Lin",
+      "year": "2021",
+      "journal-title": "J Chem Phys"
+    },
+    {
+      "key": "10.1016/j.eng.2024.07.002_b0135",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.est.2023.107176",
+      "article-title": "Inferring electrochemical performance and parameters of Li-ion batteries based on deep operator networks",
+      "volume": "65",
+      "author": "Zheng",
+      "year": "2023",
+      "journal-title": "J Energy Storage"
+    },
+    {
+      "key": "10.1016/j.eng.2024.07.002_b0140",
+      "doi-asserted-by": "crossref",
+      "first-page": "166",
+      "DOI": "10.1016/j.neucom.2023.03.015",
+      "article-title": "DeepONet-grid-UQ: a trustworthy deep operator framework for predicting the power grid’s post-fault trajectories",
+      "volume": "535",
+      "author": "Moya",
+      "year": "2023",
+      "journal-title": "Neurocomputing"
+    },
+    {
+      "issue": "187",
+      "key": "10.1016/j.eng.2024.07.002_b0145",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1098/rsif.2021.0670",
+      "article-title": "Simulating progressive intramural damage leading to aortic dissection using DeepONet: an operator–regression neural network",
+      "volume": "19",
+      "author": "Yin",
+      "year": "2022",
+      "journal-title": "J R Soc Interface"
+    },
+    {
+      "issue": "12",
+      "key": "10.1016/j.eng.2024.07.002_b0150",
+      "doi-asserted-by": "crossref",
+      "first-page": "823",
+      "DOI": "10.1038/s43588-022-00376-0",
+      "article-title": "Discovering and forecasting extreme events via active learning in neural operators",
+      "volume": "2",
+      "author": "Pickering",
+      "year": "2022",
+      "journal-title": "Nat Comput Sci"
+    },
+    {
+      "key": "10.1016/j.eng.2024.07.002_b0155",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jcp.2021.110296",
+      "article-title": "DeepM&Mnet: inferring the electroconvection multiphysics fields based on operator approximation by neural networks",
+      "volume": "436",
+      "author": "Cai",
+      "year": "2021",
+      "journal-title": "J Comput Phys"
+    },
+    {
+      "key": "10.1016/j.eng.2024.07.002_b0160",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cma.2022.115027",
+      "article-title": "Interfacing finite elements with deep neural operators for fast multiscale modeling of mechanics problems",
+      "volume": "402",
+      "author": "Yin",
+      "year": "2022",
+      "journal-title": "Comput Methods Appl Mech Eng"
+    },
+    {
+      "issue": "2",
+      "key": "10.1016/j.eng.2024.07.002_b0165",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1103/PhysRevResearch.4.023210",
+      "article-title": "Multifidelity deep neural operators for efficient learning of partial differential equations with application to fast inverse design of nanoscale heat transport",
+      "volume": "4",
+      "author": "Lu",
+      "year": "2022",
+      "journal-title": "Phys Rev Res"
+    },
+    {
+      "key": "10.1016/j.eng.2024.07.002_b0170",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cma.2022.114778",
+      "article-title": "A comprehensive and fair comparison of two neural operators (with practical extensions) based on FAIR data",
+      "volume": "393",
+      "author": "Lu",
+      "year": "2022",
+      "journal-title": "Comput Methods Appl Mech Eng"
+    },
+    {
+      "key": "10.1016/j.eng.2024.07.002_b0175",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cma.2023.116299",
+      "article-title": "Phase-field DeepONet: physics-informed deep operator neural network for fast simulations of pattern formation governed by gradient flows of free-energy functionals",
+      "volume": "416",
+      "author": "Li",
+      "year": "2023",
+      "journal-title": "Comput Methods Appl Mech Eng"
+    },
+    {
+      "issue": "12",
+      "key": "10.1016/j.eng.2024.07.002_b0180",
+      "doi-asserted-by": "crossref",
+      "first-page": "1155",
+      "DOI": "10.1038/s42256-022-00569-2",
+      "article-title": "Deep transfer operator learning for partial differential equations under conditional shift",
+      "volume": "4",
+      "author": "Goswami",
+      "year": "2022",
+      "journal-title": "Nat Mach Intell"
+    },
+    {
+      "key": "10.1016/j.eng.2024.07.002_b0185",
+      "series-title": "Machine learning in modeling and simulation: methods and applications",
+      "first-page": "219",
+      "article-title": "Physics-informed deep neural operator networks",
+      "author": "Goswami",
+      "year": "2023"
+    },
+    {
+      "key": "10.1016/j.eng.2024.07.002_b0190",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.advwatres.2023.104448",
+      "article-title": "Boundary-to-solution mapping for groundwater flows in a Toth basin",
+      "volume": "176",
+      "author": "Sun",
+      "year": "2023",
+      "journal-title": "Adv Water Resour"
+    },
+    {
+      "issue": "16",
+      "key": "10.1016/j.eng.2024.07.002_b0195",
+      "doi-asserted-by": "crossref",
+      "first-page": "8066",
+      "DOI": "10.1021/acs.chemrev.0c00004",
+      "article-title": "Big-data science in porous materials: materials genomics and machine learning",
+      "volume": "120",
+      "author": "Jablonka",
+      "year": "2020",
+      "journal-title": "Chem Rev"
+    },
+    {
+      "key": "10.1016/j.eng.2024.07.002_b0200",
+      "article-title": "A 3D convolutional neural network accurately predicts the permeability of gas diffusion layer materials directly from image data",
+      "volume": "35",
+      "author": "Cawte",
+      "year": "2022",
+      "journal-title": "Curr Opin Electrochem"
+    },
+    {
+      "issue": "7",
+      "key": "10.1016/j.eng.2024.07.002_b0205",
+      "doi-asserted-by": "crossref",
+      "first-page": "781",
+      "DOI": "10.1007/s11004-018-9743-0",
+      "article-title": "Porous structure reconstruction using convolutional neural networks",
+      "volume": "50",
+      "author": "Wang",
+      "year": "2018",
+      "journal-title": "Math Geosci"
+    },
+    {
+      "key": "10.1016/j.eng.2024.07.002_b0210",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jcp.2023.112008",
+      "article-title": "On the influence of over-parameterization in manifold based surrogates and deep neural operators",
+      "volume": "479",
+      "author": "Kontolati",
+      "year": "2023",
+      "journal-title": "J Comput Phys"
+    },
+    {
+      "issue": "529",
+      "key": "10.1016/j.eng.2024.07.002_b0215",
+      "doi-asserted-by": "crossref",
+      "first-page": "254",
+      "DOI": "10.1080/01621459.2018.1543124",
+      "article-title": "Adaptive huber regression",
+      "volume": "115",
+      "author": "Sun",
+      "year": "2020",
+      "journal-title": "J Am Stat Assoc"
+    },
+    {
+      "issue": "37",
+      "key": "10.1016/j.eng.2024.07.002_b0220",
+      "doi-asserted-by": "crossref",
+      "first-page": "1296",
+      "DOI": "10.21105/joss.01296",
+      "article-title": "PoreSpy: a Python toolkit for quantitative analysis of porous media images",
+      "volume": "4",
+      "author": "Gostick",
+      "year": "2019",
+      "journal-title": "J Open Source Softw"
+    },
+    {
+      "issue": "10",
+      "key": "10.1016/j.eng.2024.07.002_b0225",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1002/aic.17790",
+      "article-title": "Four stages of thermal effect coupled with ion-charge transports during the charging process of porous electrodes",
+      "volume": "68",
+      "author": "Huang",
+      "year": "2022",
+      "journal-title": "AIChE J"
+    },
+    {
+      "issue": "4",
+      "key": "10.1016/j.eng.2024.07.002_b0230",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1002/aic.18313",
+      "article-title": "Accelerating charging dynamics using self-driven optimizing porous structures",
+      "volume": "70",
+      "author": "Huang",
+      "year": "2024",
+      "journal-title": "AIChE J"
+    }
+  ],
+  "container-title": "Engineering",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S2095809924003904?httpAccept=text/xml",
+      "content-type": "text/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S2095809924003904?httpAccept=text/plain",
+      "content-type": "text/plain",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2024,
+        9,
+        5
+      ]
+    ],
+    "date-time": "2024-09-05T09:00:57Z",
+    "timestamp": 1725526857000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://linkinghub.elsevier.com/retrieve/pii/S2095809924003904"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2024,
+        8
+      ]
+    ]
+  },
+  "references-count": 46,
+  "alternative-id": [
+    "S2095809924003904"
+  ],
+  "URL": "http://dx.doi.org/10.1016/j.eng.2024.07.002",
+  "relation": {},
+  "ISSN": [
+    "2095-8099"
+  ],
+  "subject": [],
+  "container-title-short": "Engineering",
+  "published": {
+    "date-parts": [
+      [
+        2024,
+        8
+      ]
+    ]
+  },
+  "assertion": [
+    {
+      "value": "Elsevier",
+      "name": "publisher",
+      "label": "This article is maintained by"
+    },
+    {
+      "value": "Porous-DeepONet: Learning the Solution Operators of Parametric Reactive Transport Equations in Porous Media",
+      "name": "articletitle",
+      "label": "Article Title"
+    },
+    {
+      "value": "Engineering",
+      "name": "journaltitle",
+      "label": "Journal Title"
+    },
+    {
+      "value": "https://doi.org/10.1016/j.eng.2024.07.002",
+      "name": "articlelink",
+      "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+      "value": "article",
+      "name": "content_type",
+      "label": "Content Type"
+    },
+    {
+      "value": "© 2024 THE AUTHORS. Published by Elsevier LTD on behalf of Chinese Academy of Engineering and Higher Education Press Limited Company.",
+      "name": "copyright",
+      "label": "Copyright"
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        8,
+        6
+      ]
+    ],
+    "date-time": "2026-08-06T17:12:25Z",
+    "timestamp": 1786036345285,
+    "version": "3.56.0"
+  },
+  "publisher-location": "San Diego, California, USA",
+  "reference-count": 0,
+  "publisher": "Neural Information Processing Systems Foundation, Inc. (NeurIPS)",
+  "content-domain": {
+    "domain": [],
+    "crossmark-restriction": false
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2025
+      ]
+    ]
+  },
+  "DOI": "10.52202/085713-5018",
+  "type": "proceedings-article",
+  "created": {
+    "date-parts": [
+      [
+        2026,
+        8,
+        6
+      ]
+    ],
+    "date-time": "2026-08-06T14:44:29Z",
+    "timestamp": 1786027469000
+  },
+  "page": "166615-166677",
+  "source": "Crossref",
+  "is-referenced-by-count": 0,
+  "title": "RIGNO: A Graph-based Framework For Robust And Accurate Operator Learning For PDEs On Arbitrary Domains",
+  "prefix": "10.52202",
+  "author": [
+    {
+      "given": "Sepehr",
+      "family": "Mousavi",
+      "sequence": "first",
+      "affiliation": [
+        {
+          "name": "ETHZ - ETH Zurich"
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Shizheng",
+      "family": "Wen",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "ETHZ - ETH Zurich"
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Levi",
+      "family": "Lingsch",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "ETHZ - ETH Zurich"
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Maximilian",
+      "family": "Herde",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "ETH Zürich"
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Bogdan",
+      "family": "Raonic",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "ETHZ - ETH Zurich"
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Siddhartha",
+      "family": "Mishra",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "Swiss Federal Institute of Technology"
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    }
+  ],
+  "member": "29733",
+  "event": "Advances in Neural Information Processing Systems 38",
+  "container-title": "Advances in Neural Information Processing Systems 38",
+  "original-title": [],
+  "deposited": {
+    "date-parts": [
+      [
+        2026,
+        8,
+        6
+      ]
+    ],
+    "date-time": "2026-08-06T15:03:13Z",
+    "timestamp": 1786028593000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "http://www.proceedings.com/085713-5018.html"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2025
+      ]
+    ]
+  },
+  "references-count": 0,
+  "URL": "http://dx.doi.org/10.52202/085713-5018",
+  "relation": {},
+  "subject": [],
+  "published": {
+    "date-parts": [
+      [
+        2025
+      ]
+    ]
+  }
+}

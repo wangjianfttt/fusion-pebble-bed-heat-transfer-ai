@@ -1,0 +1,241 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        8,
+        8
+      ]
+    ],
+    "date-time": "2026-08-08T08:39:52Z",
+    "timestamp": 1786178392016,
+    "version": "3.56.0"
+  },
+  "reference-count": 21,
+  "publisher": "ASME International",
+  "issue": "7",
+  "content-domain": {
+    "domain": [],
+    "crossmark-restriction": false
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2008
+      ]
+    ]
+  },
+  "DOI": "10.1115/1.2960953",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2008,
+        7,
+        22
+      ]
+    ],
+    "date-time": "2008-07-22T23:21:26Z",
+    "timestamp": 1216768886000
+  },
+  "page": "078001",
+  "source": "Crossref",
+  "is-referenced-by-count": 2080,
+  "title": "Procedure for Estimation and Reporting of Uncertainty Due to Discretization in CFD Applications",
+  "prefix": "10.1115",
+  "volume": "130",
+  "member": "33",
+  "reference": [
+    {
+      "key": "10.1115/1.2960953_r1",
+      "doi-asserted-by": "crossref",
+      "first-page": "307",
+      "DOI": "10.1098/rsta.1911.0009",
+      "volume": "210",
+      "author": "Richardson",
+      "year": "1910",
+      "journal-title": "Philos. Trans. R. Soc. London, Ser. A",
+      "ISSN": "https://id.crossref.org/issn/0962-8428",
+      "issn-type": "print"
+    },
+    {
+      "key": "10.1115/1.2960953_r2",
+      "doi-asserted-by": "crossref",
+      "first-page": "299",
+      "DOI": "10.1098/rsta.1927.0008",
+      "volume": "226",
+      "author": "Richardson",
+      "year": "1927",
+      "journal-title": "Philos. Trans. R. Soc. London, Ser. A",
+      "ISSN": "https://id.crossref.org/issn/0962-8428",
+      "issn-type": "print"
+    },
+    {
+      "key": "10.1115/1.2960953_r3",
+      "unstructured": "I. Celik , C. J. Chen , P. J. Roache , and G. Scheurer , Editors. (1993), “Quantification of Uncertainty in Computational Fluid Dynamics,” ASME Fluids Engineering Division Summer Meeting, Washington, DC, Jun. 20–24, ASME Publ. No. FED-Vol. 158."
+    },
+    {
+      "key": "10.1115/1.2960953_r4",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1115/1.2819284"
+    },
+    {
+      "key": "10.1115/1.2960953_r5",
+      "unstructured": "Eca, L., and Hoekstra, M. , 2002, “An Evaluation of Verification Procedures for CFD Applications,”24th Symposium on Naval Hydrodynamics, Fukuoka, Japan, Jul. 8–13."
+    },
+    {
+      "key": "10.1115/1.2960953_r6",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1115/1.2910144"
+    },
+    {
+      "key": "10.1115/1.2960953_r7",
+      "unstructured": "Roache, P. J. , 1993, “A Method for Uniform Reporting of Grid Refinement Studies,”Proceedings of Quantification of Uncertainty in Computation Fluid Dynamics, Edited by Celik , et al. , ASME Fluids Engineering Division Spring Meeting, Washington, D.C., June 23–24, ASME Publ. No. FED-Vol. 158."
+    },
+    {
+      "key": "10.1115/1.2960953_r8",
+      "unstructured": "Roache, P. J. , 1998, “Verification and Validation in Computational Science and Engineering,” Hermosa Publishers, Albuquerque, NM."
+    },
+    {
+      "key": "10.1115/1.2960953_r9",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1115/1.1412235"
+    },
+    {
+      "key": "10.1115/1.2960953_r10",
+      "doi-asserted-by": "crossref",
+      "first-page": "340",
+      "DOI": "10.13182/NSE03-2",
+      "volume": "146",
+      "author": "Broadhead",
+      "year": "2004",
+      "journal-title": "Nucl. Sci. Eng.",
+      "ISSN": "https://id.crossref.org/issn/0029-5639",
+      "issn-type": "print"
+    },
+    {
+      "key": "10.1115/1.2960953_r11",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1115/1.1445139"
+    },
+    {
+      "key": "10.1115/1.2960953_r12",
+      "doi-asserted-by": "crossref",
+      "unstructured": "Oberkampf, W. L., Trucano, T. G., and Hirsch, C. , 2003, “Verification, Validation, and Predictive Capability in Computational Engineering and Physics,” Sandia Report No. SAND2003-3769.",
+      "DOI": "10.2172/809603"
+    },
+    {
+      "key": "10.1115/1.2960953_r13",
+      "doi-asserted-by": "crossref",
+      "unstructured": "Eça, L., Hoekstra, M., and Roache, P. J. , 2005, “Verification of Calculations: An Overview of the Lisbon Workshop,”AIAA Computational Fluid Dynamics Conference, Toronto, Canada, Jun., AIAA Paper No. 4728.",
+      "DOI": "10.2514/6.2005-4728"
+    },
+    {
+      "key": "10.1115/1.2960953_r14",
+      "doi-asserted-by": "crossref",
+      "unstructured": "Eça, L., Hoekstra, M., and Roache, P. J. , 2007, “Verification of Calculations: an Overview of the 2nd Lisbon Workshop,”Second Workshop on CFD Uncertainty Analysis, AIAA Computational Fluid Dynamics Conference, Miami, FL, Jun., AIAA Paper No. 2007-4089.",
+      "DOI": "10.2514/6.2007-4089"
+    },
+    {
+      "key": "10.1115/1.2960953_r15",
+      "doi-asserted-by": "crossref",
+      "first-page": "2",
+      "DOI": "10.1115/1.3242537",
+      "volume": "108",
+      "author": "Roache",
+      "year": "1986",
+      "journal-title": "ASME J. Fluids Eng.",
+      "ISSN": "https://id.crossref.org/issn/0098-2202",
+      "issn-type": "print"
+    },
+    {
+      "key": "10.1115/1.2960953_r16",
+      "unstructured": "Celik, I., and Badeau, A., Jr. , 2003, “Verification and Validation of DREAM Code,” Mechanical and Aerospace Engineering Department, Report No. MAE̱IC03/TR103."
+    },
+    {
+      "key": "10.1115/1.2960953_r17",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1115/1.1588692"
+    },
+    {
+      "key": "10.1115/1.2960953_r18",
+      "unstructured": "Ferziger, J. H. , 1989, “Estimation and Reduction of Numerical Error,”ASME Winter Annual Meeting, San Fransisco, CA, Dec."
+    },
+    {
+      "key": "10.1115/1.2960953_r19",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1002/(SICI)1097-0363(19961230)23:12<1263::AID-FLD478>3.3.CO;2-M"
+    },
+    {
+      "key": "10.1115/1.2960953_r20",
+      "unstructured": "Eça, L., and Hoekstra, M. , 2006, “On the Influence of the Iterative Error in the Numerical Uncertainty of Ship Viscous Flow Calculations,”26th Symposium on Naval Hydrodynamics, Rome, Italy, Sept. 17–22."
+    },
+    {
+      "key": "10.1115/1.2960953_r21",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1002/fld.1090"
+    }
+  ],
+  "container-title": "Journal of Fluids Engineering",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "http://fluidsengineering.asmedigitalcollection.asme.org/data/Journals/JFEGA4/27324/078001_1.pdf",
+      "content-type": "unspecified",
+      "content-version": "vor",
+      "intended-application": "similarity-checking"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2019,
+        5,
+        12
+      ]
+    ],
+    "date-time": "2019-05-12T21:45:24Z",
+    "timestamp": 1557697524000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "http://FluidsEngineering.asmedigitalcollection.asme.org/article.aspx?articleid=1434171"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2008
+      ]
+    ]
+  },
+  "references-count": 21,
+  "journal-issue": {
+    "issue": "7",
+    "published-print": {
+      "date-parts": [
+        [
+          2008
+        ]
+      ]
+    }
+  },
+  "URL": "http://dx.doi.org/10.1115/1.2960953",
+  "relation": {},
+  "ISSN": [
+    "0098-2202"
+  ],
+  "subject": [],
+  "container-title-short": "J. Fluids Eng.",
+  "published": {
+    "date-parts": [
+      [
+        2008
+      ]
+    ]
+  }
+}

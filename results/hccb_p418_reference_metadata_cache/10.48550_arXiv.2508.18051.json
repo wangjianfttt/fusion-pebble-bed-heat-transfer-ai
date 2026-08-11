@@ -1,0 +1,41 @@
+{
+  "type": "article",
+  "id": "https://doi.org/10.48550/arxiv.2508.18051",
+  "categories": [
+    "Machine Learning (cs.LG)",
+    "FOS: Computer and information sciences",
+    "FOS: Computer and information sciences"
+  ],
+  "author": [
+    {
+      "family": "Garnier",
+      "given": "Paul"
+    },
+    {
+      "family": "Lannelongue",
+      "given": "Vincent"
+    },
+    {
+      "family": "Viquerat",
+      "given": "Jonathan"
+    },
+    {
+      "family": "Hachem",
+      "given": "Elie"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2025
+      ]
+    ]
+  },
+  "abstract": "Simulating physics using Graph Neural Networks (GNNs) is predominantly driven by message-passing architectures, which face challenges in scaling and efficiency, particularly in handling large, complex meshes. These architectures have inspired numerous enhancements, including multigrid approaches and $K$-hop aggregation (using neighbours of distance $K$), yet they often introduce significant complexity and suffer from limited in-depth investigations. In response to these challenges, we propose a novel Graph Transformer architecture that leverages the adjacency matrix as an attention mask. The proposed approach incorporates innovative augmentations, including Dilated Sliding Windows and Global Attention, to extend receptive fields without sacrificing computational efficiency. Through extensive experimentation, we evaluate model size, adjacency matrix augmentations, positional encoding and $K$-hop configurations using challenging 3D computational fluid dynamics (CFD) datasets. We also train over 60 models to find a scaling law between training FLOPs and parameters. The introduced models demonstrate remarkable scalability, performing on meshes with up to 300k nodes and 3 million edges. Notably, the smallest model achieves parity with MeshGraphNet while being $7\\times$ faster and $6\\times$ smaller. The largest model surpasses the previous state-of-the-art by $38.8$\\% on average and outperforms MeshGraphNet by $52$\\% on the all-rollout RMSE, while having a similar training speed. Code and datasets are available at https://github.com/DonsetPG/graph-physics.",
+  "DOI": "10.48550/ARXIV.2508.18051",
+  "publisher": "arXiv",
+  "title": "Training Transformers for Mesh-Based Simulations",
+  "URL": "https://arxiv.org/abs/2508.18051",
+  "copyright": "Creative Commons Attribution 4.0 International",
+  "version": "1"
+}

@@ -1,0 +1,829 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        4,
+        15
+      ]
+    ],
+    "date-time": "2026-04-15T02:20:46Z",
+    "timestamp": 1776219646879,
+    "version": "3.50.1"
+  },
+  "reference-count": 52,
+  "publisher": "Elsevier BV",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2017,
+            10,
+            1
+          ]
+        ],
+        "date-time": "2017-10-01T00:00:00Z",
+        "timestamp": 1506816000000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    }
+  ],
+  "funder": [
+    {
+      "name": "Ministry of Science and Technology of China",
+      "award": [
+        "2013GB108001"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "2013GB108001"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ministry of Science and Technology of China",
+      "award": [
+        "2014GB111001"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "2014GB111001"
+          ]
+        }
+      ]
+    }
+  ],
+  "content-domain": {
+    "domain": [
+      "elsevier.com",
+      "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2017,
+        10
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.fusengdes.2017.08.002",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2017,
+        8,
+        12
+      ]
+    ],
+    "date-time": "2017-08-12T05:16:54Z",
+    "timestamp": 1502515014000
+  },
+  "page": "256-264",
+  "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 44,
+  "special_numbering": "C",
+  "title": "Discrete element modeling of pebble bed packing structures for HCCB TBM",
+  "prefix": "10.1016",
+  "volume": "121",
+  "author": [
+    {
+      "given": "Baoping",
+      "family": "Gong",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "Yongjin",
+      "family": "Feng",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "Hongbin",
+      "family": "Liao",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "Yang",
+      "family": "Liu",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "Xiaoyu",
+      "family": "Wang",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "Kaiming",
+      "family": "Feng",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    }
+  ],
+  "member": "78",
+  "reference": [
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0005",
+      "doi-asserted-by": "crossref",
+      "first-page": "1119",
+      "DOI": "10.1016/j.fusengdes.2014.01.073",
+      "article-title": "New progress on design and R&D for solid breeder test blanket module in China",
+      "volume": "89",
+      "author": "Feng",
+      "year": "2014",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0010",
+      "doi-asserted-by": "crossref",
+      "first-page": "729",
+      "DOI": "10.1016/j.fusengdes.2016.02.010",
+      "article-title": "Current progress of Chinese HCCB TBM program",
+      "volume": "109–111",
+      "author": "Feng",
+      "year": "2016",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0015",
+      "doi-asserted-by": "crossref",
+      "first-page": "67",
+      "DOI": "10.1016/j.fusengdes.2011.09.003",
+      "article-title": "Experimental measurement of effective thermal conductivity of packed lithium-titanate pebble bed",
+      "volume": "87",
+      "author": "Mandal",
+      "year": "2012",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0020",
+      "doi-asserted-by": "crossref",
+      "first-page": "216",
+      "DOI": "10.1016/j.fusengdes.2013.02.033",
+      "article-title": "Void fraction and effective thermal conductivity of binary particulate bed",
+      "volume": "88",
+      "author": "Mandal",
+      "year": "2013",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0025",
+      "doi-asserted-by": "crossref",
+      "first-page": "1975",
+      "DOI": "10.1016/j.fusengdes.2010.07.010",
+      "article-title": "Theoretical calculation and analysis modeling for the effective thermal conductivity of Li4SiO4 pebble bed",
+      "volume": "85",
+      "author": "Zhao",
+      "year": "2010",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0030",
+      "doi-asserted-by": "crossref",
+      "first-page": "1",
+      "DOI": "10.1016/j.fusengdes.2016.03.001",
+      "article-title": "Investigation of effective thermal conductivity for pebble beds by one-way coupled CFD-DEM method for CFETR WCCB",
+      "volume": "106",
+      "author": "Chen",
+      "year": "2016",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "issue": "12",
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0035",
+      "doi-asserted-by": "crossref",
+      "first-page": "1083",
+      "DOI": "10.1088/1009-0630/17/12/18",
+      "article-title": "Effective thermal property estimation of unitary pebble beds based on a CFD-DEM coupled method for a fusion blanket",
+      "volume": "17",
+      "author": "Chen",
+      "year": "2015",
+      "journal-title": "Plasma Sci. Technol."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0040",
+      "doi-asserted-by": "crossref",
+      "first-page": "24",
+      "DOI": "10.1016/j.fusengdes.2009.05.003",
+      "article-title": "Thermo-mechanical modelling of pebble bed-wall interfaces",
+      "volume": "85",
+      "author": "Gan",
+      "year": "2010",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "issue": "January (1)",
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0045",
+      "first-page": "43",
+      "article-title": "Experimental evaluation of packed bed heat transfer relations",
+      "volume": "1",
+      "author": "Khalil",
+      "year": "2008",
+      "journal-title": "J. Eng. Comput. Sci. Qassim Univ."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0050",
+      "doi-asserted-by": "crossref",
+      "first-page": "52",
+      "DOI": "10.1016/j.powtec.2013.04.013",
+      "article-title": "Thermal DEM-CFD modeling and simulation of heat transfer through packed bed",
+      "volume": "244",
+      "author": "Tsory",
+      "year": "2013",
+      "journal-title": "Powder Technol."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0055",
+      "doi-asserted-by": "crossref",
+      "first-page": "1393",
+      "DOI": "10.1016/j.jnucmat.2007.04.040",
+      "article-title": "Numerical characterization of thermo-mechanical performance of breeder pebble beds",
+      "volume": "367–370",
+      "author": "An",
+      "year": "2007",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0060",
+      "doi-asserted-by": "crossref",
+      "first-page": "1130",
+      "DOI": "10.1016/j.fusengdes.2012.02.090",
+      "article-title": "Status of ceramic breeder pebble bed thermo-mechanics R&D and impact on breeder material mechanical strength",
+      "volume": "87",
+      "author": "Ying",
+      "year": "2012",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0065",
+      "doi-asserted-by": "crossref",
+      "first-page": "1101",
+      "DOI": "10.13182/FST05-A834",
+      "article-title": "Experimental & numerical study of ceramic breeder pebble bed thermal deformation behavior",
+      "volume": "47",
+      "author": "An",
+      "year": "2005",
+      "journal-title": "Fusion Sci. Technol."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0070",
+      "doi-asserted-by": "crossref",
+      "first-page": "903",
+      "DOI": "10.1016/j.fusengdes.2005.06.305",
+      "article-title": "Pebble bed thermal-mechanical theoretical model application at the geometry of test blanket module of ITER-FEAT nuclear fusion reactor",
+      "volume": "75-79",
+      "author": "Aquaro",
+      "year": "2005",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0075",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1063/1.4934565",
+      "article-title": "Computational study on the behaviors of granular materials under mechanical cycling",
+      "volume": "118",
+      "author": "Wang",
+      "year": "2015",
+      "journal-title": "J. Appl. Phys."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0080",
+      "doi-asserted-by": "crossref",
+      "first-page": "243",
+      "DOI": "10.1016/j.fusengdes.2013.02.122",
+      "article-title": "Experimental study and analysis of the purge gas pressure drop across the pebble beds for the fusion HCPB blanket",
+      "volume": "88",
+      "author": "Abou-Sena",
+      "year": "2013",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0085",
+      "doi-asserted-by": "crossref",
+      "first-page": "324",
+      "DOI": "10.1016/j.cej.2010.10.053",
+      "article-title": "DEM-CFD simulation of fixed bed reactors with small tube to particle diameter ratios",
+      "volume": "166",
+      "author": "Eppinger",
+      "year": "2011",
+      "journal-title": "Chem. Eng. J."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0090",
+      "doi-asserted-by": "crossref",
+      "first-page": "404",
+      "DOI": "10.1016/j.cej.2009.07.057",
+      "article-title": "CFD-base analysis of the wall effect on the pressure drop in packed beds with moderatre tube/particle diameter ratios in the laminar flow regime",
+      "volume": "155",
+      "author": "Atmakidis",
+      "year": "2009",
+      "journal-title": "Chem. Eng. J."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0095",
+      "doi-asserted-by": "crossref",
+      "first-page": "329",
+      "DOI": "10.1016/j.cep.2006.07.002",
+      "article-title": "About a correlating equation for predicting pressure drops through packed beds of spheres in a large range of Reynolds numbers",
+      "volume": "46",
+      "author": "Montillet",
+      "year": "2007",
+      "journal-title": "Chem. Eng. Process."
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0100",
+      "first-page": "40",
+      "article-title": "Mean porosity and pressure drop measurements in packed beds of monosized spheres: side wall effects",
+      "volume": "1",
+      "author": "Ribeiro",
+      "year": "2010",
+      "journal-title": "IRECHE"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0105",
+      "doi-asserted-by": "crossref",
+      "first-page": "6947",
+      "DOI": "10.1016/j.ces.2005.05.068",
+      "article-title": "Flow through packed bed reactors:1. Single-phase flow",
+      "volume": "60",
+      "author": "Damjan",
+      "year": "2005",
+      "journal-title": "Chem. Eng. Sci."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0110",
+      "doi-asserted-by": "crossref",
+      "first-page": "385",
+      "DOI": "10.1007/s10894-015-0045-y",
+      "article-title": "Numerical analysis of bypass flow in ceramic pebble beds",
+      "volume": "35",
+      "author": "Zhang",
+      "year": "2016",
+      "journal-title": "J. Fusion Energy"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0115",
+      "doi-asserted-by": "crossref",
+      "first-page": "24",
+      "DOI": "10.1016/j.nucengdes.2014.02.022",
+      "article-title": "Discrete element modelling of pebble packing in pebble bed reactors",
+      "volume": "273",
+      "author": "Suikkanen",
+      "year": "2014",
+      "journal-title": "Nucl. Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0120",
+      "doi-asserted-by": "crossref",
+      "first-page": "621",
+      "DOI": "10.1007/s00339-008-4547-6",
+      "article-title": "Simulation of random packing of spherical particles with different size distributions",
+      "volume": "92",
+      "author": "Shi",
+      "year": "2008",
+      "journal-title": "Appl. Phys. A"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0125",
+      "doi-asserted-by": "crossref",
+      "first-page": "195",
+      "DOI": "10.1016/j.anucene.2015.02.011",
+      "article-title": "Effect of wall structure on pebble stagnation behavior in pebble bed reactor",
+      "volume": "80",
+      "author": "Li",
+      "year": "2015",
+      "journal-title": "Ann. Nucl. Energy"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0130",
+      "series-title": "KIT Scientific Report 7631",
+      "article-title": "Pebble bed packing in square cavities",
+      "author": "Reimann",
+      "year": "2012"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0135",
+      "doi-asserted-by": "crossref",
+      "first-page": "2343",
+      "DOI": "10.1016/j.fusengdes.2013.05.100",
+      "article-title": "Pebble bed packing in prismatic containers",
+      "volume": "88",
+      "author": "Reimann",
+      "year": "2013",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0140",
+      "doi-asserted-by": "crossref",
+      "first-page": "355",
+      "DOI": "10.1016/j.fusengdes.2008.11.064",
+      "article-title": "Experimental investigation on possible techniques of pebbles packing for the HCPB test blanket module",
+      "volume": "84",
+      "author": "Abou-Sena",
+      "year": "2009",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0145",
+      "doi-asserted-by": "crossref",
+      "first-page": "707",
+      "DOI": "10.1016/S0920-3796(01)00539-7",
+      "article-title": "Non destruction three dimensional analysis of the packing of a binary beryllium pebble bed",
+      "volume": "58–59",
+      "author": "Scaffidi-Argentina",
+      "year": "2001",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0150",
+      "doi-asserted-by": "crossref",
+      "first-page": "1049",
+      "DOI": "10.1016/j.fusengdes.2005.06.223",
+      "article-title": "Michiel, et al., Inner structures of compressed pebble beds determined by X-ray tomography",
+      "volume": "75–79",
+      "author": "J.Reimann",
+      "year": "2005",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0155",
+      "doi-asserted-by": "crossref",
+      "first-page": "653",
+      "DOI": "10.1016/j.fusengdes.2005.06.375",
+      "article-title": "Topology of compressed pebble beds",
+      "volume": "81",
+      "author": "Reimann",
+      "year": "2006",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0160",
+      "doi-asserted-by": "crossref",
+      "first-page": "1326",
+      "DOI": "10.1016/j.fusengdes.2008.06.026",
+      "article-title": "X-ray tomography investigation on pebble bed structures",
+      "volume": "83",
+      "author": "Reimann",
+      "year": "2008",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0165",
+      "doi-asserted-by": "crossref",
+      "first-page": "145",
+      "DOI": "10.1002/adem.201000256",
+      "article-title": "3D tomography analysis of the inner structure of pebbles and pebble beds",
+      "volume": "13",
+      "author": "Pieritz",
+      "year": "2011",
+      "journal-title": "Adv. Eng. Mater."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0170",
+      "doi-asserted-by": "crossref",
+      "first-page": "183",
+      "DOI": "10.1163/156855208X293817",
+      "article-title": "Study of the wall effect on particle packing structure using X-ray micro computed tomography",
+      "volume": "19",
+      "author": "Suzuki",
+      "year": "2008",
+      "journal-title": "Adv. Powder Technol."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0175",
+      "doi-asserted-by": "crossref",
+      "first-page": "1855",
+      "DOI": "10.1016/j.fusengdes.2015.05.026",
+      "article-title": "Pebble bed structures in the vicinity of concave and convex walls",
+      "volume": "98–99",
+      "author": "Reimann",
+      "year": "2015",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0180",
+      "doi-asserted-by": "crossref",
+      "first-page": "47",
+      "DOI": "10.1680/geot.1979.29.1.47",
+      "article-title": "A discrete numerical model for granular assemblies",
+      "volume": "29",
+      "author": "Cundall",
+      "year": "1979",
+      "journal-title": "Geotechnique"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0185",
+      "doi-asserted-by": "crossref",
+      "first-page": "1782",
+      "DOI": "10.1016/j.fusengdes.2010.05.042",
+      "article-title": "Computer simulation of packing structure in pebble beds",
+      "volume": "85",
+      "author": "Gan",
+      "year": "2010",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0190",
+      "doi-asserted-by": "crossref",
+      "first-page": "404",
+      "DOI": "10.1016/j.nucengdes.2014.02.010",
+      "article-title": "3D DEM simulation and analysis of void fraction distribution in a pebble bed high temperature reactor",
+      "volume": "270",
+      "author": "Yang",
+      "year": "2014",
+      "journal-title": "Nucl. Eng. Des."
+    },
+    {
+      "issue": "6",
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0195",
+      "doi-asserted-by": "crossref",
+      "first-page": "803",
+      "DOI": "10.1080/00223131.2015.1074877",
+      "article-title": "Investigation of the packing structure of pebble beds by DEM for CFETR WCCB",
+      "volume": "53",
+      "author": "Chen",
+      "year": "2016",
+      "journal-title": "J. Nucl. Sci. Technol."
+    },
+    {
+      "issue": "2/3",
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0200",
+      "doi-asserted-by": "crossref",
+      "first-page": "140",
+      "DOI": "10.1504/PCFD.2012.047457",
+      "article-title": "Models, algorithms and validation for opensource DEM and CFD-DEM",
+      "volume": "12",
+      "author": "Kloss",
+      "year": "2012",
+      "journal-title": "Progress Comput. Fluid Dyn. Int. J."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0210",
+      "doi-asserted-by": "crossref",
+      "first-page": "1151",
+      "DOI": "10.1016/j.fusengdes.2014.04.066",
+      "article-title": "A discrete element method study on the evolution of thermo-mechanics of a pebble bed experiencing pebble failure",
+      "volume": "89",
+      "author": "Lew",
+      "year": "2014",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0215",
+      "doi-asserted-by": "crossref",
+      "first-page": "476",
+      "DOI": "10.1016/0022-3115(88)90293-0",
+      "article-title": "Investigation of the mechanical-properties of ceramic breeder materials",
+      "volume": "155",
+      "author": "Dienst",
+      "year": "1988",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0220",
+      "series-title": "Mechanische Eigenschaften von Lithiumsilikaten für Fusionsreaktor-Brutblankets. Technical Report, KfK 4528",
+      "author": "Zimmermann",
+      "year": "1989"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0225",
+      "first-page": "451",
+      "article-title": "Properties of lithium orthosilicate spheres",
+      "volume": "155–157",
+      "author": "Schumacher",
+      "year": "1998",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0230",
+      "doi-asserted-by": "crossref",
+      "first-page": "2375",
+      "DOI": "10.1016/j.fusengdes.2007.05.008",
+      "article-title": "Mechanical characterization of Li2TiO3 and Li4SiO4 pebble beds: experimental determination of the material properties and of the pebble bed effective values",
+      "volume": "82",
+      "author": "Zaccari",
+      "year": "2007",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0235",
+      "doi-asserted-by": "crossref",
+      "first-page": "129",
+      "DOI": "10.1016/j.jmps.2009.10.009",
+      "article-title": "Discrete element modelling of pebble beds: with application to uniaxial compression tests of ceramic breeder pebble beds",
+      "volume": "58",
+      "author": "Gan",
+      "year": "2010",
+      "journal-title": "J. Mech. Phys. Solids"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0240",
+      "doi-asserted-by": "crossref",
+      "first-page": "179",
+      "DOI": "10.1016/S0032-5910(97)03207-5",
+      "article-title": "Numerical simulation of packed beds with monosized spheres in cylindrical containers",
+      "volume": "92",
+      "author": "Mueller",
+      "year": "1997",
+      "journal-title": "Powder Technol."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0245",
+      "doi-asserted-by": "crossref",
+      "first-page": "210",
+      "DOI": "10.1016/j.powtec.2014.08.018",
+      "article-title": "Discrete element modelling of the packing of spheres and its application to the structure of porous metals made by infiltration of packed beds of NaCl beads",
+      "volume": "268",
+      "author": "Langston",
+      "year": "2014",
+      "journal-title": "Powder Technol."
+    },
+    {
+      "issue": "8",
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0250",
+      "doi-asserted-by": "crossref",
+      "first-page": "2022",
+      "DOI": "10.1002/aic.690490812",
+      "article-title": "Voidage variation in packed beds at small column to particle diameter ratio",
+      "volume": "49",
+      "author": "Klerk",
+      "year": "2003",
+      "journal-title": "AIChE J."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0255",
+      "series-title": "The ParaView Guide: A Parallel Visualization Application",
+      "author": "Ayachit",
+      "year": "2015"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0260",
+      "doi-asserted-by": "crossref",
+      "first-page": "626",
+      "DOI": "10.1016/j.powtec.2010.07.007",
+      "article-title": "Radial porosity in packed beds of spheres",
+      "volume": "203",
+      "author": "Mueller",
+      "year": "2010",
+      "journal-title": "Powder Technol."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2017.08.002_bib0265",
+      "doi-asserted-by": "crossref",
+      "first-page": "207",
+      "DOI": "10.1016/j.physa.2004.03.068",
+      "article-title": "On distribution of contact forces in random granular packings",
+      "volume": "339",
+      "author": "Ngan",
+      "year": "2004",
+      "journal-title": "Physica A"
+    }
+  ],
+  "container-title": "Fusion Engineering and Design",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0920379617307706?httpAccept=text/xml",
+      "content-type": "text/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0920379617307706?httpAccept=text/plain",
+      "content-type": "text/plain",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2018,
+        7,
+        3
+      ]
+    ],
+    "date-time": "2018-07-03T22:42:07Z",
+    "timestamp": 1530657727000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0920379617307706"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2017,
+        10
+      ]
+    ]
+  },
+  "references-count": 52,
+  "alternative-id": [
+    "S0920379617307706"
+  ],
+  "URL": "http://dx.doi.org/10.1016/j.fusengdes.2017.08.002",
+  "relation": {},
+  "ISSN": [
+    "0920-3796"
+  ],
+  "subject": [],
+  "container-title-short": "Fusion Engineering and Design",
+  "published": {
+    "date-parts": [
+      [
+        2017,
+        10
+      ]
+    ]
+  },
+  "assertion": [
+    {
+      "value": "Elsevier",
+      "name": "publisher",
+      "label": "This article is maintained by"
+    },
+    {
+      "value": "Discrete element modeling of pebble bed packing structures for HCCB TBM",
+      "name": "articletitle",
+      "label": "Article Title"
+    },
+    {
+      "value": "Fusion Engineering and Design",
+      "name": "journaltitle",
+      "label": "Journal Title"
+    },
+    {
+      "value": "https://doi.org/10.1016/j.fusengdes.2017.08.002",
+      "name": "articlelink",
+      "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+      "value": "article",
+      "name": "content_type",
+      "label": "Content Type"
+    },
+    {
+      "value": "© 2017 Elsevier B.V. All rights reserved.",
+      "name": "copyright",
+      "label": "Copyright"
+    }
+  ]
+}

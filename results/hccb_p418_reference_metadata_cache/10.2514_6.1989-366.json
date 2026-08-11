@@ -1,0 +1,279 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        8,
+        5
+      ]
+    ],
+    "date-time": "2026-08-05T08:58:56Z",
+    "timestamp": 1785920336160,
+    "version": "3.56.0"
+  },
+  "publisher-location": "Reston, Virigina",
+  "reference-count": 23,
+  "publisher": "American Institute of Aeronautics and Astronautics",
+  "content-domain": {
+    "domain": [
+      "arc.aiaa.org"
+    ],
+    "crossmark-restriction": true
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        1989,
+        1,
+        9
+      ]
+    ]
+  },
+  "DOI": "10.2514/6.1989-366",
+  "type": "proceedings-article",
+  "created": {
+    "date-parts": [
+      [
+        2013,
+        9,
+        27
+      ]
+    ],
+    "date-time": "2013-09-27T16:58:27Z",
+    "timestamp": 1380301107000
+  },
+  "update-policy": "https://doi.org/10.2514/aiaa_crossmarkpolicy",
+  "source": "Crossref",
+  "is-referenced-by-count": 1155,
+  "title": "The design and application of upwind schemes on unstructured meshes",
+  "prefix": "10.2514",
+  "author": [
+    {
+      "given": "TIMOTHY",
+      "family": "BARTH",
+      "sequence": "first",
+      "affiliation": [
+        {
+          "name": "NASA, Ames Research Center, Moffett Field, CA"
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "DENNIS",
+      "family": "JESPERSEN",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "NASA, Ames Research Center, Moffett Field, CA"
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    }
+  ],
+  "member": "1387",
+  "published-online": {
+    "date-parts": [
+      [
+        1989,
+        8,
+        17
+      ]
+    ]
+  },
+  "reference": [
+    {
+      "key": "p_1",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.2514/3.51220"
+    },
+    {
+      "key": "p_2",
+      "doi-asserted-by": "crossref",
+      "unstructured": "Jameson, A. and Mavtiplis, D. \"Finite VolumeSfution of the TwoDimensional Euler Equations on January 1985.",
+      "DOI": "10.2514/6.1985-435"
+    },
+    {
+      "key": "p_3",
+      "unstructured": "Mavriplis, D. \"Multigrid Solutionofthe Euler Equations on UnstructuredandAdaptiveMeshes\",ICASE Report No. 87-53."
+    },
+    {
+      "key": "p_4",
+      "volume-title": "AIAA paper 87-0353, Jandary",
+      "author": "Mavriplis D.",
+      "year": "1987"
+    },
+    {
+      "key": "p_5",
+      "first-page": "7",
+      "volume": "1988",
+      "author": "Desideri J. A",
+      "year": "1988",
+      "journal-title": "VKI L - tnre Series"
+    },
+    {
+      "key": "p_6",
+      "doi-asserted-by": "crossref",
+      "unstructured": "Allmaras, S. R., and Giles, M. B. \"A Second Order Flux Split Scheme for the Unsteady 2 . ~~l ti^^^ on h n , AIAA paper 87-1119, January 1987.",
+      "DOI": "10.2514/6.1987-1119"
+    },
+    {
+      "key": "p_7",
+      "unstructured": "Roe, P. L. \"Error Estimates for Cell-Vertex Solutions ofthe Compressible Enler Equations\",ICASE Report No. 87-6, January 1987."
+    },
+    {
+      "key": "p_11",
+      "doi-asserted-by": "crossref",
+      "unstructured": "ford U. Press, 1986, pp. 55-80.",
+      "DOI": "10.1016/0044-8486(86)90062-1"
+    },
+    {
+      "key": "p_14",
+      "unstructured": "22, 1985."
+    },
+    {
+      "key": "p_15",
+      "volume-title": "AIGA paper",
+      "author": "Thomas J. L.",
+      "year": "1985"
+    },
+    {
+      "key": "p_16",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.2514/6.1988-520"
+    },
+    {
+      "issue": "2",
+      "key": "p_17",
+      "volume": "24",
+      "author": "Gowyer A.",
+      "year": "1981",
+      "journal-title": "The Computer Journal"
+    },
+    {
+      "key": "p_18",
+      "volume-title": "J1987",
+      "author": "Jameson A."
+    },
+    {
+      "key": "p_19",
+      "first-page": "43",
+      "volume": "01",
+      "author": "Roe P.L.",
+      "year": "1981",
+      "journal-title": "Phys."
+    },
+    {
+      "key": "p_20",
+      "doi-asserted-by": "crossref",
+      "unstructured": "Barth, T.J. 'Implicit Linearization Procedures for Upwind Algorithms\", Computational Mechanics '88, Springer-Verlag,vol. 2, pp.51.i.1-8,1988.",
+      "DOI": "10.1007/978-3-642-61381-4_384"
+    },
+    {
+      "key": "p_21",
+      "unstructured": "Roe, P. t.\"Error Estimates for Cell-Vertex Solutions of the Compressible Enler Equations\",ICASE Report No. 87-6, January 1987."
+    },
+    {
+      "key": "p_22",
+      "volume-title": "11th International Conference on Numerical Methods in Fluid Dynamics",
+      "author": "Giles M.",
+      "year": "1988"
+    },
+    {
+      "key": "p_23",
+      "unstructured": "Harten,A, Hyman,J.,Lax, p,\"OnFinite-Difference Approximationsand EntropyConditionsfor Shocks\", 162-166. =J"
+    },
+    {
+      "key": "p_24",
+      "unstructured": "a lniangular Mesh*, AIAA paper 85-0435,"
+    },
+    {
+      "key": "p_25",
+      "volume-title": "Vol 29",
+      "author": "Venkataktisnan",
+      "year": "1976"
+    },
+    {
+      "key": "p_26",
+      "unstructured": "Spekreijse, S.P. \"Multigrid Solution of the Steady Enler Equations\",Doctoral Thesis,Deft University of Technology, 1987."
+    },
+    {
+      "key": "p_27",
+      "volume-title": "Second International ConferenceonKyperbolic Problems, Aachen,W.Germany",
+      "author": "Rostand P.",
+      "year": "1988"
+    },
+    {
+      "key": "p_28",
+      "volume-title": "AIAA/ASME/SIAM/APS First National Fluid Dynamics Congress, July 25-28",
+      "author": "Mavriplis D. J.",
+      "year": "1988"
+    }
+  ],
+  "event": "27th Aerospace Sciences Meeting",
+  "container-title": "27th Aerospace Sciences Meeting",
+  "original-title": [],
+  "link": [
+    {
+      "URL": "http://arc.aiaa.org/doi/pdf/10.2514/6.1989-366",
+      "content-type": "unspecified",
+      "content-version": "vor",
+      "intended-application": "similarity-checking"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2022,
+        3,
+        6
+      ]
+    ],
+    "date-time": "2022-03-06T20:41:22Z",
+    "timestamp": 1646599282000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://arc.aiaa.org/doi/10.2514/6.1989-366"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        1989,
+        1,
+        9
+      ]
+    ]
+  },
+  "references-count": 23,
+  "alternative-id": [
+    "10.2514/6.1989-366",
+    "10.2514/MASM89"
+  ],
+  "URL": "http://dx.doi.org/10.2514/6.1989-366",
+  "relation": {},
+  "subject": [],
+  "published": {
+    "date-parts": [
+      [
+        1989,
+        1,
+        9
+      ]
+    ]
+  }
+}

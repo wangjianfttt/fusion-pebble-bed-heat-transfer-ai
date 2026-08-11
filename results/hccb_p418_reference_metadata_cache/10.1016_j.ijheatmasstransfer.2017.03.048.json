@@ -1,0 +1,682 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        1,
+        31
+      ]
+    ],
+    "date-time": "2026-01-31T05:27:24Z",
+    "timestamp": 1769837244791,
+    "version": "3.49.0"
+  },
+  "reference-count": 46,
+  "publisher": "Elsevier BV",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2017,
+            7,
+            1
+          ]
+        ],
+        "date-time": "2017-07-01T00:00:00Z",
+        "timestamp": 1498867200000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    }
+  ],
+  "content-domain": {
+    "domain": [
+      "elsevier.com",
+      "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2017,
+        7
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.ijheatmasstransfer.2017.03.048",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2017,
+        3,
+        27
+      ]
+    ],
+    "date-time": "2017-03-27T03:16:13Z",
+    "timestamp": 1490584573000
+  },
+  "page": "587-605",
+  "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 16,
+  "special_numbering": "C",
+  "title": "A coupling approach to modeling heat transfer during a full transient flight cycle",
+  "prefix": "10.1016",
+  "volume": "110",
+  "author": [
+    {
+      "given": "M.-P.",
+      "family": "Errera",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "M.",
+      "family": "Lazareff",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "J.-D.",
+      "family": "Garaud",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "T.",
+      "family": "Soubrié",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "C.",
+      "family": "Douta",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "T.",
+      "family": "Federici",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    }
+  ],
+  "member": "78",
+  "reference": [
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0005",
+      "doi-asserted-by": "crossref",
+      "first-page": "421",
+      "DOI": "10.1002/(SICI)1097-0363(19970830)25:4<421::AID-FLD557>3.0.CO;2-J",
+      "article-title": "Stability analysis of numerical interface conditions in fluid-structure thermal analysis",
+      "volume": "25",
+      "author": "Giles",
+      "year": "1997",
+      "journal-title": "Int. J. Numer. Meth. Fluids"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0010",
+      "doi-asserted-by": "crossref",
+      "first-page": "329",
+      "DOI": "10.1002/fld.1637",
+      "article-title": "Combined interface boundary method for coupled thermal simulations",
+      "volume": "57",
+      "author": "Roe",
+      "year": "2008",
+      "journal-title": "Int. J. Numer. Meth. Fluids"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0015",
+      "doi-asserted-by": "crossref",
+      "first-page": "3708",
+      "DOI": "10.1016/j.jcp.2009.02.007",
+      "article-title": "A composite grid solver for conjugate heat transfer in fluid-structure systems",
+      "volume": "228",
+      "author": "Henshaw",
+      "year": "2009",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0020",
+      "doi-asserted-by": "crossref",
+      "first-page": "113",
+      "DOI": "10.1002/fld.3842",
+      "article-title": "Accuracy and stability analysis of a second-order time-accurate loosely coupled partitioned algorithm for transient conjugate heat transfer problems",
+      "volume": "74",
+      "author": "Kazemi-Kamyab",
+      "year": "2014",
+      "journal-title": "Int. J. Numer. Meth. Fluids"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0025",
+      "doi-asserted-by": "crossref",
+      "first-page": "5440",
+      "DOI": "10.1016/j.jcp.2010.04.010",
+      "article-title": "A stable and high-order conjugate heat transfer problem",
+      "volume": "229",
+      "author": "Lindström",
+      "year": "2010",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0030",
+      "doi-asserted-by": "crossref",
+      "first-page": "431",
+      "DOI": "10.1016/j.jcp.2013.03.004",
+      "article-title": "Optimal solutions of numerical interface conditions in fluid-structure thermal analysis",
+      "volume": "245",
+      "author": "Errera",
+      "year": "2013",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0035",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1115/1.3147105",
+      "article-title": "Efficient finite element analysis/computational fluid dynamics thermal coupling for engineering applications",
+      "volume": "132",
+      "author": "Sun",
+      "year": "2010",
+      "journal-title": "J. Turbomach."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0040",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1115/1.4007060",
+      "article-title": "Coupled fluid-structure transient thermal analysis of a gas turbine internal air system with multiple cavities",
+      "volume": "134",
+      "author": "Ganine",
+      "year": "2012",
+      "journal-title": "J. Eng. Gas Turbines Power"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0045",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1115/1.4003242",
+      "article-title": "Coupled aerothermomechanical simulation for a turbine disk through a full transient cycle",
+      "volume": "134",
+      "author": "Sun",
+      "year": "2012",
+      "journal-title": "J. Turbomach."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0050",
+      "first-page": "1467",
+      "article-title": "Impact of determination of convective heat transfer coefficient on the coupled energy and CFD simulation for buildings",
+      "volume": "3",
+      "author": "Zhai",
+      "year": "2003",
+      "journal-title": "Proc. Build. Simul. Confer."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0055",
+      "series-title": "7th International IBPSA Conference, Rio de Janeiro, Brazil",
+      "article-title": "The adaptive coupling of computational fluid dynamics with whole-building thermal simulation",
+      "author": "Beausoleil-Morrison",
+      "year": "2001"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0060",
+      "doi-asserted-by": "crossref",
+      "first-page": "3580",
+      "DOI": "10.1016/j.ces.2006.11.059",
+      "article-title": "Computer modeling of multiscale fluid flow and heat and mass transfer in engineered spaces",
+      "volume": "62",
+      "author": "Chen",
+      "year": "2007",
+      "journal-title": "Chem. Eng. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0065",
+      "doi-asserted-by": "crossref",
+      "first-page": "1183",
+      "DOI": "10.1002/fld.3782",
+      "article-title": "A quasi-dynamic procedure for coupled thermal simulations",
+      "volume": "72",
+      "author": "Errera",
+      "year": "2013",
+      "journal-title": "Int. J. Numer. Meth. Fluids"
+    },
+    {
+      "issue": "8",
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0070",
+      "doi-asserted-by": "crossref",
+      "first-page": "1721",
+      "DOI": "10.2514/1.J050193",
+      "article-title": "Studies on fluid-thermal-structural coupling for aerothermoelasticity in hypersonic flow",
+      "volume": "48",
+      "author": "Culler",
+      "year": "2010",
+      "journal-title": "AIAA J."
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0075",
+      "doi-asserted-by": "crossref",
+      "first-page": "031022",
+      "DOI": "10.1115/1.4001245",
+      "article-title": "Unsteady conjugate heat transfer modeling",
+      "volume": "133",
+      "author": "He",
+      "year": "2011",
+      "journal-title": "J. Turbomach."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0080",
+      "doi-asserted-by": "crossref",
+      "first-page": "1030",
+      "DOI": "10.1016/j.ijheatmasstransfer.2013.08.053",
+      "article-title": "Analysis on transient conjugate heat transfer in gap-cavity-gap structure heated by high speed airflow",
+      "volume": "67",
+      "author": "Shen",
+      "year": "2013",
+      "journal-title": "Int. J. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0085",
+      "doi-asserted-by": "crossref",
+      "first-page": "852",
+      "DOI": "10.1016/j.ijheatmasstransfer.2016.05.041",
+      "article-title": "Stability analysis of partitioned methods for predicting conjugate heat transfer",
+      "volume": "101",
+      "author": "Verstraete",
+      "year": "2016",
+      "journal-title": "Int. J. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0090",
+      "series-title": "Multidisciplinary Turbomachinery Component Optimization Considering Performance, Stress, and Internal Heat Transfer",
+      "author": "Verstraete",
+      "year": "2008"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0095",
+      "doi-asserted-by": "crossref",
+      "first-page": "218",
+      "DOI": "10.1016/j.jcp.2016.02.022",
+      "article-title": "Comparative study of coupling coefficients in Dirichlet-Robin procedure for fluid-structure aerothermal simulations",
+      "volume": "312",
+      "author": "Errera",
+      "year": "2016",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0100",
+      "doi-asserted-by": "crossref",
+      "first-page": "975",
+      "DOI": "10.1016/j.ijheatmasstransfer.2016.02.037",
+      "article-title": "A coupling numerical methodology for weakly transient conjugate heat transfer problems",
+      "volume": "97",
+      "author": "Gimenez",
+      "year": "2016",
+      "journal-title": "Int. J. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0105",
+      "series-title": "The Theory of Difference Schemes, An introduction",
+      "author": "Godunov",
+      "year": "1964"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0110",
+      "doi-asserted-by": "crossref",
+      "first-page": "703",
+      "DOI": "10.1090/S0025-5718-1968-0241010-7",
+      "article-title": "Stability theory for difference approximations of mixed initial boundary value problems",
+      "volume": "22",
+      "author": "Kreiss",
+      "year": "1968",
+      "journal-title": "I., Math. Comp."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0115",
+      "doi-asserted-by": "crossref",
+      "first-page": "177",
+      "DOI": "10.1090/S0002-9947-1969-0237982-4",
+      "article-title": "Systems of difference equations with general homogeneous boundary conditions",
+      "volume": "137",
+      "author": "Osher",
+      "year": "1969",
+      "journal-title": "Trans. Am. Math. Soc."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0120",
+      "doi-asserted-by": "crossref",
+      "first-page": "649",
+      "DOI": "10.1090/S0025-5718-1972-0341888-3",
+      "article-title": "Stability theory of difference approximations for mixed initial boundary value problems",
+      "volume": "26",
+      "author": "Gustaffson",
+      "year": "1972",
+      "journal-title": "Math. Comput."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0125",
+      "series-title": "The Godunov-Ryabenkii Condition: the Beginning of a New Stability Theory",
+      "author": "Gustafsson",
+      "year": "1999"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0130",
+      "doi-asserted-by": "crossref",
+      "first-page": "225",
+      "DOI": "10.1016/j.ijthermalsci.2017.02.001",
+      "article-title": "Efficiency of steady state coupling schemes for the treatment of Fluid-Structure thermal interactions",
+      "volume": "115",
+      "author": "El Khoury",
+      "year": "2017",
+      "journal-title": "Int. J. Therm. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0135",
+      "doi-asserted-by": "crossref",
+      "first-page": "89",
+      "DOI": "10.1166/jcsmd.2013.1005",
+      "article-title": "Temporal multiscale strategies for conjugate heat transfer problems",
+      "volume": "1",
+      "author": "Errera",
+      "year": "2013",
+      "journal-title": "J. Coupled Syst. Multiscale Dyn."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0140",
+      "series-title": "Proceedings of the 15th International Heat Transfer Conference, IHTC-15, August 10-15 (2014) Kyoto, Japan",
+      "article-title": "Efficient coupling procedures in steady and unsteady thermal analysis",
+      "author": "Errera",
+      "year": "2014"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0145",
+      "doi-asserted-by": "crossref",
+      "first-page": "920",
+      "DOI": "10.1002/nme.1396",
+      "article-title": "A simultaneous solution procedure for strong interactions of generalized Newtonian fluids and viscoelastic solids at large strains",
+      "volume": "64",
+      "author": "Hübner",
+      "year": "2005",
+      "journal-title": "Int. J. Numer. Meth. Eng."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0150",
+      "doi-asserted-by": "crossref",
+      "first-page": "205",
+      "DOI": "10.1007/s11831-007-9006-6",
+      "article-title": "A fully implicit computational strategy for strongly coupled fluid-solid interaction",
+      "volume": "14–3",
+      "author": "Dettmer",
+      "year": "2007",
+      "journal-title": "Arch. Comput. Methods Eng."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0155",
+      "doi-asserted-by": "crossref",
+      "first-page": "61",
+      "DOI": "10.1016/0045-7825(80)90040-7",
+      "article-title": "Staggered transient analysis procedures for coupled dynamic systems formulation",
+      "volume": "24",
+      "author": "Felippa",
+      "year": "1980",
+      "journal-title": "Comput. Methods Appl. Mech. Eng."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0160",
+      "doi-asserted-by": "crossref",
+      "first-page": "79",
+      "DOI": "10.1016/0045-7825(95)92707-9",
+      "article-title": "Partitioned procedures for the transient solution of coupled aeroelastic problems",
+      "volume": "124",
+      "author": "Piperno",
+      "year": "1995",
+      "journal-title": "Comput. Methods Appl. Mech. Eng."
+    },
+    {
+      "issue": "8–11",
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0165",
+      "doi-asserted-by": "crossref",
+      "first-page": "805",
+      "DOI": "10.1016/S0045-7949(02)00409-1",
+      "article-title": "Partitioned strong coupling algorithms for fluid-structure interaction",
+      "volume": "81",
+      "author": "Matthies",
+      "year": "2003",
+      "journal-title": "Comput. Struct."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0170",
+      "series-title": "Iterative Solution of Nonlinear Equations in Several Variables",
+      "author": "Ortega",
+      "year": "1970"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0175",
+      "unstructured": "K.C. Park, A. Felippa, Partitioned analysis of coupled systems, in: T. Belytschko, H.T.J.R. (Eds.), Computational Methods for Transient Analysis, North-Holland Pub. Co., 1983, pp. 157–219."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0180",
+      "doi-asserted-by": "crossref",
+      "first-page": "185",
+      "DOI": "10.1007/s11831-013-9085-5",
+      "article-title": "Partitioned simulation of fluid-structure interaction",
+      "volume": "20–3",
+      "author": "Degroote",
+      "year": "2013",
+      "journal-title": "Arch. Comput. Methods Eng."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0185",
+      "first-page": "629",
+      "article-title": "On the accuracy, stability, and performance of the solution of three-dimensional nonlinear transient aeroelastic problems by partitioned procedures",
+      "volume": "1",
+      "author": "Farhat",
+      "year": "1996",
+      "journal-title": "AIAA/ASME/ASCE/AHC/Struct., Struct. Dyn. Mater. Conf."
+    },
+    {
+      "issue": "4",
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0190",
+      "doi-asserted-by": "crossref",
+      "first-page": "333",
+      "DOI": "10.1615/IntJMultCompEng.2013004653",
+      "article-title": "Simulation of conjugate heat transfer via a temporal multiscale approach",
+      "volume": "11",
+      "author": "Baqué",
+      "year": "2013",
+      "journal-title": "J. Multiscale Comput. Eng."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0195",
+      "doi-asserted-by": "crossref",
+      "first-page": "4506",
+      "DOI": "10.1016/j.cma.2004.12.005",
+      "article-title": "Added-mass effect in the design of partitioned algorithms for fluid-structure problems",
+      "volume": "194",
+      "author": "Causin",
+      "year": "2005",
+      "journal-title": "Comput. Methods Appl. Mech. Eng."
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0200",
+      "doi-asserted-by": "crossref",
+      "first-page": "61",
+      "DOI": "10.1007/s00466-008-0255-5",
+      "article-title": "Fixed-point fluid-structure interaction solvers with dynamic relaxation",
+      "volume": "43",
+      "author": "Küttler",
+      "year": "2008",
+      "journal-title": "Comput. Mech."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0205",
+      "series-title": "51th International Conference on Applied Aerodynamics",
+      "article-title": "A numerical efficient approach for coupled aerothermal simulations in fluid-structure systems",
+      "author": "Errera",
+      "year": "2016"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0210",
+      "unstructured": "http://www.zset-software.com."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0215",
+      "doi-asserted-by": "crossref",
+      "unstructured": "F.R. Menter, Zonal two-equation k-ω turbulence model for aerodynamic flows, AIAA Paper 1993–2906, 1993.",
+      "DOI": "10.2514/6.1993-2906"
+    },
+    {
+      "issue": "8",
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0220",
+      "doi-asserted-by": "crossref",
+      "first-page": "269",
+      "DOI": "10.2514/3.12149",
+      "article-title": "Two-equation eddy-viscosity turbulence models for engineering applications",
+      "volume": "32",
+      "author": "Menter",
+      "year": "1994",
+      "journal-title": "AIAA J."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0225",
+      "unstructured": "F.R. Menter, M. Kuntz, R. Langtry, Ten years of industrial experience with the SST turbulence model, Turbulence, Heat and Mass Transfer 4 (2003) Begell House Inc."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2017.03.048_b0230",
+      "unstructured": "http://www.cerfacs.fr/globc/PALM_WEB/."
+    }
+  ],
+  "container-title": "International Journal of Heat and Mass Transfer",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0017931016331222?httpAccept=text/xml",
+      "content-type": "text/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0017931016331222?httpAccept=text/plain",
+      "content-type": "text/plain",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2018,
+        7,
+        6
+      ]
+    ],
+    "date-time": "2018-07-06T19:19:38Z",
+    "timestamp": 1530904778000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0017931016331222"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2017,
+        7
+      ]
+    ]
+  },
+  "references-count": 46,
+  "alternative-id": [
+    "S0017931016331222"
+  ],
+  "URL": "http://dx.doi.org/10.1016/j.ijheatmasstransfer.2017.03.048",
+  "relation": {},
+  "ISSN": [
+    "0017-9310"
+  ],
+  "subject": [],
+  "container-title-short": "International Journal of Heat and Mass Transfer",
+  "published": {
+    "date-parts": [
+      [
+        2017,
+        7
+      ]
+    ]
+  },
+  "assertion": [
+    {
+      "value": "Elsevier",
+      "name": "publisher",
+      "label": "This article is maintained by"
+    },
+    {
+      "value": "A coupling approach to modeling heat transfer during a full transient flight cycle",
+      "name": "articletitle",
+      "label": "Article Title"
+    },
+    {
+      "value": "International Journal of Heat and Mass Transfer",
+      "name": "journaltitle",
+      "label": "Journal Title"
+    },
+    {
+      "value": "https://doi.org/10.1016/j.ijheatmasstransfer.2017.03.048",
+      "name": "articlelink",
+      "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+      "value": "article",
+      "name": "content_type",
+      "label": "Content Type"
+    },
+    {
+      "value": "© 2017 Elsevier Ltd. All rights reserved.",
+      "name": "copyright",
+      "label": "Copyright"
+    }
+  ]
+}

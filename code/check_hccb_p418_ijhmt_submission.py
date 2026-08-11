@@ -310,6 +310,38 @@ def citable_data_record(root: Path) -> dict[str, object]:
     }
 
 
+def reference_metadata_record(root: Path) -> dict[str, object]:
+    candidates = sorted(
+        (root / "results").glob("hccb_p418_reference_metadata_check_*/summary.json")
+    )
+    if not candidates:
+        return {
+            "ready": False,
+            "path": None,
+            "entry_count": 0,
+            "doi_entry_count": 0,
+            "unresolved_review_count": 0,
+            "fetch_failure_count": 0,
+        }
+    path = candidates[-1]
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    return {
+        "ready": (
+            payload.get("status") == "p418_reference_metadata_check_complete"
+            and int(payload.get("entry_count", 0)) > 0
+            and int(payload.get("doi_unresolved_review_count", -1)) == 0
+            and int(payload.get("doi_fetch_failure_count", -1)) == 0
+        ),
+        "path": str(path.resolve()),
+        "entry_count": int(payload.get("entry_count", 0)),
+        "doi_entry_count": int(payload.get("doi_entry_count", 0)),
+        "unresolved_review_count": int(
+            payload.get("doi_unresolved_review_count", 0)
+        ),
+        "fetch_failure_count": int(payload.get("doi_fetch_failure_count", 0)),
+    }
+
+
 def repository_doi_text_checks(
     data_record: dict[str, object],
     manuscript_text: str,
@@ -532,6 +564,7 @@ def build(
         if not path.is_file() or path.stat().st_size == 0
     ]
     data_record = citable_data_record(root)
+    reference_record = reference_metadata_record(root)
     missing_bibliography_entries = sorted(
         set(citation_keys) - set(bibliography_keys)
     )
@@ -751,6 +784,10 @@ def build(
         "all_bibliography_entries_have_doi_or_source_url": (
             not bibliography_entries_missing_persistent_identifier
         ),
+        "reference_metadata_checked_without_unresolved_differences": bool(
+            reference_record["ready"]
+        )
+        and int(reference_record["entry_count"]) == len(bibliography_keys),
         "editable_manuscript_sources_present": not missing_editable_sources,
         "data_and_code_availability_is_truthful": (
             "https://github.com/wangjianfttt/"
@@ -895,6 +932,7 @@ def build(
         "bibliography_entries_missing_persistent_identifier": (
             bibliography_entries_missing_persistent_identifier
         ),
+        "reference_metadata_record": reference_record,
         "editable_manuscript_sources": [
             str(path.resolve()) for path in editable_source_paths
         ],
@@ -962,6 +1000,9 @@ def write_chinese(path: Path, payload: dict[str, object]) -> None:
         "bibtex_keys_are_unique": "BibTeX键没有重复",
         "all_bibliography_entries_have_doi_or_source_url": (
             "每条文献都有DOI或原始来源网址"
+        ),
+        "reference_metadata_checked_without_unresolved_differences": (
+            "文献题录已逐条复核且无未解决差异"
         ),
         "editable_manuscript_sources_present": "LaTeX和BibTeX可编辑源文件齐全",
         "data_and_code_availability_is_truthful": "数据和代码公开说明符合当前实际状态",

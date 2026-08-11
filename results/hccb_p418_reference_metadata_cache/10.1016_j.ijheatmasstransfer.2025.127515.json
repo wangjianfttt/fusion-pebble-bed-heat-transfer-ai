@@ -1,0 +1,915 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        8,
+        5
+      ]
+    ],
+    "date-time": "2026-08-05T08:04:42Z",
+    "timestamp": 1785917082690,
+    "version": "3.56.0"
+  },
+  "reference-count": 49,
+  "publisher": "Elsevier BV",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            12,
+            1
+          ]
+        ],
+        "date-time": "2025-12-01T00:00:00Z",
+        "timestamp": 1764547200000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            12,
+            1
+          ]
+        ],
+        "date-time": "2025-12-01T00:00:00Z",
+        "timestamp": 1764547200000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/legal/tdmrep-license"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            12,
+            1
+          ]
+        ],
+        "date-time": "2025-12-01T00:00:00Z",
+        "timestamp": 1764547200000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-017"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            12,
+            1
+          ]
+        ],
+        "date-time": "2025-12-01T00:00:00Z",
+        "timestamp": 1764547200000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-037"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            12,
+            1
+          ]
+        ],
+        "date-time": "2025-12-01T00:00:00Z",
+        "timestamp": 1764547200000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-012"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            12,
+            1
+          ]
+        ],
+        "date-time": "2025-12-01T00:00:00Z",
+        "timestamp": 1764547200000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-029"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            12,
+            1
+          ]
+        ],
+        "date-time": "2025-12-01T00:00:00Z",
+        "timestamp": 1764547200000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-004"
+    }
+  ],
+  "funder": [
+    {
+      "DOI": "10.13039/501100012226",
+      "name": "Fundamental Research Funds for the Central Universities",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "DUT24MS007"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "DUT24MS007"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100012226",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/501100012226",
+      "name": "Fundamental Research Funds for the Central Universities",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "DUT24BK037"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "DUT24BK037"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100012226",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/501100001809",
+      "name": "National Natural Science Foundation of China",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "12172078"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "12172078"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100001809",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/501100012166",
+      "name": "National Key Research and Development Program of China",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "2024YFE0213500"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "2024YFE0213500"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100012166",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    }
+  ],
+  "content-domain": {
+    "domain": [
+      "elsevier.com",
+      "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2025,
+        12
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.ijheatmasstransfer.2025.127515",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2025,
+        7,
+        15
+      ]
+    ],
+    "date-time": "2025-07-15T08:47:59Z",
+    "timestamp": 1752569279000
+  },
+  "page": "127515",
+  "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 17,
+  "special_numbering": "C",
+  "title": "An improved physics-informed neural network framework for solving transient nonlinear and inhomogeneous heat conduction problems",
+  "prefix": "10.1016",
+  "volume": "252",
+  "author": [
+    {
+      "ORCID": "https://orcid.org/0009-0008-2886-179X",
+      "authenticated-orcid": false,
+      "given": "Yuxuan",
+      "family": "Li",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0009-0007-7434-4868",
+      "authenticated-orcid": false,
+      "given": "Weihang",
+      "family": "Liu",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Jiawen",
+      "family": "Ren",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0002-1038-4488",
+      "authenticated-orcid": false,
+      "given": "Miao",
+      "family": "Cui",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Zechou",
+      "family": "Zhang",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Mikhail A.",
+      "family": "Nikolaitchik",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    }
+  ],
+  "member": "78",
+  "reference": [
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0001",
+      "article-title": "Experimental and numerical evaluation of heat transfer enhancement by internal flow excitation",
+      "volume": "192",
+      "author": "Saeed",
+      "year": "2023",
+      "journal-title": "Int. J. Therm. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0002",
+      "doi-asserted-by": "crossref",
+      "first-page": "1",
+      "DOI": "10.1007/s10765-021-02849-2",
+      "article-title": "Controlling heat conduction with nonlinear-transformation cloaking",
+      "volume": "42",
+      "author": "Liu",
+      "year": "2021",
+      "journal-title": "Int. J. Thermophys."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0003",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2024.125382",
+      "article-title": "Dynamic thermal response behaviors of pumped two-phase loop with latent heat storage",
+      "volume": "225",
+      "author": "Zhang",
+      "year": "2024",
+      "journal-title": "Int. J. Heat. Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0004",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijthermalsci.2024.109209",
+      "article-title": "Analysis of heat transfer coefficient and skid marks in a slab reheating furnace considering beam misalignment and contact heat conduction",
+      "volume": "204",
+      "author": "Wang",
+      "year": "2024",
+      "journal-title": "Int. J. Therm. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0005",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.icheatmasstransfer.2022.106220",
+      "article-title": "Inverse method for simultaneously estimating temperature-dependent solid- and liquid-phase thermal conductivities during phase transition",
+      "volume": "137",
+      "author": "Zhou",
+      "year": "2022",
+      "journal-title": "Int. Commun. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0006",
+      "doi-asserted-by": "crossref",
+      "first-page": "42",
+      "DOI": "10.1016/j.tsep.2019.01.009",
+      "article-title": "Finite difference method based analysis of bio-heat transfer in human breast cyst",
+      "volume": "10",
+      "author": "MadhukarPatil",
+      "year": "2019",
+      "journal-title": "Therm. Sci. Eng. Prog."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0007",
+      "doi-asserted-by": "crossref",
+      "first-page": "113",
+      "DOI": "10.1016/j.ijthermalsci.2012.02.024",
+      "article-title": "A new approach for the estimation of temperature-dependent thermal properties by solving transient inverse heat conduction problems",
+      "volume": "58",
+      "author": "Cui",
+      "year": "2012",
+      "journal-title": "Int. J. Therm. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0008",
+      "article-title": "A general finite element method: extension of variational analysis for nonlinear heat conduction with temperature-dependent properties and boundary conditions, and its implementation as local refinement",
+      "volume": "29",
+      "author": "Xin",
+      "year": "2021",
+      "journal-title": "Comput. Math. Appl."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0009",
+      "first-page": "591",
+      "article-title": "Solutions of continyous and discontinyous anisotropic heat conduction problems with the numerical manifold method",
+      "volume": "41",
+      "author": "Liu",
+      "year": "2020",
+      "journal-title": "Appl. Math. Mech."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0010",
+      "doi-asserted-by": "crossref",
+      "first-page": "16",
+      "DOI": "10.1007/s40314-024-02953-7",
+      "article-title": "A meshless local Galerkin method for solving a class of nonlinear time-dependent mixed integral equations on non-rectangular 2D domains",
+      "volume": "44",
+      "author": "Mehregan",
+      "year": "2024",
+      "journal-title": "Comput. Appl. Math."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0011",
+      "doi-asserted-by": "crossref",
+      "first-page": "1284",
+      "DOI": "10.1016/j.ijheatmasstransfer.2017.11.074",
+      "article-title": "A peridynamic framework and simulation of non-fourierand nonlocal heat conduction",
+      "volume": "118",
+      "author": "Wang",
+      "year": "2018",
+      "journal-title": "Int. J. Heat. Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0012",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.applthermaleng.2024.125033",
+      "article-title": "Real-time 3D temperature field reconstruction for aluminum alloy forging die using Swin Transformer integrated deep learning framework",
+      "volume": "260",
+      "author": "Hu",
+      "year": "2025",
+      "journal-title": "Appl. Therm. Eng."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0013",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.measurement.2024.116210",
+      "article-title": "Perception and reconstruction of temperature field in forgings based on physical model and CNN model",
+      "volume": "242",
+      "author": "Wan",
+      "year": "2025",
+      "journal-title": "Measurement"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0014",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ast.2024.109241",
+      "article-title": "Real-time reconstruction of 3D transient non-uniform temperature field for thermal protection system based on machine learning",
+      "volume": "151",
+      "author": "Zhu",
+      "year": "2024",
+      "journal-title": "Aerosp. Sci. Technol."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0015",
+      "doi-asserted-by": "crossref",
+      "first-page": "686",
+      "DOI": "10.1016/j.jcp.2018.10.045",
+      "article-title": "Physics-informed neural networks: a deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations",
+      "volume": "378",
+      "author": "Raissi",
+      "year": "2019",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0016",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cma.2020.113028",
+      "article-title": "Conservative physics-informed neural networks on discrete domains for conservation laws: applications to forward and inverse problems",
+      "volume": "365",
+      "author": "Jagtap",
+      "year": "2020",
+      "journal-title": "Comput. Methods Appl. Mech. Eng."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0017",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cma.2020.113547",
+      "article-title": "hp-VIPINN: variational physics-informed neural networks with domain decomposition",
+      "volume": "374",
+      "author": "Kharazmi",
+      "year": "2021",
+      "journal-title": "Comput. Methods Appl. Mech. Eng."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0018",
+      "unstructured": "B. Bahmani, W. Sun. Training multi-objective/multi-task collocation physics-informed neural network with student/teachers transfer learnings, arXiv preprintarXiv, 2107 (2021) 11496."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0019",
+      "doi-asserted-by": "crossref",
+      "first-page": "5514",
+      "DOI": "10.1109/TNNLS.2021.3070878",
+      "article-title": "A high-efficient hybrid physics-informed neural networks based on convolutional neural network",
+      "volume": "33",
+      "author": "Fang",
+      "year": "2022",
+      "journal-title": "IEEe Trans. Neural Netw. Learn. Syst."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0020",
+      "doi-asserted-by": "crossref",
+      "first-page": "218",
+      "DOI": "10.1038/s42256-021-00302-5",
+      "article-title": "Learning nonlinear operators via DeepONet based on the universal approximation theorem of operators",
+      "volume": "3",
+      "author": "Lu",
+      "year": "2021",
+      "journal-title": "Nat. Mach. Intell."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0021",
+      "article-title": "Physics-informed neural networks for solving multiscale mode-resolved phonon Boltzmann transport equation",
+      "volume": "19",
+      "author": "Li",
+      "year": "2021",
+      "journal-title": "Mater. Today Phys."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0022",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.advwatres.2020.103539",
+      "article-title": "PoreFlow-net: a 3D convolutional neural network to predict fluid flow through porous media",
+      "volume": "138",
+      "author": "Santos",
+      "year": "2020",
+      "journal-title": "Adv. Water. Resour."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0023",
+      "series-title": "SPE Reservoir Simulation Conference",
+      "article-title": "Physics informed deep learning for flow and transport in porous media",
+      "author": "Fraces",
+      "year": "2021"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0024",
+      "doi-asserted-by": "crossref",
+      "first-page": "908",
+      "DOI": "10.1016/j.ijheatmasstransfer.2018.08.082",
+      "article-title": "Predicting the effective thermal conductivities of composite materials and porous media by machine learning methods",
+      "volume": "127",
+      "author": "Wei",
+      "year": "2018",
+      "journal-title": "Int. J. Heat. Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0025",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2023.124671",
+      "article-title": "Physics-informed neural networks for studying heat transfer in porous media",
+      "volume": "217",
+      "author": "Xu",
+      "year": "2023",
+      "journal-title": "Int. J. Heat. Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0026",
+      "article-title": "T-phPINN: physics-informed neural networks for solving 2D non-fourier heat conduction equations",
+      "volume": "235",
+      "author": "Zhen",
+      "year": "2024",
+      "journal-title": "Int. J. Heat. Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0027",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2024.126393",
+      "article-title": "Adaptive fractional physics-informed neural networks for solving forward and inverse problems of anomalous heat conduction in functionally graded material",
+      "volume": "236",
+      "author": "Ma",
+      "year": "2025",
+      "journal-title": "Int. J. Heat. Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0028",
+      "article-title": "A computational framework for the indirect estimation of interface thermal resistance of composite materials using XIPINN",
+      "volume": "200",
+      "author": "Leonidas",
+      "year": "2023",
+      "journal-title": "Int. J. Heat. Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0029",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jcp.2022.111722",
+      "article-title": "Self-adaptive physics-informed neural networks",
+      "volume": "474",
+      "author": "McClenny",
+      "year": "2023",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0030",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jcp.2022.111121",
+      "article-title": "Meta-learning PINN loss functions",
+      "volume": "458",
+      "author": "Psaros",
+      "year": "2022",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0031",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ast.2024.109709",
+      "article-title": "Multi-physical fields prediction model for turbine cascades based on physical information neural networks",
+      "volume": "155",
+      "author": "Li",
+      "year": "2024",
+      "journal-title": "Aerosp. Sci. Technol."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0032",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijmecsci.2024.109525",
+      "article-title": "Boundary integrated neural networks for 2D elastostatic and piezoelectric problems",
+      "volume": "280",
+      "author": "Zhang",
+      "year": "2024",
+      "journal-title": "Int. J. Mech. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0033",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.neunet.2024.106756",
+      "article-title": "Spectral integrated neural networks (SINNs) for solving forward and inverse dynamic problems",
+      "volume": "180",
+      "author": "Qiu",
+      "year": "2024",
+      "journal-title": "Neural Netw."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0034",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.neunet.2025.107559",
+      "article-title": "Spectral integrated neural networks with large time steps for 2D and 3D transient elastodynamic analysis",
+      "volume": "188",
+      "author": "Ma",
+      "year": "2025",
+      "journal-title": "Neural Netw."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0035",
+      "article-title": "Parallel physics-informed neural networks via domain decomposition",
+      "volume": "447",
+      "author": "Khemraj",
+      "year": "2021",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0036",
+      "first-page": "89",
+      "article-title": "Research on nonlinear transient thermal conductivity in multi Media based on physical information neural networks",
+      "volume": "57",
+      "author": "Chen",
+      "year": "2025",
+      "journal-title": "Acta Mech. Sin."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0037",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijthermalsci.2023.108360",
+      "article-title": "Numerical verification of a nonlocal discrete model for anisotropic heat conduction problems",
+      "volume": "191",
+      "author": "Liu",
+      "year": "2023",
+      "journal-title": "Int. J. Therm. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0038",
+      "first-page": "1902",
+      "article-title": "A prediction model of wall shear stress for ultra-high-pressure water-jet nozzle based on hybrid BP neural network",
+      "volume": "16",
+      "author": "Chen",
+      "year": "2022",
+      "journal-title": "Eng. Appl. Comput. Fluid Mech."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0039",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ast.2024.109719",
+      "article-title": "Trajectory tracking control of a morphing UAV using radial basis function artificial neural network based fast terminal sliding mode: theory and experimental",
+      "volume": "155",
+      "author": "Derrouaoui",
+      "year": "2024",
+      "journal-title": "Aerosp. Sci. Technol."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0040",
+      "doi-asserted-by": "crossref",
+      "first-page": "436",
+      "DOI": "10.1038/nature14539",
+      "article-title": "Deep learning",
+      "volume": "521",
+      "author": "Lecun",
+      "year": "2015",
+      "journal-title": "Nature"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0041",
+      "doi-asserted-by": "crossref",
+      "first-page": "6136",
+      "DOI": "10.1038/s41467-021-26434-1",
+      "article-title": "Physics-informed learning of governing equations from scarce data",
+      "volume": "12",
+      "author": "Zhao",
+      "year": "2021",
+      "journal-title": "Nat. Commun."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0042",
+      "doi-asserted-by": "crossref",
+      "first-page": "503",
+      "DOI": "10.1007/BF01589116",
+      "article-title": "On the limited memory BFGS method for large scale optimization",
+      "volume": "45",
+      "author": "Liu",
+      "year": "1989",
+      "journal-title": "Math. Program."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0043",
+      "doi-asserted-by": "crossref",
+      "first-page": "92",
+      "DOI": "10.1016/j.neucom.2022.06.111",
+      "article-title": "Activation functions in deep learning: a comprehensive survey and benchmark",
+      "volume": "503",
+      "author": "Dubey",
+      "year": "2022",
+      "journal-title": "Neurocomputing"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0044",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijthermalsci.2021.107436",
+      "article-title": "A physical model-free ant colony optimization network algorithm and full scale experimental investigation on ceiling temperature distribution in the utility tunnel fire",
+      "volume": "174",
+      "author": "Sun",
+      "year": "2022",
+      "journal-title": "Int. J. Therm. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0045",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.geothermics.2024.102945",
+      "article-title": "Prediction model of undisturbed ground temperature using artificial neural network (ANN) and multiple regressions approach",
+      "volume": "119",
+      "author": "King",
+      "year": "2024",
+      "journal-title": "Geothermics."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0046",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cma.2022.115671",
+      "article-title": "A comprehensive study of non-adaptive and residual-based adaptive sampling for physics-informed neural networks",
+      "volume": "403",
+      "author": "Wu",
+      "year": "2023",
+      "journal-title": "Comput. Methods Appl. Mech. Eng."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0047",
+      "first-page": "1",
+      "article-title": "Pytorch: an imperative style, high-performance deep learning library",
+      "volume": "32",
+      "author": "Paszke",
+      "year": "2019",
+      "journal-title": "Adv. Neural Inf. Process. Syst."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0048",
+      "doi-asserted-by": "crossref",
+      "first-page": "265",
+      "DOI": "10.1016/j.applthermaleng.2016.08.162",
+      "article-title": "Inverse heat transfer prediction of the state of the brick wall of a melting furnace",
+      "volume": "110",
+      "author": "Hafid",
+      "year": "2017",
+      "journal-title": "Appl. Therm. Eng."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.127515_bib0049",
+      "doi-asserted-by": "crossref",
+      "first-page": "1",
+      "DOI": "10.1016/j.enganabound.2023.09.002",
+      "article-title": "A novel method for simultaneous determination of thermo-physical properties and boundary conditions of phase change problems based on element differential method",
+      "volume": "157",
+      "author": "Zhang",
+      "year": "2023",
+      "journal-title": "Eng. Anal. Bound. Elem."
+    }
+  ],
+  "container-title": "International Journal of Heat and Mass Transfer",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0017931025008531?httpAccept=text/xml",
+      "content-type": "text/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0017931025008531?httpAccept=text/plain",
+      "content-type": "text/plain",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2025,
+        7,
+        23
+      ]
+    ],
+    "date-time": "2025-07-23T12:47:15Z",
+    "timestamp": 1753274835000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0017931025008531"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2025,
+        12
+      ]
+    ]
+  },
+  "references-count": 49,
+  "alternative-id": [
+    "S0017931025008531"
+  ],
+  "URL": "http://dx.doi.org/10.1016/j.ijheatmasstransfer.2025.127515",
+  "relation": {},
+  "ISSN": [
+    "0017-9310"
+  ],
+  "subject": [],
+  "container-title-short": "International Journal of Heat and Mass Transfer",
+  "published": {
+    "date-parts": [
+      [
+        2025,
+        12
+      ]
+    ]
+  },
+  "assertion": [
+    {
+      "value": "Elsevier",
+      "name": "publisher",
+      "label": "This article is maintained by"
+    },
+    {
+      "value": "An improved physics-informed neural network framework for solving transient nonlinear and inhomogeneous heat conduction problems",
+      "name": "articletitle",
+      "label": "Article Title"
+    },
+    {
+      "value": "International Journal of Heat and Mass Transfer",
+      "name": "journaltitle",
+      "label": "Journal Title"
+    },
+    {
+      "value": "https://doi.org/10.1016/j.ijheatmasstransfer.2025.127515",
+      "name": "articlelink",
+      "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+      "value": "article",
+      "name": "content_type",
+      "label": "Content Type"
+    },
+    {
+      "value": "© 2025 Elsevier Ltd. All rights are reserved, including those for text and data mining, AI training, and similar technologies.",
+      "name": "copyright",
+      "label": "Copyright"
+    }
+  ],
+  "article-number": "127515"
+}

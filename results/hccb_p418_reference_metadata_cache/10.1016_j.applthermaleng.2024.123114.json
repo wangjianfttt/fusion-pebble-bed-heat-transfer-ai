@@ -1,0 +1,711 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        3,
+        6
+      ]
+    ],
+    "date-time": "2026-03-06T06:54:56Z",
+    "timestamp": 1772780096497,
+    "version": "3.50.1"
+  },
+  "reference-count": 32,
+  "publisher": "Elsevier BV",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2024,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2024-06-01T00:00:00Z",
+        "timestamp": 1717200000000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2024,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2024-06-01T00:00:00Z",
+        "timestamp": 1717200000000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/legal/tdmrep-license"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2024,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2024-06-01T00:00:00Z",
+        "timestamp": 1717200000000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-017"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2024,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2024-06-01T00:00:00Z",
+        "timestamp": 1717200000000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-037"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2024,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2024-06-01T00:00:00Z",
+        "timestamp": 1717200000000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-012"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2024,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2024-06-01T00:00:00Z",
+        "timestamp": 1717200000000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-029"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2024,
+            6,
+            1
+          ]
+        ],
+        "date-time": "2024-06-01T00:00:00Z",
+        "timestamp": 1717200000000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-004"
+    }
+  ],
+  "funder": [
+    {
+      "DOI": "10.13039/501100001809",
+      "name": "National Natural Science Foundation of China",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "52276052"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "52276052"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100001809",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/501100018542",
+      "name": "Natural Science Foundation of Sichuan Province",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "2022NSFSC1216"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "2022NSFSC1216"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100018542",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    }
+  ],
+  "content-domain": {
+    "domain": [
+      "elsevier.com",
+      "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2024,
+        6
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.applthermaleng.2024.123114",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2024,
+        4,
+        6
+      ]
+    ],
+    "date-time": "2024-04-06T12:58:58Z",
+    "timestamp": 1712408338000
+  },
+  "page": "123114",
+  "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 6,
+  "special_numbering": "C",
+  "title": "Macroscopic transport characteristics in packed bed with a multi-physics inversion strategy for solid breeding blanket of HCCB TBM",
+  "prefix": "10.1016",
+  "volume": "247",
+  "author": [
+    {
+      "ORCID": "https://orcid.org/0000-0003-0237-8691",
+      "authenticated-orcid": false,
+      "given": "Mouhao",
+      "family": "Wang",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "Shanshan",
+      "family": "Bu",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "Bing",
+      "family": "Zhou",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0001-5140-1777",
+      "authenticated-orcid": false,
+      "given": "Baoping",
+      "family": "Gong",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "Zhenzhong",
+      "family": "Li",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "Deqi",
+      "family": "Chen",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    }
+  ],
+  "member": "78",
+  "reference": [
+    {
+      "key": "10.1016/j.applthermaleng.2024.123114_b0005",
+      "first-page": "282",
+      "article-title": "Measurement of effective conductivity of lithium oxide & beryllium packed bed",
+      "volume": "282",
+      "author": "Enoeda",
+      "year": "1994",
+      "journal-title": "IEEE."
+    },
+    {
+      "key": "10.1016/j.applthermaleng.2024.123114_b0010",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.energy.2020.119495",
+      "article-title": "Study of power conversion system for Chinese fusion engineering testing reactor",
+      "volume": "218",
+      "author": "Chen",
+      "year": "2021",
+      "journal-title": "Energy"
+    },
+    {
+      "key": "10.1016/j.applthermaleng.2024.123114_b0015",
+      "doi-asserted-by": "crossref",
+      "unstructured": "Linares Hurtado JI, Cantizano González A, Moratilla Soria BY, Martín Palacios V, Batet L. Supercritical CO2 Brayton power cycles for DEMO (demonstration power plant) fusion reactor based on dual coolant lithium lead blanket. 2016.",
+      "DOI": "10.1016/j.energy.2016.01.020"
+    },
+    {
+      "key": "10.1016/j.applthermaleng.2024.123114_b0020",
+      "doi-asserted-by": "crossref",
+      "first-page": "729",
+      "DOI": "10.1016/j.fusengdes.2016.02.010",
+      "article-title": "Current progress of Chinese HCCB TBM program",
+      "volume": "109",
+      "author": "Feng",
+      "year": "2016",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "issue": "9",
+      "key": "10.1016/j.applthermaleng.2024.123114_b0025",
+      "first-page": "72",
+      "article-title": "Review of F abrication and Properties of Solid Tritium Breeders",
+      "volume": "22",
+      "author": "Zhu",
+      "year": "2008",
+      "journal-title": "Materials Reports."
+    },
+    {
+      "issue": "7–8",
+      "key": "10.1016/j.applthermaleng.2024.123114_b0030",
+      "doi-asserted-by": "crossref",
+      "first-page": "1380",
+      "DOI": "10.1016/j.fusengdes.2014.01.065",
+      "article-title": "Conceptual design of a water cooled breeder blanket for CFETR",
+      "volume": "89",
+      "author": "Liu",
+      "year": "2014",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "issue": "7–8",
+      "key": "10.1016/j.applthermaleng.2024.123114_b0035",
+      "doi-asserted-by": "crossref",
+      "first-page": "1341",
+      "DOI": "10.1016/j.fusengdes.2014.02.036",
+      "article-title": "Requirements for helium cooled pebble bed blanket and R&D activities",
+      "volume": "89",
+      "author": "Carloni",
+      "year": "2014",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.applthermaleng.2024.123114_b0040",
+      "doi-asserted-by": "crossref",
+      "first-page": "27",
+      "DOI": "10.1002/er.3750",
+      "article-title": "Advancements in DEMO WCLL breeding blanket design and integration",
+      "volume": "42",
+      "author": "Martelli",
+      "year": "2018",
+      "journal-title": "Int. J. Energy Res."
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.applthermaleng.2024.123114_b0045",
+      "first-page": "200",
+      "article-title": "Numerical simulation on thermal hydraulics characteristics of breeder pebble bed for China HCCB-TBM",
+      "volume": "34",
+      "author": "Wang",
+      "year": "2014",
+      "journal-title": "Nuclear Fusion and Plasma Physics"
+    },
+    {
+      "issue": "8",
+      "key": "10.1016/j.applthermaleng.2024.123114_b0050",
+      "first-page": "1367",
+      "article-title": "DEM-CFD Coupled Simulation for Determination of Character of Heat and Mass Transfer and Purge Gas Flow in Li4SiO4 Pebble Bed",
+      "volume": "55",
+      "author": "Zhang",
+      "year": "2021",
+      "journal-title": "Atomic Energy Science and Technology"
+    },
+    {
+      "key": "10.1016/j.applthermaleng.2024.123114_b0055",
+      "unstructured": "Zhang B, Xia Z, Zhou Z. Tritium Transport Modeling and Analysis for HCCB Blanket of CFETR. Conference Tritium Transport Modeling and Analysis for HCCB Blanket of CFETR, vol. 85260. American Society of Mechanical Engineers, p. V003T08A17."
+    },
+    {
+      "key": "10.1016/j.applthermaleng.2024.123114_b0060",
+      "doi-asserted-by": "crossref",
+      "first-page": "114",
+      "DOI": "10.1016/j.pnucene.2017.12.012",
+      "article-title": "Numerical study on the purge gas flow and heat transfer characteristics in helium cooled solid breeder blanket of CFETR",
+      "volume": "105",
+      "author": "Wang",
+      "year": "2018",
+      "journal-title": "Prog. Nucl. Energy"
+    },
+    {
+      "key": "10.1016/j.applthermaleng.2024.123114_b0065",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cej.2021.129979",
+      "article-title": "Bulk permeability characteristics in a biomass moving bed and their effects on reactor design and scaling",
+      "volume": "420",
+      "author": "Kung",
+      "year": "2021",
+      "journal-title": "Chem. Eng. J."
+    },
+    {
+      "key": "10.1016/j.applthermaleng.2024.123114_b0070",
+      "doi-asserted-by": "crossref",
+      "first-page": "204",
+      "DOI": "10.1016/j.ijheatmasstransfer.2019.06.071",
+      "article-title": "Repeatable experimental measurements of effective thermal diffusivity and conductivity of pebble bed under vacuum and helium conditions",
+      "volume": "141",
+      "author": "Wu",
+      "year": "2019",
+      "journal-title": "Int. J. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.applthermaleng.2024.123114_b0075",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.fusengdes.2021.112564",
+      "article-title": "Simultaneous measurement of effective thermal conductivity and effective thermal diffusivity of Li2TiO3 pebble bed using transient hot-wire technique",
+      "volume": "171",
+      "author": "Patel",
+      "year": "2021",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.applthermaleng.2024.123114_b0080",
+      "series-title": "Convection in porous",
+      "author": "Nield",
+      "year": "2006"
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.applthermaleng.2024.123114_b0085",
+      "doi-asserted-by": "crossref",
+      "first-page": "199",
+      "DOI": "10.1021/i160071a001",
+      "article-title": "Flow through porous media-the Ergun equation revisited",
+      "volume": "18",
+      "author": "Macdonald",
+      "year": "1979",
+      "journal-title": "Ind. Eng. Chem. Fundam."
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.applthermaleng.2024.123114_b0090",
+      "doi-asserted-by": "crossref",
+      "first-page": "90",
+      "DOI": "10.1016/0021-9797(83)90238-2",
+      "article-title": "The effect of structure on the conductivity of a dispersion",
+      "volume": "94",
+      "author": "Chiew",
+      "year": "1983",
+      "journal-title": "J. Colloid Interface Sci."
+    },
+    {
+      "issue": "4658",
+      "key": "10.1016/j.applthermaleng.2024.123114_b0095",
+      "doi-asserted-by": "crossref",
+      "first-page": "387",
+      "DOI": "10.1038/183387a0",
+      "article-title": "Permeability of porous media",
+      "volume": "183",
+      "author": "Millington",
+      "year": "1959",
+      "journal-title": "Nature"
+    },
+    {
+      "key": "10.1016/j.applthermaleng.2024.123114_b0100",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.applthermaleng.2019.114511",
+      "article-title": "Numerical and experimental study of stagnant effective thermal conductivity of a graphite pebble bed with high solid to fluid thermal conductivity ratios",
+      "volume": "164",
+      "author": "Bu",
+      "year": "2020",
+      "journal-title": "Appl. Therm. Eng."
+    },
+    {
+      "issue": "2",
+      "key": "10.1016/j.applthermaleng.2024.123114_b0105",
+      "doi-asserted-by": "crossref",
+      "first-page": "726",
+      "DOI": "10.1016/j.ces.2009.09.026",
+      "article-title": "Computational study of forced convective heat transfer in structured packed beds with spherical or ellipsoidal particles",
+      "volume": "65",
+      "author": "Yang",
+      "year": "2010",
+      "journal-title": "Chem. Eng. Sci."
+    },
+    {
+      "key": "10.1016/j.applthermaleng.2024.123114_b0110",
+      "doi-asserted-by": "crossref",
+      "first-page": "136",
+      "DOI": "10.1016/j.fusengdes.2015.12.051",
+      "article-title": "A prediction model for the effective thermal conductivity of mono-sized pebble beds",
+      "volume": "103",
+      "author": "Wang",
+      "year": "2016",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.applthermaleng.2024.123114_b0115",
+      "series-title": "Dynamics of fluids in porous",
+      "author": "Bear",
+      "year": "2013"
+    },
+    {
+      "key": "10.1016/j.applthermaleng.2024.123114_b0120",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.anucene.2020.107524",
+      "article-title": "Numerical study of natural convection effects on effective thermal conductivity in a pebble bed",
+      "volume": "144",
+      "author": "Bu",
+      "year": "2020",
+      "journal-title": "Ann. Nucl. Energy"
+    },
+    {
+      "issue": "2",
+      "key": "10.1016/j.applthermaleng.2024.123114_b0125",
+      "doi-asserted-by": "crossref",
+      "first-page": "467",
+      "DOI": "10.1016/j.jpowsour.2009.03.026",
+      "article-title": "On modeling multi-component diffusion inside the porous anode of solid oxide fuel cells using Fick's model",
+      "volume": "192",
+      "author": "Cayan",
+      "year": "2009",
+      "journal-title": "J. Power Sources"
+    },
+    {
+      "key": "10.1016/j.applthermaleng.2024.123114_b0130",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2023.124325",
+      "article-title": "Pore-scale simulation on flow and heat transfer characteristics in packed beds with internal heat sources at low Reynolds numbers",
+      "volume": "213",
+      "author": "Wang",
+      "year": "2023",
+      "journal-title": "Int. J. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.applthermaleng.2024.123114_b0135",
+      "doi-asserted-by": "crossref",
+      "first-page": "84",
+      "DOI": "10.1016/j.fusengdes.2016.12.003",
+      "article-title": "Flow characteristics analysis of purge gas in unitary pebble beds by CFD simulation coupled with DEM geometry model for fusion blanket",
+      "volume": "114",
+      "author": "Chen",
+      "year": "2017",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "issue": "8",
+      "key": "10.1016/j.applthermaleng.2024.123114_b0140",
+      "doi-asserted-by": "crossref",
+      "first-page": "2022",
+      "DOI": "10.1002/aic.690490812",
+      "article-title": "Voidage variation in packed beds at small column to particle diameter ratio",
+      "volume": "49",
+      "author": "De Klerk",
+      "year": "2003",
+      "journal-title": "AIChE J"
+    },
+    {
+      "issue": "15–16",
+      "key": "10.1016/j.applthermaleng.2024.123114_b0145",
+      "doi-asserted-by": "crossref",
+      "first-page": "4442",
+      "DOI": "10.1016/j.ijheatmasstransfer.2012.04.014",
+      "article-title": "An inversion approach for the inverse heat conduction problems",
+      "volume": "55",
+      "author": "Li",
+      "year": "2012",
+      "journal-title": "Int. J. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.applthermaleng.2024.123114_b0150",
+      "doi-asserted-by": "crossref",
+      "unstructured": "Kennedy J, Eberhart R. Particle swarm optimization. Conference Particle swarm optimization, vol. 4. IEEE, p. 1942-8.",
+      "DOI": "10.1109/ICNN.1995.488968"
+    },
+    {
+      "key": "10.1016/j.applthermaleng.2024.123114_b0155",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2019.118574",
+      "article-title": "An optimizer using the PSO algorithm to determine thermal parameters of PCM: A case study of grey water heat harnessing",
+      "volume": "144",
+      "author": "Mazhar",
+      "year": "2019",
+      "journal-title": "Int. J. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.applthermaleng.2024.123114_b0160",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2022.123201",
+      "article-title": "Design of metamaterial-based heat manipulators by isogeometric shape optimization",
+      "volume": "196",
+      "author": "Jansari",
+      "year": "2022",
+      "journal-title": "Int. J. Heat Mass Transf."
+    }
+  ],
+  "container-title": "Applied Thermal Engineering",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S1359431124007828?httpAccept=text/xml",
+      "content-type": "text/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S1359431124007828?httpAccept=text/plain",
+      "content-type": "text/plain",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2024,
+        11,
+        15
+      ]
+    ],
+    "date-time": "2024-11-15T20:44:30Z",
+    "timestamp": 1731703470000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://linkinghub.elsevier.com/retrieve/pii/S1359431124007828"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2024,
+        6
+      ]
+    ]
+  },
+  "references-count": 32,
+  "alternative-id": [
+    "S1359431124007828"
+  ],
+  "URL": "http://dx.doi.org/10.1016/j.applthermaleng.2024.123114",
+  "relation": {},
+  "ISSN": [
+    "1359-4311"
+  ],
+  "subject": [],
+  "container-title-short": "Applied Thermal Engineering",
+  "published": {
+    "date-parts": [
+      [
+        2024,
+        6
+      ]
+    ]
+  },
+  "assertion": [
+    {
+      "value": "Elsevier",
+      "name": "publisher",
+      "label": "This article is maintained by"
+    },
+    {
+      "value": "Macroscopic transport characteristics in packed bed with a multi-physics inversion strategy for solid breeding blanket of HCCB TBM",
+      "name": "articletitle",
+      "label": "Article Title"
+    },
+    {
+      "value": "Applied Thermal Engineering",
+      "name": "journaltitle",
+      "label": "Journal Title"
+    },
+    {
+      "value": "https://doi.org/10.1016/j.applthermaleng.2024.123114",
+      "name": "articlelink",
+      "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+      "value": "article",
+      "name": "content_type",
+      "label": "Content Type"
+    },
+    {
+      "value": "© 2024 Elsevier Ltd. All rights reserved.",
+      "name": "copyright",
+      "label": "Copyright"
+    }
+  ],
+  "article-number": "123114"
+}

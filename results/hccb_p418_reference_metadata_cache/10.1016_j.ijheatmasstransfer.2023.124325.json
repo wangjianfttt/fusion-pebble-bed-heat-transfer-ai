@@ -1,0 +1,812 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        8,
+        4
+      ]
+    ],
+    "date-time": "2026-08-04T10:40:30Z",
+    "timestamp": 1785840030307,
+    "version": "3.56.0"
+  },
+  "reference-count": 44,
+  "publisher": "Elsevier BV",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2023,
+            10,
+            1
+          ]
+        ],
+        "date-time": "2023-10-01T00:00:00Z",
+        "timestamp": 1696118400000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2023,
+            10,
+            1
+          ]
+        ],
+        "date-time": "2023-10-01T00:00:00Z",
+        "timestamp": 1696118400000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/legal/tdmrep-license"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2023,
+            10,
+            1
+          ]
+        ],
+        "date-time": "2023-10-01T00:00:00Z",
+        "timestamp": 1696118400000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-017"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2023,
+            10,
+            1
+          ]
+        ],
+        "date-time": "2023-10-01T00:00:00Z",
+        "timestamp": 1696118400000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-037"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2023,
+            10,
+            1
+          ]
+        ],
+        "date-time": "2023-10-01T00:00:00Z",
+        "timestamp": 1696118400000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-012"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2023,
+            10,
+            1
+          ]
+        ],
+        "date-time": "2023-10-01T00:00:00Z",
+        "timestamp": 1696118400000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-029"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2023,
+            10,
+            1
+          ]
+        ],
+        "date-time": "2023-10-01T00:00:00Z",
+        "timestamp": 1696118400000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-004"
+    }
+  ],
+  "funder": [
+    {
+      "DOI": "10.13039/501100001809",
+      "name": "National Natural Science Foundation of China",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "52276052"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "52276052"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100001809",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    }
+  ],
+  "content-domain": {
+    "domain": [
+      "elsevier.com",
+      "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2023,
+        10
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.ijheatmasstransfer.2023.124325",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2023,
+        6,
+        2
+      ]
+    ],
+    "date-time": "2023-06-02T18:30:46Z",
+    "timestamp": 1685730646000
+  },
+  "page": "124325",
+  "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 25,
+  "special_numbering": "C",
+  "title": "Pore-scale simulation on flow and heat transfer characteristics in packed beds with internal heat sources at low Reynolds numbers",
+  "prefix": "10.1016",
+  "volume": "213",
+  "author": [
+    {
+      "ORCID": "https://orcid.org/0000-0003-0237-8691",
+      "authenticated-orcid": false,
+      "given": "Mouhao",
+      "family": "Wang",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Shanshan",
+      "family": "Bu",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Bing",
+      "family": "Zhou",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Baoping",
+      "family": "Gong",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Zhenzhong",
+      "family": "Li",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Deqi",
+      "family": "Chen",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    }
+  ],
+  "member": "78",
+  "reference": [
+    {
+      "issue": "8",
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0001",
+      "doi-asserted-by": "crossref",
+      "first-page": "853",
+      "DOI": "10.1016/0009-2509(77)80071-7",
+      "article-title": "Velocity, temperature and conversion profiles in fixed bed catalytic reactors",
+      "volume": "32",
+      "author": "Lerou",
+      "year": "1977",
+      "journal-title": "Chem. Eng. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0002",
+      "doi-asserted-by": "crossref",
+      "first-page": "45",
+      "DOI": "10.1016/j.enconman.2012.07.032",
+      "article-title": "Burnup extension of the Fixed Bed Nuclear Reactor using alternative fuels",
+      "volume": "72",
+      "author": "Alkan",
+      "year": "2013",
+      "journal-title": "Energy Convers. Manage."
+    },
+    {
+      "issue": "7",
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0003",
+      "doi-asserted-by": "crossref",
+      "first-page": "778",
+      "DOI": "10.4236/eng.2011.37094",
+      "article-title": "Suiting dynamic models of fixed-bed catalytic reactors for computer-based applications",
+      "volume": "3",
+      "author": "Toledo",
+      "year": "2011",
+      "journal-title": "Engineering"
+    },
+    {
+      "issue": "5",
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0004",
+      "doi-asserted-by": "crossref",
+      "first-page": "463",
+      "DOI": "10.1016/0038-092X(83)90050-6",
+      "article-title": "High temperature solar gas heating comparison between packed and fluidized bed receivers—I",
+      "volume": "31",
+      "author": "Flamant",
+      "year": "1983",
+      "journal-title": "Sol. Energy"
+    },
+    {
+      "issue": "7–8",
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0005",
+      "doi-asserted-by": "crossref",
+      "first-page": "1380",
+      "DOI": "10.1016/j.fusengdes.2014.01.065",
+      "article-title": "Conceptual design of a water cooled breeder blanket for CFETR",
+      "volume": "89",
+      "author": "Liu",
+      "year": "2014",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "issue": "7–8",
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0006",
+      "doi-asserted-by": "crossref",
+      "first-page": "1341",
+      "DOI": "10.1016/j.fusengdes.2014.02.036",
+      "article-title": "Requirements for helium cooled pebble bed blanket and R&D activities",
+      "volume": "89",
+      "author": "Carloni",
+      "year": "2014",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0007",
+      "doi-asserted-by": "crossref",
+      "first-page": "1",
+      "DOI": "10.1016/j.ces.2016.11.008",
+      "article-title": "A DNS study of flow and heat transfer through slender fixed-bed reactors randomly packed with spherical particles",
+      "volume": "160",
+      "author": "Das",
+      "year": "2017",
+      "journal-title": "Chem. Eng. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0008",
+      "doi-asserted-by": "crossref",
+      "first-page": "121",
+      "DOI": "10.1016/j.nucengdes.2012.05.041",
+      "article-title": "Single-phase convection heat transfer characteristics of pebble-bed channels with internal heat generation",
+      "volume": "252",
+      "author": "Meng",
+      "year": "2012",
+      "journal-title": "Nucl. Eng. Des."
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0009",
+      "doi-asserted-by": "crossref",
+      "first-page": "1140",
+      "DOI": "10.1016/j.net.2022.12.001",
+      "article-title": "Multi-scale heat conduction models with improved equivalent thermal conductivity of TRISO fuel particles for FCM fuel",
+      "volume": "55",
+      "author": "Wang",
+      "year": "2023",
+      "journal-title": "Nucl. Eng. Technol."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0010",
+      "doi-asserted-by": "crossref",
+      "first-page": "303",
+      "DOI": "10.1016/j.fusengdes.2016.08.027",
+      "article-title": "Numerical modelling for the effective thermal conductivity of lithium meta titanate pebble bed with different packing structures",
+      "volume": "112",
+      "author": "Panchal",
+      "year": "2016",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "issue": "2",
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0011",
+      "doi-asserted-by": "crossref",
+      "first-page": "726",
+      "DOI": "10.1016/j.ces.2009.09.026",
+      "article-title": "Computational study of forced convective heat transfer in structured packed beds with spherical or ellipsoidal particles",
+      "volume": "65",
+      "author": "Yang",
+      "year": "2010",
+      "journal-title": "Chem. Eng. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0012",
+      "doi-asserted-by": "crossref",
+      "first-page": "126",
+      "DOI": "10.1016/j.ces.2011.12.005",
+      "article-title": "Experimental analysis of forced convective heat transfer in novel structured packed beds of particles",
+      "volume": "71",
+      "author": "Yang",
+      "year": "2012",
+      "journal-title": "Chem. Eng. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0013",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.anucene.2020.107524",
+      "article-title": "Numerical study of natural convection effects on effective thermal conductivity in a pebble bed",
+      "volume": "144",
+      "author": "Bu",
+      "year": "2020",
+      "journal-title": "Ann. Nucl. Energy"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0014",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2022.123032",
+      "article-title": "Influences of sphere diameter and bed height on the natural convection heat transfer of packed beds",
+      "volume": "194",
+      "author": "Ahn",
+      "year": "2022",
+      "journal-title": "Int. J. Heat Mass Transf."
+    },
+    {
+      "issue": "2",
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0015",
+      "first-page": "89",
+      "article-title": "Fluid flow through packed columns",
+      "volume": "48",
+      "author": "Ergun",
+      "year": "1952",
+      "journal-title": "Chem. Eng. Prog."
+    },
+    {
+      "issue": "10",
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0016",
+      "doi-asserted-by": "crossref",
+      "first-page": "1583",
+      "DOI": "10.1002/aic.690371016",
+      "article-title": "A generalized Blake-Kozeny equation for multisized spherical particles",
+      "volume": "37",
+      "author": "MacDonald",
+      "year": "1991",
+      "journal-title": "AlChE J."
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0017",
+      "doi-asserted-by": "crossref",
+      "first-page": "199",
+      "DOI": "10.1021/i160071a001",
+      "article-title": "Flow through porous media-the Ergun equation revisited",
+      "volume": "18",
+      "author": "Macdonald",
+      "year": "1979",
+      "journal-title": "Ind. Eng. Chem. Fundam."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0018",
+      "doi-asserted-by": "crossref",
+      "first-page": "1",
+      "DOI": "10.1007/s12665-021-10090-1",
+      "article-title": "Experimental study on the adoption of flushing technique in successive alkalinity-producing systems with a focus on influence radius of orifice",
+      "volume": "80",
+      "author": "Lee",
+      "year": "2021",
+      "journal-title": "Environ. Earth Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0019",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.chroma.2020.461117",
+      "article-title": "Pressure-Flow experiments, packing, and modeling for scale-up of a mixed mode chromatography column for biopharmaceutical manufacturing",
+      "volume": "1625",
+      "author": "Prentice",
+      "year": "2020",
+      "journal-title": "J. Chromatogr. A"
+    },
+    {
+      "issue": "9",
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0020",
+      "doi-asserted-by": "crossref",
+      "first-page": "2576",
+      "DOI": "10.1016/j.ces.2008.02.017",
+      "article-title": "Pore-scale derivation of the Ergun equation to enhance its adaptability and generalization",
+      "volume": "63",
+      "author": "Du Plessis",
+      "year": "2008",
+      "journal-title": "Chem. Eng. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0021",
+      "series-title": "Heat and Mass Transfer in Packed Beds",
+      "author": "Wakao",
+      "year": "1982"
+    },
+    {
+      "issue": "2",
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0022",
+      "doi-asserted-by": "crossref",
+      "first-page": "361",
+      "DOI": "10.1002/aic.690180219",
+      "article-title": "Forced convection heat transfer correlations for flow in pipes, past flat plates, single cylinders, single spheres, and for flow in packed beds and tube bundles",
+      "volume": "18",
+      "author": "Whitaker",
+      "year": "1972",
+      "journal-title": "AlChE J."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0023",
+      "unstructured": "W.M. Kays, A.L. London, Compact heat exchangers, (1984)."
+    },
+    {
+      "issue": "4",
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0024",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1115/1.4002945",
+      "article-title": "A new technique to determine convection coefficients with flow through particle beds",
+      "volume": "133",
+      "author": "Nie",
+      "year": "2011",
+      "journal-title": "J. Heat Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0025",
+      "unstructured": "N.S.S.C. (KTA), Reactor core design of high-Temperature gas-cooled reactors part 2: heat transfer in spherical fuel elements in, 1983."
+    },
+    {
+      "issue": "Supplement 1",
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0026",
+      "first-page": "115",
+      "article-title": "Experimental investigation on flow and heat transfer in porous media with internal heat source",
+      "volume": "41",
+      "author": "Yan",
+      "year": "2007",
+      "journal-title": "At. Energy Sci. Technol."
+    },
+    {
+      "issue": "9",
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0027",
+      "first-page": "1122",
+      "article-title": "Experimental study on convection heat transfer characteristics of stacked pebble-bed channels with an internal heat source",
+      "volume": "33",
+      "author": "Meng",
+      "year": "2012",
+      "journal-title": "J. Harbin Eng. Univ."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0028",
+      "doi-asserted-by": "crossref",
+      "first-page": "856",
+      "DOI": "10.1016/j.applthermaleng.2017.07.072",
+      "article-title": "The combined effect of heat transfer and skin effect on Joule heating for silicon rod in Siemens reactor",
+      "volume": "125",
+      "author": "Nie",
+      "year": "2017",
+      "journal-title": "Appl. Therm. Eng."
+    },
+    {
+      "issue": "8",
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0029",
+      "first-page": "1367",
+      "article-title": "DEM-CFD coupled simulation for determination of character of heat and mass transfer and purge gas flow in Li4SiO4 pebble bed",
+      "volume": "55",
+      "author": "Zhang",
+      "year": "2021",
+      "journal-title": "At. Energy Sci. Technol."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0030",
+      "doi-asserted-by": "crossref",
+      "unstructured": "J. Ling, A. Dybbs, The effect of variable viscosity on forced convection over a flat plate submersed in a porous medium, (1992).",
+      "DOI": "10.1115/1.2911882"
+    },
+    {
+      "issue": "2",
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0031",
+      "doi-asserted-by": "crossref",
+      "first-page": "301",
+      "DOI": "10.1115/1.1667526",
+      "article-title": "predicting inlet temperature effects on the pressure-drop of heated porous medium channel flows using the M-HDD model",
+      "volume": "126",
+      "author": "Narasimhan",
+      "year": "2004",
+      "journal-title": "J. Heat Transf."
+    },
+    {
+      "issue": "11",
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0032",
+      "doi-asserted-by": "crossref",
+      "first-page": "2419",
+      "DOI": "10.1016/S0017-9310(01)00324-6",
+      "article-title": "Inlet temperature influence on the departure from Darcy flow of a fluid with variable viscosity",
+      "volume": "45",
+      "author": "Narasimhan",
+      "year": "2002",
+      "journal-title": "Int. J. Heat Mass Transf."
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0033",
+      "doi-asserted-by": "crossref",
+      "first-page": "31",
+      "DOI": "10.1115/1.1332778",
+      "article-title": "Modified Hazen-Dupuit-Darcy model for forced convection of a fluid with temperature-dependent viscosity",
+      "volume": "123",
+      "author": "Narasimhan",
+      "year": "2001",
+      "journal-title": "J. Heat Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0034",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2021.121067",
+      "article-title": "Heat transfer from a particle in laminar flows of a variable thermal conductivity fluid",
+      "volume": "171",
+      "author": "Dehdashti",
+      "year": "2021",
+      "journal-title": "Int. J. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0035",
+      "doi-asserted-by": "crossref",
+      "first-page": "114",
+      "DOI": "10.1016/j.pnucene.2017.12.012",
+      "article-title": "Numerical study on the purge gas flow and heat transfer characteristics in helium cooled solid breeder blanket of CFETR",
+      "volume": "105",
+      "author": "Wang",
+      "year": "2018",
+      "journal-title": "Prog. Nucl. Energy"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0036",
+      "doi-asserted-by": "crossref",
+      "first-page": "508",
+      "DOI": "10.1016/j.ces.2019.02.042",
+      "article-title": "Determination of gas film mass transfer coefficient in a packed bed reactor for the catalytic combustion of hydrogen",
+      "volume": "202",
+      "author": "Sandeep",
+      "year": "2019",
+      "journal-title": "Chem. Eng. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0037",
+      "series-title": "Performance Characteristics of Packed Bed Thermal Energy Storage For Solar Thermal Power Plants",
+      "author": "Allen",
+      "year": "2010"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0038",
+      "doi-asserted-by": "crossref",
+      "first-page": "84",
+      "DOI": "10.1016/j.fusengdes.2016.12.003",
+      "article-title": "Flow characteristics analysis of purge gas in unitary pebble beds by CFD simulation coupled with DEM geometry model for fusion blanket",
+      "volume": "114",
+      "author": "Chen",
+      "year": "2017",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0039",
+      "series-title": "Proceedings of the International Conference on Nuclear Engineering",
+      "article-title": "Tritium transport modeling and analysis for HCCB Blanket of CFETR",
+      "author": "Zhang",
+      "year": "2021"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0040",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2019.118837",
+      "article-title": "Macroscopic transport properties of Gyroid structures based on pore-scale studies: permeability, diffusivity and thermal conductivity",
+      "volume": "146",
+      "author": "Luo",
+      "year": "2020",
+      "journal-title": "Int. J. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0041",
+      "unstructured": "A. Griesmer, Introducing COMSOL multiphysics®, Version 5.4 (2018), https://www.comsol.com/blogs/introducing-comsol-multiphysics-version-5-4"
+    },
+    {
+      "issue": "8",
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0042",
+      "doi-asserted-by": "crossref",
+      "first-page": "2022",
+      "DOI": "10.1002/aic.690490812",
+      "article-title": "Voidage variation in packed beds at small column to particle diameter ratio",
+      "volume": "49",
+      "author": "De Klerk",
+      "year": "2003",
+      "journal-title": "AlChE J."
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0043",
+      "first-page": "200",
+      "article-title": "Numerical simulation on thermal hydraulics characteristics of breeder pebble bed for China HCCB-TBM",
+      "volume": "34",
+      "author": "Wang",
+      "year": "2014",
+      "journal-title": "Nucl. Fusion Plasma Phys."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2023.124325_bib0044",
+      "first-page": "17",
+      "article-title": "Conduction in heterogeneous systems",
+      "volume": "2",
+      "author": "Merdith",
+      "year": "1962",
+      "journal-title": "Adv. Electrochem. Electrochem. Eng."
+    }
+  ],
+  "container-title": "International Journal of Heat and Mass Transfer",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0017931023004714?httpAccept=text/xml",
+      "content-type": "text/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0017931023004714?httpAccept=text/plain",
+      "content-type": "text/plain",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2025,
+        11,
+        3
+      ]
+    ],
+    "date-time": "2025-11-03T12:26:42Z",
+    "timestamp": 1762172802000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0017931023004714"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2023,
+        10
+      ]
+    ]
+  },
+  "references-count": 44,
+  "alternative-id": [
+    "S0017931023004714"
+  ],
+  "URL": "http://dx.doi.org/10.1016/j.ijheatmasstransfer.2023.124325",
+  "relation": {},
+  "ISSN": [
+    "0017-9310"
+  ],
+  "subject": [],
+  "container-title-short": "International Journal of Heat and Mass Transfer",
+  "published": {
+    "date-parts": [
+      [
+        2023,
+        10
+      ]
+    ]
+  },
+  "assertion": [
+    {
+      "value": "Elsevier",
+      "name": "publisher",
+      "label": "This article is maintained by"
+    },
+    {
+      "value": "Pore-scale simulation on flow and heat transfer characteristics in packed beds with internal heat sources at low Reynolds numbers",
+      "name": "articletitle",
+      "label": "Article Title"
+    },
+    {
+      "value": "International Journal of Heat and Mass Transfer",
+      "name": "journaltitle",
+      "label": "Journal Title"
+    },
+    {
+      "value": "https://doi.org/10.1016/j.ijheatmasstransfer.2023.124325",
+      "name": "articlelink",
+      "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+      "value": "article",
+      "name": "content_type",
+      "label": "Content Type"
+    },
+    {
+      "value": "© 2023 Elsevier Ltd. All rights reserved.",
+      "name": "copyright",
+      "label": "Copyright"
+    }
+  ],
+  "article-number": "124325"
+}

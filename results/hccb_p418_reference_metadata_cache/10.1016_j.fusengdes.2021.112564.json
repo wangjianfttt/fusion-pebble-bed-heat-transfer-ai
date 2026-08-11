@@ -1,0 +1,584 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        7,
+        5
+      ]
+    ],
+    "date-time": "2026-07-05T04:45:14Z",
+    "timestamp": 1783226714825,
+    "version": "3.54.6"
+  },
+  "reference-count": 25,
+  "publisher": "Elsevier BV",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2021,
+            10,
+            1
+          ]
+        ],
+        "date-time": "2021-10-01T00:00:00Z",
+        "timestamp": 1633046400000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2021,
+            10,
+            1
+          ]
+        ],
+        "date-time": "2021-10-01T00:00:00Z",
+        "timestamp": 1633046400000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/legal/tdmrep-license"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2021,
+            10,
+            1
+          ]
+        ],
+        "date-time": "2021-10-01T00:00:00Z",
+        "timestamp": 1633046400000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-017"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2021,
+            10,
+            1
+          ]
+        ],
+        "date-time": "2021-10-01T00:00:00Z",
+        "timestamp": 1633046400000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-037"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2021,
+            10,
+            1
+          ]
+        ],
+        "date-time": "2021-10-01T00:00:00Z",
+        "timestamp": 1633046400000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-012"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2021,
+            10,
+            1
+          ]
+        ],
+        "date-time": "2021-10-01T00:00:00Z",
+        "timestamp": 1633046400000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-029"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2021,
+            10,
+            1
+          ]
+        ],
+        "date-time": "2021-10-01T00:00:00Z",
+        "timestamp": 1633046400000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-004"
+    }
+  ],
+  "content-domain": {
+    "domain": [
+      "elsevier.com",
+      "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2021,
+        10
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.fusengdes.2021.112564",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2021,
+        4,
+        29
+      ]
+    ],
+    "date-time": "2021-04-29T21:03:32Z",
+    "timestamp": 1619730212000
+  },
+  "page": "112564",
+  "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 12,
+  "special_numbering": "C",
+  "title": "Simultaneous measurement of effective thermal conductivity and effective thermal diffusivity of Li2TiO3 pebble bed using transient hot-wire technique",
+  "prefix": "10.1016",
+  "volume": "171",
+  "author": [
+    {
+      "ORCID": "https://orcid.org/0000-0002-2591-8489",
+      "authenticated-orcid": false,
+      "given": "Harsh",
+      "family": "Patel",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Maulik",
+      "family": "Panchal",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0001-5725-1095",
+      "authenticated-orcid": false,
+      "given": "Abhishek",
+      "family": "Saraswat",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Nirav",
+      "family": "Patel",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Paritosh",
+      "family": "Chaudhuri",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    }
+  ],
+  "member": "78",
+  "reference": [
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0001",
+      "doi-asserted-by": "crossref",
+      "first-page": "31",
+      "DOI": "10.1016/S0920-3796(97)00140-3",
+      "article-title": "Ceramic breeder material development",
+      "volume": "41",
+      "author": "Roux",
+      "year": "1998",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0002",
+      "doi-asserted-by": "crossref",
+      "first-page": "1362",
+      "DOI": "10.1016/j.fusengdes.2014.02.001",
+      "article-title": "Progress in engineering design of Indian LLCB TBM set for testing in ITER",
+      "author": "Chaudhuri",
+      "year": "2014",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0003",
+      "doi-asserted-by": "crossref",
+      "first-page": "95",
+      "DOI": "10.1016/0920-3796(91)90042-O",
+      "article-title": "Ceramic sphere-pac breeder design for fusion blankets",
+      "volume": "17",
+      "author": "Gierszewski",
+      "year": "1991",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0004",
+      "doi-asserted-by": "crossref",
+      "first-page": "1094",
+      "DOI": "10.13182/FST05-3",
+      "article-title": "Effective thermal conductivity of lithium ceramic pebble beds for fusion blankets: a review",
+      "volume": "47",
+      "author": "Abou-Sena",
+      "year": "2005",
+      "journal-title": "Fusion Sci. Technol."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0005",
+      "doi-asserted-by": "crossref",
+      "first-page": "94",
+      "DOI": "10.13182/FST03-A316",
+      "article-title": "Effective thermal conductivity of a Li2TiO3 pebble bed for a demo blanket",
+      "volume": "44",
+      "author": "Hatano",
+      "year": "2003",
+      "journal-title": "Fusion Sci. Technol."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0006",
+      "first-page": "263",
+      "article-title": "Transient hot-wire experimental system for measuring the effective thermal conductivity of a ceramic breeder pebble bed",
+      "volume": "72",
+      "author": "Kang",
+      "year": "2017",
+      "journal-title": "Fusion Sci. Technol."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0007",
+      "doi-asserted-by": "crossref",
+      "first-page": "73",
+      "DOI": "10.1016/j.fusengdes.2017.01.026",
+      "article-title": "Effective thermal conductivity of advanced ceramic breeder pebble beds",
+      "volume": "116",
+      "author": "Pupeschi",
+      "year": "2017",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0008",
+      "doi-asserted-by": "crossref",
+      "first-page": "34",
+      "DOI": "10.1016/j.fusengdes.2017.12.003",
+      "article-title": "Experimental measurement and numerical modeling of the effective thermal conductivity of lithium meta-titanate pebble bed",
+      "volume": "127",
+      "author": "Panchal",
+      "year": "2018",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0009",
+      "doi-asserted-by": "crossref",
+      "first-page": "950",
+      "DOI": "10.1016/j.fusengdes.2019.01.122",
+      "article-title": "Measurement of thermal conductivity of Li 2 TiO 3 pebble bed by laser flash method",
+      "volume": "146",
+      "author": "Park",
+      "year": "2019",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0010",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.fusengdes.2020.111718",
+      "article-title": "Measurement of effective thermal conductivity of lithium metatitanate pebble bed by transient hot-wire technique",
+      "volume": "158",
+      "author": "Panchal",
+      "year": "2020",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0011",
+      "doi-asserted-by": "crossref",
+      "first-page": "206",
+      "DOI": "10.1016/j.jmatprotec.2006.03.061",
+      "article-title": "Experimental measurements of the effective thermal conductivity of a lithium titanate (Li2TiO3) pebbles-packed bed",
+      "volume": "181",
+      "author": "Abou-Sena",
+      "year": "2007",
+      "journal-title": "J. Mater. Process. Technol."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0012",
+      "doi-asserted-by": "crossref",
+      "first-page": "282",
+      "DOI": "10.1109/FUSION.1993.518331",
+      "article-title": "Measurement of effective thermal conductivity of lithium oxide and beryllium sphere packed bed",
+      "volume": "1",
+      "author": "Enoeda",
+      "year": "1993",
+      "journal-title": "Proc. - Symp. Fusion Eng."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0013",
+      "doi-asserted-by": "crossref",
+      "first-page": "513",
+      "DOI": "10.1016/S0920-3796(00)00261-1",
+      "article-title": "Measurements of the effective thermal conductivity of a Li4SiO4 pebble bed",
+      "volume": "49–50",
+      "author": "Dalle Donne",
+      "year": "2000",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0014",
+      "doi-asserted-by": "crossref",
+      "first-page": "545",
+      "DOI": "10.1016/j.fusengdes.2017.05.020",
+      "article-title": "Measurements of the effective thermal conductivity of a non-compressed Li4SiO4pebble bed",
+      "volume": "125",
+      "author": "Liu",
+      "year": "2017",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0015",
+      "doi-asserted-by": "crossref",
+      "first-page": "612",
+      "DOI": "10.13182/FST01-A11963305",
+      "article-title": "Effective thermal conductivity measurement of the candidate ceramic breeder pebble beds by the hot wire method",
+      "volume": "39",
+      "author": "Enoeda",
+      "year": "2001",
+      "journal-title": "Fusion Technol."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0016",
+      "doi-asserted-by": "crossref",
+      "first-page": "303",
+      "DOI": "10.1016/j.fusengdes.2016.08.027",
+      "article-title": "Numerical modelling for the effective thermal conductivity of lithium meta titanate pebble bed with different packing structures",
+      "volume": "112",
+      "author": "Panchal",
+      "year": "2016",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0017",
+      "doi-asserted-by": "crossref",
+      "first-page": "801",
+      "DOI": "10.1016/j.fusengdes.2005.06.104",
+      "article-title": "Effective thermal conductivity of a compressed Li2TiO3 pebble bed",
+      "volume": "75–79",
+      "author": "Tanigawa",
+      "year": "2005",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0018",
+      "first-page": "49",
+      "article-title": "Experimental investigation of thermal properties of the Li 4 SiO 4 pebble beds",
+      "volume": "11",
+      "author": "Feng",
+      "year": "2015",
+      "journal-title": "Jpn. Plasma Fusion Res."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0019",
+      "series-title": "Conduction of Heat in Solids",
+      "author": "Carslaw",
+      "year": "1959"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0020",
+      "doi-asserted-by": "crossref",
+      "first-page": "674",
+      "DOI": "10.1016/j.expthermflusci.2018.07.005",
+      "article-title": "Transient hot wire measures thermophysical properties of organic foam thermal insulation materials",
+      "volume": "98",
+      "author": "Hu",
+      "year": "2018",
+      "journal-title": "Exp. Therm. Fluid Sci."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0022",
+      "first-page": "6",
+      "article-title": "Standard test method for thermal conductivity of refractories by hot wire (platinum resistance thermometer technique)",
+      "volume": "15",
+      "year": "1999"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0023",
+      "first-page": "134",
+      "article-title": "Evaluation of measurement data — guide to the expression of uncertainty in measurement",
+      "volume": "50",
+      "author": "Jcgm",
+      "year": "2008",
+      "journal-title": "Int. Organ. Stand. Geneva ISBN"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0024",
+      "doi-asserted-by": "crossref",
+      "first-page": "1182",
+      "DOI": "10.1139/p73-157",
+      "article-title": "Radial-axial transient heat conduction in a region bounded internally by a circular cylinder of finite length and appreciable heat capacity",
+      "volume": "51",
+      "author": "Kierkus",
+      "year": "1973",
+      "journal-title": "Can. J. Phys."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0025",
+      "series-title": "Thermomechanical Characterization of Advanced Ceramic Breeder Beds for Fusion Blankets",
+      "author": "Pupeschi",
+      "year": "2017"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2021.112564_bib0026",
+      "doi-asserted-by": "crossref",
+      "first-page": "112318",
+      "DOI": "10.1016/j.fusengdes.2021.112318",
+      "article-title": "Effect of Porosity on Thermal Conductivity of Li2TiO3 Ceramic Compact",
+      "volume": "166",
+      "author": "Shrivastava",
+      "year": "2021",
+      "journal-title": "Fusion Eng. Des."
+    }
+  ],
+  "container-title": "Fusion Engineering and Design",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0920379621003409?httpAccept=text/xml",
+      "content-type": "text/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0920379621003409?httpAccept=text/plain",
+      "content-type": "text/plain",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2025,
+        10,
+        12
+      ]
+    ],
+    "date-time": "2025-10-12T14:07:26Z",
+    "timestamp": 1760278046000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0920379621003409"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2021,
+        10
+      ]
+    ]
+  },
+  "references-count": 25,
+  "alternative-id": [
+    "S0920379621003409"
+  ],
+  "URL": "http://dx.doi.org/10.1016/j.fusengdes.2021.112564",
+  "relation": {},
+  "ISSN": [
+    "0920-3796"
+  ],
+  "subject": [],
+  "container-title-short": "Fusion Engineering and Design",
+  "published": {
+    "date-parts": [
+      [
+        2021,
+        10
+      ]
+    ]
+  },
+  "assertion": [
+    {
+      "value": "Elsevier",
+      "name": "publisher",
+      "label": "This article is maintained by"
+    },
+    {
+      "value": "Simultaneous measurement of effective thermal conductivity and effective thermal diffusivity of Li2TiO3 pebble bed using transient hot-wire technique",
+      "name": "articletitle",
+      "label": "Article Title"
+    },
+    {
+      "value": "Fusion Engineering and Design",
+      "name": "journaltitle",
+      "label": "Journal Title"
+    },
+    {
+      "value": "https://doi.org/10.1016/j.fusengdes.2021.112564",
+      "name": "articlelink",
+      "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+      "value": "article",
+      "name": "content_type",
+      "label": "Content Type"
+    },
+    {
+      "value": "© 2021 Elsevier B.V. All rights reserved.",
+      "name": "copyright",
+      "label": "Copyright"
+    }
+  ],
+  "article-number": "112564"
+}

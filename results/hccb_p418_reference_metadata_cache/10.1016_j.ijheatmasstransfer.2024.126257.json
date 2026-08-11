@@ -1,0 +1,754 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        7,
+        1
+      ]
+    ],
+    "date-time": "2026-07-01T02:35:19Z",
+    "timestamp": 1782873319098,
+    "version": "3.54.5"
+  },
+  "reference-count": 46,
+  "publisher": "Elsevier BV",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            1,
+            1
+          ]
+        ],
+        "date-time": "2025-01-01T00:00:00Z",
+        "timestamp": 1735689600000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            1,
+            1
+          ]
+        ],
+        "date-time": "2025-01-01T00:00:00Z",
+        "timestamp": 1735689600000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/legal/tdmrep-license"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            1,
+            1
+          ]
+        ],
+        "date-time": "2025-01-01T00:00:00Z",
+        "timestamp": 1735689600000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-017"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            1,
+            1
+          ]
+        ],
+        "date-time": "2025-01-01T00:00:00Z",
+        "timestamp": 1735689600000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-037"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            1,
+            1
+          ]
+        ],
+        "date-time": "2025-01-01T00:00:00Z",
+        "timestamp": 1735689600000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-012"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            1,
+            1
+          ]
+        ],
+        "date-time": "2025-01-01T00:00:00Z",
+        "timestamp": 1735689600000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-029"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            1,
+            1
+          ]
+        ],
+        "date-time": "2025-01-01T00:00:00Z",
+        "timestamp": 1735689600000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-004"
+    }
+  ],
+  "content-domain": {
+    "domain": [
+      "elsevier.com",
+      "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2025,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.ijheatmasstransfer.2024.126257",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2024,
+        10,
+        9
+      ]
+    ],
+    "date-time": "2024-10-09T23:10:45Z",
+    "timestamp": 1728515445000
+  },
+  "page": "126257",
+  "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 11,
+  "special_numbering": "P1",
+  "title": "Particle-fluid heat transfer for laminar and turbulent flows in packed beds of spherical particles",
+  "prefix": "10.1016",
+  "volume": "236",
+  "author": [
+    {
+      "ORCID": "https://orcid.org/0009-0000-3680-2038",
+      "authenticated-orcid": false,
+      "given": "Xiaomin",
+      "family": "Wu",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0002-4138-7286",
+      "authenticated-orcid": false,
+      "given": "Takashi",
+      "family": "Hibiki",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    }
+  ],
+  "member": "78",
+  "reference": [
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0001",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cep.2022.108996",
+      "article-title": "Improving the radial heat transport and heat distribution in catalytic gas-solid reactors",
+      "volume": "177",
+      "author": "Wehinger",
+      "year": "2022",
+      "journal-title": "Chem. Eng. Proces.- Process Intensification"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0002",
+      "doi-asserted-by": "crossref",
+      "first-page": "643",
+      "DOI": "10.1007/s12206-011-1103-7",
+      "article-title": "Modeling of laminar forced convection in spherical-pebble packed beds",
+      "volume": "26",
+      "author": "Hadad",
+      "year": "2012",
+      "journal-title": "J. Mech. Sci. Technol"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0003",
+      "doi-asserted-by": "crossref",
+      "first-page": "667",
+      "DOI": "10.1115/1.2824335",
+      "article-title": "Flow and heat transfer characteristics inside packed and fluidized beds",
+      "volume": "120",
+      "author": "Wu",
+      "year": "1998",
+      "journal-title": "J. Heat Transfer"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0004",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.energy.2020.118642",
+      "article-title": "Effect of pebble diameters on the heat transfer characteristics of a structured pebble bed in an HTGR",
+      "volume": "212",
+      "author": "Chen",
+      "year": "2020",
+      "journal-title": "Energy"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0005",
+      "doi-asserted-by": "crossref",
+      "first-page": "1363",
+      "DOI": "10.1016/0009-2509(74)80160-0",
+      "article-title": "Heat transfer and axial dispersion in packed beds",
+      "volume": "29",
+      "author": "Gunn",
+      "year": "1974",
+      "journal-title": "Chem. Eng. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0006",
+      "doi-asserted-by": "crossref",
+      "first-page": "2371",
+      "DOI": "10.1016/0017-9310(84)90096-6",
+      "article-title": "The analysis of heat transfer in fixed beds of particles at low and intermediate Reynolds numbers",
+      "volume": "27",
+      "author": "Dhingra",
+      "year": "1984",
+      "journal-title": "Int. J. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0007",
+      "doi-asserted-by": "crossref",
+      "first-page": "17980",
+      "DOI": "10.1002/aic.17980",
+      "article-title": "Numerical determination of fluid-to-particle mass and heat transfer coefficients in packed bed reactors",
+      "volume": "69",
+      "author": "Weng",
+      "year": "2023",
+      "journal-title": "A.I.Ch.E Journal"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0008",
+      "doi-asserted-by": "crossref",
+      "first-page": "24",
+      "DOI": "10.1016/j.cherd.2022.05.034",
+      "article-title": "Thermal radiation effects on heat transfer in slender packed-bed reactors: particle-resolved CFD simulations and 2D modeling",
+      "volume": "184",
+      "author": "Wehinger",
+      "year": "2022",
+      "journal-title": "Chem. Eng. Res. Des."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0009",
+      "doi-asserted-by": "crossref",
+      "first-page": "583",
+      "DOI": "10.1002/cite.201800179",
+      "article-title": "Radiation matters in fixed-bed CFD simulations",
+      "volume": "91",
+      "author": "Wehinger",
+      "year": "2019",
+      "journal-title": "Chem. Ing. Tech."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0010",
+      "doi-asserted-by": "crossref",
+      "first-page": "325",
+      "DOI": "10.1016/0009-2509(79)85064-2",
+      "article-title": "Effect of fluid dispersion coefficients on particle-to-fluid heat transfer coefficients in packed beds correlation of Nusselt numbers",
+      "volume": "34",
+      "author": "Wakao",
+      "year": "1979",
+      "journal-title": "Chem. Eng. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0011",
+      "unstructured": "J. Salzgitter, Zusammenstellung anlagen-interner Notfallschutz-maßnahmen und die Prüfung ihrer Regelung im KTA, 1997."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0012",
+      "first-page": "378",
+      "article-title": "Equations for the calculation of heat and mass transfer during flow through stationary spherical packings at moderate and high Peclet numbers",
+      "volume": "21",
+      "author": "Gnielinski",
+      "year": "1981",
+      "journal-title": "Int.Chem Eng"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0013",
+      "doi-asserted-by": "crossref",
+      "first-page": "48",
+      "DOI": "10.1016/j.applthermaleng.2018.09.017",
+      "article-title": "Experimental investigation of flow and convective heat transfer on a high-Prandtl-number fluid through the nuclear reactor pebble bed core",
+      "volume": "145",
+      "author": "Liu",
+      "year": "2018",
+      "journal-title": "Appl. Therm. Eng."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0014",
+      "doi-asserted-by": "crossref",
+      "first-page": "121",
+      "DOI": "10.1016/j.nucengdes.2012.05.041",
+      "article-title": "Single-phase convection heat transfer characteristics of pebble-bed channels with internal heat generation",
+      "volume": "252",
+      "author": "Meng",
+      "year": "2012",
+      "journal-title": "Nucl. Eng. Des."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0015",
+      "first-page": "197",
+      "article-title": "Neural Network analysis of free convection around isothermal elliptic tube",
+      "author": "Ashjaee",
+      "year": "2006",
+      "journal-title": "ESDA"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0016",
+      "doi-asserted-by": "crossref",
+      "first-page": "3609",
+      "DOI": "10.1016/j.applthermaleng.2009.06.017",
+      "article-title": "Artificial neural network modelling of the thermal performance of a compact heat exchanger",
+      "volume": "29",
+      "author": "Tan",
+      "year": "2009",
+      "journal-title": "Appl. Therm. Eng."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0017",
+      "first-page": "2",
+      "article-title": "Neural networks: a review from a statistical perspective",
+      "volume": "9",
+      "author": "Cheng",
+      "year": "1994",
+      "journal-title": "Stat. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0018",
+      "doi-asserted-by": "crossref",
+      "first-page": "564",
+      "DOI": "10.1080/18811248.2002.9715235",
+      "article-title": "Application of an artificial neural network in reactor thermohydraulic problem: prediction of critical heat flux",
+      "volume": "39",
+      "author": "Su",
+      "year": "2002",
+      "journal-title": "J. Nucl. Sci. Technol."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0019",
+      "doi-asserted-by": "crossref",
+      "first-page": "9777",
+      "DOI": "10.1021/acs.iecr.1c01660",
+      "article-title": "Local structure effects on heat transfer in very low tube-to-particle diameter ratio fixed beds of spheres",
+      "volume": "60",
+      "author": "Dixon",
+      "year": "2021",
+      "journal-title": "Ind. Eng. Chem. Res."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0020",
+      "doi-asserted-by": "crossref",
+      "first-page": "17",
+      "DOI": "10.1016/0894-1777(94)00077-L",
+      "article-title": "Heat and flow characteristics of packed beds",
+      "volume": "10",
+      "author": "Achenbach",
+      "year": "1995",
+      "journal-title": "Exp. Therm Fluid Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0021",
+      "doi-asserted-by": "crossref",
+      "first-page": "243",
+      "DOI": "10.1016/0894-1777(88)90003-9",
+      "article-title": "Single-blow experimental prediction of heat transfer coefficients a comparison of four commonly used techniques",
+      "volume": "1",
+      "author": "Heggs",
+      "year": "1988",
+      "journal-title": "Exp. Therm Fluid Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0022",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2021.122360",
+      "article-title": "Experimental investigation of flow and exergy transfer characteristics in the air-cooled randomly packed particle bed based on second law analysis",
+      "volume": "185",
+      "author": "Zhang",
+      "year": "2022",
+      "journal-title": "Int. J. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0023",
+      "unstructured": "X.K. Meng, Characterization of heat transfer in spherical bed channel with internal heat source, 2013."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0024",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.nucengdes.2021.111619",
+      "article-title": "Experimental research on convective heat transfer characteristics of molten salt in a pebble bed channel with internal heat source",
+      "volume": "387",
+      "author": "Wang",
+      "year": "2022",
+      "journal-title": "Nucl. Eng. Des"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0025",
+      "unstructured": "R. Abdulmohsin, Gas dynamics and heat transfer in a packed pebble-bed reactor for the 4th generation nuclear energy, 2013."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0026",
+      "doi-asserted-by": "crossref",
+      "first-page": "143",
+      "DOI": "10.1016/j.nucengdes.2014.11.041",
+      "article-title": "Characteristics of convective heat transport in a packed pebble-bed reactor",
+      "volume": "284",
+      "author": "Abdulmohsin",
+      "year": "2015",
+      "journal-title": "Nucl. Eng. Des"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0027",
+      "doi-asserted-by": "crossref",
+      "first-page": "725",
+      "DOI": "10.1115/1.2822636",
+      "article-title": "Investigation of non-darcian forced convection in an asymmetrically heated sintered porous channel",
+      "volume": "117",
+      "author": "Hwang",
+      "year": "1995",
+      "journal-title": "J. Heat Transfer"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0028",
+      "doi-asserted-by": "crossref",
+      "first-page": "456",
+      "DOI": "10.1115/1.2911418",
+      "article-title": "Heat transfer measurement and analysis for sintered porous channels",
+      "volume": "116",
+      "author": "Chao",
+      "year": "1994",
+      "journal-title": "Trans. ASME"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0029",
+      "doi-asserted-by": "crossref",
+      "first-page": "63",
+      "DOI": "10.1002/aic.690040113",
+      "article-title": "Heat and momentum transfer in the flow of gases through packed beds",
+      "volume": "4",
+      "author": "Glaser",
+      "year": "1958",
+      "journal-title": "A.I.Ch.E Joural"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0030",
+      "doi-asserted-by": "crossref",
+      "first-page": "69",
+      "DOI": "10.1002/aic.690040114",
+      "article-title": "Fluid-particle heat transfer in packed beds",
+      "volume": "4",
+      "author": "Baumeister",
+      "year": "1958",
+      "journal-title": "A.I.Ch.E. Journal"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0031",
+      "doi-asserted-by": "crossref",
+      "first-page": "554",
+      "DOI": "10.1021/i160028a005",
+      "article-title": "Gas-particle heat transfer coefficients in packed beds at low Reynolds numbers",
+      "volume": "7",
+      "author": "Littman",
+      "year": "1968",
+      "journal-title": "L&EC Fundamentals"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0032",
+      "unstructured": "H. Resnick, Simultaneous heat and mass transfer in a diffusion-controlled chemical reaction, 1952."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0033",
+      "doi-asserted-by": "crossref",
+      "first-page": "1405",
+      "DOI": "10.1016/0017-9310(81)90190-3",
+      "article-title": "Axial thermal dispersion and particle to fluid transfer in packed fluidized beds",
+      "volume": "24",
+      "author": "Gunn",
+      "year": "1981",
+      "journal-title": "Int. J. Heat Mass Transfer"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0034",
+      "doi-asserted-by": "crossref",
+      "first-page": "1363",
+      "DOI": "10.1016/0009-2509(74)80160-0",
+      "article-title": "Heat transfer and axial dispersion in packed beds",
+      "volume": "29",
+      "author": "Gunn",
+      "year": "1974",
+      "journal-title": "Chem. Eng. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0035",
+      "doi-asserted-by": "crossref",
+      "first-page": "2209",
+      "DOI": "10.1016/S0017-9310(05)80152-8",
+      "article-title": "Bayesian estimation of heat transport parameters in fixed beds",
+      "volume": "36",
+      "author": "Gunn",
+      "year": "1993",
+      "journal-title": "Int. J. Heat Mass Transfer"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0036",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/0017-9310(67)90169-X",
+      "article-title": "Analogy between mass and heat transfer in beds of spheres: contributions due to end effects",
+      "volume": "10",
+      "author": "Malling",
+      "year": "1967",
+      "journal-title": "Int. J Hear Mass Transfer"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0037",
+      "doi-asserted-by": "crossref",
+      "first-page": "361",
+      "DOI": "10.1002/aic.690180219",
+      "article-title": "Forced convection heat transfer correlations for flow in pipes, past flat plates, single cylinders, single spheres, and for flow in packed beds and tube bundles",
+      "volume": "18",
+      "author": "Whitaker",
+      "year": "1972",
+      "journal-title": "A.I.Ch.E J."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0038",
+      "doi-asserted-by": "crossref",
+      "first-page": "3751",
+      "DOI": "10.1016/S0009-2509(98)00175-4",
+      "article-title": "Experimental characterisation of flow regimes in various porous media-I: limit of laminar flow regime",
+      "volume": "53",
+      "author": "Seguin",
+      "year": "1998",
+      "journal-title": "Chem. Eng. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0039",
+      "doi-asserted-by": "crossref",
+      "first-page": "461",
+      "DOI": "10.1016/0017-9310(78)90080-7",
+      "article-title": "Transfer of heat or mass to particles in fixed and fluidised beds",
+      "volume": "21",
+      "author": "Gunn",
+      "year": "1978",
+      "journal-title": "Int. J Heat Mass Transfer"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0040",
+      "doi-asserted-by": "crossref",
+      "first-page": "839",
+      "DOI": "10.1016/0009-2509(74)80203-4",
+      "article-title": "Fluid-particle heat transfer in fixed and fluidized beds",
+      "volume": "29",
+      "author": "Gupta",
+      "year": "1974",
+      "journal-title": "Chem. Eng. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0041",
+      "doi-asserted-by": "crossref",
+      "first-page": "203",
+      "DOI": "10.1016/S0065-2377(08)60060-5",
+      "article-title": "Design of packed catalytic reactor",
+      "volume": "3",
+      "author": "Beek",
+      "year": "1962",
+      "journal-title": "Adv. Chem. Eng."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0042",
+      "doi-asserted-by": "crossref",
+      "first-page": "271",
+      "DOI": "10.1016/0009-2509(58)85034-4",
+      "article-title": "Mass transfer from spheres in various regular packings to a flowing fluid",
+      "volume": "8",
+      "author": "Thoenes",
+      "year": "1958",
+      "journal-title": "Chem. Eng. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0043",
+      "unstructured": "Federal Republic of Germany, Safety standards of the nuclear safety standards commission (kta) reactor core design of high-temperature gas-cooled reactors Part 2: heat transfer in spherical fuel elements, 1983."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0044",
+      "doi-asserted-by": "crossref",
+      "first-page": "325",
+      "DOI": "10.1016/0009-2509(79)85064-2",
+      "article-title": "Effect of Fluid Dispersion Coefficients on Particle-To-Fluid Heat Transfer Coefficients in Packed Beds Correlation of Nusselt Numbers",
+      "volume": "34",
+      "author": "Wakao",
+      "year": "1978",
+      "journal-title": "Chem. Eng. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0045",
+      "doi-asserted-by": "crossref",
+      "first-page": "145",
+      "DOI": "10.1007/BF02560793",
+      "article-title": "Calculation of mean heat and mass transfer coefficients in laminar and turbulent flow past single bodies with the aid of a uniform equation",
+      "volume": "41",
+      "author": "Gnielinski",
+      "year": "1975",
+      "journal-title": "Forsch. Ingenieurwes."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2024.126257_bib0046",
+      "doi-asserted-by": "crossref",
+      "first-page": "507",
+      "DOI": "10.1002/cjce.21630",
+      "article-title": "Fixed bed catalytic reactor modelling-the radial heat transfer problem",
+      "volume": "90",
+      "author": "Dixon",
+      "year": "2012",
+      "journal-title": "Can. J. Chem. Eng."
+    }
+  ],
+  "container-title": "International Journal of Heat and Mass Transfer",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S001793102401086X?httpAccept=text/xml",
+      "content-type": "text/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S001793102401086X?httpAccept=text/plain",
+      "content-type": "text/plain",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2025,
+        1,
+        26
+      ]
+    ],
+    "date-time": "2025-01-26T17:06:09Z",
+    "timestamp": 1737911169000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://linkinghub.elsevier.com/retrieve/pii/S001793102401086X"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2025,
+        1
+      ]
+    ]
+  },
+  "references-count": 46,
+  "alternative-id": [
+    "S001793102401086X"
+  ],
+  "URL": "http://dx.doi.org/10.1016/j.ijheatmasstransfer.2024.126257",
+  "relation": {},
+  "ISSN": [
+    "0017-9310"
+  ],
+  "subject": [],
+  "container-title-short": "International Journal of Heat and Mass Transfer",
+  "published": {
+    "date-parts": [
+      [
+        2025,
+        1
+      ]
+    ]
+  },
+  "assertion": [
+    {
+      "value": "Elsevier",
+      "name": "publisher",
+      "label": "This article is maintained by"
+    },
+    {
+      "value": "Particle-fluid heat transfer for laminar and turbulent flows in packed beds of spherical particles",
+      "name": "articletitle",
+      "label": "Article Title"
+    },
+    {
+      "value": "International Journal of Heat and Mass Transfer",
+      "name": "journaltitle",
+      "label": "Journal Title"
+    },
+    {
+      "value": "https://doi.org/10.1016/j.ijheatmasstransfer.2024.126257",
+      "name": "articlelink",
+      "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+      "value": "article",
+      "name": "content_type",
+      "label": "Content Type"
+    },
+    {
+      "value": "© 2024 Elsevier Ltd. All rights are reserved, including those for text and data mining, AI training, and similar technologies.",
+      "name": "copyright",
+      "label": "Copyright"
+    }
+  ],
+  "article-number": "126257"
+}

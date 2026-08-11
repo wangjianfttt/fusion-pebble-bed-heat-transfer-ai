@@ -1,0 +1,880 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        7,
+        8
+      ]
+    ],
+    "date-time": "2026-07-08T13:18:37Z",
+    "timestamp": 1783516717992,
+    "version": "3.55.0"
+  },
+  "reference-count": 49,
+  "publisher": "Elsevier BV",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            7,
+            1
+          ]
+        ],
+        "date-time": "2025-07-01T00:00:00Z",
+        "timestamp": 1751328000000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            7,
+            1
+          ]
+        ],
+        "date-time": "2025-07-01T00:00:00Z",
+        "timestamp": 1751328000000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/legal/tdmrep-license"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            7,
+            1
+          ]
+        ],
+        "date-time": "2025-07-01T00:00:00Z",
+        "timestamp": 1751328000000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-017"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            7,
+            1
+          ]
+        ],
+        "date-time": "2025-07-01T00:00:00Z",
+        "timestamp": 1751328000000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-037"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            7,
+            1
+          ]
+        ],
+        "date-time": "2025-07-01T00:00:00Z",
+        "timestamp": 1751328000000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-012"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            7,
+            1
+          ]
+        ],
+        "date-time": "2025-07-01T00:00:00Z",
+        "timestamp": 1751328000000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-029"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            7,
+            1
+          ]
+        ],
+        "date-time": "2025-07-01T00:00:00Z",
+        "timestamp": 1751328000000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-004"
+    }
+  ],
+  "funder": [
+    {
+      "DOI": "10.13039/501100001809",
+      "name": "National Natural Science Foundation of China",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "52276052"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "52276052"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100001809",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    }
+  ],
+  "content-domain": {
+    "domain": [
+      "elsevier.com",
+      "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2025,
+        7
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.ijheatmasstransfer.2025.126970",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2025,
+        3,
+        21
+      ]
+    ],
+    "date-time": "2025-03-21T03:42:55Z",
+    "timestamp": 1742528575000
+  },
+  "page": "126970",
+  "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 9,
+  "special_numbering": "C",
+  "title": "Physics-informed neural networks for effective diffusion characteristics inversion in packed bed at low flow rates",
+  "prefix": "10.1016",
+  "volume": "244",
+  "author": [
+    {
+      "ORCID": "https://orcid.org/0000-0003-0237-8691",
+      "authenticated-orcid": false,
+      "given": "Mouhao",
+      "family": "Wang",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Shanshan",
+      "family": "Bu",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Bing",
+      "family": "Zhou",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Baoping",
+      "family": "Gong",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Zhenzhong",
+      "family": "Li",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Deqi",
+      "family": "Chen",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    }
+  ],
+  "member": "78",
+  "reference": [
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0001",
+      "doi-asserted-by": "crossref",
+      "first-page": "29",
+      "DOI": "10.1016/j.ece.2021.08.001",
+      "article-title": "A tool for mass transfer evaluation in packed-bed columns for chemical engineering students",
+      "volume": "37",
+      "author": "Flagiello",
+      "year": "2021",
+      "journal-title": "Educ. Chem. Eng."
+    },
+    {
+      "issue": "6",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0002",
+      "doi-asserted-by": "crossref",
+      "first-page": "443",
+      "DOI": "10.1089/ees.2020.0070",
+      "article-title": "Hybrid fenton oxidation processes with packed bed or fluidized bed reactor for the treatment of organic pollutants in wastewater: a review",
+      "volume": "38",
+      "author": "Mohapatra",
+      "year": "2021",
+      "journal-title": "Environ. Eng. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0003",
+      "doi-asserted-by": "crossref",
+      "first-page": "29",
+      "DOI": "10.1016/j.pnucene.2018.07.010",
+      "article-title": "DEM-CFD simulation of helium flow characteristics in randomly packed bed for fusion reactors",
+      "volume": "109",
+      "author": "Wu",
+      "year": "2018",
+      "journal-title": "Progr. Nucl. Energy"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0004",
+      "doi-asserted-by": "crossref",
+      "first-page": "531",
+      "DOI": "10.1016/j.cej.2019.05.194",
+      "article-title": "An enhanced correlation for gas-particle heat and mass transfer in packed and fluidized bed reactors",
+      "volume": "374",
+      "author": "Zhu",
+      "year": "2019",
+      "journal-title": "Chem. Eng. J."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0005",
+      "article-title": "Macroscopic transport characteristics in packed bed with a multi-physics inversion strategy for solid breeding blanket of HCCB TBM",
+      "author": "Wang",
+      "year": "2024",
+      "journal-title": "Appl. Therm. Eng."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0006",
+      "first-page": "403",
+      "article-title": "Physics-informed neural networks for inversion of the macroscopic transport parameters in packed bed",
+      "volume": "114",
+      "author": "Wang",
+      "year": "2024",
+      "journal-title": "Chem. Eng. Trans."
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0007",
+      "doi-asserted-by": "crossref",
+      "first-page": "197",
+      "DOI": "10.1016/S1359-0294(01)00084-X",
+      "article-title": "Flow in porous media—pore-network models and multiphase flow",
+      "volume": "6",
+      "author": "Blunt",
+      "year": "2001",
+      "journal-title": "Curr. Opin. Colloid. Interface Sci."
+    },
+    {
+      "issue": "4",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0008",
+      "doi-asserted-by": "crossref",
+      "first-page": "1017",
+      "DOI": "10.1002/jctb.5880",
+      "article-title": "A review on computational fluid dynamic simulation for rotating packed beds",
+      "volume": "94",
+      "author": "Yang",
+      "year": "2019",
+      "journal-title": "J. Chem. Technol. Biotechnol."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0009",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ces.2021.117393",
+      "article-title": "Modelling of 3D liquid dispersion in a rotating packed bed using an Eulerian porous medium approach",
+      "volume": "250",
+      "author": "Zhang",
+      "year": "2022",
+      "journal-title": "Chem. Eng. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0010",
+      "doi-asserted-by": "crossref",
+      "first-page": "111",
+      "DOI": "10.1016/j.jpowsour.2016.10.098",
+      "article-title": "Calculation of effective transport properties of partially saturated gas diffusion layers",
+      "volume": "340",
+      "author": "Bednarek",
+      "year": "2017",
+      "journal-title": "J. Power. Sources."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0011",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2019.118837",
+      "article-title": "Macroscopic transport properties of Gyroid structures based on pore-scale studies: permeability, diffusivity and thermal conductivity",
+      "volume": "146",
+      "author": "Luo",
+      "year": "2020",
+      "journal-title": "Int. J. Heat. Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0012",
+      "series-title": "Dynamics of Fluids in Porous Media Dover Publications",
+      "author": "Bear",
+      "year": "1988"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0013",
+      "first-page": "150",
+      "article-title": "Fluid flow through granular beds",
+      "volume": "15",
+      "author": "Carman",
+      "year": "1937",
+      "journal-title": "Trans. Inst. Chem. Eng. London"
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0014",
+      "doi-asserted-by": "crossref",
+      "first-page": "199",
+      "DOI": "10.1021/i160071a001",
+      "article-title": "Flow through porous media-the Ergun equation revisited",
+      "volume": "18",
+      "author": "Macdonald",
+      "year": "1979",
+      "journal-title": "Ind. Eng. Chem. Fundament."
+    },
+    {
+      "issue": "2",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0015",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1063/5.0183475",
+      "article-title": "Gas flow through a packed bed with low tube-to-particle diameter ratio: effect of pellet roughness",
+      "volume": "36",
+      "author": "Papkov",
+      "year": "2024",
+      "journal-title": "Phys. Fluids"
+    },
+    {
+      "issue": "5",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0016",
+      "doi-asserted-by": "crossref",
+      "first-page": "e16558",
+      "DOI": "10.1002/aic.16558",
+      "article-title": "Flow dynamic in a packed bed filled with Ni-Al2O3 porous catalyst: experimental and numerical approach",
+      "volume": "65",
+      "author": "Pashchenko",
+      "year": "2019",
+      "journal-title": "AIChE J."
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0017",
+      "doi-asserted-by": "crossref",
+      "first-page": "90",
+      "DOI": "10.1016/0021-9797(83)90238-2",
+      "article-title": "The effect of structure on the conductivity of a dispersion",
+      "volume": "94",
+      "author": "Chiew",
+      "year": "1983",
+      "journal-title": "J. Colloid. Interface Sci."
+    },
+    {
+      "issue": "5",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0018",
+      "doi-asserted-by": "crossref",
+      "first-page": "439",
+      "DOI": "10.1016/0255-2701(94)00577-X",
+      "article-title": "Modelling of two-phase thermal conductivity",
+      "volume": "34",
+      "author": "Raghavan",
+      "year": "1995",
+      "journal-title": "Chem. Eng. Process.: Process Intensificat."
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0019",
+      "doi-asserted-by": "crossref",
+      "first-page": "133",
+      "DOI": "10.1021/acs.energyfuels.1c03552",
+      "article-title": "CO2 diffusion and dispersion in porous media: review of advances in experimental measurements and mathematical models",
+      "volume": "36",
+      "author": "Rezk",
+      "year": "2021",
+      "journal-title": "Energy Fuels"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0020",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.icheatmasstransfer.2024.108322",
+      "article-title": "Comparative analysis of diffusion mechanisms inside porous media for steam methane reforming over Ni-Al2O3 catalyst",
+      "volume": "159",
+      "author": "Karpilov",
+      "year": "2024",
+      "journal-title": "Int. Commun. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0021",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.fuel.2023.129205",
+      "article-title": "Intra-particle diffusion limitation for steam methane reforming over a Ni-based catalyst",
+      "volume": "353",
+      "author": "Pashchenko",
+      "year": "2023",
+      "journal-title": "Fuel"
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0022",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1615/JPorMedia.v10.i3.10",
+      "article-title": "Dispersion in porous media with and without reaction: a review",
+      "volume": "10",
+      "author": "Rudraiah",
+      "year": "2007",
+      "journal-title": "J. Porous. Media"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0023",
+      "series-title": "Advances in Hydroscience",
+      "doi-asserted-by": "crossref",
+      "first-page": "169",
+      "DOI": "10.1016/B978-0-12-021807-3.50008-4",
+      "article-title": "Dispersion in porous media",
+      "author": "Fried",
+      "year": "1971"
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0024",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1103/PhysRevE.98.033118",
+      "article-title": "Solutal convection in porous media: comparison between boundary conditions of constant concentration and constant flux",
+      "volume": "98",
+      "author": "Amooie",
+      "year": "2018",
+      "journal-title": "Phys. Rev. E"
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0025",
+      "doi-asserted-by": "crossref",
+      "first-page": "177",
+      "DOI": "10.1016/0169-7722(91)90028-Y",
+      "article-title": "Laboratory diffusion testing for waste disposal—a review",
+      "volume": "7",
+      "author": "Shackelford",
+      "year": "1991",
+      "journal-title": "J. Contam. Hydrol."
+    },
+    {
+      "issue": "13",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0026",
+      "doi-asserted-by": "crossref",
+      "first-page": "6231",
+      "DOI": "10.1021/ie901765d",
+      "article-title": "Experimental study of diffusive tortuosity of liquid-saturated consolidated porous media",
+      "volume": "49",
+      "author": "Li",
+      "year": "2010",
+      "journal-title": "Ind. Eng. Chem. Res."
+    },
+    {
+      "issue": "14",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0027",
+      "doi-asserted-by": "crossref",
+      "first-page": "3748",
+      "DOI": "10.1016/j.ces.2007.03.041",
+      "article-title": "Critical review of the impact of tortuosity on diffusion",
+      "volume": "62",
+      "author": "Shen",
+      "year": "2007",
+      "journal-title": "Chem. Eng. Sci."
+    },
+    {
+      "issue": "5",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0028",
+      "doi-asserted-by": "crossref",
+      "first-page": "1461",
+      "DOI": "10.2136/sssaj2012.0435",
+      "article-title": "Tortuosity in porous media: a critical review",
+      "volume": "77",
+      "author": "Ghanbarian",
+      "year": "2013",
+      "journal-title": "Soil Sci. Soc. Am. J."
+    },
+    {
+      "issue": "5",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0029",
+      "doi-asserted-by": "crossref",
+      "first-page": "743",
+      "DOI": "10.1063/1.858007",
+      "article-title": "Dispersion, convection, and reaction in porous media",
+      "volume": "3",
+      "author": "Mauri",
+      "year": "1991",
+      "journal-title": "Phys. Fluids A: Fluid Dyn."
+    },
+    {
+      "issue": "9",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0030",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1002/smll.201903944",
+      "article-title": "Pore-scale flow characterization of polymer solutions in microfluidic porous media",
+      "volume": "16",
+      "author": "Browne",
+      "year": "2020",
+      "journal-title": "Small."
+    },
+    {
+      "issue": "8",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0031",
+      "doi-asserted-by": "crossref",
+      "first-page": "2103",
+      "DOI": "10.1016/0009-2509(86)87128-7",
+      "article-title": "Dispersion in flow through porous media—I. One-phase flow",
+      "volume": "41",
+      "author": "Sahimi",
+      "year": "1986",
+      "journal-title": "Chem. Eng. Sci."
+    },
+    {
+      "issue": "2",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0032",
+      "doi-asserted-by": "crossref",
+      "first-page": "382",
+      "DOI": "10.1002/hyp.11034",
+      "article-title": "The effect of temperature on the seepage transport of suspended particles in a porous medium",
+      "volume": "31",
+      "author": "Bai",
+      "year": "2017",
+      "journal-title": "Hydrol. Process."
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0033",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1103/PhysRevE.98.013104",
+      "article-title": "Pore-scale statistics of flow and transport through porous media",
+      "volume": "98",
+      "author": "Aramideh",
+      "year": "2018",
+      "journal-title": "Phys. Rev. E"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0034",
+      "unstructured": "E.M. Thaysen, A. Hassanpouryouzband, K. Edlmann, Hydrogen reservoir flow behaviour: Measurements of molecular diffusion, mechanical dispersion and relative permeability (2023)."
+    },
+    {
+      "issue": "10",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0035",
+      "doi-asserted-by": "crossref",
+      "first-page": "1955",
+      "DOI": "10.1002/hyp.395",
+      "article-title": "Determination of longitudinal dispersivity in an unconfined sandy aquifer",
+      "volume": "16",
+      "author": "Kim",
+      "year": "2002",
+      "journal-title": "Hydrol. Process."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0036",
+      "doi-asserted-by": "crossref",
+      "first-page": "278",
+      "DOI": "10.1016/j.powtec.2016.09.037",
+      "article-title": "Experimental and numerical investigation of fluid flow hydrodynamics in porous media: characterization of pre-Darcy, Darcy and non-Darcy flow regimes",
+      "volume": "303",
+      "author": "Kundu",
+      "year": "2016",
+      "journal-title": "Powder. Technol."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0037",
+      "doi-asserted-by": "crossref",
+      "first-page": "643",
+      "DOI": "10.1016/j.matcom.2020.05.026",
+      "article-title": "Modelling of fluid flow through porous media using memory approach: a review",
+      "volume": "177",
+      "author": "Hashan",
+      "year": "2020",
+      "journal-title": "Math. Comput. Simul."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0038",
+      "doi-asserted-by": "crossref",
+      "first-page": "1",
+      "DOI": "10.1186/s40543-015-0081-2",
+      "article-title": "Pre-Darcy flow revisited under experimental investigation",
+      "volume": "7",
+      "author": "Siddiqui",
+      "year": "2016",
+      "journal-title": "J. Anal. Sci. Technol."
+    },
+    {
+      "issue": "10",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0039",
+      "doi-asserted-by": "crossref",
+      "first-page": "8187",
+      "DOI": "10.1002/2017WR021257",
+      "article-title": "Pre-Darcy flow in porous media",
+      "volume": "53",
+      "author": "Dejam",
+      "year": "2017",
+      "journal-title": "Water. Resour. Res."
+    },
+    {
+      "issue": "6",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0040",
+      "doi-asserted-by": "crossref",
+      "first-page": "1250",
+      "DOI": "10.1002/aic.690470602",
+      "article-title": "Microfluidics: basic issues, applications, and challenges, American Institute of Chemical Engineers",
+      "volume": "47",
+      "author": "Stone",
+      "year": "2001",
+      "journal-title": "AIChE J."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0041",
+      "doi-asserted-by": "crossref",
+      "first-page": "130",
+      "DOI": "10.1016/j.powtec.2018.01.029",
+      "article-title": "Comparison of computational fluid dynamics (CFD) and pressure drop correlations in laminar flow regime for packed bed reactors and columns",
+      "volume": "328",
+      "author": "Pavlišič",
+      "year": "2018",
+      "journal-title": "Powder. Technol."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0042",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2023.124325",
+      "article-title": "Pore-scale simulation on flow and heat transfer characteristics in packed beds with internal heat sources at low Reynolds numbers",
+      "volume": "213",
+      "author": "Wang",
+      "year": "2023",
+      "journal-title": "Int. J. Heat. Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0043",
+      "unstructured": "M. Raissi, P. Perdikaris, G.E. Karniadakis, Physics informed deep learning (parti): Data-driven solutions of nonlinear partial differential equations. arXiv 2017, arXiv preprint arXiv:1711.10561."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0044",
+      "doi-asserted-by": "crossref",
+      "first-page": "686",
+      "DOI": "10.1016/j.jcp.2018.10.045",
+      "article-title": "Physics-informed neural networks: a deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations",
+      "volume": "378",
+      "author": "Raissi",
+      "year": "2019",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "issue": "8",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0045",
+      "doi-asserted-by": "crossref",
+      "first-page": "2022",
+      "DOI": "10.1002/aic.690490812",
+      "article-title": "Voidage variation in packed beds at small column to particle diameter ratio",
+      "volume": "49",
+      "author": "De Klerk",
+      "year": "2003",
+      "journal-title": "AIChE J."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0046",
+      "doi-asserted-by": "crossref",
+      "first-page": "303",
+      "DOI": "10.1016/j.fusengdes.2016.08.027",
+      "article-title": "Numerical modelling for the effective thermal conductivity of lithium meta titanate pebble bed with different packing structures",
+      "volume": "112",
+      "author": "Panchal",
+      "year": "2016",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "issue": "4",
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0047",
+      "first-page": "111",
+      "article-title": "Performance analysis of various activation functions in generalized MLP architectures of neural networks",
+      "volume": "1",
+      "author": "Karlik",
+      "year": "2011",
+      "journal-title": "Int. J. Artif. Intell. Expert Syst."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0048",
+      "series-title": "Heat and Mass Transfer in Packed Beds",
+      "author": "Wakao",
+      "year": "1982"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2025.126970_bib0049",
+      "series-title": "International Conference on Nuclear Engineering",
+      "article-title": "Tritium Transport Modeling and Analysis for HCCB Blanket of CFETR",
+      "author": "Zhang",
+      "year": "2021"
+    }
+  ],
+  "container-title": "International Journal of Heat and Mass Transfer",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0017931025003114?httpAccept=text/xml",
+      "content-type": "text/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0017931025003114?httpAccept=text/plain",
+      "content-type": "text/plain",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2025,
+        4,
+        24
+      ]
+    ],
+    "date-time": "2025-04-24T12:15:45Z",
+    "timestamp": 1745496945000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0017931025003114"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2025,
+        7
+      ]
+    ]
+  },
+  "references-count": 49,
+  "alternative-id": [
+    "S0017931025003114"
+  ],
+  "URL": "http://dx.doi.org/10.1016/j.ijheatmasstransfer.2025.126970",
+  "relation": {},
+  "ISSN": [
+    "0017-9310"
+  ],
+  "subject": [],
+  "container-title-short": "International Journal of Heat and Mass Transfer",
+  "published": {
+    "date-parts": [
+      [
+        2025,
+        7
+      ]
+    ]
+  },
+  "assertion": [
+    {
+      "value": "Elsevier",
+      "name": "publisher",
+      "label": "This article is maintained by"
+    },
+    {
+      "value": "Physics-informed neural networks for effective diffusion characteristics inversion in packed bed at low flow rates",
+      "name": "articletitle",
+      "label": "Article Title"
+    },
+    {
+      "value": "International Journal of Heat and Mass Transfer",
+      "name": "journaltitle",
+      "label": "Journal Title"
+    },
+    {
+      "value": "https://doi.org/10.1016/j.ijheatmasstransfer.2025.126970",
+      "name": "articlelink",
+      "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+      "value": "article",
+      "name": "content_type",
+      "label": "Content Type"
+    },
+    {
+      "value": "© 2025 Elsevier Ltd. All rights are reserved, including those for text and data mining, AI training, and similar technologies.",
+      "name": "copyright",
+      "label": "Copyright"
+    }
+  ],
+  "article-number": "126970"
+}

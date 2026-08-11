@@ -1,0 +1,462 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        8,
+        5
+      ]
+    ],
+    "date-time": "2026-08-05T18:20:26Z",
+    "timestamp": 1785954026328,
+    "version": "3.56.0"
+  },
+  "reference-count": 49,
+  "publisher": "Society for Industrial & Applied Mathematics (SIAM)",
+  "issue": "1",
+  "funder": [
+    {
+      "DOI": "10.13039/100000181",
+      "name": "U.S. Air Force Office of Scientific Research",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "FA9550-09-0174"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "FA9550-09-0174"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/100000181",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    }
+  ],
+  "content-domain": {
+    "domain": [],
+    "crossmark-restriction": false
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2016,
+        1,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1137/15m1013857",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2016,
+        1,
+        26
+      ]
+    ],
+    "date-time": "2016-01-26T16:11:40Z",
+    "timestamp": 1453824700000
+  },
+  "page": "142-161",
+  "source": "Crossref",
+  "is-referenced-by-count": 962,
+  "title": "Dynamic Mode Decomposition with Control",
+  "prefix": "10.1137",
+  "volume": "15",
+  "author": [
+    {
+      "given": "Joshua L.",
+      "family": "Proctor",
+      "sequence": "first",
+      "affiliation": [
+        {
+          "name": "Corresponding author. Institute for Disease Modeling, Bellevue, WA 98004."
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Steven L.",
+      "family": "Brunton",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "Mechanical Engineering and Applied Mathematics, University of Washington, Seattle, WA 98195."
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "J. Nathan",
+      "family": "Kutz",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "Applied Mathematics, University of Washington, Seattle, WA 98195."
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    }
+  ],
+  "member": "351",
+  "published-online": {
+    "date-parts": [
+      [
+        2016,
+        1,
+        26
+      ]
+    ]
+  },
+  "reference": [
+    {
+      "key": "ref1",
+      "volume-title": "Infectious Diseases of Humans: Dynamics and Control",
+      "author": "Anderson R.",
+      "year": "1992"
+    },
+    {
+      "key": "ref2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.automatica.2013.10.012"
+    },
+    {
+      "key": "ref3",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1017/jfm.2013.249"
+    },
+    {
+      "key": "ref5",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1109/MSP.2007.4286571"
+    },
+    {
+      "key": "ref7",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1063/1.4772195"
+    },
+    {
+      "key": "ref9",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1007/s00332-012-9130-9"
+    },
+    {
+      "key": "ref10",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1214/14-AOS1257"
+    },
+    {
+      "key": "ref11",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1007/BF02288367"
+    },
+    {
+      "key": "ref12",
+      "first-page": "2281",
+      "volume": "29",
+      "author": "Fardad M.",
+      "year": "2014",
+      "journal-title": "IEEE Trans. Automat. Control"
+    },
+    {
+      "key": "ref13",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.automatica.2014.11.006"
+    },
+    {
+      "key": "ref15",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1007/BF02163027"
+    },
+    {
+      "key": "ref16",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1017/jfm.2012.37"
+    },
+    {
+      "key": "ref18",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1017/jfm.2014.553"
+    },
+    {
+      "key": "ref20",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1017/CBO9780511919701"
+    },
+    {
+      "key": "ref21",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1063/1.2840197"
+    },
+    {
+      "key": "ref22",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1063/1.4863670"
+    },
+    {
+      "key": "ref23",
+      "volume-title": "Applied System Identification",
+      "author": "Juang J. N.",
+      "year": "1994"
+    },
+    {
+      "key": "ref24",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.2514/3.20031"
+    },
+    {
+      "key": "ref26",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1007/1-84628-158-X"
+    },
+    {
+      "key": "ref27",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1126/science.275.5296.65"
+    },
+    {
+      "key": "ref28",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1515/9781400841035"
+    },
+    {
+      "key": "ref29",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1073/pnas.17.5.315"
+    },
+    {
+      "key": "ref30",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1109/TAC.2013.2257618"
+    },
+    {
+      "key": "ref31",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1007/s00162-010-0184-8"
+    },
+    {
+      "key": "ref32",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1007/s11071-005-2824-x"
+    },
+    {
+      "key": "ref33",
+      "first-page": "357",
+      "volume-title": "Annual Review of Fluid Mechanics, Annu. Rev. Fluid Mech.",
+      "volume": "45",
+      "author": "Mezić I.",
+      "year": "2013"
+    },
+    {
+      "key": "ref34",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1093/qmath/11.1.50"
+    },
+    {
+      "key": "ref35",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1109/TAC.1981.1102568"
+    },
+    {
+      "key": "ref36",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1007/BF00941887"
+    },
+    {
+      "key": "ref37",
+      "first-page": "261",
+      "volume": "40",
+      "author": "Phan M.",
+      "year": "1992",
+      "journal-title": "J. Astronautical Sci."
+    },
+    {
+      "key": "ref38",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.compchemeng.2006.05.045"
+    },
+    {
+      "key": "ref39",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.automatica.2011.02.048"
+    },
+    {
+      "key": "ref40",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1142/S0218127405012429"
+    },
+    {
+      "key": "ref41",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1017/S0022112009992059"
+    },
+    {
+      "key": "ref42",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1073/pnas.1302752110"
+    },
+    {
+      "key": "ref43",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1017/S0022112010001217"
+    },
+    {
+      "key": "ref44",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1007/s00348-010-0911-3"
+    },
+    {
+      "key": "ref47",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1007/s00348-012-1266-8"
+    },
+    {
+      "key": "ref48",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1090/qam/910462"
+    },
+    {
+      "key": "ref49",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1090/qam/910463"
+    },
+    {
+      "key": "ref50",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1090/qam/910464"
+    },
+    {
+      "key": "ref51",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.crme.2013.12.011"
+    },
+    {
+      "key": "ref52",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.3934/jcd.2014.1.391"
+    },
+    {
+      "key": "ref53",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1007/s00348-014-1805-6"
+    },
+    {
+      "key": "ref54",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/0005-1098(94)90230-5"
+    },
+    {
+      "key": "ref55",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1007/978-1-4613-0465-4"
+    },
+    {
+      "key": "ref56",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/0005-1098(95)00107-5"
+    },
+    {
+      "key": "ref57",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.2514/2.1570"
+    },
+    {
+      "key": "ref58",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.automatica.2013.07.017"
+    }
+  ],
+  "container-title": "SIAM Journal on Applied Dynamical Systems",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "http://epubs.siam.org/doi/pdf/10.1137/15M1013857",
+      "content-type": "unspecified",
+      "content-version": "vor",
+      "intended-application": "similarity-checking"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2024,
+        10,
+        30
+      ]
+    ],
+    "date-time": "2024-10-30T12:57:10Z",
+    "timestamp": 1730293030000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://epubs.siam.org/doi/10.1137/15M1013857"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2016,
+        1,
+        1
+      ]
+    ]
+  },
+  "references-count": 49,
+  "journal-issue": {
+    "issue": "1",
+    "published-print": {
+      "date-parts": [
+        [
+          2016,
+          1,
+          1
+        ]
+      ]
+    }
+  },
+  "alternative-id": [
+    "10.1137/15M1013857"
+  ],
+  "URL": "http://dx.doi.org/10.1137/15M1013857",
+  "relation": {},
+  "ISSN": [
+    "1536-0040"
+  ],
+  "subject": [],
+  "container-title-short": "SIAM J. Appl. Dyn. Syst.",
+  "published": {
+    "date-parts": [
+      [
+        2016,
+        1,
+        1
+      ]
+    ]
+  }
+}

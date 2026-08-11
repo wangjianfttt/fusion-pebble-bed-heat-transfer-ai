@@ -1,0 +1,634 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        6,
+        20
+      ]
+    ],
+    "date-time": "2026-06-20T19:19:07Z",
+    "timestamp": 1781983147639,
+    "version": "3.54.5"
+  },
+  "reference-count": 26,
+  "publisher": "Elsevier BV",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2020,
+            11,
+            1
+          ]
+        ],
+        "date-time": "2020-11-01T00:00:00Z",
+        "timestamp": 1604188800000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2020,
+            11,
+            1
+          ]
+        ],
+        "date-time": "2020-11-01T00:00:00Z",
+        "timestamp": 1604188800000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/legal/tdmrep-license"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2020,
+            11,
+            1
+          ]
+        ],
+        "date-time": "2020-11-01T00:00:00Z",
+        "timestamp": 1604188800000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-017"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2020,
+            11,
+            1
+          ]
+        ],
+        "date-time": "2020-11-01T00:00:00Z",
+        "timestamp": 1604188800000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-037"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2020,
+            11,
+            1
+          ]
+        ],
+        "date-time": "2020-11-01T00:00:00Z",
+        "timestamp": 1604188800000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-012"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2020,
+            11,
+            1
+          ]
+        ],
+        "date-time": "2020-11-01T00:00:00Z",
+        "timestamp": 1604188800000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-029"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2020,
+            11,
+            1
+          ]
+        ],
+        "date-time": "2020-11-01T00:00:00Z",
+        "timestamp": 1604188800000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-004"
+    }
+  ],
+  "funder": [
+    {
+      "DOI": "10.13039/501100001502",
+      "name": "Department of Atomic Energy, Government of India",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "39/14/12/2018-BRNS/39012"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "39/14/12/2018-BRNS/39012"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100001502",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    }
+  ],
+  "content-domain": {
+    "domain": [
+      "elsevier.com",
+      "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2020,
+        11
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.fusengdes.2020.111848",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2020,
+        7,
+        2
+      ]
+    ],
+    "date-time": "2020-07-02T10:26:36Z",
+    "timestamp": 1593685596000
+  },
+  "page": "111848",
+  "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 26,
+  "special_numbering": "C",
+  "title": "Thermal-hydraulic characteristics of purge gas in a rectangular packed pebble bed of a fusion reactor using DEM-CFD and porous medium analyses",
+  "prefix": "10.1016",
+  "volume": "160",
+  "author": [
+    {
+      "given": "Akhalesh",
+      "family": "Sharma",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "family": "Abhishek",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0003-3329-364X",
+      "authenticated-orcid": false,
+      "given": "Sandip K.",
+      "family": "Saha",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0001-6500-924X",
+      "authenticated-orcid": false,
+      "given": "Atul",
+      "family": "Sharma",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0003-3626-2056",
+      "authenticated-orcid": false,
+      "given": "Deepak",
+      "family": "Sharma",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Paritosh",
+      "family": "Chaudhuri",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    }
+  ],
+  "member": "78",
+  "reference": [
+    {
+      "key": "10.1016/j.fusengdes.2020.111848_bib0005",
+      "doi-asserted-by": "crossref",
+      "first-page": "2",
+      "DOI": "10.1016/j.fusengdes.2015.07.021",
+      "article-title": "Blanket/first wall challenges and required R&D on the pathway to DEMO",
+      "volume": "100",
+      "author": "Abdou",
+      "year": "2015",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "issue": "7–8",
+      "key": "10.1016/j.fusengdes.2020.111848_bib0010",
+      "doi-asserted-by": "crossref",
+      "first-page": "1362",
+      "DOI": "10.1016/j.fusengdes.2014.02.001",
+      "article-title": "Progress in engineering design of Indian LLCB TBM set for testing in ITER",
+      "volume": "89",
+      "author": "Chaudhuri",
+      "year": "2014",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.fusengdes.2020.111848_bib0015",
+      "doi-asserted-by": "crossref",
+      "first-page": "47",
+      "DOI": "10.1680/geot.1979.29.1.47",
+      "article-title": "A discrete numerical model for granular assemblies",
+      "volume": "29",
+      "author": "Cundall",
+      "year": "1979",
+      "journal-title": "Gotechniqu"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111848_bib0020",
+      "doi-asserted-by": "crossref",
+      "first-page": "324",
+      "DOI": "10.1016/j.cej.2010.10.053",
+      "article-title": "DEM-CFD simulations of fixed bed reactor with small tube to particle diameter ratios",
+      "volume": "166",
+      "author": "Eppinger",
+      "year": "2010",
+      "journal-title": "Chem. Eng. J."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111848_bib0025",
+      "doi-asserted-by": "crossref",
+      "first-page": "288",
+      "DOI": "10.1016/j.fusengdes.2016.06.045",
+      "article-title": "DEM-CFD simulation of purge gas flow in a solid breeder pebble bed",
+      "volume": "113",
+      "author": "Zhang",
+      "year": "2016",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "issue": "5",
+      "key": "10.1016/j.fusengdes.2020.111848_bib0030",
+      "doi-asserted-by": "crossref",
+      "first-page": "906",
+      "DOI": "10.1002/aic.10089",
+      "article-title": "CFD study of fluid flow and wall heat transfer in a fixed bed of spheres",
+      "volume": "50",
+      "author": "Nijemeisland",
+      "year": "2004",
+      "journal-title": "Aiche J."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111848_bib0035",
+      "doi-asserted-by": "crossref",
+      "first-page": "84",
+      "DOI": "10.1016/j.fusengdes.2016.12.003",
+      "article-title": "Flow characteristics analysis of purge gas in unitary pebble beds by CFD simulation coupled with DEM geometry model for fusion blanket",
+      "volume": "114",
+      "author": "Chen",
+      "year": "2017",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.fusengdes.2020.111848_bib0040",
+      "doi-asserted-by": "crossref",
+      "first-page": "119",
+      "DOI": "10.1177/1757482X17746923",
+      "article-title": "Computational fluid dynamics investigation of thermal-hydraulic characteristics in a simplified pebble bed modular reactor using different arrangements of fuel elements",
+      "volume": "10",
+      "author": "Bai",
+      "year": "2017",
+      "journal-title": "J. Comput. Multiph. Flows"
+    },
+    {
+      "issue": "2",
+      "key": "10.1016/j.fusengdes.2020.111848_bib0045",
+      "doi-asserted-by": "crossref",
+      "first-page": "135",
+      "DOI": "10.1080/00295639.2017.1388090",
+      "article-title": "Flow simulations in a pebble bed reactor by a combined DEM-CFD approach",
+      "volume": "189",
+      "author": "Zhang",
+      "year": "2017",
+      "journal-title": "Nucl. Sci. Eng."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111848_bib0050",
+      "series-title": "Proceedings of the ASME 2011 Small Modular Reactors Symposium",
+      "article-title": "Combined CFD and DEM simulations of fluid flow and heat transfer in a pebble bed reactor",
+      "author": "Zhao",
+      "year": "2011"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111848_bib0055",
+      "doi-asserted-by": "crossref",
+      "first-page": "539",
+      "DOI": "10.1016/j.fusengdes.2016.02.059",
+      "article-title": "Numerical study on influences of bed resettling, breeding zone orientation, and purge gas on temperatures in solid breeders",
+      "volume": "109",
+      "author": "Van Lew",
+      "year": "2016",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111848_bib0060",
+      "article-title": "CFD simulations of a pebble bed thermal energy storage system accounting for porosity variations effects",
+      "volume": "2033",
+      "author": "Zavattoni",
+      "year": "2018",
+      "journal-title": "AIP Conference Proceedings"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111848_bib0065",
+      "doi-asserted-by": "crossref",
+      "first-page": "1151",
+      "DOI": "10.1016/j.nucengdes.2010.01.015",
+      "article-title": "Investigating the advantages and disadvantages of realistic approach and porous approach for closely packed pebbles in CFD simulation",
+      "volume": "240",
+      "author": "Wu",
+      "year": "2010",
+      "journal-title": "Nucl. Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111848_bib0070",
+      "doi-asserted-by": "crossref",
+      "first-page": "975",
+      "DOI": "10.1002/er.929",
+      "article-title": "Thermal non-equilibrium natural convection in a square enclosure filled with a heat-generating solid phase, non-Darcy porous medium",
+      "volume": "27",
+      "author": "Baytas",
+      "year": "2003",
+      "journal-title": "Int. J. Energy Res."
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.fusengdes.2020.111848_bib0075",
+      "doi-asserted-by": "crossref",
+      "first-page": "325",
+      "DOI": "10.1016/0009-2509(79)85064-2",
+      "article-title": "Effect of fluid dispersion coefficients on particle-to-fluid heat transfer coefficients in packed beds: correlation of Nusselt numbers",
+      "volume": "34",
+      "author": "Wakao",
+      "year": "1979",
+      "journal-title": "Chem. Eng. Sci."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111848_bib0080",
+      "doi-asserted-by": "crossref",
+      "first-page": "573",
+      "DOI": "10.1016/j.ijheatmasstransfer.2018.06.127",
+      "article-title": "Comparative evaluation of heat conduction and radiation models for CFD simulation of heat transfer of packed beds",
+      "volume": "127",
+      "author": "Qian",
+      "year": "2018",
+      "journal-title": "Int. J. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111848_bib0085",
+      "doi-asserted-by": "crossref",
+      "first-page": "263",
+      "DOI": "10.1016/j.fusengdes.2017.07.010",
+      "article-title": "Status of India-specific reduced activation Ferritic-Martensitic steeland fabrication technologies development for LLCB TBM",
+      "volume": "125",
+      "author": "Mistry",
+      "year": "2017",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111848_bib0090",
+      "unstructured": "https://webbook.nist.gov/chemistry/fluid/ (last accessed on July 20, 2019)."
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.fusengdes.2020.111848_bib0095",
+      "doi-asserted-by": "crossref",
+      "first-page": "79",
+      "DOI": "10.1002/aic.690050118",
+      "article-title": "Heat and mass transfer from wall to fluid in packed bed",
+      "volume": "4",
+      "author": "Yagi",
+      "year": "1959",
+      "journal-title": "Aiche J."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111848_bib0100",
+      "first-page": "189",
+      "article-title": "Part I: effective radial thermal conductivity of packings in gas flow. Part II: thermal conductivity of the packing fraction without gas flow",
+      "volume": "18",
+      "author": "Bauer",
+      "year": "1978",
+      "journal-title": "Int. Chem. Eng."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111848_bib0105",
+      "doi-asserted-by": "crossref",
+      "first-page": "9",
+      "DOI": "10.1016/j.ijmultiphaseflow.2012.01.003",
+      "article-title": "An experimental and computational study of wall to bed heat transfer in a bubbling gas–solid fluidized bed",
+      "volume": "42",
+      "author": "Yusuf",
+      "year": "2012",
+      "journal-title": "Int. J. Multiphas. Flow"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111848_bib0110",
+      "doi-asserted-by": "crossref",
+      "first-page": "58",
+      "DOI": "10.1002/aic.10590",
+      "article-title": "Wall-to-bed heat transfer in gas–solid bubbling fluidized beds",
+      "volume": "52",
+      "author": "Patil",
+      "year": "2006",
+      "journal-title": "Aiche J."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111848_bib0115",
+      "doi-asserted-by": "crossref",
+      "first-page": "392",
+      "DOI": "10.13182/NT80-A17687",
+      "article-title": "The radiant heat transfer in the high temperature reactor core after failure of the afterheat removal systems",
+      "volume": "49",
+      "author": "Breitbach",
+      "year": "1980",
+      "journal-title": "Nucl. Technol."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111848_bib0120",
+      "unstructured": "ANSYS FLUENT 12.0 User’s Guide. (last accessed on July 20, 2019). https://www.afs.enea.it/project/neptunius/docs/fluent/html/ug/node1.htm."
+    },
+    {
+      "issue": "2",
+      "key": "10.1016/j.fusengdes.2020.111848_bib0125",
+      "doi-asserted-by": "crossref",
+      "first-page": "159",
+      "DOI": "10.13182/NT12-A14631",
+      "article-title": "Pressure drop in a pebble bed reactor under high Reynolds number",
+      "volume": "180",
+      "author": "Hassan",
+      "year": "2012",
+      "journal-title": "Nucl. Technol."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111848_bib0130",
+      "series-title": "Lectures in Mathematical Models of Turbulence",
+      "author": "Launder",
+      "year": "1972"
+    }
+  ],
+  "container-title": "Fusion Engineering and Design",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0920379620303963?httpAccept=text/xml",
+      "content-type": "text/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0920379620303963?httpAccept=text/plain",
+      "content-type": "text/plain",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2024,
+        5,
+        9
+      ]
+    ],
+    "date-time": "2024-05-09T21:49:30Z",
+    "timestamp": 1715291370000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0920379620303963"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2020,
+        11
+      ]
+    ]
+  },
+  "references-count": 26,
+  "alternative-id": [
+    "S0920379620303963"
+  ],
+  "URL": "http://dx.doi.org/10.1016/j.fusengdes.2020.111848",
+  "relation": {},
+  "ISSN": [
+    "0920-3796"
+  ],
+  "subject": [],
+  "container-title-short": "Fusion Engineering and Design",
+  "published": {
+    "date-parts": [
+      [
+        2020,
+        11
+      ]
+    ]
+  },
+  "assertion": [
+    {
+      "value": "Elsevier",
+      "name": "publisher",
+      "label": "This article is maintained by"
+    },
+    {
+      "value": "Thermal-hydraulic characteristics of purge gas in a rectangular packed pebble bed of a fusion reactor using DEM-CFD and porous medium analyses",
+      "name": "articletitle",
+      "label": "Article Title"
+    },
+    {
+      "value": "Fusion Engineering and Design",
+      "name": "journaltitle",
+      "label": "Journal Title"
+    },
+    {
+      "value": "https://doi.org/10.1016/j.fusengdes.2020.111848",
+      "name": "articlelink",
+      "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+      "value": "article",
+      "name": "content_type",
+      "label": "Content Type"
+    },
+    {
+      "value": "© 2020 Elsevier B.V. All rights reserved.",
+      "name": "copyright",
+      "label": "Copyright"
+    }
+  ],
+  "article-number": "111848"
+}

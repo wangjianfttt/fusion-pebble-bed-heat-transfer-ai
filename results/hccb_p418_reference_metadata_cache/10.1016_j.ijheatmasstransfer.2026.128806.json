@@ -1,0 +1,805 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        5,
+        3
+      ]
+    ],
+    "date-time": "2026-05-03T03:13:07Z",
+    "timestamp": 1777777987894,
+    "version": "3.51.4"
+  },
+  "reference-count": 52,
+  "publisher": "Elsevier BV",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2026,
+            9,
+            1
+          ]
+        ],
+        "date-time": "2026-09-01T00:00:00Z",
+        "timestamp": 1788220800000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2026,
+            9,
+            1
+          ]
+        ],
+        "date-time": "2026-09-01T00:00:00Z",
+        "timestamp": 1788220800000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/legal/tdmrep-license"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2026,
+            4,
+            4
+          ]
+        ],
+        "date-time": "2026-04-04T00:00:00Z",
+        "timestamp": 1775260800000
+      },
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "URL": "http://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "funder": [
+    {
+      "DOI": "10.13039/501100000266",
+      "name": "Engineering and Physical Sciences Research Council",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "EP/W033542/1"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "EP/W033542/1"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100000266",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/501100000266",
+      "name": "Engineering and Physical Sciences Research Council",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "EP/T012242/2"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "EP/T012242/2"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100000266",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    }
+  ],
+  "content-domain": {
+    "domain": [
+      "elsevier.com",
+      "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2026,
+        9
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.ijheatmasstransfer.2026.128806",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2026,
+        4,
+        11
+      ]
+    ],
+    "date-time": "2026-04-11T07:39:34Z",
+    "timestamp": 1775893174000
+  },
+  "page": "128806",
+  "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 0,
+  "special_numbering": "C",
+  "title": "Physics informed neural network for hidden thermal field discovery in porous media flows",
+  "prefix": "10.1016",
+  "volume": "265",
+  "author": [
+    {
+      "ORCID": "https://orcid.org/0000-0001-5162-4700",
+      "authenticated-orcid": false,
+      "given": "Seohee",
+      "family": "Jang",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "Yasser",
+      "family": "Mahmoudi",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    }
+  ],
+  "member": "78",
+  "reference": [
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib1",
+      "doi-asserted-by": "crossref",
+      "first-page": "984",
+      "DOI": "10.1016/j.egypro.2018.09.104",
+      "article-title": "Effect of porous media on the heat transfer enhancement for a thermal energy storage unit",
+      "volume": "152",
+      "author": "Yu",
+      "year": "2018",
+      "journal-title": "Energy Procedia"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib2",
+      "doi-asserted-by": "crossref",
+      "first-page": "206",
+      "DOI": "10.1016/j.apenergy.2019.03.200",
+      "article-title": "Potentials of porous materials for energy management in heat exchangers – a comprehensive review",
+      "volume": "243",
+      "author": "Rashidi",
+      "year": "2019",
+      "journal-title": "Appl. Energy"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib3",
+      "doi-asserted-by": "crossref",
+      "first-page": "778",
+      "DOI": "10.1016/j.ijheatmasstransfer.2016.11.074",
+      "article-title": "Nanofluid flow and heat transfer in porous media: a review of the latest developments",
+      "volume": "107",
+      "author": "Kasaeian",
+      "year": "2017",
+      "journal-title": "Int. J. Heat. Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib4",
+      "doi-asserted-by": "crossref",
+      "first-page": "378",
+      "DOI": "10.1016/j.renene.2017.05.061",
+      "article-title": "Influence of porous media on the performance of hybrid PV/Thermal collector",
+      "volume": "112",
+      "author": "Ahmed",
+      "year": "2017",
+      "journal-title": "Renew. Energy"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib5",
+      "series-title": "Convective Heat Transfer in Porous Media",
+      "author": "Mahmoudi",
+      "year": "2019"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib6",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2023.124006",
+      "article-title": "On the mechanism of turbulent heat transfer in composite porous-fluid systems with finite length porous blocks: effect of porosity and Reynolds number",
+      "volume": "208",
+      "author": "Jadidi",
+      "year": "2023",
+      "journal-title": "Int. J. Heat. Mass Transf."
+    },
+    {
+      "issue": "10",
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib7",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1063/5.0111195",
+      "article-title": "Flow leakage and Kelvin–Helmholtz instability of turbulent flow over porous media",
+      "volume": "34",
+      "author": "Jadidi",
+      "year": "2022",
+      "journal-title": "Phys. Fluids"
+    },
+    {
+      "issue": "9",
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib8",
+      "doi-asserted-by": "crossref",
+      "first-page": "1735",
+      "DOI": "10.1016/S0017-9310(00)00217-9",
+      "article-title": "Analysis of fluid flow and heat transfer interfacial conditions between a porous medium and a fluid layer",
+      "volume": "44",
+      "author": "Alazmi",
+      "year": "2001",
+      "journal-title": "Int. J. Heat. Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib9",
+      "doi-asserted-by": "crossref",
+      "first-page": "16",
+      "DOI": "10.1016/j.ijheatfluidflow.2018.06.004",
+      "article-title": "Experimental study of turbulent flow over and within cubically packed walls of spheres: effects of topography, permeability and wall thickness",
+      "volume": "73",
+      "author": "Kim",
+      "year": "2018",
+      "journal-title": "Int. J. Heat. Fluid Flow."
+    },
+    {
+      "issue": "23",
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib10",
+      "doi-asserted-by": "crossref",
+      "first-page": "4939",
+      "DOI": "10.1016/j.ijheatmasstransfer.2004.06.014",
+      "article-title": "An experimental and numerical study on heat transfer enhancement for gas heat exchangers fitted with porous media",
+      "volume": "47",
+      "author": "Pavel",
+      "year": "2004",
+      "journal-title": "Int. J. Heat. Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib11",
+      "doi-asserted-by": "crossref",
+      "first-page": "370",
+      "DOI": "10.1016/j.ijthermalsci.2018.04.030",
+      "article-title": "An experimental investigation on forced convection heat transfer of single-phase flow in a channel with different arrangements of porous media",
+      "volume": "134",
+      "author": "Baragh",
+      "year": "2018",
+      "journal-title": "Int. J. Therm. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib12",
+      "doi-asserted-by": "crossref",
+      "first-page": "1273",
+      "DOI": "10.1016/j.ijheatmasstransfer.2019.03.085",
+      "article-title": "Effects of parallel magnet bars and partially filled porous media on magneto-thermo-hydro-dynamic characteristics of pipe ferroconvection",
+      "volume": "136",
+      "author": "Sheikhnejad",
+      "year": "2019",
+      "journal-title": "Int. J. Heat. Mass Transf."
+    },
+    {
+      "issue": "4",
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib13",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1063/5.0200085",
+      "article-title": "Data-driven modal analysis of turbulent momentum exchange and heat transfer in composite porous fluid systems",
+      "volume": "36",
+      "author": "Jadidi",
+      "year": "2024",
+      "journal-title": "Phys. Fluids"
+    },
+    {
+      "issue": "5",
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib14",
+      "doi-asserted-by": "crossref",
+      "first-page": "771",
+      "DOI": "10.1016/S0017-9310(02)00360-5",
+      "article-title": "Calculation of turbulent flow and heat transfer in a porous-baffled channel",
+      "volume": "46",
+      "author": "Yang",
+      "year": "2003",
+      "journal-title": "Int. J. Heat. Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib15",
+      "doi-asserted-by": "crossref",
+      "first-page": "131",
+      "DOI": "10.1016/j.ijthermalsci.2012.05.016",
+      "article-title": "Numerical simulation of turbulent flow and heat transfer in a channel partially filled with a porous media",
+      "volume": "60",
+      "author": "Nimvari",
+      "year": "2012",
+      "journal-title": "Int. J. Therm. Sci."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib16",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijthermalsci.2024.109061",
+      "article-title": "Pore-scale conjugate heat transfer analysis of turbulent flow over stochastic open-cell metal foams",
+      "volume": "202",
+      "author": "Alruwaili",
+      "year": "2024",
+      "journal-title": "Int. J. Therm. Sci."
+    },
+    {
+      "issue": "5",
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib17",
+      "doi-asserted-by": "crossref",
+      "first-page": "1453",
+      "DOI": "10.1007/s00348-012-1369-2",
+      "article-title": "Optical measurement uncertainties due to refractive index mismatch for flow in porous media",
+      "volume": "53",
+      "author": "Patil",
+      "year": "2012",
+      "journal-title": "Exp. Fluids"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib18",
+      "doi-asserted-by": "crossref",
+      "first-page": "101",
+      "DOI": "10.1016/j.jconhyd.2016.07.002",
+      "article-title": "Review of pore network modelling of porous media: experimental characterisations, network constructions and applications to reactive transport",
+      "volume": "192",
+      "author": "Xiong",
+      "year": "2016",
+      "journal-title": "J. Contam. Hydrol."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib19",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.applthermaleng.2022.118916",
+      "article-title": "Pore-scale large eddy simulation of turbulent flow and heat transfer over porous media",
+      "volume": "215",
+      "author": "Jadidi",
+      "year": "2022",
+      "journal-title": "Appl. Therm. Eng."
+    },
+    {
+      "issue": "28",
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib20",
+      "doi-asserted-by": "crossref",
+      "first-page": "13799",
+      "DOI": "10.1073/pnas.1901619116",
+      "article-title": "Comprehensive comparison of pore-scale models for multiphase flow in porous media",
+      "volume": "116",
+      "author": "Zhao",
+      "year": "2019",
+      "journal-title": "Proc. Natl. Acad. Sci."
+    },
+    {
+      "issue": "10",
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib21",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1088/1361-6420/ace9d4",
+      "article-title": "Deep learning methods for partial differential equations and related parameter identification problems",
+      "volume": "39",
+      "author": "Nganyu Tanyu",
+      "year": "2023",
+      "journal-title": "Inverse Probl."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib22",
+      "doi-asserted-by": "crossref",
+      "first-page": "686",
+      "DOI": "10.1016/j.jcp.2018.10.045",
+      "article-title": "Physics-informed neural networks: a deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations",
+      "volume": "378",
+      "author": "Raissi",
+      "year": "2019",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib23",
+      "doi-asserted-by": "crossref",
+      "first-page": "207",
+      "DOI": "10.1016/j.taml.2020.01.039",
+      "article-title": "Physics-informed deep learning for incompressible laminar flows",
+      "volume": "10",
+      "author": "Rao",
+      "year": "2020",
+      "journal-title": "Theor. Appl. Mech. Lett."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib24",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.petrol.2021.109205",
+      "article-title": "Prediction of porous media fluid flow using physics informed neural networks",
+      "volume": "208",
+      "author": "Almajid",
+      "year": "2022",
+      "journal-title": "J. Pet. Sci. Eng."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib25",
+      "doi-asserted-by": "crossref",
+      "first-page": "A102",
+      "DOI": "10.1017/jfm.2021.135",
+      "article-title": "Flow over an espresso cup: inferring 3-D velocity and pressure fields from tomographic background oriented Schlieren via physics-informed neural networks",
+      "volume": "915",
+      "author": "Cai",
+      "year": "2021",
+      "journal-title": "J. Fluid Mech."
+    },
+    {
+      "issue": "8",
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib26",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1063/5.0058529",
+      "article-title": "Simulation of multi-species flow and heat transfer using physics-informed neural networks",
+      "volume": "33",
+      "author": "Laubscher",
+      "year": "2021",
+      "journal-title": "Phys. Fluids"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib27",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2023.125089",
+      "article-title": "Physics-informed neural networks for heat transfer prediction in two-phase flows",
+      "volume": "221",
+      "author": "Jalili",
+      "year": "2024",
+      "journal-title": "Int. J. Heat. Mass Transf."
+    },
+    {
+      "issue": "7",
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib28",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1063/5.0095270",
+      "article-title": "Physics-informed neural networks for solving Reynolds-averaged Navier–Stokes equations",
+      "volume": "34",
+      "author": "Eivazi",
+      "year": "2022",
+      "journal-title": "Phys. Fluids"
+    },
+    {
+      "issue": "2",
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib29",
+      "doi-asserted-by": "crossref",
+      "first-page": "43",
+      "DOI": "10.3390/fluids8020043",
+      "article-title": "Turbulence modeling for physics-informed neural networks: comparison of different RANS models for the backward-facing step flow",
+      "volume": "8",
+      "author": "Pioch",
+      "year": "2023",
+      "journal-title": "Fluids"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib30",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.engappai.2021.104232",
+      "article-title": "A physics-informed machine learning approach for solving heat transfer equation in advanced manufacturing and engineering applications",
+      "volume": "101",
+      "author": "Zobeiry",
+      "year": "2021",
+      "journal-title": "Eng. Appl. Artif. Intell."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib31",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.icheatmasstransfer.2022.105890",
+      "article-title": "On the application of physics informed neural networks (PINN) to solve boundary layer thermal-fluid problems",
+      "volume": "132",
+      "author": "Bararnia",
+      "year": "2022",
+      "journal-title": "Int. Commun. Heat. Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib32",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.engappai.2025.110327",
+      "article-title": "Physics informed neural network with Fourier feature for natural convection problems",
+      "volume": "146",
+      "author": "Bounnah",
+      "year": "2025",
+      "journal-title": "Eng. Appl. Artif. Intell."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib33",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2025.127040",
+      "article-title": "Solution and applications of parameterized convective heat transfer equations using physics-informed neural networks",
+      "volume": "247",
+      "author": "Cui",
+      "year": "2025",
+      "journal-title": "Int. J. Heat. Mass Transf."
+    },
+    {
+      "issue": "12",
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib34",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1063/5.0241362",
+      "article-title": "Hidden field discovery of turbulent flow over porous media using physics-informed neural networks",
+      "volume": "36",
+      "author": "Jang",
+      "year": "2024",
+      "journal-title": "Phys. Fluids"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib35",
+      "unstructured": "D.P. Kingma and J. Ba, Adam: A method for stochastic optimization, arXiv preprint arXiv:1412.6980, 2014."
+    },
+    {
+      "issue": "2",
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib36",
+      "doi-asserted-by": "crossref",
+      "first-page": "301",
+      "DOI": "10.1016/0017-9310(72)90076-2",
+      "article-title": "The prediction of laminarization with a two-equation model of turbulence",
+      "volume": "15",
+      "author": "Jones",
+      "year": "1972",
+      "journal-title": "Int. J. Heat. Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib37",
+      "first-page": "7537",
+      "article-title": "Fourier features let networks learn high frequency functions in low dimensional domains",
+      "volume": "33",
+      "author": "Tancik",
+      "year": "2020",
+      "journal-title": "Adv. Neural Inf. Process. Syst."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib38",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cma.2021.113938",
+      "article-title": "On the eigenvector bias of Fourier feature networks: from regression to solving multi-scale PDEs with physics-informed neural networks",
+      "volume": "384",
+      "author": "Wang",
+      "year": "2021",
+      "journal-title": "Comput. Methods Appl. Mech. Eng."
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib39",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1088/2632-2153/ad63f4",
+      "article-title": "Physics-informed neural network for turbulent flow reconstruction in composite porous-fluid systems",
+      "volume": "5",
+      "author": "Jang",
+      "year": "2024",
+      "journal-title": "Machine Learning Science Technology"
+    },
+    {
+      "issue": "2",
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib40",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.taml.2024.100496",
+      "article-title": "Multi-scale physics-informed neural networks for solving high Reynolds number boundary layer flows based on matched asymptotic expansions",
+      "volume": "14",
+      "author": "Huang",
+      "year": "2024",
+      "journal-title": "Theor. Appl. Mech. Lett."
+    },
+    {
+      "issue": "6",
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib41",
+      "doi-asserted-by": "crossref",
+      "first-page": "620",
+      "DOI": "10.1063/1.168744",
+      "article-title": "A tensorial approach to computational continuum mechanics using object-oriented techniques",
+      "volume": "12",
+      "author": "Weller",
+      "year": "1998",
+      "journal-title": "Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib42",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jcp.2023.112603",
+      "article-title": "NAS-PINN: neural architecture search-guided physics-informed neural network for solving PDEs",
+      "volume": "496",
+      "author": "Wang",
+      "year": "2024",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib43",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jcp.2021.110768",
+      "article-title": "When and why PINNs fail to train: a neural tangent kernel perspective",
+      "volume": "449",
+      "author": "Wang",
+      "year": "2022",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib44",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cma.2020.113552",
+      "article-title": "SciANN: a Keras/TensorFlow wrapper for scientific computations and physics-informed deep learning using artificial neural networks",
+      "volume": "373",
+      "author": "Haghighat",
+      "year": "2021",
+      "journal-title": "Comput. Methods Appl. Mech. Eng."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib45",
+      "doi-asserted-by": "crossref",
+      "first-page": "229",
+      "DOI": "10.1016/j.camwa.2023.09.030",
+      "article-title": "Physics-informed neural networks with parameter asymptotic strategy for learning singularly perturbed convection-dominated problem",
+      "volume": "150",
+      "author": "Cao",
+      "year": "2023",
+      "journal-title": "Comput. Math. Appl."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib46",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.icheatmasstransfer.2025.109085",
+      "article-title": "A physics-informed neural networks approach for coupled flow and heat transfer problems",
+      "volume": "165",
+      "author": "He",
+      "year": "2025",
+      "journal-title": "Int. Commun. Heat. Mass Transf."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib47",
+      "unstructured": "E. Kharazmi, Z. Zhang, and G.E. Karniadakis, Variational physics-informed neural networks for solving partial differential equations, arXiv preprint arXiv:1912.00873, 2019."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib48",
+      "unstructured": "H. Li, Z. Xu, G. Taylor, and T. Goldstein, Visualizing the Loss Landscape of Neural Nets, arXiv, vol. abs/1712.09913, 2017."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib49",
+      "first-page": "26548",
+      "article-title": "Characterizing possible failure modes in physics-informed neural networks",
+      "volume": "34",
+      "author": "Krishnapriyan",
+      "year": "2021",
+      "journal-title": "Adv. Neural Inf. Process. Syst."
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib50",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.energy.2026.140302",
+      "article-title": "A comprehensive PINN method with hybrid Fourier feature for high-precision natural convection solution",
+      "volume": "346",
+      "author": "Cui",
+      "year": "2026",
+      "journal-title": "Energy"
+    },
+    {
+      "issue": "36",
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib51",
+      "doi-asserted-by": "crossref",
+      "first-page": "8098",
+      "DOI": "10.1021/acs.jpca.1c05102",
+      "article-title": "Stiff-PINN: physics-Informed Neural Network for Stiff Chemical Kinetics",
+      "volume": "125",
+      "author": "Ji",
+      "year": "2021",
+      "journal-title": "J. Phys. Chem. A"
+    },
+    {
+      "key": "10.1016/j.ijheatmasstransfer.2026.128806_bib52",
+      "unstructured": "P. Rathore, W. Lei, Z. Frangella, L. Lu, and M. Udell, Challenges in training PINNs: A loss landscape perspective, arXiv preprint arXiv:2402.01868, 2024."
+    }
+  ],
+  "container-title": "International Journal of Heat and Mass Transfer",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0017931026004825?httpAccept=text/xml",
+      "content-type": "text/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0017931026004825?httpAccept=text/plain",
+      "content-type": "text/plain",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2026,
+        4,
+        29
+      ]
+    ],
+    "date-time": "2026-04-29T19:15:31Z",
+    "timestamp": 1777490131000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0017931026004825"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        9
+      ]
+    ]
+  },
+  "references-count": 52,
+  "alternative-id": [
+    "S0017931026004825"
+  ],
+  "URL": "http://dx.doi.org/10.1016/j.ijheatmasstransfer.2026.128806",
+  "relation": {},
+  "ISSN": [
+    "0017-9310"
+  ],
+  "subject": [],
+  "container-title-short": "International Journal of Heat and Mass Transfer",
+  "published": {
+    "date-parts": [
+      [
+        2026,
+        9
+      ]
+    ]
+  },
+  "assertion": [
+    {
+      "value": "Elsevier",
+      "name": "publisher",
+      "label": "This article is maintained by"
+    },
+    {
+      "value": "Physics informed neural network for hidden thermal field discovery in porous media flows",
+      "name": "articletitle",
+      "label": "Article Title"
+    },
+    {
+      "value": "International Journal of Heat and Mass Transfer",
+      "name": "journaltitle",
+      "label": "Journal Title"
+    },
+    {
+      "value": "https://doi.org/10.1016/j.ijheatmasstransfer.2026.128806",
+      "name": "articlelink",
+      "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+      "value": "article",
+      "name": "content_type",
+      "label": "Content Type"
+    },
+    {
+      "value": "© 2026 The Author(s). Published by Elsevier Ltd.",
+      "name": "copyright",
+      "label": "Copyright"
+    }
+  ],
+  "article-number": "128806"
+}

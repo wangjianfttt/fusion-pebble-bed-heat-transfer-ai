@@ -1,0 +1,715 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        8,
+        8
+      ]
+    ],
+    "date-time": "2026-08-08T08:52:00Z",
+    "timestamp": 1786179120185,
+    "version": "3.56.0"
+  },
+  "reference-count": 50,
+  "publisher": "Elsevier BV",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2019,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2019-02-01T00:00:00Z",
+        "timestamp": 1548979200000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2019,
+            2,
+            1
+          ]
+        ],
+        "date-time": "2019-02-01T00:00:00Z",
+        "timestamp": 1548979200000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/legal/tdmrep-license"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2019,
+            11,
+            30
+          ]
+        ],
+        "date-time": "2019-11-30T00:00:00Z",
+        "timestamp": 1575072000000
+      },
+      "content-version": "am",
+      "delay-in-days": 302,
+      "URL": "http://www.elsevier.com/open-access/userlicense/1.0/"
+    }
+  ],
+  "funder": [
+    {
+      "DOI": "10.13039/100000015",
+      "name": "U.S. Department of Energy",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "DE-SC0019116"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "DE-SC0019116"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/100000015",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/100000181",
+      "name": "Air Force Office of Scientific Research",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "FA9550-17-1-0013"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "FA9550-17-1-0013"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/100000181",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/100000185",
+      "name": "Defense Advanced Research Projects Agency",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "N66001-15-2-4055"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "N66001-15-2-4055"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/100000185",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    }
+  ],
+  "content-domain": {
+    "domain": [
+      "elsevier.com",
+      "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2019,
+        2
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.jcp.2018.10.045",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2018,
+        11,
+        3
+      ]
+    ],
+    "date-time": "2018-11-03T02:13:16Z",
+    "timestamp": 1541211196000
+  },
+  "page": "686-707",
+  "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 17287,
+  "special_numbering": "C",
+  "title": "Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations",
+  "prefix": "10.1016",
+  "volume": "378",
+  "author": [
+    {
+      "ORCID": "https://orcid.org/0000-0002-8467-4568",
+      "authenticated-orcid": false,
+      "given": "M.",
+      "family": "Raissi",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0002-2816-3229",
+      "authenticated-orcid": false,
+      "given": "P.",
+      "family": "Perdikaris",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "G.E.",
+      "family": "Karniadakis",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    }
+  ],
+  "member": "78",
+  "reference": [
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0010",
+      "series-title": "Advances in Neural Information Processing Systems",
+      "first-page": "1097",
+      "article-title": "Imagenet classification with deep convolutional neural networks",
+      "author": "Krizhevsky",
+      "year": "2012"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0020",
+      "doi-asserted-by": "crossref",
+      "first-page": "1332",
+      "DOI": "10.1126/science.aab3050",
+      "article-title": "Human-level concept learning through probabilistic program induction",
+      "volume": "350",
+      "author": "Lake",
+      "year": "2015",
+      "journal-title": "Science"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0030",
+      "doi-asserted-by": "crossref",
+      "first-page": "831",
+      "DOI": "10.1038/nbt.3300",
+      "article-title": "Predicting the sequence specificities of DNA- and RNA-binding proteins by deep learning",
+      "volume": "33",
+      "author": "Alipanahi",
+      "year": "2015",
+      "journal-title": "Nat. Biotechnol."
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0040",
+      "doi-asserted-by": "crossref",
+      "first-page": "736",
+      "DOI": "10.1016/j.jcp.2017.01.060",
+      "article-title": "Inferring solutions of differential equations using noisy multi-fidelity data",
+      "volume": "335",
+      "author": "Raissi",
+      "year": "2017",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0050",
+      "doi-asserted-by": "crossref",
+      "first-page": "683",
+      "DOI": "10.1016/j.jcp.2017.07.050",
+      "article-title": "Machine learning of linear differential equations using Gaussian processes",
+      "volume": "348",
+      "author": "Raissi",
+      "year": "2017",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0060",
+      "doi-asserted-by": "crossref",
+      "first-page": "812",
+      "DOI": "10.1137/140974596",
+      "article-title": "Bayesian numerical homogenization",
+      "volume": "13",
+      "author": "Owhadi",
+      "year": "2015",
+      "journal-title": "Multiscale Model. Simul."
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0070",
+      "series-title": "Gaussian Processes for Machine Learning, vol. 1",
+      "author": "Rasmussen",
+      "year": "2006"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0080",
+      "author": "Raissi"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0090",
+      "author": "Raissi"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0100",
+      "doi-asserted-by": "crossref",
+      "first-page": "1",
+      "DOI": "10.1214/15-EJS989",
+      "article-title": "Brittleness of Bayesian inference under finite information in a continuous world",
+      "volume": "9",
+      "author": "Owhadi",
+      "year": "2015",
+      "journal-title": "Electron. J. Stat."
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0110",
+      "doi-asserted-by": "crossref",
+      "first-page": "359",
+      "DOI": "10.1016/0893-6080(89)90020-8",
+      "article-title": "Multilayer feedforward networks are universal approximators",
+      "volume": "2",
+      "author": "Hornik",
+      "year": "1989",
+      "journal-title": "Neural Netw."
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0120",
+      "author": "Baydin"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0130",
+      "doi-asserted-by": "crossref",
+      "first-page": "23",
+      "DOI": "10.1016/0045-7930(86)90036-8",
+      "article-title": "Spectral and finite difference solutions of the Burgers equation",
+      "volume": "14",
+      "author": "Basdevant",
+      "year": "1986",
+      "journal-title": "Comput. Fluids"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0140",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1126/sciadv.1602614",
+      "article-title": "Data-driven discovery of partial differential equations",
+      "volume": "3",
+      "author": "Rudy",
+      "year": "2017",
+      "journal-title": "Sci. Adv."
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0150",
+      "doi-asserted-by": "crossref",
+      "first-page": "987",
+      "DOI": "10.1109/72.712178",
+      "article-title": "Artificial neural networks for solving ordinary and partial differential equations",
+      "volume": "9",
+      "author": "Lagaris",
+      "year": "1998",
+      "journal-title": "IEEE Trans. Neural Netw."
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0160",
+      "doi-asserted-by": "crossref",
+      "first-page": "1499",
+      "DOI": "10.1002/aic.690381003",
+      "article-title": "A hybrid neural network-first principles approach to process modeling",
+      "volume": "38",
+      "author": "Psichogios",
+      "year": "1992",
+      "journal-title": "AIChE J."
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0170",
+      "author": "Wang"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0180",
+      "author": "Zhu"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0190",
+      "author": "Hagge"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0200",
+      "author": "Tripathy"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0210",
+      "author": "Vlachas"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0220",
+      "doi-asserted-by": "crossref",
+      "first-page": "758",
+      "DOI": "10.1016/j.jcp.2015.11.012",
+      "article-title": "A paradigm for data-driven predictive modeling using field inversion and machine learning",
+      "volume": "305",
+      "author": "Parish",
+      "year": "2016",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0230",
+      "series-title": "53rd AIAA Aerospace Sciences Meeting",
+      "first-page": "1284",
+      "article-title": "New approaches in turbulence and transition modeling using data-driven techniques",
+      "author": "Duraisamy",
+      "year": "2018"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0240",
+      "doi-asserted-by": "crossref",
+      "first-page": "155",
+      "DOI": "10.1017/jfm.2016.615",
+      "article-title": "Reynolds averaged turbulence modelling using deep neural networks with embedded invariance",
+      "volume": "807",
+      "author": "Ling",
+      "year": "2016",
+      "journal-title": "J. Fluid Mech."
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0250",
+      "series-title": "22nd AIAA Computational Fluid Dynamics Conference",
+      "first-page": "2460",
+      "article-title": "Machine learning methods for data-driven turbulence modeling",
+      "author": "Zhang",
+      "year": "2015"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0260",
+      "doi-asserted-by": "crossref",
+      "first-page": "1",
+      "DOI": "10.1006/jcph.2002.7146",
+      "article-title": "Neural network modeling for near wall turbulent flow",
+      "volume": "182",
+      "author": "Milano",
+      "year": "2002",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0270",
+      "doi-asserted-by": "crossref",
+      "first-page": "B521",
+      "DOI": "10.1137/15M1055164",
+      "article-title": "Multifidelity information fusion algorithms for high-dimensional systems and massive data sets",
+      "volume": "38",
+      "author": "Perdikaris",
+      "year": "2016",
+      "journal-title": "SIAM J. Sci. Comput."
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0280",
+      "series-title": "Neural Networks for Signal Processing IV. Proceedings of the 1994 IEEE Workshop",
+      "first-page": "596",
+      "article-title": "Continuous-time nonlinear signal processing: a neural network based approach for gray box identification",
+      "author": "Rico-Martinez",
+      "year": "1994"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0290",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1063/1.4927765",
+      "article-title": "Evaluation of machine learning algorithms for prediction of regions of high Reynolds averaged Navier Stokes uncertainty",
+      "volume": "27",
+      "author": "Ling",
+      "year": "2015",
+      "journal-title": "Phys. Fluids"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0300",
+      "doi-asserted-by": "crossref",
+      "first-page": "1223",
+      "DOI": "10.1007/s10955-017-1836-5",
+      "article-title": "Why does deep and cheap learning work so well?",
+      "volume": "168",
+      "author": "Lin",
+      "year": "2017",
+      "journal-title": "J. Stat. Phys."
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0310",
+      "author": "Kondor"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0320",
+      "author": "Kondor"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0330",
+      "doi-asserted-by": "crossref",
+      "first-page": "827",
+      "DOI": "10.1137/16M1075454",
+      "article-title": "Wavelet scattering regression of quantum chemical energies",
+      "volume": "15",
+      "author": "Hirn",
+      "year": "2017",
+      "journal-title": "Multiscale Model. Simul."
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0340",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1098/rsta.2015.0203",
+      "article-title": "Understanding deep convolutional networks",
+      "volume": "374",
+      "author": "Mallat",
+      "year": "2016",
+      "journal-title": "Philos. Trans. R. Soc. A"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0350",
+      "doi-asserted-by": "crossref",
+      "first-page": "503",
+      "DOI": "10.1007/BF01589116",
+      "article-title": "On the limited memory BFGS method for large scale optimization",
+      "volume": "45",
+      "author": "Liu",
+      "year": "1989",
+      "journal-title": "Math. Program."
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0360",
+      "series-title": "Deep Learning",
+      "author": "Goodfellow",
+      "year": "2016"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0370",
+      "author": "Kingma"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0380",
+      "unstructured": "A. Choromanska, M. Henaff, M. Mathieu, G.B. Arous, Y. LeCun, The loss surfaces of multilayer networks, in: Artificial Intelligence and Statistics, pp. 192–204."
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0390",
+      "author": "Shwartz-Ziv"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0400",
+      "series-title": "Chebfun Guide",
+      "author": "Driscoll",
+      "year": "2014"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0410",
+      "doi-asserted-by": "crossref",
+      "first-page": "143",
+      "DOI": "10.1080/00401706.1987.10488205",
+      "article-title": "Large sample properties of simulations using Latin hypercube sampling",
+      "volume": "29",
+      "author": "Stein",
+      "year": "1987",
+      "journal-title": "Technometrics"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0420",
+      "series-title": "Advances in Neural Information Processing Systems",
+      "first-page": "2951",
+      "article-title": "Practical bayesian optimization of machine learning algorithms",
+      "author": "Snoek",
+      "year": "2012"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0430",
+      "doi-asserted-by": "crossref",
+      "first-page": "147",
+      "DOI": "10.1017/S0962492904000182",
+      "article-title": "Sparse grids",
+      "volume": "13",
+      "author": "Bungartz",
+      "year": "2004",
+      "journal-title": "Acta Numer."
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0440",
+      "doi-asserted-by": "crossref",
+      "first-page": "1",
+      "DOI": "10.1006/jcom.1997.0463",
+      "article-title": "When are quasi-Monte Carlo algorithms efficient for high dimensional integrals?",
+      "volume": "14",
+      "author": "Sloan",
+      "year": "1998",
+      "journal-title": "J. Complex."
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0450",
+      "series-title": "A First Course in the Numerical Analysis of Differential Equations, vol. 44",
+      "author": "Iserles",
+      "year": "2009"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0460",
+      "series-title": "Aerodynamics, vol. 9",
+      "author": "Von Kármán",
+      "year": "1963"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0470",
+      "series-title": "Spectral/hp Element Methods for Computational Fluid Dynamics",
+      "author": "Karniadakis",
+      "year": "2013"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0480",
+      "author": "Dauxois"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0490",
+      "author": "Abadi"
+    },
+    {
+      "key": "10.1016/j.jcp.2018.10.045_br0500",
+      "doi-asserted-by": "crossref",
+      "first-page": "3932",
+      "DOI": "10.1073/pnas.1517384113",
+      "article-title": "Discovering governing equations from data by sparse identification of nonlinear dynamical systems",
+      "volume": "113",
+      "author": "Brunton",
+      "year": "2016",
+      "journal-title": "Proc. Natl. Acad. Sci."
+    }
+  ],
+  "container-title": "Journal of Computational Physics",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0021999118307125?httpAccept=text/xml",
+      "content-type": "text/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0021999118307125?httpAccept=text/plain",
+      "content-type": "text/plain",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2026,
+        6,
+        11
+      ]
+    ],
+    "date-time": "2026-06-11T23:21:47Z",
+    "timestamp": 1781220107000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0021999118307125"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2019,
+        2
+      ]
+    ]
+  },
+  "references-count": 50,
+  "alternative-id": [
+    "S0021999118307125"
+  ],
+  "URL": "http://dx.doi.org/10.1016/j.jcp.2018.10.045",
+  "relation": {
+    "is-basis-for": [
+      {
+        "id-type": "doi",
+        "id": "10.52843/cassyni.5wcgh6",
+        "asserted-by": "object"
+      }
+    ]
+  },
+  "ISSN": [
+    "0021-9991"
+  ],
+  "subject": [],
+  "container-title-short": "Journal of Computational Physics",
+  "published": {
+    "date-parts": [
+      [
+        2019,
+        2
+      ]
+    ]
+  },
+  "assertion": [
+    {
+      "value": "Elsevier",
+      "name": "publisher",
+      "label": "This article is maintained by"
+    },
+    {
+      "value": "Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations",
+      "name": "articletitle",
+      "label": "Article Title"
+    },
+    {
+      "value": "Journal of Computational Physics",
+      "name": "journaltitle",
+      "label": "Journal Title"
+    },
+    {
+      "value": "https://doi.org/10.1016/j.jcp.2018.10.045",
+      "name": "articlelink",
+      "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+      "value": "article",
+      "name": "content_type",
+      "label": "Content Type"
+    },
+    {
+      "value": "© 2018 Elsevier Inc. All rights reserved.",
+      "name": "copyright",
+      "label": "Copyright"
+    }
+  ]
+}

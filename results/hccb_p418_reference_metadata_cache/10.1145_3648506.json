@@ -1,0 +1,662 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        8,
+        7
+      ]
+    ],
+    "date-time": "2026-08-07T08:09:57Z",
+    "timestamp": 1786090197514,
+    "version": "3.56.0"
+  },
+  "reference-count": 59,
+  "publisher": "Association for Computing Machinery (ACM)",
+  "issue": "3",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2024,
+            5,
+            20
+          ]
+        ],
+        "date-time": "2024-05-20T00:00:00Z",
+        "timestamp": 1716163200000
+      },
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "URL": "https://www.acm.org/publications/policies/copyright_policy#Background"
+    }
+  ],
+  "funder": [
+    {
+      "name": "Kortschak Scholars, PIMCO Fellows"
+    },
+    {
+      "name": "Amazon AI4Science Fellows programs"
+    },
+    {
+      "name": "Amazon AI4Science Fellowship"
+    }
+  ],
+  "content-domain": {
+    "domain": [],
+    "crossmark-restriction": false
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2024,
+        9,
+        30
+      ]
+    ]
+  },
+  "abstract": "<jats:p>In this article, we propose physics-informed neural operators (PINO) that combine training data and physics constraints to learn the solution operator of a given family of parametric Partial Differential Equations (PDE). PINO is the first hybrid approach incorporating data and PDE constraints at different resolutions to learn the operator. Specifically, in PINO, we combine coarse-resolution training data with PDE constraints imposed at a higher resolution. The resulting PINO model can accurately approximate the ground-truth solution operator for many popular PDE families and shows no degradation in accuracy even under zero-shot super-resolution, that is, being able to predict beyond the resolution of training data. PINO uses the Fourier neural operator (FNO) framework that is guaranteed to be a universal approximator for any continuous operator and discretization convergent in the limit of mesh refinement. By adding PDE constraints to FNO at a higher resolution, we obtain a high-fidelity reconstruction of the ground-truth operator. Moreover, PINO succeeds in settings where no training data is available and only PDE constraints are imposed, while previous approaches, such as the Physics-Informed Neural Network (PINN), fail due to optimization challenges, for example, in multi-scale dynamic systems such as Kolmogorov flows.</jats:p>",
+  "DOI": "10.1145/3648506",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2024,
+        2,
+        21
+      ]
+    ],
+    "date-time": "2024-02-21T07:06:51Z",
+    "timestamp": 1708499211000
+  },
+  "page": "1-27",
+  "source": "Crossref",
+  "is-referenced-by-count": 159,
+  "title": "Physics-Informed Neural Operator for Learning Partial Differential Equations",
+  "prefix": "10.1145",
+  "volume": "1",
+  "author": [
+    {
+      "ORCID": "https://orcid.org/0000-0003-2081-9665",
+      "authenticated-orcid": false,
+      "given": "Zongyi",
+      "family": "Li",
+      "sequence": "first",
+      "affiliation": [
+        {
+          "name": "Computing and mathematical science, California Institute of Technology",
+          "place": [
+            "Pasadena, USA"
+          ]
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0009-0002-1693-0272",
+      "authenticated-orcid": false,
+      "given": "Hongkai",
+      "family": "Zheng",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "Computing and mathematical science, California Institute of Technology",
+          "place": [
+            "Pasadena, USA"
+          ]
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0002-3650-2972",
+      "authenticated-orcid": false,
+      "given": "Nikola",
+      "family": "Kovachki",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "Computing and mathematical science, California Institute of Technology",
+          "place": [
+            "Pasadena, USA"
+          ]
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0001-8778-6031",
+      "authenticated-orcid": false,
+      "given": "David",
+      "family": "Jin",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "Computing and mathematical science, California Institute of Technology",
+          "place": [
+            "Pasadena, USA"
+          ]
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0002-8238-2764",
+      "authenticated-orcid": false,
+      "given": "Haoxuan",
+      "family": "Chen",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "Computing and mathematical science, California Institute of Technology",
+          "place": [
+            "Pasadena, USA"
+          ]
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0002-6518-3368",
+      "authenticated-orcid": false,
+      "given": "Burigede",
+      "family": "Liu",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "Computing and mathematical science, California Institute of Technology",
+          "place": [
+            "Pasadena, USA"
+          ]
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0001-8507-1868",
+      "authenticated-orcid": false,
+      "given": "Kamyar",
+      "family": "Azizzadenesheli",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "Computing and mathematical science, California Institute of Technology",
+          "place": [
+            "Pasadena, USA"
+          ]
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0002-6974-6797",
+      "authenticated-orcid": false,
+      "given": "Anima",
+      "family": "Anandkumar",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "Computing and mathematical science, California Institute of Technology",
+          "place": [
+            "Pasadena, USA"
+          ]
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    }
+  ],
+  "member": "320",
+  "published-online": {
+    "date-parts": [
+      [
+        2024,
+        5,
+        20
+      ]
+    ]
+  },
+  "reference": [
+    {
+      "issue": "89",
+      "key": "e_1_3_4_2_2",
+      "article-title": "Neural operator: Learning maps between function spaces",
+      "volume": "24",
+      "author": "Kovachki Nikola",
+      "year": "2023",
+      "unstructured": "Nikola Kovachki, Zongyi Li, Burigede Liu, Kamyar Azizzadenesheli, Kaushik Bhattacharya, Andrew Stuart, and Anima Anandkumar. 2023. Neural operator: Learning maps between function spaces. Journal of Machine Learning Research 24, 89 (2023), 1–97.",
+      "journal-title": "Journal of Machine Learning Research"
+    },
+    {
+      "key": "e_1_3_4_3_2",
+      "volume-title": "International Conference on Learning Representations",
+      "author": "Li Zongyi",
+      "year": "2021",
+      "unstructured": "Zongyi Li, Nikola Kovachki, Kamyar Azizzadenesheli, Burigede Liu, Kaushik Bhattacharya, Andrew Stuart, and Anima Anandkumar. 2021. Fourier neural operator for parametric partial differential equations. In International Conference on Learning Representations."
+    },
+    {
+      "key": "e_1_3_4_4_2",
+      "volume-title": "Conference on Neural Information Processing Systems",
+      "author": "Li Zongyi",
+      "year": "2021",
+      "unstructured": "Zongyi Li, Nikola Kovachki, Kamyar Azizzadenesheli, Burigede Liu, Kaushik Bhattacharya, Andrew Stuart, and Anima Anandkumar. 2021. Multipole graph neural operator for parametric partial differential equations. In Conference on Neural Information Processing Systems."
+    },
+    {
+      "key": "e_1_3_4_5_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1038/s42256-021-00302-5"
+    },
+    {
+      "key": "e_1_3_4_6_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1146/annurev-fluid-010719-060214"
+    },
+    {
+      "key": "e_1_3_4_7_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.jmps.2021.104668"
+    },
+    {
+      "key": "e_1_3_4_8_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1145/3489517.3530580"
+    },
+    {
+      "key": "e_1_3_4_9_2",
+      "unstructured": "Jaideep Pathak Shashank Subramanian Peter Harrington Sanjeev Raja Ashesh Chattopadhyay Morteza Mardani Thorsten Kurth David Hall Zongyi Li Kamyar Azizzadenesheli et al. 2023. Fourcastnet: A global data-driven high-resolution weather model using adaptive fourier neural operators."
+    },
+    {
+      "key": "e_1_3_4_10_2",
+      "article-title": "Fourier neural operator with learned deformations for pdes on general geometries",
+      "volume": "388",
+      "author": "Li Zongyi",
+      "year": "2023",
+      "unstructured": "Zongyi Li, Daniel Zhengyu Huang, Burigede Liu, and Anima Anandkumar. 2023. Fourier neural operator with learned deformations for pdes on general geometries. Journal of Machine Learning Research 388 (2023), 1–26.",
+      "journal-title": "Journal of Machine Learning Research"
+    },
+    {
+      "key": "e_1_3_4_11_2",
+      "article-title": "Real-time high-resolution co2 geological storage prediction using nested fourier neural operators",
+      "volume": "16",
+      "author": "Wen Gege",
+      "unstructured": "Gege Wen, Zongyi Li, Qirui Long, Kamyar Azizzadenesheli, Anima Anandkumar, and Sally M. Benson. Real-time high-resolution co2 geological storage prediction using nested fourier neural operators. Energy Environ. Sci., 16 (2023), 1732–1741.",
+      "journal-title": "Energy Environ. Sci."
+    },
+    {
+      "key": "e_1_3_4_12_2",
+      "unstructured": "Boris Bonev Thorsten Kurth Christian Hundt Jaideep Pathak Maximilian Baust Karthik Kashinath and Anima Anandkumar. 2023. Spherical fourier neural operators: Learning stable dynamics on the sphere. arXiv preprint arXiv:2306.03838 2023."
+    },
+    {
+      "key": "e_1_3_4_13_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1039/D2EE04204E"
+    },
+    {
+      "key": "e_1_3_4_14_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1002/qj.3803"
+    },
+    {
+      "key": "e_1_3_4_15_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.jcp.2018.10.045"
+    },
+    {
+      "key": "e_1_3_4_16_2",
+      "unstructured": "Zongyi Li Nikola Kovachki Kamyar Azizzadenesheli Burigede Liu Kaushik Bhattacharya Andrew Stuart and Anima Anandkumar. 2023. Neural operator: Graph kernel network for partial differential equations. Journal of Machine Learning Research 24 89 (2023) 1–97."
+    },
+    {
+      "key": "e_1_3_4_17_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1137/050639910"
+    },
+    {
+      "key": "e_1_3_4_18_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1214/13-STS421"
+    },
+    {
+      "key": "e_1_3_4_19_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.jcp.2020.109338"
+    },
+    {
+      "key": "e_1_3_4_20_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.cma.2020.113500"
+    },
+    {
+      "key": "e_1_3_4_21_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1145/3394486.3403198"
+    },
+    {
+      "key": "e_1_3_4_22_2",
+      "unstructured": "James Duvall Karthik Duraisamy and Shaowu Pan. 2021. Non-linear independent dual system (nids) for discretization-independent surrogate modeling over complex geometries."
+    },
+    {
+      "key": "e_1_3_4_23_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1137/19M1274067"
+    },
+    {
+      "key": "e_1_3_4_24_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1073/pnas.1718942115"
+    },
+    {
+      "key": "e_1_3_4_25_2",
+      "first-page": "447",
+      "volume-title": "Proceedings of the International Conference on Computational Science",
+      "author": "Hennigh Oliver",
+      "year": "2021",
+      "unstructured": "Oliver Hennigh, Susheela Narasimhan, Mohammad Amin Nabian, Akshay Subramaniam, Kaustubh Tangsali, Zhiwei Fang, Max Rietmann, Wonmin Byeon, and Sanjay Choudhry. 2021. NVIDIA SimNet™: An AI-accelerated multi-physics simulation framework. In Proceedings of the International Conference on Computational Science. Springer, 447–461."
+    },
+    {
+      "key": "e_1_3_4_26_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1098/rsta.2020.0093"
+    },
+    {
+      "key": "e_1_3_4_27_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.cpc.2020.107624"
+    },
+    {
+      "key": "e_1_3_4_28_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.jcp.2019.05.024"
+    },
+    {
+      "key": "e_1_3_4_29_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.5194/egusphere-egu21-3371"
+    },
+    {
+      "key": "e_1_3_4_30_2",
+      "article-title": "When and why pinns fail to train: A neural tangent kernel perspective",
+      "author": "Wang Sifan",
+      "year": "2022",
+      "unstructured": "Sifan Wang, Xinling Yu, and Paris Perdikaris. 2022. When and why pinns fail to train: A neural tangent kernel perspective. Journal of Computational Physics 449 (2022).",
+      "journal-title": "Journal of Computational Physics"
+    },
+    {
+      "key": "e_1_3_4_31_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1615/JMachLearnModelComput.2020033905"
+    },
+    {
+      "key": "e_1_3_4_32_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1126/science.aaw4741"
+    },
+    {
+      "key": "e_1_3_4_33_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1137/20M1318043"
+    },
+    {
+      "key": "e_1_3_4_34_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.cma.2019.112732"
+    },
+    {
+      "key": "e_1_3_4_35_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.neucom.2019.12.099"
+    },
+    {
+      "key": "e_1_3_4_36_2",
+      "volume-title": "Science advances",
+      "author": "Wang Sifan",
+      "year": "2021",
+      "unstructured": "Sifan Wang, Hanwen Wang, and Paris Perdikaris. 2021. Learning the solution operator of parametric partial differential equations with physics-informed deeponets. Science advances."
+    },
+    {
+      "key": "e_1_3_4_37_2",
+      "unstructured": "Samuel Lanthaler Roberto Molinaro Patrik Hadorn and Siddhartha Mishra. 2023. Nonlinear reconstruction for operator learning of pdes with discontinuities. International Conference on Learning Representations."
+    },
+    {
+      "key": "e_1_3_4_38_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.4208/cicp.OA-2021-0257"
+    },
+    {
+      "key": "e_1_3_4_39_2",
+      "doi-asserted-by": "crossref",
+      "unstructured": "Xiang Huang Zhanhong Ye Hongsheng Liu Beiji Shi Zidong Wang Kang Yang Yang Li Bingya Weng Min Wang Haotian Chu et al. 2022. Meta-auto-decoder for solving parametric partial differential equations. Conference on Neural Information Processing Systems.",
+      "DOI": "10.52202/068431-1702"
+    },
+    {
+      "key": "e_1_3_4_40_2",
+      "article-title": "Machine learning accelerated computational fluid dynamics",
+      "author": "Kochkov Dmitrii",
+      "year": "2021",
+      "unstructured": "Dmitrii Kochkov, Jamie A. Smith, Ayya Alieva, Qing Wang, Michael P. Brenner, and Stephan Hoyer. 2021. Machine learning accelerated computational fluid dynamics. arXiv:2102.01010. Retrieved from https://arxiv.org/abs/2102.01010",
+      "journal-title": "arXiv:2102.01010"
+    },
+    {
+      "key": "e_1_3_4_41_2",
+      "article-title": "ML-PDE: A framework for a machine learning enhanced pde solver",
+      "author": "Pathak Jaideep",
+      "year": "2021",
+      "unstructured": "Jaideep Pathak, Mustafa Mustafa, Karthik Kashinath, Emmanuel Motheau, Thorsten Kurth, and Marcus Day. 2021. ML-PDE: A framework for a machine learning enhanced pde solver. Bulletin of the American Physical Society (2021).",
+      "journal-title": "Bulletin of the American Physical Society"
+    },
+    {
+      "key": "e_1_3_4_42_2",
+      "first-page": "2415",
+      "volume-title": "Proceedings of the International Conference on Machine Learning",
+      "author": "Greenfeld Daniel",
+      "year": "2019",
+      "unstructured": "Daniel Greenfeld, Meirav Galun, Ronen Basri, Irad Yavneh, and Ron Kimmel. 2019. Learning to optimize multigrid PDE solvers. In Proceedings of the International Conference on Machine Learning. PMLR, 2415–2423."
+    },
+    {
+      "key": "e_1_3_4_43_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.jcp.2018.08.029"
+    },
+    {
+      "key": "e_1_3_4_44_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1007/s40304-018-0127-z"
+    },
+    {
+      "key": "e_1_3_4_45_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.jcp.2020.109951"
+    },
+    {
+      "key": "e_1_3_4_46_2",
+      "unstructured": "Shengze Cai Zhiping Mao Zhicheng Wang Minglang Yin and George Em Karniadakis. 2021. Physics-informed neural networks (pinns) for fluid mechanics: A review. Acta Mechanica Sinica."
+    },
+    {
+      "key": "e_1_3_4_47_2",
+      "volume-title": "Conference on Neural Information Processing Systems",
+      "author": "Bartolucci Francesca",
+      "year": "2023",
+      "unstructured": "Francesca Bartolucci, Emmanuel de Bézenac, Bogdan Raonić, Roberto Molinaro, Siddhartha Mishra, and Rima Alaifari. 2023. Representation equivalent neural operators. Conference on Neural Information Processing Systems."
+    },
+    {
+      "key": "e_1_3_4_48_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.5802/smai-jcm.74"
+    },
+    {
+      "key": "e_1_3_4_49_2",
+      "doi-asserted-by": "crossref",
+      "unstructured": "N. H. Nelsen and A. M. Stuart. 2021. The random feature model for input-output maps between banach spaces. SIAM Journal on Scientific Computing.",
+      "DOI": "10.1137/20M133957X"
+    },
+    {
+      "key": "e_1_3_4_50_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.jcp.2023.112008"
+    },
+    {
+      "key": "e_1_3_4_51_2",
+      "unstructured": "Maarten V. de Hoop Daniel Zhengyu Huang Elizabeth Qian and Andrew M. Stuart. 2023. The cost-accuracy trade-off in operator learning with neural networks. Journal of Machine Learning."
+    },
+    {
+      "key": "e_1_3_4_52_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.jcp.2020.110079"
+    },
+    {
+      "key": "e_1_3_4_53_2",
+      "unstructured": "Zongyi Li Nikola Kovachki Kamyar Azizzadenesheli Burigede Liu Kaushik Bhattacharya Andrew Stuart and Anima Anandkumar. 2023. Markov neural operators for learning chaotic systems. Conference on Neural Information Processing Systems."
+    },
+    {
+      "key": "e_1_3_4_54_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.compfluid.2004.12.004"
+    },
+    {
+      "key": "e_1_3_4_55_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1098/rspa.2020.0334"
+    },
+    {
+      "key": "e_1_3_4_56_2",
+      "doi-asserted-by": "crossref",
+      "unstructured": "Levi McClenny and Ulisses Braga-Neto. 2023. Self-adaptive physics-informed neural networks using a soft attention mechanism. Journal of Computational Physics (2023).",
+      "DOI": "10.2139/ssrn.4086448"
+    },
+    {
+      "key": "e_1_3_4_57_2",
+      "unstructured": "Diederik P. Kingma and Jimmy Ba. 2015. Adam: A method for stochastic optimization. International Conference on Learning (2015)."
+    },
+    {
+      "key": "e_1_3_4_58_2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.jcp.2007.08.029"
+    },
+    {
+      "key": "e_1_3_4_59_2",
+      "doi-asserted-by": "crossref",
+      "unstructured": "Lu Lu Xuhui Meng Shengze Cai Zhiping Mao Somdatta Goswami Zhongqiang Zhang and George Em Karniadakis. 2022. A comprehensive and fair comparison of two neural operators (with practical extensions) based on fair data. Computer Methods in Applied Mechanics and Engineering (2022).",
+      "DOI": "10.1016/j.cma.2022.114778"
+    },
+    {
+      "key": "e_1_3_4_60_2",
+      "unstructured": "Vladimir Fanaskov and Ivan Oseledets. 2024. Spectral neural operators. Doklady Mathematics (2024)."
+    }
+  ],
+  "container-title": "ACM / IMS Journal of Data Science",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://dl.acm.org/doi/10.1145/3648506",
+      "content-type": "unspecified",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://dl.acm.org/doi/pdf/10.1145/3648506",
+      "content-type": "unspecified",
+      "content-version": "vor",
+      "intended-application": "similarity-checking"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2026,
+        7,
+        31
+      ]
+    ],
+    "date-time": "2026-07-31T12:17:07Z",
+    "timestamp": 1785500227000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://dl.acm.org/doi/10.1145/3648506"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2024,
+        5,
+        20
+      ]
+    ]
+  },
+  "references-count": 59,
+  "journal-issue": {
+    "issue": "3",
+    "published-print": {
+      "date-parts": [
+        [
+          2024,
+          9,
+          30
+        ]
+      ]
+    }
+  },
+  "alternative-id": [
+    "10.1145/3648506"
+  ],
+  "URL": "http://dx.doi.org/10.1145/3648506",
+  "relation": {},
+  "ISSN": [
+    "2831-3194"
+  ],
+  "subject": [],
+  "container-title-short": "ACM / IMS J. Data Sci.",
+  "published": {
+    "date-parts": [
+      [
+        2024,
+        5,
+        20
+      ]
+    ]
+  }
+}

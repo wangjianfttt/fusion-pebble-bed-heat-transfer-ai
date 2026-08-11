@@ -1,0 +1,385 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        8,
+        5
+      ]
+    ],
+    "date-time": "2026-08-05T07:12:01Z",
+    "timestamp": 1785913921705,
+    "version": "3.56.0"
+  },
+  "reference-count": 14,
+  "publisher": "MDPI AG",
+  "issue": "1",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2022,
+            12,
+            22
+          ]
+        ],
+        "date-time": "2022-12-22T00:00:00Z",
+        "timestamp": 1671667200000
+      },
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "URL": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "funder": [
+    {
+      "name": "European Union",
+      "award": [
+        "101052200—EUROfusion"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "101052200—EUROfusion"
+          ]
+        }
+      ]
+    }
+  ],
+  "content-domain": {
+    "domain": [],
+    "crossmark-restriction": false
+  },
+  "abstract": "<jats:p>The fusion program in the Karlsruhe Institute of Technology (KIT) leads the R&amp;D of the DEMO helium-cooled pebble bed (HCPB) breeding blanket within the work package breeding blanket (WPBB) of the Eurofusion Consortium in the European Union (EU). A new design of the HCPB breeder zone, with a layout inspired by a nuclear reactor fuel rod arrangement, was developed recently and called the fuel-breeder pin concept. In addition, a mock-up (MU) of this fuel-breeder pin was designed and manufactured at KIT in order to test and validate its thermal–hydraulic performance. This paper reports on the results of the first experimental campaign dedicated to the fuel-breeder pin MU testing that was performed in the Helium Loop Karlsruhe (HELOKA) facility. The paper presents: (i) the integration of the fuel-breeder pin MU into the HELOKA loop including considerations of the experimental set-up, (ii) an overview of the plan for the experimental campaigns, and (iii) a discussion of the experimental results with a focus on aspects relevant for the validation of the thermal–hydraulic design of the HCPB breeder zone.</jats:p>",
+  "DOI": "10.3390/jne4010002",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2022,
+        12,
+        22
+      ]
+    ],
+    "date-time": "2022-12-22T02:59:06Z",
+    "timestamp": 1671677946000
+  },
+  "page": "11-27",
+  "update-policy": "https://doi.org/10.3390/mdpi_crossmark_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 1,
+  "title": "Experimental Thermal–Hydraulic Testing of a Mock-Up of the Fuel-Breeder Pin Concept for the EU-DEMO HCPB Breeding Blanket",
+  "prefix": "10.3390",
+  "volume": "4",
+  "author": [
+    {
+      "given": "Ali",
+      "family": "Abou-Sena",
+      "sequence": "first",
+      "affiliation": [
+        {
+          "name": "Karlsruhe Institute of Technology (KIT), 76344 Eggenstein-Leopoldshafen, Germany"
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0002-7863-6290",
+      "authenticated-orcid": false,
+      "given": "Bradut-Eugen",
+      "family": "Ghidersa",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "Karlsruhe Institute of Technology (KIT), 76344 Eggenstein-Leopoldshafen, Germany"
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0002-2875-8310",
+      "authenticated-orcid": false,
+      "given": "Guangming",
+      "family": "Zhou",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "Karlsruhe Institute of Technology (KIT), 76344 Eggenstein-Leopoldshafen, Germany"
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Joerg",
+      "family": "Rey",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "Karlsruhe Institute of Technology (KIT), 76344 Eggenstein-Leopoldshafen, Germany"
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0003-2538-9377",
+      "authenticated-orcid": false,
+      "given": "Francisco A.",
+      "family": "Hernández",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "Karlsruhe Institute of Technology (KIT), 76344 Eggenstein-Leopoldshafen, Germany"
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Martin",
+      "family": "Lux",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "Karlsruhe Institute of Technology (KIT), 76344 Eggenstein-Leopoldshafen, Germany"
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Georg",
+      "family": "Schlindwein",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "Karlsruhe Institute of Technology (KIT), 76344 Eggenstein-Leopoldshafen, Germany"
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    }
+  ],
+  "member": "1968",
+  "published-online": {
+    "date-parts": [
+      [
+        2022,
+        12,
+        22
+      ]
+    ]
+  },
+  "reference": [
+    {
+      "key": "ref_1",
+      "doi-asserted-by": "crossref",
+      "first-page": "2040",
+      "DOI": "10.1016/j.fusengdes.2010.07.017",
+      "article-title": "Preliminary thermal design and related DEMO relevancy of the EU-HCPB TBM in vertical arrangement",
+      "volume": "85",
+      "author": "Cismondi",
+      "year": "2010",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "ref_2",
+      "doi-asserted-by": "crossref",
+      "first-page": "111614",
+      "DOI": "10.1016/j.fusengdes.2020.111614",
+      "article-title": "Consolidated design of the HCPB Breeding Blanket for the pre-Conceptual Design Phase of the EU DEMO and harmonization with the ITER HCPB TBM program",
+      "volume": "157",
+      "author": "Pereslavtsev",
+      "year": "2020",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "ref_3",
+      "doi-asserted-by": "crossref",
+      "first-page": "1016",
+      "DOI": "10.1080/15361055.2019.1629247",
+      "article-title": "Design of Two Experimental Mock-Ups as Proof-of-Concept and Validation Test Rigs for the Enhanced EU DEMO HCPB Blanket",
+      "volume": "75",
+      "author": "Zhou",
+      "year": "2019",
+      "journal-title": "Fusion Sci. Technol."
+    },
+    {
+      "key": "ref_4",
+      "doi-asserted-by": "crossref",
+      "unstructured": "Zhou, G., Rey, J., Hernández, F.A., Abou-Sena, A., Lux, M., Arbeiter, F., Schlindwein, G., and Schwab, F. (2023). Engineering design of the European DEMO HCPB Breeding Blanket breeder zone mockup. Appl. Sci., (submitted).",
+      "DOI": "10.3390/app13042081"
+    },
+    {
+      "key": "ref_5",
+      "unstructured": "(2003). Measurement of fluid flow by means of pressure differential devices inserted in circular cross-section conduits running full—Part 1: General principles and requirements. Second edition (Standard No. ISO 5167-1:2003)."
+    },
+    {
+      "key": "ref_6",
+      "unstructured": "(1978). Reactor Core Design for High-Temperature Gas-Cooled Reactors Part 1: Calculation of the Material Properties of Helium (Standard No. KTA 3102.1)."
+    },
+    {
+      "key": "ref_7",
+      "doi-asserted-by": "crossref",
+      "first-page": "134",
+      "DOI": "10.1016/j.ijheatmasstransfer.2013.04.015",
+      "article-title": "On heat transfer in tubes",
+      "volume": "63",
+      "author": "Gnielinski",
+      "year": "2013",
+      "journal-title": "Int. J. Heat Mass Transf."
+    },
+    {
+      "key": "ref_8",
+      "unstructured": "Filonenko, G.K. (1954). Friction factor for turbulent pipe flow. Teploenergetika I, 40–44."
+    },
+    {
+      "key": "ref_9",
+      "unstructured": "Dittus, F.W., and Boelter, L.M.K. (1930). Publications on Engineering, University of California."
+    },
+    {
+      "key": "ref_10",
+      "first-page": "541",
+      "article-title": "Non-boiling heat transfer coefficients in annuli",
+      "volume": "36",
+      "author": "Foust",
+      "year": "1940",
+      "journal-title": "Am. Inst. Chem. Eng."
+    },
+    {
+      "key": "ref_11",
+      "unstructured": "McAdams, W.H. (1954). Heat Transmissions, McGraw-Hill. [3rd ed.]."
+    },
+    {
+      "key": "ref_12",
+      "first-page": "755",
+      "article-title": "Heat transfer and pressure drop in annuli",
+      "volume": "65",
+      "author": "Davis",
+      "year": "1943",
+      "journal-title": "Trans. ASME"
+    },
+    {
+      "key": "ref_13",
+      "first-page": "147",
+      "article-title": "Discussion on annular heat transfer coefficients for turbulent flow",
+      "volume": "41",
+      "author": "Wiegand",
+      "year": "1945",
+      "journal-title": "Am. Inst. Chem. Eng."
+    },
+    {
+      "key": "ref_14",
+      "doi-asserted-by": "crossref",
+      "first-page": "38",
+      "DOI": "10.1080/01457630590897097",
+      "article-title": "Meyer Convective heat transfer coefficients in concentric annuli",
+      "volume": "26",
+      "author": "Dirker",
+      "year": "2005",
+      "journal-title": "Heat Transf. Eng."
+    }
+  ],
+  "container-title": "Journal of Nuclear Engineering",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://www.mdpi.com/2673-4362/4/1/2/pdf",
+      "content-type": "unspecified",
+      "content-version": "vor",
+      "intended-application": "similarity-checking"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2025,
+        10,
+        11
+      ]
+    ],
+    "date-time": "2025-10-11T01:47:29Z",
+    "timestamp": 1760147249000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://www.mdpi.com/2673-4362/4/1/2"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2022,
+        12,
+        22
+      ]
+    ]
+  },
+  "references-count": 14,
+  "journal-issue": {
+    "issue": "1",
+    "published-online": {
+      "date-parts": [
+        [
+          2023,
+          3
+        ]
+      ]
+    }
+  },
+  "alternative-id": [
+    "jne4010002"
+  ],
+  "URL": "http://dx.doi.org/10.3390/jne4010002",
+  "relation": {},
+  "ISSN": [
+    "2673-4362"
+  ],
+  "subject": [],
+  "container-title-short": "JNE",
+  "published": {
+    "date-parts": [
+      [
+        2022,
+        12,
+        22
+      ]
+    ]
+  }
+}

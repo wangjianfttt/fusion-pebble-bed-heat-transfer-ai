@@ -1,0 +1,648 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        5,
+        13
+      ]
+    ],
+    "date-time": "2026-05-13T05:57:40Z",
+    "timestamp": 1778651860718,
+    "version": "3.51.4"
+  },
+  "reference-count": 38,
+  "publisher": "Elsevier BV",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2020,
+            7,
+            1
+          ]
+        ],
+        "date-time": "2020-07-01T00:00:00Z",
+        "timestamp": 1593561600000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2020,
+            7,
+            1
+          ]
+        ],
+        "date-time": "2020-07-01T00:00:00Z",
+        "timestamp": 1593561600000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/legal/tdmrep-license"
+    }
+  ],
+  "funder": [
+    {
+      "DOI": "10.13039/501100001809",
+      "name": "National Natural Science Foundation of China",
+      "doi-asserted-by": "publisher",
+      "id": [
+        {
+          "id": "10.13039/501100001809",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/501100007121",
+      "name": "Hefei Institutes of Physical Science, Chinese Academy of Sciences",
+      "doi-asserted-by": "publisher",
+      "id": [
+        {
+          "id": "10.13039/501100007121",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    }
+  ],
+  "content-domain": {
+    "domain": [
+      "elsevier.com",
+      "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2020,
+        7
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.fusengdes.2020.111707",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2020,
+        4,
+        22
+      ]
+    ],
+    "date-time": "2020-04-22T04:50:31Z",
+    "timestamp": 1587531031000
+  },
+  "page": "111707",
+  "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 11,
+  "special_numbering": "C",
+  "title": "Experimental measurements for the effective thermal conductivity of pebble beds with uncertainty analysis",
+  "prefix": "10.1016",
+  "volume": "156",
+  "author": [
+    {
+      "given": "Cong",
+      "family": "Wang",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0002-3957-5608",
+      "authenticated-orcid": false,
+      "given": "Lei",
+      "family": "Chen",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0001-5321-9864",
+      "authenticated-orcid": false,
+      "given": "Songlin",
+      "family": "Liu",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    }
+  ],
+  "member": "78",
+  "reference": [
+    {
+      "key": "10.1016/j.fusengdes.2020.111707_bib0005",
+      "doi-asserted-by": "crossref",
+      "first-page": "79",
+      "DOI": "10.1016/0920-3796(91)90040-W",
+      "article-title": "Canadian ceramic breeder sphere-pac technology: capability and recent results",
+      "volume": "17",
+      "author": "Sullivan",
+      "year": "1991",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "issue": "3P2",
+      "key": "10.1016/j.fusengdes.2020.111707_bib0010",
+      "doi-asserted-by": "crossref",
+      "first-page": "877",
+      "DOI": "10.13182/FST98-A11963723",
+      "article-title": "Effective thermal conductivity measurements of the binary pebble beds by hot wire method for the breeding blanket",
+      "volume": "34",
+      "author": "Enoeda",
+      "year": "1998",
+      "journal-title": "Fusion Technol."
+    },
+    {
+      "issue": "2P2",
+      "key": "10.1016/j.fusengdes.2020.111707_bib0015",
+      "doi-asserted-by": "crossref",
+      "first-page": "612",
+      "DOI": "10.13182/FST01-A11963305",
+      "article-title": "Effective thermal conductivity measurement of the candidate ceramic breeder pebble beds by the hot wire method",
+      "volume": "39",
+      "author": "Enoeda",
+      "year": "2001",
+      "journal-title": "Fusion Technol."
+    },
+    {
+      "issue": "02",
+      "key": "10.1016/j.fusengdes.2020.111707_bib0020",
+      "doi-asserted-by": "crossref",
+      "first-page": "345",
+      "DOI": "10.1016/S0920-3796(02)00165-5",
+      "article-title": "Thermal conductivity of compressed ceramic breeder pebble beds",
+      "volume": "61",
+      "author": "Reimann",
+      "year": "2002",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111707_bib0025",
+      "doi-asserted-by": "crossref",
+      "first-page": "801",
+      "DOI": "10.1016/j.fusengdes.2005.06.104",
+      "article-title": "Effective thermal conductivity of a compressed Li2TiO3 pebble bed",
+      "volume": "75–79",
+      "author": "Tanigawa",
+      "year": "2005",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111707_bib0030",
+      "series-title": "Part II: Thermal Conductivity of the Packing Fraction without Gas Flow",
+      "article-title": "Effective radial thermal conductivity of packings in gas flow",
+      "author": "Bauer",
+      "year": "1978"
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.fusengdes.2020.111707_bib0035",
+      "first-page": "172",
+      "article-title": "The thermal conductivity of powder beds. A model, some measurements on UO2 vibro-compacted microspheres, and their correlation",
+      "volume": "101",
+      "author": "Hall",
+      "year": "1981",
+      "journal-title": "J. Nucl. Phys. Mater. Sci. Radiat. Appl."
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.fusengdes.2020.111707_bib0040",
+      "doi-asserted-by": "crossref",
+      "first-page": "903",
+      "DOI": "10.1016/j.fusengdes.2005.06.305",
+      "article-title": "Pebble bed thermal–mechanical theoretical model: Application at the geometry of test blanket module of ITER-FEAT nuclear fusion reactor",
+      "volume": "75–79",
+      "author": "Aquaro",
+      "year": "2005",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "issue": "February",
+      "key": "10.1016/j.fusengdes.2020.111707_bib0045",
+      "doi-asserted-by": "crossref",
+      "first-page": "80",
+      "DOI": "10.1016/j.fusengdes.2018.02.088",
+      "article-title": "Effective thermal conductivity of a compacted pebble bed in a stagnant gaseous environment: an analytical approach together with DEM",
+      "volume": "130",
+      "author": "Peeketi",
+      "year": "2018",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "issue": "January",
+      "key": "10.1016/j.fusengdes.2020.111707_bib0050",
+      "doi-asserted-by": "crossref",
+      "first-page": "192",
+      "DOI": "10.1016/j.fusengdes.2018.01.013",
+      "article-title": "Discrete element method for effective thermal conductivity of packed pebbles accounting for the Smoluchowski effect",
+      "volume": "127",
+      "author": "Moscardini",
+      "year": "2018",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111707_bib0055",
+      "doi-asserted-by": "crossref",
+      "first-page": "331",
+      "DOI": "10.1016/j.ijheatmasstransfer.2018.12.005",
+      "article-title": "A DEM-based heat transfer model for the evaluation of effective thermal conductivity of packed beds filled with stagnant fluid: thermal contact theory and numerical simulation",
+      "volume": "132",
+      "author": "Chen",
+      "year": "2019",
+      "journal-title": "Int. J. Heat Mass Transf. - Theory Appl."
+    },
+    {
+      "issue": "4",
+      "key": "10.1016/j.fusengdes.2020.111707_bib0060",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1007/s10035-019-0945-z",
+      "article-title": "Analytical estimation of the effective thermal conductivity of a granular bed in a stagnant gas including the Smoluchowski effect",
+      "volume": "21",
+      "author": "Peeketi",
+      "year": "2019",
+      "journal-title": "Granul. Matter"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111707_bib0065",
+      "doi-asserted-by": "crossref",
+      "first-page": "73",
+      "DOI": "10.1016/j.fusengdes.2017.01.026",
+      "article-title": "Effective thermal conductivity of advanced ceramic breeder pebble beds",
+      "volume": "116",
+      "author": "Pupeschi",
+      "year": "2017",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111707_bib0070",
+      "doi-asserted-by": "crossref",
+      "first-page": "73",
+      "DOI": "10.1016/j.fusengdes.2017.01.026",
+      "article-title": "Effective thermal conductivity of advanced ceramic breeder pebble beds",
+      "volume": "116",
+      "author": "Pupeschi",
+      "year": "2017",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.fusengdes.2020.111707_bib0075",
+      "doi-asserted-by": "crossref",
+      "first-page": "206",
+      "DOI": "10.1016/j.jmatprotec.2006.03.061",
+      "article-title": "Experimental measurements of the effective thermal conductivity of a lithium titanate (Li2TiO3) pebbles-packed bed",
+      "volume": "181",
+      "author": "Abou-Sena",
+      "year": "2007",
+      "journal-title": "J. Mater. Process. Tech."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111707_bib0080",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.13182/FST03-A316",
+      "article-title": "Effective thermal conductivity of a Li2TiO3 pebble bed for a demo blanket",
+      "author": "Hatano",
+      "year": "2003",
+      "journal-title": "Fusion Sci. Technol."
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.fusengdes.2020.111707_bib0085",
+      "doi-asserted-by": "crossref",
+      "first-page": "67",
+      "DOI": "10.1016/j.fusengdes.2011.09.003",
+      "article-title": "Experimental measurement of effective thermal conductivity of packed lithium-titanate pebble bed",
+      "volume": "87",
+      "author": "Mandal",
+      "year": "2012",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111707_bib0090",
+      "doi-asserted-by": "crossref",
+      "first-page": "56",
+      "DOI": "10.1016/j.fusengdes.2016.12.035",
+      "article-title": "Experimental investigation of effective thermal conductivity of packed lithium-titanate pebble bed with external heat source and flow of helium",
+      "volume": "115",
+      "author": "Mandal",
+      "year": "2017",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "issue": "September (2014)",
+      "key": "10.1016/j.fusengdes.2020.111707_bib0095",
+      "first-page": "49",
+      "article-title": "Experimental investigation of thermal properties of the Li4SiO4 pebble beds",
+      "volume": "11",
+      "author": "Feng",
+      "year": "2015",
+      "journal-title": "J. Plasma Fusion Res."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111707_bib0100",
+      "doi-asserted-by": "crossref",
+      "first-page": "792",
+      "DOI": "10.1016/j.fusengdes.2017.03.169",
+      "article-title": "Theoretical and experimental study on effective thermal conductivity of pebble bed for fusion blanket",
+      "volume": "124",
+      "author": "Chen",
+      "year": "2017",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.fusengdes.2020.111707_bib0105",
+      "doi-asserted-by": "crossref",
+      "first-page": "161",
+      "DOI": "10.1016/j.taml.2019.03.001",
+      "article-title": "Progress on design and related R&D activities for the water-cooled breeder blanket for CFETR",
+      "volume": "9",
+      "author": "Liu",
+      "year": "2019",
+      "journal-title": "Theor. Appl. Mech. Lett."
+    },
+    {
+      "issue": "1–3",
+      "key": "10.1016/j.fusengdes.2020.111707_bib0110",
+      "first-page": "390",
+      "article-title": "Characterization of Li2TiO3 pebbles by graphite bed process",
+      "volume": "441",
+      "author": "Hong",
+      "year": "2013",
+      "journal-title": "J. Nucl. Phys. Mater. Sci. Radiat. Appl."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111707_bib0115",
+      "doi-asserted-by": "crossref",
+      "first-page": "72",
+      "DOI": "10.1016/j.fusengdes.2015.04.039",
+      "article-title": "Preparation and characterization of Li4SiO4 ceramic pebbles by graphite bed method",
+      "volume": "95",
+      "author": "Hong",
+      "year": "2015",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.fusengdes.2020.111707_bib0120",
+      "doi-asserted-by": "crossref",
+      "first-page": "257",
+      "DOI": "10.1023/A:1013774922355",
+      "article-title": "Uncertainty of the thermal conductivity measurement using the transient hot wire method",
+      "volume": "67",
+      "author": "Labudová",
+      "year": "2002",
+      "journal-title": "J. Therm. Anal. Calorim."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111707_bib0125",
+      "doi-asserted-by": "crossref",
+      "first-page": "74",
+      "DOI": "10.1063/1.3057871",
+      "article-title": "Conduction of heat in solids",
+      "volume": "15",
+      "author": "Carslaw",
+      "year": "1962",
+      "journal-title": "Phys. Today"
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.fusengdes.2020.111707_bib0130",
+      "doi-asserted-by": "crossref",
+      "first-page": "15",
+      "DOI": "10.1016/j.jeurceramsoc.2007.04.012",
+      "article-title": "Advances on the hot wire technique",
+      "volume": "28",
+      "author": "Dos Santos",
+      "year": "2008",
+      "journal-title": "J. Eur. Ceram. Soc."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111707_bib0135",
+      "series-title": "Evaluation of Measurement Data — Guide to the Expression of Uncertainty in Measurement",
+      "author": "JCGM 2008",
+      "year": "2008"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111707_bib0140",
+      "series-title": "Thermomechanical Characterization of Advanced Ceramic Breeder Beds for Fusion Blankets",
+      "author": "Pupeschi",
+      "year": "2017"
+    },
+    {
+      "issue": "5",
+      "key": "10.1016/j.fusengdes.2020.111707_bib0145",
+      "first-page": "30",
+      "article-title": "The slope standard error and correlation coefficient of zero-crossing linear fitting",
+      "volume": "21",
+      "author": "He-nian",
+      "year": "2002",
+      "journal-title": "College Phys."
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.fusengdes.2020.111707_bib0150",
+      "first-page": "1",
+      "article-title": "Standard deviation of linear regression coefficients expressed with correlation coefficient",
+      "volume": "14",
+      "author": "Zhong-tai",
+      "year": "1993",
+      "journal-title": "Acta Metrologica Sinica"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111707_bib0155",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.fusengdes.2019.111257",
+      "article-title": "A DEM-CFD numerical model for the prediction of the effective thermal conductivity of pebble beds with contact conduction",
+      "volume": "147",
+      "author": "Wang",
+      "year": "2019",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "issue": "1–3",
+      "key": "10.1016/j.fusengdes.2020.111707_bib0160",
+      "first-page": "213",
+      "article-title": "Density dependence on thermal properties of Li2TiO3 pellets",
+      "volume": "253",
+      "author": "Saito",
+      "year": "1998",
+      "journal-title": "J. Nucl. Phys. Mater. Sci. Radiat. Appl."
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111707_bib0165",
+      "article-title": "ITER solid breeder blanket materials database",
+      "author": "Billone",
+      "year": "1993",
+      "journal-title": "Magnetic Fusion Energy"
+    },
+    {
+      "issue": "4",
+      "key": "10.1016/j.fusengdes.2020.111707_bib0170",
+      "doi-asserted-by": "crossref",
+      "first-page": "597",
+      "DOI": "10.13182/FST90-A29196",
+      "article-title": "Heat transfer in Pebble Beds for fusion blankets",
+      "volume": "17:4",
+      "author": "Donne",
+      "year": "1990",
+      "journal-title": "Fusion Technology; (USA)"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111707_bib0175",
+      "series-title": "Effective Thermal Conductivity for Granular Beds of Various Binary Mixtures",
+      "author": "Al",
+      "year": "1981"
+    },
+    {
+      "key": "10.1016/j.fusengdes.2020.111707_bib0180",
+      "series-title": "Thermal Properties Calculation Procedures and Data Manual",
+      "author": "Huaiming",
+      "year": "1990"
+    },
+    {
+      "issue": "2P2",
+      "key": "10.1016/j.fusengdes.2020.111707_bib0185",
+      "doi-asserted-by": "crossref",
+      "first-page": "612",
+      "DOI": "10.13182/FST01-A11963305",
+      "article-title": "Effective thermal conductivity measurement of the candidate ceramic breeder pebble beds by the hot wire method",
+      "volume": "39",
+      "author": "Enoeda",
+      "year": "2001",
+      "journal-title": "Fusion Technol."
+    },
+    {
+      "issue": "00",
+      "key": "10.1016/j.fusengdes.2020.111707_bib0190",
+      "doi-asserted-by": "crossref",
+      "first-page": "513",
+      "DOI": "10.1016/S0920-3796(00)00261-1",
+      "article-title": "Measurements of the effective thermal conductivity of a Li4SiO4 pebble bed",
+      "volume": "49",
+      "author": "Donne",
+      "year": "2000",
+      "journal-title": "Fusion Eng. Des."
+    }
+  ],
+  "container-title": "Fusion Engineering and Design",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0920379620302556?httpAccept=text/xml",
+      "content-type": "text/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0920379620302556?httpAccept=text/plain",
+      "content-type": "text/plain",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2025,
+        10,
+        12
+      ]
+    ],
+    "date-time": "2025-10-12T14:02:24Z",
+    "timestamp": 1760277744000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0920379620302556"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2020,
+        7
+      ]
+    ]
+  },
+  "references-count": 38,
+  "alternative-id": [
+    "S0920379620302556"
+  ],
+  "URL": "http://dx.doi.org/10.1016/j.fusengdes.2020.111707",
+  "relation": {},
+  "ISSN": [
+    "0920-3796"
+  ],
+  "subject": [],
+  "container-title-short": "Fusion Engineering and Design",
+  "published": {
+    "date-parts": [
+      [
+        2020,
+        7
+      ]
+    ]
+  },
+  "assertion": [
+    {
+      "value": "Elsevier",
+      "name": "publisher",
+      "label": "This article is maintained by"
+    },
+    {
+      "value": "Experimental measurements for the effective thermal conductivity of pebble beds with uncertainty analysis",
+      "name": "articletitle",
+      "label": "Article Title"
+    },
+    {
+      "value": "Fusion Engineering and Design",
+      "name": "journaltitle",
+      "label": "Journal Title"
+    },
+    {
+      "value": "https://doi.org/10.1016/j.fusengdes.2020.111707",
+      "name": "articlelink",
+      "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+      "value": "article",
+      "name": "content_type",
+      "label": "Content Type"
+    },
+    {
+      "value": "© 2020 Elsevier B.V. All rights reserved.",
+      "name": "copyright",
+      "label": "Copyright"
+    }
+  ],
+  "article-number": "111707"
+}

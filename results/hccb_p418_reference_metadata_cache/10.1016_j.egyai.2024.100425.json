@@ -1,0 +1,957 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        7,
+        9
+      ]
+    ],
+    "date-time": "2026-07-09T18:48:42Z",
+    "timestamp": 1783622922345,
+    "version": "3.55.0"
+  },
+  "reference-count": 63,
+  "publisher": "Elsevier BV",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2024,
+            12,
+            1
+          ]
+        ],
+        "date-time": "2024-12-01T00:00:00Z",
+        "timestamp": 1733011200000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2024,
+            12,
+            1
+          ]
+        ],
+        "date-time": "2024-12-01T00:00:00Z",
+        "timestamp": 1733011200000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/legal/tdmrep-license"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2024,
+            9,
+            14
+          ]
+        ],
+        "date-time": "2024-09-14T00:00:00Z",
+        "timestamp": 1726272000000
+      },
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "URL": "http://creativecommons.org/licenses/by-nc-nd/4.0/"
+    }
+  ],
+  "funder": [
+    {
+      "DOI": "10.13039/501100012166",
+      "name": "National Key Research and Development Program of China",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "2023YFB4005200"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "2023YFB4005200"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100012166",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    }
+  ],
+  "content-domain": {
+    "domain": [
+      "elsevier.com",
+      "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2024,
+        12
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.egyai.2024.100425",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2024,
+        9,
+        16
+      ]
+    ],
+    "date-time": "2024-09-16T12:46:24Z",
+    "timestamp": 1726490784000
+  },
+  "page": "100425",
+  "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 10,
+  "special_numbering": "C",
+  "title": "Constraint-incorporated deep learning model for predicting heat transfer in porous media under diverse external heat fluxes",
+  "prefix": "10.1016",
+  "volume": "18",
+  "author": [
+    {
+      "given": "Ziling",
+      "family": "Guo",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Hui",
+      "family": "Wang",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Huangyi",
+      "family": "Zhu",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Zhiguo",
+      "family": "Qu",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    }
+  ],
+  "member": "78",
+  "reference": [
+    {
+      "issue": "3",
+      "key": "10.1016/j.egyai.2024.100425_bib0001",
+      "doi-asserted-by": "crossref",
+      "first-page": "364",
+      "DOI": "10.1016/j.fuproc.2009.11.008",
+      "article-title": "Modeling of solid fuel combustion in oxygen-enriched atmosphere in circulating fluidized bed boiler",
+      "volume": "91",
+      "author": "Krzywanski",
+      "year": "2010",
+      "journal-title": "Fuel Process Technol"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0002",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.rser.2020.109743",
+      "article-title": "Microwave mode of heating in the preparation of porous carbon materials for adsorption and energy storage applications – an overview",
+      "volume": "124",
+      "author": "Kumar",
+      "year": "2020",
+      "journal-title": "Renew Sustain Energy Rev"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0003",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2021.121127",
+      "article-title": "Improved predictions of thermal fluid pressurization in hydro-thermal models based on consistent incorporation of thermo-mechanical effects in anisotropic porous media",
+      "volume": "172",
+      "author": "Buchwald",
+      "year": "2021",
+      "journal-title": "Int J Heat Mass Transf"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0004",
+      "first-page": "1",
+      "article-title": "Application of CNTs/H2O nanofluid and the wavy fin with dimples in thermal management of cpu: a numerical modeling of hybrid passive cooling",
+      "author": "Siahchehrehghadikolaei",
+      "year": "2024",
+      "journal-title": "Numer Heat Transf A"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0005",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.applthermaleng.2019.114485",
+      "article-title": "Self-pumping transpiration cooling with a protective porous armor",
+      "volume": "164",
+      "author": "Huang",
+      "year": "2020",
+      "journal-title": "Appl Therm Eng"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0006",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jclepro.2021.127432",
+      "article-title": "Potential and challenges of improving solar still by micro/nano-particles and porous materials - a review",
+      "volume": "311",
+      "author": "Peng",
+      "year": "2021",
+      "journal-title": "J Clean Prod"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0007",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.icheatmasstransfer.2019.104371",
+      "article-title": "3D mixed convection MHD flow of GO-MoS2 hybrid nanoparticles in H2O–(CH2OH)2 hybrid base fluid under the effect of H2 bond",
+      "volume": "110",
+      "author": "Ghadikolaei",
+      "year": "2020",
+      "journal-title": "Int Commun Heat Mass Transf"
+    },
+    {
+      "issue": "11",
+      "key": "10.1016/j.egyai.2024.100425_bib0008",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.apt.2022.103813",
+      "article-title": "A CFD modeling of CPU cooling by eco-friendly nanofluid and fin heat sink passive cooling techniques",
+      "volume": "33",
+      "author": "Siahchehrehghadikolaei",
+      "year": "2022",
+      "journal-title": "Adv Powder Technol"
+    },
+    {
+      "issue": "3–5",
+      "key": "10.1016/j.egyai.2024.100425_bib0009",
+      "doi-asserted-by": "crossref",
+      "first-page": "172",
+      "DOI": "10.1080/01457632.2021.1874174",
+      "article-title": "Heat transfer in adsorption chillers with fluidized beds of silica gel, zeolite, and carbon nanotubes",
+      "volume": "43",
+      "author": "Krzywanski",
+      "year": "2022",
+      "journal-title": "Heat Transf Eng"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0010",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2022.122597",
+      "article-title": "Characteristics of effective thermal conductivity of porous materials considering thermal radiation: a pore-level analysis",
+      "volume": "188",
+      "author": "Luo",
+      "year": "2022",
+      "journal-title": "Int J Heat Mass Transf"
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.egyai.2024.100425_bib0011",
+      "doi-asserted-by": "crossref",
+      "first-page": "51",
+      "DOI": "10.1108/WJE-06-2018-0204",
+      "article-title": "Investigation on Magneto Eyring-Powell nanofluid flow over inclined stretching cylinder with nolinear thermal radiation and Joule heating effect",
+      "volume": "16",
+      "author": "Ghadikolaei",
+      "year": "2019",
+      "journal-title": "World J Eng"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0012",
+      "doi-asserted-by": "crossref",
+      "first-page": "12",
+      "DOI": "10.1016/j.jtice.2019.01.028",
+      "article-title": "Natural convection MHD flow due to MoS2–Ag nanoparticles suspended in C2H6O2H2O hybrid base fluid with thermal radiation",
+      "volume": "97",
+      "author": "Ghadikolaei",
+      "year": "2019",
+      "journal-title": "J Taiwan Inst Chem Eng"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0013",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.icheatmasstransfer.2020.105088",
+      "article-title": "An effective thermal conductivity model of rocks considering variable saturation and pore structure: theoretical modelling and experimental validations",
+      "volume": "121",
+      "author": "Yuan",
+      "year": "2021",
+      "journal-title": "Int Commun Heat Mass Transf"
+    },
+    {
+      "issue": "13",
+      "key": "10.1016/j.egyai.2024.100425_bib0014",
+      "doi-asserted-by": "crossref",
+      "first-page": "3520",
+      "DOI": "10.3390/ma14133520",
+      "article-title": "Experimental investigation of an intensified heat transfer adsorption bed (IHTAB) reactor prototype",
+      "volume": "14",
+      "author": "Grabowska",
+      "year": "2021",
+      "journal-title": "Materials (Basel)"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0015",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.applthermaleng.2024.122911",
+      "article-title": "Experimental modeling to design a heat exchanger control strategy for a Fischer–Tropsch fluidized bed",
+      "volume": "246",
+      "author": "Sharifian",
+      "year": "2024",
+      "journal-title": "Appl Therm Eng"
+    },
+    {
+      "issue": "51",
+      "key": "10.1016/j.egyai.2024.100425_bib0016",
+      "doi-asserted-by": "crossref",
+      "first-page": "61838",
+      "DOI": "10.1021/acsami.1c23550",
+      "article-title": "Thermal management for hydrogen charging and discharging in a screened metal–organic framework particle tank",
+      "volume": "13",
+      "author": "Wang",
+      "year": "2021",
+      "journal-title": "ACS Appl Mater Interfaces"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0017",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.icheatmasstransfer.2021.105240",
+      "article-title": "Heat transfer and entropy generation analysis of three-dimensional nanofluids flow in a cylindrical annulus filled with porous media",
+      "volume": "124",
+      "author": "Miles",
+      "year": "2021",
+      "journal-title": "Int Commun Heat Mass Transf"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0018",
+      "article-title": "A CFD modeling of heat transfer between CGNPs/H2O eco-friendly nanofluid and the novel nature-based designs heat sink: hybrid passive techniques for CPU cooling",
+      "volume": "37",
+      "author": "Ghadikolaei",
+      "year": "2023",
+      "journal-title": "Therm Sci Eng Prog"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0019",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.applthermaleng.2021.116558",
+      "article-title": "Prediction of effective thermal conductivity of porous lattice structures and validation with additively manufactured metal foams",
+      "volume": "187",
+      "author": "Wang",
+      "year": "2021",
+      "journal-title": "Appl Therm Eng"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0020",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2020.119540",
+      "article-title": "A generalized thermal conductivity model for unsaturated porous media with fractal geometry",
+      "volume": "152",
+      "author": "Shen",
+      "year": "2020",
+      "journal-title": "Int J Heat Mass Transf"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0021",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.icheatmasstransfer.2020.104527",
+      "article-title": "Enhanced fractal capillary bundle model for effective thermal conductivity of composite-porous geomaterials",
+      "volume": "113",
+      "author": "Chu",
+      "year": "2020",
+      "journal-title": "Int Commun Heat Mass Transf"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0022",
+      "doi-asserted-by": "crossref",
+      "first-page": "309",
+      "DOI": "10.1016/j.tsep.2017.12.010",
+      "article-title": "Analytical and numerical solution of non-newtonian second-grade fluid flow on a stretching sheet",
+      "volume": "5",
+      "author": "Ghadikolaei",
+      "year": "2018",
+      "journal-title": "Therm Sci Eng Prog"
+    },
+    {
+      "issue": "31",
+      "key": "10.1016/j.egyai.2024.100425_bib0023",
+      "doi-asserted-by": "crossref",
+      "first-page": "17072",
+      "DOI": "10.1016/j.ijhydene.2019.04.171",
+      "article-title": "Terrific effect of H2 on 3D free convection MHD flow of C2H6O2H2O hybrid base fluid to dissolve cu nanoparticles in a porous space considering the thermal radiation and nanoparticle shapes effects",
+      "volume": "44",
+      "author": "Ghadikolaei",
+      "year": "2019",
+      "journal-title": "Int J Hydrogen Energy"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0024",
+      "doi-asserted-by": "crossref",
+      "first-page": "389",
+      "DOI": "10.1016/j.powtec.2018.09.023",
+      "article-title": "Numerical study on magnetohydrodynic CNTs-water nanofluids as a micropolar dusty fluid influenced by non-linear thermal radiation and joule heating effect",
+      "volume": "340",
+      "author": "Ghadikolaei",
+      "year": "2018",
+      "journal-title": "Powder Technol"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0025",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2024.125406",
+      "article-title": "3-D numerical simulation of the heat transfer of a fluidized bed with a horizontal tube bundle and Geldart D particles",
+      "author": "Córcoles",
+      "year": "2024",
+      "journal-title": "Int J Heat Mass Transf"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0026",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijthermalsci.2020.106630",
+      "article-title": "Prediction of the effective thermal conductivity of an adsorption bed packed with 5A zeolite particles under working conditions",
+      "volume": "159",
+      "author": "Wang",
+      "year": "2021",
+      "journal-title": "Int J Therm Sci"
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.egyai.2024.100425_bib0027",
+      "doi-asserted-by": "crossref",
+      "first-page": "254",
+      "DOI": "10.1108/HFF-09-2017-0357",
+      "article-title": "Fuzzy logic and bed-to-wall heat transfer in a large-scale CFBC",
+      "volume": "28",
+      "author": "Krzywanski",
+      "year": "2018",
+      "journal-title": "Int J Numer Methods Heat Fluid Flow"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0028",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.apenergy.2020.114575",
+      "article-title": "Modeling of multi-scale transport phenomena in shale gas production — a critical review",
+      "volume": "262",
+      "author": "Wang",
+      "year": "2020",
+      "journal-title": "Appl Energy"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0029",
+      "doi-asserted-by": "crossref",
+      "first-page": "160",
+      "DOI": "10.1016/j.ijheatmasstransfer.2018.08.135",
+      "article-title": "Lattice Boltzmann methods for single-phase and solid-liquid phase-change heat transfer in porous media: a review",
+      "volume": "129",
+      "author": "He",
+      "year": "2019",
+      "journal-title": "Int J Heat Mass Transf"
+    },
+    {
+      "issue": "28",
+      "key": "10.1016/j.egyai.2024.100425_bib0030",
+      "doi-asserted-by": "crossref",
+      "first-page": "13799",
+      "DOI": "10.1073/pnas.1901619116",
+      "article-title": "Comprehensive comparison of pore-scale models for multiphase flow in porous media",
+      "volume": "116",
+      "author": "Zhao",
+      "year": "2019",
+      "journal-title": "Proc Natl Acad Sci"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0031",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.egyai.2020.100035",
+      "article-title": "Prediction of effective diffusivity of porous media using deep learning method based on sample structure information self-amplification",
+      "volume": "2",
+      "author": "Wang",
+      "year": "2020",
+      "journal-title": "Energy and AI"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0032",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cej.2021.130069",
+      "article-title": "Machine learning and data-driven characterization framework for porous materials: permeability prediction and channeling defect detection",
+      "volume": "420",
+      "author": "Yasuda",
+      "year": "2021",
+      "journal-title": "Chem Eng J"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0033",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.egyai.2022.100170",
+      "article-title": "Application of machine learning in optimizing proton exchange membrane fuel cells: a Review",
+      "volume": "9",
+      "author": "Ding",
+      "year": "2022",
+      "journal-title": "Energy and AI"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0034",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.egyai.2023.100245",
+      "article-title": "The effect of catalyst layer design on catalyst utilization in PEMFC studied via stochastic reconstruction method",
+      "volume": "13",
+      "author": "Zhao",
+      "year": "2023",
+      "journal-title": "Energy and AI"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0035",
+      "series-title": "Towards enhanced heat and mass exchange in adsorption systems: the role of automl and fluidized bed innovations",
+      "author": "Krzywanski",
+      "year": "2024"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0036",
+      "doi-asserted-by": "crossref",
+      "first-page": "908",
+      "DOI": "10.1016/j.ijheatmasstransfer.2018.08.082",
+      "article-title": "Predicting the effective thermal conductivities of composite materials and porous media by machine learning methods",
+      "volume": "127",
+      "author": "Wei",
+      "year": "2018",
+      "journal-title": "Int J Heat Mass Transf"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0037",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.egyai.2023.100310",
+      "article-title": "Effective thermal conductivity estimation using a convolutional neural network and its application in topology optimization",
+      "volume": "15",
+      "author": "Adam",
+      "year": "2024",
+      "journal-title": "Energy and AI"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0038",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2020.120176",
+      "article-title": "Machine learning prediction of thermal transport in porous media with physics-based descriptors",
+      "volume": "160",
+      "author": "Wei",
+      "year": "2020",
+      "journal-title": "Int J Heat Mass Transf"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0039",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2019.118749",
+      "article-title": "Optimization of the hole distribution of an effusively cooled surface facing non-uniform incoming temperature using deep learning approaches",
+      "volume": "145",
+      "author": "Yang",
+      "year": "2019",
+      "journal-title": "Int J Heat Mass Transf"
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.egyai.2024.100425_bib0040",
+      "doi-asserted-by": "crossref",
+      "first-page": "178",
+      "DOI": "10.1038/s41524-023-01134-0",
+      "article-title": "Mapping microstructure to shock-induced temperature fields using deep learning",
+      "volume": "9",
+      "author": "Li",
+      "year": "2023",
+      "journal-title": "NPJ Comput Mater"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0041",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.icheatmasstransfer.2022.105916",
+      "article-title": "Temperature field prediction for various porous media considering variable boundary conditions using deep learning method",
+      "volume": "132",
+      "author": "Wang",
+      "year": "2022",
+      "journal-title": "Int Commun Heat Mass Transf"
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.egyai.2024.100425_bib0042",
+      "doi-asserted-by": "crossref",
+      "first-page": "29",
+      "DOI": "10.1038/s41524-022-00712-y",
+      "article-title": "Physics-informed deep learning for solving phonon boltzmann transport equation with large temperature non-equilibrium",
+      "volume": "8",
+      "author": "Li",
+      "year": "2022",
+      "journal-title": "NPJ Comput Mater"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0043",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.engappai.2022.104902",
+      "article-title": "Temperature field inversion of heat-source systems via physics-informed neural networks",
+      "volume": "113",
+      "author": "Liu",
+      "year": "2022",
+      "journal-title": "Eng Appl Artif Intell"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0044",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.egyai.2021.100114",
+      "article-title": "A Review of Physics-based and data-driven models for real-time control of polymer electrolyte membrane fuel cells",
+      "volume": "6",
+      "author": "Zhao",
+      "year": "2021",
+      "journal-title": "Energy and AI"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0045",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.egyai.2023.100261",
+      "article-title": "Integration of multi-physics and machine learning-based surrogate modelling approaches for multi-objective optimization of deformed GDL of PEM Fuel Cells",
+      "volume": "14",
+      "author": "Wang",
+      "year": "2023",
+      "journal-title": "Energy and AI"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0046",
+      "doi-asserted-by": "crossref",
+      "first-page": "56",
+      "DOI": "10.1016/j.jcp.2019.05.024",
+      "article-title": "Physics-constrained deep learning for high-dimensional surrogate modeling and uncertainty quantification without labeled data",
+      "volume": "394",
+      "author": "Zhu",
+      "year": "2019",
+      "journal-title": "J Comput Phys"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0047",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.icheatmasstransfer.2022.105890",
+      "article-title": "On the application of physics informed neural networks (PINN) to solve boundary layer thermal-fluid problems",
+      "volume": "132",
+      "author": "Bararnia",
+      "year": "2022",
+      "journal-title": "Int Commun Heat Mass Transf"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0048",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.fuel.2021.122693",
+      "article-title": "A Physics-constrained deep learning model for simulating multiphase flow in 3D heterogeneous porous media",
+      "volume": "313",
+      "author": "Yan",
+      "year": "2022",
+      "journal-title": "Fuel"
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.egyai.2024.100425_bib0049",
+      "doi-asserted-by": "crossref",
+      "first-page": "127",
+      "DOI": "10.1038/s41524-021-00598-2",
+      "article-title": "Simulating fluid flow in complex porous materials by integrating the governing equations with deep-layered machines",
+      "volume": "7",
+      "author": "Kamrava",
+      "year": "2021",
+      "journal-title": "NPJ Comput Mater"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0050",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jcp.2021.110526",
+      "article-title": "A physics-informed and hierarchically regularized data-driven model for predicting fluid flow through porous media",
+      "volume": "443",
+      "author": "Wang",
+      "year": "2021",
+      "journal-title": "J Comput Phys"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0051",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2023.124671",
+      "article-title": "Physics-informed neural networks for studying heat transfer in porous media",
+      "volume": "217",
+      "author": "Xu",
+      "year": "2023",
+      "journal-title": "Int J Heat Mass Transf"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0052",
+      "doi-asserted-by": "crossref",
+      "first-page": "1201",
+      "DOI": "10.1016/j.ijheatmasstransfer.2017.05.114",
+      "article-title": "Experimental investigation of transpiration cooling with phase change for sintered porous plates",
+      "volume": "114",
+      "author": "Huang",
+      "year": "2017",
+      "journal-title": "Int J Heat Mass Transf"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0053",
+      "series-title": "The Lattice Boltzmann method: principles and practice; graduate texts in physics",
+      "author": "Krüger",
+      "year": "2017"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0054",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ast.2021.106609",
+      "article-title": "Three-dimensional pore-scale study of the directional heat transfer in a high thermal conductivity carbon/carbon composite protection system",
+      "volume": "112",
+      "author": "Wang",
+      "year": "2021",
+      "journal-title": "Aerosp Sci Technol"
+    },
+    {
+      "issue": "10",
+      "key": "10.1016/j.egyai.2024.100425_bib0055",
+      "doi-asserted-by": "crossref",
+      "first-page": "2973",
+      "DOI": "10.1007/s11431-009-0103-7",
+      "article-title": "Investigation on the three-dimensional multiphase conjugate conduction problem inside porous wick with the Lattice Boltzmann method",
+      "volume": "52",
+      "author": "Zhao",
+      "year": "2009",
+      "journal-title": "Sci in China Series E: Technol Sci"
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.egyai.2024.100425_bib0056",
+      "doi-asserted-by": "crossref",
+      "first-page": "228",
+      "DOI": "10.1016/j.ijthermalsci.2006.04.012",
+      "article-title": "A Lattice Boltzmann algorithm for fluid–solid conjugate heat transfer",
+      "volume": "46",
+      "author": "Wang",
+      "year": "2007",
+      "journal-title": "Int J Therm Sci"
+    },
+    {
+      "issue": "6",
+      "key": "10.1016/j.egyai.2024.100425_bib0057",
+      "doi-asserted-by": "crossref",
+      "first-page": "575",
+      "DOI": "10.1016/j.ijthermalsci.2003.11.002",
+      "article-title": "Application to natural convection enclosed flows of a Lattice Boltzmann BGK model coupled with a general purpose thermal boundary condition",
+      "volume": "43",
+      "author": "D'Orazio",
+      "year": "2004",
+      "journal-title": "Int J Therm Sci"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0058",
+      "doi-asserted-by": "crossref",
+      "first-page": "268",
+      "DOI": "10.1016/j.ijheatmasstransfer.2017.05.115",
+      "article-title": "A simple difference method for Lattice Boltzmann algorithm to simulate conjugate heat transfer",
+      "volume": "114",
+      "author": "Lu",
+      "year": "2017",
+      "journal-title": "Int J Heat Mass Transf"
+    },
+    {
+      "key": "10.1016/j.egyai.2024.100425_bib0059",
+      "doi-asserted-by": "crossref",
+      "first-page": "61",
+      "DOI": "10.1016/j.icheatmasstransfer.2017.06.023",
+      "article-title": "Direct numerical simulations of pool boiling curves including heater's thermal responses and the effect of vapor phase's thermal conductivity",
+      "volume": "87",
+      "author": "Gong",
+      "year": "2017",
+      "journal-title": "Int Commun Heat Mass Transf"
+    },
+    {
+      "issue": "1",
+      "key": "10.1016/j.egyai.2024.100425_bib0060",
+      "doi-asserted-by": "crossref",
+      "first-page": "434",
+      "DOI": "10.1007/s10765-007-0300-1",
+      "article-title": "Thermophysical properties of a chromium–nickel–molybdenum steel in the solid and liquid phases",
+      "volume": "29",
+      "author": "Wilthan",
+      "year": "2008",
+      "journal-title": "Int J Thermophys"
+    },
+    {
+      "issue": "3",
+      "key": "10.1016/j.egyai.2024.100425_bib0061",
+      "doi-asserted-by": "crossref",
+      "first-page": "1377",
+      "DOI": "10.1063/1.555963",
+      "article-title": "Standard reference data for the thermal conductivity of water",
+      "volume": "24",
+      "author": "Ramires",
+      "year": "1995",
+      "journal-title": "J Phys Chem Ref Data"
+    },
+    {
+      "issue": "5",
+      "key": "10.1016/j.egyai.2024.100425_bib0062",
+      "doi-asserted-by": "crossref",
+      "first-page": "1101",
+      "DOI": "10.1021/je0002437",
+      "article-title": "Specific heat capacity at constant volume for water, methanol, and their mixtures at temperatures from 300 K to 400 K and pressures to 20 MPa",
+      "volume": "46",
+      "author": "Kuroki",
+      "year": "2001",
+      "journal-title": "J Chem Eng Data"
+    },
+    {
+      "issue": "6–7",
+      "key": "10.1016/j.egyai.2024.100425_bib0063",
+      "doi-asserted-by": "crossref",
+      "first-page": "1555",
+      "DOI": "10.1016/j.ijheatmasstransfer.2003.09.011",
+      "article-title": "On transient heat conduction in a one-dimensional composite slab",
+      "volume": "47",
+      "author": "Sun",
+      "year": "2004",
+      "journal-title": "Int J Heat Mass Transf"
+    }
+  ],
+  "updated-by": [
+    {
+      "DOI": "10.1016/j.egyai.2024.100460",
+      "type": "erratum",
+      "label": "Erratum",
+      "source": "publisher",
+      "updated": {
+        "date-parts": [
+          [
+            2025,
+            1,
+            1
+          ]
+        ],
+        "date-time": "2025-01-01T00:00:00Z",
+        "timestamp": 1735689600000
+      }
+    }
+  ],
+  "container-title": "Energy and AI",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S2666546824000910?httpAccept=text/xml",
+      "content-type": "text/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S2666546824000910?httpAccept=text/plain",
+      "content-type": "text/plain",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2026,
+        5,
+        16
+      ]
+    ],
+    "date-time": "2026-05-16T08:47:09Z",
+    "timestamp": 1778921229000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://linkinghub.elsevier.com/retrieve/pii/S2666546824000910"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2024,
+        12
+      ]
+    ]
+  },
+  "references-count": 63,
+  "alternative-id": [
+    "S2666546824000910"
+  ],
+  "URL": "http://dx.doi.org/10.1016/j.egyai.2024.100425",
+  "relation": {},
+  "ISSN": [
+    "2666-5468"
+  ],
+  "subject": [],
+  "container-title-short": "Energy and AI",
+  "published": {
+    "date-parts": [
+      [
+        2024,
+        12
+      ]
+    ]
+  },
+  "assertion": [
+    {
+      "value": "Elsevier",
+      "name": "publisher",
+      "label": "This article is maintained by"
+    },
+    {
+      "value": "Constraint-incorporated deep learning model for predicting heat transfer in porous media under diverse external heat fluxes",
+      "name": "articletitle",
+      "label": "Article Title"
+    },
+    {
+      "value": "Energy and AI",
+      "name": "journaltitle",
+      "label": "Journal Title"
+    },
+    {
+      "value": "https://doi.org/10.1016/j.egyai.2024.100425",
+      "name": "articlelink",
+      "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+      "value": "article",
+      "name": "content_type",
+      "label": "Content Type"
+    },
+    {
+      "value": "© 2024 The Authors. Published by Elsevier Ltd.",
+      "name": "copyright",
+      "label": "Copyright"
+    }
+  ],
+  "article-number": "100425"
+}

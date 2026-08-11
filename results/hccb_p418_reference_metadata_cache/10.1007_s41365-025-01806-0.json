@@ -1,0 +1,720 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        1,
+        8
+      ]
+    ],
+    "date-time": "2026-01-08T19:21:32Z",
+    "timestamp": 1767900092950,
+    "version": "3.49.0"
+  },
+  "reference-count": 36,
+  "publisher": "Springer Science and Business Media LLC",
+  "issue": "1",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            12,
+            5
+          ]
+        ],
+        "date-time": "2025-12-05T00:00:00Z",
+        "timestamp": 1764892800000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.springernature.com/gp/researchers/text-and-data-mining"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2025,
+            12,
+            5
+          ]
+        ],
+        "date-time": "2025-12-05T00:00:00Z",
+        "timestamp": 1764892800000
+      },
+      "content-version": "vor",
+      "delay-in-days": 0,
+      "URL": "https://www.springernature.com/gp/researchers/text-and-data-mining"
+    }
+  ],
+  "content-domain": {
+    "domain": [
+      "link.springer.com"
+    ],
+    "crossmark-restriction": false
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2026,
+        1
+      ]
+    ]
+  },
+  "DOI": "10.1007/s41365-025-01806-0",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2025,
+        12,
+        5
+      ]
+    ],
+    "date-time": "2025-12-05T13:52:45Z",
+    "timestamp": 1764942765000
+  },
+  "update-policy": "https://doi.org/10.1007/springer_crossmark_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 0,
+  "title": "Crushing evolution in pebble bed based on a novel method: a crushable DEM study",
+  "prefix": "10.1007",
+  "volume": "37",
+  "author": [
+    {
+      "ORCID": "https://orcid.org/0000-0002-0321-9599",
+      "authenticated-orcid": false,
+      "given": "Jian",
+      "family": "Wang",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0000-0002-8436-1000",
+      "authenticated-orcid": false,
+      "given": "Ming-Zhun",
+      "family": "Lei",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "Ming-Zong",
+      "family": "Liu",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "Qi-Gang",
+      "family": "Wu",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "Zi-Cong",
+      "family": "Cai",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "Kai-Song",
+      "family": "Wang",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "ORCID": "https://orcid.org/0009-0005-3219-6751",
+      "authenticated-orcid": false,
+      "given": "Hai-Shun",
+      "family": "Deng",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    }
+  ],
+  "member": "297",
+  "published-online": {
+    "date-parts": [
+      [
+        2025,
+        12,
+        5
+      ]
+    ]
+  },
+  "reference": [
+    {
+      "key": "1806_CR1",
+      "doi-asserted-by": "publisher",
+      "first-page": "362",
+      "DOI": "10.1016/j.powtec.2020.10.076",
+      "volume": "379",
+      "author": "J Wang",
+      "year": "2021",
+      "unstructured": "J. Wang, M. Lei, H. Yang et al., Study on the packing characteristics of a special “J’’ shape ceramic packed pebble bed based on discrete element modeling. Powder Technol. 379, 362–372 (2021). https://doi.org/10.1016/j.powtec.2020.10.076",
+      "journal-title": "Powder Technol."
+    },
+    {
+      "key": "1806_CR2",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.fusengdes.2022.113051",
+      "volume": "176",
+      "author": "Q Wu",
+      "year": "2022",
+      "unstructured": "Q. Wu, M. Lei, J. Wang et al., Packing characteristics of pebble beds for fusion reactors under different friction coefficients. Fusion Eng. Des. 176, 113051 (2022). https://doi.org/10.1016/j.fusengdes.2022.113051",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "1806_CR3",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.fusengdes.2023.113966",
+      "volume": "195",
+      "author": "W Xi",
+      "year": "2023",
+      "unstructured": "W. Xi, Q. Wu, M. Lei et al., Numerically investigation of the neutron irradiation swelling on the mechanical and structural evolution of beryllium pebble bed. Fusion Eng. Des. 195, 113966 (2023). https://doi.org/10.1016/j.fusengdes.2023.113966",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "1806_CR4",
+      "doi-asserted-by": "publisher",
+      "first-page": "182",
+      "DOI": "10.1016/j.fusengdes.2018.09.012",
+      "volume": "137",
+      "author": "D Sohn",
+      "year": "2018",
+      "unstructured": "D. Sohn, Y. Lee, M.Y. Ahn et al., Numerical prediction of packing behavior and thermal conductivity of pebble beds according to pebble size distributions and friction coefficients. Fusion Eng. Des. 137, 182–190 (2018). https://doi.org/10.1016/j.fusengdes.2018.09.012",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "1806_CR5",
+      "doi-asserted-by": "publisher",
+      "first-page": "653",
+      "DOI": "10.1016/S0920-3796(01)00517-8",
+      "volume": "58",
+      "author": "G Piazza",
+      "year": "2001",
+      "unstructured": "G. Piazza, J. Reimann, E. Günther et al., Behaviour of ceramic breeder materials in long time annealing experiments. Fusion Eng. Des. 58, 653–659 (2001). https://doi.org/10.1016/S0920-3796(01)00517-8",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "1806_CR6",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.nme.2022.101188",
+      "volume": "31",
+      "author": "M Lei",
+      "year": "2022",
+      "unstructured": "M. Lei, Q. Wu, S. Xu et al., Crushing behaviour of Li4SiO4 and Li2TiO3 ceramic particles. Nucl. Mat. Energy 31, 101188 (2022). https://doi.org/10.1016/j.nme.2022.101188",
+      "journal-title": "NME"
+    },
+    {
+      "key": "1806_CR7",
+      "doi-asserted-by": "publisher",
+      "first-page": "99",
+      "DOI": "10.1016/S0022-3115(00)00352-4",
+      "volume": "283",
+      "author": "J Van Der Laan",
+      "year": "2000",
+      "unstructured": "J. Van Der Laan, H. Kawamura, N. Roux et al., Ceramic breeder research and development: progress and focus. J. Nucl. Mater. 283, 99–109 (2000). https://doi.org/10.1016/S0022-3115(00)00352-4",
+      "journal-title": "Res. Dev. J. Nucl. Mater."
+    },
+    {
+      "key": "1806_CR8",
+      "doi-asserted-by": "publisher",
+      "first-page": "268",
+      "DOI": "10.1016/j.anucene.2019.01.016",
+      "volume": "128",
+      "author": "Z Wu",
+      "year": "2019",
+      "unstructured": "Z. Wu, Y. Wu, C. Wang et al., Experimental and numerical study on helium flow characteristics in randomly packed pebble bed. Ann. Nucl. Energy 128, 268–277 (2019). https://doi.org/10.1016/j.anucene.2019.01.016",
+      "journal-title": "Ann. Nucl. Energy"
+    },
+    {
+      "key": "1806_CR9",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.fusengdes.2021.112778",
+      "volume": "172",
+      "author": "C Sedani",
+      "year": "2021",
+      "unstructured": "C. Sedani, M. Panchal, P. Chaudhuri, Simulation and experimental analysis of purge gas flow characteristic for pebble bed. Fusion Eng. Des. 172, 112778 (2021). https://doi.org/10.1016/j.fusengdes.2021.112778",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "1806_CR10",
+      "doi-asserted-by": "publisher",
+      "first-page": "106",
+      "DOI": "10.1016/j.expthermflusci.2014.09.001",
+      "volume": "60",
+      "author": "S Bu",
+      "year": "2015",
+      "unstructured": "S. Bu, J. Yang, Q. Dong et al., Experimental study of flow transitions in structured packed beds of spheres with electrochemical technique. Exp. Therm. Fluid Sci. 60, 106–114 (2015). https://doi.org/10.1016/j.expthermflusci.2014.09.001",
+      "journal-title": "Exp. Therm. Fluid Sci."
+    },
+    {
+      "key": "1806_CR11",
+      "doi-asserted-by": "publisher",
+      "first-page": "1",
+      "DOI": "10.1016/j.anucene.2016.12.009",
+      "volume": "102",
+      "author": "X Jia",
+      "year": "2017",
+      "unstructured": "X. Jia, N. Gui, X. Yang et al., Experimental study of flow field characteristics on bed configurations in the pebble bed reactor. Ann. Nucl. Energy 102, 1–10 (2017). https://doi.org/10.1016/j.anucene.2016.12.009",
+      "journal-title": "Ann. Nucl. Energy"
+    },
+    {
+      "key": "1806_CR12",
+      "doi-asserted-by": "publisher",
+      "first-page": "11352",
+      "DOI": "10.1002/er.5378",
+      "volume": "45",
+      "author": "L Liu",
+      "year": "2021",
+      "unstructured": "L. Liu, J. Deng, D. Zhang et al., Review of the experimental research on the thermal-hydraulic characteristics in the pebble bed nuclear reactor core and fusion breeder blankets. Int. J. Energ. Res. 45, 11352–11383 (2021). https://doi.org/10.1002/er.5378",
+      "journal-title": "Int. J. Energ. Res."
+    },
+    {
+      "key": "1806_CR13",
+      "doi-asserted-by": "publisher",
+      "first-page": "792",
+      "DOI": "10.1016/j.fusengdes.2017.03.169",
+      "volume": "124",
+      "author": "H Chen",
+      "year": "2017",
+      "unstructured": "H. Chen, S. Wang, C. Jin et al., Theoretical and experimental study on effective thermal conductivity of pebble bed for fusion blanket. Fusion Eng. Des. 124, 792–796 (2017). https://doi.org/10.1016/j.fusengdes.2017.03.169",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "1806_CR14",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.ces.2023.119029",
+      "volume": "280",
+      "author": "S Yu",
+      "year": "2023",
+      "unstructured": "S. Yu, Z. Zhang, C. Peng et al., Rapid analysis of packed pebble beds for thermal-hydraulic characteristics via reduced order models. Chem. Eng. Sci. 280, 119029 (2023). https://doi.org/10.1016/j.ces.2023.119029",
+      "journal-title": "Chem. Eng. Sci."
+    },
+    {
+      "key": "1806_CR15",
+      "doi-asserted-by": "publisher",
+      "first-page": "1305",
+      "DOI": "10.1016/j.jnucmat.2004.04.225",
+      "volume": "329",
+      "author": "G Dell’Orco",
+      "year": "2004",
+      "unstructured": "G. Dell’Orco, A. Ancona, A. DiMaio et al., Thermo-mechanical testing of Li-ceramic for the helium cooled pebble bed (HCPB) breeding blanket. J. Nucl. Mater. 329, 1305–1308 (2004). https://doi.org/10.1016/j.jnucmat.2004.04.225",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "1806_CR16",
+      "doi-asserted-by": "publisher",
+      "first-page": "1060",
+      "DOI": "10.1016/j.jnucmat.2004.04.225",
+      "volume": "386",
+      "author": "Y Gan",
+      "year": "2009",
+      "unstructured": "Y. Gan, M. Kamlah, Thermo-mechanical analyses of helica and hexcaliber mock-ups. J. Nucl. Mater. 386, 1060–1064 (2009). https://doi.org/10.1016/j.jnucmat.2004.04.225",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "1806_CR17",
+      "doi-asserted-by": "publisher",
+      "first-page": "1281",
+      "DOI": "10.1016/j.jnucmat.2007.03.240",
+      "volume": "367",
+      "author": "A Ying",
+      "year": "2007",
+      "unstructured": "A. Ying, M. Akiba, L. Boccaccini et al., Status and perspective of the R&D on ceramic breeder materials for testing in ITER. J. Nucl. Mater. 367, 1281–1286 (2007). https://doi.org/10.1016/j.jnucmat.2007.03.240",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "1806_CR18",
+      "doi-asserted-by": "publisher",
+      "first-page": "706",
+      "DOI": "10.1016/j.jnucmat.2010.12.131",
+      "volume": "417",
+      "author": "Y Gan",
+      "year": "2011",
+      "unstructured": "Y. Gan, M. Kamlah, H. Riesch-Oppermann et al., Crush probability analysis of ceramic breeder pebble beds under mechanical stresses. J. Nucl. Mater. 417, 706–709 (2011). https://doi.org/10.1016/j.jnucmat.2010.12.131",
+      "journal-title": "J. Nucl. Mater."
+    },
+    {
+      "key": "1806_CR19",
+      "doi-asserted-by": "publisher",
+      "first-page": "28",
+      "DOI": "10.1016/j.engfracmech.2012.05.011",
+      "volume": "100",
+      "author": "S Zhao",
+      "year": "2013",
+      "unstructured": "S. Zhao, Y. Gan, M. Kamlah et al., Influence of plate material on the contact strength of Li4SiO4 pebbles in crush tests and evaluation of the contact strength in pebble-pebble contact. Eng. Fract. Mech. 100, 28–37 (2013). https://doi.org/10.1016/j.engfracmech.2012.05.011",
+      "journal-title": "Eng. Fract. Mech."
+    },
+    {
+      "key": "1806_CR20",
+      "doi-asserted-by": "publisher",
+      "first-page": "2183",
+      "DOI": "10.1016/j.nucengdes.2007.03.046",
+      "volume": "237",
+      "author": "JJ Lee",
+      "year": "2007",
+      "unstructured": "J.J. Lee, G.C. Park, K.Y. Kim et al., Numerical treatment of pebble contact in the flow and heat transfer analysis of a pebble bed reactor core. Nucl. Eng. Des. 237, 2183–2196 (2007). https://doi.org/10.1016/j.nucengdes.2007.03.046",
+      "journal-title": "Nucl. Eng. Des."
+    },
+    {
+      "key": "1806_CR21",
+      "doi-asserted-by": "publisher",
+      "first-page": "53",
+      "DOI": "10.1016/j.fusengdes.2018.01.028",
+      "volume": "128",
+      "author": "S Wang",
+      "year": "2018",
+      "unstructured": "S. Wang, S. Wang, Q. Xu et al., Crushed model and uniaxial compression analysis of random packed ceramic pebble bed by DEM. Fusion Eng. Des. 128, 53–57 (2018). https://doi.org/10.1016/j.fusengdes.2018.01.028",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "1806_CR22",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.fusengdes.2023.114105",
+      "volume": "199",
+      "author": "DM Kuang",
+      "year": "2024",
+      "unstructured": "D.M. Kuang, J. Su, Z.R. Chen et al., Investigation of the size-dependent crushing behavior of Li4SiO4 pebbles via discrete element method. Fusion Eng. Des. 199, 114105 (2024). https://doi.org/10.1016/j.fusengdes.2023.114105",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "1806_CR23",
+      "doi-asserted-by": "publisher",
+      "DOI": "10.1016/j.fusengdes.2023.113929",
+      "volume": "194",
+      "author": "J Wang",
+      "year": "2023",
+      "unstructured": "J. Wang, M. Lei, H. Yang et al., Predicting the crushing behavior of pebbles: theoretical model and experiment verification. Fusion Eng. Des. 194, 113929 (2023). https://doi.org/10.1016/j.fusengdes.2023.113929",
+      "journal-title": "Fusion Eng. Des."
+    },
+    {
+      "key": "1806_CR24",
+      "doi-asserted-by": "publisher",
+      "first-page": "1192",
+      "DOI": "10.11779/CJGE202107003",
+      "volume": "43",
+      "author": "C Zi-yu",
+      "year": "2021",
+      "unstructured": "Z.Y. Chen, G.Y. Li, K.M. Wei et al., Ultimate state and probability of particle breakage for rockfill materials based on fractal theory. Chin. J. Geotech. Eng. (in Chinese) 43, 1192–1200 (2021). https://doi.org/10.11779/CJGE202107003",
+      "journal-title": "Chin. J. Geotech. Eng."
+    },
+    {
+      "key": "1806_CR25",
+      "doi-asserted-by": "publisher",
+      "first-page": "625",
+      "DOI": "10.1680/geot.4.P.157",
+      "volume": "65",
+      "author": "B Zhao",
+      "year": "2015",
+      "unstructured": "B. Zhao, J. Wang, M. Coop et al., An investigation of single sand particle fracture using X-ray micro-tomography. Géotechnique 65, 625–641 (2015). https://doi.org/10.1680/geot.4.P.157",
+      "journal-title": "Géotechnique"
+    },
+    {
+      "key": "1806_CR26",
+      "doi-asserted-by": "publisher",
+      "first-page": "04021133",
+      "DOI": "10.1061/(ASCE)EM.1943-7889.0002039",
+      "volume": "148",
+      "author": "P Wang",
+      "year": "2022",
+      "unstructured": "P. Wang, Z.Y. Yin, Z.Y. Wang, Micromechanical investigation of particle-size effect of granular materials in biaxial test with the role of particle breakage. J. Eng. Mech. 148, 04021133 (2022). https://doi.org/10.1061/(ASCE)EM.1943-7889.0002039",
+      "journal-title": "J. Eng. Mech."
+    },
+    {
+      "key": "1806_CR27",
+      "doi-asserted-by": "publisher",
+      "first-page": "375",
+      "DOI": "10.1016/j.gsf.2018.10.010",
+      "volume": "11",
+      "author": "Y Xiao",
+      "year": "2020",
+      "unstructured": "Y. Xiao, M. Meng, A. Daouadji et al., Effects of particle size on crushing and deformation behaviors of rockfill materials. Geosci. Front. 11, 375–388 (2020). https://doi.org/10.1016/j.gsf.2018.10.010",
+      "journal-title": "Geosci. Front."
+    },
+    {
+      "key": "1806_CR28",
+      "doi-asserted-by": "publisher",
+      "first-page": "261",
+      "DOI": "10.1515/revce-2013-0032",
+      "volume": "30",
+      "author": "L Bao",
+      "year": "2014",
+      "unstructured": "L. Bao, J. Ma, W. Long et al., Fractal analysis in particle dissolution: a review. Rev. Chem. Eng. 30, 261–287 (2014). https://doi.org/10.1515/revce-2013-0032",
+      "journal-title": "Rev. Chem. Eng."
+    },
+    {
+      "key": "1806_CR29",
+      "doi-asserted-by": "publisher",
+      "first-page": "6198",
+      "DOI": "10.1021/acs.energyfuels.2c00855",
+      "volume": "36",
+      "author": "J Ren",
+      "year": "2022",
+      "unstructured": "J. Ren, Z. Wang, B. Li et al., Fractal-time-dependent fick diffusion model of coal particles based on desorption-diffusion experiments. Energy Fuels 36, 6198–6215 (2022). https://doi.org/10.1021/acs.energyfuels.2c00855",
+      "journal-title": "Energy Fuels"
+    },
+    {
+      "key": "1806_CR30",
+      "doi-asserted-by": "publisher",
+      "first-page": "567",
+      "DOI": "10.1680/geot.1999.49.5.567",
+      "volume": "49",
+      "author": "A Nakata",
+      "year": "1999",
+      "unstructured": "A. Nakata, M. Hyde, H. Hyodo et al., A probabilistic approach to sand particle crushing in the triaxial test. Géotechnique 49, 567–583 (1999). https://doi.org/10.1680/geot.1999.49.5.567",
+      "journal-title": "Géotechnique"
+    },
+    {
+      "key": "1806_CR31",
+      "doi-asserted-by": "publisher",
+      "first-page": "315",
+      "DOI": "10.1680/geot.2010.60.5.315",
+      "volume": "60",
+      "author": "SA Hall",
+      "year": "2010",
+      "unstructured": "S.A. Hall, M. Bornert, J. Desrues et al., Discrete and continuum analysis of localised deformation in sand using X-ray $$\\mu$$CT and volumetric digital image correlation. Géotechnique 60, 315–322 (2010). https://doi.org/10.1680/geot.2010.60.5.315",
+      "journal-title": "Géotechnique"
+    },
+    {
+      "key": "1806_CR32",
+      "doi-asserted-by": "publisher",
+      "first-page": "369",
+      "DOI": "10.1680/geot.2010.60.5.369",
+      "volume": "60",
+      "author": "A Hasan",
+      "year": "2010",
+      "unstructured": "A. Hasan, K. Alshibli, Experimental assessment of 3D particle-to-particle interaction within sheared sand using synchrotron microtomography. Géotechnique 60, 369–379 (2010). https://doi.org/10.1680/geot.2010.60.5.369",
+      "journal-title": "Géotechnique"
+    },
+    {
+      "key": "1806_CR33",
+      "doi-asserted-by": "publisher",
+      "first-page": "1",
+      "DOI": "10.1007/s11440-011-0151-6",
+      "volume": "7",
+      "author": "E Andò",
+      "year": "2012",
+      "unstructured": "E. Andò, S.A. Hall, G. Viggiani et al., Grain-scale experimental investigation of localised deformation in sand: a discrete particle tracking approach. Acta Geotech. 7, 1–13 (2012). https://doi.org/10.1007/s11440-011-0151-6",
+      "journal-title": "Acta Geotech."
+    },
+    {
+      "key": "1806_CR34",
+      "doi-asserted-by": "publisher",
+      "first-page": "487",
+      "DOI": "10.1007/s11440-011-0151-6",
+      "volume": "63",
+      "author": "J Fonseca",
+      "year": "2013",
+      "unstructured": "J. Fonseca, C. O’sullivan, M.R. Coop et al., Quantifying the evolution of soil fabric during shearing using directional parameters. Géotechnique 63, 487–499 (2013). https://doi.org/10.1007/s11440-011-0151-6",
+      "journal-title": "Géotechnique"
+    },
+    {
+      "key": "1806_CR35",
+      "doi-asserted-by": "publisher",
+      "first-page": "04019060",
+      "DOI": "10.1061/(ASCE)GT.1943-5606.0002098",
+      "volume": "145",
+      "author": "S Liu",
+      "year": "2019",
+      "unstructured": "S. Liu, J. Wang, C.Y. Kwok, Dem simulation of creep in one-dimensional compression of crushable sand. J. Geotech. Geoenviron. 145, 04019060 (2019). https://doi.org/10.1061/(ASCE)GT.1943-5606.0002098",
+      "journal-title": "J. Geotech. Geoenviron."
+    },
+    {
+      "key": "1806_CR36",
+      "doi-asserted-by": "publisher",
+      "first-page": "1657",
+      "DOI": "10.1002/er.3961",
+      "volume": "42",
+      "author": "M Lei",
+      "year": "2018",
+      "unstructured": "M. Lei, S. Xu, C. Guo et al., Design and thermal-hydraulic evaluation of helium-cooled ceramic breeder blanket for China fusion engineering test reactor. Int. J. Energ. Res. 42, 1657–1663 (2018). https://doi.org/10.1002/er.3961",
+      "journal-title": "Int. J. Energ. Res."
+    }
+  ],
+  "container-title": "Nuclear Science and Techniques",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://link.springer.com/content/pdf/10.1007/s41365-025-01806-0.pdf",
+      "content-type": "application/pdf",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://link.springer.com/article/10.1007/s41365-025-01806-0",
+      "content-type": "text/html",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://link.springer.com/content/pdf/10.1007/s41365-025-01806-0.pdf",
+      "content-type": "application/pdf",
+      "content-version": "vor",
+      "intended-application": "similarity-checking"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2026,
+        1,
+        8
+      ]
+    ],
+    "date-time": "2026-01-08T15:23:47Z",
+    "timestamp": 1767885827000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://link.springer.com/10.1007/s41365-025-01806-0"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2025,
+        12,
+        5
+      ]
+    ]
+  },
+  "references-count": 36,
+  "journal-issue": {
+    "issue": "1",
+    "published-print": {
+      "date-parts": [
+        [
+          2026,
+          1
+        ]
+      ]
+    }
+  },
+  "alternative-id": [
+    "1806"
+  ],
+  "URL": "http://dx.doi.org/10.1007/s41365-025-01806-0",
+  "relation": {},
+  "ISSN": [
+    "1001-8042",
+    "2210-3147"
+  ],
+  "subject": [],
+  "container-title-short": "NUCL SCI TECH",
+  "published": {
+    "date-parts": [
+      [
+        2025,
+        12,
+        5
+      ]
+    ]
+  },
+  "assertion": [
+    {
+      "value": "14 May 2024",
+      "order": 1,
+      "name": "received",
+      "label": "Received",
+      "group": {
+        "name": "ArticleHistory",
+        "label": "Article History"
+      }
+    },
+    {
+      "value": "23 July 2024",
+      "order": 2,
+      "name": "revised",
+      "label": "Revised",
+      "group": {
+        "name": "ArticleHistory",
+        "label": "Article History"
+      }
+    },
+    {
+      "value": "6 August 2024",
+      "order": 3,
+      "name": "accepted",
+      "label": "Accepted",
+      "group": {
+        "name": "ArticleHistory",
+        "label": "Article History"
+      }
+    },
+    {
+      "value": "5 December 2025",
+      "order": 4,
+      "name": "first_online",
+      "label": "First Online",
+      "group": {
+        "name": "ArticleHistory",
+        "label": "Article History"
+      }
+    },
+    {
+      "order": 1,
+      "name": "Ethics",
+      "group": {
+        "name": "EthicsHeading",
+        "label": "Declarations"
+      }
+    },
+    {
+      "value": "The authors declare that they have no Conflict of interest.",
+      "order": 2,
+      "name": "Ethics",
+      "group": {
+        "name": "EthicsHeading",
+        "label": "Conflict of interest"
+      }
+    }
+  ],
+  "article-number": "1"
+}

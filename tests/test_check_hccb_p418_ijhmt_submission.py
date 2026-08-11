@@ -47,6 +47,11 @@ def test_working_paper_has_clean_pdf_but_waits_for_final_transient_result() -> N
     assert checks["cited_reference_count_at_most_50"]
     assert checks["bibtex_keys_are_unique"]
     assert checks["all_bibliography_entries_have_doi_or_source_url"]
+    assert checks["reference_metadata_checked_without_unresolved_differences"]
+    assert payload["reference_metadata_record"]["entry_count"] == 44
+    assert payload["reference_metadata_record"]["doi_entry_count"] == 40
+    assert payload["reference_metadata_record"]["unresolved_review_count"] == 0
+    assert payload["reference_metadata_record"]["fetch_failure_count"] == 0
     assert checks["editable_manuscript_sources_present"]
     assert checks["data_and_code_availability_is_truthful"]
     assert not checks["citable_data_repository_record_ready"]

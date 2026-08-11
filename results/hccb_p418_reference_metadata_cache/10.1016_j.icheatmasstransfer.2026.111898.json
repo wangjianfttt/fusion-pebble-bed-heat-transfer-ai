@@ -1,0 +1,941 @@
+{
+  "indexed": {
+    "date-parts": [
+      [
+        2026,
+        8,
+        7
+      ]
+    ],
+    "date-time": "2026-08-07T23:44:25Z",
+    "timestamp": 1786146265517,
+    "version": "3.56.0"
+  },
+  "reference-count": 61,
+  "publisher": "Elsevier BV",
+  "license": [
+    {
+      "start": {
+        "date-parts": [
+          [
+            2026,
+            9,
+            1
+          ]
+        ],
+        "date-time": "2026-09-01T00:00:00Z",
+        "timestamp": 1788220800000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2026,
+            9,
+            1
+          ]
+        ],
+        "date-time": "2026-09-01T00:00:00Z",
+        "timestamp": 1788220800000
+      },
+      "content-version": "tdm",
+      "delay-in-days": 0,
+      "URL": "https://www.elsevier.com/legal/tdmrep-license"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2026,
+            9,
+            1
+          ]
+        ],
+        "date-time": "2026-09-01T00:00:00Z",
+        "timestamp": 1788220800000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-017"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2026,
+            9,
+            1
+          ]
+        ],
+        "date-time": "2026-09-01T00:00:00Z",
+        "timestamp": 1788220800000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-037"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2026,
+            9,
+            1
+          ]
+        ],
+        "date-time": "2026-09-01T00:00:00Z",
+        "timestamp": 1788220800000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-012"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2026,
+            9,
+            1
+          ]
+        ],
+        "date-time": "2026-09-01T00:00:00Z",
+        "timestamp": 1788220800000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-029"
+    },
+    {
+      "start": {
+        "date-parts": [
+          [
+            2026,
+            9,
+            1
+          ]
+        ],
+        "date-time": "2026-09-01T00:00:00Z",
+        "timestamp": 1788220800000
+      },
+      "content-version": "stm-asf",
+      "delay-in-days": 0,
+      "URL": "https://doi.org/10.15223/policy-004"
+    }
+  ],
+  "funder": [
+    {
+      "DOI": "10.13039/501100001809",
+      "name": "National Natural Science Foundation of China",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "52376079"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "52376079"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100001809",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    },
+    {
+      "DOI": "10.13039/501100004731",
+      "name": "Zhejiang Province Natural Science Foundation",
+      "doi-asserted-by": "publisher",
+      "award": [
+        "LZ24E060002"
+      ],
+      "award-info": [
+        {
+          "award-number": [
+            "LZ24E060002"
+          ]
+        }
+      ],
+      "id": [
+        {
+          "id": "10.13039/501100004731",
+          "id-type": "DOI",
+          "asserted-by": "publisher"
+        }
+      ]
+    }
+  ],
+  "content-domain": {
+    "domain": [
+      "elsevier.com",
+      "sciencedirect.com"
+    ],
+    "crossmark-restriction": true
+  },
+  "published-print": {
+    "date-parts": [
+      [
+        2026,
+        9
+      ]
+    ]
+  },
+  "DOI": "10.1016/j.icheatmasstransfer.2026.111898",
+  "type": "journal-article",
+  "created": {
+    "date-parts": [
+      [
+        2026,
+        7,
+        1
+      ]
+    ],
+    "date-time": "2026-07-01T19:47:25Z",
+    "timestamp": 1782935245000
+  },
+  "page": "111898",
+  "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+  "source": "Crossref",
+  "is-referenced-by-count": 0,
+  "special_numbering": "P5",
+  "title": "Finite-volume constrained physics-informed neural operator for heat conduction in porous media with discontinuous thermal conductivity",
+  "prefix": "10.1016",
+  "volume": "178",
+  "author": [
+    {
+      "given": "Lihong",
+      "family": "Zhu",
+      "sequence": "first",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Shuxia",
+      "family": "Qiu",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Jinghua",
+      "family": "Yang",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Chien Hwa",
+      "family": "Chong",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Peng",
+      "family": "Xu",
+      "sequence": "additional",
+      "affiliation": [],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    }
+  ],
+  "member": "78",
+  "reference": [
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0005",
+      "series-title": "Dynamics of fluids in porous media",
+      "author": "Bear",
+      "year": "1988"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0010",
+      "doi-asserted-by": "crossref",
+      "first-page": "920",
+      "DOI": "10.1016/j.ijheatmasstransfer.2015.06.017",
+      "article-title": "Modeling radiative properties of air plasma sprayed thermal barrier coatings in the dependent scattering regime",
+      "volume": "89",
+      "author": "Wang",
+      "year": "2015",
+      "journal-title": "Int. J. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0015",
+      "doi-asserted-by": "crossref",
+      "first-page": "9752",
+      "DOI": "10.1016/j.ceramint.2016.03.067",
+      "article-title": "Modeling the thermal radiation properties of thermal barrier coatings based on a random generation algorithm",
+      "volume": "42",
+      "author": "Shi",
+      "year": "2016",
+      "journal-title": "Ceram. Int."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0020",
+      "doi-asserted-by": "crossref",
+      "first-page": "245",
+      "DOI": "10.1016/j.earscirev.2016.12.011",
+      "article-title": "Thermal effects on geologic carbon storage",
+      "volume": "165",
+      "author": "Vilarrasa",
+      "year": "2017",
+      "journal-title": "Earth Sci. Rev."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0025",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jgsce.2023.205079",
+      "article-title": "An overview of underground energy storage in porous media and development in China",
+      "volume": "117",
+      "author": "Liu",
+      "year": "2023",
+      "journal-title": "Gas Sci. Eng."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0030",
+      "doi-asserted-by": "crossref",
+      "first-page": "2910",
+      "DOI": "10.1149/1.1393625",
+      "article-title": "Thermal-electrochemical modeling of battery systems",
+      "volume": "147",
+      "author": "Gu",
+      "year": "2000",
+      "journal-title": "J. Electrochem. Soc."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0035",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.energy.2025.136022",
+      "article-title": "Investigation on multi-factors of triply periodic minimal surface porous media for enhancing combustion and energy efficiency of carbon free fuels powered micro generator",
+      "volume": "324",
+      "author": "Huang",
+      "year": "2025",
+      "journal-title": "Energy"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0040",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2023.124127",
+      "article-title": "A three-cell effective thermal conductivity model of two-phase porous media",
+      "volume": "209",
+      "author": "Zhu",
+      "year": "2023",
+      "journal-title": "Int. J. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0045",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.heliyon.2023.e22292",
+      "article-title": "Review of modern models of porous media for numerical simulation of fluid flows",
+      "volume": "9",
+      "author": "Simonov",
+      "year": "2023",
+      "journal-title": "Heliyon"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0050",
+      "doi-asserted-by": "crossref",
+      "first-page": "533",
+      "DOI": "10.1038/323533a0",
+      "article-title": "Learning representations by back-propagating errors",
+      "volume": "323",
+      "author": "Rumelhart",
+      "year": "1986",
+      "journal-title": "Nature"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0055",
+      "doi-asserted-by": "crossref",
+      "first-page": "2603",
+      "DOI": "10.1016/j.buildenv.2011.06.019",
+      "article-title": "Prediction of effective thermal conductivity of moist porous materials using artificial neural network approach",
+      "volume": "46",
+      "author": "Singh",
+      "year": "2011",
+      "journal-title": "Build. Environ."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0060",
+      "doi-asserted-by": "crossref",
+      "first-page": "638",
+      "DOI": "10.3390/geotechnics3030035",
+      "article-title": "Accurately predicting quartz sand thermal conductivity using machine learning and grey-box AI models",
+      "volume": "3",
+      "author": "Baghbani",
+      "year": "2023",
+      "journal-title": "Geotechnics"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0065",
+      "doi-asserted-by": "crossref",
+      "first-page": "2278",
+      "DOI": "10.1109/5.726791",
+      "article-title": "Gradient-based learning applied to document recognition",
+      "volume": "86",
+      "author": "LeCun",
+      "year": "1998",
+      "journal-title": "Proc. IEEE"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0070",
+      "doi-asserted-by": "crossref",
+      "first-page": "908",
+      "DOI": "10.1016/j.ijheatmasstransfer.2018.08.082",
+      "article-title": "Predicting the effective thermal conductivities of composite materials and porous media by machine learning methods",
+      "volume": "127",
+      "author": "Wei",
+      "year": "2018",
+      "journal-title": "Int. J. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0075",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.compscitech.2019.107861",
+      "article-title": "Predicting the effective thermal conductivity of composites from cross sections images using deep learning methods",
+      "volume": "184",
+      "author": "Rong",
+      "year": "2019",
+      "journal-title": "Compos. Sci. Technol."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0080",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2021.122131",
+      "article-title": "Analyzing the efficiency and robustness of deep convolutional neural networks for modeling natural convection in heterogeneous porous media",
+      "volume": "183",
+      "author": "Rajabi",
+      "year": "2022",
+      "journal-title": "Int. J. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0085",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.icheatmasstransfer.2022.105916",
+      "article-title": "Temperature field prediction for various porous media considering variable boundary conditions using deep learning method",
+      "volume": "132",
+      "author": "Wang",
+      "year": "2022",
+      "journal-title": "Int. Commun. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0090",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2025.126688",
+      "article-title": "A universal structure of neural network for predicting heat, flow and mass transport in various three-dimensional porous media",
+      "volume": "241",
+      "author": "Wang",
+      "year": "2025",
+      "journal-title": "Int. J. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0095",
+      "doi-asserted-by": "crossref",
+      "first-page": "320",
+      "DOI": "10.1038/s42254-024-00712-5",
+      "article-title": "Neural operators for accelerating scientific simulations and design",
+      "volume": "6",
+      "author": "Azizzadenesheli",
+      "year": "2024",
+      "journal-title": "Nat. Rev. Phys."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0100",
+      "series-title": "Neural operator: graph kernel network for partial differential equations",
+      "author": "Li",
+      "year": "2020"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0105",
+      "series-title": "Neural operator: learning maps between function spaces",
+      "author": "Kovachki",
+      "year": "2021"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0110",
+      "series-title": "Fourier neural operator for parametric partial differential equations",
+      "author": "Li",
+      "year": "2021"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0115",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.icheatmasstransfer.2024.108332",
+      "article-title": "Method for predicting conductive heat transfer topologies based on Fourier neural operator",
+      "volume": "160",
+      "author": "Yuan",
+      "year": "2025",
+      "journal-title": "Int. Commun. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0120",
+      "series-title": "U-NO: U-shaped neural operators",
+      "author": "Rahman",
+      "year": "2023"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0125",
+      "article-title": "Physics-informed neural networks in materials modeling and design: a review",
+      "author": "Michaloglou",
+      "year": "2025",
+      "journal-title": "Arch. Comput. Methods Eng."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0130",
+      "doi-asserted-by": "crossref",
+      "first-page": "56",
+      "DOI": "10.1016/j.jcp.2019.05.024",
+      "article-title": "Physics-constrained deep learning for high-dimensional surrogate modeling and uncertainty quantification without labeled data",
+      "volume": "394",
+      "author": "Zhu",
+      "year": "2019",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0135",
+      "series-title": "Physics-informed neural operator for learning partial differential equations",
+      "author": "Li",
+      "year": "2023"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0140",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1115/1.4050542",
+      "article-title": "Physics-informed neural networks for heat transfer problems",
+      "volume": "143",
+      "author": "Cai",
+      "year": "2021",
+      "journal-title": "J. Heat Transf."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0145",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2023.124671",
+      "article-title": "Physics-informed neural networks for studying heat transfer in porous media",
+      "volume": "217",
+      "author": "Xu",
+      "year": "2023",
+      "journal-title": "Int. J. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0150",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.engappai.2024.109079",
+      "article-title": "Thermal conductivity estimation using physics-informed neural networks with limited data",
+      "volume": "137",
+      "author": "Jo",
+      "year": "2024",
+      "journal-title": "Eng. Appl. Artif. Intell."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0155",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.engappai.2022.105516",
+      "article-title": "Physics-informed convolutional neural networks for temperature field prediction of heat source layout without labeled data",
+      "volume": "117",
+      "author": "Zhao",
+      "year": "2023",
+      "journal-title": "Eng. Appl. Artif. Intell."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0160",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.icheatmasstransfer.2023.106940",
+      "article-title": "Practical uncertainty quantification for space-dependent inverse heat conduction problem via ensemble physics-informed neural networks",
+      "volume": "147",
+      "author": "Jiang",
+      "year": "2023",
+      "journal-title": "Int. Commun. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0165",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.energy.2026.140473",
+      "article-title": "Transfer learning-enhanced rapid prediction of heat transfer fields in diverse porous media under Robin boundary conditions",
+      "volume": "347",
+      "author": "Xu",
+      "year": "2026",
+      "journal-title": "Energy"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0170",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.knosys.2024.111831",
+      "article-title": "Unified finite-volume physics informed neural networks to solve the heterogeneous partial differential equations",
+      "volume": "295",
+      "author": "Mei",
+      "year": "2024",
+      "journal-title": "Knowl.-Based Syst."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0175",
+      "article-title": "Physics-informed graph neural network based on the finite volume method for steady incompressible laminar convective heat transfer",
+      "volume": "37",
+      "author": "Zhang",
+      "year": "2025",
+      "journal-title": "Phys. Fluids"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0180",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cma.2020.113028",
+      "article-title": "Conservative physics-informed neural networks on discrete domains for conservation laws: applications to forward and inverse problems",
+      "volume": "365",
+      "author": "Jagtap",
+      "year": "2020",
+      "journal-title": "Comput. Methods Appl. Mech. Eng."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0185",
+      "series-title": "Numerical Heat Transfer and Fluid Flow",
+      "author": "Patankar",
+      "year": "2018"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0190",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.advwatres.2025.105087",
+      "article-title": "A finite-volume based physics-informed Fourier neural operator network for parametric learning of subsurface flow",
+      "volume": "205",
+      "author": "Yan",
+      "year": "2025",
+      "journal-title": "Adv. Water Resour."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0195",
+      "doi-asserted-by": "crossref",
+      "first-page": "A3055",
+      "DOI": "10.1137/20M1318043",
+      "article-title": "Understanding and mitigating gradient flow pathologies in physics-informed neural networks",
+      "volume": "43",
+      "author": "Wang",
+      "year": "2021",
+      "journal-title": "SIAM J. Sci. Comput."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0200",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.jcp.2021.110768",
+      "article-title": "When and why PINNs fail to train: a neural tangent kernel perspective",
+      "volume": "449",
+      "author": "Wang",
+      "year": "2022",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0205",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cam.2021.113887",
+      "article-title": "Optimally weighted loss functions for solving PDEs with neural networks",
+      "volume": "405",
+      "author": "van der Meer",
+      "year": "2022",
+      "journal-title": "J. Comput. Appl. Math."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0210",
+      "series-title": "Characterizing possible failure modes in physics-informed neural networks",
+      "author": "Krishnapriyan",
+      "year": "2021"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0215",
+      "series-title": "On the spectral bias of neural networks",
+      "author": "Rahaman",
+      "year": "2019"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0220",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.geoen.2024.212753",
+      "article-title": "Resolution enhancement and deblurring of porous media μ-CT images based on super resolution generative adversarial network",
+      "volume": "236",
+      "author": "Cai",
+      "year": "2024",
+      "journal-title": "Geoenergy Sci. Eng."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0225",
+      "series-title": "Fundamentals of Heat and Mass Transfer",
+      "author": "Incropera",
+      "year": "1996"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0230",
+      "series-title": "Handbook of Numerical Analysis",
+      "doi-asserted-by": "crossref",
+      "first-page": "713",
+      "DOI": "10.1016/S1570-8659(00)07005-8",
+      "article-title": "Finite volume methods",
+      "author": "Eymard",
+      "year": "2000"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0235",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.cma.2021.114333",
+      "article-title": "Exact imposition of boundary conditions with distance functions in physics-informed deep neural networks",
+      "volume": "389",
+      "author": "Sukumar",
+      "year": "2022",
+      "journal-title": "Comput. Methods Appl. Mech. Eng."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0240",
+      "series-title": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "first-page": "10541",
+      "article-title": "Deep frequency principle towards understanding why deeper learning is faster",
+      "volume": "35",
+      "author": "Xu",
+      "year": "2021"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0245",
+      "doi-asserted-by": "crossref",
+      "first-page": "1746",
+      "DOI": "10.4208/cicp.OA-2020-0085",
+      "article-title": "Frequency principle: Fourier analysis sheds light on deep neural networks",
+      "volume": "28",
+      "author": "Xu",
+      "year": "2020",
+      "journal-title": "Commun. Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0250",
+      "series-title": "Neural image compression: generalization, robustness, and spectral biases",
+      "author": "Lieberman",
+      "year": "2023"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0255",
+      "series-title": "2018 IEEE 15th International Symposium on Biomedical Imaging (ISBI 2018)",
+      "first-page": "61",
+      "article-title": "The Fourier radial error spectrum plot: a more nuanced quantitative evaluation of image reconstruction quality",
+      "author": "Kim",
+      "year": "2018"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0260",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.ijheatmasstransfer.2025.128083",
+      "article-title": "A hybrid model for permeability prediction of porous media based on ConViT and transfer learning",
+      "volume": "256",
+      "author": "Tang",
+      "year": "2026",
+      "journal-title": "Int. J. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0265",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1016/j.compgeo.2024.106177",
+      "article-title": "Swin transformer based transfer learning model for predicting porous media permeability from 2D images",
+      "volume": "168",
+      "author": "Geng",
+      "year": "2024",
+      "journal-title": "Comput. Geotech."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0270",
+      "doi-asserted-by": "crossref",
+      "first-page": "41",
+      "DOI": "10.1016/j.ijheatmasstransfer.2016.11.092",
+      "article-title": "Lattice Boltzmann models for the convection-diffusion equation: D2Q5 vs D2Q9",
+      "volume": "108",
+      "author": "Li",
+      "year": "2017",
+      "journal-title": "Int. J. Heat Mass Transf."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0275",
+      "doi-asserted-by": "crossref",
+      "DOI": "10.1103/PhysRevE.75.036702",
+      "article-title": "Mesoscopic predictions of the effective thermal conductivity for microscale random porous media",
+      "volume": "75",
+      "author": "Wang",
+      "year": "2007",
+      "journal-title": "Phys. Rev. E"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0280",
+      "series-title": "Decoupled weight decay regularization",
+      "author": "Loshchilov",
+      "year": "2017"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0285",
+      "series-title": "SGDR: stochastic gradient descent with warm restarts",
+      "author": "Loshchilov",
+      "year": "2016"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0290",
+      "doi-asserted-by": "crossref",
+      "first-page": "686",
+      "DOI": "10.1016/j.jcp.2018.10.045",
+      "article-title": "Physics-informed neural networks: a deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations",
+      "volume": "378",
+      "author": "Raissi",
+      "year": "2019",
+      "journal-title": "J. Comput. Phys."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0295",
+      "doi-asserted-by": "crossref",
+      "first-page": "1565",
+      "DOI": "10.1002/fld.5217",
+      "article-title": "Applications of finite difference-based physics-informed neural networks to steady incompressible isothermal and thermal flows",
+      "volume": "95",
+      "author": "Jiang",
+      "year": "2023",
+      "journal-title": "Int. J. Numer. Methods Fluids"
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0300",
+      "doi-asserted-by": "crossref",
+      "first-page": "90",
+      "DOI": "10.1109/T-C.1974.223784",
+      "article-title": "Discrete cosine transform",
+      "volume": "C-23",
+      "author": "Ahmed",
+      "year": "1974",
+      "journal-title": "IEEE Trans. Comput."
+    },
+    {
+      "key": "10.1016/j.icheatmasstransfer.2026.111898_bb0305",
+      "doi-asserted-by": "crossref",
+      "first-page": "415",
+      "DOI": "10.1016/j.jcp.2018.04.018",
+      "article-title": "Bayesian deep convolutional encoder–decoder networks for surrogate modeling and uncertainty quantification",
+      "volume": "366",
+      "author": "Zhu",
+      "year": "2018",
+      "journal-title": "J. Comput. Phys."
+    }
+  ],
+  "container-title": "International Communications in Heat and Mass Transfer",
+  "original-title": [],
+  "language": "en",
+  "link": [
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0735193326014193?httpAccept=text/xml",
+      "content-type": "text/xml",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    },
+    {
+      "URL": "https://api.elsevier.com/content/article/PII:S0735193326014193?httpAccept=text/plain",
+      "content-type": "text/plain",
+      "content-version": "vor",
+      "intended-application": "text-mining"
+    }
+  ],
+  "deposited": {
+    "date-parts": [
+      [
+        2026,
+        8,
+        7
+      ]
+    ],
+    "date-time": "2026-08-07T23:03:02Z",
+    "timestamp": 1786143782000
+  },
+  "score": 1,
+  "resource": {
+    "primary": {
+      "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0735193326014193"
+    }
+  },
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        9
+      ]
+    ]
+  },
+  "references-count": 61,
+  "alternative-id": [
+    "S0735193326014193"
+  ],
+  "URL": "http://dx.doi.org/10.1016/j.icheatmasstransfer.2026.111898",
+  "relation": {},
+  "ISSN": [
+    "0735-1933"
+  ],
+  "subject": [],
+  "container-title-short": "International Communications in Heat and Mass Transfer",
+  "published": {
+    "date-parts": [
+      [
+        2026,
+        9
+      ]
+    ]
+  },
+  "assertion": [
+    {
+      "value": "Elsevier",
+      "name": "publisher",
+      "label": "This article is maintained by"
+    },
+    {
+      "value": "Finite-volume constrained physics-informed neural operator for heat conduction in porous media with discontinuous thermal conductivity",
+      "name": "articletitle",
+      "label": "Article Title"
+    },
+    {
+      "value": "International Communications in Heat and Mass Transfer",
+      "name": "journaltitle",
+      "label": "Journal Title"
+    },
+    {
+      "value": "https://doi.org/10.1016/j.icheatmasstransfer.2026.111898",
+      "name": "articlelink",
+      "label": "CrossRef DOI link to publisher maintained version"
+    },
+    {
+      "value": "article",
+      "name": "content_type",
+      "label": "Content Type"
+    },
+    {
+      "value": "© 2026 Elsevier Ltd. All rights are reserved, including those for text and data mining, AI training, and similar technologies.",
+      "name": "copyright",
+      "label": "Copyright"
+    }
+  ],
+  "article-number": "111898"
+}

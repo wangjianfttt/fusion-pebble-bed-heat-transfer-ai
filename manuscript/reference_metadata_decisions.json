@@ -1,0 +1,23 @@
+{
+  "abousena2023hcpb": {
+    "accepted_checks": [
+      "year"
+    ],
+    "reason": "The DOI registration date is 22 December 2022, while the publisher's formal citation assigns the article to Journal of Nuclear Engineering 2023, volume 4, issue 1, pages 11-27. The issue year is retained in the bibliography.",
+    "source_url": "https://www.mdpi.com/2673-4362/4/1/2"
+  },
+  "wang2026crushable": {
+    "accepted_checks": [
+      "year"
+    ],
+    "reason": "The DOI record uses 2025 for online publication and copyright, whereas the publisher PDF assigns the formal journal citation to Nuclear Science and Techniques 2026, volume 37, article 1. The formal volume year is retained in the bibliography.",
+    "source_url": "https://doi.org/10.1007/s41365-025-01806-0"
+  },
+  "mousavi2025rigno": {
+    "accepted_checks": [
+      "pages"
+    ],
+    "reason": "The official NeurIPS 2025 proceedings BibTeX lists pages 150039-150101, whereas the DOI registration currently reports pages 166615-166677. The official proceedings pagination is retained in the bibliography.",
+    "source_url": "https://proceedings.neurips.cc/paper_files/paper/27731-/bibtex"
+  }
+}

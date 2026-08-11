@@ -1,0 +1,41 @@
+{
+  "type": "article",
+  "id": "https://doi.org/10.48550/arxiv.2601.23177",
+  "categories": [
+    "Machine Learning (cs.LG)",
+    "FOS: Computer and information sciences",
+    "FOS: Computer and information sciences"
+  ],
+  "author": [
+    {
+      "family": "Iparraguirre",
+      "given": "Mikel M."
+    },
+    {
+      "family": "Alfaro",
+      "given": "Iciar"
+    },
+    {
+      "family": "Gonzalez",
+      "given": "David"
+    },
+    {
+      "family": "Cueto",
+      "given": "Elias"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2026
+      ]
+    ]
+  },
+  "abstract": "We present MeshGraphNet-Transformer (MGN-T), a novel architecture that combines the global modeling capabilities of Transformers with the geometric inductive bias of MeshGraphNets, while preserving a mesh-based graph representation. MGN-T overcomes a key limitation of standard MGN, the inefficient long-range information propagation caused by iterative message passing on large, high-resolution meshes. A physics-attention Transformer serves as a global processor, updating all nodal states simultaneously while explicitly retaining node and edge attributes. By directly capturing long-range physical interactions, MGN-T eliminates the need for deep message-passing stacks or hierarchical, coarsened meshes, enabling efficient learning on high-resolution meshes with varying geometries, topologies, and boundary conditions at an industrial scale.\n We demonstrate that MGN-T successfully handles industrial-scale meshes for impact dynamics, a setting in which standard MGN fails due message-passing under-reaching. The method accurately models self-contact, plasticity, and multivariate outputs, including internal, phenomenological plastic variables. Moreover, MGN-T outperforms state-of-the-art approaches on classical benchmarks, achieving higher accuracy while maintaining practical efficiency, using only a fraction of the parameters required by competing baselines.",
+  "DOI": "10.48550/ARXIV.2601.23177",
+  "publisher": "arXiv",
+  "title": "MeshGraphNet-Transformer: Scalable Mesh-based Learned Simulation for Solid Mechanics",
+  "URL": "https://arxiv.org/abs/2601.23177",
+  "copyright": "Creative Commons Attribution Non Commercial No Derivatives 4.0 International",
+  "version": "3"
+}
