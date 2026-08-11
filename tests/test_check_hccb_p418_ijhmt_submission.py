@@ -92,7 +92,7 @@ def test_working_paper_has_clean_pdf_but_waits_for_final_transient_result() -> N
     assert checks["separate_ai_declaration_complete"]
     assert checks["separate_ai_declaration_matches_manuscript"]
     assert payload["forbidden_source_text_found"] == []
-    assert payload["highlight_character_counts"] == [76, 74, 76, 66, 74]
+    assert payload["highlight_character_counts"] == [76, 76, 76, 66, 74]
     claims = payload["cover_letter_scientific_claims"]
     assert claims["matches"]
     assert claims["values"]["steady_case_count"] == 60
