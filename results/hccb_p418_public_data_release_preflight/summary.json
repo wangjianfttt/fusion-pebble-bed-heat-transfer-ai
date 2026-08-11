@@ -73,14 +73,16 @@
     {
       "path": "results/hccb_p418_public_data_release_preflight/formal_training_manifest_public.json",
       "present": true,
-      "size_bytes": 107461,
-      "sha256": "cb615743c1fe07209d303405d4491d1950722745651b09397ba67774809302e8"
+      "size_bytes": 107583,
+      "sha256": "4be49063addaa39cb87be6da19937195e61ff9e96731e068820f897d1850b490"
     }
   ],
   "final_processed_files": [
     {
       "path": "results/hccb_p418_physical_steps_12/regional_sequences/regional_sequence_geometry.npz",
-      "present": false
+      "present": true,
+      "size_bytes": 14230450,
+      "sha256": "e36d8ad135eaad3ebf9e2d75d4762735fb34c31eb81fc6395e200f9ff883a797"
     },
     {
       "path": "data/apd006_hccb_source_sequence_target_packings/seed101_s80_xlo_ycentre/packing.npz",
