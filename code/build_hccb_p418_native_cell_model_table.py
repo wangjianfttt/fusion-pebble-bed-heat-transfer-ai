@@ -47,7 +47,7 @@ def main() -> int:
         "\\begin{table*}[htbp]",
         "\\centering",
         "\\small",
-        "\\caption{Temperature prediction after reconstruction on the original \\OpenFOAM{} cells for the main complete-condition split. The bounded linear reconstruction is fixed by regional geometry and neighbour extrema and introduces no fitted physical parameter. Values are means over the independent conditions. The total RMSE includes both regional-representation loss and model prediction error.}",
+        "\\caption{Temperature prediction after reconstruction on the original \\OpenFOAM{} cells for the main complete-condition split. The bounded linear reconstruction is fixed by regional geometry and neighbor extrema and introduces no fitted physical parameter. Values are means over the independent conditions. The total RMSE includes both regional-representation loss and model prediction error.}",
         "\\label{tab:native_cell_prediction}",
         "\\begin{tabular}{lrrrr}",
         "\\toprule",
