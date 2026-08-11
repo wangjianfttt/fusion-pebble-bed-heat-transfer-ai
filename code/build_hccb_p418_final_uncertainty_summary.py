@@ -132,6 +132,9 @@ def seed_components(
         standard_deviation = finite_nonnegative(
             row[standard_deviation_key], f"{source_kind} sample standard deviation"
         )
+        coefficient_of_variation = (
+            standard_deviation / mean if mean > 0.0 else None
+        )
         model = str(row[model_key])
         metric = str(row["metric"])
         output.append(
@@ -158,13 +161,36 @@ def seed_components(
                 ),
             }
         )
-        if largest is None or standard_deviation > largest["sample_standard_deviation"]:
+        if coefficient_of_variation is not None:
+            output.append(
+                {
+                    "source_kind": source_kind,
+                    "quantity": f"{model} / {metric}",
+                    "metric": "three_seed_coefficient_of_variation",
+                    "value": coefficient_of_variation,
+                    "unit": "fraction",
+                    "result_status": "reported",
+                    "interpretation": (
+                        "Sample standard deviation divided by the three-seed mean; "
+                        "used only to compare training variability across metrics with "
+                        "different units."
+                    ),
+                }
+            )
+        if coefficient_of_variation is not None and (
+            largest is None
+            or coefficient_of_variation > largest["coefficient_of_variation_fraction"]
+        ):
             largest = {
                 "model": model,
                 "metric": metric,
                 "sample_standard_deviation": standard_deviation,
                 "unit": unit,
+                "mean": mean,
+                "coefficient_of_variation_fraction": coefficient_of_variation,
             }
+    if largest is None:
+        raise ValueError(f"{source_kind} has no positive mean for normalized comparison")
     return output, largest
 
 
@@ -417,9 +443,10 @@ def write_tex(path: Path, headline: dict) -> None:
         f"is reported: all {coupled['run_count']} registered maxCo starts left the helium-"
         f"property range between {1000.0 * coupled['earliest_stop_s']:.3f} and "
         f"{1000.0 * coupled['latest_stop_s']:.3f} ms. Across three initializations, the "
-        f"largest sample standard deviations are {fmt(steady['sample_standard_deviation'])} "
-        f"{steady['unit']} for the steady models and "
-        f"{fmt(transient['sample_standard_deviation'])} K for the transient models. "
+        "largest coefficients of variation across the separately defined metrics are "
+        f"{100.0 * steady['coefficient_of_variation_fraction']:.1f}\\% for the steady "
+        f"models and {100.0 * transient['coefficient_of_variation_fraction']:.1f}\\% "
+        "for the transient models. "
         f"The independent packing changes outlet and maximum-solid temperatures by at "
         f"most {fmt(changes['outlet_temperature_K'])}\\% and "
         f"{fmt(changes['maximum_solid_temperature_K'])}\\%, respectively, but pressure "
@@ -454,8 +481,8 @@ def write_chinese(path: Path, headline: dict, external: dict) -> None:
         "",
         "## 网络重复训练",
         "",
-        f"- 稳态模型中最大的三随机种子标准差为 {fmt(headline['steady_training_seeds']['sample_standard_deviation'])} {headline['steady_training_seeds']['unit']}。",
-        f"- 瞬态模型中最大的三随机种子标准差为 {fmt(headline['transient_training_seeds']['sample_standard_deviation'])} K。",
+        f"- 稳态模型各指标分别计算后，最大变异系数为 {100.0 * headline['steady_training_seeds']['coefficient_of_variation_fraction']:.1f}%。",
+        f"- 瞬态模型各指标分别计算后，最大变异系数为 {100.0 * headline['transient_training_seeds']['coefficient_of_variation_fraction']:.1f}%。",
         "",
         "## 颗粒装填与概率预测",
         "",

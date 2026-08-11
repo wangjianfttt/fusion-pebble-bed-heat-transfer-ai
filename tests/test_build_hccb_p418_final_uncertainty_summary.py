@@ -245,6 +245,12 @@ def test_builds_separate_uncertainty_components(tmp_path: Path) -> None:
         == 17.99
     )
     assert summary["headline_results"]["diffusion_ensemble"]["coverage"] == 0.88
+    assert summary["headline_results"]["steady_training_seeds"][
+        "coefficient_of_variation_fraction"
+    ] == pytest.approx(1.0 / 6.0)
+    assert summary["headline_results"]["transient_training_seeds"][
+        "coefficient_of_variation_fraction"
+    ] == pytest.approx(1.0 / 6.0)
     assert summary["material_parameter_probability_propagation"]["performed"] is False
     assert {row["source_kind"] for row in rows} >= {
         "spatial_mesh",
@@ -255,6 +261,9 @@ def test_builds_separate_uncertainty_components(tmp_path: Path) -> None:
         "packing_realization",
         "diffusion_predictive_interval",
     }
+    assert sum(
+        row["metric"] == "three_seed_coefficient_of_variation" for row in rows
+    ) == 4
     tex = tmp_path / "generated.tex"
     chinese = tmp_path / "result_cn.md"
     write_tex(tex, summary["headline_results"])
@@ -266,6 +275,7 @@ def test_builds_separate_uncertainty_components(tmp_path: Path) -> None:
     assert "\\paragraph{Numerical and model sensitivity.}" in tex.read_text(
         encoding="utf-8"
     )
+    assert "largest coefficients of variation" in tex.read_text(encoding="utf-8")
     assert "为什么没有随意做“所有参数±5%”" in chinese.read_text(encoding="utf-8")
 
 
