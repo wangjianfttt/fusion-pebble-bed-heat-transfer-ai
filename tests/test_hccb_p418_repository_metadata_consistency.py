@@ -89,6 +89,17 @@ def test_citation_file_uses_current_title_and_software_licence() -> None:
     assert cff_creators == EXPECTED_CREATORS
 
 
+def test_github_zenodo_metadata_uses_current_title_authors_and_licence() -> None:
+    metadata = json.loads((ROOT / ".zenodo.json").read_text(encoding="utf-8"))
+    assert metadata["title"] == manuscript_title()
+    assert metadata["creators"] == EXPECTED_CREATORS
+    assert metadata["upload_type"] == "software"
+    assert metadata["access_right"] == "open"
+    assert metadata["license"] == "MIT"
+    assert metadata["version"] == "1.0.0"
+    assert metadata["language"] == "eng"
+
+
 def test_manuscript_and_zenodo_draft_use_the_same_authors_and_licences() -> None:
     manuscript = (ROOT / "manuscript/main.tex").read_text(encoding="utf-8")
     manuscript_authors = [

@@ -1,0 +1,40 @@
+{
+  "title": "Transient conjugate heat transfer in internally heated ceramic pebble beds: pore-resolved reference fields and graph–Transformer prediction",
+  "description": "Open-source programs, registered inputs, compact processed data and reproducibility records for pore-resolved conjugate heat transfer and reduced-order temperature prediction in internally heated ceramic pebble beds.",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "MIT",
+  "version": "1.0.0",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Wang, Jian",
+      "affiliation": "Anhui University of Science and Technology; Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences"
+    },
+    {
+      "name": "Wen, Wei",
+      "affiliation": "Anhui University of Science and Technology; Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences"
+    },
+    {
+      "name": "Shen, Gang",
+      "affiliation": "Anhui University of Science and Technology"
+    },
+    {
+      "name": "Lei, Mingzhun",
+      "affiliation": "Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences"
+    },
+    {
+      "name": "Song, Yuntao",
+      "affiliation": "Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences"
+    }
+  ],
+  "keywords": [
+    "solid-breeder blanket",
+    "ceramic pebble bed",
+    "conjugate heat transfer",
+    "OpenFOAM",
+    "physics-informed neural network",
+    "graph Transformer",
+    "diffusion refinement"
+  ]
+}
