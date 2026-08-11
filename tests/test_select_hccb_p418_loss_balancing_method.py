@@ -10,7 +10,20 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def summary(candidate_id: str, score: float) -> dict[str, object]:
+def summary(candidate: dict[str, object], score: float) -> dict[str, object]:
+    candidate_id = str(candidate["candidate_id"])
+    weights = {
+        "temperature_data": float(candidate["state_weight"]),
+        "reference_edge_energy_flux": float(candidate["face_flux_weight"]),
+        "projection_aware_transient_energy": float(candidate["physics_weight"]),
+    }
+    checkpoint_state: dict[str, object] = {
+        "method": candidate["method"],
+        "weights": list(weights.values()),
+    }
+    for name in ("temperature", "alpha", "expected_rho"):
+        if name in candidate:
+            checkpoint_state[name] = candidate[name]
     return {
         "evaluation_stage": "selection",
         "test_evaluated": False,
@@ -31,7 +44,12 @@ def summary(candidate_id: str, score: float) -> dict[str, object]:
         "architecture": {"hidden_dim": 96},
         "physics_terms": ["continuity", "momentum"],
         "training_normalization_sequence_ids": ["curve_01"],
-        "loss_balancing": {"candidate_id": candidate_id},
+        "loss_weights": weights,
+        "loss_balancing": {
+            "candidate_id": candidate_id,
+            "method": candidate["method"],
+            "selected_checkpoint_state": checkpoint_state,
+        },
         "best_validation_selection_score": score,
         "best_epoch": 12,
         "metrics": {
@@ -50,12 +68,14 @@ def write_protocol(tmp_path: Path) -> tuple[Path, Path, list[str]]:
     source_path = tmp_path / "sources.json"
     source_path.write_text(json.dumps(sources), encoding="utf-8")
     candidate_root = tmp_path / "candidates"
-    candidate_ids = [row["candidate_id"] for row in sources["formal_candidates"]]
-    for index, candidate_id in enumerate(candidate_ids):
+    candidates = sources["formal_candidates"]
+    candidate_ids = [row["candidate_id"] for row in candidates]
+    for index, candidate in enumerate(candidates):
+        candidate_id = candidate["candidate_id"]
         output = candidate_root / candidate_id
         output.mkdir(parents=True)
         (output / "selection_summary.json").write_text(
-            json.dumps(summary(candidate_id, 4.0 - index)),
+            json.dumps(summary(candidate, 4.0 - index)),
             encoding="utf-8",
         )
     return source_path, candidate_root, candidate_ids
@@ -145,3 +165,30 @@ def test_selector_rejects_noncomparable_candidate(tmp_path: Path) -> None:
     )
     assert process.returncode != 0
     assert "do not share one data/model setting" in process.stderr
+
+
+def test_selector_rejects_candidate_with_unregistered_loss_setting(
+    tmp_path: Path,
+) -> None:
+    source_path, candidate_root, candidate_ids = write_protocol(tmp_path)
+    bad_path = candidate_root / candidate_ids[1] / "selection_summary.json"
+    bad = json.loads(bad_path.read_text(encoding="utf-8"))
+    bad["loss_balancing"]["selected_checkpoint_state"]["temperature"] = 0.25
+    bad_path.write_text(json.dumps(bad), encoding="utf-8")
+    process = subprocess.run(
+        [
+            sys.executable,
+            str(ROOT / "code/select_hccb_p418_loss_balancing_method.py"),
+            "--candidate-root",
+            str(candidate_root),
+            "--sources",
+            str(source_path),
+            "--output",
+            str(tmp_path / "selected_method.json"),
+        ],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+    )
+    assert process.returncode != 0
+    assert "temperature differs from its source JSON" in process.stderr

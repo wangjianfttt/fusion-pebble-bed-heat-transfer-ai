@@ -9,6 +9,95 @@ import json
 from pathlib import Path
 
 
+def _candidate_weights(candidate: dict[str, object]) -> dict[str, float]:
+    """Return registered weights under the names written to model summaries."""
+    if "temperature_data_weight" in candidate:
+        source_names = {
+            "temperature_data": "temperature_data_weight",
+            "reference_edge_energy_flux": "reference_edge_energy_flux_weight",
+            "projection_aware_transient_energy": (
+                "projection_aware_transient_energy_weight"
+            ),
+        }
+    else:
+        source_names = {
+            "temperature_data": "state_weight",
+            "reference_edge_energy_flux": "face_flux_weight",
+            "projection_aware_transient_energy": "physics_weight",
+        }
+    try:
+        return {
+            summary_name: float(candidate[source_name])
+            for summary_name, source_name in source_names.items()
+        }
+    except (KeyError, TypeError, ValueError) as error:
+        raise ValueError("loss-balancing candidate has incomplete weights") from error
+
+
+def _verified_candidate_configuration(
+    candidate: dict[str, object], summary: dict[str, object]
+) -> dict[str, object]:
+    """Check that a completed run used the candidate declared in the source JSON."""
+    balancing = summary.get("loss_balancing")
+    weights = summary.get("loss_weights")
+    if not isinstance(balancing, dict) or not isinstance(weights, dict):
+        raise ValueError("selection summary does not record its loss configuration")
+
+    method = candidate.get("method")
+    if balancing.get("method") != method:
+        raise ValueError("selection summary loss method differs from its source JSON")
+    expected_weights = _candidate_weights(candidate)
+    try:
+        observed_weights = {
+            name: float(weights[name]) for name in expected_weights
+        }
+    except (KeyError, TypeError, ValueError) as error:
+        raise ValueError("selection summary has incomplete loss weights") from error
+    if observed_weights != expected_weights:
+        raise ValueError("selection summary loss weights differ from its source JSON")
+
+    checkpoint_state = balancing.get("selected_checkpoint_state")
+    if not isinstance(checkpoint_state, dict):
+        raise ValueError("selection summary has no loss-balancer checkpoint state")
+    if checkpoint_state.get("method") != method:
+        raise ValueError("loss-balancer checkpoint method differs from its source JSON")
+    if method == "fixed":
+        expected_ordered = [
+            expected_weights["temperature_data"],
+            expected_weights["reference_edge_energy_flux"],
+            expected_weights["projection_aware_transient_energy"],
+        ]
+        try:
+            observed_ordered = [float(value) for value in checkpoint_state["weights"]]
+        except (KeyError, TypeError, ValueError) as error:
+            raise ValueError("fixed loss-balancer checkpoint has invalid weights") from error
+        if observed_ordered != expected_ordered:
+            raise ValueError("fixed loss-balancer checkpoint differs from its source JSON")
+    elif method == "relobralo":
+        for name in ("temperature", "alpha", "expected_rho"):
+            try:
+                observed = float(checkpoint_state[name])
+                expected = float(candidate[name])
+            except (KeyError, TypeError, ValueError) as error:
+                raise ValueError(
+                    f"ReLoBRaLo checkpoint has invalid {name}"
+                ) from error
+            if observed != expected:
+                raise ValueError(
+                    f"ReLoBRaLo checkpoint {name} differs from its source JSON"
+                )
+    else:
+        raise ValueError(f"unsupported loss-balancing method: {method!r}")
+
+    return {
+        "method": method,
+        "initial_weights": expected_weights,
+        "temperature": candidate.get("temperature"),
+        "alpha": candidate.get("alpha"),
+        "expected_rho": candidate.get("expected_rho"),
+    }
+
+
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as handle:
@@ -27,7 +116,11 @@ def main() -> int:
     candidate_root = args.candidate_root.resolve()
     sources_path = args.sources.resolve()
     sources = json.loads(sources_path.read_text(encoding="utf-8"))
-    declared = [row["candidate_id"] for row in sources["formal_candidates"]]
+    candidates = sources["formal_candidates"]
+    declared = [row["candidate_id"] for row in candidates]
+    candidate_by_id = {row["candidate_id"]: row for row in candidates}
+    if len(candidate_by_id) != len(declared):
+        raise ValueError("loss-balancing source contains duplicate candidate ids")
     records: list[dict[str, object]] = []
     common: dict[str, object] | None = None
     for candidate_id in declared:
@@ -39,6 +132,9 @@ def main() -> int:
             raise ValueError(f"{candidate_id} read the independent test curves too early")
         if summary["loss_balancing"]["candidate_id"] != candidate_id:
             raise ValueError(f"{candidate_id} summary identifies another candidate")
+        verified_configuration = _verified_candidate_configuration(
+            candidate_by_id[candidate_id], summary
+        )
         comparable = {
             "dataset_index": summary["dataset_index"],
             "input_file_sha256": summary["input_file_sha256"],
@@ -64,6 +160,7 @@ def main() -> int:
                 "best_epoch": int(summary["best_epoch"]),
                 "summary_path": str(summary_path),
                 "summary_sha256": sha256(summary_path),
+                "verified_configuration": verified_configuration,
             }
         )
 
