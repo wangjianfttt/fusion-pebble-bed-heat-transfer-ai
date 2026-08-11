@@ -6,6 +6,8 @@ import sys
 import zipfile
 from pathlib import Path
 
+import numpy as np
+
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "code"))
@@ -27,7 +29,7 @@ def fixture(tmp_path: Path, *, ready: bool = True) -> tuple[Path, Path]:
     prediction = project / "results/selected_prediction.npz"
     compact.parent.mkdir(parents=True)
     compact.write_text("x,y\n1,2\n", encoding="utf-8")
-    prediction.write_bytes(b"selected-test-prediction")
+    np.savez_compressed(prediction, prediction=np.asarray([1.0, 2.0]))
     rows = [
         {"path": "results/compact.csv", "present": True, "sha256": digest(compact)},
         {
@@ -105,3 +107,21 @@ def test_processed_archive_rejects_private_machine_text(tmp_path: Path) -> None:
         assert "private machine text" in str(error)
     else:
         raise AssertionError("private machine text entered the release archive")
+
+
+def test_processed_archive_rejects_invalid_npz_even_with_matching_sha(
+    tmp_path: Path,
+) -> None:
+    project, release = fixture(tmp_path)
+    prediction = project / "results/selected_prediction.npz"
+    prediction.write_bytes(b"not a NumPy archive")
+    summary_path = release / "summary.json"
+    summary = json.loads(summary_path.read_text(encoding="utf-8"))
+    summary["final_processed_files"][0]["sha256"] = digest(prediction)
+    summary_path.write_text(json.dumps(summary), encoding="utf-8")
+    try:
+        build_archive(project, release, release / "output.zip")
+    except RuntimeError as error:
+        assert "format is invalid" in str(error)
+    else:
+        raise AssertionError("an invalid NPZ entered the processed-data archive")

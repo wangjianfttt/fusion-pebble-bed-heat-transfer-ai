@@ -6,7 +6,9 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
+import zipfile
 
+from build_hccb_p418_public_data_release import file_format_valid, sha256_and_read_size
 from package_hccb_p418_ijhmt_submission import sha256, write_deterministic_zip
 
 
@@ -42,6 +44,20 @@ def scan_private_text(paths: list[Path]) -> None:
             raise RuntimeError(f"private machine text in {path}: {found}")
 
 
+def verify_readable_file(path: Path, expected_sha256: str | None = None) -> str:
+    if not path.is_file() or path.stat().st_size <= 0:
+        raise FileNotFoundError(path)
+    logical_size = path.stat().st_size
+    digest, read_size = sha256_and_read_size(path)
+    if read_size != logical_size:
+        raise RuntimeError(f"release file is an unreadable cloud placeholder: {path}")
+    if not file_format_valid(path):
+        raise RuntimeError(f"release file format is invalid: {path}")
+    if expected_sha256 is not None and digest != expected_sha256:
+        raise RuntimeError(f"release SHA mismatch for {path}")
+    return digest
+
+
 def build_archive(
     project_root: Path,
     release_dir: Path,
@@ -72,12 +88,10 @@ def build_archive(
             archive_name = source.relative_to(project_root).as_posix()
         except ValueError as error:
             raise RuntimeError(f"release file is outside the project root: {source}") from error
-        if not source.is_file() or source.stat().st_size == 0:
-            raise FileNotFoundError(source)
         expected = str(row.get("sha256") or "")
-        actual = sha256(source)
-        if not expected or expected != actual:
-            raise RuntimeError(f"release SHA mismatch for {relative}")
+        if not expected:
+            raise RuntimeError(f"release SHA is missing for {relative}")
+        verify_readable_file(source, expected)
         if archive_name in seen_names:
             continue
         seen_names.add(archive_name)
@@ -86,19 +100,24 @@ def build_archive(
 
     for relative in ROOT_FILES:
         source = project_root / relative
-        if not source.is_file() or source.stat().st_size == 0:
-            raise FileNotFoundError(source)
+        verify_readable_file(source)
         entries.append((source, relative))
         source_paths.append(source)
     for name in RELEASE_FILES:
         source = release_dir / name
-        if not source.is_file() or source.stat().st_size == 0:
-            raise FileNotFoundError(source)
+        verify_readable_file(source)
         entries.append((source, f"release/{name}"))
         source_paths.append(source)
 
     scan_private_text(source_paths)
     write_deterministic_zip(output, entries)
+    expected_sizes = {name: source.stat().st_size for source, name in entries}
+    with zipfile.ZipFile(output) as archive:
+        if archive.testzip() is not None:
+            raise RuntimeError("processed-data archive failed its CRC check")
+        actual_sizes = {info.filename: info.file_size for info in archive.infolist()}
+    if actual_sizes != expected_sizes:
+        raise RuntimeError("processed-data archive member sizes do not match the sources")
     return {
         "status": "completed_p418_processed_data_release_archive",
         "archive": output.name,
