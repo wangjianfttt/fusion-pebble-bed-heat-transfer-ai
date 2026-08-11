@@ -126,11 +126,23 @@ def main() -> int:
         }
 
     leader_text = []
+    leader_methods = []
     for field, quantity, _, unit in METRICS:
         record = leaders[field]
         suffix = f"~{unit}" if unit else ""
-        leader_text.append(
-            f"{quantity} {fmt(record['value'])}{suffix} ({METHODS[record['method']]})"
+        leader_text.append(f"{quantity} {fmt(record['value'])}{suffix}")
+        leader_methods.append(str(record["method"]))
+    if len(set(leader_methods)) == 1:
+        leader_method_text = (
+            f"All six are produced by the {METHODS[leader_methods[0]]}; the separate quantities "
+            "are not combined into a scalar model score."
+        )
+    else:
+        labels = [METHODS[value] for value in leader_methods]
+        leader_method_text = (
+            "Their respective methods are "
+            + ", ".join(labels)
+            + "; the separate quantities are not combined into a scalar model score."
         )
 
     data_only = worst_by_method["pinn_data_only"]
@@ -152,8 +164,8 @@ def main() -> int:
             "Across the five complete-condition splits, the lowest worst-case values for the "
             "six separately evaluated quantities are "
             + ", ".join(leader_text)
-            + ". Because different physical quantities may favour different architectures, these "
-            "results are not combined into a scalar model score."
+            + ". "
+            + leader_method_text
         ),
         "",
         (
