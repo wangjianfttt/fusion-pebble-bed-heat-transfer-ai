@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import importlib.util
 from pathlib import Path
+from types import SimpleNamespace
 
 import numpy as np
 
@@ -250,3 +251,42 @@ def test_validation_marker_exports_model_identity_and_field_metrics() -> None:
     assert r"\PFieldSolidMaxError" in source
     assert 'selection_record.get("selection_data_role") != "validation"' in source
     assert 'selection_record.get("display_data_role") != "test"' in source
+
+
+def test_formal_field_output_requires_validation_selection() -> None:
+    args = SimpleNamespace(
+        selection=None,
+        allow_unselected_diagnostic=False,
+        validation_marker=None,
+        output_stem=MODULE.FORMAL_OUTPUT_STEM,
+    )
+    try:
+        MODULE.resolve_output_mode(args)
+    except ValueError as error:
+        assert "requires validation-only --selection" in str(error)
+    else:
+        raise AssertionError("an unselected prediction must not create a formal field figure")
+
+
+def test_unselected_field_output_is_forced_to_diagnostic_name() -> None:
+    args = SimpleNamespace(
+        selection=None,
+        allow_unselected_diagnostic=True,
+        validation_marker=None,
+        output_stem=MODULE.FORMAL_OUTPUT_STEM,
+    )
+    stem, formal = MODULE.resolve_output_mode(args)
+    assert stem == f"{MODULE.FORMAL_OUTPUT_STEM}_unselected_diagnostic"
+    assert formal is False
+
+
+def test_selected_field_output_remains_formal() -> None:
+    args = SimpleNamespace(
+        selection=Path("selection.json"),
+        allow_unselected_diagnostic=False,
+        validation_marker=None,
+        output_stem=MODULE.FORMAL_OUTPUT_STEM,
+    )
+    stem, formal = MODULE.resolve_output_mode(args)
+    assert stem == MODULE.FORMAL_OUTPUT_STEM
+    assert formal is True

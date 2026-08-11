@@ -27,6 +27,7 @@ FIGURE_HEIGHT_MM = FIGURE_HEIGHT_INCH * 25.4
 FIGURE_SIZE_INCH = (FIGURE_WIDTH_INCH, FIGURE_HEIGHT_INCH)
 PANEL_ROWS = 3
 PANEL_COLUMNS = 2
+FORMAL_OUTPUT_STEM = "hccb_p418_openfoam_model_field_comparison"
 
 
 def sha256(path: Path) -> str:
@@ -384,14 +385,45 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", type=Path, default=Path("figures"))
     parser.add_argument("--validation-marker", type=Path)
     parser.add_argument(
+        "--allow-unselected-diagnostic",
+        action="store_true",
+        help=(
+            "Allow a direct prediction only for a clearly named diagnostic figure. "
+            "Formal manuscript output requires --selection."
+        ),
+    )
+    parser.add_argument(
         "--output-stem",
-        default="hccb_p418_openfoam_model_field_comparison",
+        default=FORMAL_OUTPUT_STEM,
     )
     return parser.parse_args()
 
 
+def resolve_output_mode(args: argparse.Namespace) -> tuple[str, bool]:
+    """Separate validation-selected manuscript output from unselected diagnostics."""
+    selected = args.selection is not None
+    if selected:
+        if args.allow_unselected_diagnostic:
+            raise ValueError("--allow-unselected-diagnostic cannot be used with --selection")
+        return str(args.output_stem), True
+    if not args.allow_unselected_diagnostic:
+        raise ValueError(
+            "formal OpenFOAM--model field figure requires validation-only --selection; "
+            "use --allow-unselected-diagnostic only for a non-manuscript diagnostic"
+        )
+    if args.validation_marker is not None:
+        raise ValueError("an unselected diagnostic cannot write a validation marker")
+    stem = str(args.output_stem)
+    if stem == FORMAL_OUTPUT_STEM:
+        stem = f"{FORMAL_OUTPUT_STEM}_unselected_diagnostic"
+    if "diagnostic" not in stem.lower():
+        raise ValueError("an unselected field output stem must contain 'diagnostic'")
+    return stem, False
+
+
 def main() -> int:
     args = parse_args()
+    args.output_stem, formal_output = resolve_output_mode(args)
     selection_path = None
     selection_record = None
     if args.selection is not None:
@@ -673,7 +705,11 @@ def main() -> int:
     plt.close(figure)
 
     record = {
-        "status": "complete_same_scale_openfoam_model_field_comparison",
+        "status": (
+            "complete_same_scale_openfoam_model_field_comparison"
+            if formal_output
+            else "diagnostic_same_scale_openfoam_model_field_comparison"
+        ),
         "prediction_file": str(prediction_path),
         "prediction_file_sha256": sha256(prediction_path),
         "geometry_file": str(geometry_path),
