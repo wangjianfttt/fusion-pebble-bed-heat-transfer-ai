@@ -167,12 +167,36 @@ in the citable processed-data archive rather than this small source package.
     return payload
 
 
+def verify_existing(output_dir: Path) -> dict[str, object]:
+    summary_path = output_dir / "summary.json"
+    payload = json.loads(summary_path.read_text(encoding="utf-8"))
+    if payload.get("status") != "completed_p418_public_figure_data":
+        raise ValueError("public figure-data summary is incomplete")
+    for name, record in payload.get("outputs", {}).items():
+        path = output_dir / name
+        if not path.is_file():
+            raise FileNotFoundError(path)
+        if path.stat().st_size != int(record["size_bytes"]):
+            raise ValueError(f"public figure-data size changed: {name}")
+        if sha256(path) != record["sha256"]:
+            raise ValueError(f"public figure-data SHA-256 changed: {name}")
+        ensure_no_private_text(path)
+    ensure_no_private_text(summary_path)
+    return payload
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--project-root", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--verify-existing", action="store_true")
     args = parser.parse_args()
-    payload = build(args.project_root.resolve(), args.output_dir.resolve())
+    output_dir = args.output_dir.resolve()
+    payload = (
+        verify_existing(output_dir)
+        if args.verify_existing
+        else build(args.project_root.resolve(), output_dir)
+    )
     print(json.dumps(payload, ensure_ascii=False, indent=2))
 
 

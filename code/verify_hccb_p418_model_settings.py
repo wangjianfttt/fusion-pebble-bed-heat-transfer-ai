@@ -487,7 +487,12 @@ def verify_registry_components(root: Path, registry: dict[str, Any]) -> list[dic
     return results
 
 
-def verify(root: Path, settings_path: Path, registry_path: Path) -> dict[str, Any]:
+def verify(
+    root: Path,
+    settings_path: Path,
+    registry_path: Path,
+    require_local_source_files: bool = True,
+) -> dict[str, Any]:
     rows = list(csv.DictReader(settings_path.open(encoding="utf-8")))
     registry = json.loads(registry_path.read_text(encoding="utf-8"))
     architecture_names = {str(item["name"]) for item in registry["architectures"]}
@@ -503,7 +508,12 @@ def verify(root: Path, settings_path: Path, registry_path: Path) -> dict[str, An
         actual, check_kind, code_path = mapping[key]
         recorded = normalized_value(row["value"])
         same = compare_value(recorded, actual)
-        source_exists = (root / row["source_path"]).exists()
+        source_registered = bool(row["source_path"].strip())
+        source_exists = (
+            (root / row["source_path"]).exists()
+            if require_local_source_files
+            else source_registered
+        )
         implementation_exists = all(
             (root / item.strip()).exists()
             for item in row["implementation_path"].split(";")
@@ -544,6 +554,9 @@ def verify(root: Path, settings_path: Path, registry_path: Path) -> dict[str, An
         "architecture_registry_names": sorted(architecture_names),
         "architecture_registry_check_count": len(registry_checks),
         "architecture_registry_checks": registry_checks,
+        "source_verification_mode": (
+            "local_files" if require_local_source_files else "registered_metadata"
+        ),
         "results": results,
         "failures": failures,
     }
@@ -595,13 +608,23 @@ def main() -> int:
     parser.add_argument("--registry", type=Path, default=Path("parameters/hccb_p418_ai_architecture_sources.json"))
     parser.add_argument("--output", type=Path, default=Path("results/hccb_p418_model_setting_verification.json"))
     parser.add_argument("--chinese-summary", type=Path, default=Path("parameters/HCCB_P418_MODEL_SETTINGS_CN.md"))
+    parser.add_argument(
+        "--metadata-only-sources",
+        action="store_true",
+        help="Check registered source paths without requiring copyrighted local files.",
+    )
     args = parser.parse_args()
     root = args.root.resolve()
     settings = args.settings if args.settings.is_absolute() else root / args.settings
     registry = args.registry if args.registry.is_absolute() else root / args.registry
     output = args.output if args.output.is_absolute() else root / args.output
     chinese = args.chinese_summary if args.chinese_summary.is_absolute() else root / args.chinese_summary
-    payload = verify(root, settings, registry)
+    payload = verify(
+        root,
+        settings,
+        registry,
+        require_local_source_files=not args.metadata_only_sources,
+    )
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     chinese.parent.mkdir(parents=True, exist_ok=True)

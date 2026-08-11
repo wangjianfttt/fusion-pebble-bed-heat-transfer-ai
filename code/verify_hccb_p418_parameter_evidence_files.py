@@ -7,6 +7,7 @@ import argparse
 import csv
 import hashlib
 import json
+import re
 from collections import defaultdict
 from pathlib import Path
 
@@ -39,6 +40,7 @@ def verify(
     evidence_path: Path,
     equation_path: Path,
     root: Path = ROOT,
+    require_local_files: bool = True,
 ) -> dict[str, object]:
     source_rows = rows(sources_path)
     evidence_rows = rows(evidence_path)
@@ -85,6 +87,13 @@ def verify(
         if len(paths) != len(hashes) or not paths:
             raise ValueError(f"{parameter_id}: evidence path/hash count mismatch")
         for relative, expected in zip(paths, hashes):
+            if not relative:
+                raise ValueError(f"{parameter_id}: empty local evidence path")
+            if not re.fullmatch(r"[0-9a-f]{64}", expected):
+                raise ValueError(f"{parameter_id}: invalid SHA-256 for {relative}")
+            file_count += 1
+            if not require_local_files:
+                continue
             path = root / relative
             if not path.is_file():
                 raise FileNotFoundError(f"{parameter_id}: {path}")
@@ -94,7 +103,6 @@ def verify(
                     f"{parameter_id}: SHA-256 mismatch for {relative}: "
                     f"expected {expected}, got {actual}"
                 )
-            file_count += 1
 
     evidence_by_id = {row["parameter_id"]: row for row in evidence_rows}
     for parameter_id in ("P428", "P429"):
@@ -161,6 +169,10 @@ def verify(
         "physical_parameter_count": len(source_ids),
         "equation_map_row_count": len(equation_rows),
         "local_evidence_reference_count": file_count,
+        "local_evidence_files_verified": require_local_files,
+        "evidence_verification_mode": (
+            "local_files_and_sha256" if require_local_files else "registered_metadata_and_sha256"
+        ),
         "evidence_status_counts": dict(sorted(archived_status_count.items())),
         "all_parameters_used_by_equations": True,
         "p429_derivative_check": True,
@@ -191,11 +203,17 @@ def main() -> int:
         default=ROOT / "parameters/hccb_p418_equation_input_map.csv",
     )
     parser.add_argument("--output", type=Path)
+    parser.add_argument(
+        "--metadata-only",
+        action="store_true",
+        help="Check registered paths, URLs and SHA-256 values without requiring copyrighted local files.",
+    )
     args = parser.parse_args()
     summary = verify(
         args.sources.resolve(),
         args.evidence.resolve(),
         args.equations.resolve(),
+        require_local_files=not args.metadata_only,
     )
     text = json.dumps(summary, ensure_ascii=False, indent=2) + "\n"
     if args.output:

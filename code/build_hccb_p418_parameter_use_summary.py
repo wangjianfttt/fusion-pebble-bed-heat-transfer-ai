@@ -41,7 +41,9 @@ def read_csv(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(stream))
 
 
-def build(root: Path) -> tuple[dict[str, object], str]:
+def build(
+    root: Path, require_local_source_files: bool = True
+) -> tuple[dict[str, object], str]:
     physical = read_csv(root / "parameters/hccb_p418_physical_parameter_sources.csv")
     equations = read_csv(root / "parameters/hccb_p418_equation_input_map.csv")
     numerical = read_csv(root / "parameters/hccb_p418_model_numerical_settings.csv")
@@ -77,7 +79,15 @@ def build(root: Path) -> tuple[dict[str, object], str]:
         row["is_physical_parameter"] == "no" for row in numerical
     )
     source_paths_exist = all(
-        all((root / item.strip()).exists() for item in row["source_path"].split(";"))
+        all(
+            bool(item.strip())
+            and (
+                (root / item.strip()).exists()
+                if require_local_source_files
+                else True
+            )
+            for item in row["source_path"].split(";")
+        )
         for row in numerical
     )
     summary = {
@@ -101,6 +111,9 @@ def build(root: Path) -> tuple[dict[str, object], str]:
         "unknown_model_setting_types": unknown_setting_types,
         "all_model_settings_are_nonphysical": all_numerical_nonphysical,
         "all_model_setting_source_paths_exist": source_paths_exist,
+        "model_setting_source_verification_mode": (
+            "local_files" if require_local_source_files else "registered_metadata"
+        ),
         "experimental_observable_count": len(observables),
         "experimental_observation_source_count": len(observation_parameter_ids),
         "experimental_template_rows": template_rows,

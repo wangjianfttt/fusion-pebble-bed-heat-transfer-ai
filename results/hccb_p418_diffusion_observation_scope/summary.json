@@ -1,0 +1,30 @@
+{
+  "status": "completed_p418_diffusion_observation_scope_verification",
+  "formal_diffusion_role": "full_field_computed_temperature_residual_correction",
+  "formal_observation_count": 0,
+  "formal_observation_mask_file": null,
+  "formal_observation_source": "none",
+  "openfoam_fields_are_measurements": false,
+  "sparse_experimental_reconstruction_status": "not_started_until_source_defined_sensor_coordinates_and_response_data_exist",
+  "missing_source_items": [
+    "no_machine_readable_TESOMEX_3d_sensor_coordinate_table",
+    "no_source_backed_thermocouple_noise_and_dynamic_response_model",
+    "no_repeated_experimental_transient_ensemble_for_posterior_calibration",
+    "no_calibrated_observation_operator_between_TESOMEX_sensors_and_particle_nodes"
+  ],
+  "unobserved_metric_definition": "dynamic locations excluding t=0 and every supplied observation; fluid and solid regions are also reported separately",
+  "checks": {
+    "formal_runner_uses_computed_residual_benchmark": true,
+    "formal_runner_has_no_observation_mask_argument": true,
+    "formal_runner_has_no_observation_source_argument": true,
+    "trainer_requires_explicit_observation_source": true,
+    "absent_observation_file_produces_empty_mask": true,
+    "initial_time_excluded_from_unobserved_metrics": true,
+    "supplied_observation_excluded_from_unobserved_metrics": true,
+    "fluid_metric_excludes_solid_nodes": true,
+    "sparse_experimental_reconstruction_remains_unavailable": true,
+    "computed_and_experimental_sparse_values_are_separated": true
+  },
+  "all_checks_passed": true,
+  "interpretation": "The formal P418 diffusion comparison is a computed full-field residual test, not a sparse-thermocouple reconstruction or experimental posterior."
+}

@@ -47,11 +47,13 @@ p418-fused-preflight:
 	$(P418_PYTHON) code/preflight_hccb_p418_fused_research.py \
 		--matrix-root "$(P418_MATRIX_ROOT)" \
 		--step-root "$(P418_ROOT)/hccb_p418_physical_steps_12" \
-		--output-dir "$(P418_RESULT_ROOT)/hccb_p418_fused_preflight"
+		--output-dir "$(P418_RESULT_ROOT)/hccb_p418_fused_preflight" \
+		$(P418_PREFLIGHT_EVIDENCE_ARGS)
 
 p418-research-route-check:
 	$(PYTHON) code/check_hccb_p418_research_route_completeness.py \
-		--output-dir "$(P418_RESULT_ROOT)/hccb_p418_research_route_completeness"
+		--output-dir "$(P418_RESULT_ROOT)/hccb_p418_research_route_completeness" \
+		$(P418_RESEARCH_ROUTE_SOURCE_ARGS)
 
 p418-end-to-end-plan:
 	$(PYTHON) code/plan_hccb_p418_end_to_end_research.py \

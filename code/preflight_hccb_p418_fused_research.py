@@ -30,7 +30,9 @@ def run_check(script: str, output: Path, extra: list[str] | None = None) -> dict
     return json.loads(output.read_text(encoding="utf-8"))
 
 
-def verify_algorithm_sources() -> dict[str, object]:
+def verify_algorithm_sources(
+    require_local_source_files: bool = True,
+) -> dict[str, object]:
     path = ROOT / "parameters/hccb_p418_ai_architecture_sources.json"
     registry = json.loads(path.read_text(encoding="utf-8"))
     required = ("name", "role", "paper", "venue", "paper_url", "project_adaptation", "status")
@@ -44,9 +46,17 @@ def verify_algorithm_sources() -> dict[str, object]:
             if not isinstance(value, str) or checksum_key not in entry:
                 continue
             local_path = ROOT / value
+            checksum = str(entry[checksum_key])
+            if len(checksum) != 64 or any(
+                character not in "0123456789abcdef" for character in checksum
+            ):
+                raise ValueError(f"invalid SHA-256 in algorithm registry: {checksum_key}")
+            if not require_local_source_files:
+                archived_file_count += 1
+                continue
             if not local_path.is_file():
                 raise FileNotFoundError(local_path)
-            if sha256(local_path) != entry[checksum_key]:
+            if sha256(local_path) != checksum:
                 raise ValueError(f"archived algorithm file changed: {value}")
             archived_file_count += 1
     names = [str(entry["name"]) for entry in registry["architectures"]]
@@ -57,6 +67,11 @@ def verify_algorithm_sources() -> dict[str, object]:
         "architecture_count": len(names),
         "architecture_names": names,
         "archived_file_count": archived_file_count,
+        "source_verification_mode": (
+            "local_files_and_sha256"
+            if require_local_source_files
+            else "registered_metadata_and_sha256"
+        ),
         "all_entries_have_paper_links": all(
             str(entry.get("paper_url", "")).startswith(("https://", "http://"))
             for entry in registry["architectures"]
@@ -163,20 +178,33 @@ def main() -> int:
     parser.add_argument(
         "--output-dir", type=Path, default=ROOT / "results/hccb_p418_fused_preflight"
     )
+    parser.add_argument(
+        "--metadata-only-evidence",
+        action="store_true",
+        help="Validate literature metadata and registered hashes without local copyrighted files.",
+    )
     args = parser.parse_args()
     output = args.output_dir.resolve()
     output.mkdir(parents=True, exist_ok=True)
 
+    fused_extra = ["--metadata-only-evidence"] if args.metadata_only_evidence else None
     fused = run_check(
         "code/verify_hccb_p418_fused_model_contract.py",
         output / "fused_model_contract_check.json",
+        fused_extra,
     )
     settings = run_check(
         "code/verify_hccb_p418_model_settings.py",
         output / "model_setting_check.json",
-        ["--chinese-summary", str(output / "P418_模型数值设置对应_CN.md")],
+        [
+            "--chinese-summary",
+            str(output / "P418_模型数值设置对应_CN.md"),
+            *(["--metadata-only-sources"] if args.metadata_only_evidence else []),
+        ],
     )
-    algorithms = verify_algorithm_sources()
+    algorithms = verify_algorithm_sources(
+        require_local_source_files=not args.metadata_only_evidence
+    )
     requirements = verify_requirements()
     steady = count_completion(
         args.matrix_root.resolve(),

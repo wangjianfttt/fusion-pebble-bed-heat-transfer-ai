@@ -581,7 +581,7 @@
       "regional_model_sha256": "03b4b10bdeb4322cb6d008d81cbf89948d2589097c82e05b6534fa52557943ee",
       "regional_trainer_sha256": "cc7e3d8bc6a2aa25ad2281fdeada10608b39ea776a0dbf479d3a23cc09cca3ac",
       "temporal_model_sha256": "42118cd4550d7591c825b0e1d6d3ea28280c7135eed868e96035a602cd915861",
-      "temporal_trainer_sha256": "69724d05ee4a3d1de5a0afb80e8627e22a755710e66ed389560cc020540d08cd",
+      "temporal_trainer_sha256": "57bb3c8fdcb9f48e0e8851e40d17a1a91bef95b5836229b74202a0e4b582d757",
       "physical_state_verification_script": "code/verify_hccb_p418_diffusion_physical_state.py",
       "physical_state_verification_script_sha256": "66e0c80c5d781a38c4bd835ea1a3dc9812d2b35bd9e1f6cc8eb67d5840a0f2a8",
       "physical_state_verification_result": "results/hccb_p418_diffusion_physical_state/summary.json",

@@ -53,7 +53,9 @@ def current_formal_data(root: Path, fused: dict[str, object]) -> dict[str, objec
     return data
 
 
-def verify_architecture_sources(root: Path) -> dict[str, object]:
+def verify_architecture_sources(
+    root: Path, require_local_source_files: bool = True
+) -> dict[str, object]:
     path = root / "parameters/hccb_p418_ai_architecture_sources.json"
     registry = json.loads(path.read_text(encoding="utf-8"))
     architectures = registry["architectures"]
@@ -79,6 +81,14 @@ def verify_architecture_sources(root: Path) -> dict[str, object]:
                 relative = entry.get(source_key)
                 if not isinstance(relative, str) or not relative.strip():
                     continue
+                if len(expected) != 64 or any(
+                    character not in "0123456789abcdef" for character in expected
+                ):
+                    changed_local_files.append(relative)
+                    continue
+                if not require_local_source_files:
+                    checked_hashes += 1
+                    continue
                 local_path = root / relative
                 if not local_path.is_file():
                     missing_local_files.append(relative)
@@ -94,20 +104,30 @@ def verify_architecture_sources(root: Path) -> dict[str, object]:
         "missing_paper_links": missing_links,
         "missing_local_source_files": sorted(set(missing_local_files)),
         "changed_local_source_files": sorted(set(changed_local_files)),
+        "source_verification_mode": (
+            "local_files_and_sha256"
+            if require_local_source_files
+            else "registered_metadata_and_sha256"
+        ),
         "complete": not missing_links
         and not missing_local_files
         and not changed_local_files,
     }
 
 
-def build(root: Path) -> tuple[dict[str, object], str]:
-    parameter_use, _ = build_parameter_use(root)
+def build(
+    root: Path, require_local_source_files: bool = True
+) -> tuple[dict[str, object], str]:
+    parameter_use, _ = build_parameter_use(
+        root, require_local_source_files=require_local_source_files
+    )
     fused_path = root / "results/hccb_p418_fused_preflight/summary.json"
     fused = json.loads(fused_path.read_text(encoding="utf-8"))
-    architectures = verify_architecture_sources(root)
+    architectures = verify_architecture_sources(
+        root, require_local_source_files=require_local_source_files
+    )
 
-    route_documents = require_files(
-        root,
+    route_document_paths = (
         [
             "研究主线_简明版_CN.md",
             "algorithms/P418_模型组合为什么这样设计_CN.md",
@@ -118,8 +138,15 @@ def build(root: Path) -> tuple[dict[str, object], str]:
             "parameters/HCCB_P418_PARAMETER_EVIDENCE_CN.md",
             "parameters/hccb_p418_model_numerical_settings_CN.md",
             "results/hccb_p418_parameter_use/P418_参数怎样进入研究_CN.md",
-        ],
+        ]
+        if require_local_source_files
+        else [
+            "README.md",
+            "parameters/HCCB_P418_PARAMETER_EVIDENCE_CN.md",
+            "parameters/hccb_p418_model_numerical_settings_CN.md",
+        ]
     )
+    route_documents = require_files(root, route_document_paths)
     core_code = require_files(
         root,
         [
@@ -296,8 +323,15 @@ def main() -> int:
         type=Path,
         default=ROOT / "results/hccb_p418_research_route_completeness",
     )
+    parser.add_argument(
+        "--metadata-only-sources",
+        action="store_true",
+        help="Check registered literature URLs, paths and hashes without local copyrighted files.",
+    )
     args = parser.parse_args()
-    payload, document = build(ROOT)
+    payload, document = build(
+        ROOT, require_local_source_files=not args.metadata_only_sources
+    )
     args.output_dir.mkdir(parents=True, exist_ok=True)
     (args.output_dir / "summary.json").write_text(
         json.dumps(payload, ensure_ascii=False, indent=2) + "\n",

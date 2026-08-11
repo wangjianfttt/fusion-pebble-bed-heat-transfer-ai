@@ -33,7 +33,9 @@ def assert_equal(actual: object, expected: object, message: str) -> None:
         raise ValueError(f"{message}: expected {expected!r}, found {actual!r}")
 
 
-def verify_parameter_sources(contract: dict[str, object]) -> dict[str, object]:
+def verify_parameter_sources(
+    contract: dict[str, object], require_local_evidence_files: bool = True
+) -> dict[str, object]:
     source_path = ROOT / contract["physical_parameter_sources"]["registry"]
     evidence_path = ROOT / contract["physical_parameter_sources"]["evidence_registry"]
     equation_path = ROOT / contract["physical_parameter_sources"]["equation_map"]
@@ -68,7 +70,11 @@ def verify_parameter_sources(contract: dict[str, object]) -> dict[str, object]:
     if unused_sources:
         raise ValueError(f"registered physical parameters are absent from the equation map: {unused_sources}")
     evidence_summary = verify_evidence_files(
-        source_path, evidence_path, equation_path, root=ROOT
+        source_path,
+        evidence_path,
+        equation_path,
+        root=ROOT,
+        require_local_files=require_local_evidence_files,
     )
     return {
         "physical_parameter_count": len(source_rows),
@@ -78,6 +84,9 @@ def verify_parameter_sources(contract: dict[str, object]) -> dict[str, object]:
         ],
         "parameter_evidence_status_counts": evidence_summary[
             "evidence_status_counts"
+        ],
+        "parameter_evidence_verification_mode": evidence_summary[
+            "evidence_verification_mode"
         ],
         "p429_derivative_check": evidence_summary["p429_derivative_check"],
         "p430_molar_mass_g_mol": evidence_summary["p430_molar_mass_g_mol"],
@@ -92,6 +101,11 @@ def main() -> int:
         default=ROOT / "parameters/hccb_p418_fused_model_contract.json",
     )
     parser.add_argument("--output", type=Path)
+    parser.add_argument(
+        "--metadata-only-evidence",
+        action="store_true",
+        help="Do not require copyrighted local evidence files in a public source package.",
+    )
     args = parser.parse_args()
     contract_path = args.contract.resolve()
     contract = json.loads(contract_path.read_text(encoding="utf-8"))
@@ -222,7 +236,9 @@ def main() -> int:
     if not all(name in runner for name in runner_splits):
         raise ValueError("complete inference runner does not cover every declared split")
 
-    parameter_counts = verify_parameter_sources(contract)
+    parameter_counts = verify_parameter_sources(
+        contract, require_local_evidence_files=not args.metadata_only_evidence
+    )
     comparison_path = ROOT / contract["model_comparison_protocol"]
     comparison_summary = verify_model_comparison(comparison_path)
     data_preparation = contract["model_data_preparation"]
@@ -258,7 +274,10 @@ def main() -> int:
         raise ValueError("model data preparation uses the wrong integrated exporter")
     coupled_extension = contract["fully_coupled_transient_extension"]
     coupled_plan_path = ROOT / coupled_extension["plan_file"]
-    coupled_summary = verify_fully_coupled(coupled_plan_path)
+    coupled_summary = verify_fully_coupled(
+        coupled_plan_path,
+        require_local_source_metadata=not args.metadata_only_evidence,
+    )
     assert_equal(
         coupled_extension["predicted_channels"],
         shared_state,

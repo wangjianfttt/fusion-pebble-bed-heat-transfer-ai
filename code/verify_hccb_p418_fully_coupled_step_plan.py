@@ -11,7 +11,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def verify(plan_path: Path) -> dict[str, object]:
+def verify(
+    plan_path: Path, require_local_source_metadata: bool = True
+) -> dict[str, object]:
     plan = json.loads(plan_path.resolve().read_text(encoding="utf-8"))
     base_path = ROOT / plan["base_thermal_step_plan"]
     schema_path = ROOT / plan["output_schema"]
@@ -81,7 +83,7 @@ def verify(plan_path: Path) -> dict[str, object]:
         ROOT
         / time_config["discretization_uncertainty_method"]["source_metadata"]
     )
-    if not source_metadata.is_file():
+    if require_local_source_metadata and not source_metadata.is_file():
         raise FileNotFoundError(source_metadata)
     time_runner = (ROOT / time_step["runner"]).read_text(encoding="utf-8")
     for phrase in (
@@ -313,6 +315,7 @@ def verify(plan_path: Path) -> dict[str, object]:
         "target_boundary_and_heat_source_checks_present": True,
         "formal_openfoam_runner_present": True,
         "representative_time_step_study_present": True,
+        "discretization_source_metadata_verified": require_local_source_metadata,
         "formal_runner_requires_verified_time_step_summary": True,
         "fully_coupled_restart_and_finalizer_present": True,
         "time_dependent_full_state_exporter_present": True,

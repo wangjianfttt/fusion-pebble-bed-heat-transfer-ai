@@ -25,9 +25,16 @@ EOF
 }
 
 build_manifest() {
-  "${PYTHON_BIN}" "${ROOT}/code/build_hccb_p418_public_figure_data.py" \
-    --project-root "${ROOT}" \
-    --output-dir "${ROOT}/results/hccb_p418_public_figure_data"
+  if [[ -f "${ROOT}/results/hccb_p418_sourceflow_complete_physics_60/completed_case_physics.csv" ]]; then
+    "${PYTHON_BIN}" "${ROOT}/code/build_hccb_p418_public_figure_data.py" \
+      --project-root "${ROOT}" \
+      --output-dir "${ROOT}/results/hccb_p418_public_figure_data"
+  else
+    "${PYTHON_BIN}" "${ROOT}/code/build_hccb_p418_public_figure_data.py" \
+      --project-root "${ROOT}" \
+      --output-dir "${ROOT}/results/hccb_p418_public_figure_data" \
+      --verify-existing
+  fi
   "${PYTHON_BIN}" "${ROOT}/code/build_hccb_p418_public_data_release.py" \
     --project-root "${ROOT}" \
     --output-dir "${ROOT}/results/hccb_p418_public_data_release_preflight"
@@ -47,8 +54,10 @@ build_archive() {
 
 case "${MODE}" in
   preflight)
-    make -C "${ROOT}" p418-fused-preflight
-    make -C "${ROOT}" p418-research-route-check
+    make -C "${ROOT}" p418-fused-preflight \
+      P418_PREFLIGHT_EVIDENCE_ARGS=--metadata-only-evidence
+    make -C "${ROOT}" p418-research-route-check \
+      P418_RESEARCH_ROUTE_SOURCE_ARGS=--metadata-only-sources
     build_manifest
     ;;
   manifest)

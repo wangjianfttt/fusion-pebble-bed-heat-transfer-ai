@@ -1,0 +1,43 @@
+{
+  "status": "completed_p418_diffusion_physical_state_verification",
+  "device": "cpu",
+  "torch_version": "2.12.1+cu130",
+  "corrected_state_channels": [
+    "temperature"
+  ],
+  "fixed_state_channels": [
+    "velocity_x",
+    "velocity_y",
+    "velocity_z",
+    "pressure"
+  ],
+  "maximum_absolute_initial_temperature_residual": 0.0,
+  "maximum_absolute_dynamic_observation_error": 0.0,
+  "maximum_absolute_fixed_hydrodynamic_change": 0.0,
+  "temperature_better_energy_worse_case": {
+    "temperature_improved": true,
+    "projection_aware_energy_not_worse": false,
+    "diffusion_is_joint_temperature_energy_improvement": false,
+    "held_out_outcome": "not_joint_improvement",
+    "outcome_reason": "energy_residual_increased_despite_lower_temperature_error",
+    "model_selection_uses_this_outcome": false
+  },
+  "temperature_and_energy_better_case": {
+    "temperature_improved": true,
+    "projection_aware_energy_not_worse": true,
+    "diffusion_is_joint_temperature_energy_improvement": true,
+    "held_out_outcome": "joint_improvement",
+    "outcome_reason": "temperature_error_decreased_and_energy_residual_did_not_increase",
+    "model_selection_uses_this_outcome": false
+  },
+  "checks": {
+    "initial_temperature_residual_exactly_zero": true,
+    "dynamic_temperature_observation_imposed_exactly": true,
+    "velocity_and_pressure_unchanged": true,
+    "lower_temperature_error_with_worse_energy_not_joint_improvement": true,
+    "lower_temperature_error_with_nonworse_energy_is_joint_improvement": true,
+    "held_out_outcome_not_used_for_model_selection": true
+  },
+  "all_checks_passed": true,
+  "interpretation": "This verifies state preservation and the held-out temperature--energy description. The description does not select or update the model. It is not a prediction-accuracy result; accuracy requires the completed OpenFOAM thermal-step histories."
+}
