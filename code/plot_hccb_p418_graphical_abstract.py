@@ -81,9 +81,12 @@ def render(root: Path, output_stem: Path) -> dict[str, object]:
     domain_image = Image.open(domain_path).convert("RGB")
     field_image = Image.open(field_path).convert("RGB")
 
-    packed_bed = crop_fraction(domain_image, (0.50, 0.01, 0.99, 0.49))
-    model = crop_fraction(domain_image, (0.50, 0.50, 0.99, 0.99))
-    field = crop_fraction(field_image, (0.06, 0.01, 0.93, 0.67))
+    # Crop the three scientific messages tightly.  The field plate deliberately
+    # contains the reference and prediction rows only; including a thin strip
+    # of the error row makes the graphical abstract look accidentally clipped.
+    packed_bed = crop_fraction(domain_image, (0.59, 0.140, 0.86, 0.390))
+    model = crop_fraction(domain_image, (0.53, 0.525, 0.99, 0.985))
+    field = crop_fraction(field_image, (0.07, 0.025, 0.998, 0.633))
 
     plt.rcParams.update(
         {
@@ -95,9 +98,9 @@ def render(root: Path, output_stem: Path) -> dict[str, object]:
     )
     fig = plt.figure(figsize=(13.0 / 2.54, 5.0 / 2.54), dpi=320, facecolor="white")
     axes = (
-        fig.add_axes((0.005, 0.12, 0.285, 0.82)),
-        fig.add_axes((0.355, 0.12, 0.285, 0.82)),
-        fig.add_axes((0.700, 0.10, 0.295, 0.84)),
+        fig.add_axes((0.005, 0.145, 0.285, 0.665)),
+        fig.add_axes((0.355, 0.145, 0.285, 0.665)),
+        fig.add_axes((0.700, 0.135, 0.295, 0.675)),
     )
     for axis, image in zip(axes, (packed_bed, model, field)):
         axis.imshow(image)
@@ -114,13 +117,23 @@ def render(root: Path, output_stem: Path) -> dict[str, object]:
         (0.848, "Independent\nfull-field test", GREEN),
     )
     for x, label, colour in headings:
-        fig.text(x, 0.985, label, ha="center", va="top", fontsize=6.3, weight="bold", color=colour, linespacing=0.9)
+        fig.text(
+            x,
+            0.985,
+            label,
+            ha="center",
+            va="top",
+            fontsize=5.6,
+            weight="bold",
+            color=colour,
+            linespacing=0.86,
+        )
 
     for start, end in ((0.294, 0.351), (0.643, 0.696)):
         fig.add_artist(
             FancyArrowPatch(
-                (start, 0.51),
-                (end, 0.51),
+                (start, 0.47),
+                (end, 0.47),
                 transform=fig.transFigure,
                 arrowstyle="-|>",
                 mutation_scale=12,
@@ -129,9 +142,17 @@ def render(root: Path, output_stem: Path) -> dict[str, object]:
             )
         )
 
-    fig.text(0.148, 0.012, "60 steady + 12 transient cases", ha="center", va="bottom", fontsize=5.0)
-    fig.text(0.498, 0.012, "Selection uses validation trajectories", ha="center", va="bottom", fontsize=5.0)
-    fig.text(0.848, 0.012, "Fluid + solid temperatures at 25 s", ha="center", va="bottom", fontsize=5.0)
+    fig.text(
+        0.148,
+        0.012,
+        "He flow; cooled wall; internal heating\n60 steady + 12 transient cases",
+        ha="center",
+        va="bottom",
+        fontsize=4.15,
+        linespacing=0.92,
+    )
+    fig.text(0.498, 0.012, "Selection uses validation trajectories", ha="center", va="bottom", fontsize=4.6)
+    fig.text(0.848, 0.012, "Fluid + solid temperatures at 25 s", ha="center", va="bottom", fontsize=4.6)
 
     output_stem.parent.mkdir(parents=True, exist_ok=True)
     outputs = {
