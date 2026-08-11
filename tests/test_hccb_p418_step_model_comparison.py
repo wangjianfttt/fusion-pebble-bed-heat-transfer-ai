@@ -21,11 +21,21 @@ sys.path.insert(0, str(ROOT / "code"))
 from summarize_hccb_p418_step_model_comparison import (
     TEMPERATURE_METRIC_DEFINITION,
     openfoam_clock_times,
+    require_strict_loss_selection,
     require_temperature_metric_definition,
 )
 
 
 class P418StepModelComparisonTest(unittest.TestCase):
+    def test_strict_comparison_waits_for_validation_selected_loss_chain(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "selected_downstream_integration.json"
+            with self.assertRaisesRegex(ValueError, "before independent test aggregation"):
+                require_strict_loss_selection(["pair_disjoint_stress_test"], path)
+            require_strict_loss_selection(["direction_up_test"], path)
+            path.write_text("{}\n", encoding="utf-8")
+            require_strict_loss_selection(["pair_disjoint_stress_test"], path)
+
     def test_requires_common_temperature_metric_definition(self) -> None:
         require_temperature_metric_definition(
             {"temperature_metric_definition": TEMPERATURE_METRIC_DEFINITION},

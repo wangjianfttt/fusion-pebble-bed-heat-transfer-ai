@@ -50,6 +50,19 @@ COMMON_HOTSPOT_METRICS = {
     "solid_hotspot_prediction_temperature_deficit_maximum_K",
     "solid_hotspot_dynamic_sample_count",
 }
+
+
+def require_strict_loss_selection(
+    split_names: list[str] | tuple[str, ...], integration_path: Path
+) -> None:
+    """Do not read strict-split test results before validation-only loss selection."""
+    if STRICT_SPLIT in split_names and not integration_path.is_file():
+        raise ValueError(
+            "strict model comparison requires the completed validation-selected "
+            "loss-balancing chain before independent test aggregation"
+        )
+
+
 def load_summary(path: Path) -> dict:
     if not path.is_file():
         raise FileNotFoundError(f"missing completed model result: {path}")
@@ -417,6 +430,7 @@ def main() -> int:
     energy_range_rejections_by_split: dict[str, dict[str, dict]] = {}
     selected_model_sources_by_split: dict[str, dict[str, str]] = {}
     strict_integration_path = selected_chain_record_path(args.result_dir)
+    require_strict_loss_selection(args.split_names, strict_integration_path)
     strict_loss_selection_ready = strict_integration_path.is_file()
     clock_times = openfoam_clock_times(args.step_root)
     split_source = json.loads(args.splits.read_text(encoding="utf-8"))["splits"]
@@ -485,9 +499,6 @@ def main() -> int:
         selected_directories = selected_model_directories(
             args.result_dir,
             split,
-            allow_registered_preselection=(
-                split == STRICT_SPLIT and not strict_loss_selection_ready
-            ),
         )
         selected_model_sources_by_split[split] = {
             name: str(path.resolve())
@@ -1091,7 +1102,7 @@ def main() -> int:
         "strict_split_loss_balancing_stage": (
             "validation_selected"
             if strict_loss_selection_ready
-            else "registered_preselection"
+            else "not_applicable"
         ),
         "metric_table": csv_path.name,
         "speed_table": speed_path.name,
