@@ -3,6 +3,8 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
+import pytest
+
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "code"))
@@ -19,6 +21,10 @@ from check_hccb_p418_ijhmt_submission import (  # noqa: E402
 
 
 def test_working_paper_has_clean_pdf_but_waits_for_final_transient_result() -> None:
+    if not (ROOT / "manuscript/main.pdf").is_file():
+        pytest.skip(
+            "the public source repository intentionally excludes the compiled manuscript PDF"
+        )
     payload = build(ROOT)
     checks = payload["checks"]
     assert checks["abstract_at_most_250_words"]
@@ -162,6 +168,10 @@ def test_transient_figure_requires_result_json_and_validation_marker(
 
 
 def test_poppler_fallback_reads_the_current_pdf() -> None:
+    if not (ROOT / "manuscript/main.pdf").is_file():
+        pytest.skip(
+            "the public source repository intentionally excludes the compiled manuscript PDF"
+        )
     text, pages = pdf_text_and_pages(
         ROOT / "manuscript/main.pdf", prefer_pypdf=False
     )
