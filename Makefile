@@ -10,8 +10,16 @@ P418_RESULT_ROOT ?= $(P418_ROOT)/results
 P418_CONCURRENT_CASES ?= 1
 P418_MPI_RANKS ?= 32
 P418_PYTHON ?= $(if $(wildcard /data2/wangjian/venv/bin/python3),/data2/wangjian/venv/bin/python3,$(TORCH_PYTHON))
+P418_DOI ?=
 
-.PHONY: p418-progress p418-fused-preflight p418-research-route-check p418-parameter-evidence p418-local-transport-support p418-local-transport-sensitivity p418-scientific-findings p418-model-comparison-protocol p418-fully-coupled-step-plan p418-end-to-end-plan p418-fully-coupled-model-plan p418-high-re-evaluation-plan p418-formal-plan p418-formal-run p418-manuscript-refresh p418-reproducibility p418-public-test p418-physical-model-figure p418-field-cloud-figure
+.PHONY: p418-progress p418-fused-preflight p418-research-route-check p418-parameter-evidence p418-local-transport-support p418-local-transport-sensitivity p418-scientific-findings p418-model-comparison-protocol p418-fully-coupled-step-plan p418-end-to-end-plan p418-fully-coupled-model-plan p418-high-re-evaluation-plan p418-formal-plan p418-formal-run p418-manuscript-refresh p418-reproducibility p418-public-test p418-physical-model-figure p418-field-cloud-figure p418-apply-doi
+
+p418-apply-doi:
+	@test -n "$(P418_DOI)" || (echo "Set P418_DOI=10.5281/zenodo.<record>" >&2; exit 2)
+	$(PYTHON) code/apply_hccb_p418_repository_doi.py \
+		--project-root "$(P418_ROOT)" \
+		--doi "$(P418_DOI)" \
+		--output "$(P418_RESULT_ROOT)/hccb_p418_public_data_release_preflight/repository_doi_application.json"
 
 P418_TRANSIENT_RESULT_ROOT ?= $(P418_RESULT_ROOT)/hccb_p418_physical_steps_12
 

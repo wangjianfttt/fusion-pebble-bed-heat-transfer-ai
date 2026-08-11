@@ -5,7 +5,7 @@
   "source_package_ready": true,
   "final_outputs_ready": false,
   "source_file_count": 857,
-  "source_bytes": 24355232,
+  "source_bytes": 24356194,
   "missing_required_files": [],
   "files": [
     {
@@ -43,8 +43,8 @@
     {
       "category": "project_entry",
       "path": "Makefile",
-      "size_bytes": 70535,
-      "sha256": "5d209861377f3dc16845b55ca91e768b0dcb66eeba2fb7b622d3384f2cc56bb2",
+      "size_bytes": 70879,
+      "sha256": "06b83c34c6affe1550487ebc7c8faa66ad1496b90fac55eaea68ce8f846206ac",
       "required": true,
       "present": true
     },
@@ -4395,8 +4395,8 @@
     {
       "category": "project_entry",
       "path": "submission/README_CN.md",
-      "size_bytes": 2152,
-      "sha256": "6892528a8e2d0197a2a0a985f43d347261b991da7134e732f2b8a4f0baf86181",
+      "size_bytes": 2383,
+      "sha256": "d3d4080b4f2a5d3e04425e71778f136757c7b6286073521442ec43067d603f62",
       "required": false,
       "present": true
     },
@@ -4531,8 +4531,8 @@
     {
       "category": "tests",
       "path": "tests/test_apply_hccb_p418_repository_doi.py",
-      "size_bytes": 2777,
-      "sha256": "7e205d838249e7b9a22b1bcf6881b4826310baa4dcf77a687dc9edfa8483d554",
+      "size_bytes": 3164,
+      "sha256": "86fca5c77f1020dc27b06cc923088869e9de2464a5f2287c44e1b21a828c65db",
       "required": false,
       "present": true
     },

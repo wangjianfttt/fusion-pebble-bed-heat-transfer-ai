@@ -78,3 +78,11 @@ def test_apply_refuses_incomplete_release(tmp_path: Path) -> None:
 def test_normalized_doi_rejects_another_project_or_invalid_value() -> None:
     with pytest.raises(ValueError):
         normalized_doi("10.1000/example")
+
+
+def test_make_target_and_submission_readme_document_guarded_doi_update() -> None:
+    makefile = (ROOT / "Makefile").read_text(encoding="utf-8")
+    readme = (ROOT / "submission/README_CN.md").read_text(encoding="utf-8")
+    assert "p418-apply-doi:" in makefile
+    assert "--doi \"$(P418_DOI)\"" in makefile
+    assert "make p418-apply-doi P418_DOI=10.5281/zenodo.<record>" in readme
