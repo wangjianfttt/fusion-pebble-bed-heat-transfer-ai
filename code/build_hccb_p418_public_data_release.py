@@ -49,6 +49,15 @@ FINAL_PROCESSED_FILES = (
     "figures/hccb_p418_openfoam_model_field_selection.json",
 )
 
+SOURCE_ARCHIVE = (
+    "results/hccb_p418_reproducibility_manifest/"
+    "p418_reproduction_source.tar.gz"
+)
+SOURCE_ARCHIVE_RECORD = (
+    "results/hccb_p418_reproducibility_manifest/"
+    "source_archive_record.json"
+)
+
 PRIVATE_TEXT = (
     "/" + "Users/",
     "/" + "data2/",
@@ -329,7 +338,8 @@ def build(project_root: Path, output_dir: Path) -> dict[str, object]:
             {
                 "name": "small_source_archive",
                 "content": "code, inputs, tests and compact plot-ready tables",
-                "location": "results/hccb_p418_reproducibility_manifest/p418_reproduction_source.tar.gz",
+                "location": SOURCE_ARCHIVE,
+                "checksum_record": SOURCE_ARCHIVE_RECORD,
             },
             {
                 "name": "citable_processed_data_archive",

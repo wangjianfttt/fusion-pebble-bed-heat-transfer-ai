@@ -34,6 +34,17 @@ def test_public_data_release_preflight_is_path_free(tmp_path: Path) -> None:
     assert payload["old_tritium_release_doi_reused"] is False
     assert payload["new_physical_parameters"] == []
     assert all(row["present"] for row in payload["compact_files"])
+    source_layer = next(
+        row for row in payload["release_layers"] if row["name"] == "small_source_archive"
+    )
+    assert source_layer["location"] == module.SOURCE_ARCHIVE
+    assert source_layer["checksum_record"] == module.SOURCE_ARCHIVE_RECORD
+    archive_record = json.loads(
+        (ROOT / module.SOURCE_ARCHIVE_RECORD).read_text(encoding="utf-8")
+    )
+    assert archive_record["status"] == "p418_reproducibility_source_archive_ready"
+    assert archive_record["archive_size_bytes"] > 0
+    assert len(archive_record["archive_sha256"]) == 64
     stored = json.loads((output / "summary.json").read_text(encoding="utf-8"))
     text = json.dumps(stored, ensure_ascii=False)
     for token in module.PRIVATE_TEXT:
