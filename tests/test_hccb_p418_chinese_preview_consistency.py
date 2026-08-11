@@ -19,6 +19,8 @@ def test_chinese_preview_is_concise_and_matches_the_current_scope() -> None:
         "不代表阀门或泵速变化后的最初流动启动",
         "没有启动稳态求解",
         "不能声称已经验证了完整的初始动量瞬态",
+        "目前已经完成`20/30`项",
+        "当前英文PDF为`23`页",
         "主文不设附录",
     ):
         assert statement in text
@@ -26,5 +28,10 @@ def test_chinese_preview_is_concise_and_matches_the_current_scope() -> None:
     assert "全文域稳态求解已完成" not in text
     assert "全耦合时间步收敛已验证" not in text
     assert "40/75" not in text
+    assert "19/30" not in text
+    assert "next_epoch=34/500" not in text
+    assert "当前英文PDF为`22`页" not in text
+    assert "`7062`个英文词" not in text
     assert "约`7018`个英文词" not in text
     assert "程序正在为训练、验证和独立测试曲线生成" not in text
+    assert not any(term in text for term in ("审计", "门槛", "门控", "代理"))
