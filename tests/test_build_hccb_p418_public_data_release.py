@@ -55,6 +55,8 @@ def test_public_data_release_preflight_is_path_free(tmp_path: Path) -> None:
     assert metadata["status"] == "p418_repository_metadata_draft"
     assert metadata["ready_for_deposition"] is False
     assert metadata["metadata"]["upload_type"] == "dataset"
+    assert metadata["metadata"]["version"] == "1.0.0"
+    assert metadata["metadata"]["language"] == "eng"
     description = metadata["metadata"]["description"]
     assert "46,089 nodes" in description
     assert "245,848 connections" in description

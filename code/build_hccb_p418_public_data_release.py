@@ -266,6 +266,8 @@ def repository_metadata(
     metadata: dict[str, object] = {
         "title": f"Data and code for: {title}",
         "upload_type": "dataset",
+        "version": "1.0.0",
+        "language": "eng",
         "description": description,
         "creators": list(CREATORS),
         "keywords": keywords,
