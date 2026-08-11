@@ -80,10 +80,9 @@ E_{T,\mathrm{native}}^2
 \end{equation}
 so regional accuracy is not presented as unresolved pore-scale accuracy.
 
-Signed incidence operators assembled from the OpenFOAM \texttt{owner},
-\texttt{neighbour} and
-boundary-face lists of the finite-volume mesh evaluate regional mass and
-energy differences:
+Signed incidence operators are assembled from the finite-volume mesh. The
+required OpenFOAM lists are \texttt{owner}, \texttt{neighbour} and the boundary
+faces. These operators evaluate regional mass and energy differences:
 \begin{equation}
 \mathbf b_m=\mathbf A_m\widehat{\dot{\mathbf m}},\qquad
 \mathbf b_Q=\mathbf A_Q\widehat{\dot{\mathbf Q}}-\mathbf W.
