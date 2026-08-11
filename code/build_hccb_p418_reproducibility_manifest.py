@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import ast
 import csv
 import hashlib
 import json
@@ -22,6 +23,7 @@ REQUIRED_FILES = (
     "reproducibility/p418_environment.json",
     "reproducibility/repository_release_metadata_draft.json",
     "scripts/reproduce_p418_paper.sh",
+    "scripts/test_p418_public_package.sh",
     "code/run_hccb_p418_formal_calculations.sh",
     "code/run_hccb_p418_60_postprocess.sh",
     "code/run_hccb_p418_manuscript_refresh.sh",
@@ -35,6 +37,7 @@ REQUIRED_FILES = (
     "parameters/hccb_p418_model_splits.json",
     "parameters/hccb_p418_transient_step_plan.json",
     "parameters/hccb_p418_ai_architecture_sources.json",
+    "parameters/literature_parameter_manifest.csv",
     "results/hccb_p418_three_mesh_cht_sensitivity/summary.json",
     "results/hccb_p418_three_mesh_cht_sensitivity/engineering_observables.csv",
     "results/hccb_p418_three_mesh_cht_sensitivity/mesh_gci.csv",
@@ -182,11 +185,45 @@ def category_for(path: str) -> str:
     return "project_entry"
 
 
+def add_local_python_dependencies(root: Path, paths: set[Path]) -> set[Path]:
+    """Include project modules imported by the selected Python sources."""
+    expanded = set(paths)
+    pending = [path for path in expanded if path.suffix == ".py"]
+    inspected: set[Path] = set()
+    while pending:
+        source = pending.pop()
+        if source in inspected:
+            continue
+        inspected.add(source)
+        try:
+            tree = ast.parse(source.read_text(encoding="utf-8"), filename=str(source))
+        except (OSError, SyntaxError, UnicodeDecodeError):
+            continue
+        modules: set[str] = set()
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Import):
+                modules.update(alias.name for alias in node.names)
+            elif isinstance(node, ast.ImportFrom) and node.module:
+                modules.add(node.module)
+        for module in modules:
+            relative = Path(*module.split("."))
+            candidates = (
+                root / "code" / relative.with_suffix(".py"),
+                root / relative.with_suffix(".py"),
+            )
+            dependency = next((path for path in candidates if path.is_file()), None)
+            if dependency is not None and dependency not in expanded:
+                expanded.add(dependency)
+                pending.append(dependency)
+    return expanded
+
+
 def collect_source_paths(root: Path) -> tuple[list[Path], list[str]]:
     missing = [path for path in REQUIRED_FILES if not (root / path).is_file()]
     paths = {root / path for path in REQUIRED_FILES if (root / path).is_file()}
     for pattern in SOURCE_PATTERNS:
         paths.update(path for path in root.glob(pattern) if path.is_file())
+    paths = add_local_python_dependencies(root, paths)
     paths = {
         path
         for path in paths

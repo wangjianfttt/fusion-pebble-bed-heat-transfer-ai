@@ -23,7 +23,7 @@ The successful transient database advances the energy equations on frozen, targe
 ## Current release state
 
 - Compact files ready: 11/11
-- Final processed files currently ready: 2/8
+- Final processed files currently ready: 2/12
 - DOI: pending assignment for this P418 study
 - Licences: MIT for original software; CC BY 4.0 for processed data
 - Zenodo metadata draft: `zenodo_metadata_draft.json`

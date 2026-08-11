@@ -74,6 +74,10 @@ bash scripts/reproduce_p418_paper.sh manifest
 # Build the deterministic small source archive after verifying every file hash.
 bash scripts/reproduce_p418_paper.sh archive
 
+# Run the self-contained scientific checks included in the small source package.
+# This does not start OpenFOAM or model training.
+make p418-public-test
+
 # Use completed OpenFOAM fields to regenerate processed data.
 # This fails if the required formal cases are incomplete.
 bash scripts/reproduce_p418_paper.sh postprocess
@@ -116,6 +120,13 @@ are large. Their completion records, case identifiers, and downstream
 processed artifacts remain part of the formal calculation route. A public
 archive must either include those raw fields or state their archived location
 and checksums before submission.
+
+The public test target covers parameter provenance, nondimensional heat-transfer
+definitions, pressure and fixed-flow checks, data splits, steady random-seed
+statistics, thermodynamic consistency and reproducibility metadata. Development
+tests that require raw cloud work directories, unpublished large arrays or
+third-party source trees remain in the full research workspace and are not part
+of the public-package test target.
 
 The small package does include path-free, plot-ready tables under
 `results/hccb_p418_public_figure_data/`. They regenerate the 60-condition

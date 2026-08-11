@@ -137,6 +137,18 @@ def test_solver_extension_sources_are_included(tmp_path: Path) -> None:
     assert row["sha256"] == hashlib.sha256(extension.read_bytes()).hexdigest()
 
 
+def test_local_python_dependencies_are_included(tmp_path: Path) -> None:
+    write_required_files(tmp_path)
+    selected = tmp_path / "code" / "example_hccb_p418.py"
+    selected.write_text("from shared_openfoam_helper import value\n", encoding="utf-8")
+    helper = tmp_path / "code" / "shared_openfoam_helper.py"
+    helper.write_text("value = 1\n", encoding="utf-8")
+    paths, missing = collect_source_paths(tmp_path)
+    assert not missing
+    assert selected in paths
+    assert helper in paths
+
+
 def test_machine_local_pilot_smoke_split_is_not_public_source(tmp_path: Path) -> None:
     write_required_files(tmp_path)
     smoke = tmp_path / "parameters/hccb_p418_pilot_smoke_splits.json"
@@ -159,6 +171,15 @@ def test_outputs_include_csv_json_and_plain_chinese_summary(tmp_path: Path) -> N
     assert (output / "manifest.csv").is_file()
     text = (output / "P418_复现文件说明_CN.md").read_text(encoding="utf-8")
     assert "复现脚本默认不会启动OpenFOAM或模型训练" in text
+
+
+def test_thermophysical_parameter_manifest_is_required(tmp_path: Path) -> None:
+    write_required_files(tmp_path)
+    parameter_manifest = tmp_path / "parameters/literature_parameter_manifest.csv"
+    assert parameter_manifest.is_file()
+    parameter_manifest.unlink()
+    _, missing = collect_source_paths(tmp_path)
+    assert "parameters/literature_parameter_manifest.csv" in missing
 
 
 def test_final_json_requires_completed_status(tmp_path: Path) -> None:

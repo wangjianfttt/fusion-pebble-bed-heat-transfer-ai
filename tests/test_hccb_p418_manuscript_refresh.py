@@ -67,7 +67,14 @@ def test_refresh_requires_completed_results_before_compilation() -> None:
     assert "build_hccb_p418_chinese_reader.py" in text
     assert "P418_论文中文便读版.md" in text
     assert "package_hccb_p418_reproducibility_source.py" in text
+    assert "package_hccb_p418_processed_data_release.py" in text
+    assert "p418_processed_data_release.zip" in text
+    assert "processed_data_archive_record.json" in text
     assert "package_hccb_p418_ijhmt_submission.py" in text
+    processed = text.index("package_hccb_p418_processed_data_release.py")
+    journal_check = text.index("check_hccb_p418_ijhmt_submission.py")
+    upload_bundle = text.index("package_hccb_p418_ijhmt_submission.py")
+    assert processed < journal_check < upload_bundle
     assert "p418_ijhmt_upload_bundle.zip" in text
     assert "fixed_vs_fully_coupled" not in text
     assert "seed303" not in text

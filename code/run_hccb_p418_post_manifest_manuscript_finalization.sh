@@ -18,6 +18,7 @@ FIELD_MARKER=${ROOT}/manuscript/generated_openfoam_model_field_comparison_valida
 TRANSIENT_FIGURE=${ROOT}/figures/hccb_p418_transient_model_comparison.json
 FIELD_FIGURE=${ROOT}/figures/hccb_p418_openfoam_model_field_comparison.json
 FINAL_RECORD=${RESULT_ROOT}/hccb_p418_manuscript_refresh_complete.json
+GRAPHICAL_ABSTRACT_STEM=${ROOT}/figures/hccb_p418_graphical_abstract
 REMAINING_VALIDATION_RECORD=${RESULT_ROOT}/hccb_p418_remaining_validation_chain_complete.json
 REMAINING_VALIDATION_LOCK=${RESULT_ROOT}/.p418_remaining_validation_chain.lock
 LOCK=${TRANSIENT_ROOT}/.post_manifest_manuscript_finalization.lock
@@ -125,6 +126,23 @@ if field_payload.get("selection_data_role") != "validation":
     raise SystemExit("final field figure was not selected on validation data")
 if field_payload.get("display_data_role") != "test":
     raise SystemExit("final field figure does not display the independent test data")
+PY
+
+python3 "${ROOT}/code/plot_hccb_p418_graphical_abstract.py" \
+    --project-root "${ROOT}" \
+    --output-stem "${GRAPHICAL_ABSTRACT_STEM}"
+
+python3 - "${GRAPHICAL_ABSTRACT_STEM}.json" <<'PY'
+import json
+import sys
+from pathlib import Path
+
+path = Path(sys.argv[1])
+payload = json.loads(path.read_text(encoding="utf-8"))
+if payload.get("status") != "p418_ijhmt_graphical_abstract_ready":
+    raise SystemExit("graphical abstract is not ready")
+if payload.get("generative_ai_used_for_image") is not False:
+    raise SystemExit("graphical abstract must be generated from project data only")
 PY
 
 ROOT="${ROOT}" RESULT_ROOT="${RESULT_ROOT}" \

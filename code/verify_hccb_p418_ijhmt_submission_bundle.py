@@ -62,16 +62,33 @@ def normalized_pdf_text(pdftotext: str, path: Path) -> str:
     return " ".join(output.split())
 
 
+def resolve_record_path(bundle_dir: Path, record_path: Path | None) -> Path:
+    if record_path is not None:
+        resolved = record_path.resolve()
+        if not resolved.is_file():
+            raise FileNotFoundError(resolved)
+        return resolved
+    for name in ("record.json", "package_record.json"):
+        candidate = bundle_dir / name
+        if candidate.is_file():
+            return candidate
+    raise FileNotFoundError(
+        f"submission bundle record is missing from {bundle_dir}: "
+        "expected record.json or package_record.json"
+    )
+
+
 def verify_bundle(
     bundle_dir: Path,
     *,
+    record_path: Path | None = None,
     require_complete: bool = False,
     log_path: Path | None = None,
     texinputs: Path | None = None,
 ) -> dict[str, object]:
     bundle_dir = bundle_dir.resolve()
     upload = bundle_dir / "upload"
-    record = bundle_dir / "record.json"
+    record = resolve_record_path(bundle_dir, record_path)
     payload = json.loads(record.read_text(encoding="utf-8"))
     if require_complete and payload.get("status") != (
         "completed_p418_ijhmt_submission_bundle"
@@ -230,12 +247,14 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--bundle-dir", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--record", type=Path)
     parser.add_argument("--require-complete", action="store_true")
     parser.add_argument("--texinputs", type=Path)
     args = parser.parse_args()
     log_path = args.output.with_name("source_compile.log")
     payload = verify_bundle(
         args.bundle_dir,
+        record_path=args.record,
         require_complete=args.require_complete,
         log_path=log_path,
         texinputs=args.texinputs,

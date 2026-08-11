@@ -578,9 +578,9 @@ def test_builds_current_scope_final_sections(tmp_path: Path) -> None:
     assert "seed303" not in abstract + discussion + conclusion
     assert "fully coupled predictor" not in abstract + discussion + conclusion
     word_count = lambda text: len(re.findall(r"\b[\w'-]+\b", text))
-    assert word_count(abstract) <= 250
-    assert word_count(discussion) <= 450
-    assert word_count(conclusion) <= 170
+    assert word_count(abstract) <= 230
+    assert word_count(discussion) <= 315
+    assert word_count(conclusion) <= 120
     assert len([part for part in discussion.split("\n\n") if part.strip()]) <= 4
     payload = json.loads(result["summary"].read_text(encoding="utf-8"))
     assert payload["best_strict_transient_model"] == (
@@ -605,10 +605,22 @@ def test_builds_current_scope_final_sections(tmp_path: Path) -> None:
         "conclusion": word_count(conclusion),
     }
     assert payload["section_word_limits"] == {
-        "abstract": 250,
-        "discussion": 450,
-        "conclusion": 170,
+        "abstract": 230,
+        "discussion": 315,
+        "conclusion": 120,
     }
+    transient_source = (
+        ROOT / "code/build_hccb_p418_transient_result_text.py"
+    ).read_text(encoding="utf-8")
+    transient_limit = re.search(
+        r"^RESULT_WORD_LIMIT = (\d+)$", transient_source, re.MULTILINE
+    )
+    assert transient_limit is not None
+    assert (
+        sum(payload["section_word_limits"].values())
+        + int(transient_limit.group(1))
+        <= 1055
+    )
     assert payload["external_consistency"] == {
         "hcpb_annulus_mean_absolute_relative_error_percent": 3.8665394701,
         "fixed_bed_pressure_median_absolute_relative_error_percent": (

@@ -104,6 +104,8 @@ def test_three_seed_summary_and_tex_are_generated(tmp_path: Path) -> None:
         csv.DictReader((tmp_path / "summary/steady_seed_metrics.csv").open(encoding="utf-8"))
     )
     assert len(rows) == 12
+    assert all(not Path(row["source_summary"]).is_absolute() for row in rows)
+    assert all(row["source_summary"].startswith("results/") for row in rows)
     aggregate = list(
         csv.DictReader((tmp_path / "summary/steady_seed_summary.csv").open(encoding="utf-8"))
     )

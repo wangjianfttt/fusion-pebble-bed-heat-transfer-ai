@@ -73,8 +73,8 @@
     {
       "path": "results/hccb_p418_public_data_release_preflight/formal_training_manifest_public.json",
       "present": true,
-      "size_bytes": 112321,
-      "sha256": "461d716ddfd8800e6be35dea44cc7164dc6d549af01ce7da32be9921fab1f7dc"
+      "size_bytes": 107461,
+      "sha256": "cb615743c1fe07209d303405d4491d1950722745651b09397ba67774809302e8"
     }
   ],
   "final_processed_files": [
@@ -107,12 +107,29 @@
       "present": false
     },
     {
-      "path": "results/hccb_p418_physical_steps_12/regional_persistence_pair_disjoint_stress_test/test_temperature_predictions.npz",
+      "path": "figures/hccb_p418_transient_model_comparison.pdf",
       "present": false
     },
     {
-      "path": "results/hccb_p418_physical_steps_12/regional_graph_transformer_bounded_data_only_pair_disjoint_stress_test/test_temporal_temperature_predictions.npz",
+      "path": "figures/hccb_p418_transient_model_comparison.json",
       "present": false
+    },
+    {
+      "path": "figures/hccb_p418_openfoam_model_field_comparison.pdf",
+      "present": false
+    },
+    {
+      "path": "figures/hccb_p418_openfoam_model_field_comparison.json",
+      "present": false
+    },
+    {
+      "path": "figures/hccb_p418_openfoam_model_field_selection.json",
+      "present": false
+    },
+    {
+      "path": "validation-selected test prediction",
+      "present": false,
+      "reason": "final validation-based field-model selection is pending"
     }
   ],
   "release_layers": [

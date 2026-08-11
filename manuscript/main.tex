@@ -45,6 +45,11 @@
 \newcommand{\LiSi}{Li$_4$SiO$_4$}
 \newcommand{\OpenFOAM}{OpenFOAM}
 \journal{International Journal of Heat and Mass Transfer}
+\hypersetup{
+  pdftitle={Transient conjugate heat transfer in internally heated ceramic pebble beds: pore-resolved reference fields and graph--Transformer prediction},
+  pdfauthor={Jian Wang; Wei Wen; Gang Shen; Mingzhun Lei; Yuntao Song},
+  pdfkeywords={solid-breeder blanket; ceramic pebble bed; conjugate heat transfer; physics-informed neural network; graph Transformer; diffusion refinement}
+}
 
 \begin{document}
 \begin{frontmatter}
@@ -89,9 +94,9 @@ gas pressure, packing state and fabrication route
 further show persistent wall-induced porosity oscillations and anisotropic
 contact networks in confined breeder beds
 \cite{gong2017hccbpacking,wang2021anisotropic}. Crushable-DEM calculations
-add a further structural mechanism: compression-driven fragmentation evolves
+add a further structural mechanism: compression-driven fragmentation changes
 the particle-size distribution and the spatial pattern of crushing events,
-which can in turn alter the contact topology relevant to heat transfer
+implying possible changes in the contact topology relevant to heat transfer
 \cite{wang2026crushable}. Effective-property models are
 therefore essential for component calculations, and recent correlations span
 particle--fluid heat transfer from laminar to turbulent flow in spherical
@@ -139,8 +144,8 @@ nine matched calculations on an independent spherical packing. At inference,
 a frozen coordinate PINN supplies endpoint fields, a graph--Transformer
 advances both phase temperatures, and a diffusion-style model refines the
 remaining temperature error. All baselines use identical condition and
-trajectory splits. Figure~\ref{fig:workflow} tests whether added complexity
-improves unseen fields without degrading wall heat or energy consistency.
+trajectory splits. We test whether added complexity improves unseen fields
+without degrading wall heat or energy consistency.
 
 \begin{figure}[H]
 \centering
@@ -203,13 +208,16 @@ The present evidence does not by itself establish a final model ranking.
 
 \section*{Data and code availability}
 
-The project repository contains the parameter tables, inputs, processing
-scripts, result summaries and recorded software versions. A compact archive
-reproduces the scalar-response, independent-packing and steady-model figures.
-Geometry, selected transient predictions and final figure records will be
-deposited in a citable repository before publication. The larger decomposed
-\OpenFOAM{} fields are retained in the institutional archive and are available
-from the corresponding author on reasonable request.
+The source code, parameter tables, processed figure data, result summaries and
+recorded software versions are available at
+\url{https://github.com/wangjianfttt/fusion-pebble-bed-heat-transfer-ai}.
+Original code is released under the MIT License, and processed numerical data
+and figure tables are released under CC BY 4.0. The repository includes a
+compact archive for reproducing the reported response, independent-packing and
+model-comparison figures. The larger decomposed \OpenFOAM{} fields are retained
+in the institutional archive because of their size and are available from the
+corresponding author on reasonable request. A versioned DOI will be added to
+the repository record before submission.
 
 \section*{CRediT authorship contribution statement}
 
@@ -223,9 +231,13 @@ from the corresponding author on reasonable request.
 
 The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
 
+\section*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process}
+
+During the preparation of this work, the authors used OpenAI Codex for language revision, code review and workflow assistance. The authors independently verified the calculations, data, citations and final text, reviewed and edited all AI-assisted content, and take full responsibility for the content of the article. No generative AI system was used to create or alter the scientific images or numerical results.
+
 \section*{Acknowledgements}
 
-This work was supported by the Anhui Provincial Natural Science Foundation (2408085QA030), No. 2504000000-04-05-42671, the Anhui Intelligent Mine Technology and Equipment Engineering Research Center (AIMTEERC202307), the Science Foundation of the Institute of Plasma Physics, Chinese Academy of Sciences (DSJJ-2025-08), and the China Postdoctoral Science Foundation under Grant No. 2024M753266.
+This work was supported by the Anhui Provincial Natural Science Foundation (2408085QA030), project No. 2504000000-04-05-42671, the Anhui Intelligent Mine Technology and Equipment Engineering Research Center (AIMTEERC202307), the Science Foundation of the Institute of Plasma Physics, Chinese Academy of Sciences (DSJJ-2025-08), and the China Postdoctoral Science Foundation under Grant No. 2024M753266.
 
 \begingroup
 \small

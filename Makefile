@@ -11,7 +11,7 @@ P418_CONCURRENT_CASES ?= 1
 P418_MPI_RANKS ?= 32
 P418_PYTHON ?= $(if $(wildcard /data2/wangjian/venv/bin/python3),/data2/wangjian/venv/bin/python3,$(TORCH_PYTHON))
 
-.PHONY: p418-progress p418-fused-preflight p418-research-route-check p418-parameter-evidence p418-local-transport-support p418-local-transport-sensitivity p418-scientific-findings p418-model-comparison-protocol p418-fully-coupled-step-plan p418-end-to-end-plan p418-fully-coupled-model-plan p418-high-re-evaluation-plan p418-formal-plan p418-formal-run p418-manuscript-refresh p418-reproducibility p418-physical-model-figure p418-field-cloud-figure
+.PHONY: p418-progress p418-fused-preflight p418-research-route-check p418-parameter-evidence p418-local-transport-support p418-local-transport-sensitivity p418-scientific-findings p418-model-comparison-protocol p418-fully-coupled-step-plan p418-end-to-end-plan p418-fully-coupled-model-plan p418-high-re-evaluation-plan p418-formal-plan p418-formal-run p418-manuscript-refresh p418-reproducibility p418-public-test p418-physical-model-figure p418-field-cloud-figure
 
 P418_TRANSIENT_RESULT_ROOT ?= $(P418_RESULT_ROOT)/hccb_p418_physical_steps_12
 
@@ -118,6 +118,9 @@ p418-reproducibility:
 		--manifest "$(P418_RESULT_ROOT)/hccb_p418_reproducibility_manifest/manifest.json" \
 		--output "$(P418_RESULT_ROOT)/hccb_p418_reproducibility_manifest/p418_reproduction_source.tar.gz" \
 		--record "$(P418_RESULT_ROOT)/hccb_p418_reproducibility_manifest/source_archive_record.json"
+
+p418-public-test:
+	PYTHON="$(P418_PYTHON)" bash scripts/test_p418_public_package.sh
 
 reproduce:
 	bash scripts/reproduce_current.sh

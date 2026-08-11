@@ -90,7 +90,7 @@ def main() -> int:
             r"\resizebox{\textwidth}{!}{%",
             r"\begin{tabular}{@{}lrrr@{}}",
             r"\toprule",
-            r"Quantity & Refinement behaviour & Observed order & Fine-grid GCI \\",
+            r"Quantity & Refinement behavior & Observed order & Fine-grid GCI \\",
             r"\midrule",
         ]
     )

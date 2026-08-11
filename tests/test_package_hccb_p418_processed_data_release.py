@@ -1,71 +1,107 @@
 from __future__ import annotations
 
-import importlib.util
+import hashlib
 import json
-import tarfile
+import sys
+import zipfile
 from pathlib import Path
-
-import pytest
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SCRIPT = ROOT / "code/package_hccb_p418_processed_data_release.py"
+sys.path.insert(0, str(ROOT / "code"))
+
+from package_hccb_p418_processed_data_release import build_archive
 
 
-def load_module():
-    spec = importlib.util.spec_from_file_location("processed_release", SCRIPT)
-    module = importlib.util.module_from_spec(spec)
-    assert spec.loader is not None
-    spec.loader.exec_module(module)
-    return module
+def digest(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def test_current_release_refuses_missing_final_outputs(tmp_path: Path) -> None:
-    module = load_module()
-    with pytest.raises(RuntimeError, match="processed-data release is incomplete"):
-        module.build_archive(
-            ROOT,
-            tmp_path / "preflight",
-            tmp_path / "processed.tar.gz",
-        )
-
-
-def test_complete_fixture_builds_deterministic_safe_archive(tmp_path: Path) -> None:
-    module = load_module()
+def fixture(tmp_path: Path, *, ready: bool = True) -> tuple[Path, Path]:
     project = tmp_path / "project"
-    (project / "manuscript").mkdir(parents=True)
-    main = (ROOT / "manuscript/main.tex").read_text(encoding="utf-8")
-    (project / "manuscript/main.tex").write_text(main, encoding="utf-8")
-    (project / "manuscript/generated_final_abstract.tex").write_text(
-        "Final evidence-based abstract for the processed data release.\n",
-        encoding="utf-8",
-    )
-    choice = project / "submission/data_release_license_choice.json"
-    choice.parent.mkdir(parents=True)
-    choice.write_text(
-        json.dumps(
-            {"software_license": "MIT", "data_license": "CC-BY-4.0"}
-        )
-        + "\n",
-        encoding="utf-8",
-    )
-    for index, relative in enumerate(
-        (*module.COMPACT_FILES, *module.FINAL_PROCESSED_FILES), start=1
-    ):
-        path = project / relative
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_bytes(f"fixture-{index}\n".encode("ascii"))
-
     release = project / "release"
-    output = project / "processed.tar.gz"
-    first = module.build_archive(project, release, output)
-    first_bytes = output.read_bytes()
-    second = module.build_archive(project, release, output)
-    assert output.read_bytes() == first_bytes
-    assert first["archive_sha256"] == second["archive_sha256"]
-    assert first["repository_metadata_ready"] is True
-    with tarfile.open(output, "r:gz") as tar:
-        names = tar.getnames()
-        assert len(names) == len(set(names))
-        assert names[-1].endswith("/SHA256SUMS.txt")
-        assert all(not member.issym() and not member.islnk() for member in tar)
+    release.mkdir(parents=True)
+    for name in ("LICENSE", "DATA_LICENSE.md", "CITATION.cff"):
+        (project / name).write_text(name + "\n", encoding="utf-8")
+    compact = project / "results/compact.csv"
+    prediction = project / "results/selected_prediction.npz"
+    compact.parent.mkdir(parents=True)
+    compact.write_text("x,y\n1,2\n", encoding="utf-8")
+    prediction.write_bytes(b"selected-test-prediction")
+    rows = [
+        {"path": "results/compact.csv", "present": True, "sha256": digest(compact)},
+        {
+            "path": "results/selected_prediction.npz",
+            "present": ready,
+            "sha256": digest(prediction),
+        },
+    ]
+    (release / "summary.json").write_text(
+        json.dumps(
+            {
+                "status": (
+                    "p418_public_data_release_ready"
+                    if ready
+                    else "p418_public_data_release_preflight"
+                ),
+                "compact_files": rows[:1],
+                "final_processed_files": rows[1:],
+                "final_processed_archive_ready": ready,
+            }
+        ),
+        encoding="utf-8",
+    )
+    (release / "zenodo_metadata_draft.json").write_text(
+        json.dumps(
+            {
+                "status": (
+                    "p418_repository_metadata_ready"
+                    if ready
+                    else "p418_repository_metadata_draft"
+                ),
+                "ready_for_deposition": ready,
+                "metadata": {"license": "cc-by-4.0"},
+            }
+        ),
+        encoding="utf-8",
+    )
+    (release / "README.md").write_text("release\n", encoding="utf-8")
+    return project, release
+
+
+def test_processed_archive_is_complete_and_reproducible(tmp_path: Path) -> None:
+    project, release = fixture(tmp_path)
+    first = release / "first.zip"
+    second = release / "second.zip"
+    payload = build_archive(project, release, first)
+    build_archive(project, release, second)
+    assert payload["status"] == "completed_p418_processed_data_release_archive"
+    assert payload["license"] == "cc-by-4.0"
+    assert first.read_bytes() == second.read_bytes()
+    with zipfile.ZipFile(first) as archive:
+        assert archive.testzip() is None
+        names = archive.namelist()
+    assert "results/selected_prediction.npz" in names
+    assert "release/zenodo_metadata_draft.json" in names
+    assert "DATA_LICENSE.md" in names
+
+
+def test_processed_archive_rejects_incomplete_release(tmp_path: Path) -> None:
+    project, release = fixture(tmp_path, ready=False)
+    try:
+        build_archive(project, release, release / "output.zip")
+    except RuntimeError as error:
+        assert "not marked ready" in str(error)
+    else:
+        raise AssertionError("an incomplete processed-data release was accepted")
+
+
+def test_processed_archive_rejects_private_machine_text(tmp_path: Path) -> None:
+    project, release = fixture(tmp_path)
+    (release / "README.md").write_text("source: /data2/private\n", encoding="utf-8")
+    try:
+        build_archive(project, release, release / "output.zip")
+    except RuntimeError as error:
+        assert "private machine text" in str(error)
+    else:
+        raise AssertionError("private machine text entered the release archive")

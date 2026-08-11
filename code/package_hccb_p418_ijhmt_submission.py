@@ -189,6 +189,56 @@ def copy_required(source: Path, target: Path) -> None:
     shutil.copy2(source, target)
 
 
+def extract_balanced_arguments(text: str, command: str) -> list[str]:
+    """Return brace-balanced arguments for a LaTeX command."""
+    values: list[str] = []
+    start = 0
+    token = command + "{"
+    while True:
+        marker = text.find(token, start)
+        if marker < 0:
+            return values
+        index = marker + len(token)
+        depth = 1
+        while index < len(text) and depth:
+            if text[index] == "{" and (index == 0 or text[index - 1] != "\\"):
+                depth += 1
+            elif text[index] == "}" and (index == 0 or text[index - 1] != "\\"):
+                depth -= 1
+            index += 1
+        if depth:
+            raise RuntimeError(f"unbalanced {command} argument")
+        values.append(text[marker + len(token) : index - 1].strip())
+        start = index
+
+
+def manuscript_figure_captions(project_root: Path) -> list[str]:
+    captions: list[str] = []
+    source_files, _ = collect_manuscript_files(project_root)
+    for source in source_files:
+        if source.suffix.lower() != ".tex":
+            continue
+        text = source.read_text(encoding="utf-8")
+        for block in re.findall(
+            r"\\begin\{figure\}(.*?)\\end\{figure\}",
+            text,
+            flags=re.DOTALL,
+        ):
+            captions.extend(extract_balanced_arguments(block, "\\caption"))
+    return captions
+
+
+def write_figure_captions(path: Path, captions: list[str]) -> None:
+    path.write_text(
+        "% Editable figure captions extracted from the manuscript source.\n\n"
+        + "\n\n".join(
+            f"Figure {index}. {caption}" for index, caption in enumerate(captions, 1)
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+
 def scan_public_text(paths: list[Path]) -> None:
     for path in paths:
         if path.stat().st_size > 10 * 1024 * 1024:
@@ -246,20 +296,48 @@ def build_bundle(
     main_pdf = project_root / "manuscript/main.pdf"
     title_page = project_root / "submission/title_page.txt"
     cover_letter = project_root / "submission/cover_letter_IJHMT.md"
+    cover_letter_pdf = project_root / "submission/cover_letter_IJHMT.pdf"
     highlights = project_root / "submission/highlights.txt"
     credit = project_root / "submission/CRediT_author_statement.md"
     competing_interest = project_root / "submission/declaration_of_competing_interest.md"
     acknowledgements = project_root / "submission/acknowledgements.md"
+    ai_declaration = project_root / "submission/declaration_of_generative_ai_use.md"
     copy_required(main_pdf, upload / "Manuscript.pdf")
     copy_required(title_page, upload / "Title_page.txt")
     copy_required(cover_letter, upload / "Cover_letter.md")
+    copy_required(cover_letter_pdf, upload / "Cover_letter.pdf")
     copy_required(highlights, upload / "Highlights.txt")
     copy_required(credit, upload / "CRediT_author_statement.md")
     copy_required(
         competing_interest, upload / "Declaration_of_competing_interest.md"
     )
     copy_required(acknowledgements, upload / "Acknowledgements.md")
+    copy_required(ai_declaration, upload / "Declaration_of_generative_AI_use.md")
     copy_required(source_archive, upload / REPRODUCTION_NAME)
+
+    captions = manuscript_figure_captions(project_root)
+    if len(captions) != 7:
+        raise RuntimeError(f"expected 7 figure captions, found {len(captions)}")
+    write_figure_captions(upload / "Figure_captions.tex", captions)
+
+    graphical_abstract_included = False
+    graphical_abstract_pdf = project_root / "figures/hccb_p418_graphical_abstract.pdf"
+    graphical_abstract_png = project_root / "figures/hccb_p418_graphical_abstract.png"
+    graphical_abstract_record = project_root / "figures/hccb_p418_graphical_abstract.json"
+    if any(path.exists() for path in (graphical_abstract_pdf, graphical_abstract_png, graphical_abstract_record)):
+        for path in (graphical_abstract_pdf, graphical_abstract_png, graphical_abstract_record):
+            if not path.is_file() or path.stat().st_size == 0:
+                raise RuntimeError(f"incomplete graphical abstract output: {path}")
+        ga_payload = json.loads(graphical_abstract_record.read_text(encoding="utf-8"))
+        if ga_payload.get("status") != "p418_ijhmt_graphical_abstract_ready":
+            raise RuntimeError("graphical abstract is not validated")
+        expected_pdf_sha = ga_payload.get("outputs", {}).get("pdf", {}).get("sha256")
+        expected_png_sha = ga_payload.get("outputs", {}).get("png", {}).get("sha256")
+        if sha256(graphical_abstract_pdf) != expected_pdf_sha or sha256(graphical_abstract_png) != expected_png_sha:
+            raise RuntimeError("graphical abstract SHA mismatch")
+        copy_required(graphical_abstract_pdf, upload / "Graphical_abstract.pdf")
+        copy_required(graphical_abstract_png, upload / "Graphical_abstract.png")
+        graphical_abstract_included = True
 
     manuscript_entries: list[tuple[Path, str]] = []
     for path in tex_files + figures:
@@ -296,9 +374,17 @@ def build_bundle(
         "- `Manuscript.pdf`：主文PDF；\n"
         "- `p418_manuscript_source.zip`：LaTeX源文件和7张矢量主图；\n"
         "- `Figure_*.pdf`：按正文出现顺序编号的独立图件；\n"
-        "- `Cover_letter.md`和`Highlights.txt`：投稿信与要点；\n"
+        "- `Figure_captions.tex`：从正文源文件自动提取的7条可编辑图注；\n"
+        + (
+            "- `Graphical_abstract.pdf/png`：由正式计算图自动生成的图文摘要；\n"
+            if graphical_abstract_included
+            else ""
+        )
+        + "- `Cover_letter.pdf`：可直接上传的投稿信；`Cover_letter.md`为可编辑源文；\n"
+        "- `Highlights.txt`：论文要点；\n"
         "- `CRediT_author_statement.md`、`Declaration_of_competing_interest.md`"
         "和`Acknowledgements.md`：作者贡献、利益冲突和基金致谢；\n"
+        "- `Declaration_of_generative_AI_use.md`：AI辅助使用声明；\n"
         "- `p418_reproduction_source.tar.gz`：可公开的复现代码和参数说明；\n"
         "- `SHA256SUMS.txt`：文件完整性校验值。\n\n"
         "默认不包含英文补充材料，关键方法、结果和局限均放在正文。\n",
@@ -328,9 +414,16 @@ def build_bundle(
             "path": "upload/Manuscript.pdf",
             "sha256": sha256(upload / "Manuscript.pdf"),
         },
+        "cover_letter": {
+            "pdf_path": "upload/Cover_letter.pdf",
+            "pdf_sha256": sha256(upload / "Cover_letter.pdf"),
+            "source_path": "upload/Cover_letter.md",
+            "source_sha256": sha256(upload / "Cover_letter.md"),
+        },
         "main_figure_count": len(figures),
         "figures": figure_records,
         "supplement_included": False,
+        "graphical_abstract_included": graphical_abstract_included,
         "manuscript_source": {
             "path": f"upload/{SOURCE_NAME}",
             "sha256": sha256(manuscript_source),

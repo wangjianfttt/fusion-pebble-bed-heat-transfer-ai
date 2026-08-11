@@ -205,18 +205,6 @@ if [[ ${BUILD_SUPPLEMENT} == 1 ]]; then
   ) > "${supplement_log}" 2>&1
 fi
 
-IJHMT_CHECK_DIR=${RESULT_ROOT}/hccb_p418_ijhmt_submission_check
-ijhmt_args=(
-  --project-root "${ROOT}"
-  --output-dir "${IJHMT_CHECK_DIR}"
-  --require-complete
-)
-if [[ ${BUILD_SUPPLEMENT} == 1 ]]; then
-  ijhmt_args+=(--require-supplement)
-fi
-python3 "${ROOT}/code/check_hccb_p418_ijhmt_submission.py" \
-  "${ijhmt_args[@]}"
-
 REPRODUCIBILITY_DIR=${RESULT_ROOT}/hccb_p418_reproducibility_manifest
 PUBLIC_DATA_DIR=${RESULT_ROOT}/hccb_p418_public_data_release_preflight
 python3 "${ROOT}/code/build_hccb_p418_public_training_manifest.py" \
@@ -226,6 +214,13 @@ python3 "${ROOT}/code/build_hccb_p418_public_training_manifest.py" \
 python3 "${ROOT}/code/build_hccb_p418_public_data_release.py" \
   --project-root "${ROOT}" \
   --output-dir "${PUBLIC_DATA_DIR}"
+PROCESSED_DATA_ARCHIVE=${PUBLIC_DATA_DIR}/p418_processed_data_release.zip
+PROCESSED_DATA_ARCHIVE_RECORD=${PUBLIC_DATA_DIR}/processed_data_archive_record.json
+python3 "${ROOT}/code/package_hccb_p418_processed_data_release.py" \
+  --project-root "${ROOT}" \
+  --release-dir "${PUBLIC_DATA_DIR}" \
+  --output "${PROCESSED_DATA_ARCHIVE}" \
+  --record "${PROCESSED_DATA_ARCHIVE_RECORD}"
 python3 "${ROOT}/code/build_hccb_p418_reproducibility_manifest.py" \
   --project-root "${ROOT}" \
   --output-dir "${REPRODUCIBILITY_DIR}" \
@@ -238,6 +233,21 @@ python3 "${ROOT}/code/package_hccb_p418_reproducibility_source.py" \
   --manifest "${REPRODUCIBILITY_DIR}/manifest.json" \
   --output "${REPRODUCIBILITY_ARCHIVE}" \
   --record "${REPRODUCIBILITY_ARCHIVE_RECORD}"
+
+# Build the citable data and source archives before requiring the DOI. The
+# first formal run can therefore produce the exact Zenodo upload files; after
+# deposition assigns the DOI, rerunning this script completes the journal check.
+IJHMT_CHECK_DIR=${RESULT_ROOT}/hccb_p418_ijhmt_submission_check
+ijhmt_args=(
+  --project-root "${ROOT}"
+  --output-dir "${IJHMT_CHECK_DIR}"
+  --require-complete
+)
+if [[ ${BUILD_SUPPLEMENT} == 1 ]]; then
+  ijhmt_args+=(--require-supplement)
+fi
+python3 "${ROOT}/code/check_hccb_p418_ijhmt_submission.py" \
+  "${ijhmt_args[@]}"
 
 FINAL_REQUIREMENTS_DIR=${RESULT_ROOT}/hccb_p418_final_scientific_requirements
 python3 "${ROOT}/code/check_hccb_p418_final_scientific_requirements.py" \
@@ -282,6 +292,10 @@ record_inputs=(
   "${CHINESE_READER_SUMMARY}"
   "${FIGURE_QUALITY_DIR}/summary.json"
   "${IJHMT_CHECK_DIR}/summary.json"
+  "${PUBLIC_DATA_DIR}/summary.json"
+  "${PUBLIC_DATA_DIR}/zenodo_metadata_draft.json"
+  "${PROCESSED_DATA_ARCHIVE}"
+  "${PROCESSED_DATA_ARCHIVE_RECORD}"
   "${REPRODUCIBILITY_DIR}/manifest.json"
   "${REPRODUCIBILITY_ARCHIVE}"
   "${REPRODUCIBILITY_ARCHIVE_RECORD}"

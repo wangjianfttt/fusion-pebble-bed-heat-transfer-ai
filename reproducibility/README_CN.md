@@ -58,6 +58,9 @@ bash scripts/reproduce_p418_paper.sh manifest
 # 逐文件核对后生成可公开的小型代码复现包
 bash scripts/reproduce_p418_paper.sh archive
 
+# 运行小型公开包内可独立完成的科学检查，不启动OpenFOAM或模型训练
+make p418-public-test
+
 # 正式OpenFOAM结果齐全后，重新整理训练数据和工程量
 bash scripts/reproduce_p418_paper.sh postprocess
 
@@ -89,6 +92,11 @@ make p418-formal-run
 - 逐文件 SHA-256 和复现文件说明：`results/hccb_p418_reproducibility_manifest/`
 
 三维 OpenFOAM 原始场很大，不复制进小型代码包。最终公开数据时，需要公开原始场，或者明确给出原始场的长期存储位置和校验值。
+
+公开测试入口检查参数来源、无量纲换热量定义、压降与固定流场处理、数据划分、
+稳态随机种子统计、热物理一致性和复现文件信息。依赖云端原始工作目录、尚未公开的
+大数组或第三方源码的项目内部检查继续保留在完整科研目录中，不作为读者下载小包后
+默认运行的测试。
 
 小型包中会直接包含 `results/hccb_p418_public_figure_data/`，里面是已去除
 本机路径的轻量作图数据。它可以独立重画60工况物理响应、9工况独立装填

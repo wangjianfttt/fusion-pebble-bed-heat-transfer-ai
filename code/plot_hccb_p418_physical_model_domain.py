@@ -431,22 +431,22 @@ def draw_architecture(axis: plt.Axes) -> None:
     axis.set_box_aspect(1)
     axis.axis("off")
     input_boxes = [
-        (0.01, 0.83, 0.30, 0.12, "state\n$\\mathbf{u},p$; $T_f,T_s$", BLUE, PALE_BLUE),
-        (0.35, 0.83, 0.30, 0.12, "operating inputs\n$U_{in},T_{in},q''',t$", BLUE, PALE_BLUE),
-        (0.69, 0.83, 0.30, 0.12, "mesh\nnodes / faces / roles", GREEN, PALE_GREEN),
+        (0.01, 0.82, 0.30, 0.13, "state\n$\\mathbf{u},p,T_f,T_s$", BLUE, PALE_BLUE),
+        (0.35, 0.82, 0.30, 0.13, "conditions\n$U_{in},T_{in},q''',t$", BLUE, PALE_BLUE),
+        (0.69, 0.82, 0.30, 0.13, "mesh\nnodes, faces\nand roles", GREEN, PALE_GREEN),
     ]
     for entry in input_boxes:
-        architecture_box(axis, *entry, fontsize=6.1)
+        architecture_box(axis, *entry, fontsize=6.4)
 
     # A common input bus keeps all connectors horizontal or vertical.
     for center_x in (0.16, 0.50, 0.84):
-        axis.plot([center_x, center_x], [0.83, 0.78], color=GRAY, lw=0.9)
-    axis.plot([0.16, 0.84], [0.78, 0.78], color=GRAY, lw=0.9)
-    axis.plot([0.50, 0.24], [0.76, 0.76], color=GRAY, lw=0.9)
-    axis.plot([0.50, 0.50], [0.78, 0.76], color=GRAY, lw=0.9)
+        axis.plot([center_x, center_x], [0.82, 0.77], color=GRAY, lw=0.9)
+    axis.plot([0.16, 0.84], [0.77, 0.77], color=GRAY, lw=0.9)
+    axis.plot([0.50, 0.24], [0.75, 0.75], color=GRAY, lw=0.9)
+    axis.plot([0.50, 0.50], [0.77, 0.75], color=GRAY, lw=0.9)
     axis.add_patch(
         FancyArrowPatch(
-            (0.24, 0.76),
+            (0.24, 0.75),
             (0.24, 0.73),
             arrowstyle="-|>",
             mutation_scale=9,
@@ -456,61 +456,61 @@ def draw_architecture(axis: plt.Axes) -> None:
     )
 
     pipeline = [
-        (0.06, 0.60, 0.36, 0.12, "graph encoder\n2 GNN blocks", ORANGE, PALE_ORANGE),
-        (0.58, 0.60, 0.36, 0.12, "Physics-Attention\n2 blocks, 4 heads", PURPLE, "#F1EBF6"),
-        (0.06, 0.42, 0.36, 0.12, "temporal Transformer\n3 layers", BLUE, PALE_BLUE),
-        (0.58, 0.42, 0.36, 0.12, "graph decoder\n2 GNN blocks", ORANGE, PALE_ORANGE),
+        (0.05, 0.59, 0.38, 0.13, "graph encoder\n2 GNN blocks", ORANGE, PALE_ORANGE),
+        (0.57, 0.59, 0.38, 0.13, "physics attention\n2 blocks, 4 heads", PURPLE, "#F1EBF6"),
+        (0.05, 0.40, 0.38, 0.14, "temporal\nTransformer\n3 layers", BLUE, PALE_BLUE),
+        (0.57, 0.40, 0.38, 0.14, "graph decoder\n2 GNN blocks", ORANGE, PALE_ORANGE),
     ]
     for entry in pipeline:
-        architecture_box(axis, *entry, fontsize=6.2)
+        architecture_box(axis, *entry, fontsize=5.9)
     axis.add_patch(
         FancyArrowPatch(
-            (0.42, 0.66), (0.58, 0.66), arrowstyle="-|>",
+            (0.43, 0.655), (0.57, 0.655), arrowstyle="-|>",
             mutation_scale=9, color=BLACK, linewidth=1.1,
         )
     )
-    axis.plot([0.76, 0.76], [0.60, 0.57], color=BLACK, lw=1.1)
-    axis.plot([0.76, 0.24], [0.57, 0.57], color=BLACK, lw=1.1)
+    axis.plot([0.76, 0.76], [0.59, 0.565], color=BLACK, lw=1.1)
+    axis.plot([0.76, 0.24], [0.565, 0.565], color=BLACK, lw=1.1)
     axis.add_patch(
         FancyArrowPatch(
-            (0.24, 0.57), (0.24, 0.54), arrowstyle="-|>",
+            (0.24, 0.565), (0.24, 0.54), arrowstyle="-|>",
             mutation_scale=9, color=BLACK, linewidth=1.1,
         )
     )
     axis.add_patch(
         FancyArrowPatch(
-            (0.42, 0.48), (0.58, 0.48), arrowstyle="-|>",
+            (0.43, 0.47), (0.57, 0.47), arrowstyle="-|>",
             mutation_scale=9, color=BLACK, linewidth=1.1,
         )
     )
     architecture_box(
         axis,
-        0.06,
-        0.24,
-        0.34,
-        0.10,
-        "base $T$ field\n$T_f^{base},T_s^{base}$",
+        0.05,
+        0.215,
+        0.36,
+        0.11,
+        "base field\n$T_f^{base},T_s^{base}$",
         VERMILION,
         "#FCEAE6",
         fontsize=6.2,
     )
     architecture_box(
         axis,
-        0.60,
-        0.24,
-        0.34,
-        0.10,
-        "diffusion refiner\n3 $T$-residual steps",
+        0.59,
+        0.215,
+        0.36,
+        0.11,
+        "diffusion corrector\n3 residual steps",
         PURPLE,
         "#F1EBF6",
-        fontsize=6.2,
+        fontsize=5.8,
     )
-    axis.plot([0.76, 0.76], [0.42, 0.38], color=VERMILION, lw=1.1)
-    axis.plot([0.23, 0.76], [0.38, 0.38], color=VERMILION, lw=1.1)
+    axis.plot([0.76, 0.76], [0.40, 0.365], color=VERMILION, lw=1.1)
+    axis.plot([0.23, 0.76], [0.365, 0.365], color=VERMILION, lw=1.1)
     axis.add_patch(
         FancyArrowPatch(
-            (0.23, 0.38),
-            (0.23, 0.34),
+            (0.23, 0.365),
+            (0.23, 0.325),
             arrowstyle="-|>",
             mutation_scale=9,
             color=VERMILION,
@@ -519,8 +519,8 @@ def draw_architecture(axis: plt.Axes) -> None:
     )
     axis.add_patch(
         FancyArrowPatch(
-            (0.40, 0.29),
-            (0.60, 0.29),
+            (0.41, 0.27),
+            (0.59, 0.27),
             arrowstyle="-|>",
             mutation_scale=9,
             color=PURPLE,
@@ -530,20 +530,20 @@ def draw_architecture(axis: plt.Axes) -> None:
     architecture_box(
         axis,
         0.31,
-        0.045,
+        0.035,
         0.38,
-        0.10,
-        "final temperature\n$T_f^{pred},T_s^{pred}$",
+        0.105,
+        "final\n$T_f^{pred},T_s^{pred}$",
         VERMILION,
         "#FCEAE6",
-        fontsize=6.4,
+        fontsize=6.2,
     )
-    axis.plot([0.77, 0.77], [0.24, 0.19], color=PURPLE, lw=1.1)
-    axis.plot([0.50, 0.77], [0.19, 0.19], color=PURPLE, lw=1.1)
+    axis.plot([0.77, 0.77], [0.215, 0.18], color=PURPLE, lw=1.1)
+    axis.plot([0.50, 0.77], [0.18, 0.18], color=PURPLE, lw=1.1)
     axis.add_patch(
         FancyArrowPatch(
-            (0.50, 0.19),
-            (0.50, 0.145),
+            (0.50, 0.18),
+            (0.50, 0.14),
             arrowstyle="-|>",
             mutation_scale=9,
             color=PURPLE,

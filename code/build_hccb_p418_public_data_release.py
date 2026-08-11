@@ -8,6 +8,9 @@ import hashlib
 import json
 import re
 from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from check_hccb_p418_ijhmt_submission import (
     extract_environment,
@@ -38,8 +41,11 @@ FINAL_PROCESSED_FILES = (
     "results/hccb_p418_physical_steps_12/model_comparison/physical_step_model_metrics.csv",
     "results/hccb_p418_physical_steps_12/model_comparison/physical_step_model_speedup.csv",
     "results/hccb_p418_physical_steps_12/fixed_flow_loss_balancing_pair_disjoint_stress_test/selected_downstream_integration.json",
-    "results/hccb_p418_physical_steps_12/regional_persistence_pair_disjoint_stress_test/test_temperature_predictions.npz",
-    "results/hccb_p418_physical_steps_12/regional_graph_transformer_bounded_data_only_pair_disjoint_stress_test/test_temporal_temperature_predictions.npz",
+    "figures/hccb_p418_transient_model_comparison.pdf",
+    "figures/hccb_p418_transient_model_comparison.json",
+    "figures/hccb_p418_openfoam_model_field_comparison.pdf",
+    "figures/hccb_p418_openfoam_model_field_comparison.json",
+    "figures/hccb_p418_openfoam_model_field_selection.json",
 )
 
 PRIVATE_TEXT = (
@@ -99,6 +105,36 @@ def describe(project_root: Path, relative: str) -> dict[str, object]:
     if present:
         row.update({"size_bytes": path.stat().st_size, "sha256": sha256(path)})
     return row
+
+
+def selected_prediction_file(project_root: Path) -> str | None:
+    selection_path = (
+        project_root / "figures/hccb_p418_openfoam_model_field_selection.json"
+    )
+    if not selection_path.is_file():
+        return None
+    selection = json.loads(selection_path.read_text(encoding="utf-8"))
+    if selection.get("status") != "selected_p418_field_figure_learned_model":
+        return None
+    if selection.get("selection_data_role") != "validation":
+        return None
+    if selection.get("display_data_role") != "test":
+        return None
+    if selection.get("strict_split_loss_balancing_stage") != "validation_selected":
+        return None
+    raw_path = str(selection.get("prediction_file") or "").strip()
+    if not raw_path:
+        return None
+    prediction = Path(raw_path)
+    if not prediction.is_absolute():
+        prediction = project_root / prediction
+    prediction = prediction.resolve()
+    try:
+        return prediction.relative_to(project_root.resolve()).as_posix()
+    except ValueError as error:
+        raise ValueError(
+            "selected prediction file is outside the project root"
+        ) from error
 
 
 def license_choice(project_root: Path) -> dict[str, str] | None:
@@ -207,6 +243,19 @@ def repository_metadata(
 def build(project_root: Path, output_dir: Path) -> dict[str, object]:
     compact = [describe(project_root, path) for path in COMPACT_FILES]
     final_processed = [describe(project_root, path) for path in FINAL_PROCESSED_FILES]
+    selected_prediction = selected_prediction_file(project_root)
+    if selected_prediction is None:
+        final_processed.append(
+            {
+                "path": "validation-selected test prediction",
+                "present": False,
+                "reason": "final validation-based field-model selection is pending",
+            }
+        )
+    else:
+        selected_row = describe(project_root, selected_prediction)
+        selected_row["role"] = "validation-selected model, held-out test prediction"
+        final_processed.append(selected_row)
     compact_ready = all(row["present"] for row in compact)
     final_ready = all(row["present"] for row in final_processed)
     metadata = repository_metadata(

@@ -1,5 +1,6 @@
 import csv
 import json
+import re
 import subprocess
 from pathlib import Path
 
@@ -263,6 +264,8 @@ def test_reports_strict_split_physics_and_complete_chain_cost(tmp_path: Path) ->
     assert "0.060" in text and "0.030" in text
     assert "120" in text and "24 curves" in text
     assert "80.0" in text and "35 curves" in text
+    assert "\\times" in text
+    assert "\t" not in text
     assert "not for checkpoint or architecture selection" in text
     assert "nominal 90\\% ensemble interval covered" in text
     assert "74.0\\%" in text
@@ -277,6 +280,7 @@ def test_reports_strict_split_physics_and_complete_chain_cost(tmp_path: Path) ->
     assert "1.20" in text and "0.800" in text
     assert "rank exchange between nearly equal neighbouring regions" in text
     assert "not pebble-internal maxima" in text
+    assert len(re.findall(r"\b[\w'-]+\b", text)) <= 390
 
 
 def test_reports_diffusion_tradeoff_instead_of_hiding_it(tmp_path: Path) -> None:

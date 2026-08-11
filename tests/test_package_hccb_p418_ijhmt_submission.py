@@ -28,6 +28,22 @@ def fixture(tmp_path: Path) -> Path:
     submission.mkdir()
     for index in range(1, 8):
         (figures / f"figure_{index}.pdf").write_bytes(f"pdf{index}".encode())
+    ga_pdf = figures / "hccb_p418_graphical_abstract.pdf"
+    ga_png = figures / "hccb_p418_graphical_abstract.png"
+    ga_pdf.write_bytes(b"graphical-abstract-pdf")
+    ga_png.write_bytes(b"graphical-abstract-png")
+    (figures / "hccb_p418_graphical_abstract.json").write_text(
+        json.dumps(
+            {
+                "status": "p418_ijhmt_graphical_abstract_ready",
+                "outputs": {
+                    "pdf": {"sha256": digest(ga_pdf)},
+                    "png": {"sha256": digest(ga_png)},
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
     (manuscript / "main.tex").write_text(
         "\\documentclass{elsarticle}\n"
         "\\input{body}\n"
@@ -38,7 +54,10 @@ def fixture(tmp_path: Path) -> Path:
     (manuscript / "body.tex").write_text(
         "\\IfFileExists{marker.tex}{marker-present}{}\n"
         + "\n".join(
+            f"\\begin{{figure}}"
             f"\\includegraphics{{../figures/figure_{index}.pdf}}"
+            f"\\caption{{Caption {index}.}}"
+            f"\\end{{figure}}"
             for index in range(1, 8)
         )
         + "\n",
@@ -52,6 +71,7 @@ def fixture(tmp_path: Path) -> Path:
         "title page\n", encoding="utf-8"
     )
     (submission / "cover_letter_IJHMT.md").write_text("cover\n", encoding="utf-8")
+    (submission / "cover_letter_IJHMT.pdf").write_bytes(b"cover-letter-pdf")
     (submission / "highlights.txt").write_text("highlight\n", encoding="utf-8")
     (submission / "CRediT_author_statement.md").write_text(
         "credit\n", encoding="utf-8"
@@ -61,6 +81,9 @@ def fixture(tmp_path: Path) -> Path:
     )
     (submission / "acknowledgements.md").write_text(
         "funding\n", encoding="utf-8"
+    )
+    (submission / "declaration_of_generative_ai_use.md").write_text(
+        "AI-assisted preparation declaration\n", encoding="utf-8"
     )
 
     check_dir = results / "hccb_p418_ijhmt_submission_check"
@@ -98,8 +121,20 @@ def test_submission_bundle_contains_exact_main_figure_set(tmp_path: Path) -> Non
     assert len(list((output / "upload").glob("Figure_*.pdf"))) == 7
     assert (output / "upload/CRediT_author_statement.md").is_file()
     assert (output / "upload/Title_page.txt").is_file()
+    assert (output / "upload/Cover_letter.pdf").is_file()
+    assert (output / "upload/Cover_letter.md").is_file()
+    assert payload["cover_letter"]["pdf_sha256"] == digest(
+        output / "upload/Cover_letter.pdf"
+    )
     assert (output / "upload/Declaration_of_competing_interest.md").is_file()
     assert (output / "upload/Acknowledgements.md").is_file()
+    assert (output / "upload/Declaration_of_generative_AI_use.md").is_file()
+    assert payload["graphical_abstract_included"] is True
+    assert (output / "upload/Graphical_abstract.pdf").is_file()
+    assert (output / "upload/Graphical_abstract.png").is_file()
+    captions = (output / "upload/Figure_captions.tex").read_text(encoding="utf-8")
+    assert captions.count("Figure ") == 7
+    assert "Figure 7. Caption 7." in captions
     assert not any("supplement" in path.name for path in output.rglob("*"))
     with zipfile.ZipFile(output / "upload/p418_manuscript_source.zip") as archive:
         names = archive.namelist()

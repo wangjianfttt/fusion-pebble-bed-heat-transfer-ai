@@ -15,6 +15,9 @@ def test_finalizer_waits_for_models_and_both_final_figures() -> None:
     assert "complete_same_scale_openfoam_model_field_comparison" in text
     assert 'selection_data_role") != "validation"' in text
     assert 'display_data_role") != "test"' in text
+    assert "plot_hccb_p418_graphical_abstract.py" in text
+    assert "p418_ijhmt_graphical_abstract_ready" in text
+    assert "generative_ai_used_for_image" in text
 
 
 def test_finalizer_builds_and_checks_the_complete_manuscript() -> None:

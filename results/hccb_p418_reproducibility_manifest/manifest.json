@@ -4,15 +4,15 @@
   "project_root": ".",
   "source_package_ready": true,
   "final_outputs_ready": false,
-  "source_file_count": 734,
-  "source_bytes": 22651999,
+  "source_file_count": 775,
+  "source_bytes": 23365092,
   "missing_required_files": [],
   "files": [
     {
       "category": "project_entry",
       "path": "CITATION.cff",
-      "size_bytes": 1608,
-      "sha256": "a7ee179ce98a1665c6b009d7279ffbedc7f26e9c4a933b93e6e20a7bff645bd2",
+      "size_bytes": 1607,
+      "sha256": "ef6ccfb7552bd48790b94dc1e95dee006f98e14257240cd6b8b5bece041c5527",
       "required": true,
       "present": true
     },
@@ -35,8 +35,8 @@
     {
       "category": "project_entry",
       "path": "Makefile",
-      "size_bytes": 70358,
-      "sha256": "9cb15a31fd6b75689c72a2bf6b8667c77e44d87a36cb0c7592b2d991881ac031",
+      "size_bytes": 70460,
+      "sha256": "0489f7a6b3e437725494602100b48c0eb38497702b8f698203d25e3788215e47",
       "required": true,
       "present": true
     },
@@ -106,6 +106,14 @@
     },
     {
       "category": "programs",
+      "path": "code/apply_hccb_p418_repository_doi.py",
+      "size_bytes": 4114,
+      "sha256": "e22e8b31cf7bf44cc78428c98b87b414f10a4c48cd9b82a262c5faa3dca8b10b",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
       "path": "code/apply_hccb_p418_steady_end_time.py",
       "size_bytes": 5082,
       "sha256": "c7bd28dab82922f8538a036545128f814124d6a14b06a76a81c8495c9f9b681a",
@@ -125,6 +133,54 @@
       "path": "code/assess_hccb_p418_training_convergence.py",
       "size_bytes": 9736,
       "sha256": "b2b4c9c44042c7a3d1e7ecc117be8cf908b144af887b230369d690105225cbb3",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
+      "path": "code/build_hccb_dense_cht_p418_matrix.py",
+      "size_bytes": 15309,
+      "sha256": "6e4e8034f604d4f36021ed503a8353cb8f53694a490ecc3a1c76bfa49dd39112",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
+      "path": "code/build_hccb_dense_snappy_case.py",
+      "size_bytes": 27104,
+      "sha256": "827055c085d3c9da0b43901984c75fdec71c87b016f86169dd177f4a0d05948c",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
+      "path": "code/build_hccb_gmsh_cht_smoke_case.py",
+      "size_bytes": 28012,
+      "sha256": "c82b29b41b6240bf124631338c2c2d4824cd27927b2f618e6a0f550864d24ded",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
+      "path": "code/build_hccb_gmsh_flow_smoke_case.py",
+      "size_bytes": 10678,
+      "sha256": "961dcd6460fe612a58e122430d0b41ed829ed09139ea2b8f46bd338ee62fac51",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
+      "path": "code/build_hccb_li4sio4_transient_solid_thermo.py",
+      "size_bytes": 6684,
+      "sha256": "cc0e981bc937a9738f19d7da6c331a5593e34595abb240cdf0a79b02ef14eb3f",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
+      "path": "code/build_hccb_openfoam_helium_property_table.py",
+      "size_bytes": 12111,
+      "sha256": "c0a2f7cec5c36c10cd191441300731fd972446c31966d3a77a659f7592535bfc",
       "required": false,
       "present": true
     },
@@ -173,6 +229,14 @@
       "path": "code/build_hccb_p418_completed_smoke_splits.py",
       "size_bytes": 2749,
       "sha256": "3f395bf3c53b2a693c6f742a4757fa0788bf3f01955aeebd76b51e42b8642dea",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
+      "path": "code/build_hccb_p418_cover_letter_pdf.py",
+      "size_bytes": 4018,
+      "sha256": "8de455c1239e219dea3ed305d1419f9083698f2a0988e493d1ea4449c958bf54",
       "required": false,
       "present": true
     },
@@ -251,8 +315,8 @@
     {
       "category": "programs",
       "path": "code/build_hccb_p418_final_narrative.py",
-      "size_bytes": 44776,
-      "sha256": "769e3de9f7fb6ff609b367eebf2c742c1e39a1a8da7f00b647e13ffc6ffbe2a5",
+      "size_bytes": 42627,
+      "sha256": "8e37db1602a6b4084f35bb49687ee04cf3c194b133365893a31ac68c4b6e20cb",
       "required": false,
       "present": true
     },
@@ -379,8 +443,8 @@
     {
       "category": "programs",
       "path": "code/build_hccb_p418_mesh_sensitivity_table.py",
-      "size_bytes": 5428,
-      "sha256": "5d3eb2111ca0b0010a92faf62609b7a0f3aabf59574dd96f400749c10adcb71b",
+      "size_bytes": 5427,
+      "sha256": "cefbd9c33ac10d59d088418f441e6cff1c2f3a83471c7032320395770e72aebe",
       "required": false,
       "present": true
     },
@@ -483,8 +547,8 @@
     {
       "category": "programs",
       "path": "code/build_hccb_p418_public_data_release.py",
-      "size_bytes": 14705,
-      "sha256": "8d6b170853a480e5af3d3634eaa934650767f7ae0198f7a47f5f4caf4917bdea",
+      "size_bytes": 16500,
+      "sha256": "5f4f55c2582a2d20f85955fcff4dc1e1adff849712a55fd00bff51dfbb9668aa",
       "required": false,
       "present": true
     },
@@ -571,8 +635,8 @@
     {
       "category": "programs",
       "path": "code/build_hccb_p418_reproducibility_manifest.py",
-      "size_bytes": 15220,
-      "sha256": "02ceb54bd88c3e99e77c00c028882f93b72a3073d330588b5188bb4c48fb22c6",
+      "size_bytes": 17130,
+      "sha256": "df219fb4eee4a7e68194153ad81226c9f47a8aaa070ec9fc9ec494260bfd0b31",
       "required": false,
       "present": true
     },
@@ -659,8 +723,8 @@
     {
       "category": "programs",
       "path": "code/build_hccb_p418_steady_result_text.py",
-      "size_bytes": 8695,
-      "sha256": "dca98a0ece46229dbeaf1c72070cb0215af29ca3cd35794c965e6ab900a4fa06",
+      "size_bytes": 9117,
+      "sha256": "938834adc59b3434ae81f27395ee48c97f615551c1d68a20fd1986223ef6d2a4",
       "required": false,
       "present": true
     },
@@ -723,8 +787,8 @@
     {
       "category": "programs",
       "path": "code/build_hccb_p418_transient_result_text.py",
-      "size_bytes": 18114,
-      "sha256": "5b761def96187665f8a56bc55578dccf776c9aa8c1e664fa59917fef3e51ed28",
+      "size_bytes": 16896,
+      "sha256": "746806a888c8d70fddd00e19742f262a21c059c8222be107553fba2d72d8b2e4",
       "required": false,
       "present": true
     },
@@ -733,6 +797,22 @@
       "path": "code/build_hccb_p418_unbounded_output_diagnostic.py",
       "size_bytes": 5689,
       "sha256": "8b569a96d1508042cd78c51b2f5beb225088a17123c5bcb0b13a41ced9759499",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
+      "path": "code/build_hccb_pore_resolved_openfoam_mesh.py",
+      "size_bytes": 23419,
+      "sha256": "8653cd0e2092d53e37bf068c2c60b882d8615e14a4b0cf1b4110263bde3afc3f",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
+      "path": "code/build_hccb_pore_resolved_openfoam_steady_case.py",
+      "size_bytes": 20364,
+      "sha256": "b631652a0651770447b1b67c76f5af0afb420ad8c0b7d6492aa4f8efb7ea6c04",
       "required": false,
       "present": true
     },
@@ -795,8 +875,8 @@
     {
       "category": "programs",
       "path": "code/check_hccb_p418_ijhmt_submission.py",
-      "size_bytes": 36255,
-      "sha256": "c48f06139c511c820b57e676793c620795352b7c839a62f8bae856a4b629d765",
+      "size_bytes": 42432,
+      "sha256": "cb280283665ce9b713abea95e7bb39a54af023fb91f95905026cf0badc025f03",
       "required": true,
       "present": true
     },
@@ -853,6 +933,14 @@
       "path": "code/check_hccb_p418_steady_result_current.py",
       "size_bytes": 3885,
       "sha256": "4ac5bb4b5e41a2fd0d5a2ee3adb16041528e897d7dad276e7949021dbd2e3d60",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
+      "path": "code/check_hccb_source_sequence_lammps_packing.py",
+      "size_bytes": 14476,
+      "sha256": "0fc347adf550f5cee885dd0375523867fc50ffa0767ca3dccc648a5d0a2060f1",
       "required": false,
       "present": true
     },
@@ -978,6 +1066,14 @@
     },
     {
       "category": "programs",
+      "path": "code/compute_hccb_gmsh_boundary_heat_flows.py",
+      "size_bytes": 4777,
+      "sha256": "935a3493f8a5f630f0dc33905289341b8857b70f2e37607e094dec1c3992a25e",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
       "path": "code/configure_hccb_p418_transient_snapshots.py",
       "size_bytes": 5006,
       "sha256": "112bca00b9502d2d3851297c8f3b366a09ed483563a7ea0203bf266263a68397",
@@ -1098,6 +1194,14 @@
     },
     {
       "category": "programs",
+      "path": "code/export_hccb_cht_training_sample.py",
+      "size_bytes": 18554,
+      "sha256": "8cd02b1c62e087cf28e0f8cae72a3148494340fba0790f5e359f04e0c0bf3ca8",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
       "path": "code/export_hccb_p418_boundary_heat_flux_targets.py",
       "size_bytes": 10718,
       "sha256": "f2d021bf356ef2a57a8d4d6fa574b40e58b8290264ff29a7cfd20e874b6d1ec6",
@@ -1133,6 +1237,30 @@
       "path": "code/export_hccb_p418_transient_observables.py",
       "size_bytes": 13828,
       "sha256": "3bc57e96abaf0ccbe982fdcdf752d067826289f05bf9bc5dd24527d61ab6bf8e",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
+      "path": "code/export_openfoam_multiregion_boundary_conditions.py",
+      "size_bytes": 28319,
+      "sha256": "7095047b4d013137e6eddd2b64c817fbb57577ce955670f541e606ca480c0bc8",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
+      "path": "code/export_openfoam_multiregion_boundary_faces.py",
+      "size_bytes": 22535,
+      "sha256": "09bc9a348b3941e197ba29df89f549c98350ca968f6bb64a8a2cefc5d7bffca6",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
+      "path": "code/export_openfoam_multiregion_interface_pairs.py",
+      "size_bytes": 14703,
+      "sha256": "056a16e26b574b9bb4f61fdb4f905c98f824b497893b883971d224e056a0817a",
       "required": false,
       "present": true
     },
@@ -1189,6 +1317,22 @@
       "path": "code/handoff_hccb_p418_training_manifest.py",
       "size_bytes": 8178,
       "sha256": "bf98c4d3d76e866569d0853fa03ce1ab695df9151fdb73bf1dc974c83208f6ba",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
+      "path": "code/hccb_conservative_physics_residual.py",
+      "size_bytes": 9150,
+      "sha256": "47a6bdab1fe4a1f9769c850555da34bd5beba5e666b24afea529b52363186d94",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
+      "path": "code/hccb_multiregion_steady_cht_residual.py",
+      "size_bytes": 22690,
+      "sha256": "dd6b4429342480d4d12b666f5c57209a0fe307597951761b76cc83c9dfc4f8a2",
       "required": false,
       "present": true
     },
@@ -1354,6 +1498,22 @@
     },
     {
       "category": "programs",
+      "path": "code/hccb_source_backed_thermophysical.py",
+      "size_bytes": 10820,
+      "sha256": "384e63f30565627551bf3bbbdb1ef1cb835b2bf020b342da50969a7a47b27335",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
+      "path": "code/hccb_steady_momentum_residual.py",
+      "size_bytes": 18818,
+      "sha256": "ad8850e1060f73716eb828ce674207b092ce5860f0ceef4e9981d37b01c6d3bf",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
       "path": "code/ijhmt_figure_style.py",
       "size_bytes": 1520,
       "sha256": "d0b5f7a89ce21a5fec829873534dc514c09f47712d98d9e89d452d723c58b844",
@@ -1386,17 +1546,41 @@
     },
     {
       "category": "programs",
+      "path": "code/multiregion_finite_volume_balance.py",
+      "size_bytes": 6407,
+      "sha256": "705e2f36323a5482e5a4ef777534c4c49c06d5dceb63b6c3d8013ccbcf9cecc7",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
+      "path": "code/openfoam13_face_flux_reconstruction.py",
+      "size_bytes": 27895,
+      "sha256": "230cc374bbb502aea9bb39dc1ba13f82922810764befca35ec5a03ddb71f43b3",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
+      "path": "code/openfoam_ascii_field.py",
+      "size_bytes": 5191,
+      "sha256": "c08ad11f03f6d5f52d8835c219386e82dbb1c257b9c1e3a611ab5bccc0d1d1dc",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
       "path": "code/package_hccb_p418_ijhmt_submission.py",
-      "size_bytes": 14714,
-      "sha256": "f0b39f230e44fc5b069b57c97b3a32938f8cd628df15ff7d1e36377a5f5abe14",
+      "size_bytes": 19183,
+      "sha256": "cbe7501894024ce367a3d5804636433ece6b6b7e80d543f5d571b97064058af2",
       "required": false,
       "present": true
     },
     {
       "category": "programs",
       "path": "code/package_hccb_p418_processed_data_release.py",
-      "size_bytes": 6656,
-      "sha256": "69c4ae91a567d70969376713c2074975399ce21ad92467c6e1b90173409572e8",
+      "size_bytes": 4948,
+      "sha256": "4ba7e1388bd84d403722afb3800bb54af846ce2c5816477430044dfe580d7924",
       "required": false,
       "present": true
     },
@@ -1434,6 +1618,14 @@
     },
     {
       "category": "programs",
+      "path": "code/plot_hccb_p418_graphical_abstract.py",
+      "size_bytes": 5434,
+      "sha256": "b43062e8bac90dd8ca7503ebc2078d14c9fa506fce4b76a97feac15259575cd7",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
       "path": "code/plot_hccb_p418_learning_curve.py",
       "size_bytes": 4895,
       "sha256": "977cb688139db364a23c9652cf92f592a124e29d39f473f9c57055896f8b682e",
@@ -1459,8 +1651,8 @@
     {
       "category": "programs",
       "path": "code/plot_hccb_p418_physical_model_domain.py",
-      "size_bytes": 20693,
-      "sha256": "1346512a5784cfcb50039b73a7d6fe701c18316d02db6a3d00a5c15d2790edbb",
+      "size_bytes": 20683,
+      "sha256": "17549c3cab9942614f996749b471f57901448148dfb8da987b6cfb4173a32193",
       "required": false,
       "present": true
     },
@@ -1803,8 +1995,8 @@
     {
       "category": "programs",
       "path": "code/run_hccb_p418_manuscript_refresh.sh",
-      "size_bytes": 16018,
-      "sha256": "eb5cb0607f28ec5a606629cc1e66bbc5fad8ada519f1a3babee7ab7dfdeaadf3",
+      "size_bytes": 16787,
+      "sha256": "2b97a5599f290780ba17d5efd55f3cb1dc219819d4eb1b2390dd6b8bc406a69d",
       "required": true,
       "present": true
     },
@@ -1850,9 +2042,17 @@
     },
     {
       "category": "programs",
+      "path": "code/run_hccb_p418_post_manifest_graphical_abstract.sh",
+      "size_bytes": 2004,
+      "sha256": "42d4ec82679937359a8521b275ad5e2088d73946787aabee93025a7388c232e4",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
       "path": "code/run_hccb_p418_post_manifest_manuscript_finalization.sh",
-      "size_bytes": 5170,
-      "sha256": "6961d527b4220ba3d42d04fab8d779902f6d2010d5403b79462352a448057954",
+      "size_bytes": 5832,
+      "sha256": "608b148999486b9314b1776d1192f04b2748c0c66a13752547725bd2468c9e46",
       "required": true,
       "present": true
     },
@@ -1986,6 +2186,14 @@
     },
     {
       "category": "programs",
+      "path": "code/run_hccb_p418_transolver_seed_robustness_v2.sh",
+      "size_bytes": 4037,
+      "sha256": "66388b82bba697e622d583a68a8135554e36620ee66bcc98a31b30d4475ba243",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
       "path": "code/select_hccb_p418_cross_packing_architecture.py",
       "size_bytes": 7782,
       "sha256": "0974f94f25abe64b9bc9b4080b2f3731fde4b1ef60d3f70410030be4c4769a98",
@@ -2037,6 +2245,14 @@
       "path": "code/smoke_hccb_p418_actual_temporal_diffusion_gpu.py",
       "size_bytes": 7789,
       "sha256": "6dc1b493ef3351ddc28f2ba75917c34e50521ac84c62a4437fc6b7b37f90644a",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "programs",
+      "path": "code/sparse_temperature_observation_operator.py",
+      "size_bytes": 6876,
+      "sha256": "3d5b156df7c34bd3d695ffb6d3198c254ebcf028e9c4ffe15ff0b8ce504f3728",
       "required": false,
       "present": true
     },
@@ -2219,8 +2435,8 @@
     {
       "category": "programs",
       "path": "code/summarize_hccb_p418_steady_seed_robustness.py",
-      "size_bytes": 11817,
-      "sha256": "5373acdb8efc3e07e9ff724f8f05146487b1c151e9582ff8fecea13f58a7de03",
+      "size_bytes": 14150,
+      "sha256": "c7ea55e8e3913654c9d6413544e593e815033ca4d0f96f2374a6076a483cad68",
       "required": false,
       "present": true
     },
@@ -2531,8 +2747,8 @@
     {
       "category": "programs",
       "path": "code/verify_hccb_p418_ijhmt_submission_bundle.py",
-      "size_bytes": 9490,
-      "sha256": "d9ac4e8e9a98b4b01d76228b719abbe03367d9c9cb15d32e06b13added5226a1",
+      "size_bytes": 10193,
+      "sha256": "079e6c9ff72d728c0cbaf234553264958b457997fb742c040304963fedde927e",
       "required": false,
       "present": true
     },
@@ -2715,8 +2931,8 @@
     {
       "category": "manuscript",
       "path": "manuscript/P418_论文中文便读版.md",
-      "size_bytes": 11506,
-      "sha256": "5fe4964ac5ebb661dbe028e45413856455507de1a64cdf4a3ad1e8ac17570744",
+      "size_bytes": 12442,
+      "sha256": "a47d9c95457c48a6ce7cd183ae1ff98ee3507ec1958a8552581a6f6c7f05d63f",
       "required": true,
       "present": true
     },
@@ -2739,8 +2955,8 @@
     {
       "category": "manuscript",
       "path": "manuscript/main.tex",
-      "size_bytes": 13299,
-      "sha256": "bbe88ac79fb6de06863abe8ee559280cf450840cb8d93f5d080132f724a2183a",
+      "size_bytes": 14405,
+      "sha256": "c08a26757396d0f54b6db3cdbd49cea0adc96b01e25bf01680941b055bd899e2",
       "required": true,
       "present": true
     },
@@ -2748,7 +2964,7 @@
       "category": "manuscript",
       "path": "manuscript/methods_condensed.tex",
       "size_bytes": 10769,
-      "sha256": "979902eb549cc53d1e4c8ca324a9302af55369e7d620e98239a6a93e3a6d2c13",
+      "sha256": "886c4664dafeeb3d6cc5905f0bd29bab721e8cd8694afda38f3b6eab3a4a7937",
       "required": true,
       "present": true
     },
@@ -2771,8 +2987,8 @@
     {
       "category": "manuscript",
       "path": "manuscript/results_condensed.tex",
-      "size_bytes": 9388,
-      "sha256": "2ec99daaa25785923010285ab7eb119b86974d2f69c217fd0ae912bdbf2bfb90",
+      "size_bytes": 8997,
+      "sha256": "e925d3ec176f3006f5fc746044438cba78ff0667428adba2c4f2548b9aa1b759",
       "required": true,
       "present": true
     },
@@ -3201,18 +3417,26 @@
       "present": true
     },
     {
+      "category": "physical_and_model_inputs",
+      "path": "parameters/literature_parameter_manifest.csv",
+      "size_bytes": 216246,
+      "sha256": "571ac63a5626d887d82cb27ee962d735ea0c9bfbd41f4c3340fb44dd8dee1a11",
+      "required": true,
+      "present": true
+    },
+    {
       "category": "reproducibility",
       "path": "reproducibility/README.md",
-      "size_bytes": 8151,
-      "sha256": "9d5196ade7fa81f01cab4048f070c0ca110ba927fbcff7071f55be9808967f88",
+      "size_bytes": 8734,
+      "sha256": "c61c51c04bfb2819500074b1acfdb0c0971e1ee30cdfce03216f6efd4e02b2db",
       "required": true,
       "present": true
     },
     {
       "category": "reproducibility",
       "path": "reproducibility/README_CN.md",
-      "size_bytes": 5199,
-      "sha256": "169d8b3e17bdec29a72de996ed5acf059bc3f3aff06ff4bdb3e1030fa0a0c856",
+      "size_bytes": 5688,
+      "sha256": "174e7cae4a2cd91bc611e23f670159f005c8d31bb05296594dcb1799b6199b11",
       "required": true,
       "present": true
     },
@@ -3227,16 +3451,16 @@
     {
       "category": "reproducibility",
       "path": "reproducibility/repository_release_metadata_draft.json",
-      "size_bytes": 2030,
-      "sha256": "1cc09b9fdbd3432a540fa2289554ad12ba20496169760f0daf1952343b913c49",
+      "size_bytes": 2029,
+      "sha256": "ec4751481af7625cbd26736aee76e81d5f9af14cea0f0b08ea2c9fc762d1c238",
       "required": true,
       "present": true
     },
     {
       "category": "reproducibility",
       "path": "requirements-p418.txt",
-      "size_bytes": 361,
-      "sha256": "59a7cd3a3e3392c47f206e50c76a8289bab01bb5a64d072d1804bbc225a60dbc",
+      "size_bytes": 375,
+      "sha256": "63eae65d6dfafeab8a6847befa7a15a7c39f14bc5f48a71ce6eaef163a098cd6",
       "required": true,
       "present": true
     },
@@ -3245,6 +3469,38 @@
       "path": "results/hccb_p418_60_sourceflow_r3_model_geometry/model_geometry.npz",
       "size_bytes": 2862685,
       "sha256": "daa60a0c3e5bdf0f33e2895cba0e842fcce4f9cbb9d6c48dc217d3afa32bb07e",
+      "required": true,
+      "present": true
+    },
+    {
+      "category": "small_processed_results",
+      "path": "results/hccb_p418_60_steady_seed_robustness_100epoch/README_CN.md",
+      "size_bytes": 1754,
+      "sha256": "caa7488462bc7751bc25e2e170e627055882d85e538d01bb44fe23855c9f69fa",
+      "required": true,
+      "present": true
+    },
+    {
+      "category": "small_processed_results",
+      "path": "results/hccb_p418_60_steady_seed_robustness_100epoch/steady_seed_metrics.csv",
+      "size_bytes": 2707,
+      "sha256": "01f162515d5ab2647bde52128c3d10b53857b44b8c60ee3531679f80a1bb9a33",
+      "required": true,
+      "present": true
+    },
+    {
+      "category": "small_processed_results",
+      "path": "results/hccb_p418_60_steady_seed_robustness_100epoch/steady_seed_summary.csv",
+      "size_bytes": 3025,
+      "sha256": "41a6d9a12d36a05b7f665295069b349961de96f1213bf66258e204304c404e1d",
+      "required": true,
+      "present": true
+    },
+    {
+      "category": "small_processed_results",
+      "path": "results/hccb_p418_60_steady_seed_robustness_100epoch/summary.json",
+      "size_bytes": 9352,
+      "sha256": "3963430f3f58bfb1dbfb02ea01f375b3c1a26c62b1c88a280c464b12b425bb50",
       "required": true,
       "present": true
     },
@@ -3267,24 +3523,24 @@
     {
       "category": "small_processed_results",
       "path": "results/hccb_p418_public_data_release_preflight/README.md",
-      "size_bytes": 2854,
-      "sha256": "8cfbaf591be9129b13f841e8dfb82090141547a6f4527bc2b1c785146acc8d46",
+      "size_bytes": 2855,
+      "sha256": "c7820d62267bf66be67037af03a4cb25d9a842078484ae583344c4d4992505ee",
       "required": true,
       "present": true
     },
     {
       "category": "small_processed_results",
       "path": "results/hccb_p418_public_data_release_preflight/formal_training_manifest_public.json",
-      "size_bytes": 112321,
-      "sha256": "461d716ddfd8800e6be35dea44cc7164dc6d549af01ce7da32be9921fab1f7dc",
+      "size_bytes": 107461,
+      "sha256": "cb615743c1fe07209d303405d4491d1950722745651b09397ba67774809302e8",
       "required": true,
       "present": true
     },
     {
       "category": "small_processed_results",
       "path": "results/hccb_p418_public_data_release_preflight/summary.json",
-      "size_bytes": 5255,
-      "sha256": "f42d50691f784a10e22b9c2840f5a2cff8cfa6688299c6b017c36512f1c53951",
+      "size_bytes": 5575,
+      "sha256": "bf2fe7d2fc7d107c936890d863b8913128764b5ab4b34c208e006b2abe441823",
       "required": true,
       "present": true
     },
@@ -3386,6 +3642,14 @@
     },
     {
       "category": "programs",
+      "path": "scripts/test_p418_public_package.sh",
+      "size_bytes": 1122,
+      "sha256": "58fbf1a05c58ca8ac1078361f649b2e60c9146a6dfce114633364dac1d88df62",
+      "required": true,
+      "present": true
+    },
+    {
+      "category": "programs",
       "path": "solver_extensions/hccbHeliumTransport/Make/files",
       "size_bytes": 70,
       "sha256": "8ec896effe1db076c35d3c1bf4d5999abaf0f66bfe6d4249ec23a29710604bed",
@@ -3482,26 +3746,42 @@
     },
     {
       "category": "project_entry",
+      "path": "submission/IJHMT_UPLOAD_ORDER_CN.md",
+      "size_bytes": 902,
+      "sha256": "79f02c983d395e4728b73c7a651b567647bc216e319f806c78afb6fe726ab3b2",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "project_entry",
       "path": "submission/README_CN.md",
-      "size_bytes": 1051,
-      "sha256": "5e716487602d8cdc6e2282d70c23c75cbd379ae655e58de6e67de61e7e8ee9a7",
+      "size_bytes": 2152,
+      "sha256": "0538f8830c859670a88ce43f6bbdab1a175473bed2ccd8c6d53dd3cd6bc6c635",
       "required": false,
       "present": true
     },
     {
       "category": "project_entry",
       "path": "submission/acknowledgements.md",
-      "size_bytes": 415,
-      "sha256": "f89b9ab40b35817d5c3810dfdbd96d20ebb85bfd01ef4c1776a8cb8bcb92acd6",
+      "size_bytes": 423,
+      "sha256": "00057a38a7221049dfe09425e42155910837235e77f4ee67df2356d4238fe0bf",
       "required": false,
       "present": true
     },
     {
       "category": "project_entry",
       "path": "submission/cover_letter_IJHMT.md",
-      "size_bytes": 2695,
-      "sha256": "34d3ff5a800483f29a249d717cf2b4fa896bf8fe33e1a99aacf7a433d66c67c1",
+      "size_bytes": 2844,
+      "sha256": "e750b3cd6c3e5a39ef400d755a6a021fdc530e7488cf5710072390d57ad5fd0c",
       "required": true,
+      "present": true
+    },
+    {
+      "category": "project_entry",
+      "path": "submission/cover_letter_IJHMT.pdf",
+      "size_bytes": 72396,
+      "sha256": "d25b255bfc9b5279da284cbd0eaa365bb8cb17d797f3b23d161e6880b20692fd",
+      "required": false,
       "present": true
     },
     {
@@ -3533,6 +3813,14 @@
       "path": "submission/declaration_of_competing_interest.md",
       "size_bytes": 208,
       "sha256": "131a6f688d8db9e5398fe7300300ee66ebf7b89863bc0791b9fefebad586d7db",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "project_entry",
+      "path": "submission/declaration_of_generative_ai_use.md",
+      "size_bytes": 513,
+      "sha256": "b467fd293ddbb8a7b33507852d50b7a1f124172baf9ef69e973a4eeaf9f8f13b",
       "required": false,
       "present": true
     },
@@ -3602,6 +3890,14 @@
     },
     {
       "category": "tests",
+      "path": "tests/test_apply_hccb_p418_repository_doi.py",
+      "size_bytes": 2777,
+      "sha256": "7e205d838249e7b9a22b1bcf6881b4826310baa4dcf77a687dc9edfa8483d554",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "tests",
       "path": "tests/test_assemble_hccb_p418_corrected_steady_results.py",
       "size_bytes": 2883,
       "sha256": "97b8b5e179188a29dff0953343614f8d059b69a149cee605f64cb753e6d7b53b",
@@ -3666,6 +3962,14 @@
     },
     {
       "category": "tests",
+      "path": "tests/test_build_hccb_p418_cover_letter_pdf.py",
+      "size_bytes": 948,
+      "sha256": "a0946a5dd11fa7dd60450d5a74e8d3f0ebba987a0098cacaeecf67b2736918a8",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "tests",
       "path": "tests/test_build_hccb_p418_cross_packing_model_sources.py",
       "size_bytes": 4531,
       "sha256": "0bfe493b36b00c9747c619b75e3d6f1fd7ab9268283d38f5ae24f8eccadc5ee3",
@@ -3723,8 +4027,8 @@
     {
       "category": "tests",
       "path": "tests/test_build_hccb_p418_final_narrative.py",
-      "size_bytes": 25433,
-      "sha256": "6b569f5f47e1f6a0f2c43bd129f1dc5f283e91207afec10db326cb161e3bf322",
+      "size_bytes": 25832,
+      "sha256": "2214fb4f41f5ace4fd5b9d7057d4e2967ebdc107d83dc2cb4b803a400eee68bd",
       "required": false,
       "present": true
     },
@@ -3875,8 +4179,8 @@
     {
       "category": "tests",
       "path": "tests/test_build_hccb_p418_public_data_release.py",
-      "size_bytes": 3291,
-      "sha256": "2e9d065396a692a608f837952d08d20715e8a1af7c0a42112765903738f36227",
+      "size_bytes": 4775,
+      "sha256": "40e19c6d756c744ee0fa2e5aad7d7d83c2dec3a3bdb3abd0849b3ad541a84627",
       "required": false,
       "present": true
     },
@@ -3931,8 +4235,8 @@
     {
       "category": "tests",
       "path": "tests/test_build_hccb_p418_reproducibility_manifest.py",
-      "size_bytes": 8153,
-      "sha256": "d3ee04f397ef1ba6ef36489477b9a3fbd7066b844cc03ea9f04a67a506d733e4",
+      "size_bytes": 9045,
+      "sha256": "8264a92e06320f6ebbd780b2d52603c77cbfdcc34795b799eab0da43f69ea36c",
       "required": false,
       "present": true
     },
@@ -4027,8 +4331,8 @@
     {
       "category": "tests",
       "path": "tests/test_build_hccb_p418_transient_result_text.py",
-      "size_bytes": 11943,
-      "sha256": "76194bf8e53e1fe744da9a44c7fca9411f6526d126c9b0893b12ea588d7fde0b",
+      "size_bytes": 12066,
+      "sha256": "f90aad2af9d758a1ac9e5f70d4683ce1f9db003d361ea0e41f662d6300bdf4bf",
       "required": false,
       "present": true
     },
@@ -4083,8 +4387,8 @@
     {
       "category": "tests",
       "path": "tests/test_check_hccb_p418_ijhmt_submission.py",
-      "size_bytes": 7908,
-      "sha256": "520bceff870fb06ccdc0699373f2266fbd91726ba92606e00bff69a2851d2088",
+      "size_bytes": 9882,
+      "sha256": "56856b67b7937f7368f39c32d5aba59684a73636e89b319e317fde2ae49bcb2e",
       "required": false,
       "present": true
     },
@@ -4707,16 +5011,16 @@
     {
       "category": "tests",
       "path": "tests/test_hccb_p418_manuscript_refresh.py",
-      "size_bytes": 8270,
-      "sha256": "8707122ff20e7a18752fc84ae82158546d32389bf3ab0f0d02e15e5f54c9326c",
+      "size_bytes": 8713,
+      "sha256": "0b6ec18d43cad182956a2b7db27f7c87ef9291e800b40b3981ba226bd63fd825",
       "required": false,
       "present": true
     },
     {
       "category": "tests",
       "path": "tests/test_hccb_p418_manuscript_scientific_scope.py",
-      "size_bytes": 4467,
-      "sha256": "20133a9a4fa8b80e00071b8f840e71f3168c870616f1e2d5ede0c413285ec9c5",
+      "size_bytes": 4465,
+      "sha256": "72abac53699136562afe9976b048f53042fe7cb59180ddac2d3550c637a30f56",
       "required": false,
       "present": true
     },
@@ -4867,8 +5171,8 @@
     {
       "category": "tests",
       "path": "tests/test_hccb_p418_post_manifest_manuscript_finalization.py",
-      "size_bytes": 1569,
-      "sha256": "e3924ae1aef5bd9a20bbe72f2f886c62f1f527cc27aa58989d128daf557b6692",
+      "size_bytes": 1734,
+      "sha256": "85e69640fca57e5665bd34cd0af21408970c76e95bf3d268140446c90e3f9320",
       "required": false,
       "present": true
     },
@@ -5075,8 +5379,8 @@
     {
       "category": "tests",
       "path": "tests/test_hccb_p418_steady_seed_robustness.py",
-      "size_bytes": 4957,
-      "sha256": "80329876402abfb9d3d9f55f803851e69118c4ef03c97894aee6f1231b44b549",
+      "size_bytes": 5427,
+      "sha256": "1f541b0ff0196b3ff6a96db2e6c8856867498c9b14e1bea9c67a0abbfe6c4b93",
       "required": false,
       "present": true
     },
@@ -5227,16 +5531,16 @@
     {
       "category": "tests",
       "path": "tests/test_package_hccb_p418_ijhmt_submission.py",
-      "size_bytes": 6587,
-      "sha256": "4c9d0d04780d7886e307be7dc1fa843912a28ed357117c7deae12cc6d5d270b8",
+      "size_bytes": 8166,
+      "sha256": "515d3578926beb800d10f1dcfc41a22b1fdf1cc9e3c66d9dc33c629512801faf",
       "required": false,
       "present": true
     },
     {
       "category": "tests",
       "path": "tests/test_package_hccb_p418_processed_data_release.py",
-      "size_bytes": 2523,
-      "sha256": "1b60fc01644bc757609d7f42a903142d2992f999d178f471bd95f8629b3c5d71",
+      "size_bytes": 3760,
+      "sha256": "b3775aaa8c318d2a0ee912238a715fa1a8fe685c7be39daea26d9b7d09eaa1b3",
       "required": false,
       "present": true
     },
@@ -5269,6 +5573,14 @@
       "path": "tests/test_plot_hccb_p418_field_cloud_comparison.py",
       "size_bytes": 9591,
       "sha256": "cfe91c0d6ea3b72bc2e7a3170e61673a95611919e1bfe2901b676c895d2960c8",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "tests",
+      "path": "tests/test_plot_hccb_p418_graphical_abstract.py",
+      "size_bytes": 1811,
+      "sha256": "dd75a08c70088978414ef8157d405d08d8bdbc26508c0bee4245ed8001e341e9",
       "required": false,
       "present": true
     },
@@ -5442,6 +5754,14 @@
     },
     {
       "category": "tests",
+      "path": "tests/test_run_hccb_p418_post_manifest_graphical_abstract.py",
+      "size_bytes": 716,
+      "sha256": "d3b7309dc002d02b2ae8952f4b5cb9f1fcab7b6644dcbb02e42c799d709f2842",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "tests",
       "path": "tests/test_run_hccb_p418_post_manifest_transient_figure.py",
       "size_bytes": 1132,
       "sha256": "348b38d630c43ca1ffb166defe5af01b9130ba4c857e476bcd6aa96682ee0109",
@@ -5469,6 +5789,14 @@
       "path": "tests/test_run_hccb_p418_steady_learning_curve.py",
       "size_bytes": 772,
       "sha256": "ff55fe4b154f9c94e5ce3f319ba2e2ac729c4a61e0c6dd02218da0af2e470a58",
+      "required": false,
+      "present": true
+    },
+    {
+      "category": "tests",
+      "path": "tests/test_run_hccb_p418_transolver_seed_robustness_v2.py",
+      "size_bytes": 1112,
+      "sha256": "b61f4f5c603240a01d1a17758ea4e45fccb4da61ba3a84d6b2a130304d404784",
       "required": false,
       "present": true
     },
@@ -5787,8 +6115,8 @@
     {
       "category": "tests",
       "path": "tests/test_verify_hccb_p418_ijhmt_submission_bundle.py",
-      "size_bytes": 1196,
-      "sha256": "0f5326628931cf14ff3ef8d14abdb9c0a60d43b1d166826d8ca203451721010c",
+      "size_bytes": 1935,
+      "sha256": "3eb398f74b05f85b3e3f777df88df142b5fd84a95bdf4d6cbb3b1cd6da3c7b3a",
       "required": false,
       "present": true
     },
@@ -5890,7 +6218,7 @@
     },
     {
       "path": "manuscript/supplement.pdf",
-      "present": false,
+      "present": true,
       "required_status": null,
       "actual_status": null
     },
@@ -5944,6 +6272,12 @@
     },
     {
       "path": "manuscript/generated_steady_model_comparison_validated.tex",
+      "present": true,
+      "required_status": null,
+      "actual_status": null
+    },
+    {
+      "path": "manuscript/generated_steady_seed_robustness_text.tex",
       "present": true,
       "required_status": null,
       "actual_status": null

@@ -94,6 +94,6 @@ def test_domain_figure_uses_seed101_packing_and_local_crop() -> None:
     assert "2039-pebble seed101 parent packing" in manuscript
     assert "The resolved 125-pebble crop" in manuscript
     assert "1799-pebble" not in manuscript
-    assert '"diffusion refiner\\n3 $T$-residual steps"' in script
+    assert '"diffusion corrector\\n3 residual steps"' in script
     assert '"diffusion_temperature_refinement_steps": 3' in script
     assert "the optional diffusion module refines only its temperature residual" in manuscript

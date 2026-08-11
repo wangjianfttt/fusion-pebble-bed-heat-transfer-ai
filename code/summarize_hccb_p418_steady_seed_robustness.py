@@ -249,12 +249,15 @@ def main() -> int:
                 raise ValueError(f"{source} lacks the common data fingerprint")
             fingerprints.add(fingerprint)
             values = extract_metrics(summary)
+            portable_source = (
+                Path(args.results_root.name) / source.relative_to(args.results_root)
+            ).as_posix()
             rows.append(
                 {
                     "architecture": architecture,
                     "seed": seed,
                     **values,
-                    "source_summary": str(source.resolve()),
+                    "source_summary": portable_source,
                 }
             )
     if len(fingerprints) != 1:
