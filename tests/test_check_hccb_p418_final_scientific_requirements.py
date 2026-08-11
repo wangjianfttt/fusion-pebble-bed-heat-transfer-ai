@@ -15,7 +15,9 @@ from check_hccb_p418_final_scientific_requirements import (  # noqa: E402
     summarize_remaining_dependencies,
     steady_extrapolation_evidence,
     steady_physics_evidence,
+    steady_seed_robustness_complete,
     three_mesh_sensitivity_evidence,
+    transient_seed_robustness_complete,
 )
 
 
@@ -222,3 +224,74 @@ def test_three_mesh_requires_formal_summary_and_source_tables(tmp_path: Path) ->
     write_json(summary, payload)
     complete, _ = three_mesh_sensitivity_evidence(tmp_path)
     assert complete is False
+
+
+def test_seed_results_require_complete_registered_content(tmp_path: Path) -> None:
+    split = {
+        role: [f"{role}_case_{index}" for index in range(2)]
+        for role in ("train", "validation", "test")
+    }
+    steady_path = tmp_path / "steady.json"
+    steady_architectures = ["pinn_data_only", "pinn", "graph", "transolver"]
+    steady_metrics = [
+        {
+            "architecture": architecture,
+            "metric": f"metric_{index}",
+            "seed_count": 3,
+            "mean": 1.0,
+            "sample_std": 0.1,
+        }
+        for architecture in steady_architectures
+        for index in range(5)
+    ]
+    write_json(
+        steady_path,
+        {
+            "status": "completed_p418_main_steady_split_seed_robustness",
+            "seeds": [20260717, 20260718, 20260719],
+            "architectures": steady_architectures,
+            "split_case_ids": split,
+            "common_comparison_fingerprint": "same-fields-and-split",
+            "metrics": steady_metrics,
+            "new_physical_parameters": [],
+        },
+    )
+    assert steady_seed_robustness_complete(steady_path)
+    payload = json.loads(steady_path.read_text(encoding="utf-8"))
+    payload["metrics"] = payload["metrics"][:-1]
+    write_json(steady_path, payload)
+    assert not steady_seed_robustness_complete(steady_path)
+
+    transient_path = tmp_path / "transient.json"
+    models = [
+        "observable_transformer",
+        "graph_transformer_data_only",
+        "graph_transformer_energy_flux",
+        "low_rank_residual_correction",
+        "diffusion_residual_correction",
+    ]
+    write_json(
+        transient_path,
+        {
+            "status": "completed_p418_strict_split_seed_robustness",
+            "split_name": "pair_disjoint_stress_test",
+            "seeds": [20260717, 20260718, 20260719],
+            "models": models,
+            "complete_curve_split_ids": split,
+            "metrics": [
+                {
+                    "model": model,
+                    "seed_count": 3,
+                    "mean_K": 2.0,
+                    "sample_std_K": 0.2,
+                }
+                for model in models
+            ],
+            "new_physical_parameters": [],
+        },
+    )
+    assert transient_seed_robustness_complete(transient_path)
+    payload = json.loads(transient_path.read_text(encoding="utf-8"))
+    payload["complete_curve_split_ids"]["test"].append("test_case_0")
+    write_json(transient_path, payload)
+    assert not transient_seed_robustness_complete(transient_path)

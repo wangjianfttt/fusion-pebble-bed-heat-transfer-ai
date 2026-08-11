@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 from pathlib import Path
 
 from hccb_p418_selected_fixed_flow_chain import (
@@ -63,6 +64,86 @@ def json_payload(path: Path) -> dict | None:
     except (json.JSONDecodeError, OSError):
         return None
     return payload if isinstance(payload, dict) else None
+
+
+def _valid_seed_split(payload: dict, key: str) -> bool:
+    split = payload.get(key)
+    if not isinstance(split, dict):
+        return False
+    for role in ("train", "validation", "test"):
+        identifiers = split.get(role)
+        if (
+            not isinstance(identifiers, list)
+            or not identifiers
+            or len(identifiers) != len(set(str(value) for value in identifiers))
+        ):
+            return False
+    return True
+
+
+def steady_seed_robustness_complete(path: Path) -> bool:
+    payload = json_payload(path)
+    expected_architectures = {"pinn_data_only", "pinn", "graph", "transolver"}
+    seeds = payload.get("seeds") if payload is not None else None
+    metrics = payload.get("metrics") if payload is not None else None
+    if not (
+        payload is not None
+        and payload.get("status")
+        == "completed_p418_main_steady_split_seed_robustness"
+        and isinstance(seeds, list)
+        and len(seeds) == 3
+        and len(set(seeds)) == 3
+        and set(payload.get("architectures", [])) == expected_architectures
+        and isinstance(metrics, list)
+        and len(metrics) == 20
+        and payload.get("new_physical_parameters") == []
+        and bool(payload.get("common_comparison_fingerprint"))
+        and _valid_seed_split(payload, "split_case_ids")
+    ):
+        return False
+    return all(
+        row.get("architecture") in expected_architectures
+        and int(row.get("seed_count", -1)) == 3
+        and math.isfinite(float(row.get("mean", math.nan)))
+        and math.isfinite(float(row.get("sample_std", math.nan)))
+        and float(row.get("sample_std", -1.0)) >= 0.0
+        for row in metrics
+    )
+
+
+def transient_seed_robustness_complete(path: Path) -> bool:
+    payload = json_payload(path)
+    expected_models = {
+        "observable_transformer",
+        "graph_transformer_data_only",
+        "graph_transformer_energy_flux",
+        "low_rank_residual_correction",
+        "diffusion_residual_correction",
+    }
+    seeds = payload.get("seeds") if payload is not None else None
+    metrics = payload.get("metrics") if payload is not None else None
+    if not (
+        payload is not None
+        and payload.get("status") == "completed_p418_strict_split_seed_robustness"
+        and payload.get("split_name") == "pair_disjoint_stress_test"
+        and isinstance(seeds, list)
+        and len(seeds) >= 3
+        and len(set(seeds)) == len(seeds)
+        and set(payload.get("models", [])) == expected_models
+        and isinstance(metrics, list)
+        and len(metrics) == len(expected_models)
+        and payload.get("new_physical_parameters") == []
+        and _valid_seed_split(payload, "complete_curve_split_ids")
+    ):
+        return False
+    return all(
+        row.get("model") in expected_models
+        and int(row.get("seed_count", -1)) == len(seeds)
+        and math.isfinite(float(row.get("mean_K", math.nan)))
+        and math.isfinite(float(row.get("sample_std_K", math.nan)))
+        and float(row.get("sample_std_K", -1.0)) >= 0.0
+        for row in metrics
+    )
 
 
 def corrected_steady_comparison_complete(root: Path) -> bool:
@@ -694,7 +775,19 @@ def build_requirements(root: Path) -> list[dict]:
             },
         ]
     )
-    result_completion_overrides = {transient_summary: transient_comparison_complete}
+    steady_seed_summary = (
+        results / "hccb_p418_60_steady_seed_robustness_100epoch/summary.json"
+    )
+    transient_seed_summary = (
+        transient_root / "seed_robustness_pair_disjoint_stress_test/summary.json"
+    )
+    result_completion_overrides = {
+        transient_summary: transient_comparison_complete,
+        steady_seed_summary: steady_seed_robustness_complete(steady_seed_summary),
+        transient_seed_summary: transient_seed_robustness_complete(
+            transient_seed_summary
+        ),
+    }
     for group, name, path in result_files:
         requirements.append(
             {
