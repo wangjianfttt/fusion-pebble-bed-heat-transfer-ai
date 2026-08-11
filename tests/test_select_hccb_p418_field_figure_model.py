@@ -227,3 +227,30 @@ def test_rejects_incomplete_comparison(tmp_path: Path) -> None:
     )
     assert completed.returncode != 0
     assert "not complete" in completed.stderr
+
+
+def test_rejects_missing_validation_selected_loss_chain(tmp_path: Path) -> None:
+    result, summary, metrics = prepare(tmp_path, "graph_transformer_data_only")
+    (
+        result
+        / "fixed_flow_loss_balancing_pair_disjoint_stress_test"
+        / "selected_downstream_integration.json"
+    ).unlink()
+    completed = subprocess.run(
+        [
+            sys.executable,
+            str(SCRIPT),
+            "--result-dir",
+            str(result),
+            "--comparison-summary",
+            str(summary),
+            "--metrics-csv",
+            str(metrics),
+            "--output",
+            str(tmp_path / "selection.json"),
+        ],
+        text=True,
+        capture_output=True,
+    )
+    assert completed.returncode != 0
+    assert "cannot fall back to registered preselection" in completed.stderr

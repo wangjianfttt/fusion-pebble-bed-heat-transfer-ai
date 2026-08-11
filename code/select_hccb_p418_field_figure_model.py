@@ -118,13 +118,14 @@ def select_model(
     selected_model = min(MODEL_SPECS, key=lambda name: (values[name], name))
     spec = MODEL_SPECS[selected_model]
     integration_path = selected_chain_record_path(result_dir)
-    selected_loss_ready = split_name != STRICT_SPLIT or integration_path.is_file()
+    if split_name == STRICT_SPLIT and not integration_path.is_file():
+        raise ValueError(
+            "validation-selected loss-balancing chain is incomplete; field-model "
+            "selection cannot fall back to registered preselection"
+        )
     selected_directories = selected_model_directories(
         result_dir,
         split_name,
-        allow_registered_preselection=(
-            split_name == STRICT_SPLIT and not selected_loss_ready
-        ),
     )
     model_dir = selected_directories.get(
         selected_model,
@@ -173,12 +174,10 @@ def select_model(
         "metrics_csv_sha256": sha256(metrics_csv),
         "new_physical_parameters": [],
         "strict_split_loss_balancing_stage": (
-            "validation_selected"
-            if selected_loss_ready
-            else "registered_preselection"
+            "validation_selected" if split_name == STRICT_SPLIT else "not_applicable"
         ),
     }
-    if split_name == SELECTED_STRICT_SPLIT and selected_loss_ready:
+    if split_name == SELECTED_STRICT_SPLIT:
         result.update(
             {
                 "selected_loss_balancing_integration_record": str(integration_path),

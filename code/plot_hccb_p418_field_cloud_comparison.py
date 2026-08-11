@@ -38,6 +38,22 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def verify_selected_file(record: dict, path_key: str, sha_key: str) -> Path:
+    """Resolve one selection-record file and prove it has not changed."""
+    raw_path = record.get(path_key)
+    expected_sha = record.get(sha_key)
+    if not isinstance(raw_path, str) or not raw_path:
+        raise ValueError(f"field-model selection is missing {path_key}")
+    if not isinstance(expected_sha, str) or len(expected_sha) != 64:
+        raise ValueError(f"field-model selection is missing {sha_key}")
+    path = Path(raw_path).resolve()
+    if not path.is_file():
+        raise FileNotFoundError(path)
+    if sha256(path) != expected_sha:
+        raise ValueError(f"selected field-model file changed after selection: {path_key}")
+    return path
+
+
 def latex_text(value: str) -> str:
     replacements = {
         "&": r"\&",
@@ -441,7 +457,26 @@ def main() -> int:
             raise ValueError("field figure must display a held-out test trajectory")
         if selection_record.get("split_name") != "pair_disjoint_stress_test":
             raise ValueError("field figure must use the registered strict split")
-        prediction_path = Path(selection_record["prediction_file"]).resolve()
+        if (
+            selection_record.get("strict_split_loss_balancing_stage")
+            != "validation_selected"
+        ):
+            raise ValueError(
+                "field figure requires validation-selected loss balancing"
+            )
+        prediction_path = verify_selected_file(
+            selection_record, "prediction_file", "prediction_file_sha256"
+        )
+        for path_key, sha_key in (
+            ("model_summary", "model_summary_sha256"),
+            ("comparison_summary", "comparison_summary_sha256"),
+            ("metrics_csv", "metrics_csv_sha256"),
+            (
+                "selected_loss_balancing_integration_record",
+                "selected_loss_balancing_integration_record_sha256",
+            ),
+        ):
+            verify_selected_file(selection_record, path_key, sha_key)
         args.model_label = str(selection_record["selected_model_label"])
     else:
         prediction_path = args.prediction.resolve()

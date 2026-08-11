@@ -290,3 +290,27 @@ def test_selected_field_output_remains_formal() -> None:
     stem, formal = MODULE.resolve_output_mode(args)
     assert stem == MODULE.FORMAL_OUTPUT_STEM
     assert formal is True
+
+
+def test_selected_file_hash_is_rechecked_before_plotting(tmp_path: Path) -> None:
+    selected = tmp_path / "prediction.npz"
+    selected.write_bytes(b"selected prediction")
+    record = {
+        "prediction_file": str(selected),
+        "prediction_file_sha256": MODULE.sha256(selected),
+    }
+    assert (
+        MODULE.verify_selected_file(
+            record, "prediction_file", "prediction_file_sha256"
+        )
+        == selected.resolve()
+    )
+    selected.write_bytes(b"changed after selection")
+    try:
+        MODULE.verify_selected_file(
+            record, "prediction_file", "prediction_file_sha256"
+        )
+    except ValueError as error:
+        assert "changed after selection" in str(error)
+    else:
+        raise AssertionError("a modified selected prediction must be rejected")
