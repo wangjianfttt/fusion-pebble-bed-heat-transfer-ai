@@ -110,10 +110,28 @@ def validate_direct_coupled_failure(path: Path) -> dict:
     return record
 
 
+def validate_failure_scale(path: Path) -> dict:
+    record = load_json(path)
+    if record.get("status") != "fully_coupled_failure_temperature_scale_quantified":
+        raise ValueError("fully coupled failure-scale record has an unexpected status")
+    if record.get("sequence_id") != "source_up_u0p15_T700":
+        raise ValueError("fully coupled failure-scale sequence is unexpected")
+    if record.get("new_physical_parameters") != []:
+        raise ValueError("fully coupled failure-scale calculation introduced parameters")
+    if (
+        float(record["source_only_temperature_rise_scale_K"]) >= 0.01
+        or float(record["observed_excursion_over_source_only_scale"]) <= 1.0e4
+        or float(record["failed_query_above_generous_upper_K"]) <= 500.0
+    ):
+        raise ValueError("fully coupled failure-scale separation is insufficient")
+    return record
+
+
 def build(
     summary_path: Path,
     transport_check_path: Path | None = None,
     direct_coupled_failure_path: Path | None = None,
+    failure_scale_path: Path | None = None,
 ) -> str:
     summary = load_json(summary_path)
     if summary.get("status") != "P418_SCOPE_LIMITS_EVIDENCE_SYNCED":
@@ -192,14 +210,22 @@ def build(
     if direct_coupled_failure_path is not None:
         direct_failure = validate_direct_coupled_failure(direct_coupled_failure_path)
         failure = direct_failure["failure"]
+        if failure_scale_path is None:
+            raise ValueError("a failure-scale record is required with direct failure data")
+        scale = validate_failure_scale(failure_scale_path)
         text += (
             " A matched-initial representative using that implementation advanced "
             f"to \\SI{{{float(direct_failure['last_logged_physical_time_s']):.6f}}}{{s}} "
             "before a solid heat-capacity query reached "
             f"\\SI{{{float(failure['query_temperature_K']):.1f}}}{{K}}, above the "
             f"registered \\SI{{{float(failure['table_upper_limit_K']):.0f}}}{{K}} "
-            "limit; this startup is used only to delimit property validity, not as "
-            "fully coupled accuracy evidence."
+            "limit~\\cite{kleykamp1996enthalpy}. The imposed source could raise "
+            f"the solid by only \\SI{{{float(scale['source_only_temperature_rise_scale_K']):.4f}}}{{K}} "
+            "over this interval, while the failed query remained "
+            f"\\SI{{{float(scale['failed_query_above_generous_upper_K']):.1f}}}{{K}} "
+            "above a deliberately generous compression-plus-source estimate. It is "
+            "therefore treated as numerical startup instability, not fully coupled "
+            "response evidence."
         )
     elif transport_check_path is not None:
         text += " No matched fully coupled result is claimed."
@@ -211,6 +237,7 @@ def main() -> None:
     parser.add_argument("--summary", type=Path, required=True)
     parser.add_argument("--transport-check", type=Path)
     parser.add_argument("--direct-coupled-failure", type=Path)
+    parser.add_argument("--failure-scale", type=Path)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
 
@@ -218,6 +245,7 @@ def main() -> None:
         args.summary,
         args.transport_check,
         args.direct_coupled_failure,
+        args.failure_scale,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(text + "\n", encoding="utf-8")

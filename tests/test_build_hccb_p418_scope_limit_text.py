@@ -18,6 +18,10 @@ DIRECT_COUPLED_FAILURE = (
     ROOT
     / "results/hccb_p418_public_figure_data/direct_transport_scope_limit.json"
 )
+FAILURE_SCALE = (
+    ROOT
+    / "results/hccb_p418_fully_coupled_failure_scale_20260812/summary.json"
+)
 
 
 def test_scope_limit_text_uses_verified_failure_records(tmp_path: Path) -> None:
@@ -32,6 +36,8 @@ def test_scope_limit_text_uses_verified_failure_records(tmp_path: Path) -> None:
             str(TRANSPORT_CHECK),
             "--direct-coupled-failure",
             str(DIRECT_COUPLED_FAILURE),
+            "--failure-scale",
+            str(FAILURE_SCALE),
             "--output",
             str(output),
         ],
@@ -50,5 +56,8 @@ def test_scope_limit_text_uses_verified_failure_records(tmp_path: Path) -> None:
     assert r"\SI{0.001522}{s}" in text
     assert r"\SI{1308.8}{K}" in text
     assert r"\SI{1300}{K}" in text
-    assert "used only to delimit property validity" in text
-    assert "not as fully coupled accuracy evidence" in text
+    assert r"\cite{kleykamp1996enthalpy}" in text
+    assert r"\SI{0.0059}{K}" in text
+    assert r"\SI{551.7}{K}" in text
+    assert "numerical startup instability" in text
+    assert "not fully coupled response evidence" in text

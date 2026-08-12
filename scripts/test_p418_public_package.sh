@@ -9,11 +9,13 @@ cd "${ROOT}"
 PYTHON_BIN="${PYTHON:-python3}"
 
 tests=(
+  tests/test_analyze_hccb_p418_fully_coupled_failure_scale.py
   tests/test_analyze_hccb_p418_dimensionless_heat_transfer.py
   tests/test_analyze_hccb_p418_fixed_flow_loss_scale.py
   tests/test_analyze_hccb_p418_pressure_correlation.py
   tests/test_build_hccb_p418_reproducibility_manifest.py
   tests/test_build_hccb_p418_steady_result_text.py
+  tests/test_build_hccb_p418_scope_limit_text.py
   tests/test_hccb_p418_steady_seed_robustness.py
   tests/test_hccb_p418_physical_parameter_sources.py
   tests/test_hccb_p418_model_splits.py

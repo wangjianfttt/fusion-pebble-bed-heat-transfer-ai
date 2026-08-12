@@ -1,0 +1,16 @@
+{
+  "status": "verified_source_endpoint_temperature_extrema",
+  "condition_id": "u0p15_T700_q4p85",
+  "steady_iteration": 200,
+  "fluid_temperature_min_K": 635.1011273,
+  "fluid_temperature_max_K": 699.841865,
+  "solid_temperature_min_K": 635.0274227,
+  "solid_temperature_max_K": 699.0459812,
+  "maximum_prescribed_boundary_temperature_K": 700.0,
+  "generous_pressure_reference_Pa": 120000.0,
+  "generous_pressure_high_Pa": 145976.4733,
+  "helium_ideal_gas_gamma": 1.6666666666666667,
+  "pressure_scale_source": "The 120000 Pa reference is the registered outlet absolute pressure; 145976.4733 Pa is the maximum logged pressure in the matched inlet-velocity/mass-flux scope-limit run 14724. The pressure excursion is transferred adiabatically to the solid only as a deliberately generous diagnostic bound.",
+  "source_training_sample_sha256": "c18ae4b8eacd472e4a56bcd41179c6d9a28dc244ac2cf0ce0f2580dc134138ce",
+  "source": "formal schema-3 sample on the workstation; extrema read without modifying the sample"
+}

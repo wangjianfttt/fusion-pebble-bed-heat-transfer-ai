@@ -1,0 +1,83 @@
+{
+  "status": "hccb_pore_resolved_openfoam_mesh_preflight_failed",
+  "check_scope": "OpenFOAM13 basic checkMesh for fluid and solid regions",
+  "job_id": "14630",
+  "node": "cn003",
+  "generated_at": "2026-07-29T23:39:24.405616+00:00",
+  "allmesh_exit_code": 0,
+  "fluid_checkMesh_exit_code": 1,
+  "solid_checkMesh_exit_code": 0,
+  "fluid_cells": null,
+  "solid_cells": 4711778,
+  "checks": {
+    "mesh_commands_returned_zero": true,
+    "fluid_basic_checkMesh_passed": false,
+    "solid_basic_checkMesh_passed": false,
+    "mesh_level_is_G2": true,
+    "packing_seed_is_101": true,
+    "particle_count_is_2039": true,
+    "packing_sha_is_frozen": true
+  },
+  "case_manifest": {
+    "status": "hccb_pore_resolved_openfoam_mesh_case_built",
+    "purpose": "mesh-only numerical preflight; no physical CHT result",
+    "parameter_ids": [
+      "P048",
+      "P049",
+      "P390",
+      "P392",
+      "P404",
+      "P405"
+    ],
+    "numerical_design_ids": [
+      "ND056",
+      "ND057"
+    ],
+    "particle_count": 2039,
+    "packing_seed": 101,
+    "packing_reconstruction_mode": "P050_large_bed_then_P390_wall_adjacent_laterally_centred_crop",
+    "physical_particle_diameter_m": 0.001,
+    "meshing_particle_diameter_m": 0.00099,
+    "packing_box_m": [
+      0.0125,
+      0.0125,
+      0.01
+    ],
+    "full_channel_domain_m": [
+      0.0125,
+      0.0125,
+      0.03
+    ],
+    "boundary_basis": "one cooling wall T=635 K from packed bed through outlet; its inlet-channel continuation T=T_in; remaining transverse faces=symmetry",
+    "numerical_controls": {
+      "mesh_level": "G2",
+      "background_cells_per_particle_diameter": 10.1010101010101,
+      "sphere_icosphere_subdivisions": 3,
+      "surface_refinement_level": 1,
+      "role": "P405 mesh-count candidate",
+      "published_target_cell_count": 6670000,
+      "derivation": "G2=1/0.099dp; G1/G3 scale by cube root of P405 published cell-count ratio; ND057 freezes the disclosed numerical sphere representation separately from P405"
+    },
+    "published_mesh_target": "G1=4.87e6 cells;G2=6.67e6 cells;G3=8.81e6 cells;G2 mean cell size=0.099dp;G2 minimum cell size=0.045dp;G2-G3 pressure-drop difference<1%",
+    "obj_vertices": 1309038,
+    "obj_faces": 2609920,
+    "packing_summary_sha256": "5c68cf46e5be878928feb04e2061df7bb234edf7d66195cf1283944043953f35",
+    "packing_independent_audit_sha256": null,
+    "packing_npz_sha256": "9e289c8752cbe8d1ce767d383536a67908568f10ed71d591d67ad8348960ae43",
+    "solid_obj_sha256": "1f7982265c5738b67c9217e1a03738bb28a90f2bc0b102dc25d2708cad347310",
+    "new_fitted_physical_parameters": [],
+    "allowed_claim": "OpenFOAM mesh construction and region-splitting preflight only",
+    "forbidden_claims": [
+      "reproduced pressure drop",
+      "reproduced temperature",
+      "neural training truth"
+    ]
+  },
+  "case_manifest_sha256": "18913585ca6df1058c80d503b85382dbf550117ec7492db3d4d3d53c7bb159de",
+  "log_sha256": {
+    "Allmesh": "1902f864e3b8c0534009f70d7d6596e3741a9c3b1f1377a1ff283f0a2260fca5",
+    "fluid_checkMesh": "0db5ebf0884c997a8702af2cc6281f3e2285c9bbe4e4eaba36ccc94dd5d75a5c",
+    "solid_checkMesh": "d1ea69dab361b49f3da65a0eba31b0552ada0ccc41e6e5daf243b8cf68b60360"
+  },
+  "new_physical_parameters": []
+}

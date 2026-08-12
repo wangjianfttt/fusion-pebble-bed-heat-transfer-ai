@@ -1,0 +1,27 @@
+{
+  "status": "fully_coupled_failure_temperature_scale_quantified",
+  "sequence_id": "source_up_u0p15_T700",
+  "failure_time_s": 0.0015220808,
+  "initial_temperature_upper_K": 700.0,
+  "failed_query_temperature_K": 1308.759277,
+  "observed_excursion_above_initial_upper_K": 608.7592770000001,
+  "target_volumetric_source_W_m3": 8850000.0,
+  "solid_density_kg_m3": 1526.4,
+  "minimum_registered_cp_J_kg_K": 1501.005094040973,
+  "minimum_cp_temperature_K": 342.95110769293746,
+  "source_only_temperature_rise_scale_K": 0.00587936543559296,
+  "observed_excursion_over_source_only_scale": 103541.66341058609,
+  "generous_adiabatic_plus_source_upper_K": 757.080501494754,
+  "failed_query_above_generous_upper_K": 551.6787755052461,
+  "generous_pressure_reference_Pa": 120000.0,
+  "generous_pressure_high_Pa": 145976.4733,
+  "helium_ideal_gas_gamma": 1.6666666666666667,
+  "pressure_scale_source": "The 120000 Pa reference is the registered outlet absolute pressure; 145976.4733 Pa is the maximum logged pressure in the matched inlet-velocity/mass-flux scope-limit run 14724. The pressure excursion is transferred adiabatically to the solid only as a deliberately generous diagnostic bound.",
+  "interpretation": "The 1308.8 K lookup is a numerical startup excursion, not a usable fully coupled thermal response. The source-only scale uses the largest target heat generation and the minimum registered heat capacity; the additional ideal-gas compression estimate is intentionally generous and does not turn the failed run into physical evidence.",
+  "parameter_ids": [
+    "P403",
+    "P429",
+    "P430"
+  ],
+  "new_physical_parameters": []
+}

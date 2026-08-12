@@ -1,0 +1,72 @@
+{
+  "status": "p418_helium_transport_lookup_artifact_identified",
+  "scientific_question": "Does the fully coupled calculation stop because the published helium correlations fail, or because their OpenFOAM table has a finite pressure domain?",
+  "parameter_ids": [
+    "P070",
+    "P071",
+    "P388",
+    "P389"
+  ],
+  "equation_checks": {
+    "P070": true,
+    "P071": true,
+    "P388": true,
+    "P389": true
+  },
+  "failure_record": {
+    "path": "/Users/wangjian-macbook13/CodexLocalWork/projects/复现pinn硕士论文/fusion_pebble_heat_ai/results/hccb_p418_scope_limits_20260730/representative_velocity_up_14724_failure.json",
+    "sha256": "36d45e3bf37c5613b74f6a93bb35cd8298938538d173f5f3bc47fdd8fc609a15",
+    "job_id": 14724,
+    "last_logged_physical_time_s": 0.000465367,
+    "logged_pressure_range_pa": [
+      93413.29837,
+      145976.4733
+    ],
+    "registered_table_range_pa": [
+      93900.0,
+      146100.0
+    ]
+  },
+  "openfoam_uniform_table_source": {
+    "path": "/Users/wangjian-macbook13/CodexLocalWork/projects/复现pinn硕士论文/fusion_pebble_heat_ai/cloud_build/openfoam13_source/inspect/OpenFOAM-13-version-13/src/OpenFOAM/primitives/functions/Function2/UniformTable2/UniformTable2.C",
+    "sha256": "693f8f867ad24b47ba22a959fd5534e04576aed579da87091acef275373ec0bf",
+    "checks": {
+      "uniform_table_throws_on_pressure_below_low": true,
+      "uniform_table_throws_on_pressure_above_high": true,
+      "uniform_table_has_no_configurable_out_of_bounds_policy": true
+    }
+  },
+  "direct_correlation_evaluation": {
+    "pressure_points_pa": [
+      93413.29837,
+      93900.0,
+      120000.0,
+      145976.4733,
+      146100.0
+    ],
+    "temperature_range_k": [
+      299.0,
+      1001.0
+    ],
+    "temperature_spacing_k": 1.0,
+    "maximum_relative_viscosity_span_over_pressure": 0.0,
+    "maximum_relative_conductivity_span_over_pressure": 9.067528393175705e-05,
+    "maximum_relative_density_span_over_pressure": 0.5640171426268847,
+    "all_values_positive_and_finite": true
+  },
+  "interpretation": "P070 is independent of pressure, P071 remains finite across the logged pressure excursion, and P389 is already represented by the perfect-gas equation of state. The observed stop is therefore caused by the finite pressure domain of OpenFOAM UniformTable2, not by a singularity in the registered helium correlations.",
+  "preferred_next_numerical_test": "Implement P070 and P071 directly as an OpenFOAM transport model, verify it pointwise against the registered equations, and only then repeat one matched-initial-state representative short run.",
+  "physical_correlations_changed": false,
+  "operating_conditions_changed": false,
+  "new_fitted_physical_parameters": [],
+  "formal_solver_submitted": false,
+  "requires_explicit_approval_before_representative_solver": true,
+  "checks": {
+    "registered_equations_unchanged": true,
+    "failure_is_a_property_table_range_error": true,
+    "logged_pressure_left_registered_table": true,
+    "viscosity_is_exactly_pressure_independent": true,
+    "openfoam_uniform_table_has_hard_pressure_bounds": true,
+    "no_solver_was_started_by_this_analysis": true
+  }
+}

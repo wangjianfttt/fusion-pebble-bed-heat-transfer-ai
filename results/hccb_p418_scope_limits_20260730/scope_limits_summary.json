@@ -1,0 +1,74 @@
+{
+  "status": "P418_SCOPE_LIMITS_EVIDENCE_SYNCED",
+  "generated_at": "2026-07-30T18:08:00+08:00",
+  "scope": "Small, previously verified failure records only; no three-dimensional fields and no solver execution.",
+  "destination": "/data2/CodexWork/fusion_pebble_heat_ai/results/hccb_p418_scope_limits_20260730/",
+  "records": [
+    {
+      "filename": "MESH_PREFLIGHT_FAILED.json",
+      "easycloud_path": "/n96pfs/home/ysn96pc0041/codex_runs/p418_pebble_heat/results/full_domain_reference_20260729/MESH_PREFLIGHT_FAILED.json",
+      "size_bytes": 767,
+      "sha256": "6201a026f83126c2d53657a3e4113df0032103b65f3683e994b39cb6169f7689",
+      "status": "hccb_pore_resolved_openfoam_mesh_preflight_failed",
+      "job_id": "14630",
+      "slurm_state": "FAILED",
+      "slurm_exit_code": "3:0",
+      "scientific_meaning": "Full-domain G2 mesh preflight failed before any steady solver started; this case cannot support formal full-domain contours, pressure-drop validation, temperature validation, or GCI."
+    },
+    {
+      "filename": "mesh_audit_summary.json",
+      "easycloud_path": "/n96pfs/home/ysn96pc0041/codex_runs/p418_pebble_heat/results/full_domain_reference_20260729/mesh_audit_summary.json",
+      "size_bytes": 3238,
+      "sha256": "b49068621a592582eeb79f5e8354f6b4eca31c040025992a1f21254424c1592c",
+      "status": "hccb_pore_resolved_openfoam_mesh_preflight_failed",
+      "job_id": "14630",
+      "slurm_state": "FAILED",
+      "slurm_exit_code": "3:0",
+      "scientific_meaning": "The solid region contained 4,711,778 cells, but the fluid-region basic checkMesh returned exit code 1. The record is mesh-only failure evidence and contains no physical CHT result."
+    },
+    {
+      "filename": "maxCo_0p8_14721_failure.json",
+      "easycloud_path": "/n96pfs/home/ysn96pc0041/codex_runs/p418_pebble_heat/fully_coupled_cfl_sensitivity_formal_wide_20260730/logs/maxCo_0p8_14721_failure.json",
+      "size_bytes": 317,
+      "sha256": "dd0ec21af9ad1a8c81e6478ecbe2780d1c577efc33b52b1a5b9b086f4f9d9ff5",
+      "status": "failed_solver_exit_propagated",
+      "job_id": "14721",
+      "slurm_state": "FAILED",
+      "slurm_exit_code": "1:0",
+      "scientific_meaning": "Formal maxCo=0.8 fully coupled run stopped at 0.00110537 s because a thermophysical-property query left the available range. It cannot provide a converged CFL result."
+    },
+    {
+      "filename": "maxCo_0p4_14722_failure.json",
+      "easycloud_path": "/n96pfs/home/ysn96pc0041/codex_runs/p418_pebble_heat/fully_coupled_cfl_sensitivity_formal_wide_20260730/logs/maxCo_0p4_14722_failure.json",
+      "size_bytes": 317,
+      "sha256": "a424d3801565dc5c05d006f79b0cc1b4fa1c688038973f0ea2b76d5b7e8e72e2",
+      "status": "failed_solver_exit_propagated",
+      "job_id": "14722",
+      "slurm_state": "FAILED",
+      "slurm_exit_code": "1:0",
+      "scientific_meaning": "Formal maxCo=0.4 fully coupled run stopped at 0.00079183 s because a thermophysical-property query left the available range. It cannot provide a converged CFL result."
+    },
+    {
+      "filename": "maxCo_0p2_14723_failure.json",
+      "easycloud_path": "/n96pfs/home/ysn96pc0041/codex_runs/p418_pebble_heat/fully_coupled_cfl_sensitivity_formal_wide_20260730/logs/maxCo_0p2_14723_failure.json",
+      "size_bytes": 318,
+      "sha256": "c19284d4991def3ee7ce65739d729670ae9130c8ea97318a67ed11870bcfc171",
+      "status": "failed_solver_exit_propagated",
+      "job_id": "14723",
+      "slurm_state": "FAILED",
+      "slurm_exit_code": "1:0",
+      "scientific_meaning": "Formal maxCo=0.2 fully coupled run stopped at 0.000468382 s because a thermophysical-property query left the available range. It cannot provide a converged CFL result."
+    },
+    {
+      "filename": "representative_velocity_up_14724_failure.json",
+      "easycloud_path": "/n96pfs/home/ysn96pc0041/codex_runs/p418_pebble_heat/fully_coupled_velocity_up_short_uphi_20260730/logs/representative_velocity_up_14724_failure.json",
+      "size_bytes": 2521,
+      "sha256": "36d45e3bf37c5613b74f6a93bb35cd8298938538d173f5f3bc47fdd8fc609a15",
+      "status": "failed_solver_exit_propagated",
+      "job_id": "14724",
+      "slurm_state": "FAILED",
+      "slurm_exit_code": "1:0",
+      "scientific_meaning": "Representative U-phi short run stopped at 0.000465367 s when the local pressure minimum reached 93,413.29837 Pa, below the helium-property table lower limit of 93,900 Pa. It cannot be used to select production maxCo or to form a three-level convergence result."
+    }
+  ]
+}

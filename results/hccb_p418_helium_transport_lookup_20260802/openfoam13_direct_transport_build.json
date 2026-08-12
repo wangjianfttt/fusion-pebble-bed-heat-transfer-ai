@@ -1,0 +1,38 @@
+{
+  "status": "hccb_helium_transport_openfoam13_build_and_pointwise_check_passed",
+  "date": "2026-08-02",
+  "workstation": "192.168.3.6",
+  "openfoam_version": "OpenFOAM-13",
+  "compiler": "g++ 11.4.0",
+  "library_path": "/home/wangjian/OpenFOAM/wangjian-13/platforms/linux64GccDPInt32Opt/lib/libhccbHeliumTransport.so",
+  "library_sha256": "8115c516e82d876bc999d97c5c91c586d50e11ffc1d40f2511b74f32354f0a5c",
+  "check_executable_path": "/home/wangjian/OpenFOAM/wangjian-13/platforms/linux64GccDPInt32Opt/bin/hccbHeliumTransportCheck",
+  "check_executable_sha256": "08aab3d0999841345f0aa811fdc1d3f26cede8e1f46d9265bd1cca3e4cefc18a",
+  "registered_runtime_type": "hccbHelium<hConst<perfectGas<specie>>,sensibleEnthalpy>",
+  "runtime_registration_symbols_found": 3,
+  "missing_shared_libraries": [],
+  "source_sha256": {
+    "hccbHeliumTransport.H": "4390149432257b2239b97cc1de096fa1796368f30c6edc19cd18f0acc41269e7",
+    "hccbHeliumTransportI.H": "c38dedfa6ffb70f6cb9a8961987c3d5959a41e0ab09b9c25ed75de849538a1b0",
+    "hccbHeliumTransport.C": "5e8d5d9cef4b077f6da33edb03c2e3b9af26a6c02fc8908ccb450b7df57fbb7b",
+    "hccbHeliumThermos.C": "3e018ce477ca98d109c71efcb75121b305772c11fcb5c5a98529802e1a143a11",
+    "hccbHeliumTransportCheck.C": "c39ce07688c7f8ab7f45e27dfb02f91fc0bfdf636398a9d2a8b1efaf86cfbe84",
+    "physicalProperties.example": "cff0d5aa1c673996b325ee034a32d654d86a642ce3b1fa707b48ae55d8927046"
+  },
+  "pointwise_check": {
+    "log_sha256": "610fa7e9e87881b416c909e1456c1950b4948bf9bf8974fa619828854e1f670c",
+    "validation_sha256": "eb9a39a3294f1eb97928499e33d6687953cc9347dd8bdef8f7cd72ef623597b5",
+    "point_count": 12,
+    "pressure_range_pa": [93413.29837, 145976.4733],
+    "temperature_range_k": [299.0, 1001.0],
+    "maximum_mu_relative_error": 1.9326195952849707e-16,
+    "maximum_kappa_relative_error": 2.5402738853478493e-16,
+    "all_values_positive_and_finite": true
+  },
+  "physical_correlations_changed": false,
+  "operating_conditions_changed": false,
+  "new_fitted_parameters": [],
+  "solver_started": false,
+  "representative_matched_initial_run_submitted": false,
+  "requires_exact_user_phrase_before_solver": "批准短算"
+}

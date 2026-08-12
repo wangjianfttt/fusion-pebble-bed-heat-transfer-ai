@@ -1,0 +1,13 @@
+{
+  "status": "failed_solver_exit_propagated",
+  "stage": "adaptive_cfl",
+  "label": "maxCo_0p8",
+  "job_id": 14721,
+  "node": "cn003",
+  "mpi_exit_code": 1,
+  "last_logged_physical_time_s": 0.00110537,
+  "has_foam_fatal_error": true,
+  "has_mpi_abort": true,
+  "has_nan": false,
+  "has_property_range_error": true
+}
