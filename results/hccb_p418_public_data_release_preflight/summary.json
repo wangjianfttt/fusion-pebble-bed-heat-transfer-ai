@@ -43,8 +43,8 @@
     {
       "path": "results/hccb_p418_public_figure_data/summary.json",
       "present": true,
-      "size_bytes": 1523,
-      "sha256": "dc7beba7b74064ce80927bf44f9d1135987842789a6745c8cc91f3f1b67d10ca"
+      "size_bytes": 3095,
+      "sha256": "7640e0b17f9b2ca4723ff2479e496ae68513a39495c47c49d789ef884403950e"
     },
     {
       "path": "results/hccb_p418_public_figure_data/direct_transport_scope_limit.json",
