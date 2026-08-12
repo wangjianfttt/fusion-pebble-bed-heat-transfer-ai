@@ -97,6 +97,21 @@ def load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def project_relative(path: Path, project_root: Path) -> str:
+    resolved = path.resolve()
+    try:
+        return resolved.relative_to(project_root.resolve()).as_posix()
+    except ValueError as error:
+        raise ValueError(f"transient-figure file is outside the project root: {path}") from error
+
+
+def infer_project_root(result_dir: Path) -> Path:
+    result_dir = result_dir.resolve()
+    if result_dir.name == "hccb_p418_physical_steps_12" and result_dir.parent.name == "results":
+        return result_dir.parents[1]
+    return result_dir.parent
+
+
 def require_formal_split(summary: dict, expected_ids: list[str], label: str) -> None:
     if summary.get("split_name") != STRICT_SPLIT:
         raise ValueError(f"{label} is not the strict endpoint-pair split")
@@ -337,6 +352,7 @@ def main() -> int:
     )
     args = parser.parse_args()
     result_dir = args.result_dir.resolve()
+    record_root = infer_project_root(result_dir)
     comparison_dir = result_dir / "model_comparison"
     comparison = load_json(comparison_dir / "summary.json")
     if comparison.get("status") != "completed_p418_physical_step_model_comparison":
@@ -681,28 +697,40 @@ def main() -> int:
         "panel_axis_bounds": panel_axis_bounds,
         "panel_axis_width_spread": max(panel_widths) - min(panel_widths),
         "panel_axis_height_spread": max(panel_heights) - min(panel_heights),
-        "physics_prediction": str((physics_dir / "test_temporal_temperature_predictions.npz").resolve()),
-        "persistence_prediction": str(
-            (persistence_dir / "test_temperature_predictions.npz").resolve()
+        "physics_prediction": project_relative(
+            physics_dir / "test_temporal_temperature_predictions.npz", record_root
         ),
-        "data_only_prediction": str((data_only_dir / "test_temporal_temperature_predictions.npz").resolve()),
-        "diffusion_prediction": str((diffusion_dir / "test_refined_temperature.npz").resolve()),
+        "persistence_prediction": project_relative(
+            persistence_dir / "test_temperature_predictions.npz", record_root
+        ),
+        "data_only_prediction": project_relative(
+            data_only_dir / "test_temporal_temperature_predictions.npz", record_root
+        ),
+        "diffusion_prediction": project_relative(
+            diffusion_dir / "test_refined_temperature.npz", record_root
+        ),
         "strict_split_loss_balancing_stage": (
             "validation_selected" if selected_loss_ready else "registered_preselection"
         ),
         "selected_loss_balancing_integration_record": (
-            str(integration_path) if selected_loss_ready else None
+            project_relative(integration_path, record_root)
+            if selected_loss_ready
+            else None
         ),
         "selected_loss_balancing_integration_record_sha256": (
             sha256(integration_path) if selected_loss_ready else None
         ),
-        "model_metric_table": str((comparison_dir / "physical_step_model_metrics.csv").resolve()),
+        "model_metric_table": project_relative(
+            comparison_dir / "physical_step_model_metrics.csv", record_root
+        ),
         "energy_axis_metric": ENERGY_METRIC,
         "energy_axis_metric_unit": "dimensionless",
         "energy_axis_metric_source": (
             "common finite-volume energy post-processing applied to every model"
         ),
-        "speed_table": str((comparison_dir / "physical_step_model_speedup.csv").resolve()),
+        "speed_table": project_relative(
+            comparison_dir / "physical_step_model_speedup.csv", record_root
+        ),
         "speedup_definition": (
             "median 32-rank OpenFOAM wall time per held-out trajectory divided by "
             "complete-chain inference wall time per trajectory; training and reference-data "
@@ -710,9 +738,9 @@ def main() -> int:
         ),
         "split_regional_field_RMSE_K": split_rmse,
         "held_out_volume_averaged_solid_curve_RMSE_K_by_case": casewise_rmse,
-        "pdf": str(pdf),
-        "svg": str(svg),
-        "png": str(png),
+        "pdf": project_relative(pdf, record_root),
+        "svg": project_relative(svg, record_root),
+        "png": project_relative(png, record_root),
         "new_physical_parameter_values_added": [],
         "interpretation_scope": (
             "Computed fixed-flow thermal-step predictions on the registered P418 endpoint-pair "
@@ -738,7 +766,9 @@ def main() -> int:
             encoding="utf-8",
         )
     provenance["validation_marker"] = (
-        str(validation_marker) if validation_marker is not None else None
+        project_relative(validation_marker, record_root)
+        if validation_marker is not None
+        else None
     )
     summary_path.write_text(
         json.dumps(provenance, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"

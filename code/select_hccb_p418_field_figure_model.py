@@ -76,6 +76,21 @@ def load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def project_relative(path: Path, project_root: Path) -> str:
+    resolved = path.resolve()
+    try:
+        return resolved.relative_to(project_root.resolve()).as_posix()
+    except ValueError as error:
+        raise ValueError(f"formal field-selection file is outside the project root: {path}") from error
+
+
+def infer_project_root(result_dir: Path) -> Path:
+    result_dir = result_dir.resolve()
+    if result_dir.name == "hccb_p418_physical_steps_12" and result_dir.parent.name == "results":
+        return result_dir.parents[1]
+    return result_dir.parent
+
+
 def metric_values(metrics_csv: Path, split_name: str) -> dict[str, float]:
     values: dict[str, float] = {}
     with metrics_csv.open(newline="", encoding="utf-8") as handle:
@@ -109,6 +124,8 @@ def select_model(
     metrics_csv: Path,
     split_name: str,
 ) -> dict:
+    result_dir = result_dir.resolve()
+    project_root = infer_project_root(result_dir)
     comparison = load_json(comparison_summary)
     if comparison.get("status") != "completed_p418_physical_step_model_comparison":
         raise ValueError("formal transient model comparison is not complete")
@@ -164,13 +181,13 @@ def select_model(
             "initial_temperature_persistence",
             "dmdc",
         ],
-        "prediction_file": str(prediction_path.resolve()),
+        "prediction_file": project_relative(prediction_path, project_root),
         "prediction_file_sha256": sha256(prediction_path),
-        "model_summary": str(summary_path.resolve()),
+        "model_summary": project_relative(summary_path, project_root),
         "model_summary_sha256": sha256(summary_path),
-        "comparison_summary": str(comparison_summary.resolve()),
+        "comparison_summary": project_relative(comparison_summary, project_root),
         "comparison_summary_sha256": sha256(comparison_summary),
-        "metrics_csv": str(metrics_csv.resolve()),
+        "metrics_csv": project_relative(metrics_csv, project_root),
         "metrics_csv_sha256": sha256(metrics_csv),
         "new_physical_parameters": [],
         "strict_split_loss_balancing_stage": (
@@ -180,7 +197,9 @@ def select_model(
     if split_name == SELECTED_STRICT_SPLIT:
         result.update(
             {
-                "selected_loss_balancing_integration_record": str(integration_path),
+                "selected_loss_balancing_integration_record": project_relative(
+                    integration_path, project_root
+                ),
                 "selected_loss_balancing_integration_record_sha256": sha256(
                     integration_path
                 ),

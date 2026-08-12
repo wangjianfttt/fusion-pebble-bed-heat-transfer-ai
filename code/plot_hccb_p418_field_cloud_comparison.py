@@ -38,7 +38,20 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-def verify_selected_file(record: dict, path_key: str, sha_key: str) -> Path:
+def project_relative(path: Path, project_root: Path) -> str:
+    resolved = path.resolve()
+    try:
+        return resolved.relative_to(project_root.resolve()).as_posix()
+    except ValueError:
+        return str(resolved)
+
+
+def verify_selected_file(
+    record: dict,
+    path_key: str,
+    sha_key: str,
+    project_root: Path | None = None,
+) -> Path:
     """Resolve one selection-record file and prove it has not changed."""
     raw_path = record.get(path_key)
     expected_sha = record.get(sha_key)
@@ -46,7 +59,9 @@ def verify_selected_file(record: dict, path_key: str, sha_key: str) -> Path:
         raise ValueError(f"field-model selection is missing {path_key}")
     if not isinstance(expected_sha, str) or len(expected_sha) != 64:
         raise ValueError(f"field-model selection is missing {sha_key}")
-    path = Path(raw_path).resolve()
+    raw = Path(raw_path)
+    base = project_root.resolve() if project_root is not None else Path.cwd().resolve()
+    path = (base / raw).resolve() if not raw.is_absolute() else raw.resolve()
     if not path.is_file():
         raise FileNotFoundError(path)
     if sha256(path) != expected_sha:
@@ -439,6 +454,7 @@ def resolve_output_mode(args: argparse.Namespace) -> tuple[str, bool]:
 
 def main() -> int:
     args = parse_args()
+    project_root = Path(__file__).resolve().parents[1]
     args.output_stem, formal_output = resolve_output_mode(args)
     selection_path = None
     selection_record = None
@@ -465,7 +481,10 @@ def main() -> int:
                 "field figure requires validation-selected loss balancing"
             )
         prediction_path = verify_selected_file(
-            selection_record, "prediction_file", "prediction_file_sha256"
+            selection_record,
+            "prediction_file",
+            "prediction_file_sha256",
+            project_root,
         )
         for path_key, sha_key in (
             ("model_summary", "model_summary_sha256"),
@@ -476,7 +495,7 @@ def main() -> int:
                 "selected_loss_balancing_integration_record_sha256",
             ),
         ):
-            verify_selected_file(selection_record, path_key, sha_key)
+            verify_selected_file(selection_record, path_key, sha_key, project_root)
         args.model_label = str(selection_record["selected_model_label"])
     else:
         prediction_path = args.prediction.resolve()
@@ -745,11 +764,11 @@ def main() -> int:
             if formal_output
             else "diagnostic_same_scale_openfoam_model_field_comparison"
         ),
-        "prediction_file": str(prediction_path),
+        "prediction_file": project_relative(prediction_path, project_root),
         "prediction_file_sha256": sha256(prediction_path),
-        "geometry_file": str(geometry_path),
+        "geometry_file": project_relative(geometry_path, project_root),
         "geometry_file_sha256": sha256(geometry_path),
-        "packing_file": str(packing_path),
+        "packing_file": project_relative(packing_path, project_root),
         "packing_file_sha256": sha256(packing_path),
         "registered_local_particle_count": int(len(particle_centers_m)),
         "sequence_id": args.sequence_id,
@@ -774,7 +793,9 @@ def main() -> int:
             if selection_record is not None
             else None
         ),
-        "model_selection_file": str(selection_path) if selection_path else None,
+        "model_selection_file": (
+            project_relative(selection_path, project_root) if selection_path else None
+        ),
         "model_selection_file_sha256": sha256(selection_path) if selection_path else None,
         "temperature_representation": temperature_representation,
         "requested_time_s": args.time_s,
@@ -801,9 +822,9 @@ def main() -> int:
         "metrics": metrics,
         "error_localization": error_localization,
         "outputs": {
-            "pdf": str(pdf),
-            "svg": str(svg),
-            "png": str(png),
+            "pdf": project_relative(pdf, project_root),
+            "svg": project_relative(svg, project_root),
+            "png": project_relative(png, project_root),
         },
         "plotting_rules": [
             "OpenFOAM and model panels use one common physical temperature scale.",
@@ -848,7 +869,9 @@ def main() -> int:
             encoding="utf-8",
         )
     record["validation_marker"] = (
-        str(validation_marker) if validation_marker is not None else None
+        project_relative(validation_marker, project_root)
+        if validation_marker is not None
+        else None
     )
     summary.write_text(json.dumps(record, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(record, indent=2))

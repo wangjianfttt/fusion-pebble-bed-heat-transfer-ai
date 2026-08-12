@@ -199,7 +199,8 @@ def test_selects_lowest_rmse_learned_model(tmp_path: Path, winner: str) -> None:
     assert payload["selection_data_role"] == "validation"
     assert payload["display_data_role"] == "test"
     assert payload["strict_split_loss_balancing_stage"] == "validation_selected"
-    assert Path(payload["prediction_file"]).is_file()
+    assert not Path(payload["prediction_file"]).is_absolute()
+    assert (tmp_path / payload["prediction_file"]).is_file()
     assert payload["excluded_reference_models"] == [
         "initial_temperature_persistence",
         "dmdc",

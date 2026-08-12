@@ -324,7 +324,7 @@ def main() -> int:
         "status": "completed_p418_selected_loss_balancing_downstream",
         "split_name": STRICT_SPLIT,
         "selected_candidate_id": selected_id,
-        "selection_record": str(selection_path),
+        "selection_record": str(selection_path.relative_to(result_dir)),
         "selection_record_sha256": sha256(selection_path),
         "independent_test_read_after_validation_selection": True,
         "factorized_model_uses_selected_weights_without_reselection": True,

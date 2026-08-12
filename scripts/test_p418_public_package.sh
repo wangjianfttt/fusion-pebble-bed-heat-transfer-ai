@@ -21,6 +21,7 @@ tests=(
   tests/test_hccb_p418_model_splits.py
   tests/test_hccb_p418_transient_step_plan.py
   tests/test_hccb_p418_repository_metadata_consistency.py
+  tests/test_hccb_p418_public_record_paths.py
   tests/test_hccb_p418_comparison_contract.py
   tests/test_verify_hccb_p418_transient_thermo_correspondence.py
   tests/test_hccb_p418_pressure_density_consistency.py

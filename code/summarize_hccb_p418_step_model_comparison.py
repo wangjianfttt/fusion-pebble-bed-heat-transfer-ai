@@ -270,6 +270,14 @@ def add_metric(
     )
 
 
+def project_relative(path: Path, project_root: Path) -> str:
+    resolved = path.resolve()
+    try:
+        return resolved.relative_to(project_root.resolve()).as_posix()
+    except ValueError as error:
+        raise ValueError(f"model-comparison source is outside the project root: {path}") from error
+
+
 def temperature_metric_unit(metric: str) -> str:
     if metric.endswith("sample_count") or metric == "observation_count":
         return "count"
@@ -420,6 +428,13 @@ def main() -> int:
     parser.add_argument("--seed-robustness-summary", type=Path)
     parser.add_argument("--output-dir", type=Path, required=True)
     args = parser.parse_args()
+    args.result_dir = args.result_dir.resolve()
+    args.step_root = args.step_root.resolve()
+    args.splits = args.splits.resolve()
+    args.output_dir = args.output_dir.resolve()
+    if args.seed_robustness_summary is not None:
+        args.seed_robustness_summary = args.seed_robustness_summary.resolve()
+    project_root = args.result_dir.parents[1]
 
     rows: list[dict] = []
     speed_rows: list[dict] = []
@@ -501,7 +516,7 @@ def main() -> int:
             split,
         )
         selected_model_sources_by_split[split] = {
-            name: str(path.resolve())
+            name: project_relative(path, project_root)
             for name, path in selected_directories.items()
         }
         regional_models = (
@@ -1016,6 +1031,11 @@ def main() -> int:
             pareto_points
         )
 
+    for row in rows:
+        row["source_summary"] = project_relative(
+            Path(str(row["source_summary"])), project_root
+        )
+
     args.output_dir.mkdir(parents=True, exist_ok=True)
     csv_path = args.output_dir / "physical_step_model_metrics.csv"
     with csv_path.open("w", newline="", encoding="utf-8") as handle:
@@ -1066,7 +1086,9 @@ def main() -> int:
             "lowest_three_seed_mean_field_model": best_repeated["model"],
             "lowest_three_seed_mean_field_RMSE_K": float(best_repeated["mean_K"]),
             "corresponding_sample_std_K": float(best_repeated["sample_std_K"]),
-            "source_summary": str(args.seed_robustness_summary.resolve()),
+            "source_summary": project_relative(
+                args.seed_robustness_summary, project_root
+            ),
         }
 
     summary = {
@@ -1095,7 +1117,7 @@ def main() -> int:
         "strict_split_seed_robustness": strict_seed_result,
         "selected_model_sources_by_split": selected_model_sources_by_split,
         "strict_split_loss_balancing_integration_record": (
-            str(strict_integration_path)
+            project_relative(strict_integration_path, project_root)
             if STRICT_SPLIT in args.split_names and strict_loss_selection_ready
             else None
         ),
