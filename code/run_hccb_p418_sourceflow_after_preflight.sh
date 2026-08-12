@@ -16,7 +16,7 @@ LOCK_FILE=${LOCK_FILE:-${ROOT}/results/hccb_p418_sourceflow_watch.lock}
 POLL_SECONDS=${POLL_SECONDS:-300}
 NP_PER_CASE=${NP_PER_CASE:-32}
 CONCURRENT_CASES=${CONCURRENT_CASES:-3}
-PYTHON=${PYTHON:-/data2/wangjian/venv/bin/python3}
+PYTHON=${PYTHON:-python3}
 FORMAL_INPUT_SUMMARY=${FORMAL_INPUT_SUMMARY:-${RESULT_DIR}/formal_60_input_summary.json}
 
 if ! [[ ${POLL_SECONDS} =~ ^[1-9][0-9]*$ ]]; then

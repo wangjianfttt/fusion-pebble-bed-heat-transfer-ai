@@ -8,11 +8,11 @@ ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "code/build_hccb_p418_scope_limit_text.py"
 SUMMARY = (
     ROOT
-    / "results/hccb_p418_scope_limits_20260730/scope_limits_summary.json"
+    / "results/hccb_p418_public_figure_data/scope_limits_public/scope_limits_summary.json"
 )
 TRANSPORT_CHECK = (
     ROOT
-    / "results/hccb_p418_helium_transport_lookup_20260802/openfoam13_direct_transport_build.json"
+    / "results/hccb_p418_public_figure_data/openfoam13_direct_transport_build_public.json"
 )
 DIRECT_COUPLED_FAILURE = (
     ROOT

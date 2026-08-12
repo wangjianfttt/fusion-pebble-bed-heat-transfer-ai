@@ -15,9 +15,10 @@ STEADY_COMPARISON=${STEADY_COMPARISON:-${RESULT_ROOT}/hccb_p418_60_corrected_202
 HIGH_RE_ROOT=${RESULT_ROOT}/hccb_p418_high_re_three_bounded_model_evaluation
 HIGH_RE_COMPARISON=${HIGH_RE_ROOT}/comparison
 PACKING_SUMMARY=${RESULT_ROOT}/hccb_p418_cross_packing_seed202_integral_9/summary.json
-SCOPE_SUMMARY=${RESULT_ROOT}/hccb_p418_scope_limits_20260730/scope_limits_summary.json
-TRANSPORT_CHECK=${RESULT_ROOT}/hccb_p418_helium_transport_lookup_20260802/openfoam13_direct_transport_build.json
+SCOPE_SUMMARY=${RESULT_ROOT}/hccb_p418_public_figure_data/scope_limits_public/scope_limits_summary.json
+TRANSPORT_CHECK=${RESULT_ROOT}/hccb_p418_public_figure_data/openfoam13_direct_transport_build_public.json
 DIRECT_COUPLED_FAILURE=${RESULT_ROOT}/hccb_p418_public_figure_data/direct_transport_scope_limit.json
+FULLY_COUPLED_FAILURE_SCALE=${RESULT_ROOT}/hccb_p418_fully_coupled_failure_scale_20260812/summary.json
 MESH_SENSITIVITY_SUMMARY=${RESULT_ROOT}/hccb_p418_three_mesh_cht_sensitivity/summary.json
 MESH_SENSITIVITY_ENGINEERING=${RESULT_ROOT}/hccb_p418_three_mesh_cht_sensitivity/engineering_observables.csv
 MESH_SENSITIVITY_GCI=${RESULT_ROOT}/hccb_p418_three_mesh_cht_sensitivity/mesh_gci.csv
@@ -88,6 +89,7 @@ required=(
   "${SCOPE_SUMMARY}"
   "${TRANSPORT_CHECK}"
   "${DIRECT_COUPLED_FAILURE}"
+  "${FULLY_COUPLED_FAILURE_SCALE}"
   "${MESH_SENSITIVITY_SUMMARY}"
   "${MESH_SENSITIVITY_ENGINEERING}"
   "${MESH_SENSITIVITY_GCI}"
@@ -125,6 +127,7 @@ python3 "${ROOT}/code/build_hccb_p418_scope_limit_text.py" \
   --summary "${SCOPE_SUMMARY}" \
   --transport-check "${TRANSPORT_CHECK}" \
   --direct-coupled-failure "${DIRECT_COUPLED_FAILURE}" \
+  --failure-scale "${FULLY_COUPLED_FAILURE_SCALE}" \
   --output "${MANUSCRIPT_DIR}/generated_scope_limits.tex"
 
 python3 "${ROOT}/code/build_hccb_p418_manuscript_values.py" \

@@ -38,7 +38,9 @@ def test_public_figure_data_is_complete_and_path_free(tmp_path: Path) -> None:
     assert row_count(output / "physical_response_60.csv") == 60
     assert row_count(output / "seed202_integral_comparison_9.csv") == 9
     assert row_count(output / "steady_model_comparison_5x5.csv") == 25
-    text = "\n".join(path.read_text(encoding="utf-8") for path in output.iterdir())
+    text = "\n".join(
+        path.read_text(encoding="utf-8") for path in output.rglob("*") if path.is_file()
+    )
     for token in module.PRIVATE_TEXT:
         assert token not in text
     summary = json.loads((output / "seed202_integral_summary.json").read_text())

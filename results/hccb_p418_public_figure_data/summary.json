@@ -10,7 +10,9 @@
     "physical_response": "9ea781c7b64dbb50378e4bee549969f09420ca8ef047addb7c6b033fbb6410d7",
     "seed202_comparison": "22960f727c0805b71c33c7d0c1700c92ec43b865dc78c4ca3c32a29c25ebe49a",
     "seed202_summary": "384668533fb22db7472f430c568417ac16e8024235be5a46c40f5304a7af27b8",
-    "steady_model_comparison": "b036d1dabc7aa5715bba19fbf20b90ac85d80398734fc102ef50dd4c04ffad8e"
+    "steady_model_comparison": "b036d1dabc7aa5715bba19fbf20b90ac85d80398734fc102ef50dd4c04ffad8e",
+    "transport_check": "fbeb92a6ad08f92638ff10bbb5e1369d021707dc19a7aef97bfe55eb3af382e3",
+    "scope_summary": "ab835ef643b2e9d0688f26401b373796516d6b80ff080dd68b73f30ad64fe810"
   },
   "outputs": {
     "physical_response_60.csv": {
@@ -28,6 +30,38 @@
     "steady_model_comparison_5x5.csv": {
       "size_bytes": 22145,
       "sha256": "e0ed99ebaa2cdddb69d4aa95500122517c68bcaa9858b737ad4d3b11f3086bac"
+    },
+    "openfoam13_direct_transport_build_public.json": {
+      "size_bytes": 1982,
+      "sha256": "3aac1b50b13368f0e3dc1af1717b62395d1792945f7d0e4586ccafb192611a89"
+    },
+    "scope_limits_public/MESH_PREFLIGHT_FAILED.json": {
+      "size_bytes": 474,
+      "sha256": "5118c97353395c8736286a94da122926ce23d4a0c0ab04a765adc4a81de45143"
+    },
+    "scope_limits_public/mesh_audit_summary.json": {
+      "size_bytes": 3238,
+      "sha256": "b49068621a592582eeb79f5e8354f6b4eca31c040025992a1f21254424c1592c"
+    },
+    "scope_limits_public/maxCo_0p8_14721_failure.json": {
+      "size_bytes": 317,
+      "sha256": "dd0ec21af9ad1a8c81e6478ecbe2780d1c577efc33b52b1a5b9b086f4f9d9ff5"
+    },
+    "scope_limits_public/maxCo_0p4_14722_failure.json": {
+      "size_bytes": 317,
+      "sha256": "a424d3801565dc5c05d006f79b0cc1b4fa1c688038973f0ea2b76d5b7e8e72e2"
+    },
+    "scope_limits_public/maxCo_0p2_14723_failure.json": {
+      "size_bytes": 318,
+      "sha256": "c19284d4991def3ee7ce65739d729670ae9130c8ea97318a67ed11870bcfc171"
+    },
+    "scope_limits_public/representative_velocity_up_14724_failure.json": {
+      "size_bytes": 2396,
+      "sha256": "b1998030a65c2c2e257f3bb2a2de2652a38a2247c8667b8ed9b25d0e25c26a5f"
+    },
+    "scope_limits_public/scope_limits_summary.json": {
+      "size_bytes": 3883,
+      "sha256": "150482a7265c4fc1ff7f43a7d037df4fe0c9ef86c702611a9a3c4b68bdeb4871"
     },
     "README.md": {
       "size_bytes": 1009,

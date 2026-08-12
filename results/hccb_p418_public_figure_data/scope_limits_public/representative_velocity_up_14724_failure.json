@@ -6,7 +6,7 @@
   "node": "cn003",
   "mpi_tasks": 32,
   "mpi_exit_code": 1,
-  "case_dir": "/n96pfs/home/ysn96pc0041/codex_runs/p418_pebble_heat/fully_coupled_velocity_up_short_uphi_20260730/work/representative_velocity_up/velocity_up_T500_q6p85",
+  "case_dir": "PRIVATE_COMPUTE_PATH_REMOVED",
   "target_end_time_s": 0.002,
   "final_common_complete_time_s": null,
   "first_positive_logged_time_s": 1e-07,

@@ -10,7 +10,7 @@ LOCK=${LOCK:-${RESULT_ROOT}/hccb_p418_full_pipeline.lock}
 PROGRESS_INTERVAL_SECONDS=${PROGRESS_INTERVAL_SECONDS:-600}
 PROGRESS_JSON=${PROGRESS_JSON:-${RESULT_ROOT}/hccb_p418_runtime_progress.json}
 PROGRESS_LOG=${PROGRESS_LOG:-${RESULT_ROOT}/hccb_p418_runtime_progress.log}
-P418_PYTHON=${P418_PYTHON:-/data2/wangjian/venv/bin/python3}
+P418_PYTHON=${P418_PYTHON:-python3}
 
 mkdir -p "${RESULT_ROOT}"
 exec 8>"${LOCK}"

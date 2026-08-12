@@ -1,0 +1,11 @@
+{
+  "status": "hccb_pore_resolved_openfoam_mesh_preflight_failed",
+  "job_id": "14630",
+  "node": "cn003",
+  "case": "PRIVATE_COMPUTE_PATH_REMOVED",
+  "mesh_audit": "PRIVATE_COMPUTE_PATH_REMOVED",
+  "mesh_audit_sha256": "b49068621a592582eeb79f5e8354f6b4eca31c040025992a1f21254424c1592c",
+  "input_validation": "PRIVATE_COMPUTE_PATH_REMOVED",
+  "input_validation_sha256": "4c2587a0329f9bb49a643e278dab789ddad5941b657f9d0f509ca196137af900",
+  "steady_solver_started": false
+}

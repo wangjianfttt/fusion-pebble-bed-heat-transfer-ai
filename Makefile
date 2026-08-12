@@ -9,7 +9,7 @@ P418_PREFLIGHT_ROOT ?= $(P418_ROOT)/hccb_dense_cht_p418_sourceflow_preflight
 P418_RESULT_ROOT ?= $(P418_ROOT)/results
 P418_CONCURRENT_CASES ?= 1
 P418_MPI_RANKS ?= 32
-P418_PYTHON ?= $(if $(wildcard /data2/wangjian/venv/bin/python3),/data2/wangjian/venv/bin/python3,$(TORCH_PYTHON))
+P418_PYTHON ?= $(TORCH_PYTHON)
 P418_DOI ?=
 
 .PHONY: p418-progress p418-fused-preflight p418-research-route-check p418-parameter-evidence p418-local-transport-support p418-local-transport-sensitivity p418-scientific-findings p418-model-comparison-protocol p418-fully-coupled-step-plan p418-end-to-end-plan p418-fully-coupled-model-plan p418-high-re-evaluation-plan p418-formal-plan p418-formal-run p418-manuscript-refresh p418-reproducibility p418-public-test p418-physical-model-figure p418-field-cloud-figure p418-apply-doi

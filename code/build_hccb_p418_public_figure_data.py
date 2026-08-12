@@ -22,6 +22,12 @@ SEED202_SUMMARY_SOURCE = Path(
 STEADY_SOURCE = Path(
     "results/hccb_p418_60_corrected_20260731_model_comparison_100epoch/model_comparison.csv"
 )
+TRANSPORT_CHECK_SOURCE = Path(
+    "results/hccb_p418_helium_transport_lookup_20260802/openfoam13_direct_transport_build.json"
+)
+SCOPE_SUMMARY_SOURCE = Path(
+    "results/hccb_p418_scope_limits_20260730/scope_limits_summary.json"
+)
 PRIVATE_TEXT = (
     "/" + "Users/",
     "/" + "data2/",
@@ -62,12 +68,24 @@ def ensure_no_private_text(path: Path) -> None:
         raise ValueError(f"private machine path remains in {path}: {found}")
 
 
+def scrub_private_paths(value):
+    if isinstance(value, dict):
+        return {key: scrub_private_paths(item) for key, item in value.items()}
+    if isinstance(value, list):
+        return [scrub_private_paths(item) for item in value]
+    if isinstance(value, str) and any(token in value for token in PRIVATE_TEXT):
+        return "PRIVATE_COMPUTE_PATH_REMOVED"
+    return value
+
+
 def build(project_root: Path, output_dir: Path) -> dict[str, object]:
     sources = {
         "physical_response": project_root / PHYSICAL_SOURCE,
         "seed202_comparison": project_root / SEED202_CSV_SOURCE,
         "seed202_summary": project_root / SEED202_SUMMARY_SOURCE,
         "steady_model_comparison": project_root / STEADY_SOURCE,
+        "transport_check": project_root / TRANSPORT_CHECK_SOURCE,
+        "scope_summary": project_root / SCOPE_SUMMARY_SOURCE,
     }
     missing = [str(path) for path in sources.values() if not path.is_file()]
     if missing:
@@ -85,6 +103,8 @@ def build(project_root: Path, output_dir: Path) -> dict[str, object]:
     seed_csv_out = output_dir / "seed202_integral_comparison_9.csv"
     seed_summary_out = output_dir / "seed202_integral_summary.json"
     steady_out = output_dir / "steady_model_comparison_5x5.csv"
+    transport_out = output_dir / "openfoam13_direct_transport_build_public.json"
+    scope_dir = output_dir / "scope_limits_public"
     write_csv(physical_out, physical_fields, physical_rows)
     write_csv(seed_csv_out, seed_fields, seed_rows)
 
@@ -110,6 +130,52 @@ def build(project_root: Path, output_dir: Path) -> dict[str, object]:
         {name: row[name] for name in public_steady_fields} for row in steady_rows
     ]
     write_csv(steady_out, public_steady_fields, public_steady_rows)
+
+    transport = json.loads(sources["transport_check"].read_text(encoding="utf-8"))
+    public_transport = {
+        key: value
+        for key, value in transport.items()
+        if key not in {"workstation", "library_path", "check_executable_path"}
+    }
+    public_transport["private_machine_paths_removed_for_public_release"] = True
+    transport_out.write_text(
+        json.dumps(public_transport, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
+    raw_scope_summary = json.loads(sources["scope_summary"].read_text(encoding="utf-8"))
+    scope_source_dir = sources["scope_summary"].parent
+    scope_dir.mkdir(parents=True, exist_ok=True)
+    public_scope_rows = []
+    scope_outputs: list[Path] = []
+    for row in raw_scope_summary["records"]:
+        name = str(row["filename"])
+        source_path = scope_source_dir / name
+        if not source_path.is_file():
+            raise FileNotFoundError(source_path)
+        public_path = scope_dir / name
+        public_payload = scrub_private_paths(
+            json.loads(source_path.read_text(encoding="utf-8"))
+        )
+        public_path.write_text(
+            json.dumps(public_payload, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        public_row = scrub_private_paths(dict(row))
+        public_row["size_bytes"] = public_path.stat().st_size
+        public_row["sha256"] = sha256(public_path)
+        public_scope_rows.append(public_row)
+        scope_outputs.append(public_path)
+    public_scope_summary = scrub_private_paths(dict(raw_scope_summary))
+    public_scope_summary["destination"] = "scope_limits_public"
+    public_scope_summary["records"] = public_scope_rows
+    public_scope_summary["private_machine_paths_removed_for_public_release"] = True
+    public_scope_summary_path = scope_dir / "scope_limits_summary.json"
+    public_scope_summary_path.write_text(
+        json.dumps(public_scope_summary, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    scope_outputs.append(public_scope_summary_path)
 
     readme = output_dir / "README.md"
     readme.write_text(
@@ -138,11 +204,22 @@ in the citable processed-data archive rather than this small source package.
         encoding="utf-8",
     )
 
-    public_files = (physical_out, seed_csv_out, seed_summary_out, steady_out, readme)
+    public_files = (
+        physical_out,
+        seed_csv_out,
+        seed_summary_out,
+        steady_out,
+        transport_out,
+        *scope_outputs,
+        readme,
+    )
     for path in public_files:
         ensure_no_private_text(path)
     outputs = {
-        path.name: {"size_bytes": path.stat().st_size, "sha256": sha256(path)}
+        path.relative_to(output_dir).as_posix(): {
+            "size_bytes": path.stat().st_size,
+            "sha256": sha256(path),
+        }
         for path in public_files
     }
     payload: dict[str, object] = {

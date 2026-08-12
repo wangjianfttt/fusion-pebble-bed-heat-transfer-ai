@@ -14,7 +14,7 @@ def test_power_recovery_rejoins_the_complete_formal_route() -> None:
     formal = text.index("run_hccb_p418_formal_calculations.sh")
     assert matrix < complete_check < formal
     assert "run_hccb_p418_poststeady_pipeline.sh" not in text
-    assert 'P418_PYTHON=${P418_PYTHON:-/data2/wangjian/venv/bin/python3}' in text
+    assert 'P418_PYTHON=${P418_PYTHON:-python3}' in text
     assert "EXECUTE=1" in text
     assert 'NP_PER_CASE="${NP_PER_CASE}"' in text
     assert 'CONCURRENT_CASES="${CONCURRENT_CASES}"' in text
